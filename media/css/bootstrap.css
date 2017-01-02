@@ -1,0 +1,27 @@
+body {
+  font-family: Lora, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #333333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  line-height: 26px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+a {
+  color: #e78b24;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #da7e18;
+  text-decoration: underline;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html $if(lang)$ lang="$lang$"$endif$> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$">
+    $endfor$
+    $if(date-meta)$
+    <meta name="date" content="$date-meta$">
+    $endif$
+    $if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
+    $endif$
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"          type="text/css">
+    <link href="media/css/bootstrap.css" rel="stylesheet" media="screen,print">
+    $if(quotes)$
+    <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+    $endif$
+    $if(highlighting-css)$
+    <style type="text/css">
+    $highlighting-css$
+    </style>
+    $endif$
+    $for(css)$
+    <link rel="stylesheet" href="$css$" type="text/css">
+    $endfor$
+    $if(math)$
+      $math$
+    $endif$
+    $for(header-includes)$
+        $header-includes$
+    $endfor$
+  </head>
+  <body>
+    <main class="container">
+      <div class="text-center"> 
+        <h1 class="title">$title$</h1>
+
+        $if(subtitle)$
+        <h2 class="subtitle">$subtitle$</h2>
+        $endif$
+
+        <div id="authors">
+          $for(author)$
+          <dd class="author">$author$</dd>
+          $endfor$
+        </div>
+        
+        <p>$institute$</p>
+        
+        <p><a href="mailto:jindrich.mynarz@vse.cz"><tt>jindrich.mynarz@vse.cz</tt></a></p>
+
+        $if(date)$
+        <h3 class="date">$date$</h3>
+        $endif$
+      </div>
+
+      $if(toc)$
+      <h2>Table of contents</h2>
+      <div id="$idprefix$TOC">
+      $toc$
+      </div>
+      $endif$
+      
+      <div class="text-justify">
+        $body$
+      </div>
+      $for(include-after)$
+      $include-after$
+      $endfor$
+    </main>
+  </body>
+</html>
