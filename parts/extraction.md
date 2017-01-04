@@ -10,9 +10,13 @@ Sources:
 
 (TODO: Describe what each dataset provides. What motivates its use?)
 
-The central dataset that we used in matchmaking is the [Czech Public procurement register](https://www.vestnikverejnychzakazek.cz). This dataset contains Czech public contracts from the year 2006 and on. The available description of each contract differs, although generally the contracts feature data such as their contracting authority, the contract's object, award criteria, and the awarded bidder, comprising the primary data for matchmaking demand and supply. Roughly speaking, public contracts can be considered as expressions of demand, while awarded tenders express the supply.
+The central dataset that we used in matchmaking is the [Czech Public procurement register](https://www.vestnikverejnychzakazek.cz).
+This dataset contains Czech public contracts from the year 2006 and on.
+The available description of each contract differs, although generally the contracts feature data such as their contracting authority, the contract's object, award criteria, and the awarded bidder, comprising the primary data for matchmaking demand and supply.
+Roughly speaking, public contracts can be considered as expressions of demand, while awarded tenders express the supply.
 
-Although initially this dataset was not available as structured data and interested parties had to scrape its data from HTML, it was eventually released as [open data](http://www.isvz.cz/ISVZ/Podpora/ISVZ_open_data_vz.aspx). The data is published in exports to XML, CSV, or Microsoft Excel, partitioned by year.
+Although initially this dataset was not available as structured data and interested parties had to scrape its data from HTML, it was eventually released as [open data](http://www.isvz.cz/ISVZ/Podpora/ISVZ_open_data_vz.aspx).
+The data is published in exports to XML, CSV, or Microsoft Excel, partitioned by year.
 
 This open data offering also includes exports from electronic marketplaces, where some public contracts are published, but this part was not used for matchmaking.
 
@@ -47,28 +51,3 @@ We used a batch ETL approach, since our source data is published in batches part
 Realtime ETL would be feasible if the source data is be provided at a finer granularity.
 
 We used manual scheduling due to unstable behaviour of Virtuoso RDF store that requires ad hoc manual adjustments.
-
-### Modelling
-
-Semantic data model
-The goal of data modelling is to make the data amenable to matchmaking.
-Modelling in RDF is typically not guided by the expected use of the modelled data. (Agnostic of use)
-RDF supports a wide array of ways to reuse data.
-Instead, it is guided by a conceptual model.
-
-Focus on querying instead of reasoning
-Features of OWL were not needed.
-Focus on data integration
-Any RDF datasets can be merged. (Syntactically)
-RDF makes further data processing straightforward.
-
-The data in the Czech public procurement register is represented using forms.
-Forms are documents that inform about public contracts.
-For example, these forms include prior information notices or contract award notices.
-Using the terminology of the semantic web, the forms are information resources.
-
-#### Public Contracts Ontology
-
-[Public Contracts Ontology](https://github.com/opendatacz/public-contracts-ontology) is an RDF vocabulary for describing public contracts. The vocabulary was developed by the Czech OpenData.cz initiative since 2011.
-
-Modelling data using the Public Contracts Ontology mixed with terms cherry-picked from other linked open vocabularies, such as Public Procurement Ontology (PPROC)

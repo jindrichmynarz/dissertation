@@ -7,7 +7,7 @@ Thanks to these features ARES can serve as a reference dataset for Czech busines
 
 This system is not the primary source of the data it provides.
 Instead, it mediates data from several source registers and links back to these registers where possible.
-The main sources of ARES are the [Public Register](https://or.justice.cz/ias/ui/rejstrik) run by the Czech Ministry of Justice, the [Trade Licensing Register](http://www.rzp.cz/eng/index.html) operated by the Czech Ministry of Industry and Trade, and the [Business Register](https://www.czso.cz/csu/res/business_register) maintained by the Czech Statistical Office.
+The main sources of ARES are the [Public Register](https://or.justice.cz/ias/ui/rejstrik) (PR) run by the Czech Ministry of Justice, the [Trade Licensing Register](http://www.rzp.cz/eng/index.html) (TLR) operated by the Czech Ministry of Industry and Trade, and the [Business Register](https://www.czso.cz/csu/res/business_register) maintained by the Czech Statistical Office.
 Consequently, the data ARES provides may not be up-to-date or complete.
 ARES explicitly renounces any guarantees about the data.
 Its data is not to be treated as legally binding, but instead it serves only an informative purpose.
@@ -19,23 +19,27 @@ The limits allow to issue a thousand requests per day and five thousand requests
 Since ARES provides access to hundreds of thousands of business entities and no option for bulk download, harvesting a copy of its data may take many weeks.
 The rate-limiting and the prolonged execution thus need to be factored into account when designing an ETL pipeline that obtains the data. 
 
-Since ARES wraps many registers, we narrowed our focus to two registers most relevant to the public procurement: the Public Register and the Trade Licensing Register.
-These registers are the ones that the awarded bidders of public contracts are registered in.
+Since ARES wraps many registers, we narrowed our focus to two registers most relevant to the public procurement: PR and TLR.
+These registers are those that the awarded bidders of public contracts are registered in.
+A large share of business entities is present in both these registers.
+It is nevertheless useful to obtain data from both registers, since they are complementary.
+For instance, while the PR contains classification of organization activity according to NACE, TLR naturally provides the trade licences entities have registered.
 
-XSL transformation
-Registered Identification Number (RN) must be known in advance to form a valid request to ARES
-we extracted the identifiers from the Czech public procurement register
-a subset of the entire dataset
+Valid requests to the ARES API must contain a Registered Identification Number (RN) of a business entity.
+This design makes it difficult to obtain a complete copy of the ARES data without a complete list of valid RNs.
+We collected a subset of the entire datasets by requesting the RNs we found in other datasets. 
+The Czech public procurement register was one such dataset, so we gathered data about all business entities participating in Czech public procurement if their valid RN was published.
+In total, as of November 2016 we harvested data about 204 620 distinct entities either in PR or TLR.
+Out of these, 161 403 business entities were present in both registries.
+
+Thanks to the uniform API that ARES provides the ETL of both registers differs only in the XSL transformations mapping XML data to RDF.
+The data transformation was done using [UnifiedViews](https://unifiedviews.eu) ([Knap et al., 2017](#Knap2017)).
+UnifiedViews is an ETL tool for producing RDF data, which can be considered a predecessor of LP-ETL.
+A [custom data processing unit](https://github.com/mff-uk/DPUs/tree/master/dpu-domain-specific/ares) (DPU) was used to fetch data into UnifiedViews.
+Raw source data in XML was transformed into RDF/XML using XSL stylesheets.
+A mixture of RDF vocabularies was used to describe the ARES data with the key roles played by the GoodRelations ([Hepp, 2008](#Hepp2008)) and the Registered Organization Vocabulary ([Archer et al., 2013](#RegOrg2013)).
+The registry data is relatively consistent, so it did not require much cleaning. 
+However, we paid special care to postal addresses, since we needed them for geocoding.
+SPARQL Update operations were employed to clean and structure the addresses.
+The [data transformation](https://github.com/opendatacz/ARES2RDF) was released as open-source.
 Most of the transformation was done by Jakub Klímek from the Charles University in Prague with a contribution of this thesis' author.
-Both the [data transformation](https://github.com/opendatacz/ARES2RDF) and the [custom DPU](https://github.com/mff-uk/DPUs/tree/master/dpu-domain-specific/ares) developed for it were released as open-source.
-
-The transformation was done using [UnifiedViews](https://unifiedviews.eu) ([Knap et al., 2017](#Knap2017)).
-UnifiedViews is an ETL tool for producing RDF data.
-It can be considered a predecessor of LP-ETL.
-
-relatively consistent dataset
-SPARQL Update operations for cleaning postal addresses
-
-<!-- Total distinct business entities 204 620 in OR and RŽP (November 2016). -->
-
-A mixture of RDF vocabularies was used to describe the ARES data with the key roles played by the GoodRelations ([Hepp](#Hepp)) and the Registered Organization Vocabulary ([Archer et al., 2013](#RegOrg2013)).
