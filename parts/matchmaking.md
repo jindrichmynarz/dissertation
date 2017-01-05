@@ -8,8 +8,12 @@ To illustrate the inverse direction, matchmaking can provide, for example, alert
 
 Viewed as an information retrieval problem, the process of matchmaking can be thus considered as rewriting demands or offers to executable queries.
 
-Case-based reasoning
+## Case-based reasoning
+
 Case-based recommended systems
+
+Using the terminology of case-based reasoning, CPV provides a "bridge attribute" that allows to derive the       similarity of contracts from the shared concepts in their descriptions.
+
 Similarity-based retrieval
 Limitation: favours larger and longer-established suppliers.
 Schema-aware vs. schema-agnostic matchmaking

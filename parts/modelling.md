@@ -16,3 +16,9 @@ The data in the Czech public procurement register is represented using forms.
 Forms are documents that inform about public contracts.
 For example, these forms include prior information notices or contract award notices.
 Using the terminology of the semantic web, the forms are information resources.
+
+<!--
+TODO: Add a UML class diagram of the data model.
+Also display computed cardinalities.
+This can be used for visual validation of the ETL's results.
+-->

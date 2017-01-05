@@ -24,3 +24,20 @@ Partially integrated data is unsuitable for analysis in public media. Probabilis
 
 We practice separation of concerns.
 Data processing is split into smaller steps endowed with a single responsibility.
+
+[zIndex's wiki](#Soudek2016a) documents many of the data quality problems with the Czech public procurement register.
+
+Sources:
+
+* Czech public procurement register: public procurement journal
+* Common Procurement Vocabulary 2008 (CPV): along with a bridge mapping CPV 2003 to CPV 2008
+* Czech address data: all recognized addresses in the Czech Republic
+* ARES (Czech organization register): officially registered business entities
+* zIndex: index of fairness of contracting authorities
+
+Selection of each of the datasets had a motive justifying the effort spent preparing its data.
+The Czech public procurement register is our primary dataset that provides historical data on public contracts from the past 10 years.
+CPV organizes the objects of public contracts in a hierarchical structure that allows to draw inferences about the similarity of the objects from their distance in the structure. 
+Czech address data offers geo-coordinates for the recognized postal addresses in the Czech Republic. By matching postal addresses to their canocanical form from this dataset, postal addresses can be geocoded.
+ARES serves as a reference dataset for business entities. It is used to reconcile identities of business entities in the Czech public procurement data that lack registration numbers.
+Our case-based reasoning approach to matchmaking works under the assumption that the awarded bidders constitute cases of successful solutions to public contracts. This assumption may not be universally valid, considering that bidders may be awarded for reasons other than providing the best offer. zIndex gives us a counter-measure to balance this assumption by weighting each award by the fairness of its contracting authority.

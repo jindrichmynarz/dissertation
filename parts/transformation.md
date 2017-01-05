@@ -57,9 +57,3 @@ Findings:
 ### Cleaning
 
 *"Errors in the published data may be caused by either negligence when filling out Journal forms or by deliberate obfuscation of sensitive information in order to reduce a contract's traceability."* ([Soudek](#Soudek2016), 2016)
-
-### Enrichment
-
-#### Geocoding
-
-[elasticsearch-geocoding](https://github.com/jindrichmynarz/elasticsearch-geocoding) is a tool for geocoding instances of `schema:PostalAddress` using Czech address data stored in Elasticsearch.

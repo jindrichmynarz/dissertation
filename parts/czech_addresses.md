@@ -1,4 +1,4 @@
-## Czech addresses
+### Czech addresses
 
 In order to provide the postal addresses in the Czech public procurement data with geo-coordinates, we extracted Czech address data from the [Registry of territorial identification, addresses, and real estate](http://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN.aspx) (RÚIAN).
 The registry contained 2.9 million addresses^[Valid as of September 2016.] in the Czech republic.
@@ -12,7 +12,7 @@ We used LP-ETL to transform the source data to RDF.
 Each address was modelled as an instance of [`schema:PostalAddress`](http://schema.org/PostalAddress).
 The RÚIAN-specific attributes, such as the orientational number or the building type, were described with the RÚIAN Ontology previously developed by the OpenData.cz initiative.
 Since each row in the source data is independent of the others, it was possible to use chunked transformation to process smaller batches of rows separately and thus decrease the execution time of the transformation.
-The resulting RDF data was loaded into a Virtuoso RDF store. 
+The resulting data consisting of 42 million RDF triples was loaded into a Virtuoso RDF store. 
 
 Czech addreses data use Systém Jednotné trigonometrické sítě katastrální (S-JTSK)[^S-JTSK] as its coordinate reference system.
 S-JTSK is based on the Křovák projection, which was designed specifically for the Czechoslovakia to provide more precise geo-coordinates than another reference system would.

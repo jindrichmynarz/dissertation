@@ -1,5 +1,6 @@
 html:
 	pandoc -f markdown \
+		--number-sections \
 		--toc \
 		-s \
 		-o text.html \
@@ -9,6 +10,7 @@ html:
 
 pdf:
 	pandoc -f markdown \
+		--number-sections \
 		--toc \
 		-s \
 		-o text.pdf \

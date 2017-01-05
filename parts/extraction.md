@@ -1,15 +1,5 @@
 ## Extraction
 
-Sources:
-
-* Czech public procurement register: 2 parts - public procurement journal and electronic marketplaces
-* Common Procurement Vocabulary 2008 (CPV): along with a bridge mapping CPV 2003 to CPV 2008
-* Czech address data: all recognized addresses in the Czech Republic
-* ARES (Czech organization register): officially registered business entities
-* zIndex: index of fairness of contracting authorities
-
-(TODO: Describe what each dataset provides. What motivates its use?)
-
 The central dataset that we used in matchmaking is the [Czech Public procurement register](https://www.vestnikverejnychzakazek.cz).
 This dataset contains Czech public contracts from the year 2006 and on.
 The available description of each contract differs, although generally the contracts feature data such as their contracting authority, the contract's object, award criteria, and the awarded bidder, comprising the primary data for matchmaking demand and supply.
@@ -51,3 +41,5 @@ We used a batch ETL approach, since our source data is published in batches part
 Realtime ETL would be feasible if the source data is be provided at a finer granularity.
 
 We used manual scheduling due to unstable behaviour of Virtuoso RDF store that requires ad hoc manual adjustments.
+
+<!-- TODO: Work through the XSLT and document the important parts. -->
