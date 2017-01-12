@@ -61,6 +61,8 @@ Domains of research:
 * Methods
 * Tools implementing the methods (also auxiliary tools if no suitable ones are available)
 
+The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless specified otherwise.
+
 ## Core hypotheses
 
 * Additional features obtained from linked open data can improve matchmaking.
@@ -72,3 +74,5 @@ Preliminaries
 - Minimal introductions to the topics covered in this thesis to enable comprehension of the further text.
 
 ## Matchmaking
+
+We used data from the Czech public procurement register to evaluate the proposed matchmaking methods.

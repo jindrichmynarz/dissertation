@@ -13,6 +13,7 @@ keywords:
 ```include
 parts/abstract_english.md
 parts/abstract_czech.md
+parts/abbreviations.md
 parts/introduction.md
 parts/linked_open_data.md
 parts/public_procurement_domain.md
@@ -24,9 +25,8 @@ parts/modelling.md
 parts/public_contracts_ontology.md
 parts/transformation.md
 parts/linking.md
-parts/fusion.md
-parts/enrichment.md
 parts/geocoding.md
+parts/fusion.md
 parts/loading.md
 parts/linked_datasets.md
 parts/cpv.md

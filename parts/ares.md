@@ -29,6 +29,8 @@ Valid requests to the ARES API must contain a Registered Identification Number (
 This design makes it difficult to obtain a complete copy of the ARES data without a complete list of valid RNs.
 We collected a subset of the entire datasets by requesting the RNs we found in other datasets. 
 The Czech public procurement register was one such dataset, so we gathered data about all business entities participating in Czech public procurement if their valid RN was published.
+The downside of the method is that it potentially leaves out much unidentified business entities, since there are almost 2.8 million business entities in the Business Register as of September 2016^[See the periodical report of the Czech Statistical Office: <https://www.czso.cz/documents/10180/33134052/14007016q301.pdf/db871117-2431-4bba-b8d9-2288cd10862e>] in total.
+Moreover, this number excludes now defunct entities that could have participated in the Czech public procurement before their dissolution date.
 In total, as of November 2016 we harvested data about 204 620 distinct entities either in PR or TLR.
 Out of these, 161 403 business entities were present in both registries.
 

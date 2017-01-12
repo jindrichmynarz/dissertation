@@ -2,6 +2,10 @@
 
 Cleaning, enrichment
 
+In the context of procurement and financial data it was reported that *"data conversion aspects of the integration project are estimated to take up to 50 % of the project team's time"* ([Best practices in integration of procurement and financial data management, 2005](#BestPractices2005), p. 19).
+We argue that a considerable share of this effort can be avoided if the integrated datasets are available in RDF. 
+In such scenario, data translation can skip the resolution of syntactical inconsistencies and instead focus on resolving semantic mismatches between the integrated sources. 
+
 Due to the messiness of the public procurement data:
 
 * It is unfit for logical reasoning, e.g., applying an OWL reasoner.
@@ -54,6 +58,19 @@ Findings:
 
 [sparql-unlimited](https://github.com/jindrichmynarz/sparql-unlimited) allows to execute SPARQL Update operations split into pages.
 
+If a transformation impacts a large volume of data, it may be necessary to split it into subsequently executed offset-delimited pages affecting subsets of data that are small enough to fit in a single database transaction.
+
+<!--
+Currency conversion via ECB exchange rates:
+[European Central Bank exchange rates](https://github.com/openbudgets/datasets/tree/master/ecb-exchange-rates)
+Coverage from November 30, 1999 to April 7, 2016.
+-->
+
 ### Cleaning
 
 *"Errors in the published data may be caused by either negligence when filling out Journal forms or by deliberate obfuscation of sensitive information in order to reduce a contract's traceability."* ([Soudek](#Soudek2016), 2016)
+
+"Defensive" transformations expecting errors
+
+Even though the current documentation of the Czech public procurement register states that the collected data is validated by several rules, we found errors in the data that should have been prevented by the rules.
+A possible explanation for this issue is that the extracted dataset contains historical data as well, some of which might date to the past when the register did not yet employ as comprehensive validation as it does now. 
