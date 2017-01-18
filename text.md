@@ -23,6 +23,7 @@ parts/data_preparation.md
 parts/extraction.md
 parts/modelling.md
 parts/public_contracts_ontology.md
+parts/code_lists.md
 parts/transformation.md
 parts/linking.md
 parts/geocoding.md

@@ -8,11 +8,17 @@ API
 ARES
 ~ Access to Registers of Economic Subjects/Entities
 
+CLI
+~ Command-Line Interface
+
 CPV
 ~ Common Procurement Vocabulary
 
 CSV
 ~ Comma-Separated Values
+
+DSL
+~ Domain-Specific Language
 
 EPSG
 ~ European Petroleum Survey Group
@@ -38,11 +44,23 @@ LP-ETL
 NACE
 ~ Statistical Classification of Economic Activities in the European Community
 
+NDJSON
+~ Newline Delimited JSON
+
+PCO
+~ Public Contracts Ontology
+
+PPROC
+~ Public Procurement Ontology
+
 PR
 ~ Public Register
 
 RDF
 ~ Resource Description Framework
+
+RDF/XML
+~ RDF 1.1 XML Syntax
 
 RN
 ~ Registered Identification Number

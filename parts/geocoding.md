@@ -34,8 +34,8 @@ Finally, we wanted to assess whether open data can help build a geocoder compara
 This is why we based the developed geocoder on the gazetteer from the Czech address data.
 
 During the development of the geocoder we leveraged the tooling we built for data preparation.
-[`sparql-to-jsonld`](https://github.com/jindrichmynarz/sparql-to-jsonld) was used to retrieve the Czech address data from a SPARQL endpoint, construct descriptions of the individual postal addresses, and frame them into JSON-LD documents.
-We used [`jsonld-to-elasticsearch`](https://github.com/jindrichmynarz/jsonld-to-elasticsearch) to index the addresses in Elasticsearch.
+[sparql-to-jsonld](https://github.com/jindrichmynarz/sparql-to-jsonld) was used to retrieve the Czech address data from a SPARQL endpoint, construct descriptions of the individual postal addresses, and frame them into JSON-LD documents.
+We used [jsonld-to-elasticsearch](https://github.com/jindrichmynarz/jsonld-to-elasticsearch) to index the addresses in Elasticsearch.
 In the index phase we use basic normalization and employ a synynom filter that expands abbreviations commonly found in postal addresses.
 
 The [geocoder](https://github.com/jindrichmynarz/elasticsearch-geocoding) was implemented as a command-line tool that loads addresses to geocode from a SPARQL endpoint using a paged SPARQL SELECT query provided by the user, and queries an Elasticsearch index with the Czech address data for each address.
@@ -90,7 +90,7 @@ The geocoder achieved a match rate of 0.9788, while Here Geocoding API scored 0.
 We sorted the postal addresses that were matched both by Here Geocoding API and our geocoder by the distance of the returned geo-coordinates in descending order.
 We manually checked the top geo-coordinates and found that the maximum distance where our geo-coordinates were invalid was 8 kilometers.
 Median distance was 0.63 meters and arithmetic mean distance was 290 meters.
-We deem such results as reasonable for our use cases.
+We deem such results to be reasonable for our use cases.
 
 <!--
 Match rate for a sample of 5000 postal addresses from the Trade Licensing Register:

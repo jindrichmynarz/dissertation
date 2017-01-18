@@ -71,7 +71,7 @@ Perhaps the confusion arises from fusion and linking being merged when dealing w
 Due to the transient nature of public procurement data it is necessary to integrate it in a timely manner, before the data loses relevance [Harth et al., 2013](#Harth2013).
 
 The remaining case occurs when there is no identifier scheme for the duplicated entities.
-To illustrate that this is a common case in public procurement, Alvarez-Rodríguez quotes the lack of consensual identifiers as one of the challenges of public procurement data ([2014](#AlvarezRodriguez2014a)).
+To illustrate that this is a common case in public procurement, Alvarez-Rodríguez quotes the lack of consensual identifiers as one of the challenges of public procurement data ([2014](#AlvarezRodriguez2014)).
 If there are no identifiers to which entities can be reconciled, reconciliation begins to resemble clustering that interconnects similar entities.
 
 #### Evaluation

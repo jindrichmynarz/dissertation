@@ -56,3 +56,5 @@ A shortcoming of public procurement data that becomes apparent in data integrati
 Coletta et al. claim that data integration is harder in the context of public sector data because important metadata is often missing ([2012](#Coletta2012)).
 Fazekas discusses a similar set of issues of public procurement data from Hungary and highlights missing identifiers, imprecise links, and structural weaknesses ([Fazekas and Tóth, 2012](#Fazekas2012), p. 14).
 A corollary of these issues is that tracking public contracts through the stages of their life-cycle, from their announcement over to completion, is difficult because of the lack of reliable identifiers.
+
+<!-- TODO: Describe where does matchmaking fit in the public procurement process. -->

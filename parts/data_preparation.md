@@ -4,10 +4,11 @@
 ... A tale of gruelling detail ...
 
 Describe data preparation of the public procurement data split into ETL phases.
-Following that, describe ETL of other datasets not necessarily split by ETL phase. 
+Following that, describe ETL of other datasets not necessarily split by ETL phase.
 -->
 
-- [repository](https://github.com/jindrichmynarz/vvz-to-rdf)
+The source code used for data preparation is openly available in a [repository](https://github.com/jindrichmynarz/vvz-to-rdf).
+This allows to replicate and scrutinize the way we prepared data.
 
 We will describe the preparation of data for matchmaking using the framework of Extract-Transform-Load (ETL).
 
@@ -16,6 +17,10 @@ In fact, we first load the data into Virtuoso to make transformation via SPARQL 
 Subsequently, the data is loaded from Virtuoso to Elasticsearch.
 This can be probably termer incremental ETL.
 - Using RDF allows to load data first and integrate it later, while in the traditional context of relational databases, data integration must precede loading.
+
+We used a batch ETL approach, since our source data is published in batches partitioned per year.
+Realtime ETL would be feasible if the source data is be provided at a finer granularity.
+This is the case with the profiles of contracting authorities.
 
 For the purposes of discussion in this thesis, extraction refers to the process of converting non-RDF data to RDF.
 Once data is available in RDF, its processing is described as transformation.
@@ -27,7 +32,8 @@ Pay-as-you-go integration
 At many stages of data preparation we needed to compromise data quality due to the effort required to achieve it.
 We are explicit about the involved trade-offs, because it helps understand the complexity of the data preparation endeavour, which is mostly misrepresented as a straightforward affair.
 
-Partially integrated data is unsuitable for analysis in public media. Probabilistic hypotheses don't fit journalism: cannot make possibly untrue claims.
+Partially integrated data is unsuitable for analysis in public media.
+Probabilistic hypotheses don't fit journalism: cannot make possibly untrue claims.
 
 We practice separation of concerns.
 Data processing is split into smaller steps endowed with a single responsibility.
@@ -44,7 +50,7 @@ Sources:
 
 Selection of each of the datasets had a motive justifying the effort spent preparing its data.
 The Czech public procurement register is our primary dataset that provides historical data on public contracts from the past 10 years.
-CPV organizes the objects of public contracts in a hierarchical structure that allows to draw inferences about the similarity of the objects from their distance in the structure. 
+CPV organizes the objects of public contracts in a hierarchical structure that allows to draw inferences about the similarity of the objects from their distance in the structure.
 Czech address data offers geo-coordinates for the recognized postal addresses in the Czech Republic.
 By matching postal addresses to their canocanical form from this dataset, postal addresses can be geocoded.
 ARES serves as a reference dataset for business entities.
@@ -73,4 +79,6 @@ ncompleteness introduces involuntary influence of sampling bias to analyses base
 Aggregated counts of duplicated entities are unreliable, as they count distinct identifiers instead of counting distinct real-world entities, which may be associated with multiple identifiers.
 Data integration promises to improve both completeness and deduplication by the means of entity reconciliation.
 
-While the goals pursued by public disclosure and aggregation of procurement data are often undermined by insufficient data integration caused by heterogeneity of data provided by diverse contracting authorities, data integration can remedy some of the adverse effects of heterogeneity and fragmentation of procurement data. 
+While the goals pursued by public disclosure and aggregation of procurement data are often undermined by insufficient data integration caused by heterogeneity of data provided by diverse contracting authorities, data integration can remedy some of the adverse effects of heterogeneity and fragmentation of procurement data.
+
+Substantial effort must be spent to extract structured data out of poorly structured Czech public procurement data.

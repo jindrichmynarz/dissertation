@@ -1,24 +1,16 @@
 ### Modelling
 
-Semantic data model
-The goal of data modelling is to make the data amenable to matchmaking.
-Modelling in RDF is typically not guided by the expected use of the modelled data. (Agnostic of use)
-RDF supports a wide array of ways to reuse data.
-Instead, it is guided by a conceptual model.
+We described the extracted data with a semantic data model.
+Our goal of modelling data was to establish a structure that can be leveraged by matchmaking.
+However, modelling data in RDF is typically agnostic of its expected use.
+Instead, it is guided by a conceptual model that opens the data to a wide array of ways to reuse the data.
+Nevertheless, the way we chose model our data reflected our priorities.
 
-Focus on querying instead of reasoning
-Features of OWL were not needed.
-Focus on data integration
-Any RDF datasets can be merged. (Syntactically)
-RDF makes further data processing straightforward.
+We focused on querying and data integration instead of reasoning.
+Instead of enabling to draw logical inferences by reasoning with ontological constructs, we wanted to simplify and speed-up querying.
+In order to do that, for example, we avoided verbose structures to reduce the size of the queried data.
+For the sake of better integration with other data, we established IRIs as persistent identifiers and reused common identifiers where possible.
+Thanks to the schema-less nature of RDF, any datasets can be merged automatically.
 
-The data in the Czech public procurement register is represented using forms.
-Forms are documents that inform about public contracts.
-For example, these forms include prior information notices or contract award notices.
-Using the terminology of the semantic web, the forms are information resources.
+The extracted public procurement data was described using a mixture of RDF vocabularies, out of which the Public Contracts Ontology was the most prominent.
 
-<!--
-TODO: Add a UML class diagram of the data model.
-Also display computed cardinalities.
-This can be used for visual validation of the ETL's results.
--->

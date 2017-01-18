@@ -1,5 +1,7 @@
 ## Transformation
 
+Producing RDF as the output of data extraction provides a leverage for the subsequent parts of the ETL process, since the structure of RDF allows to express complex operations transforming the data.
+
 Cleaning, enrichment
 
 In the context of procurement and financial data it was reported that *"data conversion aspects of the integration project are estimated to take up to 50 % of the project team's time"* ([Best practices in integration of procurement and financial data management, 2005](#BestPractices2005), p. 19).
@@ -10,7 +12,7 @@ Due to the messiness of the public procurement data:
 
 * It is unfit for logical reasoning, e.g., applying an OWL reasoner.
 * We have to assume we have only a sample instead of complete data.
-* However, the distribution from which the sample is taken may be uneven. There may be systemic biases, such as particular kinds of contracting authorities not reporting public contracts properly. Therefore, the findings from the sample cannot be extrapolated to generally valid findings (without ruling out the biases).
+* However, the distribution from which the sample is taken may be uneven. We cannot assume the sample is random. There may be systemic biases, such as particular kinds of contracting authorities not reporting public contracts properly. Therefore, the findings from the sample cannot be extrapolated to generally valid findings (without ruling out the biases).
 
 Key challenges of the integration were:
 
@@ -74,3 +76,6 @@ Coverage from November 30, 1999 to April 7, 2016.
 
 Even though the current documentation of the Czech public procurement register states that the collected data is validated by several rules, we found errors in the data that should have been prevented by the rules.
 A possible explanation for this issue is that the extracted dataset contains historical data as well, some of which might date to the past when the register did not yet employ as comprehensive validation as it does now. 
+
+Code lists provide a common reference points for data integration.
+Data integration attempts to reconcile values from source data with the reference concepts from code lists.

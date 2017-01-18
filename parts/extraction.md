@@ -2,7 +2,8 @@
 
 The central dataset that we used in matchmaking is the [Czech public procurement register](https://www.vestnikverejnychzakazek.cz).
 This dataset contains Czech public contracts from the year 2006 to the present.
-<!-- It seems that there are no unawarded contracts in the data dumps.
+<!--
+There are no unawarded contracts in the data dumps.
 This makes is unsuitable for the development of the matchmaking service that alerts about open calls for tenders.
 Data from electronic marketplaces also contains open calls for tenders (marked with `<VZstav>PH010003 - Zadávací řízení</VZstav>`).
 -->
@@ -12,6 +13,7 @@ Viewed from the market perspective, public contracts can be considered as expres
 Although initially this dataset was not available as structured data and interested parties had to scrape its data from HTML, it was eventually released as [open data](http://www.isvz.cz/ISVZ/Podpora/ISVZ_open_data_vz.aspx).
 The data is published in exports to XML, CSV, or Microsoft Excel, partitioned by year.
 This open data offering also includes exports from electronic marketplaces, where some public contracts are published, but this part was not used for matchmaking.
+<!-- For instance, electronic marketplaces serve purchases of commodities. --> 
 
 We chose the XML version as the source.
 XML allows us to leverage mature tooling, such as XSLT processors, for the extraction.
@@ -38,16 +40,14 @@ Due to the fixed cardinalities, there are many empty elements of this type where
 To reduce the size of the processed data and simplify further processing we first apply an XSL transformation to remove the empty elements from the data.
 Doing so simplifies the subsequent transformations, since they do not have to cater for the option of empty elements.
 
-- Data validation is typically mentioned as an instrinsic part of extraction. However, it is also found in the transformation step.
+We developed an XSL stylesheet to extract the source XML data to RDF/XML ([Gandon, Schreiber, 2014](#Gandon2014)).
+During the extraction we validate the syntax of registered identification numbers, Common Procurement Vocabulary codes, and literals typed with `xsd:date`.
+If possible, we establish links in the extracted data via concatenating unambiguous identifiers to namespace IRIs.
+However, the majority of linking is offloaded to a [dedicated phase in the ETL process](#linking), since it typically requires queries over the complete dataset.
+A trade-off we had to make due to our choice of an RDF store is to use plain literals in place of literals typed with `xsd:duration`, since Virtuoso does not support this data type.
+Syntax of the extracted output was validated via Apache Jena's `riot`^[<https://jena.apache.org/documentation/io>] to avoid common problems in RDF/XML, such as incorrect striping ([Brickley, 2002](#Brickley2002)).
+
 <!--
-We validate the syntax of registered identification numbers and Common Procurement Vocabulary codes.
--->
+- Data validation is typically mentioned as an instrinsic part of extraction. However, it is also found in the transformation step.
 - We currently do "validation through use". Syntactical validation is performed when loading the data into an RDF store. However, the data breaks many assumptions of the Public Contracts Ontology to allow to automated validation using tools such as RDFUnit.
-
-Substantial effort must be spent to extract structured data out of poorly structured Czech public procurement data.
-
-We used a batch ETL approach, since our source data is published in batches partitioned per year.
-Realtime ETL would be feasible if the source data is be provided at a finer granularity.
-This is the case with the profiles of contracting authorities.
-
-<!-- TODO: Work through the XSLT and document the important parts. -->
+-->
