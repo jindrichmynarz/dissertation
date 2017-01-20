@@ -1,4 +1,4 @@
-### Linking
+## Linking
 
 Linked data employs a materialized data integration.
 
@@ -49,6 +49,11 @@ Properties used:
 * Legal names: stop-words (e.g., "Czech") were removed
 * Geo-coordinates
 
+* Reconcile code lists
+  * Map different wordings of award criteria to code list concepts
+Code lists provide a common reference points for data integration.
+Data integration attempts to reconcile values from source data with the reference concepts from code lists.
+
 #### Content-based addressing
 
 Simple keys: inverse functional properties (linking subjects, `owl:InverseFunctionalProperty`), functional properties (linking objects, `owl:FunctionalProperty`, only instances of `owl:ObjectProperty`)
@@ -61,6 +66,9 @@ In such case, it may be better to avoid inferring equivalence links using the de
 In general, reconciliations of the duplicated sets should be performed iteratively, building on results of prior reconciliations.
 Each reconciled set may provide new data from which additional equivalence links may be inferred using the afore-mentioned entailment rules or by incorporating the data in the linkage rules developed for entity reconciliation.
 <!-- Is it also non-monotonic? I.e. reconciling resources may produce more conflicts to reconcile. -->
+
+Hash-based linking and fusion of blank nodes (instead of linking multiple blank nodes to an IRI, they are directly replaced by the IRI)
+Requiring minimum description of the fused resources to avoid merging underspecified resources.
 
 <!--
 While the title suggests the blog post is about data fusion, it is more about linking.

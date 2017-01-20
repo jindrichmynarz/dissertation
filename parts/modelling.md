@@ -1,4 +1,4 @@
-### Modelling
+## Modelling
 
 We described the extracted data with a semantic data model.
 Our goal of modelling data was to establish a structure that can be leveraged by matchmaking.

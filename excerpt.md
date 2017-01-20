@@ -15,11 +15,12 @@ keywords:
 ```include
 parts/extraction.md
 parts/modelling.md
+parts/public_contracts_ontology.md
+parts/concrete_data_model.md
+parts/transformation.md
 ```
 
-## Transformation
-
-### Linking
+## Linking
 
 ```include
 parts/geocoding.md

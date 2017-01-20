@@ -1,4 +1,6 @@
-### Fusion
+## Fusion
+
+* Iterative fusion, interleaved with linking
 
 Data fusion can be defined as *"the process of integrating multiple data items representing the same real-world object into a single, consistent, and clean representation"* ([Bizer, Heath and Berners-Lee, 2009](#Bizer2009)). 
 In the course of data fusion *"duplicate representations are combined and fused into a single representation while inconsistencies in the data are resolved"* ([Bleiholder and Naumann, 2008](#Bleiholder2008), p. 1:3).
@@ -58,12 +60,13 @@ This convention allowed us to use a uniform SPARQL Update operation to resolve n
 For example, if there is a triple `:a owl:sameAs :b`, `:a` as the non-preferred IRI will be rewritten to `:b`.
 Note that this convention can be applied only if you can distinguish between non-preferred and preferred IRIs, such as by preferring IRIs from a reference dataset.
 
-Hash-based fusion of blank nodes
-Requiring minimum description of the fused resources to avoid merging underspecified resources.
-
 Fusing subset descriptions
 Universal quantification implemented in SPARQL via double negation
 Poor performance makes this approach unusable for larger data.
+
+We implemented data fusion using SPARQL 1.1 Update operations.
+
+* Resolution of notices
 
 Resolution of conflicts in functional properties
 ([Mynarz, 2014](#Mynarz2014c))

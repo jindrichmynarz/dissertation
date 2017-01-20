@@ -7,6 +7,16 @@ Describe data preparation of the public procurement data split into ETL phases.
 Following that, describe ETL of other datasets not necessarily split by ETL phase.
 -->
 
+Data preparation served two fundamental goals.
+1. Dataset to evaluate matchmaking
+2. Use case for applied research
+<!-- "Because applied research resides in the messy real world, strict research protocols may need to be relaxed."
+<https://en.wikipedia.org/wiki/Applied_research>
+Application of pristine methods of basic research to the messy world. -->
+
+Unlike more established research areas, matchmaking lacks available datasets for evaluation.
+A large part of work undertaken as a part of this effort thus needed to be invested in data preparation. 
+
 The source code used for data preparation is openly available in a [repository](https://github.com/jindrichmynarz/vvz-to-rdf).
 This allows to replicate and scrutinize the way we prepared data.
 
@@ -58,8 +68,6 @@ It is used to reconcile identities of business entities in the Czech public proc
 Our case-based reasoning approach to matchmaking works under the assumption that the awarded bidders constitute cases of successful solutions to public contracts.
 This assumption may not be universally valid, considering that bidders may be awarded for reasons other than providing the best offer.
 zIndex gives us a counter-measure to balance this assumption by weighting each award by the fairness of its contracting authority.
-
-*"the graph-based flexible RDF data model obsoletes the structural heterogeneity problem and makes integration from multiple data sources possible even if their schemas differ or are unknown"* ([Mihindukulasooriya, García-Castro, Esteban-Gutiérrez, 2013](#Mihindukulasooriya2013))
 
 Since there is no fixed schema in RDF, any RDF data can be merged and stored along with any other RDF data.
 Merge as union applies to schemas as well, because they too are formalized in RDF.

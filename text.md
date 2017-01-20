@@ -1,10 +1,12 @@
 ---
-title: Matchmaking Demand and Supply on the Web of Data
+title: Case-based recommender for matching bidders to public contracts using linked open data
 author: Jindřich Mynarz
 institute: Department of Information and Knowledge Engineering, University of Economics
 date: 2017
 keywords:
 - matchmaking
+- recommender systems
+- case-based reasoning
 - linked data
 - open data
 - public procurement
@@ -13,7 +15,6 @@ keywords:
 ```include
 parts/abstract_english.md
 parts/abstract_czech.md
-parts/abbreviations.md
 parts/introduction.md
 parts/linked_open_data.md
 parts/public_procurement_domain.md
@@ -23,7 +24,7 @@ parts/data_preparation.md
 parts/extraction.md
 parts/modelling.md
 parts/public_contracts_ontology.md
-parts/code_lists.md
+parts/concrete_data_model.md
 parts/transformation.md
 parts/linking.md
 parts/geocoding.md
@@ -39,4 +40,5 @@ parts/matchmaking.md
 parts/evaluation.md
 parts/conclusions.md
 parts/references.md
+parts/abbreviations.md
 ```

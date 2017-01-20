@@ -47,6 +47,12 @@ However, the majority of linking is offloaded to a [dedicated phase in the ETL p
 A trade-off we had to make due to our choice of an RDF store is to use plain literals in place of literals typed with `xsd:duration`, since Virtuoso does not support this data type.
 Syntax of the extracted output was validated via Apache Jena's `riot`^[<https://jena.apache.org/documentation/io>] to avoid common problems in RDF/XML, such as incorrect striping ([Brickley, 2002](#Brickley2002)).
 
+To aid visual validation of the extracted data, we developed [sparql-to-graphviz](https://github.com/jindrichmynarz/sparql-to-graphviz) that produces a class diagram representing the empirical schema of the provided data.
+This tool generates a description of the dataset's class diagram in the DOT language, which can be rendered to images via [Graphviz](http://www.graphviz.org), an established visualization software for representing graph structures.
+The dataset's summary in the diagram contains classes instantiated in the dataset, along with their datatype properties and object properties interconnecting the classes.
+Each property is provided with the most common range, such as `xsd:date` for a datatype property or `schema:Organization` for an object property, and its minimum and maximum cardinality.
+The cardinality ranges may signalize errors in data transformation, such as insufficient data fusion when the maximum cardinality surpasses an expected value.
+
 <!--
 - Data validation is typically mentioned as an instrinsic part of extraction. However, it is also found in the transformation step.
 - We currently do "validation through use". Syntactical validation is performed when loading the data into an RDF store. However, the data breaks many assumptions of the Public Contracts Ontology to allow to automated validation using tools such as RDFUnit.

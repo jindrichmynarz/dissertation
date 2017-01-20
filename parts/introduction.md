@@ -65,14 +65,21 @@ The contributions presented in this thesis including methods and software were a
 
 ## Core hypotheses
 
+<!-- FIXME Feedback: De-emphasize hypotheses. -->
+
 * Additional features obtained from linked open data can improve matchmaking.
 * Matchmaking methods that are able to leverage textual data effectively surpass the methods that cannot.
+  * Feedback: Too vague.
 * Improving data quality has an larger impact on matchmaking than the sophistication of matchmaking algorithms.
 * Combination of semantic and statistical features of data has a synergic effect that can produce better matchmaking results than when only semantic or statistical features are used.
 
 Preliminaries
 - Minimal introductions to the topics covered in this thesis to enable comprehension of the further text.
 
+## Case-based reasoning
+
 ## Matchmaking
 
 We used data from the Czech public procurement register to evaluate the proposed matchmaking methods.
+
+<!-- TODO: Explain the difference between matchmaking and recommender systems. (Notion of a query.) -->

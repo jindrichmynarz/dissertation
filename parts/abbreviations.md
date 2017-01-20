@@ -11,6 +11,9 @@ ARES
 CLI
 ~ Command-Line Interface
 
+CPC
+~ Central Product Classification
+
 CPV
 ~ Common Procurement Vocabulary
 
@@ -19,6 +22,9 @@ CSV
 
 DSL
 ~ Domain-Specific Language
+
+ECB
+~ European Central Bank
 
 EPSG
 ~ European Petroleum Survey Group

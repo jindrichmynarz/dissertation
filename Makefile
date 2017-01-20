@@ -1,5 +1,5 @@
 html:
-	pandoc -f markdown \
+	pandoc -f markdown+implicit_figures \
 		--number-sections \
 		--toc \
 		-s \
@@ -9,7 +9,7 @@ html:
 		text.md
 
 pdf:
-	pandoc -f markdown \
+	pandoc -f markdown+implicit_figures \
 		--number-sections \
 		--toc \
 		-s \
@@ -19,7 +19,7 @@ pdf:
 		text.md
 
 excerpt:
-	pandoc -f markdown \
+	pandoc -f markdown+implicit_figures \
 		--number-sections \
 		-s \
 		-o excerpt.pdf \

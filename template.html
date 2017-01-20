@@ -13,9 +13,9 @@
     <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
     $endif$
     <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:700" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"          type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"          type="text/css">
     <style type="text/css">
 body {
   font-family: Lora, sans-serif;
@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 26px;
   color: inherit;
   text-rendering: optimizelegibility;
+  line-height: 1.2;
 }
 
 a {
@@ -61,6 +62,13 @@ a:focus {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
+}
+.figure img {
+  width: 100%;
+}
+.figure {
+  text-align: center;
+  font-style: italic;
 }
     </style>
     $if(quotes)$

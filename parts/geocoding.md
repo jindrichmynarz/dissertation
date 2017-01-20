@@ -1,4 +1,4 @@
-#### Geocoding
+### Geocoding
 
 Geocoding is the process of linking postal addresses to geographic locations.
 The locations are represented as coordinates corresponding to a place on the Earth's surface.
