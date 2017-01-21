@@ -27,10 +27,10 @@ parts/geocoding.md
 ```
 
 ```include
+parts/loading.md
 parts/linked_datasets.md
 parts/cpv.md
 parts/ares.md
 parts/czech_addresses.md
-parts/loading.md
 parts/references.md
 ```

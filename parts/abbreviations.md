@@ -53,6 +53,9 @@ NACE
 NDJSON
 ~ Newline Delimited JSON
 
+Non-UNA
+~ Non-unique name assumption
+
 PCO
 ~ Public Contracts Ontology
 

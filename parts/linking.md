@@ -1,17 +1,16 @@
 ## Linking
 
-Linked data employs a materialized data integration.
+Linking is a process of discovering co-referent identifiers.
+Co-referent identifiers share the same referent, i.e. refer to the same real-world entity.
+Linked data operates under the non-unique name assumption (non-UNA), which posits that two names (identifiers) may refer to the same entity unless explicitly stated otherwise.
+The aim of linking is to create explicit links between non-unique names of entities.
 
-Linking is a counter-measure to the non-unique name assumption (nUNA).
+<!-- FIXME: However, queries usually operate under the unique name assumption. -->
+
+Linked data employs a materialized data integration.
 
 Addressing the accidental variety of data.
 Defragmentation of data
-
-Linking the Czech public procurement register to ARES
-Linking ARES to the czech addresses (geocoding)
-
-In the context of linked data, entity reconciliation is a process of interlinking distinct identifiers that are coreferent; i.e. refer to the same real-world entity.
-Appropriately enough, this process is also referred to by multiple terms, including instance matching, deduplication, or record linkage.
 
 Finding co-referent identifiers
 Same things, different identifiers
@@ -22,43 +21,26 @@ Lack of agreed upon identifiers established by a reliable authority leads to pro
 Blank nodes are local identifiers.
 No two blank nodes are the same.
 
-In addition, entity reconciliation can exploit both semantics (i.e. schema axioms) and statistics of data ([Hogan et al., 2012](#Hogan2012), p. 78).
-Entity reconciliation yields links between URIs that are interpreted as coreferent, which can be materialized as additional data using the `owl:sameAs` property relating the coreferent URIs. 
+In addition, linking can exploit both semantics (i.e. schema axioms) and statistics of data ([Hogan et al., 2012](#Hogan2012), p. 78).
+It yields links between IRIs that are interpreted as co-referent, which can be materialized as additional data using the `owl:sameAs` property relating the co-referent IRIs. 
 
-Linking mechanisms:
+Three main linking tasks:
+1. Reconciliation with code lists
+2. Linking the Czech public procurement register to ARES
+  - Instead of deduplicating organizations in the Czech public procurement register we decided to link them to ARES as the reference dataset.
+3. Linking ARES to the Czech addresses dataset via geocoding
 
-* Construction of IRIs from shared identifiers
-* SPARQL 1.1 Update operations
-* Silk link discovery framework
-
-SPARQL updates were used when links required a join via key (typically more than one key).
-Silk was used when links cannot be established via exact matches.
-Fuzzy similarity
-string distance metrics of business entity identifiers (IČO)
-
-When legal entity identifiers are available, they may be misleading.
-For example, there are several public contracts each year that a contracting authority awards to itself.
-
-Linking organizations from the Czech public procurement register to the Czech business register.
-
-Properties used:
-
-* Business entity identifier (IČO): syntactically invalid identifiers were used in string distance metrics to find typos
-* Postal codes
-* URLs
-* Legal names: stop-words (e.g., "Czech") were removed
-* Geo-coordinates
-
-* Reconcile code lists
-  * Map different wordings of award criteria to code list concepts
-Code lists provide a common reference points for data integration.
-Data integration attempts to reconcile values from source data with the reference concepts from code lists.
-
-#### Content-based addressing
+### Content-based addressing
 
 Simple keys: inverse functional properties (linking subjects, `owl:InverseFunctionalProperty`), functional properties (linking objects, `owl:FunctionalProperty`, only instances of `owl:ObjectProperty`)
 Compound keys: combination of properties
 Hashes: complete description (with a configuration minimum) 
+
+Construction of IRIs from shared identifiers
+
+Even when legal entity identifiers are available, they may be misleading.
+For example, there are several public contracts each year that a contracting authority awards to itself.
+Many RNs in the data are syntactically invalid and cannot be automatically coerced to the correct syntax.
 
 A caution must be given in this step if schema axioms are unreliable or instance data is diverging from the schemas.
 In such case, it may be better to avoid inferring equivalence links using the described methods in order to avoid false results.
@@ -82,7 +64,33 @@ The remaining case occurs when there is no identifier scheme for the duplicated 
 To illustrate that this is a common case in public procurement, Alvarez-Rodríguez quotes the lack of consensual identifiers as one of the challenges of public procurement data ([2014](#AlvarezRodriguez2014)).
 If there are no identifiers to which entities can be reconciled, reconciliation begins to resemble clustering that interconnects similar entities.
 
-#### Evaluation
+### Linking technologies
+
+* SPARQL 1.1 Update operations
+* Silk link discovery framework
+
+SPARQL 1.1 Update operations were used when links required a join via key (typically more than one key).
+Silk was used when links cannot be established via exact matches.
+Fuzzy similarity
+string distance metrics of business entity identifiers (IČO)
+
+### Reconciliation with code lists
+
+Map different wordings of award criteria to code list concepts
+Code lists provide a common reference points for data integration.
+Data integration attempts to reconcile values from source data with the reference concepts from code lists.
+
+### Linking organizations from the Czech public procurement register to the Czech business register
+
+Properties used:
+
+* Business entity identifier (RN): syntactically invalid identifiers were used in string distance metrics to find typos
+* Postal codes
+* URLs
+* Legal names: stop-words (e.g., "Czech") were removed
+* Geo-coordinates
+
+### Evaluation
 
 Evaluation of the quality of entity reconciliation typically involves clerical review of a sample of the resulting equivalence links. <!-- ([Christen, 2012](#Christen2012), p. 174) -->
 In this way, a randomly selected sample of equivalence links can be split into correct and incorrect matches.
@@ -92,3 +100,9 @@ There are also few automated measures that can indicate reconciliation quality.
 An example of such measure is reduction ratio, which is defined as the number of generated equivalence links compared to all possible equivalence links.
 Effectiveness of reconciliation measured in total task's run-time compared to the number of processed entities can also be determined without human input.
 A more detailed review of the evaluation methods for entity reconciliation is presented by Christen ([2012](#Christen2012), pp. 163-184).
+
+<!--
+Out-takes:
+
+Appropriately enough, this process is also referred to by multiple terms, including instance matching, deduplication, or record linkage.
+-->

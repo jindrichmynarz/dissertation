@@ -103,4 +103,6 @@ Findings of data analyses:
 
 * There can be lots with no tenders if they are part of contracts that were successfully awarded.
 * Most findings are either caused by errors in source data or examples of corruption already covered by the media in the past.
+
+Mention linking EU projects?
 -->
