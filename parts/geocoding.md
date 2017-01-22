@@ -15,7 +15,7 @@ The main challenge to address in geocoding was the lack of structure in the geoc
 // We don't do geocoding of non-organization addresses that contain only `schema:description`, hence commented out.
 87.22 % postal addresses in the Czech public procurement register have only unstructured `schema:description`.
 -->
-We attempted to parse the unstructured addresses to recover their structure as discussed in the section on cleaning data.
+We attempted to parse the unstructured addresses to recover their structure. 
 Nevertheless, many addresses contained just a name of a region or a municipality.
 This is why we started with simple geocoding based on matching region or municipality names.
 
@@ -46,7 +46,7 @@ In case of multiple results, we select the first one, which ranks the best.
 Since we practice separation of concerns, the geocoder expects reasonable clean input.
 It is the responsibility of data preparation to structure and regularize postal addresses.
 This effort has benefits for many tasks, not geocoding only.
-Instead of ad hoc cleaning during geocoding we thus prepare postal addresses as part of the ETL pre-processing, as described in the [section on cleaning data](#cleaning).
+Instead of ad hoc cleaning during geocoding we thus prepare postal addresses as part of the ETL pre-processing, as described in the [section on data transformation](#transformation).
 
 Queries to Elasticsearch are generated from the provided addresses to geocode.
 Since every property of the addresses is optional, the queries can be generated in several ways.
@@ -63,7 +63,7 @@ Moreover, unlike address localities, postal codes are usually regular, which mak
 Prior to introducing the boost for postal codes, in some cases distant addresses sharing the same street address and house number were mixed in their geolocation.
 Optimization of the geocoding query was guided by the results of evaluation.
 
-##### Evaluation
+#### Evaluation
 
 We chose to evaluate the geocoder using metrics adapted from Goldberg et al. ([2013](#Goldberg2013)).
 *Match rate* is defined as the share of addresses capable of being geocoded.

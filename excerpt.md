@@ -18,11 +18,7 @@ parts/modelling.md
 parts/public_contracts_ontology.md
 parts/concrete_data_model.md
 parts/transformation.md
-```
-
-## Linking
-
-```include
+parts/linking.md
 parts/geocoding.md
 ```
 
