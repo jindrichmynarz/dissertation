@@ -28,6 +28,10 @@ The results of offline testing can differ dramatically from the results obtained
 In particular, the recommender systems research community is reassessing the dominance of offline testing focused on evaluating accuracy metrics.
 It is becoming more common to emphasize online testing and non-accuracy metrics, such as recommendation diversity.
 
+<!--
+TODO: In order to be able to interpret CTR correctly, read: T. Joachims, L. Granka, B. Pan, H. Hembrooke, and G. Gay, Accurately interpreting clickthrough data as implicit feedback.
+-->
+
 ### Evaluated metrics
 
 * Click-through rate

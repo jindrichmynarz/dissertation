@@ -41,6 +41,7 @@ To reduce the size of the processed data and simplify further processing we firs
 Doing so simplifies the subsequent transformations, since they do not have to cater for the option of empty elements.
 
 We developed an XSL stylesheet to extract the source XML data to RDF/XML ([Gandon, Schreiber, 2014](#Gandon2014)).
+The stylesheet maps the schema of the source data onto the [target schema](#concrete-data-model).
 During the extraction we validate the syntax of registered identification numbers, Common Procurement Vocabulary codes, and literals typed with `xsd:date`.
 If possible, we establish links in the extracted data via concatenating unambiguous identifiers to namespace IRIs.
 However, the majority of linking is offloaded to a [dedicated phase in the ETL process](#linking), since it typically requires queries over the complete dataset.

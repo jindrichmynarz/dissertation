@@ -1,4 +1,4 @@
-# Related work
+## Related work
 
 The [Web of Needs](https://github.com/researchstudio-sat/webofneeds) project by Research Studios Austria states that its *"overall goal is to create a decentralized infrastructure that allows people to publish documents on the Web which make it possible to contact each other"* ([Kleedorfer, Busch, 2013](#Kleedorfer2013)).
 Members of the project implemented a prototypical implementation of matchmaking based on [Sindice SIREn](http://www.sindicetech.com/siren.html) search engine.

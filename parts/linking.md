@@ -33,7 +33,8 @@ In such case, it is be better to skip inferring equivalence links using the desc
 
 Compound keys are more complex content signatures that can be derived from combinations of values of specific properties.
 In order to be eligible as keys, these combinations must be unique.
-For example, a contract and a lot number can serve as a compound key for a contract lot.
+For example, a contract and a lot number can serve as a compound key for a contract lot, which we used to construct lot IRIs during data extraction.
+We also employed this approach to merge bidders sharing the same name and awarded with the same contract.
 Such compound keys are also commonly used as part of IRIs of the entities they identify.
 Nevertheless, compound keys are perhaps more often used in a probabilistic setting, in which the degree of their match implies a probability of equivalence of the keyed entities.
 Fuzzy matches of combinations of values can approximate exact matches of simple keys.
@@ -54,9 +55,18 @@ On the other hand, hashes can also produce false positives if they are used for 
 For example, postal addresses, for which we only know that they are located in the Czech Republic, are unlikely to be the same.
 The risk of false positives may be reduced by requiring a minimum description to be present, similarly to a compound key.
 For instance, we can hash only the postal addresses that feature at least a street address and an address locality.
+Blank nodes were rewritten to hash-based IRIs in their inverse topological order.
+If a blank node links another blank node, the linked blank node is rewritten first.
+This is done to ensure that the hashed descriptions of blank nodes do not contain blank nodes, which would cause different hashes to be computed from otherwise equivalent descriptions.
+
+We also experimented with linking entities via subsets of descriptions.
+Given some minimum description of entities to avoid false positives, we assumed that if a set of property-object pairs of a subject is a subset of such set of another subject, the subjects are co-referent.
+However, detecting subsets in SPARQL is problematic, because quantified definition of subset requires universal quantification.
+Since SPARQL is based on existential quantification instead, universally qualified predicates need to be rewritten as double negation via `FILTER NOT EXISTS`.
+Ultimately, we abandoned this linking method because of its poor performance, which makes it unusable for larger data.
 
 In case of entities for which no key can be used directly in the construction of IRIs during data extraction via XSLT, we employed blank nodes as identifiers.
-Subsequently, we converted these blank nodes to hash-based IRIs via SPARQL 1.1 Update operations.
+Subsequently, we converted these blank nodes to hash-based IRIs via SPARQL Update operations.
 The hashes were computed by concatenating properties and objects of the identified subject and deriving an SHA1 hash from the concatenated string.
 We used this approach primarily for entities that can be interpreted as structured values, such as price specifications.
 Since no two blank nodes are the same, this procedure lead to significant reduction of aliases.
@@ -65,7 +75,7 @@ Since no two blank nodes are the same, this procedure lead to significant reduct
 
 We employed four kinds of linking technologies.
 Simple keys and some compound keys were used directly to construct IRIs in XSLT.
-Linking based on hashes was done using SPARQL 1.1 Update operations ([Gearon, Passant, Polleres, 2013](#Gearon2013)).
+Linking based on hashes was done using SPARQL Update operations ([Gearon, Passant, Polleres, 2013](#Gearon2013)).
 Update operations were also used when creating links required a join via a key, for example when reconciling code list values.
 Most linking tasks based on fuzzy matches of compound keys were done using the Silk link discovery framework ([Bryl et al., 2014](#Bryl2014)).
 Silk was used when links could not be established via exact matches, for example by comparing syntactically invalid RNs via string distance metrics.
@@ -119,8 +129,6 @@ Out-takes:
 Linking can exploit both semantics (i.e. schema axioms) and statistics of data ([Hogan et al., 2012](#Hogan2012), p. 78).
 
 Appropriately enough, this process is also referred to by multiple terms, including instance matching, deduplication, or record linkage.
-
-Linked data employs a materialized data integration.
 
 Defragmentation of data
 

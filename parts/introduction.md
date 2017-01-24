@@ -63,9 +63,10 @@ Domains of research:
 
 The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless specified otherwise.
 
+<!--
 ## Core hypotheses
-
-<!-- FIXME Feedback: De-emphasize hypotheses. -->
+FIXME Feedback: De-emphasize hypotheses.
+-->
 
 * Additional features obtained from linked open data can improve matchmaking.
 * Matchmaking methods that are able to leverage textual data effectively surpass the methods that cannot.
@@ -76,10 +77,26 @@ The contributions presented in this thesis including methods and software were a
 Preliminaries
 - Minimal introductions to the topics covered in this thesis to enable comprehension of the further text.
 
-## Case-based reasoning
+## Case-based recommender systems
 
+Cold start problem of case-based recommenders
+
+The matchmaker learns from interactions between contracting authorities and bidders
+A contract is an explicit specification of user's needs.
+
+Similarly to collaborative recommendation approaches, case-based recommenders exploit data about past behaviour.
+Collaborative recommender systems: explicit offers (product or services) + demand behaviour (user interactions)
+Our case-based recommender: explicit demands (contracts) + offer behaviour (histories of bidders)
+
+Contract award can be interpreted an implicit rating of the awarded bidder.
+The histories of bidders are held in memory instead of a model in SPARQL-based and Elasticsearch-based matchmaking.
+
+<!--
 ## Matchmaking
+-->
 
 We used data from the Czech public procurement register to evaluate the proposed matchmaking methods.
+
+Limitation: One-shot recommendation
 
 <!-- TODO: Explain the difference between matchmaking and recommender systems. (Notion of a query.) -->

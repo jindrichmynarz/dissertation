@@ -2,6 +2,9 @@
 
 # Abbreviations
 
+AAA
+~ Anyone can say anything about anything
+
 API
 ~ Application Programming Interface
 
@@ -55,6 +58,9 @@ NDJSON
 
 Non-UNA
 ~ Non-unique name assumption
+
+OWA
+~ Open world assumption
 
 PCO
 ~ Public Contracts Ontology

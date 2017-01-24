@@ -35,7 +35,6 @@ parts/cpv.md
 parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
-parts/analyses.md
 parts/matchmaking.md
 parts/evaluation.md
 parts/conclusions.md

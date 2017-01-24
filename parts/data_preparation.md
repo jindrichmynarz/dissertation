@@ -17,6 +17,8 @@ Application of pristine methods of basic research to the messy world. -->
 Unlike more established research areas, matchmaking lacks available datasets for evaluation.
 A large part of work undertaken as a part of this effort thus needed to be invested in data preparation. 
 
+Linked data employs a materialized data integration.
+
 The source code used for data preparation is openly available in a [repository](https://github.com/jindrichmynarz/vvz-to-rdf).
 This allows to replicate and scrutinize the way we prepared data.
 

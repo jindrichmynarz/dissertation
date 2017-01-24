@@ -1,94 +1,98 @@
 ## Fusion
 
-<!--
-TODO: Much material about fusion can be lifted from NOTES.md.
--->
+Data fusion can be defined as *"the process of integrating multiple data items representing the same real-world object into a single, consistent, and clean representation"* ([Bizer, Heath and Berners-Lee, 2009](#Bizer2009)).
+In order to reach this goal, data fusion removes invalid or non-preferred data, so that *"duplicate representations are combined and fused into a single representation while inconsistencies in the data are resolved"* ([Bleiholder and Naumann, 2008](#Bleiholder2008), p. 1:3).
+Fusion of RDF data can be considered a countermeasure to the effects of the principle of *Anyone can say anything about anything* (AAA).
+As Klyne and Carroll state, *"RDF cannot prevent anyone from making nonsensical or inconsistent assertions, and applications that build upon RDF must find ways to deal with conflicting sources of information"* ([2002](#Klyne2002)).
 
-* Iterative fusion, interleaved with linking
-
-Data fusion can be defined as *"the process of integrating multiple data items representing the same real-world object into a single, consistent, and clean representation"* ([Bizer, Heath and Berners-Lee, 2009](#Bizer2009)). 
-In the course of data fusion *"duplicate representations are combined and fused into a single representation while inconsistencies in the data are resolved"* ([Bleiholder and Naumann, 2008](#Bleiholder2008), p. 1:3).
-However, data fusion is not limited to mechanical application of equivalence links produced by linking.
+In line with the principle of separation of concerns, data fusion expects equivalence links between conflicting identities to be provided.
+However, it is not limited to mechanical application of the equivalence links produced by linking.
 Its particular focus *"lies in resolving value-level contradictions among the different representations of a single real-world object"* ([Naumann et al., 2006](#Naumann2006), p. 22).
 
-The data fusion step in the data integration workflows takes the equivalence links produced by linking as its input.
-Fusion starts with grouping the input links into clusters of equivalent IRIs.
-For each cluster, fusion algorithm picks a preferred IRI based on pre-configured policy, typically depending on the computed quality of the IRI's entity description.
-In each cluster, data fusion resolves conflicts in literal values and rewrites the non-preferred IRIs to the chosen preferred IRI.
-Resolution of conflicts in literals is driven by an appropriate fusion policy, such as the selection of the most recent value or inclusion of all values.
-This is where the previously mentioned cardinality constraints may be used to inform what fusion policy to adopt.
-Rewriting of non-preferred IRIs is likely to disconnect resources that depend on them.
-The final step of data fusion should thus delete these "orphaned" resources, which are no longer needed.
+Viewed from the perspective of data fusion, linking is a way to discover identity conflicts.
+Identity conflicts arise when a single entity is provided with multiple identities.
+Identities in RDF correspond to either IRIs or blank nodes.
+Resolution of identity conflicts in turn gives rise to data conflicts.
+Rewriting an identity with another identity automatically merges the RDF triples in which the identities appear.
+Merging RDF triples may cause functional properties to have multiple values, which constitutes a conflict.
+<!--
+Conflicts handled by data fusion are typically divided into contradictions, where multiple non-null values are provided for a functional property, and uncertainties, where a functional property has both null and a non-null value.
+However, since there are no nulls in RDF, conflicts in RDF are limited to contradictions.
+-->
 
-Fusion may be executed iteratively with linking in case of large datasets, which are computationally demanding to process, in order to shrink the size of the processed data and thus decrease the number of comparisons that linking needs to perform.
+Fusion may be executed iteratively, interleaved with linking.
+This is expedient in case of large datasets, which are computationally demanding to process.
+Iterating fusion with linking allows to shrink the size of the processed data and thus decrease the number of comparisons that linking needs to perform.
 Moreover, in case of large datasets, the steps of linking and data fusion may be limited to subsets of data in order to improve the performance of the whole workflow.
 
-Separation of concerns: fusion expects equivalence links to be provided.
 <!--
-Are there any practical concerns warranting combination of linking with fusion?
-For example, what are the downsides of modelling public notices pertaining to a contract as contracts related via `owl:sameAs`?
--->
-
-Data from the Czech public procurement register shares many characteristics of user-generated content.
-Uncoordinated civil servants are akin to the distributed user base of web applications. 
+Data from the Czech public procurement register has many characteristics of user-generated content.
+Uncoordinated civil servants are akin to the distributed user base of web applications.
 Lack of rules and constraints enforced on user input
 Exchanging data in self-contained documents
-<!--
-However, unlike platforms leveraging user-generated content such as Wikidata or OpenStreetMap, there the register has no model for data curation in place.
-// => Not really true.
--->
 *"the default mode of authoring is copy and edit"* ([Guha, 2013](#Guha2013))
+-->
 
-Fusion of user-generated content
-Fusion policy for correction notices
-Topological (dependency) sorting to establish order or rewriting blank nodes to IRIs
-
-- Inverse sort may be used to delete orphaned resources
-
-Dropping conflicting boolean properties: if there are both true and false assertions, then we know nothing.
-
-- Null values do not exist in RDF, hence do not need to be removed. (Some data is better than no data.)
-
-TODO: Add dataset size reduction before and after cleaning
-TODO: Add percentage of conflict-free contracts before and after conflict resolution.
-
-* Truth Discovery to Resolve Object Conflicts in Linked Data. <https://arxiv.org/abs/1509.00104>
-
-We adopted a conventional directionality of the `owl:sameAs` links from a non-preferred IRI to the preferred IRI.
+In order to simplify resolution of identity conflicts, we adopted a conventional directionality of the `owl:sameAs` links from a non-preferred IRI to the preferred IRI.
 This convention allowed us to use a uniform SPARQL Update operation to resolve non-preferred IRIs to their preferred counterparts.
 For example, if there is a triple `:a owl:sameAs :b`, `:a` as the non-preferred IRI will be rewritten to `:b`.
-Note that this convention can be applied only if you can distinguish between non-preferred and preferred IRIs, such as by preferring IRIs from a reference dataset.
+Note that this convention is applicable only if you can distinguish between non-preferred and preferred IRIs, such as by preferring IRIs from a reference dataset.
 
-Fusing subset descriptions
-Universal quantification implemented in SPARQL via double negation
-Poor performance makes this approach unusable for larger data.
+Data conflicts arose only in properties that can be interpreted as functional.
+Some of these properties explicitly instantiate `owl:FunctionalProperty`, such as `pc:kind` describing the kind of a contract, while others, such as `dcterms:title` expressing the contract's title, can be endowed with this semantics for the purpose of attaining a unified view of the fused data.
+Most of our data fusion work was devoted to resolving data from contract notices.
+As was the case of identity conflicts, resolution of data conflicts was done with SPARQL Update operations.
 
-We implemented data fusion using SPARQL 1.1 Update operations.
+The conflict resolution strategies we implemented can be classified according to Bleiholder and Naumann ([2006](#Bleiholder2006)).
+Conflicts are resolved using resolution functions.
+Resolution functions are either *deciding*, which pick one of their inputs, or *mediating*, which derive output from inputs.
+An example deciding function is picking the maximum value, while an example mediating function is computing median value.
+We employed deciding conflict resolution functions.
+We used *Trust your friends* ([ibid.](#Bleiholder2006), p. 3) strategy to prefer values from ARES, since we consider it a trustworthy reference dataset.
+Leveraging the semantics of notice types we preferred data from correction notices.
+A similar reason led us to remove syntactically invalid RNs in case valid RNs were present too.
+We used *Keep up to date* ([ibid.](#Bleiholder2006), p. 3) metadata-based deciding conflict resolution strategy to prefer values from the most recent public notices.
+We determined the temporal order of notices from their submission dates and the semantics of their types, which represents an implicit order.
+For example, prior information notice comes before contract notice, which in turn precedes contract award notice.
+The order of notice types can be *learnt* from the most common order of notices with immediately following submission dates.
+We combined such distribution of subsequent notice types with manual assessment to rule out erroneous pairs.
+The order of notice types was provided as an inline table to the SPARQL Update operation resolving the conflicts.
+In line with this strategy, we also preferred the most recent values of `pc:awardDate`.
+We used *Most specific concept* ([ibid.](#Bleiholder2006), p. 4) strategy for resolution of conflicts in values from hierarchical concept schemes.
+In case a functional property had multiple concepts that were in a hierarchical relation, the most specific concepts were retained.
+For instance, we removed procedure types that can be transitively inferred by following `skos:broaderTransitive` links.
+We used *No gossiping* ([ibid.](#Bleiholder2006), p. 3) strategy for conflicting boolean values.
+If a boolean property has both `true` and `false` value, and there is no way to prioritize a value, we conclude the true value of the property is unknown, and therefore delete the conflicting values. 
+Once the conflicts were resolved by the above-described strategies, we moved the remaining notice data to the associated contracts, which corresponds with the strategy *Take the information* ([ibid.](#Bleiholder2006), p. 3).
+We excluded notice's proper data, such as submission date or notice type, from this step.
+If all previous conflict resolution strategies failed, in select cases we followed the *Roll the dice* ([ibid.](#Bleiholder2006), p. 5) strategy and picked a random value via the `SAMPLE` aggregate function in SPARQL.
+We did this for procedure types (values of `pc:procedureType`), contracting authorities (values of `pc:contractingAuthority`) without valid RNs, and actual prices (values of `pc:actualPrice`).
 
-* Resolution of notices
+The final polishing touch was to delete resources orphaned during data fusion.
+Since deleting orphans may create more orphans, we deleted orphans in the topological order based on their links.
+In this way we first deleted orphans, followed by deleting their dependent resources that were orphaned next.
 
-Resolution of conflicts in functional properties
-([Mynarz, 2014](#Mynarz2014c))
+### Evaluation
 
-Goals of data fusion:
-
-* Remove invalid data
-* Provide a consistent, up-to-date view of the data
-* Simplify querying
-
-Fusion is a counter-measure to the open world assumption (OWA).
-Linked data combines the assumptions about entity names with the OWA, which can be explained as the following:
-*"The truth of a statement is independent of whether it is known.
-In other words, not knowing whether a statement is explicitly true does not imply that the statement is false."* ([Hebeler et al., 2009](#Hebeler2009), p. 103)
-Adopting the OWA implies a recognition that data may be incomplete.
-While the goal of public procurement registers is to achieve complete coverage of public contracts falling under the regime of mandatory disclosure, it is still possible that some required data escapes the registers. 
-Missing data then impacts the quality of data analyses, since incomplete data can only provide approximate answers, and it undermines the reliability of absolute figures measured using the data. 
-Being aware of nUNA and OWA helps to realize that integration of linked data, and any data in general, cannot accomplish perfect data quality.
-
-#### Evaluation
-
-If we decide to evaluate the quality of data fusion, there are several measures available. 
+If we decide to evaluate the quality of data fusion, there are several measures available.
 One of the broadest measures for assessing data fusion is data reduction ratio, which represents the decrease in the number of fused entities.
-This figure corresponds to the measure of extensional conciseness defined by Bleiholder and Naumann ([2008](#Bleiholder2008), pp. 1:5-1:6) as the *"percentage of real-world objects covered by that dataset"*.
-Many evaluation measures used for data fusion reflect the impact of this task on data quality. 
-An example of those is completeness, which represents the ratio of instances having value for a specified property before and after fusion, and is sometimes rephrased as coverage and density ([Akoka, 2007](#Akoka2007)).
+This figure corresponds to the measure of extensional conciseness defined by Bleiholder and Naumann ([2008](#Bleiholder2008), pp. 1:5-1:6) as the *"percentage of real-world objects covered by that dataset."*
+Many evaluation measures used for data fusion reflect the impact of this task on data quality.
+An example of those measures is completeness, which represents the ratio of instances having value for a specified property before and after fusion, and is sometimes rephrased as coverage and density ([Akoka, 2007](#Akoka2007)).
+
+<!--
+([Bleiholder, Naumann, 2008](#Bleiholder2008))
+Completenes
+Conciseness
+Consistency
+- Intensional and extensional
+-->
+
+<!--
+TODO: Add dataset size reduction before and after cleaning
+TODO: Add percentage of conflict-free contracts before and after conflict resolution.
+-->
+
+<!-- Out-takes:
+* Truth Discovery to Resolve Object Conflicts in Linked Data. <https://arxiv.org/abs/1509.00104>
+-->

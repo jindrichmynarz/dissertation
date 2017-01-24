@@ -26,7 +26,7 @@ However, this technique can be used only for transformations that require solely
 Instead, an example where this technique is applicable is sequential processing of tabular data, in which data from each row can be processed separately in most cases.
 Because of its relational nature, our dataset cannot be effectively split to allow executing transformations on smaller chunks of data.
 
-Instead of partitioning data, we partitioned intermediate query bindings in SPARQL 1.1 Update operations.
+Instead of partitioning data, we partitioned intermediate query bindings in SPARQL Update operations.
 Transformations using this technique follow the same structure.
 They contain a sub-query that selects unprocessed bindings, either by requiring the bindings to match a pattern that is only present in those not yet processed, e.g., using `FILTER NOT EXISTS` to eliminate bindings that feature data added by the transformation, or by selecting subsequent subsets from sorted bindings.
 For instance, a transformation of instances of `schema:PostalAddress` can be divided into transformations of subsets of these instances.
@@ -52,7 +52,7 @@ Checkpoints consist of persisting the intermediate data output by the individual
 However, due to the large numbers of transformations large disk space would be required, if checkpoints were done for every transformation.
 To reduce disk consumption we persisted only the outputs of the major sub-parts of the data processing pipeline.
 
-Overall, we developed tens of SPARQL 1.1 Update operations for data transformation.
+Overall, we developed tens of SPARQL Update operations for data transformation.
 One of the principles we followed was to reduce data early in order to avoid needless processing in subsequent transformation steps.
 For example, we deleted empty contract lots and resources orphaned^[We consider subordinate resources without inbound links as orphaned.] in other transformations.
 Several transformations were use to clean malformed literals, for example to regularize common abbreviations for organizations types or convert `\/` into `V`.
@@ -73,7 +73,7 @@ For instance, we moved `pc:awardDate` to `pc:Tender`.
 Some data transformations required additional data.
 Some data transformations leveraged background knowledge from vocabularies.
 For example, we used `rdfs:subClassOf` axioms from PPROC to distinguish subclasses of `pproc:Notice`, when we merged data from notices to contracts.
-We loaded the required vocabularies into separate named graphs via the SPARQL 1.1 Update `LOAD` operation.
+We loaded the required vocabularies into separate named graphs via the SPARQL Update `LOAD` operation.
 
 In order to make prices comparable we converted non-CZK currencies to CZK via exchange rates data from the European Central Bank (ECB).^[<https://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html>]
 This dataset contains daily exchange rates of several currencies to EUR. 
@@ -81,11 +81,12 @@ We used an [RDF version of the dataset](https://github.com/openbudgets/datasets/
 This derivative covers rates from November 30, 1999 to April 7, 2016, so it allowed to convert most prices in our dataset.
 Prices in non-CZK currencies were converted using the exchange rates valid at their notice's publication date.
 This was done as a two-step process, first converting the prices EUR followed by the conversion to CZK.
+In order to automate the this task's execution we employed [sparql-to-csv](https://github.com/jindrichmynarz/sparql-to-csv), a tool that we developed, which also allows to pipe query results into another query.
 
 The normalized prices were winsorized^[<https://en.wikipedia.org/wiki/Winsorizing>] at 99.5^th^ percentile to remove likely incorrect extreme prices.
 Due to limited expressivity of SPARQL this task needed to be split into two SPARQL queries followed by a SPARQL update operation.
 The first query retrieved the count of 0.5 % prices, the second query chose the minimum price in the 0.5 % of highest prices using the count as a limit, and the final update capped 0.5 % of highest prices at this minimum.
-In order to automate the this task's execution we employed [sparql-to-csv](https://github.com/jindrichmynarz/sparql-to-csv), a tool that we developed, which also allows to pipe query results into another query.
+As in the case of currency conversion, we automated the steps of this task using piped queries in sparql-to-csv.
 
 <!--
 Out-takes:
