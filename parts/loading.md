@@ -6,7 +6,7 @@ Our three approaches to matchmaking warrant three approaches to loading.
 <!-- SPARQL-based matchmaking -->
 
 The SPARQL-based matchmaking requires data to be available via the SPARQL protocol ([Feigenbaum et al., 2013](#Feigenbaum2013)).
-SPARQL protocol describes the communication between clients and SPARQL endpoints, which provide query interface to RDF stores.
+SPARQL protocol describes the communication between clients and SPARQL endpoints, which provide query interfaces to RDF stores.
 Exposing data via the SPARQL protocol thus requires simply to load it in an RDF store equipped with a SPARQL endpoint.
 We chose to use the open-source version of [Virtuoso](https://virtuoso.openlinksw.com) from OpenLink as our RDF store.
 Even though Virtuoso lacks in stability and adherence to the SPARQL standard, it redeems that by offering a performance unparalleled by other open-source solutions.
@@ -22,7 +22,7 @@ Greater regularity of RDF data can be achieved by serializing it into JSON-LD ([
 
 We developed a CLI tool to perform this task.
 [*sparql-to-jsonld*](https://github.com/jindrichmynarz/sparql-to-jsonld) retrieves data from a SPARQL endpoint and converts it to JSON-LD.
-It requires a SPARQL SELECT query to select IRIs of the RDF resources of interest, a SPARQL CONSTRUCT query to define their descriptions, and a JSON-LD frame to coerce the obtained RDF graphs describing the resources into a regular JSON-LD tree layout.
+It requires a SPARQL SELECT query to select IRIs of the RDF resources of interest, a SPARQL CONSTRUCT query to retrieve their descriptions, and a JSON-LD frame to coerce the obtained RDF graphs describing the resources into a regular JSON-LD tree layout.
 The SPARQL CONSTRUCT query is used to select or construct relevant features of the described resource.
 The provided JSON-LD frame is used twice: first as a frame with the JSON-LD Framing API and then as a context for the JSON-LD compaction ([Longley et al., 2014](#Longley2014)) to shorten IRIs and JSON-LD values.
 The tool outputs [Newline Delimited JSON](http://ndjson.org) (NDJSON) that features each framed description on a separate line.

@@ -22,6 +22,7 @@ pdf:
 excerpt:
 	pandoc -f markdown+implicit_figures \
 		--latex-engine=xelatex \
+		--toc \
 		--number-sections \
 		-s \
 		-o excerpt.pdf \

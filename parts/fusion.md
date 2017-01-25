@@ -6,7 +6,7 @@ Fusion of RDF data can be considered a counter-measure to the effects of the pri
 As Klyne and Carroll state, *"RDF cannot prevent anyone from making nonsensical or inconsistent assertions, and applications that build upon RDF must find ways to deal with conflicting sources of information"* ([2002](#Klyne2002)).
 
 In line with the principle of separation of concerns, data fusion expects equivalence links between conflicting identities to be provided.
-However, it is not limited to mechanical application of the equivalence links produced by linking.
+However, it is not limited to a mechanical application of the equivalence links produced by linking.
 Its particular focus *"lies in resolving value-level contradictions among the different representations of a single real-world object"* ([Naumann et al., 2006](#Naumann2006), p. 22).
 
 Viewed from the perspective of data fusion, linking is a way to discover identity conflicts.
@@ -41,15 +41,16 @@ Note that this convention is applicable only if you can distinguish between non-
 Data conflicts arose only in properties that can be interpreted as functional.
 Some of these properties explicitly instantiate `owl:FunctionalProperty`, such as `pc:kind` describing the kind of a contract, while others, such as `dcterms:title` expressing the contract's title, can be endowed with this semantics for the purpose of attaining a unified view of the fused data.
 Most of our data fusion work was devoted to resolving data from contract notices.
-As was the case of identity conflicts, resolution of data conflicts was done with SPARQL Update operations.
+As was the case with identity conflicts, resolution of data conflicts was done with SPARQL Update operations.
 
-The conflict resolution strategies we implemented can be classified according to Bleiholder and Naumann ([2006](#Bleiholder2006)).
 Conflicts are resolved using resolution functions.
 Resolution functions are either *deciding*, which pick one of their inputs, or *mediating*, which derive output from inputs.
 An example deciding function is picking the maximum value, while an example mediating function is computing median value.
 We employed deciding conflict resolution functions.
+
+The conflict resolution strategies we implemented can be classified according to Bleiholder and Naumann ([2006](#Bleiholder2006)).
 We used *Trust your friends* ([ibid.](#Bleiholder2006), p. 3) strategy to prefer values from ARES, since we consider it a trustworthy reference dataset.
-Leveraging the semantics of notice types we preferred data from correction notices.
+Leveraging the semantics of notice types, we preferred data from correction notices.
 A similar reason led us to remove syntactically invalid RNs in case valid RNs were present too.
 We used *Keep up to date* ([ibid.](#Bleiholder2006), p. 3) metadata-based deciding conflict resolution strategy to prefer values from the most recent public notices.
 We determined the temporal order of notices from their submission dates and the semantics of their types, which represents an implicit order.
@@ -59,18 +60,18 @@ We combined such distribution of subsequent notice types with manual assessment 
 The order of notice types was provided as an inline table to the SPARQL Update operation resolving the conflicts.
 In line with this strategy, we also preferred the most recent values of `pc:awardDate`.
 We used *Most specific concept* ([ibid.](#Bleiholder2006), p. 4) strategy for resolution of conflicts in values from hierarchical concept schemes.
-In case a functional property had multiple concepts that were in a hierarchical relation, the most specific concepts were retained.
+In case a single functional property linked multiple concepts that were in a hierarchical relation, the most specific concepts were retained.
 For instance, we removed procedure types that can be transitively inferred by following `skos:broaderTransitive` links.
 We used *No gossiping* ([ibid.](#Bleiholder2006), p. 3) strategy for conflicting boolean values.
-If a boolean property has both `true` and `false` value, and there is no way to prioritize a value, we conclude the true value of the property is unknown, and therefore delete the conflicting values. 
+If a boolean property has both `true` and `false` value, and there is no way to prioritize a value, we conclude the true value of the property is unknown, and therefore delete both conflicting values. 
 Once the conflicts were resolved by the above-described strategies, we moved the remaining notice data to the associated contracts, which corresponds with the strategy *Take the information* ([ibid.](#Bleiholder2006), p. 3).
 We excluded notice's proper data, such as submission date or notice type, from this step.
 If all previous conflict resolution strategies failed, in select cases we followed the *Roll the dice* ([ibid.](#Bleiholder2006), p. 5) strategy and picked a random value via the `SAMPLE` aggregate function in SPARQL.
 We did this for procedure types (values of `pc:procedureType`), contracting authorities (values of `pc:contractingAuthority`) without valid RNs, and actual prices (values of `pc:actualPrice`).
 
-The final polishing touch was to delete resources orphaned during data fusion.
-Since deleting orphans may create more orphans, we deleted orphans in the topological order based on their links.
-In this way we first deleted orphans, followed by deleting their dependent resources that were orphaned next.
+The final polishing touch was to excise the resources orphaned during data fusion.
+Since removing orphans may create more orphans, we deleted orphans in the topological order based on their links.
+In this way we first removed orphans, followed by deleting their dependent resources that were orphaned next.
 
 ### Evaluation
 

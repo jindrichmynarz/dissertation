@@ -20,8 +20,14 @@ CPC
 CPV
 ~ Common Procurement Vocabulary
 
+CRS
+~ Coordinate Reference System
+
 CSV
 ~ Comma-Separated Values
+
+DPU
+~ Data Processing Unit
 
 DSL
 ~ Domain-Specific Language
@@ -100,6 +106,9 @@ SPARQL
 
 TLR
 ~ Trade Licensing Register
+
+URL
+~ Uniform Resource Locator
 
 WGS84
 ~ World Geodetic System

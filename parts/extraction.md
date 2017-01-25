@@ -37,6 +37,8 @@ During the extraction we validated the syntax of registered identification numbe
 If possible, we established links in the extracted data via concatenating unambiguous identifiers to namespace IRIs.
 However, the majority of linking was offloaded to a [dedicated phase in the ETL process](#linking), since it typically required queries over the complete dataset.
 A trade-off we had to make due to our choice of an RDF store was to use plain literals in place of literals typed with `xsd:duration`, since [Virtuoso](https://virtuoso.openlinksw.com) does not support this data type.
+We used LinkedPipes-ETL (LP-ETL) ([Klímek, Škoda, Nečaský, 2016](#Klimek2016)) to automate the extraction.
+LP-ETL provided us with a way to automate downloading and transforming the source data in a data processing pipeline.
 Syntax of the extracted output was validated via Apache Jena's `riot`^[<https://jena.apache.org/documentation/io>] to avoid common problems in RDF/XML, such as incorrect striping ([Brickley, 2002](#Brickley2002)).
 
 To aid visual validation of the extracted data, we developed [*sparql-to-graphviz*](https://github.com/jindrichmynarz/sparql-to-graphviz) that produces a class diagram representing the empirical schema of the data it is provided with.
