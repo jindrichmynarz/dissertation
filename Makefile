@@ -10,6 +10,7 @@ html:
 
 pdf:
 	pandoc -f markdown+implicit_figures \
+		--latex-engine=xelatex \
 		--number-sections \
 		--toc \
 		-s \
@@ -20,6 +21,7 @@ pdf:
 
 excerpt:
 	pandoc -f markdown+implicit_figures \
+		--latex-engine=xelatex \
 		--number-sections \
 		-s \
 		-o excerpt.pdf \

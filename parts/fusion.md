@@ -2,7 +2,7 @@
 
 Data fusion can be defined as *"the process of integrating multiple data items representing the same real-world object into a single, consistent, and clean representation"* ([Bizer, Heath and Berners-Lee, 2009](#Bizer2009)).
 In order to reach this goal, data fusion removes invalid or non-preferred data, so that *"duplicate representations are combined and fused into a single representation while inconsistencies in the data are resolved"* ([Bleiholder and Naumann, 2008](#Bleiholder2008), p. 1:3).
-Fusion of RDF data can be considered a countermeasure to the effects of the principle of *Anyone can say anything about anything* (AAA).
+Fusion of RDF data can be considered a counter-measure to the effects of the principle of *Anyone can say anything about anything* (AAA).
 As Klyne and Carroll state, *"RDF cannot prevent anyone from making nonsensical or inconsistent assertions, and applications that build upon RDF must find ways to deal with conflicting sources of information"* ([2002](#Klyne2002)).
 
 In line with the principle of separation of concerns, data fusion expects equivalence links between conflicting identities to be provided.

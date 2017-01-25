@@ -39,6 +39,6 @@ Nevertheless, the differences among the variants ranged in centimeters, so that 
 In fact, the reprojection of the Czech addresses geo-coordinates would not be necessary if we only computed distances within this dataset.
 However, the reprojection was needed in order to be able to compare the geo-coordinates with WGS84 geo-coordinates produced by geocoding services for evaluation of geocoding, which we describe further.
 Moreover, the reprojection to a standard coordinate reference system generally improved the ease of use of the data.
-For example, map visualizations, that are typically done using software libraries expecting WGS84 geo-coordinates,could avoid using to on-the-fly reprojections of the data. 
+For example, map visualizations, that are typically done using software libraries expecting WGS84 geo-coordinates, could avoid using to on-the-fly reprojections of the data. 
 
 [^S-JTSK]: See the [documentation](http://vdp.cuzk.cz/vymenny_format/csv/ad-csv-struktura.pdf) of the Czech address data.

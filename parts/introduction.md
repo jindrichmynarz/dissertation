@@ -64,6 +64,10 @@ Domains of research:
 The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless specified otherwise.
 
 <!--
+As a use case, the challenge is to select, combine, and apply state-of-the-art techniques to a real-world scenario.
+-->
+
+<!--
 ## Core hypotheses
 FIXME Feedback: De-emphasize hypotheses.
 -->

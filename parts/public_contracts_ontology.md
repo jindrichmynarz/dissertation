@@ -8,24 +8,22 @@ Yet in fact, since the disclosure of public procurement data is mandated by law,
 
 PCO establishes a reusable conceptual vocabulary to provide a consistent way of describing public contracts.
 This aim for reusability corresponds with the established principle of minimal ontological commitment ([Gruber, 1993](#Gruber1993)).
-The vocabulary follows a simple snowflake structure oriented around contract as the central concept.
+The vocabulary exhibits a simple snowflake structure oriented around contract as the central concept.
 It extensively reuses and links other vocabularies, such as [Dublin Core Terms](http://dublincore.org/documents/dcmi-terms) or [GoodRelations](http://www.heppnetz.de/ontologies/goodrelations/v1.html).
 While direct reuse of linked data vocabularies is discouraged by Presutti et al. ([2016](#Presutti2016)), because it introduces a dependency on external vocabulary maintainer and the consequences of the ontological constraints of the reused terms are rarely considered, we argue that these vocabularies are often maintained by organizations more stable than the organization of the vocabulary's creator and that the mentioned ontological constraints are typically non-existent in lightweight linked data vocabularies, such as Dublin Core Terms.
 Several properties in PCO have their range restricted to values enumerated in code lists.
 For example, there is a code list for procedure types, including open or restricted procedures.
-These core code lists are represented using SKOS and are a part of the vocabulary.
+These core code lists are represented using the Simple Knowledge Organization System (SKOS) ([Miles, Bechhofer, 2009](#Miles2009)) and are a part of the vocabulary.
 The design of PCO is described in more detail in Nečaský et al. ([2014](#Necasky2014)).
 
 The vocabulary was used to a large extent in the [LOD2 project](http://aksw.org/Projects/LOD2.html).
 For example, it was applied to Czech, British, EU, or Polish public procurement data.
-In this way, we validated the reusability of the vocabulary across various legal environments.
-
-<!--
-*Anti-SEO* coined by Jiří Skuhrovec: <http://blog.aktualne.cz/blogy/jiri-skuhrovec.php?itemid=13827>
--->
+In this way, we validated the portability of the vocabulary across various legal environments and ways of publishing public procurement data.
 
 <!-- 
 # Out-takes:
+
+*Anti-SEO* coined by Jiří Skuhrovec: <http://blog.aktualne.cz/blogy/jiri-skuhrovec.php?itemid=13827>
 
 Reasoning with data was its explicit non-goal.
 As a result, the vocabulary does not feature sufficient ontological constructs to allow reasoning.

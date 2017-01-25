@@ -29,6 +29,9 @@ DSL
 ECB
 ~ European Central Bank
 
+ELT
+~ Extract Load Transform
+
 EPSG
 ~ European Petroleum Survey Group
 
@@ -37,6 +40,9 @@ ETL
 
 EU
 ~ European Union
+
+HTML
+~ Hypertext Markup Language
 
 HTTP
 ~ Hypertext Transfer Protocol
