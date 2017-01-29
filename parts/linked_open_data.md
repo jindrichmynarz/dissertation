@@ -1,9 +1,9 @@
 ## Linked open data
 
 <!--
-Semantic web technologies
-Linked data principles
 The open definition
+Linked data principles
+Semantic web technologies
 -->
 
 Linked data is a way of structuring data that identifies entities with Internationalized Resource Identifiers (IRI) and materializes their relationships as a network of machine-processable data ([Ayers, 2007, p. 94](#Ayers2007)).
@@ -17,5 +17,17 @@ Explicit links across datasets, for example public contracts link suppliers from
 
 Linked open data offers interoperability without centralization.
 
-Non-unique name assumption (nUNA)
-Open world assumption (OWA): anyone can say anything about anything (AAA)
+* Non-unique name assumption (non-UNA)
+* Open world assumption (OWA)
+* Anyone can say anything about anything (AAA)
+
+<!-- ### Preliminaries
+Minimal introductions to the topics covered in this thesis to enable comprehension of the further text.
+* RDF
+* SPARQL
+-->
+
+The benefits of using linked open data are demonstrated mostly in the data preparation.
+Linked open data makes it simpler to combine multiple datasets.
+It also provides a way to define "semantic" features for matchmaking.
+Semantic features can alleviate the problem of "shallow content analysis" that exists in some content-based recommender systems, typically those based on text.

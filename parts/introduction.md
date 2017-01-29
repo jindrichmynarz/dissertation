@@ -1,15 +1,10 @@
 # Introduction
 
-<!--
-Explain why a more precise title would be "Matchmaking public procurement linked open data".
-Explain why such a significant share of the dissertation is devoted to data preparation.
--->
-
 The goal of this thesis is to increase the efficiency of the market process of demand meeting supply during its information phase.
 In particular, this work focuses on the public procurement market in the Web environment. 
 
 A key obstacle to achieving the stated goal is fragmentation of data on the Web.
-Data about demands and offers is dispersed across a multitude of web sites, including e-shops or public sector registries. 
+Data about demands and offers is dispersed across a multitude of web sites, including electronic marketplaces or public sector registries. 
 To get a broader picture about the market one must scan through the relevant yet heterogenous sources of data, each of which may expose a different access interface, most of which will be suitable only for humans to process.
 Therefore, *"search and matchmaking between two business parties over the current Web are still very time-consuming if [...] information from multiple sources needs to be combined to assess the relevance or execute the query"* ([Radinger et al., 2013](#Radinger2013)).
 To improve this situation, the broad goal of this thesis is to contribute to defragmentation of online markets by linking the data communicated between them.
@@ -51,17 +46,50 @@ A key part of this research are the similarity metrics for multidimensional and 
 To frame matchmaking within the process of demand meeting supply, it occurs during the information phase, in which *"participants to the market seek potential partners"* ([Di Noia et al., 2004](#DiNoia2004)).
 In this sense, demands for products and services correspond to information needs and the aim of matchmaking is to retrieve the information that will satisfy them.
 
-Contributions: <!-- They are also in the conclusions. -->
+<!-- Problem statement -->
 
-Domains of research:
+General problems:
 
-* Knowledge engineering
-* Recommender systems
+* Fragmentation of demand on the Web
+* Passive waste in public procurement 
 
-* Methods
+Specific problems:
+
+* Feature construction for matchmaking
+* How to engineer matchmaking methods to achieve high accuracy and diversity of recommendations?
+* Can the proposed method achieve accuracy and diversity acceptable by domain experts?
+
+<!-- Problem context -->
+
+* Selection of a matching object; specifically for tenders
+* Social context: Better matchmaking helps avoid passive waste with public resources.
+
+<!-- Research domain -->
+
+The domain of this research is an intersection of case-based recommender systems and semantic web knowledge engineering.
+
+Stakeholders: Contracting authorities, bidders
+
+<!-- Research goals -->
+
+<!-- Scientific methods -->
+
+* Design of software artefacts
+* Experimentation
+
+Evaluation:
+
+* Offline experiments on retrospective data
+* Online experiments - clickthrough rates
+* Interviews with domain experts
+
+<!-- Contributions -->
+
+* Implemented matchmaking methods
 * Tools implementing the methods (also auxiliary tools if no suitable ones are available)
+* Reusable training/testing datasets
 
-The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless specified otherwise.
+<!-- How do the chapters depend on each other? -->
 
 <!--
 As a use case, the challenge is to select, combine, and apply state-of-the-art techniques to a real-world scenario.
@@ -70,37 +98,12 @@ As a use case, the challenge is to select, combine, and apply state-of-the-art t
 <!--
 ## Core hypotheses
 FIXME Feedback: De-emphasize hypotheses.
--->
 
 * Additional features obtained from linked open data can improve matchmaking.
 * Matchmaking methods that are able to leverage textual data effectively surpass the methods that cannot.
   * Feedback: Too vague.
 * Improving data quality has an larger impact on matchmaking than the sophistication of matchmaking algorithms.
 * Combination of semantic and statistical features of data has a synergic effect that can produce better matchmaking results than when only semantic or statistical features are used.
-
-Preliminaries
-- Minimal introductions to the topics covered in this thesis to enable comprehension of the further text.
-
-## Case-based recommender systems
-
-Cold start problem of case-based recommenders
-
-The matchmaker learns from interactions between contracting authorities and bidders
-A contract is an explicit specification of user's needs.
-
-Similarly to collaborative recommendation approaches, case-based recommenders exploit data about past behaviour.
-Collaborative recommender systems: explicit offers (product or services) + demand behaviour (user interactions)
-Our case-based recommender: explicit demands (contracts) + offer behaviour (histories of bidders)
-
-Contract award can be interpreted an implicit rating of the awarded bidder.
-The histories of bidders are held in memory instead of a model in SPARQL-based and Elasticsearch-based matchmaking.
-
-<!--
-## Matchmaking
 -->
 
-We used data from the Czech public procurement register to evaluate the proposed matchmaking methods.
-
-Limitation: One-shot recommendation
-
-<!-- TODO: Explain the difference between matchmaking and recommender systems. (Notion of a query.) -->
+The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless specified otherwise.

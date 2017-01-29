@@ -5,20 +5,10 @@ In many other domains only supply is explicitly described in advertising, while 
 Explicit formulation of demand allows us to process it automatically.
 The explicit formulation is required by law to ensure a basic level of transparency and thus minimize corruption risks.
 
-*"The estimate of total general government expenditures on works, goods, and services [...] represented 13.1 % of the EU GDP in 2015, the highest value for the last 4 years"* ([European Commission, 2016](#EuropeanCommission2016)).
-
-Estimate of total general government expenditures on works, goods, and services (excluding utilities): 24.2 billion EUR in 2015 in the Czech Republic, which amounts for 14.5 % of the country's GDP ([European Commission, 2016](#EuropeanCommission2016))
-
 Problems of transparency:
 
 - Matchmaking will be used only by willing civil servants.
 - Corruption scandals are ignored and eventually forgotten by the public.
-
-Legal basis of proactive disclosure of public procurement data.
-
-EU's common regulatory framework
-to produce a single public procurement market <!-- Although the share of cross-country procurement is minimal. See <http://www.govtransparency.eu/wp-content/uploads/2016/03/Fazekas-Skuhrovec_OECD-Integrity-Forum_draft_160321_towebsite.pdf> -->
-<!-- TODO: Work through the relevant EU directives and Czech law. -->
 
 Disclosure of public procurement data is mandated by legislation, which requires public contracts that meet prescribed conditions, including thresholds for money spent, to be advertised publicly through contract notices ([Graux and Kronenburg, 2012](#Graux2012), p. 7). 
 In the European Union, public contracts are classified as public sector information, which is prescribed to be publicly available by the *Directive on the re-use of public sector information* ([EU, 2013](#EU2013)).
@@ -58,3 +48,38 @@ Fazekas discusses a similar set of issues of public procurement data from Hungar
 A corollary of these issues is that tracking public contracts through the stages of their life-cycle, from their announcement over to completion, is difficult because of the lack of reliable identifiers.
 
 <!-- TODO: Describe where does matchmaking fit in the public procurement process. -->
+
+<!--
+### Legal context
+* Czech law
+* EU directives
+-->
+
+Legal basis of proactive disclosure of public procurement data.
+
+EU's common regulatory framework to produce a single public procurement market
+<!-- Although the share of cross-country procurement is minimal. See <http://www.govtransparency.eu/wp-content/uploads/2016/03/Fazekas-Skuhrovec_OECD-Integrity-Forum_draft_160321_towebsite.pdf> -->
+<!-- TODO: Work through the relevant EU directives and Czech law. -->
+
+<!--
+### Economic context
+* Single market for cross-country public procurement: However, the public procurements markets in the EU member states are fragmented.
+* Clientelism
+-->
+
+*"The estimate of total general government expenditures on works, goods, and services [...] represented 13.1 % of the EU GDP in 2015, the highest value for the last 4 years"* ([European Commission, 2016](#EuropeanCommission2016)).
+
+Estimate of total general government expenditures on works, goods, and services (excluding utilities): 24.2 billion EUR in 2015 in the Czech Republic, which amounts for 14.5 % of the country's GDP ([European Commission, 2016](#EuropeanCommission2016))
+
+Relevance of matchmaking based on procedure types:
+
+* Open procedures: alerts to relevant bidders may be sent
+* Closed procedures: contracting authority may be recommended suitable bidders to approach
+  * A potential issue: A closed procedure is probably chosen when the contracting authority already knows which bidders to invite.
+
+From the perspective of recommendation systems:
+* A strong desire for conformity <!-- TODO: Substantiate this claim. -->
+
+B2B context
+
+Public contracts are typically complex demands.

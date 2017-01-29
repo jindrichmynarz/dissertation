@@ -1,0 +1,22 @@
+digraph {
+  overlap=false;
+  splines=true;
+
+  vvz [shape=circle, label="Czech public procurement register", fontname="Open Sans"];
+  ares [shape=circle, label="ARES", fontname="Open Sans"];
+  cpv [shape=circle, label="CPV", fontname="Open Sans"];
+  czechAddresses [shape=circle, label="Czech addresses", fontname="Open Sans"];
+  zIndex [shape=circle, label="zIndex", fontname="Open Sans"];
+  nace [shape=circle, label="NACE", fontname="Open Sans"];
+  esfCz [shape=circle, label="Czech ESF projects", fontname="Open Sans"];
+  cpa [shape=circle, label="CPA", fontname="Open Sans"];
+
+  vvz -> ares;
+  vvz -> cpv;
+  vvz -> czechAddresses;
+  vvz -> esfCz;
+  cpv -> cpa;
+  ares -> czechAddresses;
+  ares -> nace;
+  zIndex -> ares;
+}

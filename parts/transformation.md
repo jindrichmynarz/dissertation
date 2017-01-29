@@ -89,6 +89,9 @@ Due to limited expressivity of SPARQL this task needed to be split into two SPAR
 The first query retrieved the count of 0.5 % prices, the second query chose the minimum price in the highest 0.5 % prices using the count as a limit, and the final update capped the 0.5 % of highest prices at this minimum.
 As in the case of currency conversion, we automated the steps of this task using piped queries in *sparql-to-csv*.
 
+Finally, some estimated prices are expressed as ranges from minimum to maximum price.
+These prices were converted to arithmetic averages to simplify further processing.
+
 <!--
 Out-takes:
 

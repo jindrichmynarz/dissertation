@@ -104,6 +104,9 @@ SKOS
 SPARQL
 ~ SPARQL Protocol and RDF Query Language
 
+TF-IDF
+~ Term frequency-inverse document frequency
+
 TLR
 ~ Trade Licensing Register
 

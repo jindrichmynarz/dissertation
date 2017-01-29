@@ -1,9 +1,36 @@
 # Evaluation
 
+Experimental design (experimental evaluation, controlled experiment)
+- Lab studies
+- Matchmaking is a classification task that produces a ranked list of relevant items.
+
+Nonexperimental design: qualitative research via interviews with users (or domain experts)
+
++ Descriptive evaluation via example scenarios?
++ Cost-benefit analysis discussing the matchmaker's value compared with the costs in sustaining it (keeping it operable)?
+
+Statistical significance
+Practical importance: demonstrate utility of the developed artefact
+
 ## Offline evaluation
 
 We conducted offline evaluation using retrospective data about awarded public contracts.
 Matchmaking was tested on the task of the awarded bidder prediction.
+
+It is common to use historical user interaction data to evaluate recommender systems ([Jannach et al., 2010, p. 169](#Jannach2010)).
+Contract award as an explicit user feedback
+
+Split into training and testing dataset.
+n-fold cross-validation
+
+Using recall does not make sense, since there is only one positive. Hence, recall would be either 0 or 1.
+
+Baseline results:
+
+* Exact match via CPV
+* Recommend most awarded bidders constantly
+* Recommend random bidders
+* Recommend bidders with highest PageRank
 
 ### Evaluated metrics
 
@@ -28,9 +55,13 @@ The results of offline testing can differ dramatically from the results obtained
 In particular, the recommender systems research community is reassessing the dominance of offline testing focused on evaluating accuracy metrics.
 It is becoming more common to emphasize online testing and non-accuracy metrics, such as recommendation diversity.
 
+Click-through can be reinterpreted as implicit positive rating.
+
 <!--
 TODO: In order to be able to interpret CTR correctly, read: T. Joachims, L. Granka, B. Pan, H. Hembrooke, and G. Gay, Accurately interpreting clickthrough data as implicit feedback.
 -->
+
+A/B testing
 
 ### Evaluated metrics
 

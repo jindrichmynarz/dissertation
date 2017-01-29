@@ -17,6 +17,7 @@ parts/acknowledgements.md
 parts/abstract_english.md
 parts/abstract_czech.md
 parts/introduction.md
+parts/case_based_recommender_systems.md
 parts/linked_open_data.md
 parts/public_procurement_domain.md
 parts/motivation.md

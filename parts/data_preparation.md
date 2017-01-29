@@ -1,10 +1,8 @@
 # Data preparation
 
 A fundamental part of the hereby presented work is preparation of the Czech public procurement dataset enriched with linked data.
-Data preparation served two fundamental goals.
-The resulting dataset was used to evaluate the case-based recommender system we built as our main contribution. 
-Preparation of this dataset was necessary because, unlike in more established research areas, matchmaking lacks available datasets for evaluation.
-It also served as a use case for applied research in the public procurement domain to explore whether the proposed recommender system can provide useful recommendations in a real-world setting.
+The prepared dataset was used to evaluate the case-based recommender system we built as our main contribution. 
+It served as a use case for applied research in the public procurement domain to explore whether the proposed recommender system can provide useful recommendations in a real-world setting.
 
 <!-- Characteristics of ETL -->
 
@@ -24,7 +22,7 @@ Linking and fusion are interleaved and executed iteratively, each building on th
 Loading is concerned with making the data available in a way that the matchmaking methods can operate efficiently.
 The following figure summarizes the overall ETL workflow.
 
-![ETL workflow](img/etl_workflow.png){width=50%}
+![ETL workflow](img/etl_workflow.png)
 
 Our approach to ETL can be regarded as Extract-Load-Transform (ELT). 
 We first loaded the extracted data into an RDF store to make transformation, linking, and fusion via SPARQL Update operations feasible.
