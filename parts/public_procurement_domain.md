@@ -71,7 +71,7 @@ EU's common regulatory framework to produce a single public procurement market
 
 Estimate of total general government expenditures on works, goods, and services (excluding utilities): 24.2 billion EUR in 2015 in the Czech Republic, which amounts for 14.5 % of the country's GDP ([European Commission, 2016](#EuropeanCommission2016))
 
-![Public procurement's share of GDP of the Czech Republic](img/share_of_gdp.png)
+![Percentage of public procurement's share of GDP](img/share_of_gdp_v2.png){width=75%}
 
 <!-- 
 ![Public procurement's share of GDP for the Czech Republic and the EU average](img/share_of_gdp_cz_eu_comparison.png)

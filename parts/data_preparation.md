@@ -20,7 +20,8 @@ Once data is available in RDF, its processing is described as transformation.
 Linking discovers co-referent identities, while fusion resolves them to the preferred identities, along with resolving data conflicts that may arise.
 Linking and fusion are interleaved and executed iteratively, each building on the results of the previous step.
 Loading is concerned with making the data available in a way that the matchmaking methods can operate efficiently.
-The following figure summarizes the overall ETL workflow.
+The adopted ETL workflow evolved from the workflow that was described in Mynarz ([2014c](#Mynarz2014c)).
+The following figure summarizes the overall workflow.
 
 ![ETL workflow](img/etl_workflow.png)
 

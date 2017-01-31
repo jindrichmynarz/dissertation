@@ -16,4 +16,7 @@ Goal: efficiency - reducing the decision-making effort.
 
 <!--
 Defragmentation of data on contracting authority profiles
+- Creating a single market across the EU member states
+Automation of parts of the public procurement process
+Better access to public procurement for SMEs, since the market is dominated by large companies, who can afford the friction.
 -->

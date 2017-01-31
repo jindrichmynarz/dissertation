@@ -8,7 +8,7 @@ However, queries and data analyses usually operate under the unique name assumpt
 Consequently, the aim of linking is to make explicit links between non-unique names of entities, so that these entities can be unified in data fusion.
 In this way, linking addresses the accidental variety of data published on the Web.
 
-<!-- ### Content-based addressing -->
+### Content-based addressing
 
 In the absence of agreed upon identifiers, entities are referred to by their description.
 Moreover, unlike RDF, some data formats, such as CSV, do not enable linking.
@@ -72,7 +72,7 @@ If a blank node linked another blank node, the linked blank node was rewritten f
 This was done to ensure that the hashed descriptions of blank nodes do not contain blank nodes, which would cause different hashes to be computed from otherwise equivalent descriptions.
 Since no two blank nodes are the same, this procedure led to a significant reduction of aliases.
 
-<!-- ### Linking technologies -->
+### Technologies
 
 We employed four kinds of linking technologies.
 Simple keys and some compound keys were used directly to construct IRIs in XSLT.
@@ -86,6 +86,8 @@ For example, we used it to compare syntactically invalid RNs via string distance
 In general, linking was done iteratively, interposed with data fusion.
 Fusion reduced the size of the data, in turn reducing the search space for linking.
 Additionally, linking following fusion could build on previously created links.
+
+### Tasks
 
 We worked on three main linking tasks.
 We reconciled values in our dataset with standard code lists.

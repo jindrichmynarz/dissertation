@@ -58,5 +58,8 @@ Probably the most common inconsistency is assigning less specific concepts.
 A partial solution to inter-indexer consistency (assuming intra-indexer consistency): consider CPV as local tags. I.e. they are comparable only with respect to the contracting authority that assigned them. (This approach also ignores that several civil servants are likely assigning CPV for most contracting authorities, hence the intra-indexer consistency may be broken.)
 -->
 
-<!-- RDF version of CPV is also available at <http://cpv.data.ac.uk>. -->
+<!--
+RDF version of CPV is also available at <http://cpv.data.ac.uk>.
+There is also the version from MOLDEAS.
+-->
 <!-- Discuss transitivity of hierarchical relations with `skos:broaderTransitive` vs. `skos:broader`? -->
