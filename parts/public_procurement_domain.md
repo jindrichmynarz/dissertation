@@ -64,12 +64,28 @@ EU's common regulatory framework to produce a single public procurement market
 <!--
 ### Economic context
 * Single market for cross-country public procurement: However, the public procurements markets in the EU member states are fragmented.
-* Clientelism
+* Clientelism, collusion, bid rigging
 -->
 
 *"The estimate of total general government expenditures on works, goods, and services [...] represented 13.1 % of the EU GDP in 2015, the highest value for the last 4 years"* ([European Commission, 2016](#EuropeanCommission2016)).
 
 Estimate of total general government expenditures on works, goods, and services (excluding utilities): 24.2 billion EUR in 2015 in the Czech Republic, which amounts for 14.5 % of the country's GDP ([European Commission, 2016](#EuropeanCommission2016))
+
+![Public procurement's share of GDP of the Czech Republic](img/share_of_gdp.png)
+
+<!-- 
+![Public procurement's share of GDP for the Czech Republic and the EU average](img/share_of_gdp_cz_eu_comparison.png)
+year,cz,euAvg
+2009,17.27,14.70 
+2010,16.29,14.33
+2011,14.4,13.1 // It seems a different methodology was used from this year on. The estimates don't match.
+2012,13.8,12.9
+2013,13.6,12.8
+2014,13.7,12.9
+2015,14.5,13.1
+Sources: Public Procurement Indicators 2015, 2014, 2013, 2012
+Datawrapper: <https://datawrapper.dwcdn.net/OzbYV/1/>
+-->
 
 Relevance of matchmaking based on procedure types:
 
@@ -78,8 +94,14 @@ Relevance of matchmaking based on procedure types:
   * A potential issue: A closed procedure is probably chosen when the contracting authority already knows which bidders to invite.
 
 From the perspective of recommendation systems:
-* A strong desire for conformity <!-- TODO: Substantiate this claim. -->
+* A strong desire for conformity, not deviating from the defaults, high risk-aversion <!-- TODO: Substantiate this claim. -->
+* Civil servants are not motivated, so they behave like satisficers, searching for "good enough" solutions.
 
 B2B context
 
 Public contracts are typically complex demands.
+
+<!--
+Public procurement is an uncommon domain for recommender systems.
+*"experiment designs that evaluate different algorithm variants on historical user ratings derived from the      movie domain form by far the most popular evaluation design and state of practice."* ([Jannach et al., 2010](#Jannach2010), p. 175)
+-->

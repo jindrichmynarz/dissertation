@@ -109,5 +109,6 @@ Further problems:
   * Primacy effect = Items at the beginning of a recommendation list are analyzed more frequently.
 * Determine the weights of features based on their perceived utility
 * Reformulate award criteria using <https://en.wikipedia.org/wiki/Conjoint_analysis>?
+* What repair action can we provide users when faced with empty results of matchmaking?
 
 <!-- TODO: Add a diagram showing the technology stack involved in the matchmaker. -->

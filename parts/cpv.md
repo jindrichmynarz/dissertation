@@ -1,7 +1,7 @@
 ### Common Procurement Vocabulary
 
 Common Procurement Vocabulary (CPV)^[<http://simap.ted.europa.eu/web/simap/cpv>] is a controlled vocabulary standardized by the EU for harmonizing the description of procured objects across the EU member states.
-Within the EU, CPV has been mandatory to use for public procurement since 2006.
+Within the EU, CPV has been mandatory to use for public procurement since 2006. <!-- FIXME: Add citation? -->
 The most recent version of CPV is from 2008.
 Each CPV concept is provided with labels in 23 languages of the EU.
 The multilingual nature of CPV allows to localize public procurement data to support cross-country procurement.
@@ -54,6 +54,8 @@ A shared vocabulary does not help if the way it is used is not shared too.
 This is a to certain degree an unsolvable problem.
 To a limited extent it can be alleviated by strict rules or shared practices.
 Probably the most common inconsistency is assigning less specific concepts.
+
+A partial solution to inter-indexer consistency (assuming intra-indexer consistency): consider CPV as local tags. I.e. they are comparable only with respect to the contracting authority that assigned them. (This approach also ignores that several civil servants are likely assigning CPV for most contracting authorities, hence the intra-indexer consistency may be broken.)
 -->
 
 <!-- RDF version of CPV is also available at <http://cpv.data.ac.uk>. -->

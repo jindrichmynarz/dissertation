@@ -16,6 +16,11 @@ For example, there is a code list for procedure types, including open or restric
 These core code lists are represented using the Simple Knowledge Organization System (SKOS) ([Miles, Bechhofer, 2009](#Miles2009)) and are a part of the vocabulary.
 The design of PCO is described in more detail in Nečaský et al. ([2014](#Necasky2014)).
 
+The following class diagram shows the Public Contracts Ontology.
+Reused classes are distinguished by dotted borders.
+
+![Public Contracts Ontology](img/pco.png)
+
 The vocabulary was used to a large extent in the [LOD2 project](http://aksw.org/Projects/LOD2.html).
 For example, it was applied to Czech, British, EU, or Polish public procurement data.
 In this way, we validated the portability of the vocabulary across various legal environments and ways of publishing public procurement data.

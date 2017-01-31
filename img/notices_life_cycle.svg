@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="700"
+   height="200"
+   id="svg3085"
+   version="1.1"
+   inkscape:version="0.48.4 r9943 custom"
+   sodipodi:docname="notices_life_cycle.svg">
+  <defs
+     id="defs3087">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible">
+      <path
+         id="path4118"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.79850746"
+     inkscape:cx="558.07009"
+     inkscape:cy="174.5"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1279"
+     inkscape:window-height="747"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3090">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-852.36215)">
+    <g
+       id="g4126"
+       transform="translate(11.402175,79.37808)">
+      <g
+         transform="translate(-83,0)"
+         id="g3992">
+        <path
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+           d="m 116.37097,817.55456 c 0,0 51.20546,0 72.75124,0 l 0,110.85903 -83.14427,0 c 0,-35.73184 0,-97.00165 0,-97.00165 z"
+           id="rect3151"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccc" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text3805"
+           y="861.38855"
+           x="111.32728"
+           style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+           xml:space="preserve"><tspan
+             y="861.38855"
+             x="111.32728"
+             sodipodi:role="line"
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             id="tspan3807">Prior</tspan><tspan
+             y="877.71216"
+             x="111.32728"
+             sodipodi:role="line"
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             id="tspan3147">information</tspan><tspan
+             y="894.03583"
+             x="111.32728"
+             sodipodi:role="line"
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             id="tspan3149">notice</tspan></text>
+      </g>
+      <path
+         sodipodi:nodetypes="cc"
+         style="fill:none;stroke:#000000;stroke-width:1.37547231;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+         d="m 106.88629,873.0083 51.52955,0"
+         id="path4005"
+         inkscape:connector-curvature="0" />
+      <g
+         transform="translate(-136.35171,0)"
+         id="g3986">
+        <path
+           sodipodi:nodetypes="cccccc"
+           inkscape:connector-curvature="0"
+           id="path3955"
+           d="m 307.73724,817.55456 c 0,0 51.20546,0 72.75124,0 l 0,110.85903 -83.14427,0 c 0,-35.73184 0,-97.00165 0,-97.00165 z"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0" />
+        <text
+           xml:space="preserve"
+           style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+           x="303.65036"
+           y="861.38855"
+           id="text3937"
+           sodipodi:linespacing="125%"><tspan
+             id="tspan3943"
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="303.65036"
+             y="861.38855">Contract</tspan><tspan
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="303.65036"
+             y="877.71216"
+             id="tspan3950">notice</tspan></text>
+      </g>
+      <g
+         transform="matrix(0.98219992,0,0,0.98219992,-138.02262,15.539189)"
+         id="g4117">
+        <path
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+           d="m 593.29609,817.55456 c 0,0 51.20546,0 72.75124,0 l 0,110.85903 -83.14427,0 c 0,-35.73184 0,-97.00165 0,-97.00165 z"
+           id="path3957"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccc" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text3959"
+           y="861.38855"
+           x="589.20923"
+           style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+           xml:space="preserve"><tspan
+             y="861.38855"
+             x="589.20923"
+             sodipodi:role="line"
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             id="tspan3961">Contract</tspan><tspan
+             y="877.71216"
+             x="589.20923"
+             sodipodi:role="line"
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             id="tspan3965">award</tspan><tspan
+             id="tspan3963"
+             y="894.03583"
+             x="589.20923"
+             sodipodi:role="line"
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans">notice</tspan></text>
+      </g>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3999"
+         d="m 244.72366,873.0083 51.52955,0"
+         style="fill:none;stroke:#000000;stroke-width:1.37547231;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+         sodipodi:nodetypes="cc" />
+      <g
+         transform="translate(-12.073197,-155.00001)"
+         id="g4097">
+        <path
+           sodipodi:nodetypes="cccccc"
+           inkscape:connector-curvature="0"
+           id="path4010"
+           d="m 320.29609,972.55456 c 0,0 51.20546,0 72.75124,0 l 0,110.85904 -83.14427,0 c 0,-35.7318 0,-97.00166 0,-97.00166 z"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0" />
+        <text
+           xml:space="preserve"
+           style="font-size:12.04696751px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+           x="315.59021"
+           y="1015.7734"
+           id="text4012"
+           sodipodi:linespacing="125%"><tspan
+             style="font-size:12.04696751px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="315.59021"
+             y="1015.7734"
+             id="tspan4018">Notice</tspan><tspan
+             style="font-size:12.04696751px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="315.59021"
+             y="1030.832"
+             id="tspan4030">for changes</tspan><tspan
+             style="font-size:12.04696751px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="315.59021"
+             y="1045.8907"
+             id="tspan4032">or additional </tspan><tspan
+             style="font-size:12.04696751px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="315.59021"
+             y="1060.9495"
+             id="tspan4034">information</tspan></text>
+      </g>
+      <g
+         id="g4059"
+         transform="translate(159.8663,0)">
+        <path
+           sodipodi:nodetypes="cccccc"
+           inkscape:connector-curvature="0"
+           id="path4061"
+           d="m 421.60017,817.55456 c 0,0 51.20546,0 72.75124,0 l 0,110.85903 -83.14427,0 c 0,-35.73184 0,-97.00165 0,-97.00165 z"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0" />
+        <text
+           xml:space="preserve"
+           style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+           x="415.51328"
+           y="861.38855"
+           id="text4063"
+           sodipodi:linespacing="125%"><tspan
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="415.51328"
+             y="861.38855"
+             id="tspan4069">Modification</tspan><tspan
+             id="tspan4076"
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="415.51328"
+             y="877.71216">notice</tspan></text>
+      </g>
+      <path
+         sodipodi:nodetypes="cc"
+         style="fill:none;stroke:#000000;stroke-width:1.37547231;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+         d="m 380.41187,873.0083 51.52955,0"
+         id="path4105"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4124"
+         d="m 516.96724,873.0083 51.52955,0"
+         style="fill:none;stroke:#000000;stroke-width:1.37547231;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+         sodipodi:nodetypes="cc" />
+    </g>
+  </g>
+</svg>

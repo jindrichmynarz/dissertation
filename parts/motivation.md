@@ -13,3 +13,7 @@ The abbreviations used throughout the text are collected in [this list](#abbrevi
 All vocabulary prefixes used in the text can be resolved to their corresponding namespace IRIs via <http://prefix.cc>.
 
 Goal: efficiency - reducing the decision-making effort.
+
+<!--
+Defragmentation of data on contracting authority profiles
+-->

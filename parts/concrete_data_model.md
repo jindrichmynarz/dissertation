@@ -22,6 +22,10 @@ Notices are documents that inform about changes in the life-cycle of public cont
 Using the terminology of the Jacobs and Walsh ([2004](#Jacobs2004)), notices are information resources describing contracts as non-information resources. 
 Information resource is *"a resource which has the property that all of its essential characteristics can be conveyed in a message"* ([ibid.](#Jacobs2004)), so that it can be transferred via HTTP, which cannot be done with non-information resources, such as physical objects or abstract notions.
 
+<!--
+TODO: Add a (simplified) diagram of public contract lifecycle in terms of public notices.
+-->
+
 We represent contract notices as instances of subclasses of `pproc:Notice` from PPROC, since PCO does not include the concept of a contract notice.
 Each notice pertains to a single contract, while a contract may link several notices informing about its life-cycle.
 Notices provide a way to represent temporal dimension of contracts.
