@@ -6,7 +6,7 @@ There are no unawarded contracts in the data dumps.
 This makes is unsuitable for the development of the matchmaking service that alerts about open calls for tenders.
 Data from electronic marketplaces also contains open calls for tenders (marked with `<VZstav>PH010003 - Zadávací řízení</VZstav>`).
 -->
-The available description of each contract differs, although generally the contracts feature data such as their contracting authority, the contract's object, award criteria, and the awarded bidder, comprising the primary data for matchmaking demand and supply.
+The available description of each contract in this dataset differs, although generally the contracts feature data such as their contracting authority, the contract's object, award criteria, and the awarded bidder, comprising the primary data for matchmaking demand and supply.
 Viewed from the market perspective, public contracts can be considered as expressions of demand, while awarded tenders express the supply.
 
 We described this dataset with a semantic data model.

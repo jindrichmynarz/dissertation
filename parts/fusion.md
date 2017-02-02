@@ -82,6 +82,10 @@ Many evaluation measures used for data fusion reflect the impact of this task on
 An example of those measures is completeness, which represents the ratio of instances having value for a specified property before and after fusion, and is sometimes rephrased as coverage and density ([Akoka, 2007](#Akoka2007)).
 
 <!--
+Fusion reduced the data by %%% fusion to XXX.
+-->
+
+<!--
 ([Bleiholder, Naumann, 2008](#Bleiholder2008))
 Completenes
 Conciseness

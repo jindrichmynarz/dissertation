@@ -73,25 +73,20 @@ Estimate of total general government expenditures on works, goods, and services 
 
 ![Percentage of public procurement's share of GDP](img/share_of_gdp_v2.png){width=75%}
 
-<!-- 
-![Public procurement's share of GDP for the Czech Republic and the EU average](img/share_of_gdp_cz_eu_comparison.png)
-year,cz,euAvg
-2009,17.27,14.70 
-2010,16.29,14.33
-2011,14.4,13.1 // It seems a different methodology was used from this year on. The estimates don't match.
-2012,13.8,12.9
-2013,13.6,12.8
-2014,13.7,12.9
-2015,14.5,13.1
-Sources: Public Procurement Indicators 2015, 2014, 2013, 2012
-Datawrapper: <https://datawrapper.dwcdn.net/OzbYV/1/>
--->
+Sources: Public Procurement Indicators 2015, 2014, 2013, 2012 ([European Commission, 2016](#EuropeanCommission2016)).
 
 Relevance of matchmaking based on procedure types:
 
 * Open procedures: alerts to relevant bidders may be sent
+<!--
+Also for the first round of restricted procedures.
+To a lesser extent also applicable with other procedure types, such as innovation partnership.
+-->
 * Closed procedures: contracting authority may be recommended suitable bidders to approach
   * A potential issue: A closed procedure is probably chosen when the contracting authority already knows which bidders to invite.
+<!-- In case of simplified under limit procedure, contracting authority can directly approach bidders.
+In that case, at least five bidders must be approached. (<https://www.zakonyprolidi.cz/cs/2016-134#p53>)
+-->
 
 From the perspective of recommendation systems:
 * A strong desire for conformity, not deviating from the defaults, high risk-aversion <!-- TODO: Substantiate this claim. -->
@@ -102,6 +97,10 @@ B2B context
 Public contracts are typically complex demands.
 
 <!--
-Public procurement is an uncommon domain for recommender systems.
+Public procurement is an uncommon domain for recommender systems:
 *"experiment designs that evaluate different algorithm variants on historical user ratings derived from the      movie domain form by far the most popular evaluation design and state of practice."* ([Jannach et al., 2010](#Jannach2010), p. 175)
+-->
+
+<!--
+[2016](#CzechRepublic2016)
 -->

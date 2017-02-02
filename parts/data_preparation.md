@@ -75,7 +75,6 @@ Preparation of the dataset for matchmaking involved several sources.
 Selection of each of the data sources had a motive justifying the effort spent preparing the data.
 We selected the Czech public procurement register as our primary dataset, to which we linked Common Procurement Vocabulary (CPV), Czech addresses data, Access to Registers of Economic Subjects/Entities (ARES), and zIndex. 
 The Czech public procurement register provides historical data on Czech public contracts since 2006.
-<!-- TODO: Add exact dates of the first and last contracts in the source dataset. -->
 CPV organizes objects of public contracts in a hierarchical structure that allows to draw inferences about the similarity of the objects from their distance in the structure.
 Czech address data offers geo-coordinates for the reference postal addresses in the Czech Republic.
 By matching postal addresses to their canocanical forms from this dataset, postal addresses can be geocoded.
