@@ -81,7 +81,13 @@ Update operations were also used when creating links required a join via a key, 
 Most linking tasks based on fuzzy matches of compound keys were done using the Silk link discovery framework ([Bryl et al., 2014](#Bryl2014)).
 Silk was used when links could not be established via exact matches.
 For example, we used it to compare syntactically invalid RNs via string distance metrics.
+We used Silk Workbench, a graphical user interface for Silk, to develop linkage rules iteratively.
+Silk Workbench displays linking results in a way the interlinked entities can be compared manually.
+This enables to examine a sample of links for false positives and false negatives and adjust the linkage rules accordingly, tuning weights and thresholds to avoid undesired results.
+An example linkage rule in Silk Workbench is shown in the in the following figure.
 [Elasticsearch](https://www.elastic.co/products/elasticsearch) was employed for matching postal addresses to reference addresses from the Czech addresses dataset.
+
+![Example linkage rule in Silk Workbench](img/silk_workbench_linkage_rule.png)
 
 In general, linking was done iteratively, interposed with data fusion.
 Fusion reduced the size of the data, in turn reducing the search space for linking.
