@@ -3,7 +3,7 @@
 Geocoding is the process of linking postal addresses to geographic locations.
 The locations are represented as coordinates corresponding to a place on the Earth's surface.
 Geocoding can be considered a case of instance matching ([Christen, 2012, section 9.1](#Christen2012)) that matches addresses from a dataset to reference addresses equipped with geo-coordinates.
-We geocoded business entities in the Czech public procurement register, the Public Register (PR), and the Trade Licensing Register (TLR).
+We geocoded postal addresses of business entities in the Czech public procurement register, the Public Register (PR), and the Trade Licensing Register (TLR).
 In case of the PR we geocoded only the addresses that were missing links to the Czech address dataset.
 Unlinked addresses in the PR amounted for 12.42 % of all its addresses.
 No addresses in the TLR were linked.
@@ -68,8 +68,13 @@ Further optimization of the geocoding query was guided by the results of evaluat
 
 We chose to evaluate the geocoder using metrics adapted from Goldberg et al. ([2013](#Goldberg2013)).
 *Match rate* is defined as the share of addresses capable of being geocoded.
+
+$match\:rate = \frac{|\{a \in A, geocode(a) \neq \varnothing\}|}{|A|}$
+
 We adapted *spatial accuracy* as the share of addresses that are geocoded within a specified distance from the reference location.
 We chose to evaluate spatial accuracy at 50 meters, so that geo-coordinates found within 50 meters from the reference location are considered matching.
+
+$spatial\:accuracy = \frac{|\{a \in A, distance(geocode(a), ground\:truth_a)< 50\}|}{|A|}$
 
 While match rate can be computed without a gold standard dataset, spatial accuracy needs one.
 Thanks to the links to the Czech addresses dataset from the Public Register, we had a dataset that could be used as a gold standard.
@@ -92,6 +97,10 @@ We sorted the postal addresses that were matched both by Here Geocoding API and 
 We manually checked the top geo-coordinates and found that the maximum distance where our geo-coordinates were invalid was 8 kilometers.
 Median distance was 0.63 meters and arithmetic mean distance was 290 meters.
 We deem such results to be reasonable for our use cases.
+
+<!--
+We geocoded 49 635 postal addresses in the Czech public procurement register.
+-->
 
 <!--
 Match rate for a sample of 5000 postal addresses from the Trade Licensing Register:

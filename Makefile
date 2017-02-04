@@ -1,5 +1,6 @@
 html:
 	pandoc -f markdown+implicit_figures \
+		--mathjax \
 		--number-sections \
 		--toc \
 		-s \
