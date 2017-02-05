@@ -19,6 +19,7 @@ Matchmaking was tested on the task of the awarded bidder prediction.
 
 It is common to use historical user interaction data to evaluate recommender systems ([Jannach et al., 2010, p. 169](#Jannach2010)).
 Contract award as an explicit user feedback
+Framework agreements awarded to multiple bidders were excluded from the evaluation dataset.
 
 Split into training and testing dataset.
 n-fold cross-validation

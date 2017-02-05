@@ -104,3 +104,7 @@ Public procurement is an uncommon domain for recommender systems:
 <!--
 [2016](#CzechRepublic2016)
 -->
+
+<!--
+- Contracting authorities are recommended to estimate contract price based on similar contract. This is a use case for similarity-based retrieval.
+-->

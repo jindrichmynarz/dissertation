@@ -81,9 +81,8 @@ This figure corresponds to the measure of extensional conciseness defined by Ble
 Many evaluation measures used for data fusion reflect the impact of this task on data quality.
 An example of those measures is completeness, which represents the ratio of instances having value for a specified property before and after fusion, and is sometimes rephrased as coverage and density ([Akoka, 2007](#Akoka2007)).
 
-<!--
-Fusion reduced the data by %%% fusion to XXX.
--->
+Compared with the raw extracted datasets, fusion decreased the number of distinct entities by 61.68 % to 2 million.
+Overall, fusion reduced the data by 52.14 % from 20.5 million triples to 9.8 million.
 
 <!--
 ([Bleiholder, Naumann, 2008](#Bleiholder2008))
@@ -91,13 +90,4 @@ Completenes
 Conciseness
 Consistency
 - Intensional and extensional
--->
-
-<!--
-TODO: Add dataset size reduction before and after cleaning
-TODO: Add percentage of conflict-free contracts before and after conflict resolution.
--->
-
-<!-- Out-takes:
-* Truth Discovery to Resolve Object Conflicts in Linked Data. <https://arxiv.org/abs/1509.00104>
 -->

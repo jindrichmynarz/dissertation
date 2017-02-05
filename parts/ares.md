@@ -34,6 +34,13 @@ Moreover, this number excludes now defunct entities that could have participated
 In total, as of November 2016 we harvested data about 204 620 distinct entities either in PR or TLR.
 Out of these, 161 403 business entities were present in both registries.
 
+What we made was snapshot of data valid at the harvest date.
+However, business entities change in time and so does the data in ARES that describes them.
+For instance, companies may move to different postal addresses.
+Without the complete history of the registers, access to previous addresses is unavailable.
+Since we have only a snapshot of the data, the historical data is missing.
+This deficiency turned out to be detrimental to linking business entities by making it more difficult to identify correct reference entities to link.
+
 Thanks to the uniform API that ARES provides the ETL of both registers differs only in the URL paramaters and the XSL transformations mapping XML data to RDF.
 The data transformation was done using UnifiedViews.
 A [custom data processing unit](https://github.com/mff-uk/DPUs/tree/master/dpu-domain-specific/ares) (DPU) was used to fetch data into UnifiedViews.

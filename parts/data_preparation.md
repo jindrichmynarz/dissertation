@@ -1,5 +1,9 @@
 # Data preparation
 
+<!--
+80/20 rule: <https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html>
+-->
+
 A fundamental part of the hereby presented work is preparation of the Czech public procurement dataset enriched with linked data.
 The prepared dataset was used to evaluate the case-based recommender system we built as our main contribution. 
 It served as a use case for applied research in the public procurement domain to explore whether the proposed recommender system can provide useful recommendations in a real-world setting.
@@ -25,6 +29,9 @@ The following figure summarizes the overall workflow.
 
 ![ETL workflow](img/etl_workflow.png)
 
+We employed materialized data integration.
+Unlike virtual integration, materialized integration persists the integrated data.
+This allowed us to achieve the query performance required by data transformations and SPARQL-based matchmaking.
 Our approach to ETL can be regarded as Extract-Load-Transform (ELT). 
 We first loaded the extracted data into an RDF store to make transformation, linking, and fusion via SPARQL Update operations feasible.
 Using RDF allows to load data first and integrate it later, while in the traditional context of relational databases, data integration typically precedes loading.
@@ -87,10 +94,5 @@ ETL of each of these datasets is described in more detail in the following secti
 
 The source code used for data preparation is openly available in [this repository](https://github.com/jindrichmynarz/vvz-to-rdf).
 This allows others to replicate and scrutinize the way we prepared data.
-
-<!--
-Out-takes:
-
-Linked data employs a materialized data integration.
-Unlike virtual integration, materialized integration persists integrated data.
--->
+The data preparation tasks were implemented via declarative programming using XSLT, SPARQL Update operations, and XML specifications of linkage rules.
+The high-level nature of declarative programming made the implementation concise and helped us to avoid bugs by abstracting from lower-level data manipulation.
