@@ -2,21 +2,34 @@ digraph {
   overlap=false;
   splines=true;
 
-  vvz [shape=circle, label="Czech public procurement register", fontname="Open Sans"];
-  ares [shape=circle, label="ARES", fontname="Open Sans"];
-  cpv [shape=circle, label="CPV", fontname="Open Sans"];
-  czechAddresses [shape=circle, label="Czech addresses", fontname="Open Sans"];
-  zIndex [shape=circle, label="zIndex", fontname="Open Sans"];
-  nace [shape=circle, label="NACE", fontname="Open Sans"];
-  esfCz [shape=circle, label="Czech ESF projects", fontname="Open Sans"];
-  cpa [shape=circle, label="CPA", fontname="Open Sans"];
+  // 9824755 triples
+  vvz [shape=circle, width=3.4961608645886315, fontsize=34.961608645886315,
+       label="Czech public procurement register", fontname="Open Sans", fixedsize=true];
 
-  vvz -> ares;
-  vvz -> cpv;
-  vvz -> czechAddresses;
-  vvz -> esfCz;
-  cpv -> cpa;
-  ares -> czechAddresses;
-  ares -> nace;
-  zIndex -> ares;
+  // 24782573 + 873093 = 25655666 triples
+  ares [shape=circle, width=3.7045916465327453, fontsize=37.045916465327453,
+        label="ARES", fontname="Open Sans", fixedsize=true];
+
+  // 290002 triples
+  cpv [shape=circle, width=2.731200496511493, fontsize=27.31200496511493,
+       label="CPV", fontname="Open Sans", fixedsize=true];
+
+  // 42731843 triples
+  czechAddresses [shape=circle, width=3.8153758120471357, fontsize=38.153758120471357,
+                  label="Czech addresses", fontname="Open Sans", fixedsize=true];
+
+  // 57872 triples
+  zIndex [shape=circle, width=2.381234245708772, fontsize=23.81234245708772,
+          label="zIndex", fontname="Open Sans", fixedsize=true];
+
+  // 17098 triples
+  nace [shape=circle, width=2.1164726563726135, fontsize=21.164726563726135,
+        label="CZ-NACE", fontname="Open Sans", fixedsize=true];
+
+  vvz -> ares [penwidth=4.485267024680352]; // 30568 triples
+  vvz -> cpv [penwidth=5.4984235935136905]; // 315082 triples 
+  vvz -> czechAddresses [penwidth=5.323278920380405]; // 210513 triples
+  ares -> czechAddresses [penwidth=5.464321102704399]; // 162361 + 2753 + 126173 = 291287 triples
+  ares -> nace [penwidth=5.941060506289356]; // 873093 triples
+  zIndex -> ares [penwidth=3.808210972924222]; // 6430 triples
 }
