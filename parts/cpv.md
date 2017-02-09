@@ -11,6 +11,8 @@ There are 9454 concepts in the main vocabulary, structured in 6 levels of hierar
 The supplementary vocabulary can be used to qualify concepts from the main vocabulary.
 An example supplementary concept is `MF09`, meaning *"Using hovercraft"*.
 There are 903 concepts in the supplementary vocabulary, which is organized as a flat list.
+However, the supplementary vocabulary is rarely used.
+Only 3.25 % of objects in our Czech public procurement dataset are qualified with a supplementary concept. 
 The vocabulary has a monohierarchical structure in which the individual taxonomic links typically have the        flavour of either subsumption^[E.g., *"Broccoli"* has broader concept *"Vegetables"*.] or part-whole^[E.g., *"Vegetables"* has broader concept *"Vegetables, fruits and nuts"*.] relations between CPV concepts.
 The hierarchical structure allows to derive a correspondence between the concept's location in the structure and its conceptual similarity to its neighbouring concepts, which makes it possible to perform basic reasoning and query expansion.
 

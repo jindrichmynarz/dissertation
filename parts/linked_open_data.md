@@ -16,7 +16,11 @@ Linked data is a way of structuring data that identifies entities with Internati
 IRIs are universal, thus any entity can be identified with a IRI, and have global scope, therefore IRI can only identify one entity ([Berners-Lee, 1996](#BernersLee1996)).
 
 Resource Description Framework (RDF) is a graph data format for exchanging data on the Web.
-The data model of RDF is a directed labelled graph.
+The formal data model of RDF is a directed labelled graph.
+RDF statements: triples, subjects, predicates, objects
+IRIs, blank nodes, literals, data types
+Quads, named graphs
+RDF serializations, e.g., Turtle, JSON-LD, N-Quads
 
 (Argument for RDF, why we chose it)
 RDF makes combining data straightforward.
@@ -30,8 +34,10 @@ Linked open data offers interoperability without centralization.
 
 <!-- ### Preliminaries
 Minimal introductions to the topics covered in this thesis to enable comprehension of the further text.
-* RDF
 * SPARQL
+SPARQL is a query language for RDF data.
+The syntax of SPARQL combines the syntax of Turtle with the syntax of SQL. (Even though it was only inspired by SQL.)
+The syntax of graph patterns extends Turtle with variables. (Names prefixed either by `?` or `$`.)
 -->
 
 The benefits of using linked open data are demonstrated mostly in the data preparation.
@@ -49,3 +55,8 @@ Benefits of LOD (according to [Di Noia et al., 2016](#DiNoia2016)):
 * Availability of free data
 * Since the data is structured, there is no need for structuring it via content analysis. (Although data preparation is definitely necessary.)
 * Data is described in a semantic way
+
+Plus:
+
+* Both content and preferences (i.e. contract awards) are expressed in an uniform way.
+* Features that link other datasets can be used to automatically retrieve more features.

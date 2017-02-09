@@ -11,6 +11,9 @@ API
 ARES
 ~ Access to Registers of Economic Subjects/Entities
 
+BR
+~ Business Register
+
 CLI
 ~ Command-Line Interface
 
@@ -22,6 +25,9 @@ CPV
 
 CRS
 ~ Coordinate Reference System
+
+CSO
+~ Czech Statistical Office
 
 CSV
 ~ Comma-Separated Values

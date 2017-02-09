@@ -7,7 +7,7 @@ Thanks to these features ARES can serve as a reference dataset for Czech busines
 
 This system is not the primary source of the data it provides.
 Instead, it mediates data from several source registers and links back to these registers where possible.
-The main sources of ARES are the [Public Register](https://or.justice.cz/ias/ui/rejstrik) (PR) run by the Czech Ministry of Justice, the [Trade Licensing Register](http://www.rzp.cz/eng/index.html) (TLR) operated by the Czech Ministry of Industry and Trade, and the [Business Register](https://www.czso.cz/csu/res/business_register) maintained by the Czech Statistical Office.
+The main sources of ARES are the [Public Register](https://or.justice.cz/ias/ui/rejstrik) (PR) run by the Czech Ministry of Justice, the [Trade Licensing Register](http://www.rzp.cz/eng/index.html) (TLR) operated by the Czech Ministry of Industry and Trade, and the [Business Register](https://www.czso.cz/csu/res/business_register) (BR) maintained by the Czech Statistical Office (CSO).
 Consequently, the data ARES provides may not be up-to-date or complete.
 In fact, ARES explicitly renounces any guarantees about the data.
 Its data is not to be treated as legally binding, but instead it serves only an informative purpose.
@@ -21,9 +21,10 @@ The rate-limiting and the prolonged execution thus need to be factored into acco
 
 Since ARES wraps many registers, we narrowed our focus to two registers most relevant to the public procurement: PR and TLR.
 These registers are those that the awarded bidders of public contracts are registered in.
+We used only a subset of BR that links bidders to concepts from the NACE classification.
 A large share of business entities is present in both these registers.
 It is nevertheless useful to obtain data from both registers, since they are complementary.
-For instance, while the PR contains classification of organization activity according to NACE, TLR naturally provides the trade licences entities have registered.
+For instance, while the PR contains classification of organization activity, TLR naturally provides the trade licences entities have registered.
 
 Valid requests to the ARES API must contain a Registered Identification Number (RN) of a business entity.
 This design makes it difficult to obtain a complete copy of the ARES data without a complete list of valid RNs.
@@ -51,3 +52,19 @@ However, we paid special care to postal addresses, since we needed them for geoc
 SPARQL Update operations were employed to clean and structure the addresses.
 The [data transformation](https://github.com/opendatacz/ARES2RDF) was released as open-source.
 Most of the transformation was done by Jakub Klímek from the Charles University in Prague with a contribution of this thesis' author, in particular on the XSL stylesheets and SPARQL Update operations.
+
+The subset of BR containing links to NACE was provided in CSV by Ondřej Kokeš who harvested it from ARES.
+We extracted 873 thousand links to NACE from this subset and converted them to RDF via [*tarql*](http://tarql.github.io), which is a command-line tool for converting tabular data to RDF via SPARQL CONSTRUCT queries.
+Links to NACE were available for 89.5 % of organizations in the Czech public procurement register that were linked to ARES.
+
+The version of NACE that these links use is CZ-NACE, a Czech extension to NACE Rev. 2 that adds specific leaf concepts.
+CZ-NACE is maintained by the CSO,^[<https://www.czso.cz/csu/czso/klasifikace_ekonomickych_cinnosti_cz_nace>]
+which provided us this classification in XML.
+We converted the source data to RDF using a custom Python script.
+
+<!--
+Extends NACE Rev. 2 with leaf concepts
+3209 organizations from the Czech public procurement register that are in ARES are missing links to NACE
+All links to NACE lead to valid codes.
+27359 organizations linked to NACE (30568 total ARES, 37322 total unlinked)
+-->

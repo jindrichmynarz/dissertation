@@ -26,4 +26,5 @@ TODO: Does "collaboration via content" fit our recommender? (M. J. Pazzani, A fr
 
 <!--
 public contracts ~ queries
+Recommender systems do not need explicit queries.
 -->

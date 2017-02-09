@@ -22,9 +22,10 @@ Contract award as an explicit user feedback
 Framework agreements awarded to multiple bidders were excluded from the evaluation dataset.
 
 Split into training and testing dataset.
-n-fold cross-validation
+5-fold cross-validation
 
 Using recall does not make sense, since there is only one positive. Hence, recall would be either 0 or 1.
+<!-- = unary rating -->
 
 Baseline results:
 
