@@ -23,3 +23,7 @@ Browsing-based approaches: navigation of the item space, for example using criti
 <!--
 TODO: Does "collaboration via content" fit our recommender? (M. J. Pazzani, A framework for collaborative, content-based and demographic filtering, Artificial Intelligence Review 13 (1999), no. 5–6, 393–408.)
 -->
+
+<!--
+public contracts ~ queries
+-->

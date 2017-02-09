@@ -5,8 +5,6 @@ The data model's class diagram is shown in the following figure.
 
 ![Class diagram of the Czech public procurement data](img/vvz.png)
 
-<!-- FIXME: Temporary placeholder. -->
-
 The data model of the extracted data departs from PCO in several ways.
 There are ad hoc terms in the `<http://linked.opendata.cz/ontology/isvz.cz/>` namespace to represent dataset-specific features of the Czech public procurement register.
 Some of these terms are intermediate and are subsequently replaced during data transformation.
@@ -41,6 +39,17 @@ This code list links CPV to the Central Product Classification (CPC).^[<http://u
 We also extracted several code lists enumerating the types of contract notices.
 The EU-wide standard types of notices, including the prior information notice or the design contest notice, were published in 2004 and updated in 2014, with a few types removed, such as the public works concession, or added, such as the modification notice.^[<http://simap.ted.europa.eu/standard-forms-for-public-procurement>]
 All code lists were represented in RDF using SKOS.
+
+The diagram of the concrete data model shows the Czech public procurement register data after the steps described in this chapter were applied.
+As is apparent from the cardinalities of many properties, the dataset's quality is hardly optimal.
+Maximum cardinalities of several properties are higher than expected due to several reasons.
+Some entities were merged inadvertently due to their unreliable identifiers.
+For example, there are few public contracts that share the placeholder identifier `1`.
+We adopted several heuristic countermeasures to avoid fusing distinct entities, such as in case of the previous example, but in general we could not ensure the reliability of all identifiers.
+Another cause of high cardinalities is incomplete data fusion due to insufficient information needed to decide on which values to drop and which ones to keep.
+Once the hints for by data fusion, such as the semantics or temporal order of contract notices, were used up, there is no more guidance for preferring particular values.
+When this happens, we can either resort to random sampling or leave the data as is.
+Further improvements in data quality can be made in line with the pay-as-you-go approach if the invested effort is offset by the gains obtained in matchmaking.
 
 <!--
 The temporal nature of the public procurement domain is important because much of the value of this data is transient and decreases as the data ages.

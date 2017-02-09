@@ -45,6 +45,7 @@ Syntax of the extracted output was validated via Apache Jena's `riot`^[<https://
 
 The selected dataset spans Czech public contracts from June 1, 2006 to January 18, 2017.
 This selection amounts to 1.6 GB of raw data in XML and corresponds to 20.5 million extracted RDF triples.
+The dataset contains 186 965 public contracts.
 
 To aid visual validation of the extracted data, we developed [*sparql-to-graphviz*](https://github.com/jindrichmynarz/sparql-to-graphviz) that produces a class diagram representing the empirical schema of the data it is provided with.
 This tool generates a description of the dataset's class diagram in the DOT language, which can be rendered to images via [Graphviz](http://www.graphviz.org), an established visualization software for graph structures.

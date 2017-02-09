@@ -16,6 +16,7 @@ Linked data is a way of structuring data that identifies entities with Internati
 IRIs are universal, thus any entity can be identified with a IRI, and have global scope, therefore IRI can only identify one entity ([Berners-Lee, 1996](#BernersLee1996)).
 
 Resource Description Framework (RDF) is a graph data format for exchanging data on the Web.
+The data model of RDF is a directed labelled graph.
 
 (Argument for RDF, why we chose it)
 RDF makes combining data straightforward.
@@ -37,3 +38,14 @@ The benefits of using linked open data are demonstrated mostly in the data prepa
 Linked open data makes it simpler to combine multiple datasets.
 It also provides a way to define "semantic" features for matchmaking.
 Semantic features can alleviate the problem of "shallow content analysis" that exists in some content-based recommender systems, typically those based on text.
+
+Recommender systems are typically unaware of the semantics of item features.
+
+LOD-based recommender systems
+LOD-enabled Recommender Systems Challenge on Book Recommendation ([Di Noia, Cantador, Ostuni, 2014](#DiNoia2014)).
+
+Benefits of LOD (according to [Di Noia et al., 2016](#DiNoia2016)):
+
+* Availability of free data
+* Since the data is structured, there is no need for structuring it via content analysis. (Although data preparation is definitely necessary.)
+* Data is described in a semantic way
