@@ -1,11 +1,32 @@
 ## Public procurement domain
 
-<!-- Pro-active disclosure of demand data. -->
+Our target domain is public procurement.
+The use case to apply the developed methods focuses on the Czech public procurement.
+
+<!--
+Definitions:
+* What is a public contract?
+* What is public procurement?
+  * "Public procurement is the process for awarding contracts for the purchase of goods and services by the public authorities."
+* What is a contracting authority? A public body issuing a public contract.
+* Who is a bidder?
+-->
+
+A particular feature of public procurement is that it is a domain where interests of public and private sector   meet.
+
+* An interface between public and private sector, different motivations
+
+<!--
+Explicit formulation of demands
+Legal mandate for proactive disclosure
+-->
 
 The domain of public procurement is suitable for matchmaking because, unlike many other domains, demands are made explicit in contract notices.
 In many other domains only supply is explicitly described in advertising, while demand is left implicit.
 Explicit formulation of demand allows us to process it automatically.
 The explicit formulation is required by law to ensure a basic level of transparency and thus minimize corruption risks.
+
+Public contracts constitute a specific case of demand that represents public interest, while the side of supplies is driven by private interests.
 
 Problems of transparency:
 
@@ -41,10 +62,10 @@ Coletta et al. claim that data integration is harder in the context of public se
 Fazekas discusses a similar set of issues of public procurement data from Hungary and highlights missing identifiers, imprecise links, and structural weaknesses ([Fazekas and Tóth, 2012](#Fazekas2012), p. 14).
 A corollary of these issues is that tracking public contracts through the stages of their life-cycle, from their announcement over to completion, is difficult because of the lack of reliable identifiers.
 
-<!-- TODO: Describe where does matchmaking fit in the public procurement process.
-Information phase
-<http://www.sciencedirect.com.ezproxy.techlib.cz/science/article/pii/S0166361513002480#sec0045>
--->
+Matchmaking covers the information phase of market transaction ([Schmid, Lindemann, 1998, p. 194](#Schmid1998)) that corresponds to the preparation and tendering stages in public procurement life-cycle ([Nečaský et al., 2014, p. 865](#Necasky2014)), during which public bodies learn about relevant suppliers and companies learn about relevant open calls.
+
+To frame matchmaking within the process of demand meeting supply, it occurs during the information phase, in which *"participants to the market seek potential partners"* ([Di Noia et al., 2004](#DiNoia2004)).
+In this sense, demands for products and services correspond to information needs and the aim of matchmaking is to retrieve the information that will satisfy them.
 
 Matchmaking in public procurement can be framed in its legal and economic context.
 
@@ -60,15 +81,13 @@ In particular, these documents form the legal basis for proactive disclosure of 
 standard forms for publishing public procurement data
 Tenders Electronic Daily ("Supplement to the Official Journal")^[<http://ted.europa.eu>]
 
-<!-- Although the share of cross-country procurement is minimal. See <http://www.govtransparency.eu/wp-content/uploads/2016/03/Fazekas-Skuhrovec_OECD-Integrity-Forum_draft_160321_towebsite.pdf> -->
-
 ### Economic context
 
 <!-- Economy of scale -->
 
 * Economy of scale: due to the volume of public procurement, even minor improvements can have substantial impact
 The large volume of transactions in this domain gives rise to economies of scale, so that even minuscule improvements of public procurement processes can have a substantial impact.
-As an instance of such improvement, the matchmaking method presented in this paper may potentially increase    the efficiency of resource allocation in the public sector.
+As an instance of such improvement, the matchmaking method presented in this paper may potentially increase the efficiency of resource allocation in the public sector.
 The promises of economic impact are particularly relevant for public procurement where the scale of operations provides ample opportunity for cost savings.
 
 *"The estimate of total general government expenditures on works, goods, and services [...] represented 13.1 % of the EU GDP in 2015, the highest value for the last 4 years"* ([European Commission, 2016](#EuropeanCommission2016)).
@@ -81,24 +100,26 @@ Sources: Public Procurement Indicators 2015, 2014, 2013, 2012 ([European Commiss
 
 <!-- Passive waste -->
 
-Improving the effective allocation of public sector resources in public procurement. (Improving government's decision making)
+Improving the effective allocation of public sector resources in public procurement. (Improving government's decision making) <!-- Link to the previous discussion in the section on open data. -->
 Goal: efficiency - reducing the decision-making effort.
+Automation of parts of the public procurement process
 
 Active waste: entails benefit to public decision maker
 Passive waste: passive waste proceeding from ineffieciencies dominates over active waste
 
 This affects not only the active waste with public resources that is often caused by corruption or clientelism.
-A study of the Italian public sector ([Bandiera, Prat, Valletti, 2009, p. 1282](#Bandiera2009)) observed that 83 \% of inefficient spending in public procurement is due to passive waste that does not entail any benefit for the public decision-maker, and which is caused rather by a lack of skills or incentives.
+A study of the Italian public sector ([Bandiera, Prat, Valletti, 2009, p. 1282](#Bandiera2009)) observed that 83 % of inefficient spending in public procurement is due to passive waste that does not entail any benefit for the public decision-maker, and which is caused rather by a lack of skills or incentives.
 Releasing public procurement data also makes it possible to build applications on the data that assist contracting authorities to avoid passive waste and improve the quality of their decisions.
 
 <!-- Defragmentation of the public procurement market -->
 
 Defragmentation of data on contracting authority profiles
 - Creating a single market across the EU member states
-Automation of parts of the public procurement process
 Better access to public procurement for SMEs, since the market is dominated by large companies, who can afford the friction.
 * Single market for cross-country public procurement: However, the public procurements markets in the EU member states are fragmented.
-* Clientelism, collusion, bid rigging
+* Clientelism, collusion, bid rigging: contributes to fragmentation of the public procurement market
+
+<!-- Although the share of cross-country procurement is minimal. See <http://www.govtransparency.eu/wp-content/uploads/2016/03/Fazekas-Skuhrovec_OECD-Integrity-Forum_draft_160321_towebsite.pdf> -->
 
 B2B context
 

@@ -19,6 +19,8 @@ parts/abstract_czech.md
 parts/introduction.md
 parts/case_based_recommender_systems.md
 parts/linked_open_data.md
+parts/open_data.md
+parts/linked_data.md
 parts/public_procurement_domain.md
 parts/related_work.md
 parts/data_preparation.md
@@ -37,7 +39,15 @@ parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
 parts/matchmaking.md
+parts/case_based_reasoning.md
+parts/sparql.md
+parts/full_text_search.md
+parts/tensor_factorization.md
+parts/factors.md
+parts/further_problems.md
 parts/evaluation.md
+parts/offline_evaluation.md
+parts/online_evaluation.md
 parts/conclusions.md
 parts/references.md
 parts/abbreviations.md

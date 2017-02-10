@@ -1,4 +1,9 @@
+\pagebreak
+\newpage
+
 # Introduction
+
+<!-- Goal: efficiency -->
 
 The goal of this thesis is to increase the efficiency of the market process of demand meeting supply during its information phase.
 In particular, this work focuses on the public procurement market in the Web environment. 
@@ -9,7 +14,7 @@ To get a broader picture about the market one must scan through the relevant yet
 Therefore, *"search and matchmaking between two business parties over the current Web are still very time-consuming if [...] information from multiple sources needs to be combined to assess the relevance or execute the query"* ([Radinger et al., 2013](#Radinger2013)).
 To improve this situation, the broad goal of this thesis is to contribute to defragmentation of online markets by linking the data communicated between them.
 Having links in between datasets on the Web that are traversable by machines may enable to query the distributed markets as a single virtual market.
-Such virtual market may facilitate for supply and demand to meet in a distributed linked open data infrastructure.
+Such virtual market may facilitate supply and demand to meet in a distributed linked open data infrastructure.
 
 A fundamental prerequisite to making this happen is to have the data in question openly available in a machine readable format.
 Open access to the data is needed to remove the information asymmetries between the actors in online marketplaces, which introduce unnecessary friction to the process of supply meeting demand.
@@ -19,13 +24,9 @@ Therefore, it is necessary to make this implicit data explicit by expressing it 
 Structuring data about both demands and offers in a granular fashion is especially crucial for complex multidimensional descriptions that cannot be simply reduced, such as to a single comparable number (e.g., a price tag).
 Having access to structured data enables automated processing and granular descriptions provide a basis for novel functionalities.
 
-Open data can balance information asymmetries between the members of the market caused by fragmentation of data distributed on the Web.
-Better informedness can then lead to better decisions of the market's participants.
-A key step in this direction is better integration of data on the Web.
-
 In the public procurement domain, better information can improve the quality of government's decision making and thus make the allocation of public resources more efficient.
 Matchmaking can help public bodies to find a more suitable supplier, while companies can benefit from finding business opportunities in relevent calls for tenders.
-In effect, the ambition of the developed system is mainly to reduce passive waste with public funds ([Bandiera et al., 2009](#Bandiera2009)), which, unlike active waste, does not benefits the decision-making civil servant, but instead is caused rather by lack of information, skills, and motivation.
+In effect, the ambition of the developed system is mainly to reduce passive waste with public funds ([Bandiera, Prat, Valletti, 2009](#Bandiera2009)), which, unlike active waste, does not benefit the decision-making civil servant, but instead is caused rather by lack of information, skills, and motivation.
 
 Additional goals:
 
@@ -43,9 +44,6 @@ It can leverage both machine learning due to the volume of the data and semantic
 
 A key part of this research are the similarity metrics for multidimensional and heterogeneous data described using RDF.
 
-To frame matchmaking within the process of demand meeting supply, it occurs during the information phase, in which *"participants to the market seek potential partners"* ([Di Noia et al., 2004](#DiNoia2004)).
-In this sense, demands for products and services correspond to information needs and the aim of matchmaking is to retrieve the information that will satisfy them.
-
 <!-- Problem statement -->
 
 General problems:
@@ -55,6 +53,7 @@ General problems:
 
 Specific problems:
 
+* Data integration
 * Feature construction for matchmaking
 * How to engineer matchmaking methods to achieve high accuracy and diversity of recommendations?
 * Can the proposed method achieve accuracy and diversity acceptable by domain experts?
@@ -106,4 +105,4 @@ FIXME Feedback: De-emphasize hypotheses.
 * Combination of semantic and statistical features of data has a synergic effect that can produce better matchmaking results than when only semantic or statistical features are used.
 -->
 
-The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless specified otherwise.
+The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless stated otherwise.

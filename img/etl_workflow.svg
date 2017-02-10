@@ -16,8 +16,8 @@
    inkscape:version="0.48.4 r9943 custom"
    sodipodi:docname="etl_workflow.svg"
    inkscape:export-filename="/Users/mynarzjindrich/Dropbox/Public/dissertation/img/etl_workflow.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-xdpi="180"
+   inkscape:export-ydpi="180">
   <defs
      id="defs3639">
     <marker
@@ -58,7 +58,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.1489107"
      inkscape:cx="398.06307"
-     inkscape:cy="183.15148"
+     inkscape:cy="169.22524"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -75,7 +75,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -84,38 +84,34 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-752.36218)">
-    <g
-       id="g3886"
-       transform="matrix(1.7402626,0,0,1.7402626,-476.40766,-585.86898)">
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.86593753;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         id="rect3021"
-         width="58.784466"
-         height="42.600071"
-         x="683.13477"
-         y="866.70874"
-         transform="matrix(1,0,-0.44260787,0.89671527,0,0)" />
-      <text
-         transform="scale(0.99734864,1.0026584)"
-         xml:space="preserve"
-         style="font-size:7.84986067px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-         x="343.23041"
-         y="786.43695"
-         id="text3251"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           x="343.23041"
-           y="786.43695"
-           id="tspan3255">Czech public</tspan><tspan
-           sodipodi:role="line"
-           x="343.23041"
-           y="796.24927"
-           id="tspan3779">procurement</tspan><tspan
-           id="tspan3785"
-           sodipodi:role="line"
-           x="343.23041"
-           y="806.06158">register</tspan></text>
-    </g>
+    <rect
+       transform="matrix(1,0,-0.44260788,0.89671526,0,0)"
+       y="854.95068"
+       x="423.24832"
+       height="74.135307"
+       width="102.30041"
+       id="rect3021"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ff6600;stroke-width:1.50695872000000008;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3251"
+       y="784.29114"
+       x="119.63689"
+       style="font-size:13.66081905px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       xml:space="preserve"
+       transform="scale(0.99734864,1.0026584)"><tspan
+         id="tspan3255"
+         y="784.29114"
+         x="119.63689"
+         sodipodi:role="line">Czech public</tspan><tspan
+         id="tspan3779"
+         y="801.36719"
+         x="119.63689"
+         sodipodi:role="line">procurement</tspan><tspan
+         y="818.44318"
+         x="119.63689"
+         sodipodi:role="line"
+         id="tspan3785">register</tspan></text>
     <g
        id="g3893"
        transform="matrix(1.7402626,0,0,1.7402626,-471.92609,-568.55237)">
@@ -502,5 +498,29 @@
        d="m 494.31881,930.56325 0,51.52954"
        style="fill:none;stroke:#000000;stroke-width:1.37547231;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
        sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       x="270.35318"
+       y="899.21564"
+       id="text3065"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan3067"
+         style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         sodipodi:role="line"
+         x="270.35318"
+         y="899.21564">RDF</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3069"
+       y="899.21564"
+       x="411.84647"
+       style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       xml:space="preserve"><tspan
+         y="899.21564"
+         x="411.84647"
+         sodipodi:role="line"
+         style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         id="tspan3071">RDF</tspan></text>
   </g>
 </svg>
