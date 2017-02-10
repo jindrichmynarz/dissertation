@@ -20,7 +20,6 @@ parts/introduction.md
 parts/case_based_recommender_systems.md
 parts/linked_open_data.md
 parts/public_procurement_domain.md
-parts/motivation.md
 parts/related_work.md
 parts/data_preparation.md
 parts/modelling.md

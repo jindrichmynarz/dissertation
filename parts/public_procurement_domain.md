@@ -43,6 +43,7 @@ A corollary of these issues is that tracking public contracts through the stages
 
 <!-- TODO: Describe where does matchmaking fit in the public procurement process.
 Information phase
+<http://www.sciencedirect.com.ezproxy.techlib.cz/science/article/pii/S0166361513002480#sec0045>
 -->
 
 Matchmaking in public procurement can be framed in its legal and economic context.
@@ -57,15 +58,18 @@ The aim of the EU's common regulatory framework is to build a single public proc
 
 In particular, these documents form the legal basis for proactive disclosure of public procurement data.
 standard forms for publishing public procurement data
-Tenders Electronic Daily ('Supplement to the Official Journal') ^[<http://ted.europa.eu>]
+Tenders Electronic Daily ("Supplement to the Official Journal")^[<http://ted.europa.eu>]
 
 <!-- Although the share of cross-country procurement is minimal. See <http://www.govtransparency.eu/wp-content/uploads/2016/03/Fazekas-Skuhrovec_OECD-Integrity-Forum_draft_160321_towebsite.pdf> -->
 
 ### Economic context
 
-* Single market for cross-country public procurement: However, the public procurements markets in the EU member states are fragmented.
-* Clientelism, collusion, bid rigging
+<!-- Economy of scale -->
+
 * Economy of scale: due to the volume of public procurement, even minor improvements can have substantial impact
+The large volume of transactions in this domain gives rise to economies of scale, so that even minuscule improvements of public procurement processes can have a substantial impact.
+As an instance of such improvement, the matchmaking method presented in this paper may potentially increase    the efficiency of resource allocation in the public sector.
+The promises of economic impact are particularly relevant for public procurement where the scale of operations provides ample opportunity for cost savings.
 
 *"The estimate of total general government expenditures on works, goods, and services [...] represented 13.1 % of the EU GDP in 2015, the highest value for the last 4 years"* ([European Commission, 2016](#EuropeanCommission2016)).
 
@@ -75,24 +79,55 @@ Estimate of total general government expenditures on works, goods, and services 
 
 Sources: Public Procurement Indicators 2015, 2014, 2013, 2012 ([European Commission, 2016](#EuropeanCommission2016)).
 
+<!-- Passive waste -->
+
+Improving the effective allocation of public sector resources in public procurement. (Improving government's decision making)
+Goal: efficiency - reducing the decision-making effort.
+
+Active waste: entails benefit to public decision maker
+Passive waste: passive waste proceeding from ineffieciencies dominates over active waste
+
+This affects not only the active waste with public resources that is often caused by corruption or clientelism.
+A study of the Italian public sector ([Bandiera, Prat, Valletti, 2009, p. 1282](#Bandiera2009)) observed that 83 \% of inefficient spending in public procurement is due to passive waste that does not entail any benefit for the public decision-maker, and which is caused rather by a lack of skills or incentives.
+Releasing public procurement data also makes it possible to build applications on the data that assist contracting authorities to avoid passive waste and improve the quality of their decisions.
+
+<!-- Defragmentation of the public procurement market -->
+
+Defragmentation of data on contracting authority profiles
+- Creating a single market across the EU member states
+Automation of parts of the public procurement process
+Better access to public procurement for SMEs, since the market is dominated by large companies, who can afford the friction.
+* Single market for cross-country public procurement: However, the public procurements markets in the EU member states are fragmented.
+* Clientelism, collusion, bid rigging
+
 B2B context
 
-Relevance of matchmaking based on procedure types:
+### Use cases for matchmaking
 
-* Open procedures: alerts to relevant bidders may be sent
-<!--
-Also for the first round of restricted procedures.
-To a lesser extent also applicable with other procedure types, such as innovation partnership.
--->
-* Closed procedures: contracting authority may be recommended suitable bidders to approach
-  * A potential issue: A closed procedure is probably chosen when the contracting authority already knows which bidders to invite.
-<!-- In case of simplified under limit procedure, contracting authority can directly approach bidders.
-In that case, at least five bidders must be approached. (<https://www.zakonyprolidi.cz/cs/2016-134#p53>)
--->
+Several use cases for matchmaking follow from the public procurement legislation according to the procedure types chosen for public contracts.
+Public procurement law defines types of procedures that govern how contracting authorities communicate with bidders.
+In particular, procedure types determine what data on public contracts is published, along with specifying who has access to it and when it needs to be made available.
+The main procedure types are either open or restricted.
+Open procedure mandates contracting authorities to disclose data on contracts publicly, so that any bidders can respond with an offer.
+In this case, contracting authorities do not negotiate with bidders and contracts are awarded solely based on the received bids.
+Restricted procedure differs by an extra screening step.
+As in open procedure, contracting authorities announce contracts publicly, but bidders respond with expression of interest instead of bids.
+Contracting authorities then screen the interested bidders and send invitation to tender to the selected bidders.
 
-<!--
-- Contracting authorities are recommended to estimate contract price based on similar contract. This is a use case for similarity-based retrieval.
--->
+The chosen procedure type determines for which users is matchmaking relevant.
+Bidders can use matchmaking both in case of open and restricted procedures to be alerted about current business opportunities in public procurement that are relevant for them.
+Contracting authorities can use matchmaking in restricted procedure to get recommendations of suitable bidders.
+<!-- A potential issue: A restricted procedure is probably chosen when the contracting authority already knows which bidders to invite. -->
+Moreover, in case of the simplified under limit procedure, which is allowed for public contracts below a specified financial threshold, contracting authoritiy can approach bidders directly.
+In such case, at least five bidders must be approached according to the law no. 2016/134. <!-- <https://www.zakonyprolidi.cz/cs/2016-134#p53> -->
+In that scenario, matchmaking can help recommend appropriate bidders to interest in the public contract.
+There are also other procedure types, such as innovation partnership, in which matchmaking is applicable to a lesser extent.
+
+Additionally, a use case for similarity-based retrieval during contract specification.
+The Czech law no. 2016/134 suggests contracting authorities to estimate contract price based on similar contracts. <!-- <https://www.zakonyprolidi.cz/cs/2016-134#f5805154> -->
+In order to address this use case, matchmaking can recommend similar contracts based on the incomplete description of the specified contract.
+
+<!-- Diversity vs. conformity -->
 
 From the perspective of recommendation systems:
 * A strong desire for conformity, not deviating from the defaults, high risk-aversion <!-- TODO: Substantiate this claim. -->
@@ -103,11 +138,18 @@ From the perspective of recommendation systems:
   - On the contrary, matchmaking may intentionally emphasize diversity to offset the desire for conformity.
 * Civil servants are not motivated, so they behave like satisficers, searching for "good enough" solutions.
 
-Public contracts are typically complex demands.
-Complex representation, many latent features, many features unstructured (documentation), or not disclosed
-Matchmaking has to operate on simplified models of public contracts.
+<!-- Complex representation -->
 
-<!--
-Public procurement is an uncommon domain for recommender systems:
-*"experiment designs that evaluate different algorithm variants on historical user ratings derived from the      movie domain form by far the most popular evaluation design and state of practice."* ([Jannach et al., 2010](#Jannach2010), p. 175)
--->
+Public contracts are typically complex demands.
+They may stipulate non-negotiable qualification criteria as well as setting desired qualities in bidders.
+Apart from their complex representation, public contracts have many features unavailable as structured data.
+These features comprise unstructured documentation or undisclosed terms and conditions.
+Matchmaking has to operate on simplified models of public contracts.
+The data model for public contracts we designed is described in the section on [modelling](#modelling).
+
+<!-- Uncommon domain -->
+
+Public procurement is an uncommon domain for recommender systems.
+Recommender systems are conventionally used in domains such as books, movies, or music.
+In fact, the *"experiment designs that evaluate different algorithm variants on historical user ratings derived from the movie domain form by far the most popular evaluation design and state of practice"* ([Jannach et al., 2010](#Jannach2010), p. 175).
+Our use case is thereby a novel application of recommender systems.

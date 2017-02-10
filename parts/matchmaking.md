@@ -118,3 +118,5 @@ Further problems:
 * What repair action can we provide users when faced with empty results of matchmaking?
 
 <!-- TODO: Add a diagram showing the technology stack involved in the matchmaker. -->
+
+<!-- Use an ageing function to discount older contract awards? -->

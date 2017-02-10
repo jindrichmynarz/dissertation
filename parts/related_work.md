@@ -5,3 +5,8 @@ Members of the project implemented a prototypical implementation of matchmaking 
 
 German national project *IntelligentMatch* (2010 — 2012)^[<http://www.intelligent-match.de>] set as its goal to build up technological infrastructure for intelligent matchmaking.
 Among the results of this project is *i-text*, a prototype of matchmaking engine targeted at the textile industry.
+
+<!-- General note at the end of the introcution chapter -->
+
+The abbreviations used throughout the text are collected in [this list](#abbreviations). 
+All vocabulary prefixes used in the text can be resolved to their corresponding namespace IRIs via <http://prefix.cc>.
