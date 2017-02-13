@@ -14,7 +14,10 @@ keywords:
 
 \newpage
 
+# Introduction
+
 ```include
+parts/public_procurement_domain.md
 parts/data_preparation.md
 parts/modelling.md
 parts/public_contracts_ontology.md

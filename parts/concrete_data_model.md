@@ -25,6 +25,7 @@ TODO: Add a (simplified) diagram of public contract lifecycle in terms of public
 -->
 
 We represent contract notices as instances of subclasses of `pproc:Notice` from PPROC, since PCO does not include the concept of a contract notice.
+PCO treats notices as mere artefacts of the document-based communication in public procurement.
 Each notice pertains to a single contract, while a contract may link several notices informing about its life-cycle.
 Notices provide a way to represent temporal dimension of contracts.
 They serve as time-indexed snapshots tracking the evolution of contracts, based on the notice type and timestamp.

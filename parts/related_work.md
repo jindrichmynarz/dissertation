@@ -9,6 +9,16 @@ Among the results of this project is *i-text*, a prototype of matchmaking engine
 * WeightedNIPaths ([Ristoski et al., 2015](#Ristoski2015))
 * Spreading activation ([Heitmann, Hayes, 2014](#Heitmann2014))
 
+<!--
+TODO: (much of related work can be lifted from D9a.1.1)
+- GoodRelations: gr:seeks, demand as ideal gr:Offering <http://wiki.goodrelations-vocabulary.org/Cookbook/Seeks>
+- LOTED
+- LOTED2
+- PPROC
+- MOLDEAS
+- Euroalert
+-->
+
 <!-- General note at the end of the introcution chapter -->
 
 The abbreviations used throughout the text are collected in [this list](#abbreviations). 

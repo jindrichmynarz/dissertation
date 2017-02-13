@@ -53,6 +53,12 @@ ETL
 EU
 ~ European Union
 
+GDP
+~ Gross Domestic Product
+
+GPA
+~ Agreement on Government Procurement
+
 HTML
 ~ Hypertext Markup Language
 
@@ -76,6 +82,9 @@ NDJSON
 
 Non-UNA
 ~ Non-unique name assumption
+
+NUTS
+~ Nomenclature of Territorial Units for Statistics
 
 OWA
 ~ Open world assumption

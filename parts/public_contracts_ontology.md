@@ -4,7 +4,6 @@
 The vocabulary has been developed by the Czech OpenData.cz initiative since 2011, while this thesis' author has been one of its editors.
 Its design is driven by what public procurement data is available, mostly in the Czech Republic and at the EU level. 
 The data-driven approach *"implies that vocabularies should not use conceptualizations that do not match well to common database schemas in their target domains"* ([Mynarz, 2014](#Mynarz2014a)).
-Yet in fact, since the disclosure of public procurement data is mandated by law, PCO can be indirectly considered a legal ontology.
 
 PCO establishes a reusable conceptual vocabulary to provide a consistent way of describing public contracts.
 This aim for reusability corresponds with the established principle of minimal ontological commitment ([Gruber, 1993](#Gruber1993)).
@@ -18,6 +17,8 @@ The design of PCO is described in more detail in Nečaský et al. ([2014](#Necas
 The following class diagram shows the Public Contracts Ontology.
 
 ![Public Contracts Ontology](img/pco.png)
+
+<!-- TODO: Include criticism by LOTED2? ([Distinto, d'Aquin, Motta, 2016](#Distinto2016)) -->
 
 The vocabulary was used to a large extent in the [LOD2 project](http://aksw.org/Projects/LOD2.html).
 For example, it was applied to Czech, British, EU, or Polish public procurement data.

@@ -1,5 +1,17 @@
 ## Offline evaluation
 
+<!--
+### Implementation notes
+
+* Start a new Clojure project `matchmaker-evaluation`.
+* Evaluation accepts input in EDN with matchmaking results.
+* Define a schema of the matchmaking results:
+  * Rank: HR@k, MRR@k
+  * CC@k (catalog coverage)
+* Copy and paste evalution metrics from the original `matchmaker` project.
+* Incanter visualizations
+-->
+
 We conducted offline evaluation using retrospective data about awarded public contracts.
 Matchmaking was tested on the task of the awarded bidder prediction.
 

@@ -61,7 +61,7 @@ For example, we deleted empty contract lots and resources orphaned^[We consider 
 Several transformations were used to clean malformed literals; for example to regularize common abbreviations for organizations types or convert `\/` into `V`.
 We added default values into the data.
 Since the dataset is of Czech origin, we used Czech koruna (CZK) as default value in case currency was missing.
-Addresses without an explicitly stated country were assumed to be located in the Czech Republic.
+Addresses without an explicitly stated country were assumed to be located in Czech Republic.
 Nevertheless, adding default values was a trade-off favouring coverage over accuracy.
 
 We paid particular attention to structuring postal addresses in order to improve the results of the subsequent [geocoding](#geocoding).

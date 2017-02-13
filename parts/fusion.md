@@ -31,6 +31,16 @@ Uncoordinated civil servants are akin to the distributed user base of web applic
 Lack of rules and constraints enforced on user input
 Exchanging data in self-contained documents
 *"the default mode of authoring is copy and edit"* ([Guha, 2013](#Guha2013))
+
+Public procurement data also suffers from shortcomings similar to those of user-generated data.
+The users generating data for the public procurement registers usually comprise many contracting authorities.
+Each authority may produce data digressing from the mandated data standards in a different way.
+Due to the distinct interpretations of the extent of mandatory and discretionary data by contracting authorities, the resulting aggregated dataset may appear to be incomplete.
+Additionally, public procurement data is typically collected from forms filled out by people, who may inadvertently or purposely enter errors into the data they create.
+A shortcoming of public procurement data that becomes apparent in data integration is the lack of global, agreed-upon and well-maintained identifier schemes for values of attributes of public contracts; such as the award criteria employed in the course of selecting the winning bid for a contract.
+Coletta et al. claim that data integration is harder in the context of public sector data because important metadata is often missing ([2012](#Coletta2012)).
+Fazekas discusses a similar set of issues of public procurement data from Hungary and highlights missing identifiers, imprecise links, and structural weaknesses ([Fazekas and Tóth, 2012](#Fazekas2012), p. 14).
+A corollary of these issues is that tracking public contracts through the stages of their life-cycle, from their announcement over to completion, is difficult because of the lack of reliable identifiers.
 -->
 
 In order to simplify resolution of identity conflicts, we adopted a conventional directionality of the `owl:sameAs` links from a non-preferred IRI to the preferred IRI.

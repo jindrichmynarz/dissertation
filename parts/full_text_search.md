@@ -1,5 +1,18 @@
 ## Full-text search
 
+<!--
+### Implementation notes
+
+* Start a new Clojure project `matchmaker-elasticsearch`.
+* Only command-line interface (~ minimum viable product)
+* Copy and paste code from the previous matchmaker.
+* Custom benchmark manipulating data in the Elasticsearch endpoint.
+* Matchmaker is provided as a component (e.g., mount) 
+* Elasticsearch interactions are done via the `elastisch` library.
+* Extensive configuration in EDN.
+* Produces results in EDN.
+-->
+
 The use of full-text search engines was motivated by the substantial share of textual data in public procurement data.
 For example, the temporal or the spatial dimensions of public contracts is described by literals in dates and postal addresses.
 Analysis of literals in SPARQL is limited and inefficient without the use of additional full-text indices.

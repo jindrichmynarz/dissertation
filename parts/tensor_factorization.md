@@ -1,5 +1,13 @@
 ## Tensor factorization
 
+<!--
+### Implementation notes:
+
+* Start a new Python project `matchmaker-rescal`.
+* Only command-line interface (~ minimum viable product)
+* Produce results in EDN (<https://github.com/swaroopch/edn_format>).
+-->
+
 Web of Needs
 
 <!--

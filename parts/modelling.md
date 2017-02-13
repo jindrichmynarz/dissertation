@@ -22,4 +22,3 @@ For the sake of better integration with other data, we established IRIs as persi
 Thanks to the schema-less nature of RDF, shared identifiers allowed us to merge datasets automatically.
 
 The extracted public procurement data was described using a mixture of RDF vocabularies, out of which the Public Contracts Ontology was the most prominent.
-
