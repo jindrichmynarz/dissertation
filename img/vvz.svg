@@ -12,9 +12,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1650"
-   height="1700"
-   viewBox="0 0 1320 1360"
+   width="1350"
+   height="1650"
+   viewBox="0 0 1080 1320"
    id="svg2985"
    version="1.1"
    inkscape:version="0.48.4 r9943 custom"
@@ -30,7 +30,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -49,18 +49,18 @@
      inkscape:window-height="751"
      id="namedview3995"
      showgrid="false"
-     inkscape:zoom="0.32585545"
-     inkscape:cx="752.77069"
-     inkscape:cy="948.52666"
+     inkscape:zoom="0.3365368"
+     inkscape:cx="293.26028"
+     inkscape:cy="906.18836"
      inkscape:window-x="0"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2985" />
   <g
-     id="g4765"
-     transform="translate(28.473597,161.4777)">
+     id="g3534"
+     transform="translate(6.6184177,50.760373)">
     <g
-       transform="translate(-1640.6035,1467.7056)"
+       transform="translate(-1612.1299,1629.1833)"
        id="node1"
        class="node">
       <title
@@ -105,7 +105,7 @@
          style="fill:none;stroke:#000000" />
     </g>
     <g
-       transform="translate(-15.60349,1441.2649)"
+       transform="translate(12.870107,1602.7426)"
        id="node2"
        class="node">
       <title
@@ -189,10 +189,10 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3045"
        font-size="10.00"
-       y="655.72052"
-       x="666.85895">adms:identifier (1..3)</text>
+       y="817.19824"
+       x="695.33252">adms:identifier (1..3)</text>
     <g
-       transform="translate(-579.60349,1404.5807)"
+       transform="translate(-551.12989,1566.0584)"
        id="node4"
        class="node">
       <title
@@ -261,7 +261,7 @@
          style="fill:none;stroke:#000000" />
     </g>
     <g
-       transform="translate(0,-312)"
+       transform="translate(28.473597,-150.5223)"
        id="g4617">
       <path
          d="m 705.98416,818.31962 c 0,-53.68757 0.6603,-45.10124 0.6603,-84.23968"
@@ -276,7 +276,7 @@
          transform="matrix(0.3200017,-0.94741698,0.94741698,0.3200017,1286.5102,2123.184)" />
     </g>
     <g
-       transform="translate(21.41499,-329.19105)"
+       transform="translate(49.888587,-167.71335)"
        id="g4601">
       <text
          x="692.5766"
@@ -304,7 +304,7 @@
          style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:subcontractingPrice (1..6)</text>
     </g>
     <g
-       transform="translate(-438.60349,1525.7056)"
+       transform="translate(-410.12989,1687.1833)"
        id="node11"
        class="node">
       <title
@@ -334,10 +334,10 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3105"
        font-size="10.00"
-       y="655.72052"
-       x="864.146">:awardedTender (1..57)</text>
+       y="817.19824"
+       x="892.61957">:awardedTender (1..57)</text>
     <g
-       transform="translate(4,1596)"
+       transform="translate(32.473597,1757.4777)"
        id="node3"
        class="node">
       <title
@@ -433,28 +433,28 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3147"
        font-size="10.00"
-       y="657.96454"
-       x="427.20709">adms:identifier (1..89)</text>
+       y="819.44226"
+       x="455.68069">adms:identifier (1..89)</text>
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
        id="path3152"
-       d="m 306.61967,231.11 c 2.14948,171.55167 106.24448,332.76243 242.30147,334.48282" />
+       d="m 335.09327,392.5877 c 2.14948,171.55167 106.24448,332.76243 242.30147,334.48282" />
     <text
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3156"
        font-size="10.00"
-       y="485.64569"
-       x="404.71356">:lot (1..475)</text>
+       y="647.12341"
+       x="433.18716">:lot (1..475)</text>
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
        id="path3161"
-       d="m 343.81069,205.35014 c 106.33315,0 104.20403,133.79877 205.40501,133.79877" />
+       d="m 372.28429,366.82784 c 106.33315,0 104.20403,133.79877 205.40501,133.79877" />
     <g
-       transform="translate(-271.71004,-39.61887)"
+       transform="translate(-243.23644,121.85883)"
        id="g4577">
       <text
          x="639"
@@ -482,7 +482,7 @@
          style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:highestConsideredBidPrice (0..2)</text>
     </g>
     <g
-       transform="translate(-415.59843,1349.0027)"
+       transform="translate(-484.44723,1367.1511)"
        id="node5"
        class="node">
       <title
@@ -500,11 +500,11 @@
          id="text3178"
          style="font-size:14px;text-anchor:start;font-family:Monaco" />
       <polygon
-         points="687,-525 799,-525 799,-525 687,-525 687,-525 "
+         points="799,-525 799,-525 687,-525 687,-525 687,-525 "
          id="polygon3180"
          style="fill:#000000;stroke:#000000" />
       <polygon
-         points="687,-551 799,-551 799,-499 687,-499 687,-499 "
+         points="799,-551 799,-499 687,-499 687,-499 687,-551 "
          id="polygon3182"
          style="fill:none;stroke:#000000" />
     </g>
@@ -513,66 +513,21 @@
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
        id="path3187"
-       d="m 232.069,231.07 c 0.57346,239.15464 97.71923,373.65836 95.62208,555.1137" />
+       d="m 260.5426,392.5477 c 0,248.15564 -1.99782,175.17208 -1.99782,411.9796" />
     <text
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3191"
        font-size="10.00"
-       y="511.64868"
-       x="187.92336">:location (0..11)</text>
-    <g
-       transform="translate(-1222.3734,1597.4359)"
-       id="node8"
-       class="node">
-      <title
-         id="title3194">k8370eab1ae99cceb00c302a4073ebcbb5dfc42a7</title>
-      <text
-         x="2251.5901"
-         y="-1608.8"
-         font-size="14.00"
-         id="text3196"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">skos:Concept</text>
-      <text
-         x="2202.99"
-         y="-1588"
-         font-size="10.00"
-         id="text3198"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">skos:prefLabel</text>
-      <text
-         x="2298.98"
-         y="-1588"
-         font-size="10.00"
-         id="text3200"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..1)</text>
-      <text
-         x="2203"
-         y="-1569"
-         font-size="10.00"
-         id="text3202"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">skos:notation</text>
-      <text
-         x="2292.99"
-         y="-1569"
-         font-size="10.00"
-         id="text3204"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..22)</text>
-      <polygon
-         points="2406,-1599 2406,-1599 2198,-1599 2198,-1599 2198,-1599 "
-         id="polygon3206"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="2406,-1625 2406,-1559 2198,-1559 2198,-1559 2198,-1625 "
-         id="polygon3208"
-         style="fill:none;stroke:#000000" />
-    </g>
+       y="601.67712"
+       x="172.4196">:location (0..11)</text>
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
        id="path3213"
-       d="m 194.498,88.72 c 5.3218,-263.27905 801.70342,-283.16621 803.44574,-127.99974" />
+       d="m 222.9716,250.1977 c 0,-203.208268 193.04759,-199.428109 354.81013,-199.428109" />
     <g
-       transform="translate(-855.04907,-84.98333)"
+       transform="translate(-876.5025,70.120707)"
        id="g4721">
       <text
          x="1224"
@@ -606,7 +561,7 @@
          style="font-size:10px;text-anchor:start;font-family:Monaco">:additionalObject (1..10)</text>
     </g>
     <g
-       transform="translate(-1175.6035,1410.0027)"
+       transform="translate(-1147.1299,1571.4804)"
        id="node10"
        class="node">
       <title
@@ -654,10 +609,10 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3251"
        font-size="10.00"
-       y="760.76978"
-       x="406.67508">:contractingAuthority (0..2)</text>
+       y="922.2475"
+       x="435.14868">:contractingAuthority (0..2)</text>
     <g
-       transform="translate(-71.603491,1526)"
+       transform="translate(-43.129894,1687.4777)"
        id="node12"
        class="node">
       <title
@@ -684,7 +639,7 @@
          style="fill:none;stroke:#000000" />
     </g>
     <g
-       transform="translate(0,-312)"
+       transform="translate(28.473597,-150.5223)"
        id="g4694">
       <path
          d="m 344.105,427.54 c 174.99641,0 128.86759,-0.62463 204.91962,-0.62463"
@@ -702,10 +657,10 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3271"
        font-size="10.00"
-       y="110.1619"
-       x="368.67725">:awardCriteriaCombination (0..2)</text>
+       y="271.63962"
+       x="397.15085">:awardCriteriaCombination (0..2)</text>
     <g
-       transform="translate(-96.603491,1522.5162)"
+       transform="translate(-68.129894,1683.9939)"
        id="node13"
        class="node">
       <title
@@ -741,10 +696,10 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3293"
        font-size="10.00"
-       y="166.70322"
-       x="415.26904">:subsidy (0..4)</text>
+       y="328.18091"
+       x="443.74265">:subsidy (0..4)</text>
     <g
-       transform="translate(-70.603491,-388.17228)"
+       transform="translate(-42.129894,-226.69458)"
        id="g4547">
       <text
          x="702.24854"
@@ -792,9 +747,9 @@
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
        id="path3315"
-       d="m 344.168,182.91 c 110.23275,0 104.10363,67.16731 204.82537,67.16731" />
+       d="m 372.6416,344.3877 c 110.23275,0 104.10363,67.16731 204.82537,67.16731" />
     <polygon
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,440.35626,1670.5872)"
+       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,1832.0649)"
        style="fill:#000000;stroke:#000000"
        id="polygon3317"
        points="617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 " />
@@ -802,10 +757,10 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3319"
        font-size="10.00"
-       y="216.85278"
-       x="455.28979">ns0:notice (1..19)</text>
+       y="378.33047"
+       x="483.7634">ns0:notice (1..19)</text>
     <g
-       transform="translate(-1601.6035,1376.4164)"
+       transform="translate(-1573.1299,1537.8941)"
        id="node7"
        class="node">
       <title
@@ -925,20 +880,65 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3447"
        font-size="10.00"
-       y="963.0636"
-       x="376.51184">schema:address (0..1)</text>
+       y="1050.5314"
+       x="452.7619">schema:address (0..1)</text>
+    <g
+       transform="translate(-1609.1299,1642.8029)"
+       id="node8"
+       class="node">
+      <title
+         id="title3194">k8370eab1ae99cceb00c302a4073ebcbb5dfc42a7</title>
+      <text
+         x="2251.5901"
+         y="-1608.8"
+         font-size="14.00"
+         id="text3196"
+         style="font-size:14px;text-anchor:start;font-family:Monaco">skos:Concept</text>
+      <text
+         x="2202.99"
+         y="-1588"
+         font-size="10.00"
+         id="text3198"
+         style="font-size:10px;text-anchor:start;font-family:Monaco">skos:prefLabel</text>
+      <text
+         x="2298.98"
+         y="-1588"
+         font-size="10.00"
+         id="text3200"
+         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..1)</text>
+      <text
+         x="2203"
+         y="-1569"
+         font-size="10.00"
+         id="text3202"
+         style="font-size:10px;text-anchor:start;font-family:Monaco">skos:notation</text>
+      <text
+         x="2292.99"
+         y="-1569"
+         font-size="10.00"
+         id="text3204"
+         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..22)</text>
+      <polygon
+         points="2406,-1599 2406,-1599 2198,-1599 2198,-1599 2198,-1599 "
+         id="polygon3206"
+         style="fill:#000000;stroke:#000000" />
+      <polygon
+         points="2406,-1625 2406,-1559 2198,-1559 2198,-1559 2198,-1625 "
+         id="polygon3208"
+         style="fill:none;stroke:#000000" />
+    </g>
     <path
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
        id="path3607"
-       d="m 1034.3466,-29.35 c 1.36,-9.93 16.45,-17.65 45.28,-17.65 19.82,0 33.15,3.65 39.98,9.16" />
+       d="m 647.59011,16.01703 c 1.36,-9.93 16.45,-17.65 45.28,-17.65 19.82,0 33.15,3.65 39.98,9.16" />
     <polygon
-       transform="translate(-1222.3734,1596)"
+       transform="translate(-1609.1299,1641.367)"
        style="fill:#000000;stroke:#000000"
        id="polygon3609"
-       points="2341.99,-1633.84 2341.99,-1633.84 2341.99,-1633.84 2344.63,-1629.6 2338.17,-1631.46 2347.28,-1625.35 2347.28,-1625.35 2347.28,-1625.35 2345.8,-1636.22 2344.63,-1629.6 " />
+       points="2347.28,-1625.35 2347.28,-1625.35 2347.28,-1625.35 2345.8,-1636.22 2344.63,-1629.6 2341.99,-1633.84 2341.99,-1633.84 2341.99,-1633.84 2344.63,-1629.6 2338.17,-1631.46 " />
     <g
-       transform="translate(27.875604,-312.68422)"
+       transform="translate(-358.88089,-267.31719)"
        id="g4710">
       <text
          x="1013.6166"
@@ -954,7 +954,7 @@
          style="font-size:10px;text-anchor:start;font-family:Monaco">skos:related (0..2)</text>
     </g>
     <g
-       transform="translate(-913.60349,1573.4359)"
+       transform="translate(-885.12989,1734.9136)"
        id="node9"
        class="node">
       <title
@@ -1002,28 +1002,28 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3639"
        font-size="10.00"
-       y="-2.2389832"
-       x="827.8894">:weightedCriterion (0..1)</text>
+       y="111.29253"
+       x="704.21014">:weightedCriterion (0..1)</text>
     <text
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3648"
        font-size="10.00"
-       y="775.16638"
-       x="666.55133">regorg:registration (0..29)</text>
+       y="936.6441"
+       x="695.0249">regorg:registration (0..29)</text>
     <text
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3657"
        font-size="10.00"
-       y="889.05371"
-       x="666.91754">schema:address (0..17)</text>
+       y="1050.5314"
+       x="695.39111">schema:address (0..17)</text>
     <path
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
        id="path3662"
-       d="M 780.55349,849.985 C 1152.7961,858.1305 997.22451,247.32251 997.22451,50.96312"
+       d="M 809.02709,1011.4627 C 1221.7449,1010.3326 1022.6019,50.702512 808.42047,50.81663"
        sodipodi:nodetypes="cc" />
     <g
-       transform="translate(-1101.733,-412.54553)"
+       transform="translate(-1202.8572,-313.74218)"
        id="g4734">
       <text
          x="1997"
@@ -1042,16 +1042,16 @@
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3677"
        font-size="10.00"
-       y="775.16638"
-       x="862.57233">:bidder (0..12)</text>
+       y="936.6441"
+       x="891.0459">:bidder (0..12)</text>
     <text
        style="font-size:10px;text-anchor:start;font-family:Monaco"
        id="text3686"
        font-size="10.00"
-       y="69.766968"
-       x="675.73657">:awardCriterion (1..10)</text>
+       y="231.24467"
+       x="704.21014">:awardCriterion (1..10)</text>
     <g
-       transform="translate(-1583.5893,1174.2581)"
+       transform="translate(-2442.7429,1255.8941)"
        id="node22"
        class="node">
       <title
@@ -1243,16 +1243,16 @@
          id="text3989"
          style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/2001/XMLSchema#</text>
       <polygon
-         points="2460,-287 2848,-287 2848,-287 2460,-287 2460,-287 "
+         points="2848,-287 2848,-287 2460,-287 2460,-287 2460,-287 "
          id="polygon3991"
          style="fill:#000000;stroke:#000000" />
       <polygon
-         points="2460,-314 2848,-314 2848,0 2460,0 2460,0 "
+         points="2848,-314 2848,0 2460,0 2460,0 2460,-314 "
          id="polygon3993"
          style="fill:none;stroke:#000000" />
     </g>
     <path
-       d="m 344.105,172.44518 c 174.99641,0 128.86759,-0.62463 204.91962,-0.62463"
+       d="m 372.5786,333.92288 c 174.99641,0 128.86759,-0.62463 204.91962,-0.62463"
        id="path4589"
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#000000"
@@ -1261,19 +1261,19 @@
        points="623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 "
        id="polygon4591"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,409.38523,1722.47)" />
+       transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,437.85883,1883.9477)" />
     <polygon
        points="622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 "
        id="polygon4593"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,440.35626,1759.4736)" />
+       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,1920.9513)" />
     <polygon
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,440.35626,1985.9047)"
+       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,2147.3824)"
        style="fill:#000000;stroke:#000000"
        id="polygon4609"
        points="615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 " />
     <g
-       transform="translate(0,-312)"
+       transform="translate(28.473597,-150.5223)"
        id="g4745">
       <path
          sodipodi:nodetypes="cc"
@@ -1288,12 +1288,12 @@
          points="1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 " />
     </g>
     <polygon
-       transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,907.5068,-602.8463)"
+       transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,838.44247,-584.62647)"
        style="fill:#000000;stroke:#000000"
        id="polygon4740"
-       points="1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 " />
+       points="1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 " />
     <path
-       d="m 306.61967,231.11 c 2.14948,171.55167 18.15231,475.6569 242.30147,478.4911"
+       d="m 335.09327,392.5877 c 2.14948,171.55167 18.15231,475.6569 242.30147,478.4911"
        id="path4636"
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#000000"
@@ -1302,10 +1302,10 @@
        points="626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 "
        id="polygon4638"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,440.35626,2129.8387)" />
+       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,2291.3164)" />
     <g
        id="g4647"
-       transform="matrix(1,0,0,-1,-45.224002,1786.1719)">
+       transform="matrix(1,0,0,-1,-16.750405,1947.6496)">
       <path
          d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
          id="path4649"
@@ -1323,15 +1323,15 @@
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
        id="path4656"
-       d="m 306.61967,231.11 c 2.14948,171.55167 -35.26161,595.1475 242.30147,598.6571" />
+       d="m 335.09327,392.5877 c 2.14948,171.55167 -35.26161,595.1475 242.30147,598.6571" />
     <polygon
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,440.35626,2250.2098)"
+       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,2411.6875)"
        style="fill:#000000;stroke:#000000"
        id="polygon4658"
        points="626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 " />
     <g
        id="g4660"
-       transform="translate(152.77601,-358.40268)">
+       transform="translate(181.24961,-196.92498)">
       <path
          d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
          id="path4662"
@@ -1345,7 +1345,7 @@
          transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)" />
     </g>
     <path
-       d="m 860.39824,732.1034 c 0,81.8258 -24.23342,97.6637 -70.31863,97.6637"
+       d="m 888.87184,893.5811 c 0,81.8258 -24.23342,97.6637 -70.31863,97.6637"
        id="path4669"
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#000000"
@@ -1354,9 +1354,9 @@
        points="617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 "
        id="polygon4671"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(-0.93159382,-0.36350097,-0.36350097,0.93159382,900.75026,2250.2098)" />
+       transform="matrix(-0.93159382,-0.36350097,-0.36350097,0.93159382,929.22386,2411.6875)" />
     <g
-       transform="matrix(1,0,0,-1,-35.223993,1077.4575)"
+       transform="matrix(1,0,0,-1,-6.750396,1238.9352)"
        id="g4673">
       <path
          sodipodi:nodetypes="cc"
@@ -1370,29 +1370,18 @@
          id="polygon4677"
          points="1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 " />
     </g>
-    <path
-       d="m 804.60417,6.09286 c 174.9964,0 82.98436,-0.62463 159.0364,-0.62463"
-       id="path4700"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000"
-       sodipodi:nodetypes="cc" />
     <polygon
-       points="631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 "
-       id="polygon4702"
-       style="fill:#000000;stroke:#000000"
-       transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,824.00117,1556.1177)" />
-    <polygon
-       transform="matrix(0.31594088,0.94877887,-0.94877887,0.31594088,-552.8812,-178.93691)"
+       transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,438.14549,1601.4847)"
        style="fill:#000000;stroke:#000000"
        id="polygon4728"
-       points="623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 " />
+       points="622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 " />
     <polygon
-       points="622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 "
+       points="631.794,-1424.1 631.794,-1424.1 623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 "
        id="polygon4738"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(0.31594088,-0.94877887,-0.94877887,-0.31594088,-552.8812,189.97545)" />
+       transform="matrix(-0.94877887,-0.31594088,-0.31594088,0.94877887,948.16868,1601.4847)" />
     <g
-       transform="translate(0,-78.86284)"
+       transform="translate(28.473597,82.61486)"
        id="g4749">
       <path
          d="m 661.96023,942.20971 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
@@ -1407,7 +1396,7 @@
          transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1241.2862,-407.85728)" />
     </g>
     <path
-       d="m 326.89966,850.3837 c 0,109.5695 47.53655,165.1577 224.33919,167.3933"
+       d="m 314.87653,845.94711 c 144.2141,-4.56313 88.03328,331.07199 264.83592,333.30759"
        id="path4761"
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#000000"
@@ -1416,6 +1405,21 @@
        points="619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 "
        id="polygon4763"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,440.35626,2437.9445)" />
+       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,2599.4222)" />
+    <g
+       id="g3514"
+       transform="matrix(1,0,0,-1,-6.750396,1122.8245)">
+      <path
+         d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
+         id="path3516"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000"
+         sodipodi:nodetypes="cc" />
+      <polygon
+         points="1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 "
+         id="polygon3518"
+         style="fill:#000000;stroke:#000000"
+         transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)" />
+    </g>
   </g>
 </svg>
