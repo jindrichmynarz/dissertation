@@ -1,9 +1,9 @@
 ### Concrete data model
 
 The concrete data model of the Czech public procurement data uses the PCO mixed with terms cherry-picked from other linked open vocabularies, such as Public Procurement Ontology (PPROC) ([Muñoz-Soro et al., 2016a](#MunozSoro2016a)), which directly builds upon PCO.
-The data model's class diagram is shown in the following figure.
+The data model's class diagram is shown in [@fig:vvz].
 
-![Class diagram of the Czech public procurement data](img/vvz.png)
+![Class diagram of the Czech public procurement data](img/vvz.png){#fig:vvz}
 
 The data model of the extracted data departs from PCO in several ways.
 There are ad hoc terms in the `<http://linked.opendata.cz/ontology/isvz.cz/>` namespace to represent dataset-specific features of the Czech public procurement register.

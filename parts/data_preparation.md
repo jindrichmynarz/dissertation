@@ -3,10 +3,6 @@
 
 # Data preparation
 
-<!--
-80/20 rule: <https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html>
--->
-
 A fundamental part of the hereby presented work is preparation of the Czech public procurement dataset enriched with linked data.
 The prepared dataset was used to evaluate the case-based recommender system we built as our main contribution. 
 It served as a use case for applied research in the public procurement domain to explore whether the proposed recommender system can provide useful recommendations in a real-world setting.
@@ -28,9 +24,9 @@ Linking discovers co-referent identities, while fusion resolves them to the pref
 Linking and fusion are interleaved and executed iteratively, each building on the results of the previous step.
 Loading is concerned with making the data available in a way that the matchmaking methods can operate efficiently.
 The adopted ETL workflow evolved from the workflow that was described in Mynarz ([2014c](#Mynarz2014c)).
-The following figure summarizes the overall workflow.
+The [@fig:etl] summarizes the overall workflow.
 
-![ETL workflow](img/etl_workflow.png)
+![ETL workflow](img/etl_workflow.png){#fig:etl}
 
 We employed materialized data integration.
 Unlike virtual integration, materialized integration persists the integrated data.
@@ -99,3 +95,6 @@ The source code used for data preparation is openly available in [this repositor
 This allows others to replicate and scrutinize the way we prepared data.
 The data preparation tasks were implemented via declarative programming using XSLT, SPARQL Update operations, and XML specifications of linkage rules.
 The high-level nature of declarative programming made the implementation concise and helped us to avoid bugs by abstracting from lower-level data manipulation.
+The work on data preparation started already in 2011, which may explain diverse choices of the employed tools.
+Throughout the data preparation, as more suitable and mature tools appeared, we adopted them.
+A reference for the involved software is provided in the [Appendix A](#appendix-a).

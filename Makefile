@@ -6,6 +6,7 @@ html:
 		-s \
 		-o text.html \
 		--filter pandoc-include \
+		--filter pandoc-crossref \
 		--template template.html \
 		text.md
 
@@ -17,6 +18,7 @@ pdf:
 		-s \
 		-o text.pdf \
 		--filter pandoc-include \
+		--filter pandoc-crossref \
 		--variable urlcolor=blue \
 		text.md
 
@@ -28,6 +30,7 @@ excerpt:
 		-s \
 		-o excerpt.pdf \
 		--filter pandoc-include \
+		--filter pandoc-crossref \
 		--variable urlcolor=blue \
 		excerpt.md
 

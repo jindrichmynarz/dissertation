@@ -1,4 +1,4 @@
-## Case-based recommender systems
+### Case-based recommendation
 
 Cold start problem of case-based recommenders
 

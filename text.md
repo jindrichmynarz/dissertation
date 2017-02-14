@@ -1,5 +1,5 @@
 ---
-title: Case-based recommender using linked open data for matching bidders to public contracts
+title: Matchmaking of bidders and public contracts using linked open data
 author: Jindřich Mynarz
 institute: Department of Information and Knowledge Engineering, University of Economics
 date: 2017
@@ -17,7 +17,9 @@ parts/acknowledgements.md
 parts/abstract_english.md
 parts/abstract_czech.md
 parts/introduction.md
-parts/case_based_recommender_systems.md
+parts/matchmaking.md
+parts/case_based_recommendation.md
+parts/link_prediction.md
 parts/linked_open_data.md
 parts/open_data.md
 parts/linked_data.md
@@ -51,4 +53,5 @@ parts/online_evaluation.md
 parts/conclusions.md
 parts/references.md
 parts/abbreviations.md
+parts/software.md
 ```

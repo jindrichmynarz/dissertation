@@ -56,9 +56,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1489107"
-     inkscape:cx="398.06307"
-     inkscape:cy="169.22524"
+     inkscape:zoom="1.5071634"
+     inkscape:cx="407.67583"
+     inkscape:cy="60.093322"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -75,7 +75,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -181,29 +181,25 @@
            x="447.68375"
            y="853.04517">Linking</tspan></text>
     </g>
-    <g
-       id="g3918"
-       transform="matrix(1.7402626,0,0,1.7402626,-471.92614,-576.26724)">
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.82039648;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         id="rect3828"
-         width="50.275063"
-         height="24.783039"
-         x="530.07794"
-         y="841.20667" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text3830"
-         y="856.31506"
-         x="541.0246"
-         style="font-size:7.50398731px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-         xml:space="preserve"><tspan
-           y="856.31506"
-           x="541.0246"
-           sodipodi:role="line"
-           style="font-size:7.50398731px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-           id="tspan3832">Loading</tspan></text>
-    </g>
+    <rect
+       y="887.65326"
+       x="450.54868"
+       height="43.128998"
+       width="87.491814"
+       id="rect3828"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.42770529;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       xml:space="preserve"
+       style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       x="469.59872"
+       y="913.94586"
+       id="text3830"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan3832"
+         style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         sodipodi:role="line"
+         x="469.59872"
+         y="913.94586">Loading</tspan></text>
     <g
        id="g3880"
        transform="matrix(0.95180351,0,0,0.95180351,-136.10924,417.80245)">
@@ -339,18 +335,18 @@
     <path
        inkscape:connector-curvature="0"
        id="path4005"
-       d="m 116.78391,909.24199 51.52955,0"
+       d="M 116.78391,909.24199 183.98047,832.6477"
        style="fill:none;stroke:#000000;stroke-width:1.37547231;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
        sodipodi:nodetypes="cc" />
     <text
        sodipodi:linespacing="125%"
        id="text4061"
-       y="899.21564"
-       x="129.37764"
+       y="868.16986"
+       x="121.54414"
        style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        xml:space="preserve"><tspan
-         y="899.21564"
-         x="129.37764"
+         y="868.16986"
+         x="121.54414"
          sodipodi:role="line"
          style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
          id="tspan4063">RDF</tspan></text>
@@ -369,24 +365,24 @@
     <text
        xml:space="preserve"
        style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-       x="463.72931"
+       x="499.41528"
        y="868.16986"
        id="text4849"
        sodipodi:linespacing="125%"><tspan
          id="tspan4851"
          style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
          sodipodi:role="line"
-         x="463.72931"
+         x="499.41528"
          y="868.16986">RDF</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4853"
        y="954.60315"
-       x="437.40741"
+       x="499.20508"
        style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        xml:space="preserve"><tspan
          y="954.60315"
-         x="437.40741"
+         x="499.20508"
          sodipodi:role="line"
          style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
          id="tspan4855">JSON-LD</tspan></text>
@@ -522,5 +518,120 @@
          sodipodi:role="line"
          style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
          id="tspan3071">RDF</tspan></text>
+    <g
+       transform="matrix(0.95180351,0,0,0.95180351,-417.22352,417.80245)"
+       id="g3069">
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+         d="m 616.02676,427.09827 0,-35.6792 92.59765,0 0,35.6792"
+         id="path3071"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+      <path
+         sodipodi:type="arc"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.81675959;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="path3073"
+         sodipodi:cx="1032.1428"
+         sodipodi:cy="385.93362"
+         sodipodi:rx="140.71428"
+         sodipodi:ry="32.142857"
+         d="m 1172.8571,385.93362 c 0,17.75201 -62.9999,32.14286 -140.7143,32.14286 -77.71433,0 -140.71426,-14.39085 -140.71426,-32.14286 0,-17.75201 62.99993,-32.14285 140.71426,-32.14285 77.7144,0 140.7143,14.39084 140.7143,32.14285 z"
+         transform="matrix(0.3286816,0,0,0.29505105,323.07923,275.80085)" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+         d="m 708.57578,427.173 c 0,5.23775 -20.70691,9.48378 -46.2502,9.48378 -25.54328,0 -46.25019,-4.24603 -46.25019,-9.48378"
+         id="path3075"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="csc" />
+      <path
+         sodipodi:nodetypes="csc"
+         inkscape:connector-curvature="0"
+         id="path3077"
+         d="m 708.57579,396.08697 c 0,5.23776 -20.70692,9.48379 -46.25023,9.48379 -25.54326,0 -46.25018,-4.24603 -46.25018,-9.48379"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3079"
+         style="font-size:14.45122051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         xml:space="preserve"
+         y="423.01697"
+         x="661.99042"><tspan
+           id="tspan3081"
+           y="423.01697"
+           x="661.99042"
+           sodipodi:role="line">RDF store</tspan></text>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3083"
+       y="868.16986"
+       x="222.63136"
+       style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       xml:space="preserve"><tspan
+         y="868.16986"
+         x="222.63136"
+         sodipodi:role="line"
+         style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         id="tspan3085">RDF</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path3087"
+       d="m 213.20453,834.35086 0,51.52954"
+       style="fill:none;stroke:#000000;stroke-width:1.37547231;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1.37547231;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="m 494.37432,930.44306 -71.84105,76.59424"
+       id="path3089"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g3892"
+       transform="translate(0,4.2698985)">
+      <g
+         id="g3886">
+        <path
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.42999995;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+           d="m 368.71796,971.67883 38.42104,0 14.45982,14.74823 0,55.75964 -52.88086,0 z"
+           id="rect3091"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccc" />
+        <text
+           xml:space="preserve"
+           style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+           x="373.86627"
+           y="1003.3683"
+           id="text3876"
+           sodipodi:linespacing="125%"><tspan
+             id="tspan3878"
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="373.86627"
+             y="1003.3683">Tensor</tspan><tspan
+             style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+             sodipodi:role="line"
+             x="373.86627"
+             y="1019.6919"
+             id="tspan3880">file</tspan></text>
+      </g>
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="rect3882"
+         d="m 406.98679,971.67883 14.61203,14.61204 -14.61203,0 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.42999995;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       x="427.54727"
+       y="954.60315"
+       id="text3900"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan3902"
+         style="font-size:13.05890846px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         sodipodi:role="line"
+         x="427.54727"
+         y="954.60315">tensor</tspan></text>
   </g>
 </svg>

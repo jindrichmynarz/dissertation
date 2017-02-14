@@ -23,7 +23,7 @@ Due to the volume of processed data and the complexity of the applied transforma
 LP-ETL loads data into an in-memory RDF store and materializes the output of each processing step, which leads to performance problems when working with higher volumes of data.
 LP-ETL allows to execute SPARQL updates on data partitioned into chunks of smaller size, which can significantly speed up processing of larger datasets.
 However, this technique can be used only for transformations that require solely the data present in the chunk, which prevents it from being used in cases the whole dataset is needed by a transformation; e.g., for joins across many resources.
-Instead, an example where this technique is applicable is sequential processing of tabular data, in which data from each row can be processed separately in most cases.
+An example where this technique is applicable is sequential processing of tabular data, in which data from each row can be processed separately in most cases.
 Because of its relational nature, our dataset cannot be effectively split to allow executing transformations on smaller chunks of data.
 
 Instead of partitioning data, we partitioned intermediate query bindings in SPARQL Update operations.
@@ -85,7 +85,7 @@ This dataset contains daily exchange rates of several currencies to EUR.
 We used an [RDF version of the dataset](https://github.com/openbudgets/datasets/tree/master/ecb-exchange-rates) prepared for the [OpenBudgets.eu](http://openbudgets.eu) project.
 This derivative covers rates from November 30, 1999 to April 7, 2016, so it allowed to convert most prices in our dataset.
 Prices in non-CZK currencies were converted using the exchange rates valid at their notice's publication date.
-This was done as a two-step process, first converting the prices EUR followed by the conversion to CZK.
+This was done as a two-step process, first converting the prices to EUR followed by the conversion to CZK.
 In order to automate the execution of this task we employed [*sparql-to-csv*](https://github.com/jindrichmynarz/sparql-to-csv), a tool that we developed, which also allows to pipe query results into another query or update operation.
 
 The normalized prices were winsorized^[<https://en.wikipedia.org/wiki/Winsorizing>] at 99.5^th^ percentile to remove likely incorrect extreme prices.

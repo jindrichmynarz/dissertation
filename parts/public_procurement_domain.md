@@ -101,9 +101,9 @@ We describe our use of linked data in detail in the following [chapter on data p
 Public procurement constitutes a large share of the volume of transactions in the economy.
 The share of government expenditures in public procurement on works, goods, and services (excluding utilities) was estimated to be *"13.1 % of the EU GDP in 2015, the highest value for the last 4 years"* ([European Commission, 2016](#EuropeanCommission2016)).
 This estimate amounted to 24.2 billion EUR in 2015 in the Czech Republic, which corresponded with 14.5 % of the country's GDP ([ibid.](#EuropeanCommission2016)).
-Compared with the EU, Czech Republic exhibits consistent above-average values of this indicator, as can be seen in the following diagram.
+Compared with the EU, Czech Republic exhibits consistent above-average values of this indicator, as can be seen in [@fig:gdp].
 
-![Percentage of public procurement's share of GDP. Source: Public Procurement Indicators 2012-2015 ([European Commission, 2016](#EuropeanCommission2016))](img/share_of_gdp_v2.png){width=75%}
+![Percentage of public procurement's share of GDP. Source: Public Procurement Indicators 2012-2015 ([European Commission, 2016](#EuropeanCommission2016))](img/share_of_gdp_v2.png){#fig:gdp width=75%}
 
 <!-- Economy of scale -->
 
