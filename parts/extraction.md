@@ -6,8 +6,9 @@ The data is published in exports to XML, CSV, or Microsoft Excel, each partition
 However, the dataset exports contain only past contracts that were already awarded, so they cannot be used for alerting bidders about relevant opportunities in public procurement.
 Nevertheless, this historical data can be used for training and evaluation.
 Although published in structured formats, the data is structured poorly, so we had to spend substantial effort improving its structure.
-This open data offering also includes exports from electronic marketplaces, where some public contracts are published, but we did not use it.
-<!-- For instance, electronic marketplaces serve purchases of commodities. --> 
+This open data offering also includes exports from electronic marketplaces, where some public contracts are published.
+For instance, electronic marketplaces serve for purchases of commodities.
+Nonetheless, we did not use this dataset, since it follows a different schema than the Czech public procurement register, so that using it would require us to spend further effort on data preparation.
 
 We chose the XML version as the source for data extraction.
 XML allows us to leverage mature tooling, such as XSLT processors, for the extraction.

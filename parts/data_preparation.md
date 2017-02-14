@@ -23,7 +23,7 @@ Once data is available in RDF, its processing is described as transformation.
 Linking discovers co-referent identities, while fusion resolves them to the preferred identities, along with resolving data conflicts that may arise.
 Linking and fusion are interleaved and executed iteratively, each building on the results of the previous step.
 Loading is concerned with making the data available in a way that the matchmaking methods can operate efficiently.
-The adopted ETL workflow evolved from the workflow that was described in Mynarz ([2014c](#Mynarz2014c)).
+The adopted ETL workflow evolved from the workflow that was previously described by the thesis' author ([Mynarz, 2014c](#Mynarz2014c)).
 The [@fig:etl] summarizes the overall workflow.
 
 ![ETL workflow](img/etl_workflow.png){#fig:etl}
@@ -58,6 +58,15 @@ In our case, we use feedback from evaluation of matchmaking as an indirect indic
 
 The principal goal of ETL is to add value to data.
 A key way to do so is to improve data quality.
+Since data quality is typically defined as fitness for use, we focus on the fitness of the prepared data for matchmaking in particular.
+Fitness for this use is affected by several data quality dimensions ([Batini, Scannapieco, 2006](#Batini2006)).
+The key relevant dimensions are duplication and completeness.
+Lack of duplicate entities reduces the search space matchmaking has to explore.
+On the contrary, duplicates break links that can be leveraged by matchmaking.
+For instance, if there are unknown aliases for a bidder, then data linked from these aliases is not reachable.
+Incompleteness causes features potentially valuable for matchmaking to be missing.
+It makes data less descriptive and increases its sparsity.
+
 While the goals pursued by public disclosure and aggregation of procurement data are often undermined by insufficient data integration caused by heterogeneity of data provided by diverse contracting authorities, ETL can remedy some of the adverse effects of heterogeneity and fragmentation of procurement data.
 However, at many stages of data preparation we needed to compromise data quality due to the effort required to achieve it.
 We are explicit about the involved trade-offs, because it helps to understand the complexity of the data preparation endeavour.

@@ -5,6 +5,8 @@ Linked data principles
 Semantic web technologies
 -->
 
+Linked data is a set of practices for publishing data.
+
 Linked data is a way of structuring data that identifies entities with Internationalized Resource Identifiers (IRIs) and materializes their relationships as a network of machine-processable data ([Ayers, 2007, p. 94](#Ayers2007)).
 IRIs are universal, thus any entity can be identified with a IRI, and have global scope, therefore IRI can only identify one entity ([Berners-Lee, 1996](#BernersLee1996)).
 

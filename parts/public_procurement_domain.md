@@ -10,6 +10,8 @@ Companies competing for contract award are called bidders.
 Since public procurement is a legal domain, public contracts are legally enforceable agreements on such purchases financed from public funds.
 Public contracts are publicized and monitored by contract notices.
 Contract notices announce competitive bidding for the award of public contracts ([Distinto, d'Aquin, Motta, 2016](#Distinto2016), p. 14) and update the progress of public contracts as they go through their life cycle, ending either in completion or cancellation.
+In our case we deal with public contracts that can be described more precisely as proposed contracts ([ibid.](#Distinto2016), p. 14) until they are awarded and agreements with suppliers are signed.
+We use the term "public contract" as a conceptual shortcut to denote the whole contract's life-cycle.
 
 Public procurement is an uncommon domain for recommender systems.
 Recommender systems are conventionally used in domains such as books, movies, or music.
@@ -103,7 +105,7 @@ The share of government expenditures in public procurement on works, goods, and 
 This estimate amounted to 24.2 billion EUR in 2015 in the Czech Republic, which corresponded with 14.5 % of the country's GDP ([ibid.](#EuropeanCommission2016)).
 Compared with the EU, Czech Republic exhibits consistent above-average values of this indicator, as can be seen in [@fig:gdp].
 
-![Percentage of public procurement's share of GDP. Source: Public Procurement Indicators 2012-2015 ([European Commission, 2016](#EuropeanCommission2016))](img/share_of_gdp_v2.png){#fig:gdp width=75%}
+![Percentage of public procurement's share of GDP. Source: Public Procurement Indicators 2012-2015 ([European Commission, 2016](#EuropeanCommission2016))](img/share_of_gdp_v2.png){#fig:gdp}
 
 <!-- Economy of scale -->
 
