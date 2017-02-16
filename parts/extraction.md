@@ -9,6 +9,7 @@ Although published in structured formats, the data is structured poorly, so we h
 This open data offering also includes exports from electronic marketplaces, where some public contracts are published.
 For instance, electronic marketplaces serve for purchases of commodities.
 Nonetheless, we did not use this dataset, since it follows a different schema than the Czech public procurement register, so that using it would require us to spend further effort on data preparation.
+Unfortunately, since data preparation is not a routine task, reliable estimates of the required effort are difficult to come by, so we avoid them.
 
 We chose the XML version as the source for data extraction.
 XML allows us to leverage mature tooling, such as XSLT processors, for the extraction.

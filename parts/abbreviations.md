@@ -65,6 +65,9 @@ HTML
 HTTP
 ~ Hypertext Transfer Protocol
 
+IRI
+~ Internationalized Resource Identifier
+
 JSON
 ~ JavaScript Object Notation
 
@@ -86,11 +89,17 @@ Non-UNA
 NUTS
 ~ Nomenclature of Territorial Units for Statistics
 
+ODC
+~ Open Data Commons
+
 OWA
 ~ Open world assumption
 
 PCO
 ~ Public Contracts Ontology
+
+PDDL
+~ Public Domain Dedication and Licence
 
 PPROC
 ~ Public Procurement Ontology

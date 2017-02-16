@@ -65,7 +65,13 @@ Lack of duplicate entities reduces the search space matchmaking has to explore.
 On the contrary, duplicates break links that can be leveraged by matchmaking.
 For instance, if there are unknown aliases for a bidder, then data linked from these aliases is not reachable.
 Incompleteness causes features potentially valuable for matchmaking to be missing.
-It makes data less descriptive and increases its sparsity.
+It makes data less descriptive and increases its sparsity, which makes matchmaking less effective.
+Measuring both dimensions is difficult.
+In case of duplication, we can only measure relative improvement of the deduplicated dataset compared to the input dataset.
+Measuring duplication of the output dataset is unfeasible, since it may contain unknown entity aliases.
+Evaluation of completeness requires either a reference dataset to compare to or reliable cardinalities to expect in the target dataset's schema.
+Unfortunately, reference datasets are typically unavailable.
+Cardinalities of properties either cannot be relied upon or their computation is undermined by unknown duplicates.
 
 While the goals pursued by public disclosure and aggregation of procurement data are often undermined by insufficient data integration caused by heterogeneity of data provided by diverse contracting authorities, ETL can remedy some of the adverse effects of heterogeneity and fragmentation of procurement data.
 However, at many stages of data preparation we needed to compromise data quality due to the effort required to achieve it.

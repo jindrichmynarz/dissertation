@@ -14,3 +14,7 @@ Nonexperimental design: qualitative research via interviews with users (or domai
 
 Statistical significance
 Practical importance: demonstrate utility of the developed artefact
+
+<!--
+Alternative evaluation protocol, widely used in top-k recommendation: <http://dl.acm.org/citation.cfm?id=1864721>
+-->

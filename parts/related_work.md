@@ -7,7 +7,7 @@ German national project *IntelligentMatch* (2010 — 2012)^[<http://www.intellig
 Among the results of this project is *i-text*, a prototype of matchmaking engine targeted at the textile industry.
 
 * WeightedNIPaths ([Ristoski et al., 2015](#Ristoski2015))
-* Spreading activation ([Heitmann, Hayes, 2014](#Heitmann2014))
+* Spreading activation ([Heitmann, Hayes, 2014](#Heitmann2014), [Heitmann, Hayes, 2016](#Heitmann2016))
 
 <!--
 TODO: (much of related work can be lifted from D9a.1.1)

@@ -31,6 +31,9 @@ Linked open data offers interoperability without centralization.
 
 <!-- ### Preliminaries
 Minimal introductions to the topics covered in this thesis to enable comprehension of the further text.
+IRI
+RDF
+Hypertext Transfer Protocol (HTTP)
 * SPARQL
 SPARQL is a query language for RDF data.
 The syntax of SPARQL combines the syntax of Turtle with the syntax of SQL. (Even though it was only inspired by SQL.)
@@ -67,3 +70,14 @@ Plus:
 * Defragmentation of procurement data sources via links and reuse of data 
 * Links to contextual data
 * no black-box features like keywords (e.g., features with expandable semantics)
+* Both content-based and collaborative features can be represented in the same feature space.
+
+<!--
+Compared to open data:
+* Linked data automates retrieval of additional features. IRIs of linked resources can be crawled automatically. Crawlers may follow further links in the obtained data.
+  - Network effect
+* Cross-domain recommendation: links between data from different domain can be leveraged
+  - Preferences from one domain are used to predict preferences in other domain.
+  - Perhaps registered organization activities (NACE) can predict preferred objects of public contracts (CPV)
+  - Knowledge graphs can help even in cases where there is no overlap between the domains ([Heitmann, Hayes, 2016](#Heitmann2016)).
+-->
