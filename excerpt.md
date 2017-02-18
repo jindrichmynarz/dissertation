@@ -16,10 +16,10 @@ keywords:
 
 # Introduction
 
-## Linked open data
-
 ```include
+parts/linked_open_data.md
 parts/open_data.md
+parts/linked_data.md
 parts/public_procurement_domain.md
 parts/data_preparation.md
 parts/modelling.md

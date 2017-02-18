@@ -1,0 +1,111 @@
+# General namespaces
+
+@prefix dcterms:             <http://purl.org/dc/terms/> .
+@prefix gr:                  <http://purl.org/goodrelations/v1#> .
+@prefix pc:                  <http://purl.org/procurement/public-contracts#> .
+@prefix pcdt:                <http://purl.org/procurement/public-contracts-datatypes#> .
+@prefix pproc:               <http://contsem.unizar.es/def/sector-publico/pproc#> .
+@prefix qb:                  <http://purl.org/linked-data/cube#> .
+@prefix rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rov:                 <http://www.w3.org/ns/regorg#> .
+@prefix schema:              <http://schema.org/> .
+@prefix skos:                <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:                 <http://www.w3.org/2001/XMLSchema#> .
+
+# Dataset-specific namespaces
+
+@prefix business-entity:     <http://linked.opendata.cz/resource/business-entity/> .
+@prefix concept:             <http://linked.opendata.cz/resource/concept/> .
+@prefix contract-kind:       <http://purl.org/procurement/public-contracts-kinds#> .
+@prefix criteria:            <http://purl.org/procurement/public-contracts-criteria#> .
+@prefix criterion-weighting: <http://linked.opendata.cz/resource/criterion-weighting/> .
+@prefix procedure-type:      <http://purl.org/procurement/public-contracts-procedure-types#> .
+@prefix zindex-dimension:    <http://linked.opendata.cz/ontology/zindex.cz/dimension/> .
+@prefix zindex-measure:      <http://linked.opendata.cz/ontology/zindex.cz/measure/> .
+
+# Public contract
+
+<http://linked.opendata.cz/resource/isvz.cz/contract/60019151> a pc:Contract ;
+  dcterms:title "Poskytnutí finančního úvěru v návaznosti na PLÁN INVESTIC"@cs ;
+  dcterms:description "Předmětem veřejné zakázky je poskytnutí finančního úvěru v návaznosti na „PLÁN INVESTIC“, který proběhne postupným vyčerpáním úvěru v průběhu roku 2008 - 2009. Výše požadovaného úvěru je 25.000.000,- Kč. Zadavatel požaduje předložení variant nabídky. Varianty nabídky se budou lišit úrokovou sazbou, podrobněji viz zadávací dokumentace."@cs ;
+  pc:contractingAuthority business-entity:CZ00275492 ;
+  pc:actualPrice <http://linked.opendata.cz/resource/price-specification/3216c7e7a33ff96baeb229ace30386106ef4d045> ;
+  pc:awardCriteriaCombination <http://linked.opendata.cz/resource/award-criteria-combination/22efb559d44126a2e74491a5a85d3d5b75508494> ;
+  pc:lot <http://linked.opendata.cz/resource/isvz.cz/lot/60019151-966> ;
+  pc:mainObject concept:e9d7a8d75cca91b23728bbab4f4023f061da84cb ;
+  pc:procedureType procedure-type:Open ; # Open procedure type is suitable for alerting bidders
+  pc:kind contract-kind:Services . 
+
+# zIndex score of the contracting authority
+
+<http://linked.opendata.cz/resource/zindex.cz/observation/CZ00275492/VSE_2011-2013> a qb:Observation ;
+  zindex-dimension:organization  business-entity:CZ00275492 ;
+  zindex-measure:zIndex 0.5341678574 .
+
+# Contract lot (a part of the contract)
+
+<http://linked.opendata.cz/resource/isvz.cz/lot/60019151-966> a pproc:Lot ;
+  pc:awardedTender <http://linked.opendata.cz/resource/tender/77ad2d1457a5060deef27ae92d52073bead41c4f> .
+
+# Awarded tender
+
+<http://linked.opendata.cz/resource/tender/77ad2d1457a5060deef27ae92d52073bead41c4f> a pc:Tender ;
+  pc:awardDate "2008-10-06"^^xsd:date ;
+  pc:bidder business-entity:CZ45244782 .
+
+# Awarded bidder
+
+business-entity:CZ45244782 a rov:RegisteredOrganization ;
+  gr:legalName "Česká spořitelna, a.s." ; 
+  dcterms:issued "1991-12-30"^^xsd:date ; # Registration date
+  rov:orgActivity  <http://linked.opendata.cz/resource/concept-scheme/nace/64190> .
+
+# Registered NACE activity of the awarded bidder
+
+<http://linked.opendata.cz/resource/concept-scheme/nace/64190> a skos:Concept ;
+  skos:prefLabel "Other monetary intermediation"@en .
+
+# Award criteria combination
+
+<http://linked.opendata.cz/resource/award-criteria-combination/22efb559d44126a2e74491a5a85d3d5b75508494>
+  a pc:AwardCriteriaCombination ;
+  pc:awardCriterion criterion-weighting:e52956cb26e9d5bbcef93a9092b3ccb8f00c7056,
+                    criterion-weighting:d177fe880756bcccbc974e5e342e316a09434fd9 .
+
+# Weighting of award criterion 1
+
+criterion-weighting:d177fe880756bcccbc974e5e342e316a09434fd9 a pc:CriterionWeighting ;
+  pc:criterionWeight "20"^^pcdt:percentage ;
+  pc:weightedCriterion concept:e838c490bd80cd19e19d106c772741db68ed3fea .
+
+# Award criterion 1
+
+concept:e838c490bd80cd19e19d106c772741db68ed3fea a skos:Concept ;
+  skos:prefLabel "Ostatní podmínky úvěru"@cs .
+
+# Weighting of award criterion 2
+
+criterion-weighting:e52956cb26e9d5bbcef93a9092b3ccb8f00c7056 a pc:CriterionWeighting ;
+  pc:criterionWeight "80"^^pcdt:percentage ;
+  pc:weightedCriterion criteria:LowestPrice .
+
+# Object of the contract
+
+concept:e9d7a8d75cca91b23728bbab4f4023f061da84cb a skos:Concept ;
+  skos:closeMatch <http://linked.opendata.cz/resource/cpv-2008/concept/66130000> .
+
+<http://linked.opendata.cz/resource/cpv-2008/concept/66130000> a skos:Concept ;
+  skos:prefLabel "Brokerage and related securities and commodities services"@en ; 
+  skos:broaderTransitive  <http://linked.opendata.cz/resource/cpv-2008/concept/66100000> .
+
+# Broader object of the contract
+
+<http://linked.opendata.cz/resource/cpv-2008/concept/66100000> a skos:Concept ;
+  skos:prefLabel "Banking and investment services"@en . 
+
+# Actual price of the contract
+
+<http://linked.opendata.cz/resource/price-specification/3216c7e7a33ff96baeb229ace30386106ef4d045>
+  a schema:PriceSpecification ;
+  schema:price 5951341 ;
+  schema:priceCurrency "CZK" .

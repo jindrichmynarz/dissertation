@@ -1,7 +1,7 @@
 \pagebreak
 \newpage
 
-# Data preparation
+# Data preparation {#sec:data-preparation}
 
 A fundamental part of the hereby presented work is preparation of the Czech public procurement dataset enriched with linked data.
 The prepared dataset was used to evaluate the case-based recommender system we built as our main contribution. 

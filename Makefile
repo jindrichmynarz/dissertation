@@ -1,5 +1,5 @@
 html:
-	pandoc -f markdown+implicit_figures \
+	pandoc -f markdown+implicit_figures+backtick_code_blocks \
 		--mathjax \
 		--number-sections \
 		--toc \
@@ -8,10 +8,11 @@ html:
 		--filter pandoc-include \
 		--filter pandoc-crossref \
 		--template template.html \
+		--highlight-style tango \
 		text.md
 
 pdf:
-	pandoc -f markdown+implicit_figures \
+	pandoc -f markdown+implicit_figures+backtick_code_blocks \
 		--latex-engine=xelatex \
 		--number-sections \
 		--toc \
@@ -20,10 +21,11 @@ pdf:
 		--filter pandoc-include \
 		--filter pandoc-crossref \
 		--variable urlcolor=blue \
+		--highlight-style tango \
 		text.md
 
 excerpt:
-	pandoc -f markdown+implicit_figures \
+	pandoc -f markdown+implicit_figures+backtick_code_blocks \
 		--latex-engine=xelatex \
 		--toc \
 		--number-sections \
@@ -32,6 +34,7 @@ excerpt:
 		--filter pandoc-include \
 		--filter pandoc-crossref \
 		--variable urlcolor=blue \
+		--highlight-style tango \
 		excerpt.md
 
 clean:

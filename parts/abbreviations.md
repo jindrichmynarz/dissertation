@@ -95,6 +95,9 @@ ODC
 OWA
 ~ Open world assumption
 
+OWL
+~ Web Ontology Language
+
 PCO
 ~ Public Contracts Ontology
 
@@ -109,6 +112,9 @@ PR
 
 RDF
 ~ Resource Description Framework
+
+RDFS
+~ RDF Schema
 
 RDF/XML
 ~ RDF 1.1 XML Syntax
@@ -136,6 +142,9 @@ TLR
 
 URL
 ~ Uniform Resource Locator
+
+W3C
+~ World Wide Web Consortium
 
 WGS84
 ~ World Geodetic System

@@ -42,7 +42,7 @@ Since matchmaking requires demands to be specified, public procurement makes for
 
 <!-- Complex representation -->
 
-Public contracts are typically complex demands.
+Since public procurement often pursues multiple objectives, public contracts are typically complex demands.
 Their explicit formulation thus requires sufficiently expressive modelling, which makes it a suitable use case for semantic web technologies, including RDF and RDF Schema.
 Public contracts may stipulate non-negotiable qualification criteria as well as setting desired qualities in bidders.
 The objects of public contracts are often heterogeneous products or services, that cannot be described only in terms of price.

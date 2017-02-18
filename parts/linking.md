@@ -2,7 +2,7 @@
 
 Linking is a process of discovering co-referent identifiers.
 Co-referent identifiers share the same referent, i.e. they refer to the same entity.
-The existence of co-referent identifiers is possible, because linked data operates under the non-unique name assumption (non-UNA), which posits that two names (identifiers) may refer to the same entity unless explicitly stated otherwise.
+The existence of co-referent identifiers is possible, because linked data operates under the non-unique name assumption (non-UNA).
 This assumption allows to publish distributed data without coordination required for agreeing on names.
 However, queries and data analyses usually operate under the unique name assumption, and therefore they require a unified dataset without aliases for entities.
 Consequently, the aim of linking is to make explicit links between non-unique names of entities, so that these entities can be unified in data fusion.
