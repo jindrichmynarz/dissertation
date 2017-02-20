@@ -1,4 +1,4 @@
-# Appendix A: Software
+# Appendix A: Software {#sec:software .unnumbered}
 
 The work described in this thesis involved many software tools.
 In order to provide a single reference point for these tools, this appendix provides their brief descriptions.

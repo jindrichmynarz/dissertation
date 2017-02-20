@@ -42,7 +42,7 @@ Since matchmaking requires demands to be specified, public procurement makes for
 
 <!-- Complex representation -->
 
-Since public procurement often pursues multiple objectives, public contracts are typically complex demands.
+Since public procurement often pursues multiple objectives, public contracts are demands with variable degrees of complexity and completeness.
 Their explicit formulation thus requires sufficiently expressive modelling, which makes it a suitable use case for semantic web technologies, including RDF and RDF Schema.
 Public contracts may stipulate non-negotiable qualification criteria as well as setting desired qualities in bidders.
 The objects of public contracts are often heterogeneous products or services, that cannot be described only in terms of price.
@@ -95,7 +95,8 @@ Fragmentation of public procurement data thus requires further data integration 
 In fact, one of the reasons why the public procurement market is dominated by large companies may be that they, unlike SMEs, can afford the friction in processing the data.
 
 According to our approach to data preparation, linked data provides a way to compensate the impact of imperfect standardization.
-While a standard can be defined as *"coordination mechanism around non-proprietary knowledge that organizes and directs technological change"* ([Gosain, 2003](#Gosain2003), p. 18), linked data enables to cope with insufficient standardization by allowing for *"cooperation without coordination"* ([Wood, 2011](#Wood2011), p. 5), which enables to bridge local heterogeneities via the flexible data model of RDF and explicit links.
+While a standard can be defined as *"coordination mechanism around non-proprietary knowledge that organizes and directs technological change"* ([Gosain, 2003](#Gosain2003), p. 18), linked data enables to cope with insufficient standardization by allowing for *"cooperation without coordination"* ([Wood, 2011](#Wood2011), p. 5) or centralization.
+Instead, linked data allows to bridge local heterogeneities via the flexible data model of RDF and explicit links between decentralized data sources.
 We describe our use of linked data in detail in the following [chapter on data preparation](#data-preparation).
 
 ### Economic context

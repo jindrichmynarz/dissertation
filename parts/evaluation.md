@@ -1,6 +1,3 @@
-\pagebreak
-\newpage
-
 # Evaluation
 
 Experimental design (experimental evaluation, controlled experiment)

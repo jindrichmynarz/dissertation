@@ -1,6 +1,3 @@
-\pagebreak
-\newpage
-
 # Conclusions
 
 <!--

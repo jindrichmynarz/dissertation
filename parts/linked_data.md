@@ -53,6 +53,7 @@ Moreover, RDFS can express subsumption hierarchies between classes or properties
 If more sophisticated ontological constraints are required, they can be defined by the Web Ontology Language (OWL) ([W3C OWL Working Group, 2012](#W3C2012)).
 RDFS and OWL can be used in tandem to create vocabularies that provide classes and properties to describe data.
 Vocabularies enable tools to operate on datasets sharing the same vocabulary without dataset-specific adaptations.
+The explicit semantics provided by RDF vocabularies makes datasets described by such vocabularies machine-understandable to a limited extent.
 For example, one shared vocabulary used in our work is the Public Contracts Ontology, which is described in [@sec:pco].
 
 <!-- SPARQL -->

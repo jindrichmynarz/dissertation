@@ -1,6 +1,3 @@
-\pagebreak
-\newpage
-
 # Data preparation {#sec:data-preparation}
 
 A fundamental part of the hereby presented work is preparation of the Czech public procurement dataset enriched with linked data.

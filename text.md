@@ -10,6 +10,7 @@ keywords:
 - linked data
 - open data
 - public procurement
+link-citations: true
 ---
 
 ```include
@@ -40,7 +41,7 @@ parts/cpv.md
 parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
-parts/matchmaking.md
+parts/methods.md
 parts/case_based_reasoning.md
 parts/sparql.md
 parts/full_text_search.md
@@ -51,7 +52,7 @@ parts/evaluation.md
 parts/offline_evaluation.md
 parts/online_evaluation.md
 parts/conclusions.md
-parts/references.md
 parts/abbreviations.md
 parts/software.md
+parts/references.md
 ```

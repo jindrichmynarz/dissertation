@@ -7,12 +7,14 @@ html:
 		-o text.html \
 		--filter pandoc-include \
 		--filter pandoc-crossref \
-		--template template.html \
-		--highlight-style tango \
+		--filter pandoc-citeproc \
+		--template style/template.html \
+		--bibliography references.bib \
+		--csl style/ref_format.csl \
 		text.md
 
 pdf:
-	pandoc -f markdown+implicit_figures+backtick_code_blocks \
+	pandoc -f markdown+implicit_figures+backtick_code_blocks+citations \
 		--latex-engine=xelatex \
 		--number-sections \
 		--toc \
@@ -20,8 +22,14 @@ pdf:
 		-o text.pdf \
 		--filter pandoc-include \
 		--filter pandoc-crossref \
+		--filter pandoc-citeproc \
 		--variable urlcolor=blue \
-		--highlight-style tango \
+		--template style/template.tex \
+		--bibliography references.bib \
+		--csl style/ref_format.csl \
+		-V fontsize=12pt \
+		-V papersize=a4paper \
+		-V documentclass:report \
 		text.md
 
 excerpt:
@@ -33,8 +41,14 @@ excerpt:
 		-o excerpt.pdf \
 		--filter pandoc-include \
 		--filter pandoc-crossref \
+		--filter pandoc-citeproc \
 		--variable urlcolor=blue \
-		--highlight-style tango \
+		--template style/template.tex \
+		--bibliography references.bib \
+		--csl style/ref_format.csl \
+		-V fontsize=12pt \
+		-V papersize=a4paper \
+		-V documentclass:report \
 		excerpt.md
 
 clean:

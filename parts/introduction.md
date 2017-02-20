@@ -1,7 +1,6 @@
-\pagebreak
-\newpage
-
 # Introduction
+
+<!-- What is the problem? -->
 
 <!-- Goal: efficiency -->
 
@@ -108,3 +107,5 @@ FIXME Feedback: De-emphasize hypotheses.
 The following parts of this chapter provide preliminaries upon which the subsequent chapters extensively build.
 
 The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless stated otherwise.
+
+Both reused and developed software is listed in [appendix @sec:software].

@@ -10,6 +10,7 @@ keywords:
 - linked data
 - open data
 - public procurement
+link-citations: true
 ---
 
 \newpage
@@ -36,6 +37,6 @@ parts/cpv.md
 parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
-parts/references.md
 parts/abbreviations.md
+parts/references.md
 ```

@@ -1,6 +1,4 @@
-\newpage
-
-# Abbreviations
+# Abbreviations {.unnumbered}
 
 AAA
 ~ Anyone can say anything about anything
