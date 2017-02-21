@@ -18,6 +18,7 @@ pdf:
 		--latex-engine=xelatex \
 		--number-sections \
 		--toc \
+		--include-before-body parts/title_page.tex \
 		-s \
 		-o text.pdf \
 		--filter pandoc-include \
@@ -37,8 +38,9 @@ pdf:
 excerpt:
 	pandoc -f markdown+implicit_figures+backtick_code_blocks \
 		--latex-engine=xelatex \
-		--toc \
 		--number-sections \
+		--toc \
+		--include-before-body parts/title_page.tex \
 		-s \
 		-o excerpt.pdf \
 		--filter pandoc-include \

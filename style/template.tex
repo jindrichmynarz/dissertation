@@ -192,7 +192,7 @@ $endfor$
 %Following line controls size of code chunks
 \setmonofont[Scale=0.7]{Monaco}
 %Following line controls size of figure legends
-%\setsansfont[Scale=1.2]{Optima Regular}
+\setsansfont{Gill Sans}
 
 %Attempt to set math size
 %First size must match the text size in the document or command will not work
@@ -202,6 +202,8 @@ $endfor$
 % HEADINGS
 \usepackage{sectsty}
 \usepackage[normalem]{ulem}
+\allsectionsfont{\normalfont\sffamily}
+\renewcommand{\cfttoctitlefont}{\huge\sffamily}
 %\sectionfont{\rmfamily\mdseries\Large}
 %\subsectionfont{\rmfamily\mdseries\scshape\large}
 %\subsubsectionfont{\rmfamily\bfseries\upshape\large}
@@ -237,9 +239,6 @@ $endfor$
 >{\centering\arraybackslash}m{#1}}%
 
 \begin{document}
-$if(title)$
-\maketitle
-$endif$
 $if(abstract)$
 \begin{abstract}
 $abstract$
