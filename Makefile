@@ -10,7 +10,7 @@ html:
 		--filter pandoc-citeproc \
 		--template style/template.html \
 		--bibliography references.bib \
-		--csl style/ref_format.csl \
+		--csl style/iso690-author-date-cs.csl \
 		text.md
 
 pdf:
@@ -26,7 +26,7 @@ pdf:
 		--variable urlcolor=blue \
 		--template style/template.tex \
 		--bibliography references.bib \
-		--csl style/ref_format.csl \
+		--csl style/iso690-author-date-cs.csl \
 		-V fontsize=12pt \
 		-V papersize=a4paper \
 		-V documentclass:report \
@@ -45,7 +45,7 @@ excerpt:
 		--variable urlcolor=blue \
 		--template style/template.tex \
 		--bibliography references.bib \
-		--csl style/ref_format.csl \
+		--csl style/iso690-author-date-cs.csl \
 		-V fontsize=12pt \
 		-V papersize=a4paper \
 		-V documentclass:report \
