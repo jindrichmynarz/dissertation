@@ -36,8 +36,8 @@ Additionally, since sorting a large set is a computationally expensive operation
 The selected unprocessed bindings from the sub-query are split into subsets by setting a `LIMIT`.
 The outer update operation then works on this subset and transforms it.
 
-We developed [*sparql-unlimited*](https://github.com/jindrichmynarz/sparql-unlimited) that allows to run SPARQL update operations following the described structure using Virtuoso.
-This tool executes transformations rendered from [Mustache](https://mustache.github.io) templates that feature placeholders for `LIMIT`, and optionally `OFFSET`.
+We developed *sparql-unlimited*^[<https://github.com/jindrichmynarz/sparql-unlimited>] that allows to run SPARQL update operations following the described structure using Virtuoso.
+This tool executes transformations rendered from Mustache^[<https://mustache.github.io>] templates that feature placeholders for `LIMIT`, and optionally `OFFSET`.
 Limit determines the size of a subset to be transformed in one update operation.
 In this way, the processed subset's size can be adjusted based on the complexity of the transformation.
 Updates are executed repeatedly, the offset being incremented by the limit in each iteration, until their response reports zero modifications.
@@ -82,11 +82,11 @@ We loaded the required vocabularies into separate named graphs via the SPARQL Up
 
 In order to make prices comparable, we converted non-CZK currencies to CZK via exchange rates data from the European Central Bank (ECB).^[<https://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html>]
 This dataset contains daily exchange rates of several currencies to EUR. 
-We used an [RDF version of the dataset](https://github.com/openbudgets/datasets/tree/master/ecb-exchange-rates) prepared for the [OpenBudgets.eu](http://openbudgets.eu) project.
+We used an RDF version of the dataset^[<https://github.com/openbudgets/datasets/tree/master/ecb-exchange-rates>] prepared for the OpenBudgets.eu^[<http://openbudgets.eu>] project.
 This derivative covers rates from November 30, 1999 to April 7, 2016, so it allowed to convert most prices in our dataset.
 Prices in non-CZK currencies were converted using the exchange rates valid at their notice's publication date.
 This was done as a two-step process, first converting the prices to EUR followed by the conversion to CZK.
-In order to automate the execution of this task we employed [*sparql-to-csv*](https://github.com/jindrichmynarz/sparql-to-csv), a tool that we developed, which also allows to pipe query results into another query or update operation.
+In order to automate the execution of this task we employed *sparql-to-csv*^[<https://github.com/jindrichmynarz/sparql-to-csv>], a tool that we developed, which also allows to pipe query results into another query or update operation.
 
 The normalized prices were winsorized^[<https://en.wikipedia.org/wiki/Winsorizing>] at 99.5^th^ percentile to remove likely incorrect extreme prices.
 Due to limited expressivity of SPARQL this task needed to be split into two SPARQL queries followed by a SPARQL update operation.

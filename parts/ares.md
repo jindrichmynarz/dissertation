@@ -1,19 +1,19 @@
 ### Access to Registers of Economic Subjects/Entities
 
-[Access to Registers of Economic Subjects/Entities](http://wwwinfo.mfcr.cz/ares/ares.html.en) (ARES) is an information system about business entities, which is maintained by the Ministry of Finance of the Czech Republic.
+Access to Registers of Economic Subjects/Entities^[<http://wwwinfo.mfcr.cz/ares/ares.html.en>] (ARES) is an information system about business entities, which is maintained by the Ministry of Finance of the Czech Republic.
 The data describes business entities along with their registrations required to pursue their business.
 It contains legal business entity names, registration dates, their postal addresses, and classifications according to NACE. 
 Thanks to these features ARES can serve as a reference dataset for Czech business entities.
 
 This system is not the primary source of the data it provides.
 Instead, it mediates data from several source registers and links back to these registers where possible.
-The main sources of ARES are the [Public Register](https://or.justice.cz/ias/ui/rejstrik) (PR) run by the Czech Ministry of Justice, the [Trade Licensing Register](http://www.rzp.cz/eng/index.html) (TLR) operated by the Czech Ministry of Industry and Trade, and the [Business Register](https://www.czso.cz/csu/res/business_register) (BR) maintained by the Czech Statistical Office (CSO).
+The main sources of ARES are the Public Register^[<https://or.justice.cz/ias/ui/rejstrik>] (PR) run by the Czech Ministry of Justice, the Trade Licensing Register^[<http://www.rzp.cz/eng/index.html>] (TLR) operated by the Czech Ministry of Industry and Trade, and the Business Register^[<https://www.czso.cz/csu/res/business_register>] (BR) maintained by the Czech Statistical Office (CSO).
 Consequently, the data ARES provides may not be up-to-date or complete.
 In fact, ARES explicitly renounces any guarantees about the data.
 Its data is not to be treated as legally binding, but instead it serves only an informative purpose.
 
 The benefit of ARES that outweighs its drawbacks is that, unlike the source registers, it provides data in a structured format.
-It exposes an [HTTP API](http://wwwinfo.mfcr.cz/ares/ares_xml.html.cz) that allows to retrieve data in XML about one legal entity per request.
+It exposes an HTTP API^[<http://wwwinfo.mfcr.cz/ares/ares_xml.html.cz>] that allows to retrieve data in XML about one legal entity per request.
 The access to data is rate-limited to prevent high load from automated harvesters that may cause unavailability of the service for human users.
 The limits allow to issue a thousand requests per day and five thousand requests per night.
 Since ARES provides access to hundreds of thousands of business entities and no option for bulk download, harvesting a copy of its data may take many weeks.
@@ -44,19 +44,19 @@ This deficiency turned out to be detrimental to linking business entities by mak
 
 Thanks to the uniform API that ARES provides the ETL of both registers differs only in the URL paramaters and the XSL transformations mapping XML data to RDF.
 The data transformation was done using UnifiedViews.
-A [custom data processing unit](https://github.com/mff-uk/DPUs/tree/master/dpu-domain-specific/ares) (DPU) was used to fetch data into UnifiedViews.
+A custom data processing unit^[<https://github.com/mff-uk/DPUs/tree/master/dpu-domain-specific/ares>] (DPU) was used to fetch data into UnifiedViews.
 Raw source data in XML was transformed into RDF/XML using XSL stylesheets.
 A mixture of RDF vocabularies was used to describe the ARES data with the key roles played by the GoodRelations [@Hepp2008] and the Registered Organization Vocabulary [@Archer2013].
 The registry data is relatively consistent, so it did not require much cleaning. 
 However, we paid special care to postal addresses, since we needed them for geocoding.
 SPARQL Update operations were employed to clean and structure the addresses.
-The [data transformation](https://github.com/opendatacz/ARES2RDF) was released as open-source.
-Most of the transformation was done by Jakub Klímek from the Charles University in Prague with a contribution of this thesis' author, in particular on the XSL stylesheets and SPARQL Update operations.
+The data transformation^[<https://github.com/opendatacz/ARES2RDF>] was released as open-source.
+Most of the transformation was done by Jakub Klímek from the Charles University in Prague with a contribution of this thesis' author, in particular regarding the XSL stylesheets and SPARQL Update operations.
 
 Organizations registered in BR are assigned concepts from the Statistical Classification of Economic Activities in the European Community (NACE).
 NACE is a hierarchical classification describing economic activities pursued by business entities.
 The subset of BR in CSV containing links to NACE was provided to us via personal communication with Ondřej Kokeš who harvested it from ARES.
-We extracted 873 thousand links to NACE from this subset and converted them to RDF via [*tarql*](http://tarql.github.io), which is a command-line tool for converting tabular data to RDF via SPARQL CONSTRUCT queries.
+We extracted 873 thousand links to NACE from this subset and converted them to RDF via *tarql*^[<http://tarql.github.io>], which is a command-line tool for converting tabular data to RDF via SPARQL CONSTRUCT queries.
 Links to NACE were available for 89.5 % of organizations in the Czech public procurement register that were linked to ARES.
 
 The version of NACE that these links use is CZ-NACE,^[<https://www.czso.cz/csu/czso/klasifikace_ekonomickych_cinnosti_cz_nace>] a Czech extension to NACE Rev. 2 that adds specific leaf concepts.

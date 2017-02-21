@@ -1,6 +1,6 @@
 ## Modelling {#sec:modelling}
 
-The central dataset that we used in matchmaking is the [Czech public procurement register](https://www.vestnikverejnychzakazek.cz).
+The central dataset that we used in matchmaking is the Czech public procurement register.^[<https://www.vestnikverejnychzakazek.cz>]
 <!--
 There are no unawarded contracts in the data dumps.
 This makes is unsuitable for the development of the matchmaking service that alerts about open calls for tenders.

@@ -23,7 +23,9 @@ pdf:
 		--filter pandoc-include \
 		--filter pandoc-crossref \
 		--filter pandoc-citeproc \
-		--variable urlcolor=blue \
+		--variable citecolor=orange \
+		--variable urlcolor=orange \
+		--variable linkcolor=orange \
 		--template style/template.tex \
 		--bibliography references.bib \
 		--csl style/iso690-author-date-cs.csl \
@@ -42,7 +44,9 @@ excerpt:
 		--filter pandoc-include \
 		--filter pandoc-crossref \
 		--filter pandoc-citeproc \
-		--variable urlcolor=blue \
+		--variable citecolor=orange \
+		--variable urlcolor=orange \
+		--variable linkcolor=orange \
 		--template style/template.tex \
 		--bibliography references.bib \
 		--csl style/iso690-author-date-cs.csl \

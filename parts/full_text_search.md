@@ -13,11 +13,13 @@
 * Produces results in EDN.
 -->
 
+We chose Elasticsearch^[<https://www.elastic.co/products/elasticsearch>] because of its expressive query DSL that allows us to formulate complex matchmaking queries.
+
 The use of full-text search engines was motivated by the substantial share of textual data in public procurement data.
 For example, the temporal or the spatial dimensions of public contracts is described by literals in dates and postal addresses.
 Analysis of literals in SPARQL is limited and inefficient without the use of additional full-text indices.
 The value of such data is thus not harnessed in SPARQL-based matchmaking.
-More suitable tools for exploitation of textual data are full-text search engines in document-oriented databases, such as [Elasticsearch](https://www.elastic.co/products/elasticsearch) or [Apache Solr](http://lucene.apache.org/solr).
+More suitable tools for exploitation of textual data are full-text search engines in document-oriented databases, such as Elasticsearch or Apache Solr.^[<http://lucene.apache.org/solr>]
 This approach also opens doors for linguistic analysis of textual data, such as normalization via a lemmatizer or query expansion via synonym sets from a WordNet.
 
 <!--

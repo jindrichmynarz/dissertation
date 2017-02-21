@@ -31,7 +31,7 @@ Data sparsity refers to the share of missing values in a dataset.
 If a large share of the matched entities is lacking values of the key properties leveraged by matchmaking, the quality of matchmaking results deteriorates.
 Complementary open datasets can help fill in the blank values or add extra features [@DiNoia2015, p. 102] that improve the quality of matchmaking.
 
-The hereby presented work was done within the broader context of the [OpenData.cz](http://opendata.cz) initiative.
+The hereby presented work was done within the broader context of the OpenData.cz^[<http://opendata.cz>] initiative.
 OpenData.cz is an initiative for transparent data infrastructure of the Czech public sector.
 It advocates adopting open data and linked data principles for publishing data on the Web.
 Our contributions described in [sec:data-preparation] enhance this infrastructure by supplying it with more open datasets or improving the existing ones.

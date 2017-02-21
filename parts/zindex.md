@@ -1,6 +1,6 @@
 ### zIndex
 
-[zIndex](http://zindex.cz/en) grades Czech contracting authorities with fairness scores.
+zIndex^[<http://zindex.cz/en>] grades Czech contracting authorities with fairness scores.
 The scores are based on the contracting authority's adherence to good practices in public procurement as observed from the data it discloses [@Soudek2016b].
 As its authors suggest, high zIndex score implies that there is less room for mismanagement of public funds, while a low score indicates the opposite.
 zIndex scores are normalized to the interval between 0 and 1, in which 1 represents the best score.
@@ -14,7 +14,7 @@ However, the perceived fairness of contracting authorities may change over time 
 In our case, most scores zIndex scores we had were derived from the period from 2011 to 2013.
 As such, they are most relevant for public contracts from 2013, and may be misleading for the contracts years dated in years further apart.
 
-zIndex scores were initially supplied to the author by [Datlab s.r.o.](http://datlab.cz) in September 2014.
+zIndex scores were initially supplied to the author by Datlab s.r.o.^[<http://datlab.cz>] in September 2014.
 An updated snapshot of zIndex was provided upon request in January 2017.
 The data in CSV was transformed to RDF using *tarql*.
 The RDF version of the data was represented as a simple data cube using the Data Cube Vocabulary [@Cyganiak2014a].

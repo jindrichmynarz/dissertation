@@ -85,7 +85,7 @@ We used Silk Workbench, a graphical user interface for Silk, to develop linkage 
 Silk Workbench displays linking results in a way the interlinked entities can be compared manually.
 This enables to examine a sample of links for false positives and false negatives and adjust the linkage rules accordingly, tuning weights and thresholds to avoid undesired results.
 An example linkage rule in Silk Workbench is shown in the in [@fig:silk].
-[Elasticsearch](https://www.elastic.co/products/elasticsearch) was employed for matching postal addresses to reference addresses from the Czech addresses dataset.
+Elasticsearch^[<https://www.elastic.co/products/elasticsearch>] was employed for matching postal addresses to reference addresses from the Czech addresses dataset.
 
 ![Example linkage rule in Silk Workbench](img/silk_workbench_linkage_rule.png){#fig:silk}
 
@@ -159,13 +159,13 @@ Precision: 0.955
 <!--
 Out-takes:
 
-Linking can exploit both semantics (i.e. schema axioms) and statistics of data ([Hogan et al., 2012](#Hogan2012), p. 78).
+Linking can exploit both semantics (i.e. schema axioms) and statistics of data [@Hogan2012, p. 78].
 
 Appropriately enough, this process is also referred to by multiple terms, including instance matching, deduplication, or record linkage.
 
 Defragmentation of data
 
-Due to the transient nature of public procurement data it is necessary to integrate it in a timely manner, before the data loses relevance [Harth et al., 2013](#Harth2013).
+Due to the transient nature of public procurement data it is necessary to integrate it in a timely manner, before the data loses relevance [@Harth2013].
 
 While the title suggests the blog post is about data fusion, it is more about linking.
 <http://blog.mynarz.net/2016/10/basic-fusion-of-rdf-data-in-sparql.html>

@@ -1,7 +1,7 @@
 ## Extraction
 
 Data from the Czech public procurement register was not initially available as structured data, so that interested parties had to scrape its data from HTML.
-This dataset was eventually released as [open data](http://www.isvz.cz/ISVZ/Podpora/ISVZ_open_data_vz.aspx).
+This dataset was eventually released as open data.^[<http://www.isvz.cz/ISVZ/Podpora/ISVZ_open_data_vz.aspx>]
 The data is published in exports to XML, CSV, or Microsoft Excel, each partitioned by year.
 However, the dataset exports contain only past contracts that were already awarded, so they cannot be used for alerting bidders about relevant opportunities in public procurement.
 Nevertheless, this historical data can be used for training and evaluation.
@@ -40,7 +40,7 @@ The stylesheet maps the schema of the source data onto the target schema ([@sec:
 During the extraction we validated the syntax of registered identification numbers, CPV codes, and literals typed with `xsd:date`.
 If possible, we established links in the extracted data via concatenating unambiguous identifiers to namespace IRIs.
 However, the majority of linking was offloaded to a dedicated phase in the ETL process ([@sec:linking]), since it typically required queries over the complete dataset.
-A trade-off we had to make due to our choice of an RDF store was to use plain literals in place of literals typed with `xsd:duration`, since [Virtuoso](https://virtuoso.openlinksw.com) does not support this data type.
+A trade-off we had to make due to our choice of an RDF store was to use plain literals in place of literals typed with `xsd:duration`, since Virtuoso^[<https://virtuoso.openlinksw.com>] does not yet support this data type.
 We used LinkedPipes-ETL (LP-ETL) [@Klimek2016] to automate the extraction.
 LP-ETL provided us with a way to automate downloading and transforming the source data in a data processing pipeline.
 Syntax of the extracted output was validated via Apache Jena's `riot`^[<https://jena.apache.org/documentation/io>] to avoid common problems in RDF/XML, such as incorrect striping [@Brickley2002].
@@ -49,8 +49,8 @@ The selected dataset spans Czech public contracts from June 1, 2006 to January 1
 This selection amounts to 1.6 GB of raw data in XML and corresponds to 20.5 million extracted RDF triples.
 The dataset contains 186 965 public contracts.
 
-To aid visual validation of the extracted data, we developed [*sparql-to-graphviz*](https://github.com/jindrichmynarz/sparql-to-graphviz) that produces a class diagram representing the empirical schema of the data it is provided with.
-This tool generates a description of the dataset's class diagram in the DOT language, which can be rendered to images via [Graphviz](http://www.graphviz.org), an established visualization software for graph structures.
+To aid visual validation of the extracted data, we developed *sparql-to-graphviz*^[<https://github.com/jindrichmynarz/sparql-to-graphviz>] that produces a class diagram representing the empirical schema of the data it is provided with.
+This tool generates a description of the dataset's class diagram in the DOT language, which can be rendered to images via Graphviz,^[<http://www.graphviz.org>] an established visualization software for graph structures.
 The dataset's summary in the diagram contains classes instantiated in the dataset, along with their datatype properties and object properties interconnecting the classes.
 Each property is provided with the most common range, such as `xsd:date` for a datatype property or `schema:Organization` for an object property, and its minimum and maximum cardinality.
 The cardinality ranges may signalize errors in data transformation, such as insufficient data fusion when the maximum cardinality surpasses an expected value.
