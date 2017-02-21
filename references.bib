@@ -1,6 +1,7 @@
 % Encoding: UTF8
+@preamble{ " \newcommand{\noop}[1]{} " } % a do-nothing command that serves a purpose
 
-@online{8principles2007,
+@online{EightPrinciples2007,
   title = {8 principles of open government data},
   date = {2007-12-07/2007-12-08},
   url = {https://public.resource.org/8_principles.html},
@@ -10,7 +11,7 @@
 @online{AccessInfoEurope2011,
   title = {Beyond access},
   subtitle = {Open government data \& the right to (re)use public information},
-  author = {{Access Info Europe} and {Open Knowledge Foundation}},
+  organization = {{Access Info Europe} and {Open Knowledge Foundation}},
   date = {2011-01-07},
   urldate = {2017-01-03},
   url = {http://www.access-info.org/documents/Access_Docs/Advancing/Beyond_Access_7_January_2011_web.pdf}
@@ -62,7 +63,7 @@
   title = {Enabling the matchmaking of organizations and public procurement notices by means of linked open data},
   editor = {Ordoñez de Pablos, Patricia and Lytras D., Miltiadis and Tennyson D., Robert and Labra Gayo, José Emilio},
   booktitle = {Cases on open-linked data and semantic web applications},
-  location = {Hershey (PA)},
+  address = {Hershey (PA)},
   publisher = {{IGI Global}},
   year = {2013},
   pages = {105--131},
@@ -106,7 +107,7 @@
   title = {Modern information retrieval},
   subtitle = {The concepts and technology behind search},
   edition = {2},
-  location = {Boston (MA)},
+  address = {Boston (MA)},
   publisher = {Addison-Wesley and ACM Press Books},
   year = {2011},
   isbn = {978-0-321-41691-9}
@@ -128,8 +129,8 @@
 @book{Batini2006,
   author = {Batini, Carlo and Scannapieco, Monica},
   title = {Data quality: concepts, methodologies and techniques},
-  location = {Berlin and Heidelberg},
-  publisher = {Springer}, 
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
   year = {2006},
   pagetotal = {XIX, 262},
   series = {Data-Centric Systems and Applications},
@@ -150,7 +151,7 @@
   author = {Beliakov, Gleb and Pradera, Ana and Calvo, Tomasa},
   title = {Aggregation functions},
   subtitle = {A guide for practitioners},
-  location = {Berlin and Heidelberg},
+  address = {Berlin and Heidelberg},
   publisher = {Springer},
   year = {2007},
   isbn = {978-3-540-73720-9}
@@ -162,7 +163,7 @@
   editor = {Ricci, Francesco and Rokach, Lior and Shapira, Bracha},
   booktitle = {Recommender systems handbook},
   edition = {2},
-  location = {Berlin and Heidelberg},
+  address = {Berlin and Heidelberg},
   publisher = {Springer},
   year = {2015},
   pages = {777--808},
@@ -189,7 +190,7 @@
 
 @online{BestPractices2005,
   title = {Best practices in integration of procurement and financial data management},
-  location = {Lexington (KY)},
+  address = {Lexington (KY)},
   publisher = {National Electronic Commerce Coordinating Council},
   year = {2005},
   urldate = {2017-01-09},
@@ -267,19 +268,24 @@
   doi = {10.1145/2187980.2188039}
 }
 
-@incollection{Boncz2014,
-  author = {Boncz, Peter and Erling, Orri and Pham, Minh-Duc},
-  title = {Advances in large-scale {RDF} data management},
+@book{lod2book,
   editor = {Auer, Sören and Bryl, Volha and Tramp, Sebastian},
   booktitle = {Linked open data: creating knowledge out of interlinked data},
-  location = {Berlin and Heidelberg},
+  address = {Berlin and Heidelberg},
   publisher = {Springer},
   year = {2014},
-  pages = {21--44},
   series = {Lecture Notes in Computer Science},
   volume = {8661},
   isbn = {978-3-319-09845-6},
   doi = {10.1007/978-3-319-09846-3_2}
+}
+
+@incollection{Boncz2014,
+  author = {Boncz, Peter and Erling, Orri and Pham, Minh-Duc},
+  title = {Advances in large-scale {RDF} data management},
+  crossref = {lod2book},
+  pages = {21--44},
+  url = {http://link.springer.com/chapter/10.1007/978-3-319-09846-3_2}
 }
 
 @online{Brickley2002,
@@ -292,7 +298,7 @@
 }
 
 @techreport{Brickley2014,
-  editor = {Brickley, Dan and Guha, R.V.},
+  editor = {Brickley, Dan and Guha, Ramanathan V.},
   title = {{RDF Schema 1.1}},
   type = {{W3C} Recommendation},
   date = {2014-02-25},
@@ -303,14 +309,1128 @@
 @incollection{Bryl2014,
   author = {Bryl, Volha and Bizer, Christian and Isele, Robert and Verlic, Mateja and Hong, Soon Gill and Jang, Sammy and Yi, Mun Yong and Choi, Key-Sun},
   title = {Interlinking and knowledge fusion},
-  editor = {Auer, Sören and Bryl, Volha and Tramp, Sebastian},
-  booktitle = {Linked open data: creating knowledge out of interlinked data},
-  location = {Berlin and Heidelberg},
+  crossref = {lod2book},
+  pages = {70--89},
+  url = {http://link.springer.com/chapter/10.1007/978-3-319-09846-3_4},
+}
+
+@book{Heath2011,
+  author = {Heath, Tom and Bizer, Christian},
+  title = {Linked data},
+  subtitle = {Evolving the Web into a global data space},
+  edition = {1},
+  publisher = {Morgan \& Claypool},
+  year = {2011},
+  series = {Synthesis Lectures on the Semantic Web: Theory and Technology},
+  volume = {1:1},
+  url = {http://linkeddatabook.com/editions/1.0},
+  doi = {10.2200/S00334ED1V01Y201102WBE001},
+  isbn = {978-1-60845-431-0}
+}
+
+@techreport{Carothers2014,
+  editor = {Carothers, Gavin},
+  title = {{RDF 1.1 N-Quads}},
+  subtitle = {A line-based syntax for {RDF} datasets},
+  type = {{W3C} Recommendation},
+  date = {2014-02-25},
+  urldate = {2017-02-17},
+  url = {https://www.w3.org/TR/n-quads}
+}
+
+@book{Christen2012,
+  author = {Christen, Peter},
+  title = {Data matching},
+  subtitle = {Concepts and techniques for record linkage, entity resolution, and duplicate detection},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2012},
+  series = {Data-Centric Systems and Applications},
+  volume = {1},
+  doi = {10.1007/978-3-642-31164-2}
+}
+
+@inproceedings{Coletta2012,
+  author = {Coletta, Remi and Castanier, Emmanuel and Valduriez, Patrick and Frisch, Christian and Duyhoa, Ngo and Bellahsene, Zohra},
+  title = {Public data integration with WebSmatch},
+  booktitle = {Proceedings of the 1\textsuperscript{st} International Workshop on Open Data},
+  location = {Nantes, France},
+  eventdate = {2012-05-25},
+  address = {New York (NY)},
+  publisher = {{ACM}},
+  year = {2012},
+  pages = {5--12},
+  url = {http://www.data-publica.com/content/wp-content/uploads/2012/05/OpenData.pdf},
+  isbn = {978-1-4503-1404-6},
+  doi = {10.1145/2422604.2422606}
+}
+
+@techreport{Cyganiak2014a,
+  editor = {Cyganiak, Richard and Reynolds, Dave},
+  title = {The {RDF} Data Cube Vocabulary},
+  type = {{W3C} Recommendation},
+  date = {2014-01-16},
+  urldate = {2017-01-24},
+  url = {https://www.w3.org/TR/vocab-data-cube}
+}
+
+@techreport{Cyganiak2014b,
+  editor = {Cyganiak, Richard and Wood, David and Lanthaler, Markus},
+  title = {{RDF} 1.1 concepts and abstract syntax},
+  type = {{W3C} Recommendation},
+  date = {2014-02-25},
+  urldate = {2017-02-17},
+  url = {http:// www.w3.org/TR/rdf11-concepts}
+}
+
+@misc{CzechRepublic2016,
+  organization = {Czech Republic},
+  title = {Zákon č. 134/2016 Sb., zákon o zadávání veřejných zakázek},
+  booktitle = {Sbírka zákonů},
+  year = {2016},
+  volume = {2016},
+  number = {51},
+  issn = {0322‑8037}
+}
+
+@article{Deshpande2004,
+  author = {Deshpande, Mukund and Karypis, George},
+  title = {Item-based top-n recommendation algorithms},
+  journal = {{ACM} Transactions on Information Systems},
+  month = {January},
+  year = {2004},
+  volume = {22},
+  number = {1},
+  pages = {143--177},
+  issn = {1046-8188},
+  doi = {10.1145/963770.963776}
+}
+
+@article{DiNoia2004,
+  author = {Di Noia, Tommasso and Di Sciascio, Eugenio and Donini, Francesco M. and Mongiello, Marina},
+  title = {A system for principled matchmaking in an electronic marketplace},
+  journal = {International Journal of Electronic Commerce},
+  year = {2004},
+  volume = {8},
+  number = {4},
+  pages = {9--37},
+  issn = {1557-9301}
+}
+
+@article{DiNoia2007,
+  author = {Di Noia, Tommaso and Di Sciascio, Eugenio and Donini, Francesco M.},
+  year = {2007},
+  title = {Semantic matchmaking as non-monotonic reasoning},
+  subtitle = {A description logic approach},
+  journal = {Journal of Artificial Intelligence Research},
+  month = {May},
+  year = {2007},
+  volume = {29},
+  number = {1},
+  pages = {269--307},
+  issn = {1076-9757}
+}
+
+@inproceedings{DiNoia2014,
+  author = {Di Noia, Tommaso and Cantador, Ivan and Ostuni, Vito Claudio},
+  title = {Linked open data-enabled recommender systems},
+  subtitle = {{ESWC} 2014 Challenge on Book Recommendation},
+  crossref = {SemWebEval2014},
+  pages = {129--143}
+}
+
+@inproceedings{DiNoia2015,
+  author = {Di Noia, Tommaso and Ostuni, Vito Claudio},
+  title = {Recommender systems and linked open data},
+  editor = {Faber, Wolfgang and Paschke, Adrian},
+  booktitle = {Reasoning Web. Web Logic Rules. 11\textsuperscript{th} International Summer School 2015},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2015},
+  pages = {88--113},
+  series = {Lecture notes in computer science},
+  volume = {9203},
+  url = {http://sisinflab.poliba.it/publications/2015/DO15/Recommender%20Systems%20and%20Linked%20Open%20Data%20-%20RW%202015.pdf}
+}
+
+@article{DiNoia2016,
+  author = {Di Noia, Tommaso and Ostuni, Vito Claudio and Tomeo, Paolo and Di Sciascio, Eugenio},
+  year = {2016},
+  title = {SPrank},
+  subtitle = {Semantic path-based ranking for top-n recommendations using linked open data},
+  journal = {{ACM} Transactions on Intelligent Systems and Technology},
+  volume = {8},
+  number = {1},
+  issn = {2157-6904}
+}
+
+@article{Distinto2016,
+  author = {Distinto, Isabella and d'Aquin, Mathieu and Motta, Enrico},
+  title = {{LOTED2}},
+  subtitle = {An ontology of European public procurement notices},
+  journal = {Semantic Web Journal},
+  year = {2016},
+  volume = {7},
+  number = {3},
+  url = {http://oro.open.ac.uk/45732/1/swj678_0.pdf}
+}
+
+@online{EuropeanCommission2016,
+  organization = {European Commission},
+  title = {Public procurement indicators 2015},
+  year = {2016},
+  address = {Brussels},
+  urldate = {2017-01-09},
+  url = {http://ec.europa.eu/DocsRoom/documents/20679/attachments/1/translations/en/renditions/native}
+}
+
+@misc{EU2004,
+  organization = {EU},
+  title = {Directive 2004/18/EC of the European Parliament and of the Council of 31 March 2004 on the coordination of procedures for the award of public works contracts, public supply contracts and public service contracts},
+  journal = {Official Journal of the European Union},
+  year = {2004},
+  volume = {L 134},
+  pages = {114--240},
+  url = {http://data.europa.eu/eli/dir/2004/18/oj}
+}
+
+@misc{EU2013,
+  organization = {EU},
+  title = {Directive 2013/37/EU of the European Parliament and of the Council of 26 June 2013 amending the Directive 2003/98/EU on the re-use of public sector information},
+  year = {2013},
+  journal = {Official Journal of the European Union},
+  volume = {L 175},
+  pages = {1--8},
+  url = {http://data.europa.eu/eli/dir/2013/37/oj},
+  issn = {1725-2555}
+}
+
+@misc{EU2014a,
+  organization = {EU},
+  title = {Directive 2014/24/EU of the European Parliament and of the Council of 26 February 2014 on public procurement and repealing Directive 2004/18/EC},
+  journal = {Official Journal of the European Union},
+  year = {2014},
+  volume = {L 94},
+  pages = {65--242},
+  url = {http://data.europa.eu/eli/dir/2014/24/oj}
+}
+
+@misc{EU2014b,
+  organization = {EU},
+  title = {Directive 2014/25/EU of the European Parliament and of the Council of 26 February 2014 on procurement by entities operating in the water, energy, transport and postal services sectors and repealing Directive 2004/17/EC},
+  journal = {Official Journal of the European Union},
+  year = {2014},
+  volume = {L 94},
+  pages = {243--374},
+  url = {http://data.europa.eu/eli/dir/2014/25/oj}
+}
+
+@book{Euzenat2013,
+  author = {Euzenat, Jérôme and Shvaiko, Pavel},
+  title = {Ontology matching},
+  edition = {2},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2013},
+  isbn = {978-3-642-38720-3}
+}
+
+@techreport{Fazekas2012,
+  author = {Fazekas, Mihály and Tóth, István János},
+  title = {Corruption and state capacity in Hungary},
+  subtitle = {Objective measures and new insights},
+  address = {Budapest},
+  organization = {Corruption Research Centre},
+  year = {2012}
+}
+
+@techreport{Feigenbaum2013,
+  editor = {Feigenbaum, Lee and Williams, Gregory Todd and Clark, Kendall Grant and Torres, Elias},
+  title = {{SPARQL} 1.1 Protocol},
+  type = {{W3C} Recommendation},
+  date = {2013-03-21},
+  urldate = {2017-01-16},
+  url = {https://www.w3.org/TR/sparql11-protocol}
+}
+
+@inproceedings{Friedrich2016,
+  author = {Friedrich, Heiko and Kleedorfer, Florian and Human, Soheil and Huemer, Christian},
+  title = {Integrating Matching Services into the Web of Needs},
+  crossref = {Semantics2016},
+  url = {http://ceur-ws.org/Vol-1695/paper19.pdf}
+}
+
+@techreport{Gandon2014,
+  editor = {Gandon, Fabien and Schreiber, Guus},
+  title = {{RDF} 1.1 {XML} syntax},
+  type = {{W3C} Recommendation},
+  date = {2014-02-25},
+  urldate = {2017-01-13},
+  url = {https://www.w3.org/TR/rdf-syntax-grammar}
+}
+
+@inproceedings{Ge2010,
+  author = {Ge, Mouzhi and Delgado-Battenfeld, Carla and Jannach, Dietmar},
+  title = {Beyond accuracy},
+  subtitle = {Evaluating recommender systems by coverage and serendipity},
+  booktitle = {Proceedings of the 4\textsuperscript{th} {ACM} Conference on Recommender Systems},
+  location = {Barcelona, Spain},
+  address = {New York (NY)},
+  publisher = {{ACM}},
+  year = {2010},
+  pages = {257--260},
+  isbn = {978-1-60558-906-0},
+  doi = {10.1145/1864708.1864761}
+}
+
+@techreport{Gearon2013,
+  editor = {Gearon, Paula and Passant, Alexandre and Polleres, Axel},
+  title = {{SPARQL} 1.1 Update},
+  type = {{W3C} Recommendation},
+  date = {2013-03-21},
+  urldate = {2017-02-21},
+  url = {https://www.w3.org/TR/sparql11-update}
+}
+
+@article{Goldberg2013,
+  author = {Goldberg, Daniel W. and Ballard, Morven and Boyd, James H. and Mullan, Narelle and Garfield, Carol and Rosman, Diana and Ferrante, Anna M.},
+  title = {An evaluation framework for comparing geocoding systems},
+  journal = {International Journal of Health Geographics},
+  year = {2013},
+  urldate = {2017-01-05},
+  url = {https://ij-healthgeographics.biomedcentral.com/articles/10.1186/1476-072X-12-50},
+  doi = {10.1186/1476-072X-12-50}
+}
+
+@techreport{GonzalezCastillo2001,
+  author = {González-Castillo, Javier and Trastour, David and Bartolini, Claudio},
+  title = {Description logics for matchmaking of services},
+  organization = {Hewlett-Packard},
+  date = {2001-10-30},
+  url = {https://www.hpl.external.hp.com/techreports/2001/HPL-2001-265.pdf}
+}
+
+@inproceedings{Gosain2003,
+  author = {Gosain, Sanjay},
+  title = {Realizing the vision for web services},
+  subtitle = {Strategies for dealing with imperfect standards},
+  editor = {King, John L. and Lyytinen, Kalle},
+  booktitle = {Proceedings of the Workshop on Standard Making},
+  booksubtitle = {A critical research frontier for information systems},
+  location = {Seattle (WA)},
+  eventdate = {2003-12-12/2003-12-14},
+  year = {2003},
+  pages = {10--29},
+  url = {http://www.joelwest.org/misq-stds/proceedings/126_10-29.pdf}
+}
+
+@techreport{Graux2012,
+  author = {Graux, Hans and Tom, Kronenburg},
+  title = {State of play: re-use of public procurement data},
+  month = {August},
+  year = {2012},
+  urldate = {2017-02-10},
+  type = {European Public Sector Information Platform Topic Report},
+  number = {2012/7},
+  url = {https://www.europeandataportal.eu/sites/default/files/2012_re_use_of_public_procurement_data.pdf}
+}
+
+@article{Gruber1993,
+  author = {Gruber, Thomas R.},
+  title = {A translation approach to portable ontology specifications},
+  journal = {Knowledge Acquisition},
+  year = {1993},
+  volume = {5},
+  number = {2},
+  pages = {199--220},
+  url = {http://tomgruber.org/writing/ontolingua-kaj-1993.htm}
+}
+
+@online{Guha2013,
+  author = {Guha, Ramanathan V.},
+  title = {Light at the end of the tunnel},
+  location = {Sydney},
+  year = {2013},
+  urldate = {2017-02-21},
+  url = {http: //videolectures.net/iswc2013_guha_tunnel}
+}
+
+@inproceedings{Halevy2006,
+  author = {Halevy, Alon and Rajaraman, Anand and Ordille, Joan},
+  title = {Data integration},
+  subtitle = {The teenage years},
+  booktitle = {Proceedings of the 32\textsuperscript{nd} international conference on very large data bases},
+  location = {Seoul, Korea},
+  eventdate = {2006-09-12/2006-09-15},
+  year = {2006},
+  address = {San Jose (CA)},
+  publisher = {{VLDB} Endowment},
+  pages = {9--16},
+  url = {http://www.cs.ubc.ca/~rap/teaching/534P/2011/readings/halevyVldb06.pdf}
+}
+
+@techreport{Harris2013,
+  author = {Harris, Steve and Seaborne, Andy},
+  title = {{SPARQL} 1.1 Query Language},
+  type = {{W3C} Recommendation},
+  date = {2013-03-21},
+  urldate = {2017-01-03},
+  url = {http://www.w3.org/TR/sparql11-query}
+}
+
+@inproceedings{Harth2013,
+  author = {Harth, Andreas and Knoblock, Craig A. and Stadtmüller, Steffen and Studer, Rudi and Szekely, Pedro},
+  title = {On-the-fly integration of static and dynamic linked data},
+  editor = {Hartig, Olaf and Sequeda, Juan and Hogan, Aidan and Matsutsusuka, Takahide},
+  booktitle = {Proceedings of the 4\textsuperscript{th} International Workshop on Consuming Linked Data co-located with the 12\textsuperscript{th} International Semantic Web Conference},
+  address = {Aachen},
+  publisher = {{RWTH} Aachen University},
+  year = {2013},
+  urldate = {2017-01-09},
+  series = {{CEUR} workshop proceedings},
+  volume = {1034},
+  url = {http://ceur-ws.org/Vol-1034/HarthEtAl_COLD2013.pdf},
+  issn = {1613-0073}
+}
+
+@book{Hebeler2009,
+  author = {Hebeler, John and Fisher, Matthew and Blace, Ryan and Perez-Lopez, Andrew},
+  title = {Semantic web programming},
+  address = {Hoboken (NJ)},
+  publisher = {John Wiley \& Sons},
+  year = {2009},
+  isbn = {978-0-470-41801-7}
+}
+
+@inproceedings{Heitmann2010,
+  author = {Heitmann, Benjamin and Hayes, Connor},
+  title = {Using linked data to build open, collaborative recommender systems},
+  booktitle = {Proceedings of the 2010 {AAAI} Spring Symposium},
+  booksubtitle = {Linked Data Meets Artificial Intelligence},
+  venue = {Stanford University},
+  location = {Palo Alto (CA)},
+  publisher = {{AAAI}},
+  year = {2010},
+  pages = {76--81},
+  url = {http://www.aaai.org/ocs/index.php/SSS/SSS10/paper/view/1067/1452}
+}
+
+@inproceedings{Heitmann2014,
+  author = {Heitmann, Benjamin and Hayes, Conor},
+  title = {{SemStim} at the {LOD-RecSys} 2014 challenge},
+  crossref = {SemWebEval2014},
+  pages = {170--175},
+  url = {https://www.insight-centre.org/sites/default/files/publications/index.pdf},
+  doi = {10.1007/978-3-319-12024-9_22}
+}
+
+@proceedings{SemWebEval2014,
+  editor = {Presutti, Valentina and Stankovic, Milan and Cambria, Eric and Cantador, Iván and Di Iorio, Angelo and Di Noia, Tommaso and Lange, Christoph and Reforgiato Recupero, Diego and Tordai, Anna},
+  title = {Semantic Web Evaluation Challenge},
+  subtitle = {Revised selected papers},
+  location = {Anissaras, Crete, Greece},
+  eventdate = {2014-05-25/2014-05-29},
+  address = {Berlin and Heidelberg},
   publisher = {Springer},
   year = {2014},
-  pages = {70--89},
+  series = {Communications in computer and information science},
+  volume = {475}
+}
+
+@inproceedings{Heitmann2016,
+  author = {Heitmann, Benjamin and Hayes, Conor},
+  title = {{SemStim}},
+  subtitle = {Exploiting knowledge graphs for cross-domain recommendation},
+  booktitle = {2016 {IEEE} 16\textsuperscript{th} International Conference on Data Mining Workshops},
+  location = {Barcelona, Spain},
+  address = {New York (NY)},
+  publisher = {{IEEE}},
+  year = {2016},
+  pages = {999--1006},
+  doi = {10.1109/ICDMW.2016.0145}
+}
+
+@inproceedings{Hepp2008,
+  author = {Hepp, Martin},
+  title = {GoodRelations},
+  subtitle = {An ontology for describing products and services offers on the Web},
+  booktitle = {Knowledge engineering: practice and patterns},
+  booksubtitle = {Proceedings of the 16\textsuperscript{th} International Conference, EKAW 2008},
+  location = {Acitrezza, Italy},
+  eventdate = {2008-09-29/2008-10-02},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2008},
+  pages = {329--346},
+  url = {http://ids.snu.ac.kr/w/images/e/e9/Paper_1.pdf},
+  doi = {10.1007/978-3-540-87696-0_29}
+}
+
+@article{Hogan2012,
+  author = {Hogan, Aidan and Zimmermann, Antoine and Umbrich, Jürgen and Polleres, Axel and Decker, Stefan},
+  title = {Scalable and distributed methods for entity matching, consolidation and disambiguation over linked data corpora},
+  journal = {Journal of Web Semantics},
+  month = {January},
+  year = {2012},
+  volume = {10},
+  pages = {76--110},
+  url = {http://aidanhogan.com/docs/entcons_jws_final.pdf},
+  doi = {10.1016/j.websem.2011.11.002}
+}
+
+@techreport{Isaac2009,
+  author = {Isaac, Antoine and Summers, Ed},
+  title = {{SKOS} Simple Knowledge Organization System primer},
+  type = {{W3C} Working Group Note},
+  date = {2009-08-18},
+  urldate = {2017-01-03},
+  url = {https://www.w3.org/TR/skos-primer}
+}
+
+@inproceedings{Isele2011,
+  author = {Isele, Robert and Jentzsch, Anja and Bizer, Christian},
+  title = {Efficient multidimensional blocking for link discovery without losing recall},
+  editor = {Marian, Amélie and Vassalos, Vasilis},
+  booktitle = {Proceedings of the 14\textsuperscript{th} International Workshop on the Web and Databases},
+  eventdate = {2011-06-12},
+  location = {Athens, Greece},
+  year = {2011},
+  url = {http://www.wiwiss.fu-berlin.de/en/fachbereich/bwl/pwo/bizer/research/publications/IseleJentzschBizer-WebDB2011.pdf}
+}
+
+@techreport{Jacobs2004,
+  author = {Jacobs, Ian and Walsh, Norman},
+  title = {Architecture of the World Wide Web, volume 1},
+  type = {{W3C} Recommendation},
+  date = {2004-12-15},
+  urldate = {2017-01-19},
+  url = {http://www.w3.org/TR/webarch}
+}
+
+@book{Jannach2010,
+  author = {Jannach, Dietmar and Zanker, Markus and Felfernig, Alexander and Friedrich, Gerhard},
+  title = {Recommender systems},
+  subtitle = {An introduction},
+  edition = {1},
+  address = {New York (NY)},
+  publisher = {Cambridge University Press},
+  year = {2010},
+  isbn = {978-0-521-49336-9}
+}
+
+@techreport{Kenny2012,
+  author = {Kenny, Charles and Karver, Jonathan},
+  title = {Publish what you buy},
+  subtitle = {The case for routine publication of government contracts},
+  address = {Washington DC},
+  organization = {Center for Global Development},
+  month = {August},
+  year = {2012},
+  urldate = {2017-01-03},
+  series = {{CDG} policy paper},
+  number = {011},
+  url = {http://www.cgdev.org/content/publications/detail/1426431}
+}
+
+@inproceedings{Kiefer2007,
+  author = {Kiefer, Christoph and Bernstein, Abraham and Stocker, Markus},
+  title = {The fundamentals of {iSPARQL}},
+  subtitle = {A virtual triple approach for similarity-based semantic web tasks},
+  crossref = {SemanticWeb2007},
+  pages = {295--309},
+  doi = {10.1007/978-3-540-76298-0_22}
+}
+
+@book{Kimball2004,
+  author = {Kimball, Ralph and Caserta, Joe},
+  title = {The data warehouse {ETL} toolkit},
+  subtitle = {Practical techniques for extracting, cleaning, conforming, and delivering data},
+  address = {Hoboken (NJ)},
+  publisher = {Wiley},
+  year = {2004},
+  isbn = {978-0-7645-6757-5}
+}
+
+@inproceedings{Kleedorfer2013,
+  author = {Kleedorfer, Florian and Busch, Christina Maria},
+  title = {Beyond data: building a web of needs},
+  editor = {Bizer, Christian},
+  booktitle = {Linked Data on the Web},
+  booksubtitle = {Proceedings of the {WWW} 2013 Workshop on Linked Data on the Web},
+  location = {Rio de Janeiro, Brazil},
+  eventdate = {2013-05-14},
+  address = {Aachen},
+  publisher = {{RWTH} Aachen University},
+  year = {2013},
+  series = {{CEUR} workshop proceedings},
+  volume = {996},
+  url = {http://ceur-ws.org/Vol-996/papers/ldow2013-paper-13.pdf},
+  issn = {1613-0073}
+}
+
+@inproceedings{Kleedorfer2014,
+  author = {Kleedorfer, Florian and Busch, Christina Maria and Pichler, Christian and Huemer, Christian},
+  title = {The case for the {Web of Needs}},
+  booktitle = {Proceedings of the 2014 {IEEE} 16\textsuperscript{th} Conference on Business Informatics},
+  location = {Geneva},
+  address = {New York (NY)},
+  publisher = {{IEEE}},
+  year = {2014},
+  pages = {94--101},
+  url = {https://sat.researchstudio.at/sites/sat.researchstudio.at/files/won_cbi-2014_the_case_for_the_web_of_needs.pdf},
+  doi = {10.1109/CBI.2014.55}
+}
+
+@inproceedings{Kleedorfer2016,
+  author = {Kleedorfer, Florian and Human, Soheil and Friedrich, Heiko and Huemer, Christian},
+  year = {2016},
+  title = {{Web of Needs}: a process overview},
+  crossref = {Semantics2016},
+  url = {http://ceur-ws.org/Vol-1695/paper22.pdf}
+}
+
+@proceedings{Semantics2016,
+  editor = {Martin, Michael and Cuquet, Martí and Folmer, Erwin},
+  booktitle = {Joint Proceedings of the Posters and Demos Track of the 12\textsuperscript{th} International Conference on Semantic Systems - {SEMANTiCS2016} and the 1\textsuperscript{st} International Workshop on Semantic Change \& Evolving Semantics ({SuCCESS}'16) co-located with the 12\textsuperscript{th} International Conference on Semantic Systems ({SEMANTiCS} 2016)},
+  address = {Aachen},
+  publisher = {{RWTH} Aachen University},
+  year = {2016},
+  series = {{CEUR} workshop proceedings},
+  volume = {1695}
+}
+
+@techreport{Klimek2012,
+  author = {Klímek, Jakub and Knap, Tomáš and Mynarz, Jindřich and Nečaský, Martin and Svátek, Vojtěch},
+  title = {{LOD2} deliverable 9a.1.1},
+  subtitle = {Framework for creating linked data in the domain of public sector contracts},
+  year = {2012}
+}
+
+@online{Klimek2013,
+  author = {Klímek, Jakub and Snoha, Matej and Mynarz, Jindřich},
+  title = {Deliverable 9a.2.1},
+  subtitle = {Prototype of matchmaking web services for linked commerce data in the domain of public sector contracts},
+  date = {2013-08-03},
+  urldate = {2017-01-18},
+  url = {http://svn.aksw.org/lod2/D9a.2.1/public.pdf}
+}
+
+@inproceedings{Klimek2016,
+  author = {Klímek, Jakub and Škoda, Petr and Nečaský, Martin},
+  title = {LinkedPipes {ETL}},
+  subtitle = {Evolved linked data preparation},
+  editor = {Sack, Harald and Rizzo, Giuseppe and Steinmetz, Nadine and Mladenić, Dunja and Auer, Sören and Lange, Christoph},
+  booktitle = {The Semantic Web},
+  booksubtitle = {{ESWC} 2016 Satellite Events. Revised Selected Papers},
+  location = {Heraklion, Crete, Greece},
+  eventdate = {2016-05-29/2016-06-02},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2016},
+  pages = {95--100},
   series = {Lecture notes in computer science},
-  volume = {8861},
-  url = {http://link.springer.com/chapter/10.1007/978-3-319-09846-3_4},
-  isbn = {978-3-319-09846-3}
+  volume = {9989},
+  url = {http://2016.eswc-conferences.org/sites/default/files/papers/Accepted%20Posters%20and%20Demos/ESWC2016_DEMO_Linked_Pipes_ETL.pdf},
+  isbn = {978-3-319-47602-5},
+  issn = {0302-9743}
+}
+
+@techreport{Klyne2002,
+  editor = {Klyne, Graham and Carroll, Jeremy},
+  title = {Resource Description Framework ({RDF})},
+  subtitle = {Concepts and abstract data model},
+  type = {{W3C} Working Draft},
+  date = {2002-08-29},
+  urldate = {2017-01-23},
+  url = {https://www.w3.org/TR/2002/WD-rdf-concepts-20020829}
+}
+
+@inproceedings{Knap2012,
+  author = {Knap, Tomáš and Michelfeit, Jan and Nečaský, Martin},
+  title = {Linked open data aggregation},
+  subtitle = {Conflict resolution and aggregate quality},
+  booktitle = {Proceedings of the 2012 IEEE 36\textsuperscript{th} Annual Computer Software and Applications Conference Workshops},
+  address = {New York (NY)},
+  publisher = {{IEEE}},
+  year = {2012},
+  doi = {10.1109/COMPSACW.2012.29}
+}
+
+% Alternatives:
+% * <http://ceur-ws.org/Vol-1343/poster14.pdf>
+% * <http://link.springer.com/chapter/10.1007/978-3-319-11955-7_52>
+@article{Knap2017,
+  author = {Knap, Tomáš and Hanečák, Peter and Klímek, Jakub and Mader, Christian and Nečaský, Martin and Van Nuffelen, Bert and Škoda, Petr},
+  title = {{UnifiedViews}},
+  subtitle = {An {ETL} tool for {RDF} data management},
+  journal = {Semantic Web: Interoperability, Usability, Applicability},
+  year = {\noop{2017} [under review]},
+  url = {http://www.semantic-web-journal.net/system/files/swj1265.pdf}
+}
+
+@techreport{Longley2014,
+  author = {Longley, Dave and Kellogg, Gregg and Lanthaler, Markus and Sporny, Manu},
+  title = {{JSON-LD} 1.0 processing algorithms and {API}},
+  type = {{W3C} Recommendation},
+  organization = {{W3C}},
+  date = {2014-01-16},
+  urldate = {2017-01-18},
+  url = {https://www.w3.org/TR/json-ld-api}
+}
+
+@techreport{Longley2016,
+  author = {Longley, Dave and Sporny, Manu and Kellogg, Gregg and Lanthaler, Markus},
+  title = {{JSON-LD} Framing 1.1},
+  subtitle = {An application programming interface for the {JSON-LD} syntax},
+  type = {Draft Community Group Report},
+  organization = {{W3C}},
+  date = {2016-11-29},
+  urldate = {2017-01-02},
+  url = {http://json-ld.org/spec/latest/json-ld-framing}
+}
+
+@proceedings{SemanticWeb2007,
+  editor = {Aberer, Karl and Choi, Key-Sun and Noy, Natasha and Allemang, Dean and Lee, Kyung-Il and Nixon, Lyndon and Golbeck, Jennifer and Mika, Peter and Maynard, Diana and Mizoguchi, Riichiro and Schreiber, Guus and Cudré-Mauroux, Philippe},
+  booktitle = {The semantic web},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2007},
+  series = {Lecture notes in computer science},
+  volume = {4825},
+  isbn = {978-3-540-76297-3}
+}
+
+@inproceedings{Magliacane2012,
+  author = {Magliacane, Sara and Bozzon, Alessandro and Della Valle, Emanuele},
+  title = {Efficient execution of top-k {SPARQL} queries},
+  editor = {Cudré-Mauroux, Philippe and Heflin, Jeff and Sirin, Evren and Tudorache, Tania and Euzenat, Jérôme and Hauswirth, Manfred and Parreira, Josiane-Xavier and Hendler, Jim and Schreiber, Guus and Bernstein, Abraham and Blomqvist, Eva},
+  booktitle = {The Semantic Web},
+  booksubtitle = {{ISWC} 2012},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2012},
+  pages = {344--360},
+  series = {Lecture notes in computer science},
+  volume = {7649},
+  isbn = {978-3-642-35175-4},
+  doi = {10.1007/978-3-642-35176-1_22}
+}
+
+@incollection{Marin2013,
+  author = {Marín, Jose Luis and Rodríguez, Mai and Marín, Ángel and Calmeau, Ramón and Alvarez-Rodríguez, Jose María and Polo-Paredes, Luis and Rubiera-Azcona, Emilio and Rodríguez-González, Alejandro and Labra-Gayo, José Emilio and Ordoñez de Pablos, Patricia},
+  title = {Euroalert.net},
+  subtitle = {Aggregating public procurement data to deliver commercial services to {SMEs}},
+  editor = {Ordoñez de Pablos, Patricia and Cueva Lovelle, Juan Manuel and Labra-Gayo, José Emilio and Tennyson, Robert D.},
+  booktitle = {E-procurement management for successful electronic government systems},
+  address = {Hershey (PA)},
+  publisher = {{IGI Global}},
+  year = {2013},
+  pages = {114--130},
+  doi = {10.4018/978-1-4666-2119-0.ch007}
+}
+
+@inproceedings{Michelfeit2014a,
+  author = {Michelfeit, Jan and Mynarz, Jindřich},
+  title = {New directions in linked data fusion},
+  editor = {Horridge, Matthew and Rospocher, Marco and van Ossenbruggen, Jacco},
+  booktitle = {Proceedings of the {ISWC} 2014 Posters \& Demonstrations Track},
+  address = {Aachen},
+  publisher = {{RWTH} Aachen University},
+  year = {2014},
+  pages = {397--400},
+  series = {{CEUR} workshop proceedings},
+  volume = {1272},
+  url = {http://ceur-ws.org/Vol-1272/paper_119.pdf}
+}
+
+@article{Michelfeit2014b,
+  author = {Michelfeit, Jan and Knap, Tomáš and Nečaský, Martin},
+  title = {Linked data integration with conflicts},
+  archivePrefix = {arXiv},
+  date = {2014-10-27},
+  urldate = {2017-01-02},
+  url = {https://arxiv.org/abs/1410.7990}
+}
+
+@inproceedings{Mihindukulasooriya2013,
+  author = {Mihindukulasooriya, Nandana and García-Castro, Raúl and Esteban-Gutiérrez, Miguel},
+  title = {{Linked Data Platform} as a novel approach for {Enterprise Application Integration}},
+  editor = {Hartig, Olaf and Sequeda, Juan and Hogan, Aidan and Matsutsusuka, Takahide},
+  booktitle = {Proceedings of the 4\textsuperscript{th} International Workshop on Consuming Linked Data co-located with the 12\textsuperscript{th} International Semantic Web Conference},
+  address = {Aachen},
+  publisher = {{RWTH} Aachen University},
+  year = {2013},
+  urldate = {2017-01-09},
+  series = {{CEUR} workshop proceedings},
+  volume = {1034},
+  url = {http://ceur-ws.org/Vol-1034/MihindukulasooriyaEtAl_COLD2013.pdf}
+}
+
+@techreport{Miles2009,
+  editor = {Miles, Alistair and Bechhofer, Sean},
+  title = {{SKOS} {S}imple {K}nowledge {O}rganization {S}ystem reference},
+  type = {{W3C} Recommendation},
+  organization = {{W3C}},
+  date = {2009-08-18},
+  urldate = {2017-01-25},
+  url = {https://www.w3.org/TR/skos-reference}
+}
+
+@inproceedings{MunozSoro2015,
+  author = {Muñoz-Soro, José Félix and Esteban, Guillermo},
+  title = {Using the semantic web for the integration and publication of public procurement data},
+  editor = {Kö A. and Francesconi E.},
+  booktitle = {Electronic Government and the Information Systems Perspective},
+  booksubtitle = {{EGOVIS} 2015},
+  address = {Cham},
+  publisher = {Springer},
+  year = {2015},
+  series = {Lecture notes in computer science},
+  volume = {9265},
+  doi = {10.1007/978-3-319-22389-6_2}
+}
+
+@article{MunozSoro2016,
+  author = {Muñoz-Soro, José Félix and Esteban, Guillermo and Corcho, Oscar and Serón, Francisco},
+  title = {{PPROC}, an ontology for transparency in public procurement},
+  journal = {Semantic Web},
+  year = {2016},
+  volume = {7},
+  number = {3},
+  pages = {295--309},
+  url = {http://semantic-web-journal.org/system/files/swj1142.pdf},
+  doi = {10.3233/SW-150195}
+}
+
+@mastersthesis{Mynarz2012,
+  author = {Mynarz, Jindřich},
+  title = {Linked open data for public sector information},
+  address = {Praha},
+  school = {Charles University in Prague. Faculty of Arts. Institute of Information Studies and Librarianship. Department of New Media Studies},
+  note = {Thesis supervisor: Vojtěch Svátek},
+  year = {2012}
+}
+
+@online{Mynarz2013,
+  author = {Mynarz, Jindřich},
+  title = {Capturing temporal dimension of linked data},
+  date = {2013-07-17},
+  urldate = {2017-01-03},
+  url = {http://blog.mynarz.net/2013/07/capturing-temporal-dimension-of-linked.html}
+}
+
+@online{Mynarz2014a,
+  author = {Mynarz, Jindřich},
+  title = {Methods for designing ontologies and vocabularies for data on the Web},
+  year = {2014},
+  urldate = {2017-01-03},
+  url = {http://www.damepraci.eu/p/designing-ontologies.html}
+}
+
+@techreport{Mynarz2014b,
+  author = {Mynarz, Jindřich and Zeman, Václav and Dudáš, Marek},
+  title = {{LOD2} deliverable 9a.2.2},
+  subtitle = {Stable implementation of matching functionality into web application for filing public contracts},
+  date = {2014-08-20},
+  urldate = {2017-01-03},
+  url = {http://svn.aksw.org/lod2/D9a.2.2/public.pdf}
+}
+
+@article{Mynarz2014c,
+  author = {Mynarz, Jindřich},
+  title = {Integration of public procurement data using linked data},
+  journal = {Journal of Systems Integration},
+  year = {2014},
+  volume = {5},
+  number = {4},
+  pages = {19--31},
+  url = {http://www.si-journal.org/index.php/JSI/article/viewFile/213/158},
+  issn = {1804-2724}
+}
+
+@inproceedings{Mynarz2015,
+  author = {Mynarz, Jindřich and Svátek, Vojtěch and Di Noia, Tommaso},
+  title = {Matchmaking public procurement linked open data},
+  editor = {Debruyne, Christophe and Panetto, Hervé and Meersman, Robert and Dillon, Tharam and Weichart, Georg and An, Yuan and Ardagna, Claudio Agostino},
+  booktitle = {Proceedings of {On the Move to Meaningful Internet Systems}},
+  booksubtitle = {{OTM} 2015 Conferences},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2015},
+  pages = {405--422},
+  series = {Information Systems and Applications, incl. Internet/{Web}, and {HCI}},
+  volume = {9415},
+  url = {http://link.springer.com/chapter/10.1007%2F978-3-319-26148-5_27},
+  isbn = {978-3-319-26148-5}
+}
+
+@article{Nakatsuji2016,
+  author = {Nakatsuji, Makoto and Toda, Hiroyuki and Sawada, Hiroshi and Zheng, Jin Guang and Hendler, James A.},
+  title = {Semantic sensitive tensor factorization},
+  journal = {Artificial Intelligence},
+  month = {January},
+  year = {2016},
+  volume = {230},
+  pages = {224--245},
+  url = {http://www.sciencedirect.com/science/article/pii/S000437021500137X},
+  doi = {10.1016/j.artint.2015.09.001}
+}
+
+@article{Naumann2006,
+  author = {Naumann, Felix and Bilke, Alexander and Bleiholder, Jens and Weis, Melanie},
+  title = {Data fusion in three steps},
+  subtitle = {Resolving schema, tuple, and value inconsistencies},
+  journal = {Bulletin of the {IEEE} Computer Society Technical Committee on Data Engineering},
+  month = {June},
+  year = {2006},
+  volume = {29},
+  number = {2},
+  pages = {21--31},
+  url = {http://sites.computer.org/debull/A06june/A06JUN-CD.pdf}
+}
+
+@article{Necasky2014,
+  author = {Nečaský, Martin and Klímek, Jakub and Mynarz, Jindřich and Knap, Tomáš and Svátek, Vojtěch and Stárka, Jakub},
+  title = {Linked data support for filing public contracts},
+  journal = {Computers in Industry},
+  month = {January},
+  year = {2014},
+  url = {http://dx.doi.org/10.1016/j.compind.2013.12.006},
+  issn = {0166-3615}
+}
+
+@online{OpenDefinition2015,
+  organization = {Open Knowledge},
+  title = {Open definition 2.1},
+  date = {2015-11-10},
+  urldate = {2017-02-15},
+  url = {http://opendefinition.org/od/2.1/en}
+}
+
+@article{Parycek2014,
+  author = {Parycek, Peter and Höchtl, Johann and Ginner, Michael},
+  title = {Open government data implementation evaluation},
+  journal = {Journal of Theoretical and Applied Electronic Commerce Research},
+  month = {May},
+  year = {2014},
+  volume = {9},
+  number = {2},
+  pages = {80--99},
+  url = {http://www.scielo.cl/pdf/jtaer/v9n2/art07.pdf},
+  issn = {0718–1876},
+  doi = {10.4067/S0718-18762014000200007}
+}
+
+@inproceedings{Paton2012,
+  author = {Paton, Norman W. and Christodoulou, Klitos and Fernandes, Alvaro A. A. and Parsia, Bijan and Hedeler, Cornelia},
+  title = {Pay-as-you-go data integration for linked data},
+  subtitle = {Opportunities, challenges and architectures},
+  booktitle = {Proceedings of the 4\textsuperscript{th} International Workshop on Semantic Web Information Management},
+  address = {New York (NY)},
+  publisher = {{ACM}},
+  year = {2012},
+  isbn = {978-1-4503-1446-6}
+}
+
+@inproceedings{Paton2016,
+  author = {Paton, Norman W. and Belhajjame, Khalid and Embury, Suzanne M. and Fernandes, Alvaro A. A. and Maskat, Ruhaila},
+  title = {Pay-as-you-go data integration},
+  subtitle = {Experiences and recurring themes},
+  editor = {Freivalds, Rūsiņš Mārtiņš and Engels, Gregor and Catania, Barbara},
+  booktitle = {{SOFSEM} 2016: Theory and Practice of Computer Science},
+  booksubtitle = {Proceedings of the 42\textsuperscript{nd} International Conference on Current Trends in Theory and Practice of Computer Science},
+  location = {Harrachov, Czech Republic},
+  eventdate = {2016-01-23/2016-01-28},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2016},
+  pages = {81--92},
+  series = {Lecture notes in computer science},
+  volume = {9587},
+  doi = {10.1007/978-3-662-49192-8_7}
+}
+
+@inproceedings{Presern2014,
+  author = {Prešern, Mateja and Žejn, Gašper},
+  title = {Supervizor: an indispensable open government application},
+  booktitle = {Share-PSI 2.0 workshop on uses of open data within government for innovation and efficiency},
+  year = {2014},
+  urldate = {2017-01-03},
+  url = {https://www.w3.org/2013/share-psi/wiki/images/6/6b/Supervizor_Slovenia_description_pdf.pdf}
+}
+
+@inproceedings{Presutti2016,
+  author = {Presutti, Valentina and Lodi, Giorgia and Nuzzolese, Andrea and Gangemi, Aldo and Peroni, Silvio and Aspirino, Luigi},
+  title = {The role of ontology design patterns in linked data projects},
+  editor = {Comyn-Wattiau, Isabelle and Tanaka, Katsumi and Song, Il-Yeol and Yamamoto, Shuichiro and Saeki, Motoshi},
+  booktitle = {Conceptual modelling},
+  booksubtitle = {Proceedings of the 35\textsuperscript{th} International Conference, {ER} 2016},
+  location = {Gifu, Japan},
+  eventdate = {2016-11-14/2016-11-17},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2016},
+  pages = {113--121},
+  series = {Lecture notes in computer science},
+  volume = {9974},
+  doi = {10.1007/978-3-319-46397-1_9},
+  issn = {0302-9743}
+}
+
+@inproceedings{Radinger2013,
+  author = {Radinger, Andreas and Rodriguez-Castro, Bene and Stolz, Alex and Hepp, Martin},
+  title = {BauDataWeb},
+  subtitle = {The {A}ustrian building and construction materials market as linked data},
+  booktitle = {Proceedings of the 9\textsuperscript{th} International Conference on Semantic Systems ({I-SEMANTICS} 2013)},
+  location = {Graz, Austria},
+  eventdate = {2013-09-04/2013-09-06},
+  address = {New York (NY)},
+  publisher = {{ACM}},
+  year = {2013},
+  url = {http://semantic.eurobau.com/BauDataWeb-ISEMANTICS2013.pdf},
+  isbn = {978-1-4503-1972-0/13/09}
+}
+
+@online{RFC2616,
+  author = {Fielding, Roy Thomas and Gettys, J. and Mogul, J. and Frystyk, H. and Masinter, L. and Leach, P. and Berners-Lee, Tim},
+  title = {{RFC} 2616},
+  subtitle = {{H}ypertext {T}ransfer {P}rotocol: {HTTP}/1.1},
+  month = {June},
+  year = {1999},
+  urldate = {2017-02-16},
+  pagetotal = {176},
+  url = {https://tools.ietf.org/html/rfc2616},
+  issn = {2070-1721}
+}
+
+@book{Richter2013,
+  author = {Richter, Michael M. and Weber, Rosina O.},
+  title = {Case-based reasoning},
+  subtitle = {A textbook},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2013},
+  isbn = {978-3-642-40167-1}
+}
+
+@inproceedings{Ristoski2015,
+  author = {Ristoski, Petar and Schuhmacher, Michael and Paulheim, Heiko},
+  title = {Using graph metrics for linked open data enabled recommender systems},
+  editor = {Stuckenschmidt, Heiner and Jannach, Dieter},
+  booktitle = {E-Commerce and Web Technologies},
+  booksubtitle = {16\textsuperscript{th} International Conference on Electronic Commerce and Web Technologies, {EC-Web} 2015. Revised Selected Papers},
+  location = {Valencia, Spain},
+  month = {September},
+  year = {2015},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  pages = {30--41},
+  series = {Lecture notes in business information processing},
+  volume = {239},
+  doi = {10.1007/978-3-319-27729-5_3}
+}
+
+@inproceedings{Said2013,
+  author = {Said, Alan and Bellogín, Alejandro and De Vries, Arjen P.},
+  title = {A top-n recommender system evaluation protocol inspired by deployed systems},
+  booktitle = {{ACM} {RecSys} 2013 Workshop on Large-Scale Recommender Systems},
+  eventdate = {2013-10-13},
+  location = {Hong Kong, China},
+  year = {2013},
+  url = {http://graphlab.com/files/lsrs2013/paper_12.pdf}
+}
+
+@inproceedings{Schmid1998,
+  author = {Schmid, Beat F. and Lindemann, Markus A.},
+  title = {Elements of a reference model for electronic markets},
+  booktitle = {Proceedings of the 31\textsuperscript{st} Hawaii International Conference on System Sciences},
+  month = {January},
+  year = {1998},
+  volume = {4},
+  pages = {193--201},
+  doi = {10.1109/HICSS.1998.655275}
+}
+
+@inproceedings{Smeros2016,
+  author = {Smeros, Panayiotis and Koubarakis, Manolis},
+  title = {Discovering spatial and temporal links among {RDF} data},
+  booktitle = {Proceedings of the {WWW} 2016 Workshop},
+  booksubtitle = {Linked Data on the Web ({LDOW2016})},
+  eventdate = {2016-04-11},
+  location = {Montréal, Canada},
+  year = {2016},
+  urldate = {2017-01-02},
+  url = {http://events.linkeddata.org/ldow2016/papers/LDOW2016_paper_08.pdf}
+}
+
+@incollection{Smyth2007,
+  author = {Smyth, Barry},
+  title = {Case-based recommendation},
+  editor = {Brusilovsky, Peter and Kobsa, Alfred and Nejdl, Wolfgang},
+  booktitle = {The Adaptive Web},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2007},
+  pages = {342--376},
+  series = {Lecture notes in computer science},
+  volume = {4321},
+  isbn = {978-3-540-72078-2},
+  doi = {10.1007/978-3-540-72079-9_11}
+}
+
+@online{Soudek2016a,
+  author = {Soudek, Jan},
+  title = {Journal data quality},
+  date = {2016-09-06},
+  urldate = {2017-01-05},
+  url = {http://wiki.zindex.cz/doku.php?id=en:kvalita_dat_ve_vestniku}
+}
+
+@online{Soudek2016b,
+  author = {Soudek, Jan},
+  title = {zIndex},
+  subtitle = {Public contracting authorities rating},
+  date = {2016-09-06},
+  urldate = {2017-01-05},
+  url = {http://wiki.zindex.cz/doku.php?id=en:start#metodika_hodnoceni}
+}
+
+@techreport{Sporny2014,
+  author = {Sporny, Manu and Longley, Dave and Kellogg, Gregg and Lanthaler, Markus and Lindström, Niklas},
+  title = {{JSON-LD} 1.0},
+  subtitle = {A {JSON}-based serialization for linked data},
+  type = {{W3C} Recommendation},
+  organization = {{W3C}},
+  date = {2014-01-16},
+  urldate = {2017-01-02},
+  url = {http://www.w3.org/TR/json-ld}
+}
+
+@incollection{Svatek2014,
+  author = {Svátek, Vojtěch and Mynarz, Jindřich and Węcel, Krzysztof and Klímek, Jakub and Knap, Tomáš and Nečaský, Martin},
+  title = {Linked open data for public procurement},
+  crossref = {lod2book},
+  pages = {196--213},
+  url = {http://link.springer.com/chapter/10.1007/978-3-319-09846-3_10}
+}
+
+@techreport{W3C2012,
+  organization = {{W3C} {OWL} Working Group},
+  title = {{OWL} 2 Web Ontology Language},
+  subtitle = {Document overview},
+  edition = {2},
+  type = {{W3C} Recommendation},
+  date = {2012-12-11},
+  urldate = {2017-02-17},
+  url = {https://www.w3.org/TR/owl2-overview}
+}
+
+@book{Wood2011,
+  editor = {Wood, David},
+  title = {Linking government data},
+  address = {Berlin and Heidelberg},
+  publisher = {Springer},
+  year = {2011},
+  pagetotal = {xx, 232},
+  isbn = {978-1-4614-1767-5}
 }

@@ -2,7 +2,7 @@
 
 Open data is data that can be accessed equally by people and machines.
 Its definition is based on grounding principles that assert what conditions should data meet to achieve legal and technical openness.
-Principles of open data are perhaps best embodied in the Open Definition ([Open Definition 2.1,               2015](#OpenDefinition2015)) and the Eight principles of open government data [-@8principles2007]. 
+Principles of open data are perhaps best embodied in the Open Definition ([Open Definition 2.1,               2015](#OpenDefinition2015)) and the Eight principles of open government data [-@EightPrinciples2007]. 
 According to the Open Definition's summary, *"open data and content can be freely used, modified, and shared by anyone for any purpose."*^[<http://opendefinition.org>]
 The legal conditions of open data are usually established via a licence or waiver, such as the Open Data Commons Public Domain Dedication and Licence (ODC PDDL).^[<https://opendatacommons.org/licenses/pddl/1.0>]
 Eight principles of open government data draws similar requirements as the Open Definition and adds demands for completeness, primacy, and timeliness.

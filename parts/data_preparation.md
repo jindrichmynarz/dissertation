@@ -103,7 +103,7 @@ ETL of each of these datasets is described in more detail in the following secti
 
 <!-- Source code -->
 
-The source code used for data preparation is openly available in [this repository](https://github.com/jindrichmynarz/vvz-to-rdf).
+The source code used for data preparation is openly available in a code repository.^[<https://github.com/jindrichmynarz/vvz-to-rdf>]
 This allows others to replicate and scrutinize the way we prepared data.
 The data preparation tasks were implemented via declarative programming using XSLT, SPARQL Update operations, and XML specifications of linkage rules.
 The high-level nature of declarative programming made the implementation concise and helped us to avoid bugs by abstracting from lower-level data manipulation.

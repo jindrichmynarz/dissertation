@@ -3,6 +3,8 @@
 Linked data is a set of practices for publishing structured data on the Web.
 It is a way of structuring data that identifies entities with Internationalized Resource Identifiers (IRIs) and materializes their relationships as a network of machine-processable data ([Ayers, 2007, p. 94](#Ayers2007)).
 IRIs are universal, so that any entity can be identified with a IRI, and have global scope, therefore an IRI can only identify one entity ([Berners-Lee, 1996](#BernersLee1996)).
+In this section we provide a basic introduction to key aspects of linked data used in this thesis.
+A more detailed introduction in available in Heath and Bizer [-@Heath2011].
 
 Linked data may be seen as a pragmatic implementation of the so-called semantic web vision.
 It is based on semantic web technologies.
