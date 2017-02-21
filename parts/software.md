@@ -1,4 +1,4 @@
-# Appendix A: Software {#sec:software .unnumbered}
+# Appendix A: Software {#sec:software .unnumbered} 
 
 The work described in this thesis involved many software tools.
 In order to provide a single reference point for these tools, this appendix provides their brief descriptions.
@@ -6,49 +6,49 @@ We describe both the software used for data preparation as well as software for 
 The descriptions are divided into two categories: software that we reused and software that we developed.
 Descriptions in each category are sorted in alphabetic order.
 
-## Reused software
+## Reused software {.unnumbered}
 
 Several tools were reused as is or integrated with other tools.
 The tools listed in this category are mostly database systems or data processing tools.
 
-### Elasticsearch
+### Elasticsearch {.unnumbered}
 
-### GeoTools
+### GeoTools {.unnumbered}
 
-### LinkedPipes-ETL
+### LinkedPipes-ETL {.unnumbered}
 
-### OpenLink Virtuoso
+### OpenLink Virtuoso {.unnumbered}
 
-### RESCAL
+### RESCAL {.unnumbered}
 
-### Saxon XSLT and XQuery Processor
+### Saxon XSLT and XQuery Processor {.unnumbered}
 
-### Silk Link Discovery Framework
+### Silk Link Discovery Framework {.unnumbered}
 
-### tarql
+### tarql {.unnumbered}
 
-### UnifiedViews
+### UnifiedViews {.unnumbered}
 
-## Developed software
+## Developed software {.unnumbered}
 
 In order to cover needs that were not sufficiently addressed by existing software we developed new reusable tools.
 
-### elasticsearch-geocoding
+### elasticsearch-geocoding {.unnumbered}
 
-### jsonld-to-elasticsearch
+### jsonld-to-elasticsearch {.unnumbered}
 
-### matchmaker-sparql
+### matchmaker-sparql {.unnumbered}
 
-### matchmaker-elasticsearch
+### matchmaker-elasticsearch {.unnumbered}
 
-### matchmaker-rescal
+### matchmaker-rescal {.unnumbered}
 
-### sparql-to-csv
+### sparql-to-csv {.unnumbered}
 
-### sparql-to-graphviz
+### sparql-to-graphviz {.unnumbered}
 
-### sparql-to-jsonld
+### sparql-to-jsonld {.unnumbered}
 
-### sparql-unlimited
+### sparql-unlimited {.unnumbered}
 
-### vocab-to-graphviz
+### vocab-to-graphviz {.unnumbered}

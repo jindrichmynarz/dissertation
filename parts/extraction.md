@@ -43,7 +43,7 @@ However, the majority of linking was offloaded to a dedicated phase in the ETL p
 A trade-off we had to make due to our choice of an RDF store was to use plain literals in place of literals typed with `xsd:duration`, since Virtuoso^[<https://virtuoso.openlinksw.com>] does not yet support this data type.
 We used LinkedPipes-ETL (LP-ETL) [@Klimek2016] to automate the extraction.
 LP-ETL provided us with a way to automate downloading and transforming the source data in a data processing pipeline.
-Syntax of the extracted output was validated via Apache Jena's `riot`^[<https://jena.apache.org/documentation/io>] to avoid common problems in RDF/XML, such as incorrect striping [@Brickley2002].
+Syntax of the extracted output was validated via Apache Jena's *riot*^[<https://jena.apache.org/documentation/io>] to avoid common problems in RDF/XML, such as incorrect striping [@Brickley2002].
 
 The selected dataset spans Czech public contracts from June 1, 2006 to January 18, 2017.
 This selection amounts to 1.6 GB of raw data in XML and corresponds to 20.5 million extracted RDF triples.

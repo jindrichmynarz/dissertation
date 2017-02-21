@@ -104,7 +104,7 @@ Given this assumption, quality assessment followed by data pre-processing is typ
 
 Having considered the characteristics of linked data we may highlight its advantages. 
 Many of these advantages are related to data preparation, which we point out in [@sec:data-preparation], however, linked data can also benefit matchmaking in several ways.
-This overview draws upon the benefits of linked data for recommender systems identified in related research (e.g., [@DiNoia2014], [@DiNoia2016]), since these benefits apply to matchmaking too.
+This overview draws upon the benefits of linked data for recommender systems identified in related research (e.g., @DiNoia2014, @DiNoia2016), since these benefits apply to matchmaking too.
 
 Unlike textual content, linked data is structured, so there is less need for structuring it via content analysis.
 RDF gives linked data not only structure but also flexibility to model varied data. 

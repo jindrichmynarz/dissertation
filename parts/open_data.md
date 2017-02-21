@@ -12,7 +12,7 @@ It may be either reactive disclosure, such as upon Freedom of Information reques
 Disclosure of public sector data in the EU is regulated by the directive 2013/37/EU on the re-use of public sector information [@EU2013].
 
 While releasing open data is frequently framed as a means to improve transparency of the public sector, it can also have a positive effect on its efficiency [@AccessInfoEurope2011, p. 69], since the public sector itself is often the primary user of open data.
-Using open data can help streamline public sector processes [@Parycek2014, p. 90] and curb unnecessary expenditures [#Presern2014, p. 4].
+Using open data can help streamline public sector processes [@Parycek2014, p. 90] and curb unnecessary expenditures [@Presern2014, p. 4].
 The publication of public procurement data is claimed to improve *"the quality of government investment decision-making"* [@Kenny2012, p. 2], as supervision enabled by access to data puts a pressure on contracting authorities to follow fair and budget-wise contracting procedures.
 Matchmaking public contracts to relevant suppliers is an example of such application that can contribute to better informed decisions that lead to more economically advantageous contracts.
 
