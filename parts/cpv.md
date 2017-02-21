@@ -29,13 +29,13 @@ In this way, graph distance within CPV can better approximate the semantic dista
 In order to achieve this goal, we experimented with link discovery tools to construct associative links within the vocabulary.
 In the absence of better features to anchor the sense of the concepts, we compared the concepts' multilingual labels to determine their similarity.
 Even with the modest size of the vocabulary this exercise turned to be computationally expensive, since it would require over a trillion of pair-wise comparisons due to the number of languages involved.
-This naïve approach could be improved by using techniques, such as blocking ([Isele et al., 2011](#Isele2011)), however, given the tenuous benefits, we decided to abandon this effort.
+This naïve approach could be improved by using techniques, such as blocking [@Isele2011], however, given the tenuous benefits, we decided to abandon this effort.
 
 In order to integrate CPV with the public procurement data, we converted it from XML to RDF.
 The [transformation](https://github.com/opendatacz/cpv2rdf) was done using an XSL transformation and SPARQL CONSTRUCT queries for enriching data.
 Its result is described using SKOS plus Dublin Core Terms^[<http://dublincore.org/documents/dcmi-terms>] for metadata.
 While the original CPV source expresses hierachical relations using the structure of numerical notations of the    vocabulary's concepts, its RDF version makes these relations explicit using hierarchical relations from SKOS, such as `skos:broaderTransitive`.
-The transformation was originally orchestrated by a shell script, which was later replaced by a [UnifiedViews](https://unifiedviews.eu) ([Knap et al., 2017](#Knap2017)) pipeline.
+The transformation was originally orchestrated by a shell script, which was later replaced by a [UnifiedViews](https://unifiedviews.eu) [@Knap2017] pipeline.
 UnifiedViews is an ETL tool for producing RDF data, which can be considered a predecessor of LP-ETL.
 
 The Czech public procurement register mandates the use of the 2008 version of CPV since September 15, 2008.

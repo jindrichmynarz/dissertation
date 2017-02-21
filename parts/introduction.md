@@ -10,7 +10,7 @@ In particular, this work focuses on the public procurement market in the Web env
 A key obstacle to achieving the stated goal is fragmentation of data on the Web.
 Data about demands and offers is dispersed across a multitude of web sites, including electronic marketplaces or public sector registries. 
 To get a broader picture about the market one must scan through the relevant yet heterogenous sources of data, each of which may expose a different access interface, most of which will be suitable only for humans to process.
-Therefore, *"search and matchmaking between two business parties over the current Web are still very time-consuming if [...] information from multiple sources needs to be combined to assess the relevance or execute the query"* ([Radinger et al., 2013](#Radinger2013)).
+Therefore, *"search and matchmaking between two business parties over the current Web are still very time-consuming if [...] information from multiple sources needs to be combined to assess the relevance or execute the query"* [@Radinger2013].
 To improve this situation, the broad goal of this thesis is to contribute to defragmentation of online markets by linking the data communicated between them.
 Having links in between datasets on the Web that are traversable by machines may enable to query the distributed markets as a single virtual market.
 Such virtual market may facilitate supply and demand to meet in a distributed linked open data infrastructure.
@@ -25,7 +25,7 @@ Having access to structured data enables automated processing and granular descr
 
 In the public procurement domain, better information can improve the quality of government's decision making and thus make the allocation of public resources more efficient.
 Matchmaking can help public bodies to find a more suitable supplier, while companies can benefit from finding business opportunities in relevent calls for tenders.
-In effect, the ambition of the developed system is mainly to reduce passive waste with public funds ([Bandiera, Prat, Valletti, 2009](#Bandiera2009)), which, unlike active waste, does not benefit the decision-making civil servant, but instead is caused rather by lack of information, skills, and motivation.
+In effect, the ambition of the developed system is mainly to reduce passive waste with public funds [@Bandiera2009], which, unlike active waste, does not benefit the decision-making civil servant, but instead is caused rather by lack of information, skills, and motivation.
 
 Additional goals:
 

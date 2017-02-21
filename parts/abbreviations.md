@@ -1,4 +1,4 @@
-# Abbreviations {.unnumbered}
+# Abbreviations {#sec:abbreviations .unnumbered}
 
 AAA
 ~ Anyone can say anything about anything

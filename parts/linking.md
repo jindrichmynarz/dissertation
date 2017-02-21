@@ -1,4 +1,4 @@
-## Linking
+## Linking {#sec:linking}
 
 Linking is a process of discovering co-referent identifiers.
 Co-referent identifiers share the same referent, i.e. they refer to the same entity.
@@ -13,7 +13,7 @@ In this way, linking addresses the accidental variety of data published on the W
 In the absence of agreed upon identifiers, entities are referred to by their description.
 Moreover, unlike RDF, some data formats, such as CSV, do not enable linking.
 Lack of agreed upon identifiers established by a reliable authority leads to proliferation of aliases for equivalent entities.
-Missing consensual identifiers are one of the key challenges in integration of public procurement data ([Alvarez-Rodríguez, Labra-Gayo, Ordoñez de Pablos, 2014](#AlvarezRodriguez2014)).
+Missing consensual identifiers are one of the key challenges in integration of public procurement data [@AlvarezRodriguez2014].
 
 If descriptions with which entities are referred to are reliable, we can use content-based addressing to discover descriptions referring to the same entity.
 Content-based addressing is a general approach for identifying entities by using their content.
@@ -76,9 +76,9 @@ Since no two blank nodes are the same, this procedure led to a significant reduc
 
 We employed four kinds of linking technologies.
 Simple keys and some compound keys were used directly to construct IRIs in XSLT.
-Linking based on hashes was done using SPARQL Update operations ([Gearon, Passant, Polleres, 2013](#Gearon2013)).
+Linking based on hashes was done using SPARQL Update operations [@Gearon2013].
 Update operations were also used when creating links required a join via a key, for example when reconciling code list values.
-Most linking tasks based on fuzzy matches of compound keys were done using the Silk link discovery framework ([Bryl et al., 2014](#Bryl2014)).
+Most linking tasks based on fuzzy matches of compound keys were done using the Silk link discovery framework [@Bryl2014].
 Silk was used when links could not be established via exact matches.
 For example, we used it to compare syntactically invalid RNs via string distance metrics.
 We used Silk Workbench, a graphical user interface for Silk, to develop linkage rules iteratively.
@@ -121,7 +121,7 @@ Geocoding is the described in greater detail further in this section.
 
 ### Evaluation
 
-Evaluation of the quality of linking typically involves clerical review of a sample of the resulting equivalence links ([Christen, 2012](#Christen2012), p. 174).
+Evaluation of the quality of linking typically involves clerical review of a sample of the resulting equivalence links [@Christen2012, p. 174].
 By using manual assessment, a randomly selected sample of links can be split into correct and incorrect matches.
 This allows to compute quality metrics, such as precision, which is defined as the ratio of correct links (true positives) to all links (positives).
 Results of the metrics computed on a sample may then be extrapolated to approximate the quality of the complete output of linking.
@@ -138,7 +138,7 @@ For example, there are two distinct entities named *COMIMPEX spol. s r.o.* that 
 There are also few automated measures that may indicate linking quality.
 An example of such measure is reduction ratio, which is defined as the number of generated equivalence links compared to all possible equivalence links.
 Effectiveness of linking measured in total task's runtime compared to the number of processed entities can also be determined without human input.
-A more detailed review of the evaluation methods for linking is presented by Christen ([ibid.](#Christen2012), pp. 163-184).
+A more detailed review of the evaluation methods for linking is presented by Christen [-@Christen2012, pp. 163-184].
 
 <!--
 TODO:

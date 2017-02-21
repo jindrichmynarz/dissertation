@@ -11,4 +11,4 @@ Schema-aware vs. schema-agnostic matchmaking
 Reinterpretation of contract award as a positive rating (in the context of the awarded contract)
 Limitation: We have only positive ratings.
 
-Case-based recommenders are usually classified as subset of knowledge-based recommenders ([Jannach et al., 2010](#Jannach2010)).
+Case-based recommenders are usually classified as subset of knowledge-based recommenders [@Jannach2010].

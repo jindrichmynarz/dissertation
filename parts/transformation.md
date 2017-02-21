@@ -1,15 +1,15 @@
-## Transformation
+## Transformation {#sec:transformation}
 
 Due to our separation of concerns, extraction produced only intermediate data.
 This data needed to be transformed in order to reach a better quality and conform with our target data model.
 
 Even though the current documentation of the Czech public procurement register states that the collected data is validated by several rules, we found errors in the data that should have been prevented by the rules.
 A possible explanation for this issue is that the extracted dataset contains historical data as well, some of which might date to the past when the register did not yet employ as comprehensive validation as it does now. 
-Alternatively, the *"errors in the published data may be caused by either negligence when filling out Journal forms or by deliberate obfuscation of sensitive information in order to reduce a contract's traceability"* ([Soudek, 2016](#Soudek2016)).
+Alternatively, the *"errors in the published data may be caused by either negligence when filling out Journal forms or by deliberate obfuscation of sensitive information in order to reduce a contract's traceability"* [@Soudek2016a].
 Due to the messiness of the data, we had to make data transformations defensive.
 The transformations needed to rely on fewer assumptions about the data and had to be able to deal with violations of these assumptions. 
 For example, the identifiers of the entities involved in public procurement had to be treated as inherently unrealiable.
-Many other data quality problems of the Czech public procurement register are documented in the wiki of zIndex ([Soudek, 2016a](#Soudek2016a)). 
+Many other data quality problems of the Czech public procurement register are documented in the wiki of zIndex [@Soudek2016a]. 
 
 Moreover, since not all data is disclosed, we have only a sample instead of complete data.
 Given the incentives not to publish data, we cannot assume the sample is random.
@@ -41,7 +41,7 @@ This tool executes transformations rendered from [Mustache](https://mustache.git
 Limit determines the size of a subset to be transformed in one update operation.
 In this way, the processed subset's size can be adjusted based on the complexity of the transformation.
 Updates are executed repeatedly, the offset being incremented by the limit in each iteration, until their response reports zero modifications.
-This stopping condition is Virtuoso-specific, since the SPARQL 1.1 Update standard ([Gearon, Passant, Polleres, 2013](#Gearon2013)) leaves it unspecified, so that SPARQL engines differ in how zero modifications are indicated.
+This stopping condition is Virtuoso-specific, since the SPARQL 1.1 Update standard [@Gearon2013] leaves it unspecified, so that SPARQL engines differ in how zero modifications are indicated.
 Additionally, the tool provides conveniences including configurable retries of failed updates or the ability to restart transformations from a specified offset.
 
 While *sparql-unlimited* was used to automate parts of individual transformations, each transformation was launched manually.
@@ -61,10 +61,10 @@ For example, we deleted empty contract lots and resources orphaned^[We consider 
 Several transformations were used to clean malformed literals; for example to regularize common abbreviations for organizations types or convert `\/` into `V`.
 We added default values into the data.
 Since the dataset is of Czech origin, we used Czech koruna (CZK) as default value in case currency was missing.
-Addresses without an explicitly stated country were assumed to be located in Czech Republic.
+Addresses without an explicitly stated country were assumed to be located in the Czech Republic.
 Nevertheless, adding default values was a trade-off favouring coverage over accuracy.
 
-We paid particular attention to structuring postal addresses in order to improve the results of the subsequent [geocoding](#geocoding).
+We paid particular attention to structuring postal addresses in order to improve the results of the subsequent geocoding ([@sec:geocoding]).
 The chief aim of the transformation of postal addresses was to minimize their variety to increase their chance for match with a reference postal address.
 We managed to extract postal codes, house numbers, and street names from otherwise unstructured data.
 Accidental variations in postal addresses, such as punctuation, were normalized where possible.
@@ -99,7 +99,7 @@ These prices were converted to arithmetic averages to simplify further processin
 <!--
 Out-takes:
 
-In the context of procurement and financial data it was reported that *"data conversion aspects of the integration project are estimated to take up to 50 % of the project team's time"* ([Best practices in integration of procurement and financial data management, 2005](#BestPractices2005), p. 19).
+In the context of procurement and financial data it was reported that *"data conversion aspects of the integration project are estimated to take up to 50 % of the project team's time"* [@BestPractices2005, p. 19].
 We argue that a considerable share of this effort can be avoided if the integrated datasets are available in RDF. 
 In that case, data translation can skip the resolution of syntactical inconsistencies and instead focus on resolving semantic mismatches between the integrated sources.
 

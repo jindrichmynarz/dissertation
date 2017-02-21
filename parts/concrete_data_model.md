@@ -1,6 +1,6 @@
-### Concrete data model
+### Concrete data model {#sec:concrete-data-model}
 
-The concrete data model of the Czech public procurement data uses the PCO mixed with terms cherry-picked from other linked open vocabularies, such as Public Procurement Ontology (PPROC) ([Muñoz-Soro et al., 2016](#MunozSoro2016)), which directly builds upon PCO.
+The concrete data model of the Czech public procurement data uses the PCO mixed with terms cherry-picked from other linked open vocabularies, such as Public Procurement Ontology (PPROC) [@MunozSoro2016], which directly builds upon PCO.
 The data model's class diagram is shown in [@fig:vvz].
 
 ![Class diagram of the Czech public procurement data](img/vvz.png){#fig:vvz}
@@ -17,8 +17,8 @@ This custom modelling pattern was adopted, since SKOS does not recommend any way
 
 Data in the Czech public procurement register is represented using notices, such as prior information notices or contract award notices.
 Notices are documents that inform about changes in the life-cycle of public contracts.
-Using the terminology of the Jacobs and Walsh ([2004](#Jacobs2004)), notices are information resources describing contracts as non-information resources. 
-Information resource is *"a resource which has the property that all of its essential characteristics can be conveyed in a message"* ([ibid.](#Jacobs2004)), so that it can be transferred via HTTP, which cannot be done with non-information resources, such as physical objects or abstract notions.
+Using the terminology of the Jacobs and Walsh [-@Jacobs2004], notices are information resources describing contracts as non-information resources. 
+Information resource is *"a resource which has the property that all of its essential characteristics can be conveyed in a message"* [-@Jacobs2004], so that it can be transferred via HTTP, which cannot be done with non-information resources, such as physical objects or abstract notions.
 
 <!--
 TODO: Add a (simplified) diagram of public contract lifecycle in terms of public notices.
@@ -35,7 +35,7 @@ For example, it does not accommodate expressing that a contracting authority was
 Neither is it supported by PCO, which was designed as atemporal, since modelling temporal data remains an open research topic.
 
 Apart from reusing the code lists incorporated in PCO, we employed a few others.
-We extracted the code list standardizing categories of procured services as defined in the EU directive 2004/18/EC ([EU, 2004](#EU2004)).
+We extracted the code list standardizing categories of procured services as defined in the EU directive 2004/18/EC [@EU2004].
 This code list links CPV to the Central Product Classification (CPC).^[<http://unstats.un.org/unsd/cr/registry/cpc-2.asp>]
 We also extracted several code lists enumerating the types of contract notices.
 The EU-wide standard types of notices, including the prior information notice or the design contest notice, were published in 2004 and updated in 2014, with a few types removed, such as the public works concession, or added, such as the modification notice.^[<http://simap.ted.europa.eu/standard-forms-for-public-procurement>]

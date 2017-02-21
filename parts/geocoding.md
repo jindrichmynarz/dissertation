@@ -1,8 +1,8 @@
-### Geocoding
+### Geocoding {#sec:geocoding}
 
 Geocoding is the process of linking postal addresses to geographic locations.
 The locations are represented as coordinates corresponding to a place on the Earth's surface.
-Geocoding can be considered a case of instance matching ([Christen, 2012, section 9.1](#Christen2012)) that matches addresses from a dataset to reference addresses equipped with geo-coordinates.
+Geocoding can be considered a case of instance matching [@Christen2012, section 9.1] that matches addresses from a dataset to reference addresses equipped with geo-coordinates.
 We geocoded postal addresses of business entities in the Czech public procurement register, the Public Register (PR), and the Trade Licensing Register (TLR).
 In case of the PR we geocoded only the addresses that were missing links to the Czech address dataset.
 Unlinked addresses in the PR amounted for 12.42 % of all its addresses.
@@ -16,7 +16,7 @@ The main challenge to address in geocoding was the lack of structure in the geoc
 // We don't do geocoding of non-organization addresses that contain only `schema:description`, hence commented out.
 87.22 % postal addresses in the Czech public procurement register have only unstructured `schema:description`.
 -->
-As described in the [section on transformation](#transformation), we attempted to parse the unstructured addresses to recover their structure.
+As described in the [@sec:transformation], we attempted to parse the unstructured addresses to recover their structure.
 Nevertheless, many addresses contained just a name of a region or a municipality.
 This is why we started with simple geocoding based on matching region or municipality names.
 
@@ -25,7 +25,7 @@ The data provides geo-coordinates of centroids of each region and municipality.
 The geo-coordinates were reprojected from EPSG:5514 coordinate reference system (CRS) to EPSG:4326 to improve their interoperability.
 We loaded the data into our RDF store and ran a SPARQL Update operation to match the geo-coordinates to postal addresses via the names of regions and municipalities.
 
-In order to geocode other postal addresses, we built and Elasticsearch-based geocoder using the [Czech address data](#czech-addresses).
+In order to geocode other postal addresses, we built and Elasticsearch-based geocoder using the Czech address data ([@sec:czech-addresses]).
 We decided not to use an existing solution for several reasons.
 Some geocoding services have restrictive licenses.
 For instance, the results of Google's Maps Geocoding API can be used [only in conjuction with displaying the obtained geo-coordinates on the Google map](https://developers.google.com/maps/documentation/geocoding/policies#map).
@@ -47,7 +47,7 @@ In case of multiple results, we selected the first one, which ranked the best.
 Since we practice separation of concerns, the geocoder expects a reasonably clean input.
 It is the responsibility of data preparation to structure and normalize postal addresses.
 This effort has benefits for many tasks, not geocoding only.
-Instead of ad hoc cleaning during geocoding we thus prepared postal addresses as part of the ETL pre-processing, as described in the [section on data transformation](#transformation).
+Instead of ad hoc cleaning during geocoding we thus prepared postal addresses as part of the ETL pre-processing, as described in [@sec:transformation]. 
 
 Queries to Elasticsearch are generated from the provided addresses to geocode.
 Since every property of the addresses is optional, the queries can be generated in several ways.
@@ -66,7 +66,7 @@ Further optimization of the geocoding query was guided by the results of evaluat
 
 #### Evaluation
 
-We chose to evaluate the geocoder using metrics adapted from Goldberg et al. ([2013](#Goldberg2013)).
+We chose to evaluate the geocoder using metrics adapted from Goldberg et al. [-@Goldberg2013].
 *Match rate* is defined as the share of addresses capable of being geocoded.
 If $A$ is a set of addresses and $geocode()$ is a geocoding function, we can define match rate as $\frac{|\{a \in A, geocode(a) \neq \varnothing\}|}{|A|}$.
 We adapted *spatial accuracy* as the share of addresses that are geocoded within a specified distance from the reference location.
@@ -93,7 +93,7 @@ The geocoder achieved a match rate of 0.9788, while Here Geocoding API scored 0.
 We sorted the postal addresses that were matched both by Here Geocoding API and our geocoder by the distance of the returned geo-coordinates in descending order.
 We manually checked the top geo-coordinates and found that the maximum distance where our geo-coordinates were invalid was 8 kilometers.
 Median distance was 0.63 meters and arithmetic mean distance was 290 meters.
-We deem such results to be reasonable for our use cases.
+We deem such results to be reasonable for our use case.
 
 <!--
 We geocoded 49 635 postal addresses in the Czech public procurement register.

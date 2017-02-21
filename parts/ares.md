@@ -46,7 +46,7 @@ Thanks to the uniform API that ARES provides the ETL of both registers differs o
 The data transformation was done using UnifiedViews.
 A [custom data processing unit](https://github.com/mff-uk/DPUs/tree/master/dpu-domain-specific/ares) (DPU) was used to fetch data into UnifiedViews.
 Raw source data in XML was transformed into RDF/XML using XSL stylesheets.
-A mixture of RDF vocabularies was used to describe the ARES data with the key roles played by the GoodRelations ([Hepp, 2008](#Hepp2008)) and the Registered Organization Vocabulary ([Archer et al., 2013](#RegOrg2013)).
+A mixture of RDF vocabularies was used to describe the ARES data with the key roles played by the GoodRelations [@Hepp2008] and the Registered Organization Vocabulary [@Archer2013].
 The registry data is relatively consistent, so it did not require much cleaning. 
 However, we paid special care to postal addresses, since we needed them for geocoding.
 SPARQL Update operations were employed to clean and structure the addresses.
@@ -64,7 +64,6 @@ CZ-NACE is maintained by the CSO, which provided us with this classification in 
 We converted the source data to RDF using a custom Python script.
 
 <!--
-Extends NACE Rev. 2 with leaf concepts
 3209 organizations from the Czech public procurement register that are in ARES are missing links to NACE
 All links to NACE lead to valid codes.
 27359 organizations linked to NACE (30568 total ARES, 37322 total unlinked)

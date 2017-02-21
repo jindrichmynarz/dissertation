@@ -1,13 +1,13 @@
 ## Fusion
 
-Data fusion can be defined as *"the process of integrating multiple data items representing the same real-world object into a single, consistent, and clean representation"* ([Bizer, Heath and Berners-Lee, 2009](#Bizer2009)).
-In order to reach this goal, data fusion removes invalid or non-preferred data, so that *"duplicate representations are combined and fused into a single representation while inconsistencies in the data are resolved"* ([Bleiholder and Naumann, 2008](#Bleiholder2008), p. 1:3).
+Data fusion can be defined as *"the process of integrating multiple data items representing the same real-world object into a single, consistent, and clean representation"* [@Bizer2009].
+In order to reach this goal, data fusion removes invalid or non-preferred data, so that *"duplicate representations are combined and fused into a single representation while inconsistencies in the data are resolved"* [@Bleiholder2008, p. 1:3].
 Fusion of RDF data can be considered a counter-measure to the effects of the principle of *Anyone can say anything about anything* (AAA).
-As Klyne and Carroll state, *"RDF cannot prevent anyone from making nonsensical or inconsistent assertions, and applications that build upon RDF must find ways to deal with conflicting sources of information"* ([2002](#Klyne2002)).
+As Klyne and Carroll state, *"RDF cannot prevent anyone from making nonsensical or inconsistent assertions, and applications that build upon RDF must find ways to deal with conflicting sources of information"* [-@Klyne2002].
 
 In line with the principle of separation of concerns, data fusion expects equivalence links between conflicting identities to be provided.
 However, it is not limited to a mechanical application of the equivalence links produced by linking.
-Its particular focus *"lies in resolving value-level contradictions among the different representations of a single real-world object"* ([Naumann et al., 2006](#Naumann2006), p. 22).
+Its particular focus *"lies in resolving value-level contradictions among the different representations of a single real-world object"* [@Naumann2006, p. 22].
 
 Viewed from the perspective of data fusion, linking is a way to discover identity conflicts.
 Identity conflicts arise when a single entity is provided with multiple identities.
@@ -30,7 +30,7 @@ Data from the Czech public procurement register has many characteristics of user
 Uncoordinated civil servants are akin to the distributed user base of web applications.
 Lack of rules and constraints enforced on user input
 Exchanging data in self-contained documents
-*"the default mode of authoring is copy and edit"* ([Guha, 2013](#Guha2013))
+*"the default mode of authoring is copy and edit"* [@Guha2013]
 
 Public procurement data also suffers from shortcomings similar to those of user-generated data.
 The users generating data for the public procurement registers usually comprise many contracting authorities.
@@ -38,8 +38,8 @@ Each authority may produce data digressing from the mandated data standards in a
 Due to the distinct interpretations of the extent of mandatory and discretionary data by contracting authorities, the resulting aggregated dataset may appear to be incomplete.
 Additionally, public procurement data is typically collected from forms filled out by people, who may inadvertently or purposely enter errors into the data they create.
 A shortcoming of public procurement data that becomes apparent in data integration is the lack of global, agreed-upon and well-maintained identifier schemes for values of attributes of public contracts; such as the award criteria employed in the course of selecting the winning bid for a contract.
-Coletta et al. claim that data integration is harder in the context of public sector data because important metadata is often missing ([2012](#Coletta2012)).
-Fazekas discusses a similar set of issues of public procurement data from Hungary and highlights missing identifiers, imprecise links, and structural weaknesses ([Fazekas and Tóth, 2012](#Fazekas2012), p. 14).
+Coletta et al. claim that data integration is harder in the context of public sector data because important metadata is often missing [-@Coletta2012].
+Fazekas discusses a similar set of issues of public procurement data from Hungary and highlights missing identifiers, imprecise links, and structural weaknesses [@Fazekas2012, p. 14].
 A corollary of these issues is that tracking public contracts through the stages of their life-cycle, from their announcement over to completion, is difficult because of the lack of reliable identifiers.
 -->
 
@@ -58,25 +58,25 @@ Resolution functions are either *deciding*, which pick one of their inputs, or *
 An example deciding function is picking the maximum value, while an example mediating function is computing median value.
 We employed deciding conflict resolution functions.
 
-The conflict resolution strategies we implemented can be classified according to Bleiholder and Naumann ([2006](#Bleiholder2006)).
-We used *Trust your friends* ([ibid.](#Bleiholder2006), p. 3) strategy to prefer values from ARES, since we consider it a trustworthy reference dataset.
+The conflict resolution strategies we implemented can be classified according to Bleiholder and Naumann [-@Bleiholder2006].
+We used *Trust your friends* [@Bleiholder2006, p. 3] strategy to prefer values from ARES, since we consider it a trustworthy reference dataset.
 Leveraging the semantics of notice types, we preferred data from correction notices.
 A similar reason led us to remove syntactically invalid RNs in case valid RNs were present too.
-We used *Keep up to date* ([ibid.](#Bleiholder2006), p. 3) metadata-based deciding conflict resolution strategy to prefer values from the most recent public notices.
+We used *Keep up to date* [@Bleiholder2006, p. 3] metadata-based deciding conflict resolution strategy to prefer values from the most recent public notices.
 We determined the temporal order of notices from their submission dates and the semantics of their types, which represents an implicit order.
 For example, prior information notice comes before contract notice, which in turn precedes contract award notice.
 The order of notice types can be *learnt* from the most common order of notices with immediately following submission dates.
 We combined such distribution of subsequent notice types with manual assessment to rule out erroneous pairs.
 The order of notice types was provided as an inline table to the SPARQL Update operation resolving the conflicts.
 In line with this strategy, we also preferred the most recent values of `pc:awardDate`.
-We used *Most specific concept* ([ibid.](#Bleiholder2006), p. 4) strategy for resolution of conflicts in values from hierarchical concept schemes.
+We used *Most specific concept* [@Bleiholder2006, p. 4] strategy for resolution of conflicts in values from hierarchical concept schemes.
 In case a single functional property linked multiple concepts that were in a hierarchical relation, the most specific concepts were retained.
 For instance, we removed procedure types that can be transitively inferred by following `skos:broaderTransitive` links.
-We used *No gossiping* ([ibid.](#Bleiholder2006), p. 3) strategy for conflicting boolean values.
+We used *No gossiping* [@Bleiholder2006, p. 3] strategy for conflicting boolean values.
 If a boolean property has both `true` and `false` value, and there is no way to prioritize a value, we conclude the true value of the property is unknown, and therefore delete both conflicting values. 
-Once the conflicts were resolved by the above-described strategies, we moved the remaining notice data to the associated contracts, which corresponds with the strategy *Take the information* ([ibid.](#Bleiholder2006), p. 3).
+Once the conflicts were resolved by the above-described strategies, we moved the remaining notice data to the associated contracts, which corresponds with the strategy *Take the information* [@Bleiholder2006, p. 3].
 We excluded notice's proper data, such as submission date or notice type, from this step.
-If all previous conflict resolution strategies failed, in select cases we followed the *Roll the dice* ([ibid.](#Bleiholder2006), p. 5) strategy and picked a random value via the `SAMPLE` aggregate function in SPARQL.
+If all previous conflict resolution strategies failed, in select cases we followed the *Roll the dice* [@Bleiholder2006, p. 5] strategy and picked a random value via the `SAMPLE` aggregate function in SPARQL.
 We did this for procedure types (values of `pc:procedureType`), contracting authorities (values of `pc:contractingAuthority`) without valid RNs, and actual prices (values of `pc:actualPrice`).
 
 The final polishing touch was to excise the resources orphaned during data fusion.
@@ -87,15 +87,15 @@ In this way we first removed orphans, followed by deleting their dependent resou
 
 If we decide to evaluate the quality of data fusion, there are several measures available.
 One of the broadest measures for assessing data fusion is data reduction ratio, which represents the decrease in the number of fused entities.
-This figure corresponds to the measure of extensional conciseness defined by Bleiholder and Naumann ([2008](#Bleiholder2008), pp. 1:5-1:6) as the *"percentage of real-world objects covered by that dataset."*
+This figure corresponds to the measure of extensional conciseness defined by Bleiholder and Naumann [-@Bleiholder2008, pp. 1:5-1:6] as the *"percentage of real-world objects covered by that dataset."*
 Many evaluation measures used for data fusion reflect the impact of this task on data quality.
-An example of those measures is completeness, which represents the ratio of instances having value for a specified property before and after fusion, and is sometimes rephrased as coverage and density ([Akoka, 2007](#Akoka2007)).
+An example of those measures is completeness, which represents the ratio of instances having value for a specified property before and after fusion, and is sometimes rephrased as coverage and density [@Akoka2007].
 
 Compared with the raw extracted datasets, fusion decreased the number of distinct entities by 61.68 % to 2 million.
 Overall, fusion reduced the data by 52.14 % from 20.5 million triples to 9.8 million.
 
 <!--
-([Bleiholder, Naumann, 2008](#Bleiholder2008))
+[@Bleiholder2008]
 Completenes
 Conciseness
 Consistency

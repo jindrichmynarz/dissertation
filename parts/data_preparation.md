@@ -6,7 +6,7 @@ It served as a use case for applied research in the public procurement domain to
 
 <!-- Characteristics of ETL -->
 
-In this chapter we will describe the data preparation using the framework of Extract-Transform-Load (ETL) ([Kimball, Caserta, 2004](#Kimball2004)).
+In this chapter we will describe the data preparation using the framework of Extract-Transform-Load (ETL) [@Kimball2004].
 ETL is a workflow for data preparation that is guided by the principle of the separation of concerns, as indicated by its compound name.
 It conceptualizes a sequence of data processing steps endowed with a single main responsibility.
 Each step is further subdivided into smaller steps endowed with a single responsibility.
@@ -20,7 +20,7 @@ Once data is available in RDF, its processing is described as transformation.
 Linking discovers co-referent identities, while fusion resolves them to the preferred identities, along with resolving data conflicts that may arise.
 Linking and fusion are interleaved and executed iteratively, each building on the results of the previous step.
 Loading is concerned with making the data available in a way that the matchmaking methods can operate efficiently.
-The adopted ETL workflow evolved from the workflow that was previously described by the thesis' author ([Mynarz, 2014c](#Mynarz2014c)).
+The adopted ETL workflow evolved from the workflow that was previously described by the thesis' author [-@Mynarz2014c].
 The [@fig:etl] summarizes the overall workflow.
 
 ![ETL workflow](img/etl_workflow.png){#fig:etl}
@@ -43,20 +43,20 @@ Merge as union applies to schemas as well, because they too are formalized in RD
 Flexible data model of RDF and the expressive power of RDF vocabularies and ontologies enable to handle variation in the processed data sources.
 Vocabularies and ontologies make RDF into a self-describing data format.
 Producing RDF as the output of data extraction provides a leverage for the subsequent parts of the ETL process, since the RDF structure allows to express complex operations transforming the data.
-Moreover, the homogeneous structure of RDF *"obsoletes the structural heterogeneity problem and makes integration from multiple data sources possible even if their schemas differ or are unknown"* ([Mihindukulasooriya, García-Castro, Esteban-Gutiérrez, 2013](#Mihindukulasooriya2013)).
+Moreover, the homogeneous structure of RDF *"obsoletes the structural heterogeneity problem and makes integration from multiple data sources possible even if their schemas differ or are unknown"* [@Mihindukulasooriya2013].
 Explicit, machine-readable description of RDF data enables to automate many data processing tasks.
 In the context of data preparation, this feature of RDF reduces the need for manual intervention in the data preparation process, which decreases its cost and increases its consistency by avoiding human-introduced errors.
-However, *"providing a coherent and integrated view of data from [linked data] resources retains classical challenges for data integration (e.g., identification and resolution of format inconsistencies in value representation, handling of inconsistent structural representations for related concepts, entity resolution)"* ([Paton et al., 2012](#Paton2012)).
+However, *"providing a coherent and integrated view of data from [linked data] resources retains classical challenges for data integration (e.g., identification and resolution of format inconsistencies in value representation, handling of inconsistent structural representations for related concepts, entity resolution)"* [@Paton2012].
 
-Linked data provides a way to practice pay-as-you-go data integration ([ibid.](#Paton2012)).
-The pay-as-you-go principle suggests to reduce costs invested up-front into data preparation, recognize opportunities for incremental refinement of the prepared data, and revise which opportunities to invest in based on user feedback ([Paton et al., 2016](#Paton2016)).
+Linked data provides a way to practice pay-as-you-go data integration [@Paton2012].
+The pay-as-you-go principle suggests to reduce costs invested up-front into data preparation, recognize opportunities for incremental refinement of the prepared data, and revise which opportunities to invest in based on user feedback [@Paton2016].
 The required investment in data preparation is inversely proportional to the willingness of users to tolerate imperfections in data.
 In our case, we use feedback from evaluation of matchmaking as an indirect indication of the parts of data preparation that need to be improved.
 
 The principal goal of ETL is to add value to data.
 A key way to do so is to improve data quality.
 Since data quality is typically defined as fitness for use, we focus on the fitness of the prepared data for matchmaking in particular.
-Fitness for this use is affected by several data quality dimensions ([Batini, Scannapieco, 2006](#Batini2006)).
+Fitness for this use is affected by several data quality dimensions [@Batini2006].
 The key relevant dimensions are duplication and completeness.
 Lack of duplicate entities reduces the search space matchmaking has to explore.
 On the contrary, duplicates break links that can be leveraged by matchmaking.
@@ -109,4 +109,4 @@ The data preparation tasks were implemented via declarative programming using XS
 The high-level nature of declarative programming made the implementation concise and helped us to avoid bugs by abstracting from lower-level data manipulation.
 The work on data preparation started already in 2011, which may explain diverse choices of the employed tools.
 Throughout the data preparation, as more suitable and mature tools appeared, we adopted them.
-A reference for the involved software is provided in the [Appendix A](#appendix-a).
+A reference for the involved software is provided in the [appendix @sec:software].

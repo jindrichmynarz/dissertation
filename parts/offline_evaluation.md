@@ -15,7 +15,7 @@
 We conducted offline evaluation using retrospective data about awarded public contracts.
 Matchmaking was tested on the task of the awarded bidder prediction.
 
-It is common to use historical user interaction data to evaluate recommender systems ([Jannach et al., 2010, p. 169](#Jannach2010)).
+It is common to use historical user interaction data to evaluate recommender systems [@Jannach2010, p. 169].
 Contract award as an explicit user feedback
 Framework agreements awarded to multiple bidders were excluded from the evaluation dataset.
 
@@ -38,7 +38,7 @@ TODO: Refer to Maidel (2008) in the discussion of setting the weights of expande
 Additionally, Maidel (ibid.) showed that weighting concepts (e.g., by TF-IDF) does not have an impact.
 
 Discuss internal validity of the proposed evaluation design:
-*"Internal validity refers to the extent to which the effects observed are due to the controlled test conditions (e.g., the varying of a recommendation algorithm’s parameters) instead of differences in the set of participants   (predispositions) or uncontrolled/unknown external effects."* ([Jannach et al., 2010](#Jannach2010), p. 168)
+*"Internal validity refers to the extent to which the effects observed are due to the controlled test conditions (e.g., the varying of a recommendation algorithm’s parameters) instead of differences in the set of participants   (predispositions) or uncontrolled/unknown external effects."* [@Jannach2010, p. 168]
 -->
 
 ### Evaluated metrics
@@ -60,7 +60,7 @@ The task 2 of the challenge used F1-measure @ top 5.
 The evaluation of task 3 on diversity is evaluated using intra-list diversity (ILD) with only dcterms:subject and dbo:author. We can also restrict the ILD to few properties (or property paths).
 -->
 
-Accuracy, however, is not a suitable metric for evaluation of matchmaking because of the class imbalance within matchmaking results. <!-- [Christen, 2012](#Christen2012) -->
+Accuracy, however, is not a suitable metric for evaluation of matchmaking because of the class imbalance within matchmaking results. <!-- [@Christen2012] -->
 Results with the status of non-match are much more prevalent in matchmaking than those with the status of match, which skews accuracy measure, as it takes the number of true negatives into account.
 
 <!--

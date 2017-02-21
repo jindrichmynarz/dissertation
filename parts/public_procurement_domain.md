@@ -9,13 +9,13 @@ Bodies issuing public contracts, such as ministries or municipalities, are refer
 Companies competing for contract award are called bidders.
 Since public procurement is a legal domain, public contracts are legally enforceable agreements on such purchases financed from public funds.
 Public contracts are publicized and monitored by contract notices.
-Contract notices announce competitive bidding for the award of public contracts ([Distinto, d'Aquin, Motta, 2016](#Distinto2016), p. 14) and update the progress of public contracts as they go through their life cycle, ending either in completion or cancellation.
-In our case we deal with public contracts that can be described more precisely as proposed contracts ([ibid.](#Distinto2016), p. 14) until they are awarded and agreements with suppliers are signed.
+Contract notices announce competitive bidding for the award of public contracts [@Distinto2016, p. 14] and update the progress of public contracts as they go through their life cycle, ending either in completion or cancellation.
+In our case we deal with public contracts that can be described more precisely as proposed contracts [@Distinto2016, p. 14] until they are awarded and agreements with suppliers are signed.
 We use the term "public contract" as a conceptual shortcut to denote the whole contract's life-cycle.
 
 Public procurement is an uncommon domain for recommender systems.
 Recommender systems are conventionally used in domains such as books, movies, or music.
-In fact, the *"experiment designs that evaluate different algorithm variants on historical user ratings derived from the movie domain form by far the most popular evaluation design and state of practice"* ([Jannach et al., 2010](#Jannach2010), p. 175).
+In fact, the *"experiment designs that evaluate different algorithm variants on historical user ratings derived from the movie domain form by far the most popular evaluation design and state of practice"* [@Jannach2010, p. 175].
 Our use case thereby constitutes a novel application of recommender systems.
 
 Matchmaking in public procurement can be framed in its legal and economic context.
@@ -24,8 +24,8 @@ Matchmaking in public procurement can be framed in its legal and economic contex
 
 Public procurement is a domain governed by law.
 We are focused on Czech public procurement, for which there are two primary sources of relevant law.
-Public procurement in the Czech Republic is governed by the law no. 2016/134 ([Czech Republic, 2016](#CzechRepublic2016)).
-Czech Republic, as a member state of the European Union, harmonises its law with EU directives, in particular the directives 2014/24/EU ([EU, 2014a](#EU2014a)) and 2014/25/EU ([EU, 2014b](#EU2014b)) in the case of public procurement.
+Public procurement in the Czech Republic is governed by the law no. 2016/134 [@CzechRepublic2016].
+Czech Republic, as a member state of the European Union, harmonises its law with EU directives, in particular the directives 2014/24/EU [@EU2014a] and 2014/25/EU [@EU2014b] in the case of public procurement.
 The first directive regulates public procurement of works, supplies, or services, while the latter one regulates public procurement of utilities, including water, energy, transport, and postal services.
 The law no. 2016/134 transposes these directives into the Czech legislation.
 Besides legal terms and conditions to harmonize public procurement in the EU member states these directives also define standard forms for EU public procurement notices,^[<http://simap.ted.europa.eu/web/simap/standard-forms-for-public-procurement>] which constitute a common schema of public notices.
@@ -49,13 +49,13 @@ The objects of public contracts are often heterogeneous products or services, th
 Apart from their complex representation, public contracts have many features unavailable as structured data.
 These features comprise unstructured documentation or undisclosed terms and conditions.
 Consequently, matchmaking has to operate on simplified models of public contracts.
-The data model for public contracts we designed is described in the section on [modelling](#modelling).
+The data model for public contracts we designed is described in [@sec:modelling].
 
 <!-- Proactive disclosure -->
 
 Moreover, there is a legal mandate for proactive disclosure of contract notices.
-Public contracts that meet prescribed minimum conditions, including thresholds for money spent, must be advertised publicly ([Graux and Kronenburg, 2012](#Graux2012), p. 7).
-Since public contracts in the EU are classified as public sector information, they fall within the regime of mandatory public disclosure under the terms of the Directive on the re-use of public sector information ([EU, 2013](#EU2013)).
+Public contracts that meet prescribed minimum conditions, including thresholds for money spent, must be advertised publicly [@Graux2012, p. 7].
+Since public contracts in the EU are classified as public sector information, they fall within the regime of mandatory public disclosure under the terms of the Directive on the re-use of public sector information [@EU2013].
 This provides equal access to contract notices for all members of the public without the need to make requests for the notices, which in turn helps to enable fair competition in the public procurement market.
 
 <!-- Desire for conformity -->
@@ -76,7 +76,7 @@ Finally, legal regulations standardize the communication in public procurement.
 Besides prescribing procedures that standardize how participants in public procurement communicate, it standardizes the messages exchanged between the participants.
 Contracting authorities have to disclose public procurement data following the structure of standard forms for contract notices.
 The way in which public contracts are described in these forms is standardized to some degree via shared vocabularies and code lists, such as the Common Procurement Vocabulary (CPV) or the Nomenclature of Territorial Units for Statistics (NUTS).
-Standardization is especially relevant in the public sector, since it is characterized by *"a variety of information, of variable granularity and quality created by different institutions and represented in heterogeneous formats"* ([Euzenat, Shvaiko, 2013](#Euzenat2013), p. 12).
+Standardization is especially relevant in the public sector, since it is characterized by *"a variety of information, of variable granularity and quality created by different institutions and represented in heterogeneous formats"* [@Euzenat2013, p. 12].
 
 Standardization of data contributes to defragmentation of the public procurement market.
 Defragmentation of the EU member states' markets is the prime goal of the EU's common regulatory framework.
@@ -95,18 +95,18 @@ Fragmentation of public procurement data thus requires further data integration 
 In fact, one of the reasons why the public procurement market is dominated by large companies may be that they, unlike SMEs, can afford the friction in processing the data.
 
 According to our approach to data preparation, linked data provides a way to compensate the impact of imperfect standardization.
-While a standard can be defined as *"coordination mechanism around non-proprietary knowledge that organizes and directs technological change"* ([Gosain, 2003](#Gosain2003), p. 18), linked data enables to cope with insufficient standardization by allowing for *"cooperation without coordination"* ([Wood, 2011](#Wood2011), p. 5) or centralization.
+While a standard can be defined as *"coordination mechanism around non-proprietary knowledge that organizes and directs technological change"* [@Gosain2003, p. 18], linked data enables to cope with insufficient standardization by allowing for *"cooperation without coordination"* [@Wood2011, p. 5] or centralization.
 Instead, linked data allows to bridge local heterogeneities via the flexible data model of RDF and explicit links between decentralized data sources.
-We describe our use of linked data in detail in the following [chapter on data preparation](#data-preparation).
+We describe our use of linked data in detail in [@sec:data-preparation].
 
 ### Economic context
 
 Public procurement constitutes a large share of the volume of transactions in the economy.
-The share of government expenditures in public procurement on works, goods, and services (excluding utilities) was estimated to be *"13.1 % of the EU GDP in 2015, the highest value for the last 4 years"* ([European Commission, 2016](#EuropeanCommission2016)).
-This estimate amounted to 24.2 billion EUR in 2015 in the Czech Republic, which corresponded with 14.5 % of the country's GDP ([ibid.](#EuropeanCommission2016)).
+The share of government expenditures in public procurement on works, goods, and services (excluding utilities) was estimated to be *"13.1 % of the EU GDP in 2015, the highest value for the last 4 years"* [@EuropeanCommission2016].
+This estimate amounted to 24.2 billion EUR in 2015 in the Czech Republic, which corresponded with 14.5 % of the country's GDP [@EuropeanCommission2016].
 Compared with the EU, Czech Republic exhibits consistent above-average values of this indicator, as can be seen in [@fig:gdp].
 
-![Percentage of public procurement's share of GDP. Source: Public Procurement Indicators 2012-2015 ([European Commission, 2016](#EuropeanCommission2016))](img/share_of_gdp_v2.png){#fig:gdp}
+![Percentage of public procurement's share of GDP. Source: Public Procurement Indicators 2012-2015 [@EuropeanCommission2016]](img/share_of_gdp_v2.png){#fig:gdp}
 
 <!-- Economy of scale -->
 
@@ -118,7 +118,7 @@ Publishing open data on public procurement as well as using our matchmaking meth
 Due to the volume of the public funds involved in public procurement, it is prone to waste and political graft.
 Wasteful spending in public procurement can be either classified as active waste, which entails benefits to the public decision maker, or passive waste, which does not benefit the decision maker.
 Whereas active waste may result from corruption or clientelism, passive waste proceeds from inefficiencies caused by lack of skills or incentives.
-While active waste is widely perceived as the main problem of public procurement, a study of the Italian public sector ([Bandiera, Prat, Valletti, 2009](#Bandiera2009), p. 1282) observed that 83 % of uneconomic spending in public procurement can be attributed to passive waste.
+While active waste is widely perceived as the main problem of public procurement, a study of the Italian public sector [@Bandiera2009, p. 1282] observed that 83 % of uneconomic spending in public procurement can be attributed to passive waste.
 We therefore decided to focus on optimizing public procurement where most impact can be expected.
 Matchmaking can help improve the public procurement processes to cut down passive waste. 
 It can assist civil servants by providing relevant information, thus reducing the decision-making effort related to public procurement processes.
@@ -126,8 +126,8 @@ We identified several use cases where matchmaking can help.
 
 ### Use cases for matchmaking
 
-Matchmaking covers the information phase of market transaction ([Schmid, Lindemann, 1998](#Schmid1998), p. 194) that corresponds to the preparation and tendering stages in public procurement life-cycle ([Nečaský et al., 2014](#Necasky2014), p. 865).
-During this phase *"participants to the market seek potential partners"* ([Di Noia et al., 2004](#DiNoia2004)), so that public bodies learn about relevant bidders and companies learn about relevant open calls.
+Matchmaking covers the information phase of market transaction [@Schmid1998, p. 194] that corresponds to the preparation and tendering stages in public procurement life-cycle [@Necasky2014, p. 865].
+During this phase *"participants to the market seek potential partners"* [@DiNoia2004], so that public bodies learn about relevant bidders and companies learn about relevant open calls.
 In this sense, demands for products and services correspond to information needs and the aim of matchmaking is to retrieve the information that will satisfy them.
 Several use cases for matchmaking follow from the public procurement legislation according to the procedure types chosen for public contracts.
 
@@ -145,12 +145,12 @@ Bidders can use matchmaking both in case of open and restricted procedures to be
 Contracting authorities can use matchmaking in restricted procedure to get recommendations of suitable bidders.
 <!-- A potential issue: A restricted procedure is probably chosen when the contracting authority already knows which bidders to invite. -->
 Moreover, in case of the simplified under limit procedure, which is allowed for public contracts below a specified financial threshold, contracting authoritiy can approach bidders directly.
-In such case, at least five bidders must be approached according to the law no. 2016/134. <!-- <https://www.zakonyprolidi.cz/cs/2016-134#p53> -->
+In such case, at least five bidders must be approached according to the law no. 2016/134 [@CzechRepublic2016]. <!-- <https://www.zakonyprolidi.cz/cs/2016-134#p53> -->
 In that scenario, matchmaking can help recommend appropriate bidders to interest in the public contract.
 There are also other procedure types, such as innovation partnership, in which matchmaking is applicable to a lesser extent.
 
 An additional use case for similarity-based retrieval during contract specification.
-The Czech law no. 2016/134 suggests contracting authorities to estimate contract price based on similar contracts. <!-- <https://www.zakonyprolidi.cz/cs/2016-134#f5805154> -->
+The Czech law no. 2016/134 [@CzechRepublic2016] suggests contracting authorities to estimate contract price based on similar contracts. <!-- <https://www.zakonyprolidi.cz/cs/2016-134#f5805154> -->
 In order to address this use case, matchmaking can recommend similar contracts based on the incomplete description of the specified contract.
 
 <!--
