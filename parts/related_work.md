@@ -10,6 +10,8 @@ Among the results of this project is *i-text*, a prototype of matchmaking engine
 * Spreading activation [@Heitmann2014], [@Heitmann2016]
 
 <!--
+Existing research was related mostly to web service discovery or e-commerce.
+
 TODO: (much of related work can be lifted from D9a.1.1)
 - GoodRelations: gr:seeks, demand as ideal gr:Offering <http://wiki.goodrelations-vocabulary.org/Cookbook/Seeks>
 - LOTED
@@ -18,6 +20,13 @@ TODO: (much of related work can be lifted from D9a.1.1)
 - MOLDEAS
 - Euroalert
 - Original matchmaking by Matej Snoha in PC Filing App
+
+Matchmaking dates back to 1990s (e.g., <https://www.ijcai.org/Proceedings/95-1/Papers/088.pdf>).
+- Based e.g., on KQML
+- Declarative forward-chaining rules
+
+Description logics: query is formulated as a class of matches
+- Matches tested via subsumption (or satisfiability of constraints)
 -->
 
 <!-- General note at the end of the introcution chapter -->

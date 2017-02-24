@@ -19,8 +19,6 @@ parts/abstract_english.md
 parts/abstract_czech.md
 parts/introduction.md
 parts/matchmaking.md
-parts/case_based_recommendation.md
-parts/link_prediction.md
 parts/linked_open_data.md
 parts/open_data.md
 parts/linked_data.md
@@ -42,7 +40,6 @@ parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
 parts/methods.md
-parts/case_based_reasoning.md
 parts/sparql.md
 parts/full_text_search.md
 parts/tensor_factorization.md
