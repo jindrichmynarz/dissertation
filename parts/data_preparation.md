@@ -1,8 +1,8 @@
 # Data preparation {#sec:data-preparation}
 
 A fundamental part of the hereby presented work is preparation of the Czech public procurement dataset enriched with linked data.
-The prepared dataset was used to evaluate the case-based recommender system we built as our main contribution. 
-It served as a use case for applied research in the public procurement domain to explore whether the proposed recommender system can provide useful recommendations in a real-world setting.
+The prepared dataset was used to evaluate the matchmakers we built as our main contribution. 
+It served as a use case for applied research in the public procurement domain to explore whether the proposed matchmakers provide useful recommendations in a real-world setting.
 
 <!-- Characteristics of ETL -->
 

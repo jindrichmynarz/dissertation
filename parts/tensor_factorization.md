@@ -26,3 +26,7 @@ Perspective of probabilistic databases
 Hybrid approaches combining multiple methods
 - E.g., re-ranking
 -->
+
+<!--
+RESCAL does not require strict feature modelling.
+-->

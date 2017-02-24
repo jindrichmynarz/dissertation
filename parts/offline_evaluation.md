@@ -71,6 +71,13 @@ Alternative solutions:
 * Ask users to rate a sample of public contracts either as relevant or irrelevant. The sample must be chosen in order to maximize the insight learnt from the rating, e.g., the sample should be generated dynamically to increase its overall diversity.
 -->
 
+The explanatory power of offline evaluation is limited.
+It can tell which of the evaluated approaches provides better results, but it cannot tell if an approach is useful.
+Whether an approach is useful can be only evaluated by real users.
+This is what online evaluation or qualitative evaluation can help with.
+
+Limited correspondence between the evaluted metrics and usefulness in real world.
+
 ### Evaluation results
 
 <!--

@@ -64,7 +64,7 @@ Specific problems:
 
 <!-- Research domain -->
 
-The domain of this research is an intersection of case-based recommender systems and semantic web knowledge engineering.
+The domain of this research is an intersection of matchmaking and semantic web knowledge engineering.
 
 Stakeholders: Contracting authorities, bidders
 

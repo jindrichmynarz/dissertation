@@ -96,6 +96,8 @@ This assumption implies that deduplication may be needed if identifiers are requ
 *Open world assumption* (OWA) supposes that *"the truth of a statement is independent of whether it is known.
 In other words, not knowing whether a statement is explicitly true does not imply that the statement is false"* [@Hebeler2009, p. 103].
 Due to OWA we cannot infer that missing statements are false.
+However, it allows us to model incomplete data.
+In matchmaking *"the absence of a characteristic in the description of a supply or demand should not be interpreted as a constraint"* [@DiNoia2007, p. 279].
 OWA poses a potential problem for classification tasks in machine learning, because linked data rarely contains explicit negative examples.
 The principle of *Anyone can say anything about anything* (AAA) assumes that the open world of linked data provides no guarantees that the assertions published as linked data are consistent or uncontradictory.
 Given this assumption, quality assessment followed by data pre-processing is typically required when using linked data.
@@ -124,3 +126,9 @@ The links between datasets can be used to provide cross-domain recommendations.
 In such scenario preferences from one domain are be used to predict preferences in another domain.
 For example, if in our case we combine data from business and public procurement registers, we may leverage links between business entities described with concepts from an economic classification to predict their associations to concepts from a procurement classification.
 If there is no overlap between the resources from the combined datasets, there may be at least an overlap in RDF vocabularies describing the resources [@Heitmann2016], which provide broader conceptual associations.
+
+<!--
+Semantic features ~ smart descriptors
+- Low-level descriptors require complex distance metrics.
+- High-level, smart descriptors can work with simpler distance metrics.
+-->

@@ -13,10 +13,10 @@ Contract notices announce competitive bidding for the award of public contracts 
 In our case we deal with public contracts that can be described more precisely as proposed contracts [@Distinto2016, p. 14] until they are awarded and agreements with suppliers are signed.
 We use the term "public contract" as a conceptual shortcut to denote the whole contract's life-cycle.
 
-Public procurement is an uncommon domain for recommender systems.
+Public procurement is an uncommon domain for recommender and matchmaking systems.
 Recommender systems are conventionally used in domains such as books, movies, or music.
 In fact, the *"experiment designs that evaluate different algorithm variants on historical user ratings derived from the movie domain form by far the most popular evaluation design and state of practice"* [@Jannach2010, p. 175].
-Our use case thereby constitutes a novel application of recommender systems.
+Our use case thereby constitutes a novel application of these technologies.
 
 Matchmaking in public procurement can be framed in its legal and economic context.
 

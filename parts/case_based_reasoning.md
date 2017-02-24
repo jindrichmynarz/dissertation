@@ -12,3 +12,11 @@ Reinterpretation of contract award as a positive rating (in the context of the a
 Limitation: We have only positive ratings.
 
 Case-based recommenders are usually classified as subset of knowledge-based recommenders [@Jannach2010].
+
+<!--
+Similarity search
+- "Query by example"
+- Pairwise distance functions
+- k-nearest neighbour queries: specifies a number of results to retrieve
+Curse of dimensionality: RDF is complex and contains a multitude of dimensions. Linear increase of dimensions => exponential growth of negative effects.
+-->
