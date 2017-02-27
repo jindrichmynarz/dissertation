@@ -12,6 +12,9 @@ ARES
 BR
 ~ Business Register
 
+CBR
+~ Case-based reasoning
+
 CLI
 ~ Command-Line Interface
 

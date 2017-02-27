@@ -25,8 +25,16 @@ Perspective of probabilistic databases
 
 Hybrid approaches combining multiple methods
 - E.g., re-ranking
+
+Tensor factorization ~ tensor completion
 -->
 
 <!--
 RESCAL does not require strict feature modelling.
+-->
+
+<!--
+Comparison of CBR systems with machine learning is in [@Richter2013, p. 531].
+CBR and ML have many things in common.
+Both learn from past data to produce predictions, which are not guaranteed to be correct.
 -->

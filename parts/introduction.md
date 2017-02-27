@@ -104,7 +104,7 @@ FIXME Feedback: De-emphasize hypotheses.
 * Combination of semantic and statistical features of data has a synergic effect that can produce better matchmaking results than when only semantic or statistical features are used.
 -->
 
-The following parts of this chapter provide preliminaries upon which the subsequent chapters extensively build.
+The following parts in this chapter provide preliminaries which the subsequent chapters build on.
 
 The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless stated otherwise.
 

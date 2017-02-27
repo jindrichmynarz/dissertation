@@ -52,6 +52,10 @@ The evaluated metris reflect both accuracy and diversity of the matchmaking resu
 
 <!--
 Why did we drop Mean Reciprocal Rank (MRR)?
+
+Diversity of results is often low in case-based recommenders based on similarity-based retrieval.
+There are several strategies to mitigate this issue:
+- Bounded greedy selection: minimizes total similarity in the result set, while maximizing total similarity of the result set to the query.
 -->
 
 <!--

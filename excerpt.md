@@ -18,6 +18,8 @@ link-citations: true
 # Introduction
 
 ```include
+parts/matchmaking.md
+parts/case_based_reasoning.md
 parts/linked_open_data.md
 parts/open_data.md
 parts/linked_data.md

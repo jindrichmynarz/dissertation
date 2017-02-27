@@ -11,9 +11,13 @@
 * Elasticsearch interactions are done via the `elastisch` library.
 * Extensive configuration in EDN.
 * Produces results in EDN.
+
+* Use an asymmetric similarity metric for prices. Lower-priced contracts are preferred.
 -->
 
 We chose Elasticsearch^[<https://www.elastic.co/products/elasticsearch>] because of its expressive query DSL that allows us to formulate complex matchmaking queries.
+
+Elasticsearch Query DSL
 
 The use of full-text search engines was motivated by the substantial share of textual data in public procurement data.
 For example, the temporal or the spatial dimensions of public contracts is described by literals in dates and postal addresses.
@@ -35,4 +39,8 @@ SIREn allows to index deeply nested data.
 Implementation note:
 If bidder was not awarded any tender, find similar bidders via their description in ARES.
 If bidder's description is not found in ARES, an ad hoc request is issued to the ARES API to fetch its description and run it through ETL.
+-->
+
+<!--
+Comparison of CBR systems with information retrieval systems is in [@Richter2013, p. 525].
 -->

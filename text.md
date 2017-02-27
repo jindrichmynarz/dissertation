@@ -19,6 +19,8 @@ parts/abstract_english.md
 parts/abstract_czech.md
 parts/introduction.md
 parts/matchmaking.md
+parts/case_based_reasoning.md
+parts/link_prediction.md
 parts/linked_open_data.md
 parts/open_data.md
 parts/linked_data.md
@@ -48,6 +50,7 @@ parts/further_problems.md
 parts/evaluation.md
 parts/offline_evaluation.md
 parts/online_evaluation.md
+parts/qualitative_evaluation.md
 parts/conclusions.md
 parts/abbreviations.md
 parts/software.md
