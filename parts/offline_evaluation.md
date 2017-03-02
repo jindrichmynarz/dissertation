@@ -21,6 +21,7 @@ Framework agreements awarded to multiple bidders were excluded from the evaluati
 
 Split into training and testing dataset.
 5-fold cross-validation
+<!-- Should we split by time? For example, use 8 years (2006-2014) as training and 2 years (2015-2016) for testing? -->
 
 Using recall does not make sense, since there is only one positive. Hence, recall would be either 0 or 1.
 <!-- = unary rating -->

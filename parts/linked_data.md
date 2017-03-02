@@ -98,7 +98,7 @@ In other words, not knowing whether a statement is explicitly true does not impl
 Due to OWA we cannot infer that missing statements are false.
 However, it allows us to model incomplete data.
 In matchmaking *"the absence of a characteristic in the description of a supply or demand should not be interpreted as a constraint"* [@DiNoia2007, p. 279].
-OWA poses a potential problem for classification tasks in machine learning, because linked data rarely contains explicit negative examples.
+OWA poses a potential problem for classification tasks in machine learning, because linked data rarely contains explicit negative examples [@Nickel2012, p. 272].
 The principle of *Anyone can say anything about anything* (AAA) assumes that the open world of linked data provides no guarantees that the assertions published as linked data are consistent or uncontradictory.
 Given this assumption, quality assessment followed by data pre-processing is typically required when using linked data.
 

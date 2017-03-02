@@ -12,6 +12,9 @@ ARES
 BR
 ~ Business Register
 
+CC
+~ Catalog coverage
+
 CBR
 ~ Case-based reasoning
 
@@ -60,6 +63,9 @@ GDP
 GPA
 ~ Agreement on Government Procurement
 
+HR
+~ Hit ratio
+
 HTML
 ~ Hypertext Markup Language
 
@@ -75,8 +81,14 @@ JSON
 JSON-LD
 ~ JSON for Linked Data
 
+LOD
+~ Linked open data
+
 LP-ETL
 ~ LinkedPipes-ETL
+
+MRR
+~ Mean reciprocal rank
 
 NACE
 ~ Statistical Classification of Economic Activities in the European Community
