@@ -13,6 +13,7 @@
 * Produces results in EDN.
 -->
 
+Initial version [@Mynarz2014b]
 [@Mynarz2015]
 
 The histories of bidders are held in memory instead of a model in SPARQL-based and Elasticsearch-based matchmaking.
@@ -27,4 +28,6 @@ SPARQL retrieves exact matches. Ranking needs to be implemented on top of SPARQL
 SPARQL operates under the closed world assumption. CBR assumes open world.
 
 Curse of dimensionality: RDF is complex and contains a multitude of dimensions. Linear increase of dimensions => exponential growth of negative effects.
+
+Combination functions [@Beliakov2007], [@Beliakov2015]
 -->
