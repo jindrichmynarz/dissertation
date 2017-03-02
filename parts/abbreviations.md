@@ -81,6 +81,9 @@ JSON
 JSON-LD
 ~ JSON for Linked Data
 
+LCWA
+~ Local closed world assumption
+
 LOD
 ~ Linked open data
 
@@ -146,6 +149,9 @@ SKOS
 
 SPARQL
 ~ SPARQL Protocol and RDF Query Language
+
+SRL
+~ Statistical relational learning
 
 TF-IDF
 ~ Term frequency-inverse document frequency

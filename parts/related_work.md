@@ -15,12 +15,17 @@ Existing research was related mostly to web service discovery or e-commerce.
 TODO: (much of related work can be lifted from D9a.1.1)
 - GoodRelations: gr:seeks, demand as ideal gr:Offering <http://wiki.goodrelations-vocabulary.org/Cookbook/Seeks>
 - LOTED
-- LOTED2
+- LOTED2 [@Distinto2016]: proposes matchmaking as future work
 - PPROC
-- MOLDEAS
-- Euroalert
-- Original matchmaking by Matej Snoha in PC Filing App
+- 10ders Information Services
+- MOLDEAS: matchmaking via spreading activation
+- Euroalert [@Marin2013]
+- Call for Anything (C4N) <http://vocab.deri.ie/c4n>
+- GoodRelations (`gr:seeks`) [@Hepp2008] <http://wiki.goodrelations-vocabulary.org/Cookbook/Seeks>
+  - Expects conceptual symmetry between demand and supply, since the object of `gr:seeks` is modelled as an ideal `gr:Offering`.
+- Original matchmaking by Matej Snoha in PC Filing App [@Snoha2013]
 - [@Salvadores2008]
+- iSPARQL [@Kiefer2007]
 
 Matchmaking dates back to 1990s (e.g., <https://www.ijcai.org/Proceedings/95-1/Papers/088.pdf>).
 - Based e.g., on KQML

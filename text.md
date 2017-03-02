@@ -18,13 +18,13 @@ parts/acknowledgements.md
 parts/abstract_english.md
 parts/abstract_czech.md
 parts/introduction.md
-parts/matchmaking.md
-parts/case_based_reasoning.md
-parts/link_prediction.md
 parts/linked_open_data.md
 parts/open_data.md
 parts/linked_data.md
 parts/public_procurement_domain.md
+parts/matchmaking.md
+parts/case_based_reasoning.md
+parts/statistical_relational_learning.md
 parts/related_work.md
 parts/data_preparation.md
 parts/modelling.md

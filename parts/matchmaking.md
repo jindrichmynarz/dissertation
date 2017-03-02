@@ -65,6 +65,9 @@ Should we distinguish two phases of matchmaking?
 *"the objective of a matchmaking process is to discover best available offers to a given request"* [@DiNoia2007, p. 269]
 -->
 
-We adapted two general methods for matchmaking: case-based reasoning and link prediction.
+We adapted two general methods for matchmaking: case-based reasoning and statistical relational learning.
+Both methods have many things in common and employ similar techniques to achieve their goals.
+Both learn from past data to produce predictions that are not guaranteed to be correct.
+A more detailed comparison of case-based reasoning with machine learning is in Richter and Weber [-@Richter2013, p. 531].
 
 <!-- TODO: Should we also discuss other methods adopted for matchmaking in related research, e.g., reasoning with description logic? -->

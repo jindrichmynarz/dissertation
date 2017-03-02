@@ -5,6 +5,7 @@ It is a way of structuring data that identifies entities with Internationalized 
 IRIs are universal, so that any entity can be identified with a IRI, and have global scope, therefore an IRI can only identify one entity [@BernersLee1996].
 In this section we provide a basic introduction to key aspects of linked data used in this thesis.
 A more detailed introduction in available in Heath and Bizer [-@Heath2011].
+A dominant manifestation of linked data is the Linking Open Data Cloud [@Abele2017], which maps the web of semantically structured data that the spans hundreds of datasets from diverse domains, such as health care or linguistics.
 
 Linked data may be seen as a pragmatic implementation of the so-called semantic web vision.
 It is based on semantic web technologies.
