@@ -20,7 +20,7 @@ Our use case thereby constitutes a novel application of these technologies.
 
 Matchmaking in public procurement can be framed in its legal and economic context.
 
-### Legal context
+### Legal context {#sec:legal-context}
 
 Public procurement is a domain governed by law.
 We are focused on Czech public procurement, for which there are two primary sources of relevant law.

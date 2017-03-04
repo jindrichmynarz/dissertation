@@ -25,6 +25,7 @@ parts/public_procurement_domain.md
 parts/matchmaking.md
 parts/case_based_reasoning.md
 parts/statistical_relational_learning.md
+parts/related_work.md
 parts/data_preparation.md
 parts/modelling.md
 parts/public_contracts_ontology.md
