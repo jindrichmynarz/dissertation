@@ -1,4 +1,4 @@
-## Public procurement domain
+## Public procurement domain {#sec:public-procurement}
 
 Our work targets the domain of public procurement.
 In particular, we apply our developed method on the Czech public procurement.

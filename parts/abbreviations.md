@@ -12,6 +12,9 @@ ARES
 BR
 ~ Business Register
 
+C4N
+~ Call for Anything
+
 CC
 ~ Catalog coverage
 
@@ -35,6 +38,12 @@ CSO
 
 CSV
 ~ Comma-Separated Values
+
+DAML
+~ DARPA Agent Markup Language
+
+DL
+~ Description logics
 
 DPU
 ~ Data Processing Unit
@@ -81,14 +90,23 @@ JSON
 JSON-LD
 ~ JSON for Linked Data
 
+KQML
+~ Knowledge Query and Manipulation Language
+
 LCWA
 ~ Local closed world assumption
 
 LOD
 ~ Linked open data
 
+LOTED
+~ Linked Open TED
+
 LP-ETL
 ~ LinkedPipes-ETL
+
+MOLDEAS
+~ Methods on linked data for e-procurement applying semantics
 
 MRR
 ~ Mean reciprocal rank
@@ -108,6 +126,9 @@ NUTS
 ODC
 ~ Open Data Commons
 
+OIL
+~ Ontology Inference Layer
+
 OWA
 ~ Open world assumption
 
@@ -125,6 +146,9 @@ PPROC
 
 PR
 ~ Public Register
+
+PTO
+~ Product Types Ontology
 
 RDF
 ~ Resource Description Framework
@@ -152,6 +176,9 @@ SPARQL
 
 SRL
 ~ Statistical relational learning
+
+TED
+~ Tenders Electronic Daily
 
 TF-IDF
 ~ Term frequency-inverse document frequency

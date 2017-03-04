@@ -109,3 +109,8 @@ The following parts in this chapter provide preliminaries which the subsequent c
 The contributions presented in this thesis including methods and software were authored or co-authored by the thesis author, unless stated otherwise.
 
 Both reused and developed software is listed in [appendix @sec:software].
+
+<!-- General note at the end of the introduction chapter -->
+
+The abbreviations used throughout the text are collected in [@sec:abbreviations].
+All vocabulary prefixes used in the text can be resolved to their corresponding namespace IRIs via <http://prefix.cc>.
