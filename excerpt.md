@@ -42,5 +42,6 @@ parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
 parts/abbreviations.md
+parts/software.md
 parts/references.md
 ```

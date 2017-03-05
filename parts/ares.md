@@ -50,13 +50,13 @@ A mixture of RDF vocabularies was used to describe the ARES data with the key ro
 The registry data is relatively consistent, so it did not require much cleaning. 
 However, we paid special care to postal addresses, since we needed them for geocoding.
 SPARQL Update operations were employed to clean and structure the addresses.
-The data transformation^[<https://github.com/opendatacz/ARES2RDF>] was released as open-source.
+The data transformation^[<https://github.com/opendatacz/ARES2RDF>] was released as open source.
 Most of the transformation was done by Jakub Klímek from the Charles University in Prague with a contribution of this thesis' author, in particular regarding the XSL stylesheets and SPARQL Update operations.
 
 Organizations registered in BR are assigned concepts from the Statistical Classification of Economic Activities in the European Community (NACE).
 NACE is a hierarchical classification describing economic activities pursued by business entities.
 The subset of BR in CSV containing links to NACE was provided to us via personal communication with Ondřej Kokeš who harvested it from ARES.
-We extracted 873 thousand links to NACE from this subset and converted them to RDF via *tarql*^[<http://tarql.github.io>], which is a command-line tool for converting tabular data to RDF via SPARQL CONSTRUCT queries.
+We extracted 873 thousand links to NACE from this subset and converted them to RDF via Tarql^[<http://tarql.github.io>], which is a command-line tool for converting tabular data to RDF via SPARQL CONSTRUCT queries.
 Links to NACE were available for 89.5 % of organizations in the Czech public procurement register that were linked to ARES.
 
 The version of NACE that these links use is CZ-NACE,^[<https://www.czso.cz/csu/czso/klasifikace_ekonomickych_cinnosti_cz_nace>] a Czech extension to NACE Rev. 2 that adds specific leaf concepts.

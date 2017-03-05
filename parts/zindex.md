@@ -16,7 +16,7 @@ As such, they are most relevant for public contracts from 2013, and may be misle
 
 zIndex scores were initially supplied to the author by Datlab s.r.o.^[<http://datlab.cz>] in September 2014.
 An updated snapshot of zIndex was provided upon request in January 2017.
-The data in CSV was transformed to RDF using *tarql*.
+The data in CSV was transformed to RDF using Tarql.
 The RDF version of the data was represented as a simple data cube using the Data Cube Vocabulary [@Cyganiak2014a].
 Each zIndex score was modelled as a measure of an observation that is indexed by the dimensions of the scored contracting authority and the rating period.
 Contracting authorities are identified by their IRIs from ARES, which are automatically derived from their RNs.

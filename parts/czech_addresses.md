@@ -28,7 +28,7 @@ At the time the data was transformed (September 2016) LP-ETL did not support rep
 In its current version (as of January 2017) it features a component^[<https://github.com/linkedpipes/etl/tree/master/plugins/t-geoTools>] that offers this functionality. 
 We thus implemented the reprojection as a separate step following the data transformation in LP-ETL.
 We developed a command-line tool that requested the original geo-coordinates in paged batches using SPARQL SELECT queries, reprojected them, and uploaded the batches back to the RDF store using SPARQL Update operations.
-Geo-coordinates were reprojected using the open-source GeoTools^[<http://www.geotools.org>] Java library.
+Geo-coordinates were reprojected using the open source GeoTools^[<http://www.geotools.org>] Java library.
 
 According to the dataset's documentation, Czech addresses use the EPSG:5514^[<http://epsg.io/5514>] variant of the S-JTSK CRS since 2011. 
 Till 2011 the variant in use was EPSG:2065.^[<http://epsg.io/2065>]

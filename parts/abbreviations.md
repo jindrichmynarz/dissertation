@@ -60,6 +60,9 @@ ELT
 EPSG
 ~ European Petroleum Survey Group
 
+ES
+~ Elasticsearch
+
 ETL
 ~ Extract Transform Load
 
@@ -126,6 +129,9 @@ NUTS
 ODC
 ~ Open Data Commons
 
+OGC
+~ Open Geospatial Consortium
+
 OIL
 ~ Ontology Inference Layer
 
@@ -176,6 +182,9 @@ SPARQL
 
 SRL
 ~ Statistical relational learning
+
+SVG
+~ Scalable Vector Graphics
 
 TED
 ~ Tenders Electronic Daily
