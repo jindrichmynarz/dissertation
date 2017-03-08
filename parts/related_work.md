@@ -81,7 +81,7 @@ iSPARQL extends SPARQL with similarity measures implemented using Apache Jena^[<
 In this way, it allows to combine graph pattern matching with similarity-based retrieval within a single query.
 While conceived as a general approach, it was also applied to matchmaking of web services [@Kiefer2008].
 This application coupled iSPARQL with machine learning in order to improve detection of approximate matches. 
-This use case demonstrated that *"combination of logical deduction and statistical induction produces superior performance over logical inference only"* [@Kiefer2008, p. 473].
+This use case demonstrated that the hybrid *"combination of logical deduction and statistical induction produces superior performance over logical inference only"* [@Kiefer2008, p. 473].
 Moreover, the similarity-based queries *"that exploit textual information of the services turned out to be very effective"* [@Kiefer2008, p. 475].
 Both these findings greatly influenced our approaches to matchmaking.
 We leverage textual information in matchmaking based on full-text search and apply machine learning in RESCAL-based matchmaking.
@@ -101,10 +101,15 @@ The online matchmaking, which is capable of serving queries in real time, is imp
 It is thus comparable to our approach for matchmaking based on full-text search.
 The offline matchmaking, which delivers results periodically as it processes queries in batches, is implemented using machine learning via RESCAL [@Nickel2011].
 It thus closely resembles our matchmaker based on the same technology.
+Detailed evaluation of the offline matchmaker is available in @Friedrich2015. 
 While our approaches to matchmaking mirror the ones in the Web of Needs to a large extent, their fundamental difference is the application to the public procurement domain.
 Matchmakers in the Web of Needs are generic, since they are not tuned for any specific use case.
 Instead, they support common matchmaking scenarios shared in many domains, so they are based on a common denominator of data about demands and offers, including features such as title, description, tags, or price [@Friedrich2016].
 However, the architecture of the Web of Needs allows extensions to particular vertical marketplaces, such as the public procurement, so that more powerful domain-specific features can be leveraged in matchmaking.
+
+A tensor-based approach to matchmaking semantic web services is described in [@Szwabe2015].
+This proposal combines tuple-based probabilistic tensor modeling with covariance-based multilinear filtering.
+Extensive evaluation shows the presented approach as superior to other matchmaking methods. 
 
 <!--
 (Actual matchmaking done (some of it in context of public procurement))

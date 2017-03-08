@@ -15,9 +15,8 @@ link-citations: true
 
 \newpage
 
-# Introduction
-
 ```include
+parts/introduction.md
 parts/linked_open_data.md
 parts/open_data.md
 parts/linked_data.md

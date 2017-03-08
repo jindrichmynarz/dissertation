@@ -10,9 +10,7 @@
 * Learning to rank with <http://fa.bianp.net/blog/2012/learning-to-rank-with-scikit-learn-the-pairwise-transform/>?
 -->
 
-@Nickel2011, @Nickel2012
-
-Web of Needs
+@Nickel2011, @Nickel2012, @Zhiltsov2013
 
 <!--
 ### Tensor representation of RDF
@@ -58,7 +56,7 @@ Traditional methods for statistical relational learning, such as Markov logic ne
 Tensor factorization was shown to scale well.
 
 No distinction between ontological and instance relations is maintained.
-In this way, ontologies are handled as soft constraints [@Nickel2013, p. 66].
+In this way, ontologies are handled as soft constraints [@Nickel2013a, p. 66].
 The model of RDF data does not draw a distinction between terminological and instance data (TBox and ABox).
 Both classes and instances are modelled as entities.
 *"ontologies are handled like soft constraints, meaning that the additional information present in an ontology guides the factorization to semantically more reasonable results"* [@Nickel2012, p. 273]
@@ -75,6 +73,8 @@ Binary predicates in RDF ~ dyadic relations
 
 <!--
 ### Tensor factorization
+
+Theoretical generalization of the abilities of tensor factorization is in @Nickel2013b.
 
 Tensor factorization is inefficient if data contains a lot of strongly connected graph components.
 Decomposition addresses high dimensionality and sparsity.
