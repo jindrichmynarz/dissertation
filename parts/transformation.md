@@ -36,10 +36,10 @@ For instance, a transformation of instances of `schema:PostalAddress` can be div
 The latter option for filtering unprocessed bindings cannot be used when the set of sorted bindings is modified during the transformation.
 For example, when a transformation deletes some bindings, the offsets of subsets in the ordered set cease to be valid.
 Additionally, since sorting a large set is a computationally expensive operation, this option may require the sub-query projecting ordered bindings to be wrapped in another sub-query to be able to cache the sorted set, such as with Virtuoso's scrollable cursors.^[See the section *"Example: Prevent Limits of Sorted LIMIT/OFFSET query"* in <http://docs.openlinksw.com/virtuoso/rdfsparqlimplementationextent> for more details.]
-The selected unprocessed bindings from the sub-query are split into subsets by setting a `LIMIT`.
+The selected unprocessed bindings from the sub-query are split into subsets by setting a limit.
 The outer update operation then works on this subset and transforms it.
 
-We developed *sparql-unlimited*^[<https://github.com/jindrichmynarz/sparql-unlimited>] that allows to run SPARQL update operations following the described structure using Virtuoso.
+We developed sparql-unlimited^[<https://github.com/jindrichmynarz/sparql-unlimited>] that allows to run SPARQL update operations following the described structure using Virtuoso.
 This tool executes transformations rendered from Mustache^[<https://mustache.github.io>] templates that feature placeholders for `LIMIT`, and optionally `OFFSET`.
 Limit determines the size of a subset to be transformed in one update operation.
 In this way, the processed subset's size can be adjusted based on the complexity of the transformation.
@@ -47,7 +47,7 @@ Updates are executed repeatedly, the offset being incremented by the limit in ea
 This stopping condition is Virtuoso-specific, since the SPARQL 1.1 Update standard [@Gearon2013] leaves it unspecified, so that SPARQL engines differ in how zero modifications are indicated.
 Additionally, the tool provides conveniences including configurable retries of failed updates or the ability to restart transformations from a specified offset.
 
-While *sparql-unlimited* was used to automate parts of individual transformations, each transformation was launched manually.
+While sparql-unlimited was used to automate parts of individual transformations, each transformation was launched manually.
 Virtuoso, the RDF store in which we executed the transformations, has an upredictable runtime, which may be due to unresolved previous transactions or generally faulty implementation.
 Therefore, we started each transformation manually to allow to fine-tune the configuration for each run depending on the perceived response from Virtuoso.
 

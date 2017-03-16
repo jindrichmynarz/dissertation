@@ -1,15 +1,15 @@
 ### Open data
 
 Open data is data that can be accessed equally by people and machines.
-Its definition is based on grounding principles that assert what conditions should data meet to achieve legal and technical openness.
+Its definition is grounded in principles that assert what conditions should data meet to achieve legal and technical openness.
 Principles of open data are perhaps best embodied in the Open Definition [@OpenDefinition2015] and the Eight principles of open government data [-@EightPrinciples2007]. 
 According to the Open Definition's summary, *"open data and content can be freely used, modified, and shared by anyone for any purpose."*^[<http://opendefinition.org>]
-The legal conditions of open data are usually established via a licence or waiver, such as the Open Data Commons Public Domain Dedication and Licence (ODC PDDL).^[<https://opendatacommons.org/licenses/pddl/1.0>]
+<!-- Legal conditions of open data are usually established via a licence or waiver, such as the Open Data Commons Public Domain Dedication and Licence (ODC PDDL).^[<https://opendatacommons.org/licenses/pddl/1.0>] -->
 Eight principles of open government data draws similar requirements as the Open Definition and adds demands for completeness, primacy, and timeliness.
 
 Open data is particularly prominent in the public sector, since public sector data is subject to disclosure mandated by law.
-It may be either reactive disclosure, such as upon Freedom of Information requests, or proactive disclosure, such as by releasing as open data. 
-Disclosure of public sector data in the EU is regulated by the directive 2013/37/EU on the re-use of public sector information [@EU2013].
+It may be either reactive disclosure, such as upon Freedom of Information requests, or proactive disclosure, such as by publishing open data. 
+In case of the EU, disclosure of public sector data is regulated by the directive 2013/37/EU on the re-use of public sector information [@EU2013].
 
 While releasing open data is frequently framed as a means to improve transparency of the public sector, it can also have a positive effect on its efficiency [@AccessInfoEurope2011, p. 69], since the public sector itself is often the primary user of open data.
 Using open data can help streamline public sector processes [@Parycek2014, p. 90] and curb unnecessary expenditures [@Presern2014, p. 4].

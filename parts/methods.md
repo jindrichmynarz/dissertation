@@ -66,3 +66,9 @@ This is an opportunity to normalize by the bidder's age from ARES.
 -->
 
 Using the terminology of case-based reasoning, CPV provides a "bridge attribute" that allows to derive the similarity of contracts from the shared concepts in their descriptions.
+
+<!--
+## Feature selection
+
+Manual feature selection ~ schema-aware matchmaking
+-->

@@ -50,6 +50,7 @@ The evaluated metris reflect both accuracy and diversity of the matchmaking resu
   <!-- More commonly named HitRatio -->
 * Average rank at 100 (AR@100): mean average rank of hits in top 100 results
 * Catalog coverage at 10 (CC@10): distinct entities in top 10 results ⁄ all entities
+* Prediction coverage [@Herlocker2004, p. 40]
 
 <!--
 Why did we drop Mean Reciprocal Rank (MRR)?

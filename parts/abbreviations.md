@@ -39,6 +39,9 @@ CSO
 CSV
 ~ Comma-Separated Values
 
+CZK
+~ Czech Koruna
+
 DAML
 ~ DARPA Agent Markup Language
 
@@ -68,6 +71,9 @@ ETL
 
 EU
 ~ European Union
+
+EUR
+~ Euro
 
 GDP
 ~ Gross Domestic Product
@@ -126,8 +132,10 @@ Non-UNA
 NUTS
 ~ Nomenclature of Territorial Units for Statistics
 
+<!--
 ODC
 ~ Open Data Commons
+-->
 
 OGC
 ~ Open Geospatial Consortium
@@ -144,8 +152,10 @@ OWL
 PCO
 ~ Public Contracts Ontology
 
+<!--
 PDDL
 ~ Public Domain Dedication and Licence
+-->
 
 PPROC
 ~ Public Procurement Ontology
