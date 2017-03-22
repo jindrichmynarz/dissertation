@@ -1,5 +1,17 @@
 # Introduction
 
+<!--
+For the first time in history we have data on past experiences in making public contracts, from which we can learn how to make better contracts.
+Matchmaking is one way to use these experiences.
+By learning from history we can agree on better deals.
+
+Public contracts exist in a network of relationships between companies or people and so does the data about public contracts.
+The relationships in data mirror the relationships in real world.
+This is why it is important to combine data from multiple domain to learn about the context in which public contracts are made.
+Here, semantics is a way to agree on meaning of things in data.
+Semantic web is a way to agree on what things are, so that we can combine our data about the things.
+-->
+
 <!-- What is the problem? -->
 
 In order for demand and supply to meet, they must learn about each other.

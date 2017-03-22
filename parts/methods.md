@@ -67,6 +67,9 @@ This is an opportunity to normalize by the bidder's age from ARES.
 
 Using the terminology of case-based reasoning, CPV provides a "bridge attribute" that allows to derive the similarity of contracts from the shared concepts in their descriptions.
 
+Matchmaking basically learns the associations between CPV concepts and bidders from contract awards. <!-- Potentially NACE concepts too. -->
+For each CPV concept the most associated bidders can be found.
+
 <!--
 ## Feature selection
 
