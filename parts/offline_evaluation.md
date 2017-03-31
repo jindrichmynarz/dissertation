@@ -91,6 +91,9 @@ The evaluated metris reflect both accuracy and diversity of the matchmaking resu
 
 * Hit rate at 10 (HR@10): number of hits in top 10 results ⁄ number of queries
   <!-- More commonly named HitRatio -->
+* Mean reciprocal rank at 10 (MRR@10): average of the hits' multiplicative inverse ranks
+  * Used for evaluating systems where *"the user wishes to see one relevant document"* [@Craswell2009].
+  * *"MRR is equivalent to Mean Average Precision in cases where each query has precisely one relevant document."* [@Craswell2009]
 * Average rank at 100 (AR@100): mean average rank of hits in top 100 results
 * Catalog coverage at 10 (CC@10): distinct entities in top 10 results ⁄ all entities
 * Prediction coverage [@Herlocker2004, p. 40]

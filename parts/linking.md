@@ -141,9 +141,6 @@ Effectiveness of linking measured in total task's runtime compared to the number
 A more detailed review of the evaluation methods for linking is presented by Christen [-@Christen2012, pp. 163-184].
 
 <!--
-TODO:
-* Add the number of generated links.
-
 Findings:
 * A lot of missing addresses in ARES.
 * Some links are between the same IRIs even though this is prohibited in the source dataset. (Unsure why this happens.) This skews the link counts.
