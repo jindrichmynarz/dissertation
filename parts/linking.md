@@ -4,21 +4,21 @@ Linking is a process of discovering co-referent identifiers.
 Co-referent identifiers share the same referent, i.e. they refer to the same entity.
 The existence of co-referent identifiers is possible, because linked data operates under the non-unique name assumption (non-UNA).
 This assumption allows to publish distributed data without coordination required for agreeing on names.
-However, queries and data analyses usually operate under the unique name assumption, and therefore they require a unified dataset without aliases for entities.
+However, queries and data analyses usually operate under the unique name assumption (UNA), and therefore they require a unified dataset without aliases for entities.
 Consequently, the aim of linking is to make explicit links between non-unique names of entities, so that these entities can be unified in data fusion.
 In this way, linking addresses the accidental variety of data published on the Web.
 
 ### Content-based addressing
 
 In the absence of agreed upon identifiers, entities are referred to by their description.
-Moreover, unlike RDF, some data formats, such as CSV, do not enable linking.
+Moreover, unlike RDF, some data formats, such as CSV, do not have a mechanism for linking.
 Lack of agreed upon identifiers established by a reliable authority leads to proliferation of aliases for equivalent entities.
 Missing consensual identifiers are one of the key challenges in integration of public procurement data [@AlvarezRodriguez2014].
 
-If descriptions with which entities are referred to are reliable, we can use content-based addressing to discover descriptions referring to the same entity.
+If descriptions with which entities are referred to are reliable and complete, we can use content-based addressing to discover descriptions referring to the same entity.
 Content-based addressing is a general approach for identifying entities by using their content.
 In case of RDF entities, we assume that triples containing an entity's identifer to make up the entity's description.
-We typically restrict such triples to those in which an entity's identifier is in the subject position.
+We typically restrict such triples to those in which an entity's identifier is in the subject role.
 Various content signatures may be derived from such descriptions of entities.
 
 Simple keys of entities can be derived from values of specific properties.
@@ -34,24 +34,24 @@ In such case, it is be better to skip inferring equivalence links via the descri
 
 Compound keys are more complex content signatures that can be derived from combinations of values of specific properties.
 In order to be eligible as keys, these combinations must be unique.
-For example, a contract and a lot number can serve as a compound key for a contract lot. 
+For example, a contract and a lot number can serve as a compound key for a contract lot.
 Similarly to simple keys, such compound keys are commonly used as part of IRIs of the entities they identify.
-We also employed this approach to merge bidders sharing the same name and awarded with the same contract.
+We also employed this approach to merge the bidders sharing the same name and awarded with the same contract.
 Nevertheless, compound keys are perhaps used more often in a probabilistic setting, in which the degree of their match implies a probability of equivalence of the keyed entities.
 Fuzzy matches of combinations of values can approximate exact matches of simple keys.
 However, unlike identifying simple keys, identification of suitable compound keys and approaches for their matching usually requires expert insight into the domain in question.
-A common scenario of probabilistic matching of compound keys uses combinations of simple keys that are unreliable identifiers on their own.
+A common scenario for probabilistic matching of compound keys uses combinations of simple keys that are unreliable identifiers on their own.
 In the context of our dataset, even when RNs are available, they may be misleading as identifiers.
 For example, there are several public contracts each year that a contracting authority awards to itself according to the supplied RNs of the authority and the awarded bidder.
 Moreover, many RNs in the data are syntactically invalid and cannot be automatically coerced to the correct syntax.
-So for example, an organization's name may be combined with its syntactically invalid RN to produce a compound key. 
+So, for example, an organization's name may be combined with its syntactically invalid RN to produce a compound key.
 
 Further extending the size of keys, we can use complete descriptions of the keyed entities.
 Since such keys may be unwieldy, they can be substituted by their hashes to make them more manageable.
 Using hashes as keys is standard in content-based addressing.
-Hash functions map variable length content to fixed length, while preserving its uniqueness.
+Hash functions map variable length descriptions to fixed length, while preserving their uniqueness.
 Unlike the previously described approaches for deriving keys, hashes do not require background knowledge to select key properties, so their production can be fully automated.
-However, on the one hand, hash keys tend to be more brittle, since any change in the hashes descriptions produces a different hash, which may lead to many false negatives when comparing hashes.
+However, on the one hand, hash keys tend to be more brittle, since any change in the hashed descriptions produces a different hash, which may lead to many false negatives when comparing hashes.
 On the other hand, hashes can also produce false positives if they are used for underspecified entities.
 For example, postal addresses, for which we only know that they are located in the Czech Republic, are unlikely to be the same.
 The risk of false positives may be reduced by requiring a minimum description to be present, similarly to a compound key.
@@ -59,8 +59,8 @@ For instance, we can hash only the postal addresses that feature at least a stre
 
 We also experimented with linking entities by discovering entities that are described with a subset of another entity's description.
 Given some minimum description of entities to avoid false positives, we assumed that if a set of property-object pairs of a subject is a subset of such set of another subject, the subjects are co-referent.
-However, detecting subsets in SPARQL is problematic, because the quantified definition of subset requires universal quantification.
-Since SPARQL is based on existential quantification instead, universally qualified predicates need to be reimplemented as double negation via nested `FILTER NOT EXISTS` clause.
+However, detecting subsets in SPARQL is problematic, because the definition of subset requires universal quantification.
+Since SPARQL is based on existential quantification instead, universally qualified predicates need to be reimplemented as double negation via nested `FILTER NOT EXISTS` clauses.
 Ultimately, we abandoned this linking method because of its poor performance, which makes it unusable for larger data.
 
 In case of entities for which no key can be used directly in the construction of IRIs during data extraction via XSLT, we employed blank nodes as identifiers.
@@ -71,6 +71,7 @@ The entities identified by blank nodes were processed in their inverse topologic
 If a blank node linked another blank node, the linked blank node was rewritten first.
 This was done to ensure that the hashed descriptions of blank nodes do not contain blank nodes, which would cause different hashes to be computed from otherwise equivalent descriptions.
 Since no two blank nodes are the same, this procedure led to a significant reduction of aliases.
+<!-- TODO: Should we quantify this reduction? -->
 
 ### Technologies
 
@@ -81,7 +82,7 @@ Update operations were also used when creating links required a join via a key, 
 Most linking tasks based on fuzzy matches of compound keys were done using the Silk link discovery framework [@Bryl2014].
 Silk was used when links could not be established via exact matches.
 For example, we used it to compare syntactically invalid RNs via string distance metrics.
-We used Silk Workbench, a graphical user interface for Silk, to develop linkage rules iteratively.
+We used Silk Workbench, a graphical user interface for Silk, to develop the linkage rules iteratively.
 Silk Workbench displays linking results in a way the interlinked entities can be compared manually.
 This enables to examine a sample of links for false positives and false negatives and adjust the linkage rules accordingly, tuning weights and thresholds to avoid undesired results.
 An example linkage rule in Silk Workbench is shown in the in [@fig:silk].
@@ -104,7 +105,7 @@ We linked organizations in the Czech public procurement register to ARES.
 Instead of deduplicating organizations directly in the register, we decided to reconcile them with ARES, which provided reference identities for organizations.
 We developed Silk linkage rules using combinations of several properties as compound keys.
 Syntactically invalid RNs were matched with valid RNs using the Levenshtein string distance metric to find RNs containing typos.
-Normalized legal names of organizations were compared via the Jaro-Winkler distance metric with high required similarity threshold.
+Normalized legal names of organizations were compared via the Jaro-Winkler distance metric with a high required similarity threshold.
 This metric was selected because it penalizes mismatches near the start of the name more than mismatches at the end.
 It also takes the lengths of the compared names into account, so that more mismatches are tolerated in longer names.
 Thanks to these features this distance metric is widely used when comparing names.
@@ -129,7 +130,7 @@ Results of the metrics computed on a sample may then be extrapolated to approxim
 We manually evaluated a randomly selected sample of 200 links to ARES generated by approximate matching in Silk.
 To a limited extent, the evaluation of this subset of links can approximate the evaluation of all links, which was not feasible due to the manual effort involved in assessing link validity.
 Validity of each link was confirmed or rejected based on data published in the PR, including changes over time, or on web sites of the linked organizations.
-9 links were determined to be false positives, while the rest was confirmed to be valid. 
+9 links were determined to be false positives, while the rest was confirmed to be valid.
 This ratio of false positives produces the precision of 0.955.
 We consider such precision to be reasonable, given the low quality of the linked data.
 Some false positives were caused by ambiguous descriptions of business entities.
@@ -167,4 +168,11 @@ Due to the transient nature of public procurement data it is necessary to integr
 While the title suggests the blog post is about data fusion, it is more about linking.
 <http://blog.mynarz.net/2016/10/basic-fusion-of-rdf-data-in-sparql.html>
 Perhaps the confusion arises from fusion and linking being merged when dealing with blank nodes.
+
+# New linking, 2017-03-31
+
+Count of unlinked organizations: 2079
+Count of unlinked organizations with invalid registrations: 615
+Count of unlinked bidders: 1924
+Count of unlinked contracting authorities: 172 (some contracting authorities are bidders too)
 -->
