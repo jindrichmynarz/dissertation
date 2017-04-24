@@ -12,12 +12,16 @@
 * Incanter visualizations
 -->
 
+Offline evaluation: evaluation without user involvement
+
 We conducted offline evaluation using retrospective data about awarded public contracts.
 Matchmaking was tested on the task of the awarded bidder prediction.
 
 It is common to use historical user interaction data to evaluate recommender systems [@Jannach2010, p. 169].
 Contract award as an explicit user feedback
 Framework agreements awarded to multiple bidders were excluded from the evaluation dataset.
+
+### Evaluation protocol
 
 Split into training and testing dataset.
 5-fold cross-validation
@@ -94,13 +98,11 @@ The evaluated metris reflect both accuracy and diversity of the matchmaking resu
 * Mean reciprocal rank at 10 (MRR@10): average of the hits' multiplicative inverse ranks
   * Used for evaluating systems where *"the user wishes to see one relevant document"* [@Craswell2009].
   * *"MRR is equivalent to Mean Average Precision in cases where each query has precisely one relevant document."* [@Craswell2009]
-* Average rank at 100 (AR@100): mean average rank of hits in top 100 results
 * Catalog coverage at 10 (CC@10): distinct entities in top 10 results ⁄ all entities
 * Prediction coverage [@Herlocker2004, p. 40]
+* Long-tail percentage [@Adomavicius2012]
 
 <!--
-Why did we drop Mean Reciprocal Rank (MRR)?
-
 Diversity of results is often low in case-based recommenders based on similarity-based retrieval.
 There are several strategies to mitigate this issue:
 - Bounded greedy selection: minimizes total similarity in the result set, while maximizing total similarity of the result set to the query.
@@ -123,12 +125,16 @@ Alternative solutions:
 * Ask users to rate a sample of public contracts either as relevant or irrelevant. The sample must be chosen in order to maximize the insight learnt from the rating, e.g., the sample should be generated dynamically to increase its overall diversity.
 -->
 
-The explanatory power of offline evaluation is limited.
+The prediction power of offline evaluation is limited.
 It can tell which of the evaluated approaches provides better results, but it cannot tell if an approach is useful.
 Whether an approach is useful can be only evaluated by real users.
 This is what online evaluation or qualitative evaluation can help with.
 
 Limited correspondence between the evaluted metrics and usefulness in real world.
+
+We used Wilcoxon signed-rank test [@Rey2014] to evaluate the statistical significance of differences between the distributions of ranks produced by the evaluated matchmakers.
+We chose it because we compare ranks for the whole dataset and this test is suited for paired samples from the same population.
+Moreover, it does not require the compared samples to follow normal distribution, which is the case of the distributions of ranks.
 
 ### Evaluation results
 

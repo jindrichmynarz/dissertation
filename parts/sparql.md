@@ -30,4 +30,6 @@ SPARQL operates under the closed world assumption. CBR assumes open world.
 Curse of dimensionality: RDF is complex and contains a multitude of dimensions. Linear increase of dimensions => exponential growth of negative effects.
 
 Combination functions [@Beliakov2007], [@Beliakov2015]
+
+Recommendation of the topmost populater bidders ~ non-personalized recommendation.
 -->

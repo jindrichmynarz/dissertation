@@ -15,4 +15,6 @@ Highlight the awarded bidder in the results if found.
 Ask the civil servants to sort the results based on suitability. (How? How to make sure that enough information about bidders is available?)
 Ask also to reflect on the results (in terms of diversity, biases etc.).
 Use the resorted results to find correlation to the matchmaker's results.
+
+Should we rename this as "user study"? (per [@Beel2013])
 -->

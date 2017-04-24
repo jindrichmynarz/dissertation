@@ -75,3 +75,7 @@ For each CPV concept the most associated bidders can be found.
 
 Manual feature selection ~ schema-aware matchmaking
 -->
+
+<!--
+Top-k recommendation: best matches are shown, but not their predicted ratings.
+-->
