@@ -13,6 +13,8 @@
 -->
 
 Offline evaluation: evaluation without user involvement
+*"Offline evaluations use pre-compiled offline datasets from which some information has been removed. Subsequently, the recommender algorithms are analyzed on their ability to recommend the missing information"* [~Beel2013, p. 8].
+*"The off-line evaluation consists of running several algorithms on the same datasets of user interactions (e.g., ratings) and comparing their performance."* [@Ricci2011, p. 16]
 
 We conducted offline evaluation using retrospective data about awarded public contracts.
 Matchmaking was tested on the task of the awarded bidder prediction.
@@ -20,6 +22,17 @@ Matchmaking was tested on the task of the awarded bidder prediction.
 It is common to use historical user interaction data to evaluate recommender systems [@Jannach2010, p. 169].
 Contract award as an explicit user feedback
 Framework agreements awarded to multiple bidders were excluded from the evaluation dataset.
+In terms of [Beel2013] we use "user-offline-dataset", since it contains implicit ratings inferred from contract awards.
+
+Offline evaluation has several limitations that reduce its predictive power.
+The main limitations of datasets used for offline evaluation are incompleteness and systemic biases.
+Ground truth datasets used in offline evaluation are incomplete.
+They contain only a fraction of true positives.
+*"When incomplete datasets are used as ground-truth, recommender systems are evaluated based on how well they can calculate an incomplete ground-truth"* [@Beel2013, p. 11].
+If the evaluated systems recommends items of higher relevance that are not in the ground truth, they are ignored in offline evaluation.
+
+However, one can also argue that *"offline evaluations are based on more thorough assessments than online evaluations"* [@Beel2013].
+Ground truth in offline evaluation may be based on more thorough examinations of the items, involving multiple features in tandem, while online evaluation may be derived from a superficial assessment, such as click-throughs based on titles only.
 
 ### Evaluation protocol
 
@@ -48,7 +61,7 @@ TODO: Refer to Maidel (2008) in the discussion of setting the weights of expande
 Additionally, Maidel (ibid.) showed that weighting concepts (e.g., by TF-IDF) does not have an impact.
 
 Discuss internal validity of the proposed evaluation design:
-*"Internal validity refers to the extent to which the effects observed are due to the controlled test conditions (e.g., the varying of a recommendation algorithm’s parameters) instead of differences in the set of participants   (predispositions) or uncontrolled/unknown external effects."* [@Jannach2010, p. 168]
+*"Internal validity refers to the extent to which the effects observed are due to the controlled test conditions (e.g., the varying of a recommendation algorithm’s parameters) instead of differences in the set of participants (predispositions) or uncontrolled/unknown external effects."* [@Jannach2010, p. 168]
 
 Adverse selction is caused by asymmetric distribution of information.
 Collusion: agreement between multiple parties to limit open competition.
@@ -100,7 +113,8 @@ The evaluated metris reflect both accuracy and diversity of the matchmaking resu
   * *"MRR is equivalent to Mean Average Precision in cases where each query has precisely one relevant document."* [@Craswell2009]
 * Catalog coverage at 10 (CC@10): distinct entities in top 10 results ⁄ all entities
 * Prediction coverage [@Herlocker2004, p. 40]
-* Long-tail percentage [@Adomavicius2012]
+* Long-tail percentage [@Adomavicius2012]: measures the distribution of the recommended items
+  * 101 distinct bidders account for 20 % of the awarded contracts.
 
 <!--
 Diversity of results is often low in case-based recommenders based on similarity-based retrieval.
