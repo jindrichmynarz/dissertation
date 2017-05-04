@@ -122,6 +122,13 @@ While active waste is widely perceived as the main problem of public procurement
 We therefore decided to focus on optimizing public procurement where most impact can be expected.
 Matchmaking can help improve the public procurement processes to cut down passive waste. 
 It can assist civil servants by providing relevant information, thus reducing the decision-making effort related to public procurement processes.
+<!--
+Moreover, communication protocols can reduce corruption potential.
+In particular, protocols that automate interactions between contracting authorities and bidders leave less leeway.
+For instance, *"automatic matching services can find suitable pairs for a resource transfer.
+The transfer itself can be mediated by a protocol, reducing human interaction to a necessary minimum."*^[<https://sat.researchstudio.at/en/web-of-needs>]
+On the other hand, automation may be corrupted too.
+-->
 We identified several use cases where matchmaking can help.
 
 ### Use cases for matchmaking
