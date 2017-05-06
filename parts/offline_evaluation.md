@@ -1,46 +1,61 @@
 ## Offline evaluation
 
-<!--
-### Implementation notes
+<!-- Definition of offline evaluation
+TODO: Frame within the context of design science. -->
 
-* Start a new Clojure project `matchmaker-evaluation`.
-* Evaluation accepts input in EDN with matchmaking results.
-* Define a schema of the matchmaking results:
-  * Rank: HR@k, MRR@k
-  * CC@k (catalog coverage)
-* Copy and paste evalution metrics from the original `matchmaker` project.
-* Incanter visualizations
--->
+Offline evaluation is an experimental evaluation that ... 
 
 Offline evaluation: evaluation without user involvement
+The term "offline evaluation" is established in the recommender system research.
 *"Offline evaluations use pre-compiled offline datasets from which some information has been removed. Subsequently, the recommender algorithms are analyzed on their ability to recommend the missing information"* [~Beel2013, p. 8].
 *"The off-line evaluation consists of running several algorithms on the same datasets of user interactions (e.g., ratings) and comparing their performance."* [@Ricci2011, p. 16]
+
+<!-- Ground truth -->
 
 We conducted offline evaluation using retrospective data about awarded public contracts.
 Matchmaking was tested on the task of the awarded bidder prediction.
 
-It is common to use historical user interaction data to evaluate recommender systems [@Jannach2010, p. 169].
-Contract award as an explicit user feedback
-Framework agreements awarded to multiple bidders were excluded from the evaluation dataset.
-In terms of [Beel2013] we use "user-offline-dataset", since it contains implicit ratings inferred from contract awards.
+Using historical user interaction data to evaluate recommender systems is common practice [@Jannach2010, p. 169].
+
+In our case, we cast contract awards as explicit positive user feedback.
+In terms of [@Beel2013] we use a "user-offline-dataset", since it contains implicit ratings inferred from contract awards.
+
+Adjustments of the ground truth:
+
+* Framework agreements awarded to multiple bidders were excluded from the evaluation dataset.
+
+Since we evaluate matchmaking as a prediction of the awarded bidders, we need each public contract to have a single winner.
+However, that is not the case for around 1 % of public contracts in our dataset. 
+This may be either in error or when members of the winning groups of bidders are listed separately.
+We decided to exclude these contracts from our evaluation sample.
+
+<!-- Limitations -->
 
 Offline evaluation has several limitations that reduce its predictive power.
-The main limitations of datasets used for offline evaluation are incompleteness and systemic biases.
-Ground truth datasets used in offline evaluation are incomplete.
-They contain only a fraction of true positives.
-*"When incomplete datasets are used as ground-truth, recommender systems are evaluated based on how well they can calculate an incomplete ground-truth"* [@Beel2013, p. 11].
-If the evaluated systems recommends items of higher relevance that are not in the ground truth, they are ignored in offline evaluation.
+The datasets used for offline evaluation can be incomplete and can contain systemic biases.
+Ground truth in the datasets is incomplete, since it typically contains only a fraction of true positives.
+In most cases, users review only few possible matches, which excludes the rest, notwithstanding its relevance, from the true positives.
+Consequently, if the evaluated systems recommend relevant items that are not in the ground truth, these matches are ignored. 
+
+There are also downsides that are inherent to our assumptions used for evaluation.
+
+<!-- Upsides -->
 
 However, one can also argue that *"offline evaluations are based on more thorough assessments than online evaluations"* [@Beel2013].
-Ground truth in offline evaluation may be based on more thorough examinations of the items, involving multiple features in tandem, while online evaluation may be derived from a superficial assessment, such as click-throughs based on titles only.
+Ground truth in offline evaluation may be derived from more thorough examination of items, involving multiple features in tandem, while online evaluation may rely on superficial assessment, such as click-throughs based on titles only.
 
 ### Evaluation protocol
+
+<!-- N-fold cross-validation -->
 
 Split into training and testing dataset.
 5-fold cross-validation
 <!-- Should we split by time? For example, use 8 years (2006-2014) as training and 2 years (2015-2016) for testing? -->
 
-Using recall does not make sense, since there is only one positive. Hence, recall would be either 0 or 1.
+<!-- Metrics and objectives -->
+
+Using recall does not make sense, since there is only one positive.
+Hence, recall would be either 0 or 1.
 <!-- = unary rating -->
 
 Baseline results:
@@ -49,11 +64,6 @@ Baseline results:
 * Recommend most awarded bidders constantly
 * Recommend random bidders
 * Recommend bidders with highest PageRank
-
-Since we evaluate matchmaking as a prediction of the awarded bidders, we need each public contract to have a single winner.
-However, that is not the case for around 1 % of public contracts in our dataset. 
-This may be either in error or when members of the winning groups of bidders are listed separately.
-We decided to exclude these contracts from our evaluation sample.
 
 <!--
 TODO: Refer to Maidel (2008) in the discussion of setting the weights of expanded concepts:
@@ -154,4 +164,10 @@ Moreover, it does not require the compared samples to follow normal distribution
 
 <!--
 Evaluate statistical significance using Wilcoxon signed-rank test.
+-->
+
+<!--
+### Out-takes:
+
+*"When incomplete datasets are used as ground-truth, recommender systems are evaluated based on how well they can calculate an incomplete ground-truth"* [@Beel2013, p. 11].
 -->

@@ -109,6 +109,10 @@ RDF data can be prepared into this expected format using sparql-to-jsonld.
 
 ### matchmaker-sparql {.unnumbered}
 
+matchmaker-sparql^[<https://github.com/jindrichmynarz/matchmaker-sparql>] is a command-line application for evaluation of SPARQL-based matchmaking.
+The evaluation setup is guided by a configuration file provided to the application.
+The configuration describes data to use, connection to a SPARQL endpoint to query and update the data, parameters of the matchmaker, and the evaluation protocol for n-fold cross-validation.
+
 ### matchmaker-elasticsearch {.unnumbered}
 
 ### matchmaker-rescal {.unnumbered}

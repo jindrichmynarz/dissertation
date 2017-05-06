@@ -156,3 +156,17 @@ It can leverage both machine learning due to the volume of the data and semantic
 
 A key part of this research are the similarity metrics for multidimensional and heterogeneous data described using RDF.
 -->
+
+<!--
+## Design science framing
+
+### Design problems
+
+Develop matchmakers
+
+### Knowledge questions
+
+Do the developed matchmakers provide value to bidders and contracting authorities?
+(Are the matchmakers "good enough" (= accurate enough and diverse enough)?)
+(Would users continue to use the matchmakers if they are provided with a demo?)
+-->
