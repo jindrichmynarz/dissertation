@@ -4,6 +4,7 @@ html:
 		--number-sections \
 		--toc \
 		-s \
+		-S \
 		-o text.html \
 		--filter pandoc-include \
 		--filter pandoc-crossref \
@@ -20,6 +21,7 @@ pdf:
 		--toc \
 		--include-before-body parts/title_page.tex \
 		-s \
+		-S \
 		-o text.pdf \
 		--filter pandoc-include \
 		--filter pandoc-crossref \
@@ -42,6 +44,7 @@ excerpt:
 		--toc \
 		--include-before-body parts/title_page.tex \
 		-s \
+		-S \
 		-o excerpt.pdf \
 		--filter pandoc-include \
 		--filter pandoc-crossref \
