@@ -49,7 +49,6 @@ parts/factors.md
 parts/further_problems.md
 parts/evaluation.md
 parts/offline_evaluation.md
-parts/online_evaluation.md
 parts/qualitative_evaluation.md
 parts/conclusions.md
 parts/abbreviations.md

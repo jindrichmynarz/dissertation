@@ -23,7 +23,7 @@ Therefore, the findings from the sample cannot be extrapolated to generally vali
 
 The key challenges of the data transformation were dealing with high heterogeneity of the data and achieving a workable performance of complex transformations affecting large subsets of data.
 Due to the volume of processed data and the complexity of the applied transformations, we have not used LP-ETL to orchestrate the transformations.
-LP-ETL loads data into an in-memory RDF store and materializes the output of each processing step, which leads to performance problems when working with higher volumes of data.
+LP-ETL materializes the output of each processing step and, in case of RDF, loads data into an in-memory RDF store, which leads to performance problems when working with higher volumes of data.
 LP-ETL allows to execute SPARQL updates on data partitioned into chunks of smaller size, which can significantly speed up processing of larger datasets.
 However, this technique can be used only for transformations that require solely the data present in the chunk, which prevents it from being used in cases the whole dataset is needed by a transformation; e.g., for joins across many resources.
 An example where this technique is applicable is sequential processing of tabular data, in which data from each row can be processed separately in most cases.

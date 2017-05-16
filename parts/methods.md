@@ -79,3 +79,49 @@ Manual feature selection ~ schema-aware matchmaking
 <!--
 Top-k recommendation: best matches are shown, but not their predicted ratings.
 -->
+
+## Ground truth {#sec:ground-truth}
+
+There are downsides that are inherent to our assumptions about the used ground truth.
+The assumption that the awarded bidder is the best match for a contract is fundamentally problematic.
+We have to rely on contract awards only, since we do not have explicit evaluations of the awarded bidders after finishing the contracts.
+Bidders may be awarded on the basis of adverse selection, caused by asymmetric distribution of information.
+Tendering processes can suffer from collusion when multiple parties agree to limit open competition.
+In that case, rival bidders may cooperate for mutual benefit, for instance, by bid rigging that involves submitting overvalued fake bids to make real bids more appealing.
+Neither we can assume that bidders who were awarded multiple contracts from the same contracting authority have proven their quality.
+Instead, they may just be cases of clientelism.
+
+<!--
+Cartels are explicit collusion agreements.
+A close problem: monopoly
+
+Can we identify "bad" bidders? Do they exhibit certain patterns that we can recognize in the data?
+(Perhaps we can use data from ÚOHS. However, Sbírka rozhodnutí by ÚOHS is not machine readable.)
+
+The majority of the Czech public contracts actually used an open procedure.
+
+What we have is this: Similar contracts are usually awarded to these bidders.
+
+Matchmaking can therefore serve only as pre-filtering.
+The problem with filtering is that it potentially leaves relevant bidders behind, so that we cannot say that the bias will be dealt with by manual screening of the matches.
+
+Since learning from contracts awarded in the past is the fundamental part of our machine learning approach, the key question is this: Is the bias severe enough to make it better to avoid learning from past contracts?
+
+Nevertheless, how can matchmaking work without learning from the awarded contracts? Can it only employ similarity-based retrieval?
+
+Countermeasures:
+There are several ways we attempted to ammeliorate the biases in our ground truth:
+
+* We experimented with discounting contract awards by the zIndex scores of their contracting authorities.
+  However, this is a blunt tool, since it applies across the board for all contracts by a contracting authority.
+  Within large contracting authorities each contract may be administered by different civil servant.
+  Moreover, the people involved in public procurement of a contracting authority change over time.
+* We experimented with limiting contracts awards to those awarded in open procedures.
+  An intuition motivating this experiment is that a contract awarded in an open procedure enables fairer competition and thus avoid some risks of adverse selection.
+  However, a likely outcome of these corrective measures is performance loss in the evaluation via retrospective data.
+  This can be described as underfitting, while learning from all contract awards overfits, so that it includes the negative effects in public procurement too.
+* An alternative option is to restrict contract awards to learn from by their award criteria.
+  It seems that the simplistic criterion of lowest price is fair, but, due to bidder collusion the lowest price may be intentionally inflated by fake bids.
+  Other, more complex award criteria leave more room for deliberation of contracting authorities.
+  As such, they can be made less transparent.
+-->

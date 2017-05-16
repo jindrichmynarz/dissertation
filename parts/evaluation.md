@@ -26,3 +26,8 @@ Evaluated dimensions:
 -->
 
 [@Beel2013] found that *"results of offline and online evaluations often contradict each other"* (p. 7).
+
+However, conducting online evaluation is expensive since it requires an application with real users.
+In order to attract sufficient mass of users to make the finding from the evaluation statistically significant, the application must be relatively mature and proven useful.
+Due to the large effort required by setting up an online evaluation, we decided instead to balance the offline evaluation with qualitative evaluation using semi-structured interviews with domain experts and prospective users of the matchmakers.
+We used offline evaluation to pre-screen viable matchmaking methods and configurations that we subsequently consulted with users.

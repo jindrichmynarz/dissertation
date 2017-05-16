@@ -82,7 +82,7 @@ GPA
 ~ Agreement on Government Procurement
 
 HR
-~ Hit ratio
+~ Hit rate
 
 HTML
 ~ Hypertext Markup Language
@@ -113,6 +113,9 @@ LOTED
 
 LP-ETL
 ~ LinkedPipes-ETL
+
+LTP
+~ Long-tail percentage
 
 MOLDEAS
 ~ Methods on linked data for e-procurement applying semantics
@@ -148,6 +151,9 @@ OWA
 
 OWL
 ~ Web Ontology Language
+
+PC
+~ Prediction coverage
 
 PCO
 ~ Public Contracts Ontology
