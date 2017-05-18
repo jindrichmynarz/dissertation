@@ -38,11 +38,13 @@ Browsing-based approaches: navigation of the item space, for example using criti
 -->
 
 <!--
-Formalization of the methods should be provided.
+TODO: Formalization of the methods should be provided.
 We can start with a definition of the key entities involved in the matchmaking task.
 -->
 
-<!-- TODO: Add a diagram showing the technology stack involved in the matchmaker. -->
+<!--
+TODO: Add a diagram showing the technology stack involved in the matchmakers. Shouldn't this be in a separate section on implementation?
+-->
 
 <!--
 Subscription to streams
@@ -110,7 +112,7 @@ Since learning from contracts awarded in the past is the fundamental part of our
 Nevertheless, how can matchmaking work without learning from the awarded contracts? Can it only employ similarity-based retrieval?
 
 Countermeasures:
-There are several ways we attempted to ammeliorate the biases in our ground truth:
+There are several ways we attempted to ameliorate the biases in our ground truth:
 
 * We experimented with discounting contract awards by the zIndex scores of their contracting authorities.
   However, this is a blunt tool, since it applies across the board for all contracts by a contracting authority.

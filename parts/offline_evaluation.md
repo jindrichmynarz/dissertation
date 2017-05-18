@@ -1,13 +1,6 @@
 ## Offline evaluation
 
-<!-- Definition of offline evaluation
-TODO: Frame within the context of design science. -->
-
-Offline evaluation is an experimental setting, in which past user interactions are used as ground truth.
-In this setting, some interactions are withheld and the evaluated system is assessed on its ability to fill in the missing interactions. 
-The term "offline evaluation" is established in recommender systems research as being in contrast to online evaluation.
-While online evaluation involves users in real-time, offline evaluation approximates online evaluation by using pre-recorded user interactions.
-Offline evaluation then *"consists of running several algorithms on the same datasets of user interactions (e.g., ratings) and comparing their performance"* [@Ricci2011, p. 16].
+We used offline evaluation to filter matchmaking methods and configurations to those that were subsequently used in qualitative evaluation.
 
 ### Ground truth
 
@@ -15,26 +8,6 @@ We conducted offline evaluation using retrospective data about awarded public co
 Matchmaking was tested on the task of predicting the awarded bidder.
 In our case, we treat contract awards as explicit positive user feedback.
 Thus, in terms of [@Beel2013], we use a "user-offline-dataset", since it contains implicit ratings inferred from contract awards.
-
-<!-- Limitations -->
-
-While using historical user interaction data for evaluation is a common practice [@Jannach2010, p. 169], it has several limitations that reduce its predictive power.
-In addition to the principal limitations of our ground truth described in [@sec:ground-truth], the datasets used for offline evaluation can be incomplete and may contain systemic biases.
-Ground truth in the datasets is incomplete, since it typically contains only a fraction of true positives.
-In most cases, users review only few possible matches, excluding the rest, notwithstanding its relevance, from the true positives.
-Consequently, if the evaluated system recommends relevant items that are not in the ground truth, these matches are ignored.
-In other words, *"when incomplete datasets are used as ground-truth, recommender systems are evaluated based on how well they can calculate an incomplete ground-truth"* [@Beel2013, p. 11].
-
-Due to these limitations offline evaluation has a weak prediction power. 
-It can tell which of the evaluated approaches provides better results, but it cannot tell if an approach is useful.
-There is a limited correspondence between the evaluted metrics and usefulness in real world.
-Whether an approach is useful can be only evaluated by real users.
-This is what online evaluation or qualitative evaluation can help with.
-
-<!-- Upsides -->
-
-However, one can also argue that *"offline evaluations are based on more thorough assessments than online evaluations"* [@Beel2013].
-Ground truth in offline evaluation may be derived from more thorough examination of items, involving multiple features in tandem, while online evaluation may rely on superficial assessment, such as click-throughs based on titles only.
 
 <!-- Adjustments of the ground truth -->
 
@@ -63,18 +36,22 @@ Should we add an explanation why we did not split folds by time?
 
 ### Evaluated metrics
 
-<!-- Metrics and objectives
-TODO: Add rationale behind each metric. Also explicitly describe what values of the metrics are better (e.g., lower/higher).
--->
+<!-- Metrics and objectives -->
 
 The objectives we focus on in offline evaluation are accuracy and diversity of the matchmaking results.
 The adopted evaluation metrics thus go beyond those that reflect accuracy.
 
+<!-- Evaluation of performance?
+Perhaps a rough overall assessment can suffice. E.g., both the SPARQL-based and Elasticsearch-based matchmakers deliver real-time performance, while the RESCAL-based one has to be used in batch mode.
+Performance ~ efficiency in time and space (e.g., speed and RAM consumption)
+Mention restrictions by the computational cost of an evaluation protocol? E.g., not using a learning to rank algorithm?
+-->
+
 We define the evaluation metrics using the following notation.
 Let $C$ be the set of evaluated public contracts and $B$ the set of known bidders.
-The function $match\colon C \to \mathbb{P}(B)$ returns an ordered set of bidders recommended for a given public contract.
+The function $match\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of bidders recommended for a given public contract.
 The function $bidder\colon C \to B$ returns the bidder to whom a contract was awarded.
-The function $rank\colon C \to \mathbb{Z}_{\ge 1} \cup \{ \text{not found} \}$ gives the rank of the bidder who won a given public contract: <!-- _b -->
+The function $rank\colon C \to \mathbb{Z}_{\ge 1} \cup \{ \text{not found} \}$ gives the rank of the bidder who won a given public contract.
 
 $rank(c) = 
   \begin{cases}
@@ -97,7 +74,7 @@ This metric can be calculated as follows:
 $HR@10 = \frac{\left\vert{c \in C : bidder(c) \in match(c) \land rank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$
 
 MRR@10 is the arithmetic mean of multiplicative inverse ranks.
-Multiplicative inverse $mi\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such: <!-- _b -->
+Multiplicative inverse $mi\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such:
 
 $mi(c)=\begin{cases}
          \frac{1}{rank(c)}, & \text{if}\ bidder(c) \in match(c) \\ 
@@ -110,20 +87,20 @@ MRR@10 reflects how prominent the position of the hit is in the matchmaking resu
 We aim to increase MRR@10, corresponding to a lower rank the hit has.
 MRR@10 can be defined as follows:
 
-$MRR@10 = \frac{1}{\left\vert{C}\right\vert}\sum_{c \in C} mi(c)$ <!-- _b -->
+$MRR@10 = \frac{1}{\left\vert{C}\right\vert}\sum_{c \in C} mi(c)$
 
 The adopted metrics that go beyond accuracy include prediction coverage (PC) and two metrics reflecting diversity: catalog coverage at 10 (CC@10) and long-tail percentage at 10 (LTP@10).
 PC [@Herlocker2004, p. 40] measures the amount of items for which the evaluated system is able to produce recommendations.
 We strive to increase PC to achieve a near-complete coverage.
-PC is defined as the share of queries for which non-empty results are returned:
+PC is defined as the share of queries for which non-empty results are returned.
 
 $PC = \frac{\left\vert{c \in C : match(c) \neq \varnothing}\right\vert}{\left\vert{C}\right\vert}$
 
 CC@10 reflects the diversity of the recommended items.
 Systems that recommend a limited set of items have a low catalog coverage, while systems that recommend diverse items achieve a higher catalog coverage.
-We compute CC@10 as the number of distinct bidders in the top 10 results for all contracts divided by the number of all bidders:
+We compute CC@10 as the number of distinct bidders in the top 10 results for all contracts divided by the number of all bidders.
 
-$CC@10 = \frac{\left\vert{\bigcup_{c \in C} match(c)}\right\vert}{\left\vert{B}\right\vert}$ <!-- _b -->
+$CC@10 = \frac{\left\vert{\bigcup_{c \in C} match(c)}\right\vert}{\left\vert{B}\right\vert}$
 
 LTP@10 [@Adomavicius2012] is based on the distribution of the recommended items.
 Concretely, it measures the share of items from the long tail in the matchmaking results.
@@ -132,7 +109,7 @@ In case of the Czech public procurement data, 20 % of the awarded contracts conc
 To avoid awarding contracts only to a few highly successful bidders, we aim to increase the recommendations from the long tail of bidders. 
 We calculate LTP@10 as follows:
 
-$LTP@10 = \frac{\sum_{c \in C} \left\vert{match(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{match(c)}\right\vert}$ <!-- _b -->
+$LTP@10 = \frac{\sum_{c \in C} \left\vert{match(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{match(c)}\right\vert}$
 
 <!-- Unused evaluation metrics -->
 
@@ -141,14 +118,6 @@ Both precision and recall have limited prediction power in our case, since only 
 If we consider top 10 results only, precision would be either 1/10 or 0, while recall would either be 1 or 0.
 This problem is known as class imbalance [@Christen2012].
 Results with the status of non-match are much more prevalent in matchmaking than those with the status of match, which skews the evaluation measures that take non-matches into account.
-
-<!--
-http://videolectures.net/eswc2014_di_noia_linked/?q=di%20noia
-The task 2 of the challenge used F1-measure @ top 5.
-The evaluation of task 3 on diversity is evaluated using intra-list diversity (ILD) with only dcterms:subject and dbo:author. We can also restrict the ILD to few properties (or property paths).
-
-User coverage: a share of bidders for which the system is able of recommending contracts.
--->
 
 <!-- Evaluation of statistical significance -->
 
@@ -162,15 +131,7 @@ We chose SPARQL-based matchmaking using exact matches via CPV without weighting 
 The developed matchmaking methods and configurations were assessed by comparing their evaluation results with the results obtained for the baseline configuration.
 In this way, we measured the progress beyond the baseline that various matchmaking factors were able to achieve.
 
-<!--
-Is the baseline needed?
-Baseline results:
-
-* Exact match via CPV
-* Recommend most awarded bidders constantly
-* Recommend random bidders
-* Recommend bidders with highest PageRank
--->
+<!-- There are also papers that consider multiple baselines, such as [@Garcin2014]. -->
 
 <!--
 ### Out-takes:
@@ -183,4 +144,19 @@ Moreover, the limitations of the chosen ground truth have to be considered with 
 Internal validity in the context of recommender systems can be defined as the *"extent to which the effects observed are due to the controlled test conditions (e.g., the varying of a recommendation algorithm's parameters) instead of differences in the set of participants (predispositions) or uncontrolled/unknown external effects"* [@Jannach2010, p. 168].
 
 *"External validity refers to the extent to which results are generalizable to other user groups or situations"*  [@Jannach2010, p. 168]
+
+Unused evaluation metrics:
+
+http://videolectures.net/eswc2014_di_noia_linked/?q=di%20noia
+The task 2 of the challenge used F1-measure @ top 5.
+The evaluation of task 3 on diversity is evaluated using intra-list diversity (ILD) with only dcterms:subject and dbo:author. We can also restrict the ILD to few properties (or property paths).
+
+User coverage: a share of bidders for which the system is able of recommending contracts.
+
+Other baselines:
+
+* Exact match via CPV
+* Recommend most awarded bidders constantly
+* Recommend random bidders
+* Recommend bidders with highest PageRank
 -->
