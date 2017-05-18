@@ -42,6 +42,7 @@ parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
 parts/methods.md
+parts/ground_truth.md
 parts/sparql.md
 parts/full_text_search.md
 parts/tensor_factorization.md
