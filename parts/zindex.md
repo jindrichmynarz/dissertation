@@ -1,4 +1,4 @@
-### zIndex
+### zIndex {#sec:zindex}
 
 zIndex^[<http://zindex.cz/en>] grades Czech contracting authorities with fairness scores.
 The scores are based on the contracting authority's adherence to good practices in public procurement as observed from the data it discloses [@Soudek2016b].

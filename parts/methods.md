@@ -82,4 +82,10 @@ As such, it corresponds to schema-aware matchmaking.
 Top-k recommendation: best matches are shown, but not their predicted ratings.
 -->
 
+## Definitions
+
+Let $C$ be the set of evaluated public contracts and $B$ the set of known bidders.
+
+<!-- ... segue ... -->
+
 We experimented with matchmaking methods that use SPARQL, full-text search, and tensor factorization.

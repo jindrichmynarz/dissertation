@@ -90,6 +90,9 @@ HTML
 HTTP
 ~ Hypertext Transfer Protocol
 
+IDF
+~ Inverse document frequency
+
 IRI
 ~ Internationalized Resource Identifier
 

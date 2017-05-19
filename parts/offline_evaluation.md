@@ -47,8 +47,7 @@ Performance ~ efficiency in time and space (e.g., speed and RAM consumption)
 Mention restrictions by the computational cost of an evaluation protocol? E.g., not using a learning to rank algorithm?
 -->
 
-We define the evaluation metrics using the following notation.
-Let $C$ be the set of evaluated public contracts and $B$ the set of known bidders.
+We define the evaluation metrics using the following notation, building on the notation defined previously. 
 The function $match\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of bidders recommended for a given public contract.
 The function $bidder\colon C \to B$ returns the bidder to whom a contract was awarded.
 The function $rank\colon C \to \mathbb{Z}_{\ge 1} \cup \{ \text{not found} \}$ gives the rank of the bidder who won a given public contract.
@@ -130,6 +129,10 @@ Moreover, it does not require the compared samples to follow normal distribution
 We chose SPARQL-based matchmaking using exact matches via CPV without weighting as our baseline.
 The developed matchmaking methods and configurations were assessed by comparing their evaluation results with the results obtained for the baseline configuration.
 In this way, we measured the progress beyond the baseline that various matchmaking factors were able to achieve.
+
+<!-- Query expansion -->
+
+<!-- Data reduction -->
 
 <!-- There are also papers that consider multiple baselines, such as [@Garcin2014]. -->
 

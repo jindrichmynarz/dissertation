@@ -28,6 +28,8 @@ The matchmakers suffer from the curse of dimensionality.
 RDF data is typically complex and contains many dimensions.
 Linear increase of dimensions leads to exponential growth of negative effects.
 
+<!-- The most important characteristic of SPARQL, needs to be elaborated: -->
+
 Since SPARQL retrieves exact matches, their ranking needs to be implemented on top of SPARQL.
 
 While RDF stores in general suffer from performance penalty compared to relational databases, recent advancements in the application of column store technology for RDF data brought large performance improvements [@Boncz2014, p. 23].
@@ -38,22 +40,65 @@ The benefits of SPARQL come with costs.
 As Maali [-@Maali2014, p. 57] writes, the pure declarative nature of SPARQL implies high evaluation cost and requires *"users to express their needs in a single query"*.
 This is why the matchmaker employs a single-shot approach.
 As it does not have a conversational interface with which users can iteratively refine their query, if no suitable match is found, users need to revise their query and start again, even though they may not be able to provide a detailed query from the start.
-Moreover, due to its SPARQL basis the matchmaker employs materialize-then-sort query execution scheme [Magliacane2012, p. 345], which implies that matchmaker needs to compute scores for all matched solutions prior to sorting them even though only top $k$ matches are retrieved.
+Moreover, due to its SPARQL basis the matchmaker employs materialize-then-sort query execution scheme [@Magliacane2012, p. 345], which implies that matchmaker needs to compute scores for all matched solutions prior to sorting them even though only top $k$ matches are retrieved.
+
+While there is no need for data pre-processing, derived data that changes infrequently can be materialized and stored in RDF.
+This can improve performance by avoiding the need to recompute the derived data at query time.
+This benefit is offset by increased use of storage space and an overhead with updates, since materialized data has to be periodically recomputed when the data it is derived from changes.
+We used materialization for pre-computing inverse document frequencies (IDF) of CPV concepts.
+
+### Weighting
 
 <!--
-Materialization trade-offs
-Fixed data may be materialized.
-For instance, IDFs of CPV may be pre-computed.
+FIXME: Distinguish weights and modifiers? This was considered in the ODBASE submission. For example, while CPV associations strengths were indicated by weights, zIndex was termed a qualifier.
 -->
 
-### Weighing
+We adjust scores of matches by multiplying them with weights defined as $w \in \mathbb{R} : 0 < w \leq 1$.
+Some weights are given by data or derived from it, others can be provided as configuration to the matchmaker.
+We apply weights to different kinds of relations and objects in the data.
 
-We adjust scores of matches by multiplying them with weights.
+Several weights can be applied to relations between contracts and CPV concepts. 
+We weight concepts relations instead of the concepts directly, since the same concept may be present more than once in a contract's description.
+For example, we can use query expansion and infer a concept that is already explicitly assigned to a contract.
+This allows us to distinguish concepts associated by different relations.
+For example, concepts may be linked by distinct properties or they may be either stated explicitly or inferred via query expansion.
+
+There are several concrete ways in which weights can be applied to CPV concepts.
+The matchmaker may apply an inhibiting weight to de-emphasize the concepts associated with contracts via the `pc:additionalObject` property.
+Similarly, qualifying concepts from the CPV's supplementary vocabulary can be discounted by a lower weight.
+Concepts inferred by query expansion can be weighted either by a fixed inhibition or inverse document frequency (IDF).
+
+Inverse document frequency (IDF) is used to de-emphasize the impact of popular CPV concepts on matchmaking.
+Unlike infrequent and specific concepts, popular concepts may have lesser discriminative power to determine relevance of contracts described by them.
+IDF is computed as follows:
+
+$idf(t, C) = \log\frac{\left\vert{C}\right\vert}{1 + \left\vert{\{c \in C : t \in c\}}\right\vert}$
+
+The denominator in the formula is incremented by 1 to avoid division by zero.
+Subsequently, we scale IDF into the interval $(0, 1]$ in order to be able to use it as weight.
+
+$idf'(t, C) = \frac{idf(t, C)}{max(\{s \in T : idf(s, C)\})}$
+
+While IDF can be computed on the fly, we decided to pre-compute it and store it as RDF.
+Computation of IDF is implemented via two declarative SPARQL Update operations, the first of which uses a Virtuoso-specific extension function for logarithm (`bif:log10()`).
+
+Besides CPV, weights can be applied to objects of specific properties.
+In particular, we allow to inhibit the objects of `pc:kind` when used in combination with CPV.
+This property indicates broad kinds of contracts, such as works or supplies.
+
+The matchmaker also allows to weight contracts indirectly via a weight of their contracting authorities.
+We use zIndex scores as weights of contracting authorities, which are given by the dataset described in [@sec:zindex].
 
 ### Query expansion
 
 We expand CPV concepts by following hierarchical relations in the CPV.
-We follow either links to narrower concepts via `skos:narrowerTransitive`, to broader concepts via `skos:broaderTransitive`, or in both directions.
+We follow either links to narrower concepts via `skos:narrowerTransitive` ([@fig:expand-to-narrower]), to broader concepts via `skos:broaderTransitive`, or in both directions.
+
+![Expansion to narrower concepts](img/expand_to_narrower.png){#fig:expand-to-narrower}
+
+![Expansion to broader concepts](img/expand_to_broader.png){#fig:expand-to-broader}
+
+<!-- Define a query expansion operator? -->
 
 ### Aggregation functions
 
@@ -115,8 +160,6 @@ The generated queries are executed on the configured SPARQL endpoint and return 
 Each kind of matchmaker corresponds to a query template.
 It may also expose specific parameters that can be provided via the configuration. 
 
-We implement query expansion via SPARQL 1.1 property paths.
-
 The basic graph pattern considered in most configurations of the matchmaker is illustrated in [@lst:property-path] using the SPARQL 1.1 Property Path syntax.
 
 ```{#lst:property-path caption="Matchmaker's SPARQL property path"}
@@ -126,6 +169,13 @@ The basic graph pattern considered in most configurations of the matchmaker is i
   pc:awardedTender/pc:bidder ?matchedBidder .
 \end{lstlisting}
 ```
+
+We implemented query expansion via SPARQL 1.1 property paths.
+Property paths allow us to retrieve concepts reachable within a given maximum number of hops transitively following the hierarchical relations in CPV.
+We use the short-hand notation `{1, max}` for these property paths.
+It defines a graph neighbourhood at most `max` hops away.
+This notation is not a part of the SPARQL standard, but it is defined in [@Seaborne2014], and several RDF stores, including Virtuoso, support it.
+However, it can be rewritten to the more verbose standard SPARQL notation if required.
 
 The actual implementation of the matchmaker in SPARQL is based on nested sub-queries and `VALUES` clauses used to associate the considered properties with weights.
 Score aggregation is done using SPARQL 1.1 aggregates.
