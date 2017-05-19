@@ -1,7 +1,7 @@
 ## SPARQL
 
 The initial version of the SPARQL-based matchmaker was introduced in [@Mynarz2014b].
-[@Mynarz2015] covers an improved version of the matchmaker.
+Our subsequent publication [@Mynarz2015] covers an improved version of the matchmaker.
 The hereby described version is thus the third iteration of the matchmaker.
 
 Matchmaking public contract to suitable bidders starts with retrieving similar contracts awarded in the past.
@@ -9,6 +9,8 @@ For each awarded contract a similarity score is computed and the contracts are g
 Scores of each group are aggregated and sorted in descending order.
 In this way, matchmaking uses both semantic and statistical properties of data on which it operates.
 While the semantics of contracts' descriptions is employed in similarity measurement, the aggregation of scores reflects the statistics about past participation of bidders in public procurement [@AlvarezRodriguez2013, p. 122]. 
+
+### Technology
 
 <!-- SPARQL: benefits & drawbacks -->
 
@@ -28,10 +30,6 @@ The matchmakers suffer from the curse of dimensionality.
 RDF data is typically complex and contains many dimensions.
 Linear increase of dimensions leads to exponential growth of negative effects.
 
-<!-- The most important characteristic of SPARQL, needs to be elaborated: -->
-
-Since SPARQL retrieves exact matches, their ranking needs to be implemented on top of SPARQL.
-
 While RDF stores in general suffer from performance penalty compared to relational databases, recent advancements in the application of column store technology for RDF data brought large performance improvements [@Boncz2014, p. 23].
 Yet, in order to get the best performance of SPARQL, the matchmaker is limited to exact joins.
 Fuzzy joins over literal ranges or overlapping substrings significantly decrease the matchmaker's performance and are therefore avoided.
@@ -46,6 +44,29 @@ While there is no need for data pre-processing, derived data that changes infreq
 This can improve performance by avoiding the need to recompute the derived data at query time.
 This benefit is offset by increased use of storage space and an overhead with updates, since materialized data has to be periodically recomputed when the data it is derived from changes.
 We used materialization for pre-computing inverse document frequencies (IDF) of CPV concepts.
+
+### Ranking
+
+<!-- The most important characteristic of SPARQL, needs to be elaborated: -->
+
+Since SPARQL retrieves exact matches, their ranking needs to be implemented on top of SPARQL.
+Matches are ranked by scores calculated by aggregating contract similarities.
+Similarities between contracts are computed by aggregating similarities their objects.
+These objects describe the products or services sought in contracts.
+There are many ways how a contract object can be described.
+Due to the above-mentioned limitation of SPARQL to exact matches, the SPARQL-based matchmaker is limited to descriptions by object properties. 
+Concretely, the matchmaker can use CPV concepts, either as main or additional objects or their qualifiers (`pc:mainObject`, `pc:additionalObject`), contract kinds (`pc:kind`), service categories (`isvz:serviceCategory`), and NACE concepts indirectly linked via CPV.   
+
+### Query expansion
+
+We expand CPV concepts by following hierarchical relations in the CPV.
+We follow either links to narrower concepts via `skos:narrowerTransitive` ([@fig:expand-to-narrower]), to broader concepts via `skos:broaderTransitive` ([@fig:expand-to-broader]), or in both directions.
+
+![Expansion to narrower concepts](img/expand_to_narrower.png){#fig:expand-to-narrower}
+
+![Expansion to broader concepts](img/expand_to_broader.png){#fig:expand-to-broader}
+
+<!-- Define a query expansion operator? -->
 
 ### Weighting
 
@@ -88,17 +109,6 @@ This property indicates broad kinds of contracts, such as works or supplies.
 
 The matchmaker also allows to weight contracts indirectly via a weight of their contracting authorities.
 We use zIndex scores as weights of contracting authorities, which are given by the dataset described in [@sec:zindex].
-
-### Query expansion
-
-We expand CPV concepts by following hierarchical relations in the CPV.
-We follow either links to narrower concepts via `skos:narrowerTransitive` ([@fig:expand-to-narrower]), to broader concepts via `skos:broaderTransitive`, or in both directions.
-
-![Expansion to narrower concepts](img/expand_to_narrower.png){#fig:expand-to-narrower}
-
-![Expansion to broader concepts](img/expand_to_broader.png){#fig:expand-to-broader}
-
-<!-- Define a query expansion operator? -->
 
 ### Aggregation functions
 
