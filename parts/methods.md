@@ -1,5 +1,11 @@
 # Matchmaking methods
 
+<!--
+TODO: It may make sense to move much content from the specific sections of this chapter here.
+Many methods will be generic to more than one approach. For example, weighting or query expansion.
+However, without the finished implementations of all the matchmaking methods, shuffling content around would be a premature optimization.
+-->
+
 Matchmaking public contracts to bidders can be framed as a task for case-based reasoning.
 Data on awarded contracts can be recast as past cases to learn from.
 Bidders in the most similar awarded contracts are recommended as solutions to the query contract.
@@ -25,8 +31,9 @@ Matchmakers can run on any dataset described by PCO.
 One of such datasets is the Czech public procurement dataset which we use as a use case in our work.
 
 A limitation of our approach is that it works as a one-shot recommendation that does not take user feedback on the generated recommendations into account.
+Since the matchmakers do not have a conversational interface with which users can iteratively refine their query, if no suitable match is found, users need to revise their query and start again, even though they may not be able to provide a detailed query from the start.
+This can be characterized as a query-based approach, in which users have to respecify their query in case no results are found.
 One-shot recommendation is typical for case-based recommenders [@Smyth2007].
-It can be characterized as a query-based approach, in which users have to respecify their query in case no results are found.
 The opposite is true of conversational recommender systems that elicit user feedback to refine their recommendations.
 For example, users may provide a critique, such as requiring cheaper matches.
 Critiques can be interpreted as directional feature constraints [@Smyth2007, p. 361].
@@ -77,6 +84,12 @@ For each CPV concept the most associated bidders can be found.
 
 We employed manual feature selection.
 As such, it corresponds to schema-aware matchmaking.
+
+<!-- Feature selection as a way of mitigating the curse of dimensionality? -->
+
+The matchmakers suffer from the curse of dimensionality.
+RDF data is typically complex and contains many dimensions.
+Linear increase of dimensions leads to exponential growth of negative effects.
 
 <!--
 Top-k recommendation: best matches are shown, but not their predicted ratings.

@@ -10,40 +10,80 @@ Scores of each group are aggregated and sorted in descending order.
 In this way, matchmaking uses both semantic and statistical properties of data on which it operates.
 While the semantics of contracts' descriptions is employed in similarity measurement, the aggregation of scores reflects the statistics about past participation of bidders in public procurement [@AlvarezRodriguez2013, p. 122]. 
 
-### Technology
+This matchmaker explores the use of SPARQL [@Harris2013] for matchmaking.
+We introduced SPARQL in [@sec:linked-data].
+The choice of this technology for matchmaking has both benefits and drawbacks. 
 
-<!-- SPARQL: benefits & drawbacks -->
+### Benefits
 
-We chose SPARQL [@Harris2013] as a native way of processing RDF data using the RDF data model.
-This technological choice has both benefits and drawbacks for use in matchmaking.
+<!-- Nativeness -->
 
-SPARQL operates directly on indices of RDF databases, so there is no need to pre-process data or build a model.
+SPARQL is a native way of querying and manipulating RDF data.
+As it is designed for RDF, it is based on graph pattern matching.
+Graph patterns in SPARQL are based on data in the Turtle syntax [@Beckett2014] extended with variables.
+Consequently, there is little impedance mismatch between data and queries.
+
+<!-- Universality -->
+
+The general design of SPARQL makes it into a universal tool for working with RDF.
+Thanks it its expressivity and declarative description it can be used for many different tasks.
+For example, we also adopted it as our primary tool for data preparation, as described in [@sec:data-preparation].
+
+<!-- Standardization -->
+
+Since SPARQL is a standard [@Harris2013], most RDF stores support it.
+Setup of the SPARQL-based matchmaker thus requires only loading data into an RDF store.
+Since the matchmaker is limited to the standard SPARQL without proprietary addons or extension functions, it is portable across RDF stores compliant with the SPARQL specifications.
+Consequently, it is not tied to any single RDF store vendor.
+
+<!-- Real-time -->
+
+Since SPARQL operates directly on indices of RDF databases, there is no need to pre-process data or build a model.
 Thanks to this feature, SPARQL can answer matchmaking queries in real time.
-In particular, having this property is useful for recommendations from streaming data.
+In particular, this property is useful for recommendations from streaming data.
 Such requirement is to a certain degree also present in the public procurement domain because its data becomes quickly obsolete due to its currency bound on fixed deadlines for tender submission. 
 
-Since the matchmaker is limited to the standard SPARQL without proprietary addons or extension functions, it is portable across RDF stores compliant with the SPARQL specifications.
-The implementation of our matchmaker bases exclusively on querying a SPARQL endpoint without any previous data     preprocessing.
-Our tool can thus be easily deployed by any public administration exposing its data via a SPARQL endpoint with no further tool or service needed.
+While there is no need for data pre-processing, derived data that changes infrequently can be materialized and stored in RDF.
+Doing so can improve performance by avoiding the need to recompute the derived data at query time.
+This benefit is offset by increased use of storage space and an overhead with updates, since materialized data has to be recomputed when the data it is derived from changes.
+We used materialization for pre-computing inverse document frequencies (IDF) of CPV concepts.
 
-The matchmakers suffer from the curse of dimensionality.
-RDF data is typically complex and contains many dimensions.
-Linear increase of dimensions leads to exponential growth of negative effects.
-
-While RDF stores in general suffer from performance penalty compared to relational databases, recent advancements in the application of column store technology for RDF data brought large performance improvements [@Boncz2014, p. 23].
-Yet, in order to get the best performance of SPARQL, the matchmaker is limited to exact joins.
-Fuzzy joins over literal ranges or overlapping substrings significantly decrease the matchmaker's performance and are therefore avoided.
+### Drawbacks 
 
 The benefits of SPARQL come with costs.
-As Maali [-@Maali2014, p. 57] writes, the pure declarative nature of SPARQL implies high evaluation cost and requires *"users to express their needs in a single query"*.
-This is why the matchmaker employs a single-shot approach.
-As it does not have a conversational interface with which users can iteratively refine their query, if no suitable match is found, users need to revise their query and start again, even though they may not be able to provide a detailed query from the start.
-Moreover, due to its SPARQL basis the matchmaker employs materialize-then-sort query execution scheme [@Magliacane2012, p. 345], which implies that matchmaker needs to compute scores for all matched solutions prior to sorting them even though only top $k$ matches are retrieved.
+As Maali [-@Maali2014, p. 57] writes, the pure declarative nature and expressivity of SPARQL implies high evaluation cost.
+While RDF stores in general suffer from performance penalty compared to relational databases, recent advancements in the application of column store technology for RDF data brought large performance improvements [@Boncz2014, p. 23].
 
-While there is no need for data pre-processing, derived data that changes infrequently can be materialized and stored in RDF.
-This can improve performance by avoiding the need to recompute the derived data at query time.
-This benefit is offset by increased use of storage space and an overhead with updates, since materialized data has to be periodically recomputed when the data it is derived from changes.
-We used materialization for pre-computing inverse document frequencies (IDF) of CPV concepts.
+<!-- Single-shot approach -->
+
+Moreover, SPARQL requires *"users to express their needs in a single query"*.
+This is why the matchmaker employs a single-shot approach.
+
+<!-- Limitation to exact matches -->
+
+SPARQL only allows exact matches.
+Partial matches have to be implemented on top of it.
+
+In SPARQL, identities of resources either match or do not.
+SPARQL cannot leverage literals efficiently: they are not indexed and treated as unstructured data.
+Since literals are not indexed, they have to be analysed at query time. 
+Instead: structural similarity, overlaps in graph patterns
+
+Yet, in order to get the best performance of SPARQL, the matchmaker is limited to exact joins.
+Fuzzy joins over literal ranges or overlapping substrings significantly decrease the matchmaker's performance and should therefore be avoided.
+
+<!-- Materialize-then-sort -->
+
+SPARQL employs materialize-then-sort query execution scheme [@Magliacane2012, p. 345], which implies that the matchmaker needs to compute scores for all matched solutions prior to sorting them, even though only top $k$ matches are retrieved.
+Matchmaking in SPARQL depends on aggregations and sorting, which are both examples of operations called the pipeline breakers in the query execution model.
+Such operations prevent lazy execution, since they require their complete input to be available.
+Sorting is implemented as a result modifier, so that it too requires complete results to be realized.
+<!-- ...leads to ranking... -->
+
+<!--
+SPARQL query optimization: reordering triple patterns in order to minimize cardinality of the intermediate results
+Minimize unnecessary intermediate bindings via blank nodes and property paths.
+-->
 
 ### Ranking
 
@@ -56,6 +96,14 @@ These objects describe the products or services sought in contracts.
 There are many ways how a contract object can be described.
 Due to the above-mentioned limitation of SPARQL to exact matches, the SPARQL-based matchmaker is limited to descriptions by object properties. 
 Concretely, the matchmaker can use CPV concepts, either as main or additional objects or their qualifiers (`pc:mainObject`, `pc:additionalObject`), contract kinds (`pc:kind`), service categories (`isvz:serviceCategory`), and NACE concepts indirectly linked via CPV.   
+
+The matchmaker leverages primarily the associations of bidders to contracts and their associations to CPV concepts.
+These associations may have different weights.
+They can be also more or less frequent.
+
+<!--
+Formalize the scoring function.
+-->
 
 ### Query expansion
 
@@ -86,6 +134,7 @@ For example, concepts may be linked by distinct properties or they may be either
 
 There are several concrete ways in which weights can be applied to CPV concepts.
 The matchmaker may apply an inhibiting weight to de-emphasize the concepts associated with contracts via the `pc:additionalObject` property.
+These weights are applied both to associations to the query contract and to the matched contracts.
 Similarly, qualifying concepts from the CPV's supplementary vocabulary can be discounted by a lower weight.
 Concepts inferred by query expansion can be weighted either by a fixed inhibition or inverse document frequency (IDF).
 
@@ -188,6 +237,7 @@ This notation is not a part of the SPARQL standard, but it is defined in [@Seabo
 However, it can be rewritten to the more verbose standard SPARQL notation if required.
 
 The actual implementation of the matchmaker in SPARQL is based on nested sub-queries and `VALUES` clauses used to associate the considered properties with weights.
+<!-- Actually, the baseline matchmaker doesn't use subqueries. -->
 Score aggregation is done using SPARQL 1.1 aggregates.
 Matchmaker source code is available in a public repository^[<https://github.com/jindrichmynarz/matchmaker-sparql>] licensed as open source under the terms of Eclipse Public License.
 Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.

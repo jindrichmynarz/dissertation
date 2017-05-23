@@ -1,4 +1,4 @@
-### Linked data
+### Linked data {#sec:linked-data}
 
 Linked data is a set of practices for publishing structured data on the Web.
 It is a way of structuring data that identifies entities with Internationalized Resource Identifiers (IRIs) and materializes their relationships as a network of machine-processable data [@Ayers2007, p. 94].
