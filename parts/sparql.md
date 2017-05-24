@@ -25,14 +25,14 @@ Consequently, there is little impedance mismatch between data and queries.
 
 <!-- Universality -->
 
-The general design of SPARQL makes it into a universal tool for working with RDF.
-Thanks it its expressivity and declarative description it can be used for many different tasks.
-For example, we also adopted it as our primary tool for data preparation, as described in [@sec:data-preparation].
+The design of SPARQL makes it into a universal tool for working with RDF.
+Thanks to its expressivity and declarative formulation it can be used for many varied tasks.
+For example, besides matchmaking we also adopted it as our primary tool for data preparation, as described in [@sec:data-preparation].
 
 <!-- Standardization -->
 
 Since SPARQL is a standard [@Harris2013], most RDF stores support it.
-Setup of the SPARQL-based matchmaker thus requires only loading data into an RDF store.
+The setup of the SPARQL-based matchmaker thus requires only loading data into an RDF store.
 Since the matchmaker is limited to the standard SPARQL without proprietary addons or extension functions, it is portable across RDF stores compliant with the SPARQL specifications.
 Consequently, it is not tied to any single RDF store vendor.
 
@@ -40,7 +40,7 @@ Consequently, it is not tied to any single RDF store vendor.
 
 Since SPARQL operates directly on indices of RDF databases, there is no need to pre-process data or build a model.
 Thanks to this feature, SPARQL can answer matchmaking queries in real time.
-In particular, this property is useful for recommendations from streaming data.
+In particular, this is useful for recommendations from streaming data.
 Such requirement is to a certain degree also present in the public procurement domain because its data becomes quickly obsolete due to its currency bound on fixed deadlines for tender submission. 
 
 While there is no need for data pre-processing, derived data that changes infrequently can be materialized and stored in RDF.
@@ -51,38 +51,33 @@ We used materialization for pre-computing inverse document frequencies (IDF) of 
 ### Drawbacks 
 
 The benefits of SPARQL come with costs.
-As Maali [-@Maali2014, p. 57] writes, the pure declarative nature and expressivity of SPARQL implies high evaluation cost.
-While RDF stores in general suffer from performance penalty compared to relational databases, recent advancements in the application of column store technology for RDF data brought large performance improvements [@Boncz2014, p. 23].
-
-<!-- Single-shot approach -->
-
-Moreover, SPARQL requires *"users to express their needs in a single query"*.
-This is why the matchmaker employs a single-shot approach.
+As Maali [-@Maali2014, p. 57] writes, the pure declarative nature and expressivity of SPARQL implies a high evaluation cost.
+RDF stores in general suffer from a performance penalty when compared to relational databases.
+Nevertheless, recent advancements in the application of column store technology for RDF data brought large performance improvements [@Boncz2014, p. 23].
+SPARQL also lends itself to advanced query optimization that can avoid much of the performance costs.
 
 <!-- Limitation to exact matches -->
 
-SPARQL only allows exact matches.
-Partial matches have to be implemented on top of it.
-
-In SPARQL, identities of resources either match or do not.
-SPARQL cannot leverage literals efficiently: they are not indexed and treated as unstructured data.
-Since literals are not indexed, they have to be analysed at query time. 
-Instead: structural similarity, overlaps in graph patterns
-
-Yet, in order to get the best performance of SPARQL, the matchmaker is limited to exact joins.
-Fuzzy joins over literal ranges or overlapping substrings significantly decrease the matchmaker's performance and should therefore be avoided.
+In order to get the best performance of SPARQL, the matchmaker is limited to joins based on exact matches.
+SPARQL supports only exact matches.
+Exact matches can distinguish between identical and non-identical resources.
+Fuzzy matches are needed to differentiate degrees of similarity between resources.
+However, fuzzy matches have to be implemented on top of the default graph pattern matching in SPARQL.
+For example, the `FILTER` clauses can match partially overlapping strings or numbers within a given distance.
+SPARQL is not designed to perform such matches efficiently.
+SPARQL engines can optimize fuzzy matches, e.g., by using additional indices for literals, but if literals are not indexed, they have to be analysed at query time, which incurs a significant performance penalty for queries employing fuzzy matches.
 
 <!-- Materialize-then-sort -->
 
+The performance of SPARQL-based matchmaking also degrades due to the unnecessary work SPARQL does for top-$k$ queries.
 SPARQL employs materialize-then-sort query execution scheme [@Magliacane2012, p. 345], which implies that the matchmaker needs to compute scores for all matched solutions prior to sorting them, even though only top $k$ matches are retrieved.
 Matchmaking in SPARQL depends on aggregations and sorting, which are both examples of operations called the pipeline breakers in the query execution model.
-Such operations prevent lazy execution, since they require their complete input to be available.
-Sorting is implemented as a result modifier, so that it too requires complete results to be realized.
-<!-- ...leads to ranking... -->
+Such operations prevent lazy execution, since they require their complete input to be realized.
+For example, SPARQL treats sorting as a result modifier, which needs to be provided with all results.
 
 <!--
-SPARQL query optimization: reordering triple patterns in order to minimize cardinality of the intermediate results
-Minimize unnecessary intermediate bindings via blank nodes and property paths.
+Filtering vs. ranking
+...leads to ranking...
 -->
 
 ### Ranking
@@ -261,4 +256,18 @@ Use a more content-based approach (leveraging data from ARES) for cold-start use
 Alternative solutions:
 * Users may subscribe to recommendations for other users. For example, they may be asked to list their competitors, who were awarded public contracts, and be subscribed to their recommendations.
 * Ask users to rate a sample of public contracts either as relevant or irrelevant. The sample must be chosen in order to maximize the insight learnt from the rating, e.g., the sample should be generated dynamically to increase its overall diversity.
+-->
+
+<!--
+Out-takes:
+
+Moreover, SPARQL requires *"users to express their needs in a single query"*.
+This is why the matchmaker employs a single-shot approach.
+
+Resources in an RDF graph can be considered similar if their neighbourhoods are similar.
+This leads to iterative computation and propagation of similarities through the RDF graph.
+That is not what SPARQL is suited for.
+
+SPARQL query optimization: reordering triple patterns in order to minimize cardinality of the intermediate results
+Minimize unnecessary intermediate bindings via blank nodes and property paths.
 -->

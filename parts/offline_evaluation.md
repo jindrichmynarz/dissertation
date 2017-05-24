@@ -106,9 +106,12 @@ Concretely, it measures the share of items from the long tail in the matchmaking
 If we sort bidders in descending order by the number of contracts awarded to them, the first bidders that account for 20 % of contract awards form the *short head* ($SH = \left\{ b \in B : ??? \right\}$) and the remaining ones constitute the *long tail* ($LT = B \setminus SH$).
 In case of the Czech public procurement data, 20 % of the awarded contracts concentrates among the 101 most popular bidders.
 To avoid awarding contracts only to a few highly successful bidders, we aim to increase the recommendations from the long tail of bidders. 
+This is especially important for evaluation of the case-based matchmakers, which tend to favour the most popular bidders.
 We calculate LTP@10 as follows:
 
 $LTP@10 = \frac{\sum_{c \in C} \left\vert{match(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{match(c)}\right\vert}$
+
+$(b_{1},\dots,b_{n}), i : \sum_{k = 1}^{i - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{k = 1}^{i} awards(b_{k})$
 
 <!-- Unused evaluation metrics -->
 
