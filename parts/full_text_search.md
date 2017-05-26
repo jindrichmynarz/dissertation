@@ -36,11 +36,17 @@ SIREn allows to index deeply nested data.
 * Stemming: is there a Czech stemmer for Elasticsearch?
 
 <!--
+Comparison of CBR systems with information retrieval systems is in [@Richter2013, p. 525].
+-->
+
+### Benefits and drawbacks
+
+### Matchmaking
+
+### Implementation
+
+<!--
 Implementation note:
 If bidder was not awarded any tender, find similar bidders via their description in ARES.
 If bidder's description is not found in ARES, an ad hoc request is issued to the ARES API to fetch its description and run it through ETL.
--->
-
-<!--
-Comparison of CBR systems with information retrieval systems is in [@Richter2013, p. 525].
 -->

@@ -147,3 +147,9 @@ Experiments with YAGO in @Nickel2012 also include materialized `rdf:type` infere
 
 Use a learning-to-rank method to optimize weights of features.
 -->
+
+### Benefits and drawbacks
+
+### Matchmaking
+
+### Implementation

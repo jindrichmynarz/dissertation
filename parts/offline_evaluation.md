@@ -133,7 +133,16 @@ We chose SPARQL-based matchmaking using exact matches via CPV without weighting 
 The developed matchmaking methods and configurations were assessed by comparing their evaluation results with the results obtained for the baseline configuration.
 In this way, we measured the progress beyond the baseline that various matchmaking factors were able to achieve.
 
+<!-- Aggregation functions -->
+
+<!-- Refer to [@Mynarz2015] for tests of Gödel's and Łukasiewicz's t-norms and t-conorms. There is no need to replicate these findings. -->
+
 <!-- Query expansion -->
+
+<!--
+Refer to [@Maidel2008] in the discussion of setting the weights of expanded concepts.
+Maidel showed that weighting concepts (e.g., by TF-IDF) does not have an impact.
+-->
 
 <!-- Data reduction -->
 
