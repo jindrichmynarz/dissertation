@@ -40,6 +40,12 @@ parts/cpv.md
 parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
+```
+
+# Matchmaking methods
+
+```include
+parts/sparql.md
 parts/evaluation.md
 parts/offline_evaluation.md
 parts/abbreviations.md

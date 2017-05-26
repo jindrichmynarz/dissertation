@@ -80,6 +80,25 @@ Using the terminology of case-based reasoning, CPV provides a "bridge attribute"
 Matchmaking basically learns the associations between CPV concepts and bidders from contract awards. <!-- Potentially NACE concepts too. -->
 For each CPV concept the most associated bidders can be found.
 
+Diversity of results is often low in case-based recommenders based on similarity-based retrieval.
+There are several strategies to mitigate this issue:
+- Bounded greedy selection: minimizes total similarity in the result set, while maximizing total similarity of the result set to the query.
+
+<!--
+Comparison of CBR systems with databases in [@Richter2013, p. 524].
+SPARQL operates under the closed world assumption. CBR assumes open world.
+-->
+
+<!--
+Use a more content-based approach (leveraging data from ARES) for cold-start users (i.e. those without an awarded contract)?
+Alternative solutions:
+* Users may subscribe to recommendations for other users. For example, they may be asked to list their competitors, who were awarded public contracts, and be subscribed to their recommendations.
+* Ask users to rate a sample of public contracts either as relevant or irrelevant. The sample must be chosen in order to maximize the insight learnt from the rating, e.g., the sample should be generated dynamically to increase its overall diversity.
+-->
+
+Moreover, SPARQL requires *"users to express their needs in a single query"*.
+This is why the matchmaker employs a single-shot approach.
+
 ## Feature selection
 
 We employed manual feature selection.
@@ -97,7 +116,13 @@ Top-k recommendation: best matches are shown, but not their predicted ratings.
 
 ## Definitions
 
+<!--
+TODO: Does C denote a set of identities or internally structured objects?
+-->
+
 Let $C$ be the set of evaluated public contracts and $B$ the set of known bidders.
+Let $O_{CPV}$ be the set of CPV concepts and $\mathbb{P}{O_{CPV}})$ the powerset of this set.
+For a query contract $c$, $C_{c}^{c}$ denotes the set of the matched contracts.
 
 <!-- ... segue ... -->
 

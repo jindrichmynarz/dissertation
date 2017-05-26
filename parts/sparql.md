@@ -79,64 +79,66 @@ Matchmaking in SPARQL depends on aggregations and sorting, both of which are exa
 Such operations prevent lazy execution, since they require their complete input to be realized.
 For example, SPARQL treats sorting as a result modifier, which needs to be provided with all results.
 
-### Matchmaking
-
-The matchmaker employs a ranking model implemented in SPARQL.
-The matchmaker retrieves contract objects, weights their components and combines them into a contract similarity score.
-The contract similarities are aggregated per their awarded bidder to form the bidders' match scores.
-
-#### Ranking
+### Ranking
 
 SPARQL queries retrieve exact matches satisfying the query conditions.
-Since SPARQL only distinguishes matches from non-matches, the degrees to which matches satisfy the query are unknown.
-Ranking thus needs to be implemented on top of SPARQL.
+Since SPARQL can tell only matches from non-matches, the degrees to which matches satisfy the query are unknown.
+Ranking of matches thus needs to be implemented on top of SPARQL.
 We need to relax the match conditions to avoid filtering partial matches, and then compute scores to rank the matches.
 
-The matchmaker ranks matches by scores calculated by aggregating contract similarities.
-Similarities between contracts are computed by aggregating similarities of their objects.
+The matchmaker retrieves contract objects that overlap with the object of the query contract, which is optionally expanded to include related CPV concepts.
+Components of contract objects are weighted and these weights are combined into a contract similarity score.
+Contract similarities are aggregated per bidder to produce bidder's match score.
+
 Contract objects describe what products or services are sought by the contracts.
 There are many ways how a contract object can be described.
 However, due to the above-mentioned limitation of SPARQL to exact matches, the matchmaker is restricted to descriptions via object properties.
 Concretely, the matchmaker can use CPV concepts, either as main or additional objects or their qualifiers (`pc:mainObject`, `pc:additionalObject`), contract kinds (`pc:kind`), and service categories (`isvz:serviceCategory`).
+<!-- Contract objects can be represented as collections of weights. -->
 
 The scoring function $mscore\colon C \times B \to \mathbb{R}_{\ge 0}$ can defined as
 
-$mscore(c_{q}, b) = agg(\sum_{c \in C : bidder(c) = b} sim(c_{q}, c))$
+$$mscore(c_{q}, b) = agg(\sum_{c \in C : bidder(c) = b} sim(c_{q}, c))$$ {#eq:mscore}
 
-where $c_{q}$ is the query contract, $b$ is a bidder, $agg$ is an aggregation function, and $sim$ is a contract similarity metric.
+where $c_{q}$ is the query contract, $b$ is a bidder, $agg$ is an aggregation function, and $sim$ is a contract similarity metric ($sim\colon C \times C \to \mathbb{R}_{\ge 0}$).
+The similarity scores in the matchmaker are not normalized.
+The following sections cover the operations involved in computing the $mscore$.
 
-$sim\colon C \times C \to \mathbb{R}_{\ge 0}$
-
-The similarity scores in the SPARQL-based matchmaker are not normalized.
-
+<!--
 $sim(c_{1}, c_{2}) = obj(c_{1}) \cap obj(c_{2})$
-
-The matchmaker leverages primarily the associations of bidders to contracts and their associations to CPV concepts.
-These associations may have different weights.
-They can be also more or less frequent.
-
+-->
 <!-- FIXME: This is already mentioned in the section on weighting. -->
+<!--
 Contract similarity may be adjusted by zIndex.
 We experimented with weighting contract similarity by zIndex of the matched contract's contracting authority.
 
 $sim(c_{q}, c) \cdot zindex(c)$
 
+* $o_{q}$: object of the query contract
+* $o_{c}$: object of the matched contract
+
+$exp(o_{q}) \bowtie o_{c}$
+-->
+
 #### Query expansion
 
 We expand CPV concepts by following hierarchical relations in the CPV.
-We follow either links to narrower concepts via `skos:narrowerTransitive` ([@fig:expand-to-narrower]), to broader concepts via `skos:broaderTransitive` ([@fig:expand-to-broader]), or in both directions.
-Both figures show expansions to two-hop neighbourhoods of CPV concepts.
+We follow either links to narrower concepts via `skos:narrowerTransitive` ([@fig:expand-to-narrower]), links to broader concepts via `skos:broaderTransitive` ([@fig:expand-to-broader]), or links in both directions.
+Both figures illustrating the query expansion show expansions to two-hop neighbourhoods of the CPV concepts.
 
 ![Expansion to narrower concepts](img/expand_to_narrower.png){#fig:expand-to-narrower}
 
 ![Expansion to broader concepts](img/expand_to_broader.png){#fig:expand-to-broader}
 
-Let $O_{CPV}$ be the set of CPV concepts and $\mathbb{P}{O_{CPV}})$ the powerset of this set.
+<!--
+FIXME: How explicit we want to be? Should be pass the direction of the expansion and the number of hops explicitly? -->
 Query expansion can be defined as $exp\colon \mathbb{P}(O_{CPV}) \to \mathbb{P}(O_{CPV})$.
+When no expansion is used, $exp$ is the identity function, which simply returns its argument.
+Query expansion can be parameterized by the maximum number of hops followed to obtain a graph neighbourhood of the expanded concept.
 
 #### Weighting
 
-We adjust scores of matches by multiplying them with weights defined as $w \in \mathbb{R} : 0 < w \leq 1$.
+We adjust the scores computed by the matchmaker by multiplying them with weights defined as $w \in \mathbb{R} : 0 < w \leq 1$.
 Some weights are given by data or derived from it, others can be provided as configuration to the matchmaker.
 We apply weights to different kinds of relations and objects in the data.
 
@@ -154,14 +156,14 @@ Concepts inferred by query expansion can be weighted either by a fixed inhibitio
 
 Inverse document frequency is used to de-emphasize the impact of popular CPV concepts on matchmaking.
 Unlike infrequent and specific concepts, the popular ones may have lesser discriminative power to determine the relevance of contracts described by them.
-IDF ($idf\colon O_{CPV} \times C$) is computed as follows: <!-- _b FIXME: Here we pass not a contract, but all contracts. -->
+IDF ($idf\colon O_{CPV}$) is computed as follows:
 
-$idf(t, C) = \log\frac{\left\vert{C}\right\vert}{1 + \left\vert{\{c \in C : t \in c\}}\right\vert}$
+$idf(o) = \log\frac{\left\vert{C}\right\vert}{1 + \left\vert{\{c \in C : o \in c\}}\right\vert}$
 
 The denominator in the formula is incremented by 1 to avoid division by zero.
 Subsequently, we scale IDF into the interval $(0, 1]$ in order to be able to use it as weight.
 
-$idf'(t, C) = \frac{idf(t, C)}{max(\{s \in T : idf(s, C)\})}$
+$idf'(o) = \frac{idf(o)}{max(\{o' \in O_{CPV} : idf(o')\})}$
 
 Besides CPV, weights can be applied to objects of specific properties.
 In particular, the matchmaker can inhibit the objects of `pc:kind` when used in combination with CPV.
@@ -194,7 +196,7 @@ The basic t-conorms, complementary to the t-norms, are the following:
 
 We use these t-conorms to aggregate contract similarities into the match scores of bidders.
 
-#### Non-personalized matchmaking
+### Non-personalized matchmaking
 
 Apart from the above-described matchmaker, we also implemented three non-personalized approaches for matchmaking.
 We call these approaches non-personalized because none of them considers the query contract.
@@ -216,36 +218,33 @@ It may also expose specific parameters that can be provided via the configuratio
 
 The basic graph pattern considered in most configurations of the matchmaker is illustrated in [@lst:property-path] using the SPARQL 1.1 Property Path syntax.
 
-```{#lst:property-path caption="Matchmaker's SPARQL property path"}
-?queryCFT (pc:mainObject|pc:additionalObject)/
-  (skos:broaderTransitive|skos:narrowerTransitive)*/
-  ^(pc:mainObject|pc:additionalObject)/
-  pc:awardedTender/pc:bidder ?matchedBidder .
+```{#lst:property-path caption="Matchmaker's basic SPARQL property path"}
+?queryContract ^pc:lot/pc:mainObject/skos:closeMatch/
+               ^skos:closeMatch/^pc:mainObject/pc:lot/
+               pc:awardedTender/pc:bidder ?matchedBidder .
 \end{lstlisting}
 ```
+
+Apart from the baseline matchmaker, which uses the property path in [@lst:property-path], the implementation of the matchmakers is based on nested sub-queries and `VALUES` clauses used to associate the considered properties with weights.
 
 We implemented query expansion via SPARQL 1.1 property paths.
 Property paths allow us to retrieve concepts reachable within a given maximum number of hops transitively following the hierarchical relations in CPV.
 We use the short-hand notation `{1, max}` for these property paths.
 It defines a graph neighbourhood at most `max` hops away.
 This notation is not a part of the SPARQL standard, but it is defined in [@Seaborne2014], and several RDF stores, including Virtuoso, support it.
-However, it can be rewritten to the more verbose standard SPARQL notation if required.
+However, it can be rewritten to the more verbose standard SPARQL notation if complete standards-compliance is required.
 
-The actual implementation of the matchmaker in SPARQL is based on nested sub-queries and `VALUES` clauses used to associate the considered properties with weights.
-<!-- Actually, the baseline matchmaker doesn't use subqueries. -->
 Score aggregation is done using SPARQL 1.1 aggregates.
-Matchmaker source code is available in a public repository^[<https://github.com/jindrichmynarz/matchmaker-sparql>] licensed as open source under the terms of Eclipse Public License.
-Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
-
 However, probabilistic sum requires aggregation by multiplication, which cannot be implemented directly in SPARQL  since it lacks an operator to multiply grouped bindings.
 Therefore, we implemented the aggregation via post-processing of SPARQL results.
 Eventually, since the difference on the evaluated metrics between the probabilistic sum and summation ($a + b$)    turned out to be statistically insignificant, we opted for summation, which can be computed in SPARQL and is       marginally faster.
 
 <!-- Optimization -->
 
-SPARQL query optimization: reordering triple patterns in order to minimize cardinality of the intermediate results
-Minimize unnecessary intermediate bindings via blank nodes and property paths.
-
+The execution time of the matchmaker can be improved by common optimization techniques for SPARQL.
+We reordered triple patterns in the matchmaking queries in order to minimize cardinality of the intermediate results.
+We reduced unnecessary intermediate bindings via blank nodes and property paths.
+Performance can be also enhanced by materialization of pre-computed data.
 While there is no need for data pre-processing, derived data that changes infrequently can be materialized and stored in RDF.
 Doing so can improve performance by avoiding the need to recompute the derived data at query time.
 This benefit is offset by increased use of storage space and an overhead with updates, since materialized data has to be recomputed when the data it is derived from changes.
@@ -253,29 +252,11 @@ We used materialization for pre-computing inverse document frequencies (IDF) of 
 While IDF can be computed on the fly, we decided to pre-compute it and store it as RDF.
 Computation of IDF is implemented via two declarative SPARQL Update operations, the first of which uses a Virtuoso-specific extension function for logarithm (`bif:log10()`).
 
-<!--
-Comparison of CBR systems with databases in [@Richter2013, p. 524].
-SPARQL operates under the closed world assumption. CBR assumes open world.
-
-Combination functions [@Beliakov2007], [@Beliakov2015]
-
-Diversity of results is often low in case-based recommenders based on similarity-based retrieval.
-There are several strategies to mitigate this issue:
-- Bounded greedy selection: minimizes total similarity in the result set, while maximizing total similarity of the result set to the query.
--->
-
-<!--
-Use a more content-based approach (leveraging data from ARES) for cold-start users (i.e. those without an awarded contract)?
-Alternative solutions:
-* Users may subscribe to recommendations for other users. For example, they may be asked to list their competitors, who were awarded public contracts, and be subscribed to their recommendations.
-* Ask users to rate a sample of public contracts either as relevant or irrelevant. The sample must be chosen in order to maximize the insight learnt from the rating, e.g., the sample should be generated dynamically to increase its overall diversity.
--->
+Matchmaker source code is available in a public repository^[<https://github.com/jindrichmynarz/matchmaker-sparql>] licensed as open source under the terms of Eclipse Public License.
+Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
 
 <!--
 Out-takes:
-
-Moreover, SPARQL requires *"users to express their needs in a single query"*.
-This is why the matchmaker employs a single-shot approach.
 
 Resources in an RDF graph can be considered similar if their neighbourhoods are similar.
 This leads to iterative computation and propagation of similarities through the RDF graph.
