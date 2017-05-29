@@ -1,12 +1,15 @@
 ## Ground truth {#sec:ground-truth}
 
 The fundamental part of the proposed matchmaking methods is the ground truth they are based on.
-We use past contracts awards as the ground truth to from which the methods learn to assess matches.
+We use past contracts awards as the ground truth from which the methods learn to assess matches.
 
 There are inherent downsides in our assumptions about the ground truth we used.
 The assumption that the awarded bidder is the best match for a contract is fundamentally problematic.
 We have to rely on contract awards only, since we do not have explicit evaluations of the awarded bidders after finishing the contracts.
-Bidders may be awarded on the basis of adverse selection, caused by asymmetric distribution of information.
+Nor do we have any other relations between bidders and contracts in our dataset.
+However, profiles of contracting authorities link contracts with all bidders that submitted a valid bid.
+
+We need to take into account that bidders may be awarded on the basis of adverse selection, e.g., caused by asymmetric distribution of information.
 Tendering processes can suffer from collusion when multiple parties agree to limit open competition.
 In that case, rival bidders may cooperate for mutual benefit, for instance, by bid rigging that involves submitting overvalued fake bids to make real bids more appealing.
 Neither we can assume that bidders who were awarded multiple contracts from the same contracting authority have proven their quality.
@@ -18,8 +21,6 @@ A close problem: monopoly
 
 Can we identify "bad" bidders? Do they exhibit certain patterns that we can recognize in the data?
 (Perhaps we can use data from ÚOHS. However, Sbírka rozhodnutí by ÚOHS is not machine readable.)
-
-The majority of the Czech public contracts actually used an open procedure.
 
 What we have is this: Similar contracts are usually awarded to these bidders.
 

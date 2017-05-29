@@ -140,6 +140,9 @@ rov:orgActivity
 
 Experiments with YAGO in @Nickel2012 also include materialized `rdf:type` inferences.
 - Should we do the same?
+
+Alternative method for link prediction using tensor representation of RDF:
+<http://semdeep.iiia.csic.es/files/SemDeep-17_paper_3.pdf>
 -->
 
 <!--

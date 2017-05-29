@@ -101,8 +101,9 @@ We used it to reconcile the identities of business entities in the Czech public 
 zIndex provides fairness score to contracting authorities in the Czech public procurement.
 ETL of each of these datasets is described in more detail in the following sections.
 
-<!-- Source code -->
+<!-- Data and source code -->
 
+The Czech public procurement dataset is available at <https://linked.opendata.cz/dataset/isvz>.
 The source code used for data preparation is openly available in a code repository.^[<https://github.com/jindrichmynarz/vvz-to-rdf>]
 This allows others to replicate and scrutinize the way we prepared data.
 The data preparation tasks were implemented via declarative programming using XSLT, SPARQL Update operations, and XML specifications of linkage rules.

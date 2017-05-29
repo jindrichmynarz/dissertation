@@ -93,6 +93,7 @@ Contract similarities are aggregated per bidder to produce bidder's match score.
 Contract objects describe what products or services are sought by the contracts.
 There are many ways how a contract object can be described.
 However, due to the above-mentioned limitation of SPARQL to exact matches, the matchmaker is restricted to descriptions via object properties.
+It leverages terms from controlled vocabularies, such as CPV or the code list of contract kinds.
 Concretely, the matchmaker can use CPV concepts, either as main or additional objects or their qualifiers (`pc:mainObject`, `pc:additionalObject`), contract kinds (`pc:kind`), and service categories (`isvz:serviceCategory`).
 <!-- Contract objects can be represented as collections of weights. -->
 
@@ -218,6 +219,7 @@ Each kind of matchmaker corresponds to a query template.
 It may also expose specific parameters that can be provided via the configuration.
 
 The basic graph pattern considered in most configurations of the matchmaker is illustrated in [@lst:property-path] using the SPARQL 1.1 Property Path syntax.
+The path is complicated by intermediate resources proxying CPV concepts connected via `skos:closeMatch`, as described in [@sec:concrete-data-model].
 
 ```{#lst:property-path caption="Matchmaker's basic SPARQL property path"}
 ?queryContract ^pc:lot/pc:mainObject/skos:closeMatch/

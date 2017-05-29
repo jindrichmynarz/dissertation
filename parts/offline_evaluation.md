@@ -133,20 +133,41 @@ We chose SPARQL-based matchmaking using exact matches via CPV without weighting 
 The developed matchmaking methods and configurations were assessed by comparing their evaluation results with the results obtained for the baseline configuration.
 In this way, we measured the progress beyond the baseline that various matchmaking factors were able to achieve.
 
-<!-- Aggregation functions -->
+We test several factors involved in the matchmakers.
+These factors include weighting, query expansion, aggregation functions, and data reduction.
 
-<!-- Refer to [@Mynarz2015] for tests of Gödel's and Łukasiewicz's t-norms and t-conorms. There is no need to replicate these findings. -->
+<!-- Weighting -->
+
+<!--
+*"the inclusion of item concept weights does not improve the performance of the algorithm"* [@Maidel2009, p. 97].
+-->
 
 <!-- Query expansion -->
 
+<!-- Aggregation functions -->
+
 <!--
-Refer to [@Maidel2008] in the discussion of setting the weights of expanded concepts.
-Maidel showed that weighting concepts (e.g., by TF-IDF) does not have an impact.
+Refer to [@Mynarz2015] for tests of Gödel's and Łukasiewicz's t-norms and t-conorms.
+There is no need to replicate these findings.
 -->
 
 <!-- Data reduction -->
 
-<!-- There are also papers that consider multiple baselines, such as [@Garcin2014]. -->
+<!--
+Data reduction ~ cold start problem.
+-->
+
+<!-- Non-personalized matchmakers -->
+
+<!--
+There are also papers that consider multiple baselines, such as [@Garcin2014].
+-->
+
+<!-- Evaluation results for countermeasures to limits of our ground truth:
+* Weighting by zIndex
+* Learning from contracts awarded in open procedures only.
+  The majority of the Czech public contracts actually use an open procedure.
+-->
 
 <!--
 ### Out-takes:

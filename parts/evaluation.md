@@ -18,8 +18,8 @@ In terms of Wieringa [-@Wieringa2014, p. 31], both our offline evaluation and qu
 
 Offline evaluation is an experimental setting, in which past user interactions are used as ground truth.
 In this setting, some interactions are withheld and the evaluated system is assessed on its ability to fill in the missing interactions. 
-The term "offline evaluation" is established in recommender systems research in contrast to online evaluation.
-While online evaluation involves users in real-time, offline evaluation approximates online evaluation by using pre-recorded user interactions.
+Offline evaluation is defined in the recommender systems research in contrast to online evaluation.
+While online evaluation involves users in real-time, offline evaluation approximates actual user behaviour by using pre-recorded user interactions.
 Offline evaluation then *"consists of running several algorithms on the same datasets of user interactions (e.g., ratings) and comparing their performance"* [@Ricci2011, p. 16].
 
 <!-- Limitations of offline evaluation -->
@@ -35,7 +35,7 @@ Due to these limitations offline evaluation has a weak prediction power.
 As such, *"offline evaluations of accuracy are not always meaningful for predicting the relative performance of different techniques"* [@Garcin2014, p. 176].
 Offline evaluation can tell which of the evaluated approaches provides better results, but it cannot tell if an approach is useful.
 There is a limited correspondence between the evaluted metrics and usefulness in real world.
-Whether an approach is useful can be only evaluated by real users.
+Whether an approach is useful can be evaluated only by real users.
 This is what online evaluation or qualitative evaluation can help with.
 
 <!-- Upsides -->
@@ -46,7 +46,7 @@ Ground truth in offline evaluation may be derived from more thorough examination
 <!-- Online evaluation -->
 
 Online evaluation is commonly recommended as a remedy to the afore-mentioned limitations of offline evaluation.
-As a matter of fact, the results of online evaluation can differ widely from the results of offline evaluation.
+As a matter of fact, results of online evaluation can differ widely from the results of offline evaluation.
 Several studies found that *"results of offline and online evaluations often contradict each other"* [@Beel2013, p. 7] or acknowledged that *"there remains a discrepancy in the offline evaluation protocols, and the online deployment and accuracy estimate of the algorithms in a real-life setting"* [-@Said2013].
 However, conducting online evaluation is expensive since it requires an application with real users.
 In order to attract a sufficient mass of users to make the findings from the evaluation statistically significant, the application must be relatively mature and proven useful.
