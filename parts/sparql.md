@@ -177,8 +177,9 @@ These scores are taken from the dataset described in [@sec:zindex].
 Aggregation functions take multiple numeric inputs and combine them into a single output.
 The matchmaker uses these functions to combine weights and partial similarity scores to form a match score.
 As such, aggregation functions constitute an important part of ranking.
-In terms of fuzzy logic, aggregation functions can be interpreted as generalizations of logical conjunction or disjunction
-Instead of only boolean values, their inputs can be treated as degrees of probability ($f \colon \left[0, 1\right]^{n} \to \left[0, 1\right]$ [@Beliakov2015, p. 785]), where 0 indicates impossibility and 1 indicates certainty.
+In terms of fuzzy logic, aggregation functions can be interpreted as generalizations of logical conjunction and disjunction.
+Instead of only boolean values, their inputs can be treated as degrees of probability, where 0 indicates impossibility and 1 indicates certainty.
+Aggregation function $f$ can thus be defined as $f \colon \left[0, 1\right]^{n} \to \left[0, 1\right]$ [@Beliakov2015, p. 785].
 The typical examples of these functions are triangular norms (t-norms) and conorms (t-conorms).
 T-norms generalize conjunction and t-conorms generalize disjunction.
 The basic t-norms can be defined as follows [@Beliakov2015, p. 792]:
@@ -204,9 +205,9 @@ The most basic is the random matchmaker that recommends bidders at random.
 While it is hardly going to deliver a competitive accuracy, it produces diverse results.
 An approach contrary to random matchmaking is the recommendation of the top-most popular bidders.
 For each contract this matchmaker recommends the same bidders that were awarded the most contracts.
-A similar approach is employed in the matchmaker that recommends bidders with the highest score in the PageRank-like algorithm implemented by the Virtuoso-specific `IRI_RANK` [@Virtuoso2017].
-Since this score uses a proprietary extension of SPARQL, it is an exception from the limitations to standard SPARQL.
-These conceptually and computationally simpler approaches are used as baselines to which we can contrast the more sophisticated matchmakers.
+A similar approach is employed in the matchmaker that recommends bidders with the highest score computed by the PageRank-like algorithm implemented by the Virtuoso-specific `IRI_RANK` [@Virtuoso2017].
+Since this score uses a proprietary extension of SPARQL, it is an exception from our constraint to standard SPARQL.
+These conceptually and computationally simpler approaches are used as baselines to which we can contrast the more sophisticated ones in evaluation.
 
 ### Implementation
 
@@ -222,22 +223,21 @@ The basic graph pattern considered in most configurations of the matchmaker is i
 ?queryContract ^pc:lot/pc:mainObject/skos:closeMatch/
                ^skos:closeMatch/^pc:mainObject/pc:lot/
                pc:awardedTender/pc:bidder ?matchedBidder .
-\end{lstlisting}
 ```
 
-Apart from the baseline matchmaker, which uses the property path in [@lst:property-path], the implementation of the matchmakers is based on nested sub-queries and `VALUES` clauses used to associate the considered properties with weights.
+Apart from our baseline matchmaker, which uses the property path in [@lst:property-path], the implementation of the matchmakers is based on nested sub-queries and `VALUES` clauses used to associate the considered properties with weights.
 
 We implemented query expansion via SPARQL 1.1 property paths.
 Property paths allow us to retrieve concepts reachable within a given maximum number of hops transitively following the hierarchical relations in CPV.
 We use the short-hand notation `{1, max}` for these property paths.
 It defines a graph neighbourhood at most `max` hops away.
-This notation is not a part of the SPARQL standard, but it is defined in [@Seaborne2014], and several RDF stores, including Virtuoso, support it.
-However, it can be rewritten to the more verbose standard SPARQL notation if complete standards-compliance is required.
+This notation is not a part of the SPARQL standard, but it is formally defined by Seaborne [-@Seaborne2014], and several RDF stores, including Virtuoso, support it.
+However, it can be rewritten to the more verbose standard SPARQL notation if full standards-compliance is required.
 
-Score aggregation is done using SPARQL 1.1 aggregates.
-However, probabilistic sum requires aggregation by multiplication, which cannot be implemented directly in SPARQL  since it lacks an operator to multiply grouped bindings.
-Therefore, we implemented the aggregation via post-processing of SPARQL results.
-Eventually, since the difference on the evaluated metrics between the probabilistic sum and summation ($a + b$)    turned out to be statistically insignificant, we opted for summation, which can be computed in SPARQL and is       marginally faster.
+Score aggregation via aggregation functions is done using SPARQL 1.1 aggregates.
+However, probabilistic sum requires aggregation by multiplication, which cannot be implemented directly in SPARQL since it lacks an operator to multiply grouped bindings.
+Therefore, we implemented this aggregation function via post-processing of SPARQL results.
+Eventually, since the difference on the evaluated metrics between probabilistic sum and summation ($a + b$)    turned out to be statistically insignificant, we opted for summation, which can be computed in SPARQL and is       marginally faster.
 
 <!-- Optimization -->
 
@@ -250,9 +250,9 @@ Doing so can improve performance by avoiding the need to recompute the derived d
 This benefit is offset by increased use of storage space and an overhead with updates, since materialized data has to be recomputed when the data it is derived from changes.
 We used materialization for pre-computing inverse document frequencies (IDF) of CPV concepts.
 While IDF can be computed on the fly, we decided to pre-compute it and store it as RDF.
-Computation of IDF is implemented via two declarative SPARQL Update operations, the first of which uses a Virtuoso-specific extension function for logarithm (`bif:log10()`).
+Computation of IDF is implemented via two declarative SPARQL Update operations, the first of which uses a Virtuoso-specific extension function for logarithm (`bif:log10()`), and the second normalizes the IDFs using the maximum IDF.
 
-Matchmaker source code is available in a public repository^[<https://github.com/jindrichmynarz/matchmaker-sparql>] licensed as open source under the terms of Eclipse Public License.
+The matchmaker's source code is available in a public repository^[<https://github.com/jindrichmynarz/matchmaker-sparql>] licensed as open source under the terms of the Eclipse Public License 1.0.
 Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
 
 <!--
