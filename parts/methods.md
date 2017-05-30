@@ -6,12 +6,14 @@ Many methods will be generic to more than one approach. For example, weighting o
 However, without the finished implementations of all the matchmaking methods, shuffling content around would be a premature optimization.
 -->
 
+<!-- FIXME: This seems to match the introductory section on case-based reasoning. -->
+
 Matchmaking public contracts to bidders can be framed as a task for case-based reasoning.
 Data on awarded contracts can be recast as past cases to learn from.
 Bidders in the most similar awarded contracts are recommended as solutions to the query contract.
 
 Public contract ~ case
-Reinterpretation of previously awarded public contracts as experiences of solved problems.
+Reinterpretation of the previously awarded public contracts as experiences of solved problems.
 Contract award can be interpreted an implicit rating of the awarded bidder.
 Reinterpretation of contract award as a positive rating (in the context of the awarded contract)
 Limitation: We have only positive ratings.
@@ -26,9 +28,17 @@ From the perspective of a contracting authority, the task seems like matchmaking
 From the bidder's perspective, the task seems like recommendation.
 -->
 
+<!-- Portability -->
+
 The portability of the developed matchmaking methods is granted by the common data model, the Public Contracts Ontology [@sec:pco].
 Matchmakers can run on any dataset described by PCO.
 One of such datasets is the Czech public procurement dataset which we use as a use case in our work.
+
+<!-- Limitations -->
+
+The proposed methods for matchmaking suffer from several limitations.
+
+<!-- One-shot recommendation -->
 
 A limitation of our approach is that it works as a one-shot recommendation that does not take user feedback on the generated recommendations into account.
 Since the matchmakers do not have a conversational interface with which users can iteratively refine their query, if no suitable match is found, users need to revise their query and start again, even though they may not be able to provide a detailed query from the start.
@@ -38,21 +48,25 @@ The opposite is true of conversational recommender systems that elicit user feed
 For example, users may provide a critique, such as requiring cheaper matches.
 Critiques can be interpreted as directional feature constraints [@Smyth2007, p. 361].
 
+Moreover, SPARQL requires *"users to express their needs in a single query"*.
+This is why the matchmaker employs a single-shot approach.
+
 <!--
 Is there a way to provide user feedback?
 Browsing-based approaches: navigation of the item space, for example using critique-based navigation
 - Critiquing can be used to reformulate matchmaking queries (e.g., assign different weights) or query the results (e.g., filter to meet the critique).
 -->
 
+## Definitions
+
 <!--
-TODO: Formalization of the methods should be provided.
+TODO: Does C denote a set of identities or internally structured objects?
 -->
 
 We can start with a definition of the key entities involved in the matchmaking task.
-
-<!--
-TODO: Add a diagram showing the technology stack involved in the matchmakers. Shouldn't this be in a separate section on implementation?
--->
+Let $C$ be the set of evaluated public contracts and $B$ the set of known bidders.
+Let $O_{CPV}$ be the set of CPV concepts and $\mathbb{P}{O_{CPV}})$ the powerset of this set.
+For a query contract $c$, $C_{c}^{c}$ denotes the set of the matched contracts. <!-- _b -->
 
 <!--
 Subscription to streams
@@ -96,9 +110,6 @@ Alternative solutions:
 * Ask users to rate a sample of public contracts either as relevant or irrelevant. The sample must be chosen in order to maximize the insight learnt from the rating, e.g., the sample should be generated dynamically to increase its overall diversity.
 -->
 
-Moreover, SPARQL requires *"users to express their needs in a single query"*.
-This is why the matchmaker employs a single-shot approach.
-
 ## Feature selection
 
 We employed manual feature selection.
@@ -113,16 +124,6 @@ Linear increase of dimensions leads to exponential growth of negative effects.
 <!--
 Top-k recommendation: best matches are shown, but not their predicted ratings.
 -->
-
-## Definitions
-
-<!--
-TODO: Does C denote a set of identities or internally structured objects?
--->
-
-Let $C$ be the set of evaluated public contracts and $B$ the set of known bidders.
-Let $O_{CPV}$ be the set of CPV concepts and $\mathbb{P}{O_{CPV}})$ the powerset of this set.
-For a query contract $c$, $C_{c}^{c}$ denotes the set of the matched contracts.
 
 <!-- ... segue ... -->
 

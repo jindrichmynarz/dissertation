@@ -17,7 +17,8 @@
 
 Tensors provide modelling simplicity: multiple relations can be represented in a higher-order tensor.
 Sparse adjacency matrices generated from RDF are often challenging to process.
-Tensors are multidimensional arrays. A natural way to represent multi-graphs is to use adjacency tensors.
+Tensors are multidimensional arrays.
+A natural way to represent multi-graphs is to use adjacency tensors.
 Tensor order
 RDF data can be represented as a third-order tensor.
 Adjacency tensors

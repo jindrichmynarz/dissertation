@@ -48,6 +48,7 @@ As such it is not tied to any single RDF store vendor.
 <!-- Real-time -->
 
 SPARQL operates directly on indices of RDF databases, so there is no need to pre-process data or build a machine learning model.
+In terms of recommender systems, we can consider it a memory-based approach.
 Thanks to this feature, SPARQL can answer matchmaking queries in real time.
 In particular, this is useful for recommendations from streaming data.
 Public procurement data shares some of the characteristics of streaming data as it becomes quickly obsolete due to its currency bound on fixed deadlines for tender submission.
@@ -256,6 +257,10 @@ Computation of IDF is implemented via two declarative SPARQL Update operations, 
 
 The matchmaker's source code is available in a public repository^[<https://github.com/jindrichmynarz/matchmaker-sparql>] licensed as open source under the terms of the Eclipse Public License 1.0.
 Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
+
+<!--
+TODO: Add a diagram showing the technology stack involved in the matchmaker. 
+-->
 
 <!--
 Out-takes:

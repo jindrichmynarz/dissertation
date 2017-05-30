@@ -48,3 +48,4 @@ Their evaluation leaves more room for deliberation of contracting authorities, a
 However, a likely outcome of these corrective measures is performance loss in the evaluation via retrospective data.
 Matchmakers may be underfitting, unable to completely capture the underlying trends in the public procurement data, which too include biases from adverse selection.
 On contrary, learning from all contract awards overfits, so that it includes the negative effects in public procurement too.
+It may mistake random variability and systemic biases for causality.

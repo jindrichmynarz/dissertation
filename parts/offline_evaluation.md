@@ -40,6 +40,8 @@ Should we add an explanation why we did not split folds by time?
 
 The objectives we focus on in offline evaluation are accuracy and diversity of the matchmaking results.
 The adopted evaluation metrics thus go beyond those that reflect accuracy.
+We aim to maximize the metrics of accuracy.
+In case of the non-accuracy metrics we strive to increase them without degrading the accuracy. 
 
 <!-- Evaluation of performance?
 Perhaps a rough overall assessment can suffice. E.g., both the SPARQL-based and Elasticsearch-based matchmakers deliver real-time performance, while the RESCAL-based one has to be used in batch mode.
@@ -48,70 +50,82 @@ Mention restrictions by the computational cost of an evaluation protocol? E.g., 
 -->
 
 We define the evaluation metrics using the following notation, building on the notation defined previously. 
-The function $match\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of bidders recommended for a given public contract.
+The function $match_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of bidders recommended for a given public contract by matchmaker $m$.
 The function $bidder\colon C \to B$ returns the bidder to whom a contract was awarded.
-The function $rank\colon C \to \mathbb{Z}_{\ge 1} \cup \{ \text{not found} \}$ gives the rank of the bidder who won a given public contract.
+The function $wrank\colon C \to \mathbb{N}_{\ge 1} \cup \{ \text{nil} \}$ gives the rank of the bidder who won a given public contract.
 
-$rank(c) = 
+$wrank(c) = 
   \begin{cases}
-    indexOf(match(c), bidder(c)), & \text{if}\ bidder(c) \in match(c) \\
-    \quad\text{not found}, & \text{otherwise}\\
+    n \in \mathbb{N}\colon bidder(c)\, \textrm{is in position}\, n\, \textrm{in}\, match_{m}(c)
+    & \text{if}\ bidder(c) \in match_{m}(c) \\
+    \quad\textrm{nil}, & \textrm{otherwise} \\
   \end{cases}$
 
-<!--
-Count of contracts awarded to bidder $b$:
+The function $awards\colon B \to \mathbb{N}$ returns the number of contracts awarded to a given bidder.
 
 $awards(b) = \left\vert{c \in C : bidder(c) = b}\right\vert$
--->
 
 We measured accuracy using hit rate at 10 (HR@10) and mean reciprocal rank at 10 (MRR@10).
 HR@10 is the share of queries for which hits are found in the top 10 results.
 We consider hits to be the results that include the awarded bidder.
 We adopted HR@10 as the primary metric that we aim to increase.
-This metric can be calculated as follows: 
+This metric can be calculated for matchmaker $m$ as follows: 
 
-$HR@10 = \frac{\left\vert{c \in C : bidder(c) \in match(c) \land rank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$
+$HR@10 = \frac{\left\vert{c \in C : bidder(c) \in match_{m}(c) \land wrank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$ <!-- _b -->
 
 MRR@10 is the arithmetic mean of multiplicative inverse ranks.
-Multiplicative inverse $mi\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such:
+Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such:
 
-$mi(c)=\begin{cases}
-         \frac{1}{rank(c)}, & \text{if}\ bidder(c) \in match(c) \\ 
-         0, & \text{otherwise}
+$mir(c)=\begin{cases}
+         \frac{1}{wrank(c)}, & \text{if}\ bidder(c) \in match_{m}(c) \\ 
+         0, & \text{nil}
        \end{cases}$
 
 This metric is used for evaluating systems where *"the user wishes to see one relevant document"* [@Craswell2009] and it is *"equivalent to Mean Average Precision in cases where each query has precisely one relevant document"* [@Craswell2009].
 This makes it suitable for our evaluation setup, since for each query (i.e. a contract) we know only one true positive (i.e. the awarded bidder).
 MRR@10 reflects how prominent the position of the hit is in the matchmaking results.
 We aim to increase MRR@10, corresponding to a lower rank the hit has.
-MRR@10 can be defined as follows:
+MRR@10 for matchmaker $m$ can be defined as follows:
 
-$MRR@10 = \frac{1}{\left\vert{C}\right\vert}\sum_{c \in C} mi(c)$
+$MRR@10 = \frac{1}{\left\vert{C}\right\vert}\sum_{c \in C} mir(c)$ <!-- _b -->
 
-The adopted metrics that go beyond accuracy include prediction coverage (PC) and two metrics reflecting diversity: catalog coverage at 10 (CC@10) and long-tail percentage at 10 (LTP@10).
+The adopted metrics that go beyond accuracy include prediction coverage (PC), catalog coverage at 10 (CC@10), and long-tail percentage at 10 (LTP@10).
 PC [@Herlocker2004, p. 40] measures the amount of items for which the evaluated system is able to produce recommendations.
 We strive to increase PC to achieve a near-complete coverage.
-PC is defined as the share of queries for which non-empty results are returned.
+PC for matchmaker $m$ is defined as the share of queries for which non-empty results are returned.
 
-$PC = \frac{\left\vert{c \in C : match(c) \neq \varnothing}\right\vert}{\left\vert{C}\right\vert}$
+$PC = \frac{\left\vert{c \in C : match_{m}(c) \neq \varnothing}\right\vert}{\left\vert{C}\right\vert}$ <!-- _b -->
 
-CC@10 reflects the diversity of the recommended items.
+CC@10 reflects diversity of the recommended items.
 Systems that recommend a limited set of items have a low catalog coverage, while systems that recommend diverse items achieve a higher catalog coverage.
-We compute CC@10 as the number of distinct bidders in the top 10 results for all contracts divided by the number of all bidders.
+We compute CC@10 for matchmaker $m$ as the number of distinct bidders in the top 10 results for all contracts divided by the number of all bidders.
 
-$CC@10 = \frac{\left\vert{\bigcup_{c \in C} match(c)}\right\vert}{\left\vert{B}\right\vert}$
+$CC@10 = \frac{\left\vert{\bigcup_{c \in C} match_{m}(c)}\right\vert}{\left\vert{B}\right\vert}$ <!-- _b -->
 
-LTP@10 [@Adomavicius2012] is based on the distribution of the recommended items.
+LTP@10 [@Adomavicius2012] is a metric of novelty, which is based on the distribution of the recommended items.
 Concretely, it measures the share of items from the long tail in the matchmaking results.
-If we sort bidders in descending order by the number of contracts awarded to them, the first bidders that account for 20 % of contract awards form the *short head* ($SH = \left\{ b \in B : ??? \right\}$) and the remaining ones constitute the *long tail* ($LT = B \setminus SH$).
+If we sort bidders in descending order by the number of contracts awarded to them, the first bidders that account for 20 % of contract awards form the *short head* and the remaining ones constitute the *long tail*.
 In case of the Czech public procurement data, 20 % of the awarded contracts concentrates among the 101 most popular bidders.
 To avoid awarding contracts only to a few highly successful bidders, we aim to increase the recommendations from the long tail of bidders. 
 This is especially important for evaluation of the case-based matchmakers, which tend to favour the most popular bidders.
-We calculate LTP@10 as follows:
+Let $(b_{1}, \dots, b_{n})$ be an n-tuple of all $b_{i} \in B$, so that $(i > j) \implies awards(b_{i}) \geq awards(b_{j})$. <!-- _b -->
+The short head $SH$ can be then defined as:
 
-$LTP@10 = \frac{\sum_{c \in C} \left\vert{match(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{match(c)}\right\vert}$
+$SH = (b_{1},\dots,b_{e});\quad \textrm{so that}\, e : \sum_{k = 1}^{e - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{l = 1}^{e} awards(b_{l})$ <!-- _b -->
 
-$(b_{1},\dots,b_{n}), i : \sum_{k = 1}^{i - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{k = 1}^{i} awards(b_{k})$
+Long tail $LT$ is the complement of the short head ($LT = B \setminus SH$).
+We then calculate LTP@10 for matchmaker $m$ as follows:
+
+$LTP@10 = \frac{\sum_{c \in C} \left\vert{match_{m}(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{match_{m}(c)}\right\vert}$
+
+<!--
+We can also evaluate novelty in terms of time.
+One way to assess novelty could be the average age of the recommended bidders.
+We can compute the bidder's age from its establishment date.
+The mean average age of the top 10 most popular bidders is 21.7 years.
+The mean average age of all bidders is 17.5 years (median 19 years).
+This is probably not such a large difference, since the maximum age is only
+-->
 
 <!-- Unused evaluation metrics -->
 

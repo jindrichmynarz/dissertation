@@ -12,10 +12,10 @@ In other words, in SRL *"the underlying idea is that reasoning can often be redu
 <!-- #### Collective learning with latent feature models -->
 
 There are two basic kinds of SRL models: models with known features and models with latent features.
-Our work focuses on latent feature models.
+Our work focuses on the latent feature models.
 Unlike known features, latent features cannot be directly observed in data.
 Instead, they are assumed to be hidden causes for the observed variables.
-<!-- This makes latent features hard to interpret. -->
+<!-- Consequently, results from machine learning based on latent features are difficult to interpret. -->
 Latent feature models are used to derive relationships between entities from interactions of their latent features [@Nickel2016, p. 17].
 Since latent features correspond to global patterns in data, they can be considered products of collective learning.
 
