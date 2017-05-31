@@ -157,7 +157,9 @@ These factors include weighting, query expansion, aggregation functions, and dat
 *"the inclusion of item concept weights does not improve the performance of the algorithm"* [@Maidel2009, p. 97].
 -->
 
-<!-- Query expansion -->
+<!-- Query expansion
+Too many hops to broader concepts introduce noise [@DiNoia2012a].
+-->
 
 <!-- Aggregation functions -->
 

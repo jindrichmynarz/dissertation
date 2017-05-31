@@ -121,6 +121,8 @@ The matchmakers suffer from the curse of dimensionality.
 RDF data is typically complex and contains many dimensions.
 Linear increase of dimensions leads to exponential growth of negative effects.
 
+[@Ragone2017]
+
 <!--
 Top-k recommendation: best matches are shown, but not their predicted ratings.
 -->
