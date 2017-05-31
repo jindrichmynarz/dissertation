@@ -66,14 +66,14 @@ The function $awards\colon B \to \mathbb{N}$ returns the number of contracts awa
 $awards(b) = \left\vert{c \in C : bidder(c) = b}\right\vert$
 
 We measured accuracy using hit rate at 10 (HR@10) and mean reciprocal rank at 10 (MRR@10).
-HR@10 is the share of queries for which hits are found in the top 10 results.
+HR@10 [@Deshpande2004, p. 159] is the share of queries for which hits are found in the top 10 results.
 We consider hits to be the results that include the awarded bidder.
 We adopted HR@10 as the primary metric that we aim to increase.
-This metric can be calculated for matchmaker $m$ as follows: 
+This metric can be calculated for the matchmaker $m$ as follows: 
 
 $HR@10 = \frac{\left\vert{c \in C : bidder(c) \in match_{m}(c) \land wrank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$ <!-- _b -->
 
-MRR@10 is the arithmetic mean of multiplicative inverse ranks.
+MRR@10 [@Craswell2009] is the arithmetic mean of multiplicative inverse ranks.
 Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such:
 
 $mir(c)=\begin{cases}
@@ -85,20 +85,20 @@ This metric is used for evaluating systems where *"the user wishes to see one re
 This makes it suitable for our evaluation setup, since for each query (i.e. a contract) we know only one true positive (i.e. the awarded bidder).
 MRR@10 reflects how prominent the position of the hit is in the matchmaking results.
 We aim to increase MRR@10, corresponding to a lower rank the hit has.
-MRR@10 for matchmaker $m$ can be defined as follows:
+MRR@10 for the matchmaker $m$ can be defined as follows:
 
 $MRR@10 = \frac{1}{\left\vert{C}\right\vert}\sum_{c \in C} mir(c)$ <!-- _b -->
 
 The adopted metrics that go beyond accuracy include prediction coverage (PC), catalog coverage at 10 (CC@10), and long-tail percentage at 10 (LTP@10).
 PC [@Herlocker2004, p. 40] measures the amount of items for which the evaluated system is able to produce recommendations.
 We strive to increase PC to achieve a near-complete coverage.
-PC for matchmaker $m$ is defined as the share of queries for which non-empty results are returned.
+PC for the matchmaker $m$ is defined as the share of queries for which non-empty results are returned.
 
 $PC = \frac{\left\vert{c \in C : match_{m}(c) \neq \varnothing}\right\vert}{\left\vert{C}\right\vert}$ <!-- _b -->
 
-CC@10 reflects diversity of the recommended items.
+CC@10 [@Ge2010, p. 258] reflects diversity of the recommended items.
 Systems that recommend a limited set of items have a low catalog coverage, while systems that recommend diverse items achieve a higher catalog coverage.
-We compute CC@10 for matchmaker $m$ as the number of distinct bidders in the top 10 results for all contracts divided by the number of all bidders.
+We compute CC@10 for the matchmaker $m$ as the number of distinct bidders in the top 10 results for all contracts divided by the number of all bidders.
 
 $CC@10 = \frac{\left\vert{\bigcup_{c \in C} match_{m}(c)}\right\vert}{\left\vert{B}\right\vert}$ <!-- _b -->
 
@@ -108,13 +108,14 @@ If we sort bidders in descending order by the number of contracts awarded to the
 In case of the Czech public procurement data, 20 % of the awarded contracts concentrates among the 101 most popular bidders.
 To avoid awarding contracts only to a few highly successful bidders, we aim to increase the recommendations from the long tail of bidders. 
 This is especially important for evaluation of the case-based matchmakers, which tend to favour the most popular bidders.
-Let $(b_{1}, \dots, b_{n})$ be an n-tuple of all $b_{i} \in B$, so that $(i > j) \implies awards(b_{i}) \geq awards(b_{j})$. <!-- _b -->
-The short head $SH$ can be then defined as:
+Let $(b_{1}, \dots, b_{n})$ be an n-tuple of all bidders $b_{i} \in B$, so that $(i > j) \implies awards(b_{i}) \geq awards(b_{j})$, so that the bidders are sorted in descending order by the number of contracts awarded to them. <!-- _b -->
+The short head $SH$ of this ordered n-tuple can be then defined as:
 
 $SH = (b_{1},\dots,b_{e});\quad \textrm{so that}\, e : \sum_{k = 1}^{e - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{l = 1}^{e} awards(b_{l})$ <!-- _b -->
 
+$SH$ is delimited by the index $e$ of the bidder with the awards of whom the short head reaches 20 % of all awarded contracts (i.e. $\frac{\left\vert{C}\right\vert}{5}$).
 Long tail $LT$ is the complement of the short head ($LT = B \setminus SH$).
-We then calculate LTP@10 for matchmaker $m$ as follows:
+We then calculate LTP@10 for the matchmaker $m$ as follows:
 
 $LTP@10 = \frac{\sum_{c \in C} \left\vert{match_{m}(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{match_{m}(c)}\right\vert}$
 
