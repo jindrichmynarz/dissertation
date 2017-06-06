@@ -1,9 +1,5 @@
 ## SPARQL
 
-<!--
-Is the matchmaker based on correlations between bidders and CPV concepts?
--->
-
 The SPARQL-based matchmaker employs a case-based reasoning approach that learns from contracts awarded in the past.
 For each awarded contract a similarity score is computed and the contracts are grouped by bidders who won them.
 Scores of each group are aggregated and sorted in descending order.
@@ -15,7 +11,7 @@ It should therefore not start this section. -->
 
 The initial version of the SPARQL-based matchmaker was introduced in [@Mynarz2014b].
 Our subsequent publication [@Mynarz2015] covers an improved version of the matchmaker.
-The hereby described version is thus the third iteration of the matchmaker.
+The hereby described version is thus the third iteration of the matchmaker with extended configurability.
 
 ### Benefits and drawbacks
 
@@ -96,18 +92,35 @@ There are many ways how a contract object can be described.
 However, due to the above-mentioned limitation of SPARQL to exact matches, the matchmaker is restricted to descriptions via object properties.
 It leverages terms from controlled vocabularies, such as CPV or the code list of contract kinds.
 Concretely, the matchmaker can use CPV concepts, either as main or additional objects or their qualifiers (`pc:mainObject`, `pc:additionalObject`), contract kinds (`pc:kind`), and service categories (`isvz:serviceCategory`).
-<!-- Contract objects can be represented as collections of weights. -->
+Consequently, we define the set of properties $P = \{\texttt{isvz:serviceCategory}, \texttt{pc:additionalObject}, \texttt{pc:kind}, \texttt{pc:mainObject}\}$.
+The range of each of these properties is enumerated by a controlled vocabulary.
+We define a union of concepts in these vocabularies as $Con = Con_{CPV} \cup Con_{kind} \cup Con_{\substack{service \\ category}}$. <!-- _b -->
+Contract objects are sets of concept associations $CA$:
+
+$CA = \{(con, p_{q}, p_{m}): con \in Con \land p_{q} \in P \land p_{m} \in P\}$
+
+In each concept association $p_{q}$ is a property associating a concept $con$ to the query contract and $p_{m}$ a is a property associating a concept $con$ to a matched contract.
+Using the function $t\colon \mathbb{P}(CA) \to \mathbb{P}(WC)$ the matchmaker transforms the concept associations into a set of weighted concepts.
+$WC$ associates concepts $con$ with weights $w$:
+
+$WC = \{(con, w): c \in Con \land w \in \mathbb{R}_{\ge 0}\}$.
+
+For each contract $c$ we define the set $CA_{c} \subset CA$ and the set $WC_{c} \subset WC$, so that $\forall con: (con, p_{q}, p_{m}) \in CA_{c} \implies (con, w) \in WC_{c}$, while $con$ is unique in $WC_{c}$, so that given $x, y \in WC_{c} \land x = (con, w_{i}) \land y = (con, w_{j}) \implies w_{i} = w_{j}$.<!-- _b -->
+The function $t$ expands concepts and weights concept associations, and aggregates the weights per concept.
 
 The scoring function $mscore\colon C \times B \to \mathbb{R}_{\ge 0}$ can defined as
 
 $$mscore(c_{q}, b) = agg(\sum_{c \in C : bidder(c) = b} sim(c_{q}, c))$$ {#eq:mscore}
 
-where $c_{q}$ is the query contract, $b$ is a bidder, $agg$ is an aggregation function, and $sim$ is a contract similarity metric ($sim\colon C \times C \to \mathbb{R}_{\ge 0}$).
-The similarity scores in the matchmaker are not normalized.
+where $c_{q}$ is the query contract, $b$ is a bidder, $agg$ is an aggregation function, and $sim$ is a contract similarity metric ($sim\colon C \times C \to \mathbb{R}_{\ge 0}$). <!-- _b -->
+The match scores in the matchmaker are not normalized.
+Similarities of contract objects are computed as follows:
+
+$$sim(c_{1}, c_{2}) = obj(c_{1}) \cap obj(c_{2})$$ {#eq:sim}
+
 The following sections cover the operations involved in computing the $mscore$.
 
 <!--
-$sim(c_{1}, c_{2}) = obj(c_{1}) \cap obj(c_{2})$
 -->
 <!-- FIXME: This is already mentioned in the section on weighting. -->
 <!--
@@ -134,38 +147,48 @@ Both figures illustrating the query expansion show expansions to two-hop neighbo
 
 <!--
 FIXME: How explicit we want to be? Should be pass the direction of the expansion and the number of hops explicitly? -->
-Query expansion can be defined as $exp\colon \mathbb{P}(O_{CPV}) \to \mathbb{P}(O_{CPV})$.
+Query expansion can be defined as $exp\colon Con \times Dir \times \mathbb{N}_{> 0} \to \mathbb{P}(Con)$. <!-- _b -->
+The last argument of the function $exp$ denotes the number of hops in the expansion.
+Direction of expansion $Dir$ is the set $\{\text{broader}, \text{narrower}\}$.
+Bidirectional expansion can be thus defined as $exp(con, \text{broader}, h) \cup exp(con, text(narrower), h)$.
 When no expansion is used, $exp$ is the identity function, which simply returns its argument.
+<!-- FIXME: Or we can simply omit it. -->
 Query expansion can be parameterized by the maximum number of hops followed to obtain a graph neighbourhood of the expanded concept.
 
 #### Weighting
 
 We adjust the scores computed by the matchmaker by multiplying them with weights defined as $w \in \mathbb{R} : 0 < w \leq 1$.
 Some weights are given by data or derived from it, others can be provided as configuration to the matchmaker.
-We apply weights to different kinds of relations and objects in the data.
+We apply weights to different kinds objects associations in the data.
 
-Several weights can be applied to relations between contracts and CPV concepts.
-We weight concept relations instead of the concepts directly, since the same concept may be present more than once in a contract's object.
+Several weights can be applied to associations between contracts and CPV concepts.
+We weight concept associations instead of the concepts directly, since the same concept may be present more than once in a contract's object.
 For example, we can use query expansion to infer a concept that is already explicitly assigned to a contract.
-This weighting scheme allows us to distinguish concepts associated by different relations.
+This weighting scheme allows us to distinguish concepts associated by different associations.
 For example, concepts may be linked by distinct properties or they may be either stated explicitly or inferred via query expansion.
 
 There are several concrete ways in which weights can be applied to CPV concepts.
 The matchmaker may apply an inhibiting weight to de-emphasize the concepts associated with contracts via the `pc:additionalObject` property.
 These weights are applied both to associations with the query contract and those with the matched contracts.
+<!--
+We could allow different weights for associations with the query contract and the matched contracts.
+For example, an additional object of the query contract can be weighted lower than an additional object of a matched contract.
+Such distinction may be motivated by different levels of trust in the consistency of contract descriptions of among the contract authorities.
+For instance, while an authority may assign a smaller weight to additional objects of its contracts, it may assume a higher weight of additional objects of contract by other authorities.
+-->
 Similarly, qualifying concepts from the CPV's supplementary vocabulary can be discounted by a lower weight.
 Concepts inferred by query expansion can be weighted either by a fixed inhibition or their inverse document frequency (IDF).
 
 Inverse document frequency is used to de-emphasize the impact of popular CPV concepts on matchmaking.
 Unlike infrequent and specific concepts, the popular ones may have lesser discriminative power to determine the relevance of contracts described by them.
-IDF ($idf\colon O_{CPV}$) is computed as follows:
+IDF ($idf\colon O_{CPV}$) is computed as follows: <!-- _b -->
 
 $idf(o) = \log\frac{\left\vert{C}\right\vert}{1 + \left\vert{\{c \in C : o \in c\}}\right\vert}$
 
-The denominator in the formula is incremented by 1 to avoid division by zero.
-Subsequently, we scale IDF into the interval $(0, 1]$ in order to be able to use it as weight.
+The denominator in the formula is incremented by 1 to avoid division by zero in case of concepts unused in contract objects.
+Subsequently, we scale IDF into the interval $(0, 1]$ by using its maximum value in order to be able to use it as a weight.
 
-$idf'(o) = \frac{idf(o)}{max(\{o' \in O_{CPV} : idf(o')\})}$
+$idf'(o) = \frac{idf(o)}{max(\{o' \in O_{CPV} : idf(o')\})}$ <!-- _b -->
 
 Besides CPV, weights can be applied to objects of specific properties.
 In particular, the matchmaker can inhibit the objects of `pc:kind` when used in combination with CPV.
@@ -188,16 +211,18 @@ The basic t-norms can be defined as follows [@Beliakov2015, p. 792]:
 
 * Gödel's t-norm (minimum t-norm): $T_{min}(x, y) = min(x, y)$
 * Product t-norm: $T_{P}(x, y) = x \cdot y$
-* Łukasiewicz's t-norm: $T_{L}(x, y) = max(x + y - 1, 0)$
+* Łukasiewicz's t-norm: $T_{L}(x, y) = max(x + y - 1, 0)$ <!-- _b -->
 
 We use these t-norms to combine weights.
+They are used in place of $comb$ in [@eq:sim].
 The basic t-conorms, complementary to the t-norms, are the following:
 
 * Gödel's t-conorm (maximum t-conorm): $S_{max}(x, y) = max(x, y)$
 * Product t-conorm (probabilistic sum): $S_{P}(x, y) = x + y - x \cdot y$
-* Łukasiewicz's t-conorm (bounded sum): $S_{L}(x, y) = min(x + y, 1)$
+* Łukasiewicz's t-conorm (bounded sum): $S_{L}(x, y) = min(x + y, 1)$ <!-- _b -->
 
 We use these t-conorms to aggregate contract similarities into the match scores of bidders.
+They are used in place of $agg$ in [@eq:mscore].
 
 ### Non-personalized matchmaking
 
@@ -259,7 +284,7 @@ The matchmaker's source code is available in a public repository^[<https://githu
 Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
 
 <!--
-TODO: Add a diagram showing the technology stack involved in the matchmaker. 
+TODO: Add a diagram showing the technology stack involved in the matchmaker.
 -->
 
 <!--

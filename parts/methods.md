@@ -67,6 +67,7 @@ We can start with a definition of the key entities involved in the matchmaking t
 Let $C$ be the set of evaluated public contracts and $B$ the set of known bidders.
 Let $O_{CPV}$ be the set of CPV concepts and $\mathbb{P}{O_{CPV}})$ the powerset of this set.
 For a query contract $c$, $C_{c}^{c}$ denotes the set of the matched contracts. <!-- _b -->
+We use $\mathbb{P}$ to denote a power set of a set. 
 
 <!--
 Subscription to streams

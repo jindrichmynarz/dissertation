@@ -8,7 +8,8 @@ A possible explanation for this issue is that the extracted dataset contains his
 Alternatively, the *"errors in the published data may be caused by either negligence when filling out Journal forms or by deliberate obfuscation of sensitive information in order to reduce a contract's traceability"* [@Soudek2016a].
 A large part of data transformation was therefore devoted to denoising.
 We dealt both with natural noise, such as involuntarily introduced typos in literals, and malicious noise, such as deliberate omissions to obfuscate the data.
-Many other data quality problems of the Czech public procurement register are documented in the wiki of zIndex [@Soudek2016a]. 
+Many other data quality problems of the Czech public procurement register are documented in the wiki of zIndex [@Soudek2016a].
+Similar problems in public procurement data were witnessed by Futia et al. [-@Futia2017] in case of Italy. 
 
 Due to the messiness of the data, we had to make data transformations defensive.
 The transformations needed to rely on fewer assumptions about the data and had to be able to deal with violations of these assumptions. 

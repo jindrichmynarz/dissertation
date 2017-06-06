@@ -6,6 +6,10 @@ We use past contracts awards as the ground truth from which the methods learn to
 There are inherent downsides in our assumptions about the ground truth we used.
 The assumption that the awarded bidder is the best match for a contract is fundamentally problematic.
 We have to rely on contract awards only, since we do not have explicit evaluations of the awarded bidders after finishing the contracts.
+Lack of post-award data is common in public procurement:
+
+> *"With a few exceptions such as Italy and Estonia, no government publishes information on contract implementation, making it impossible to know what happens after the contract is awarded — for example, did the suppliers deliver on time and budget?"* [@Mendes2017]
+
 Nor do we have any other relations between bidders and contracts in our dataset.
 However, profiles of contracting authorities link contracts with all bidders that submitted a valid bid.
 
