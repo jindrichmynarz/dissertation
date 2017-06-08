@@ -78,6 +78,10 @@ For example, SPARQL treats sorting as a result modifier, which needs to be provi
 
 ### Ranking
 
+<!-- FIXME: Should we rename this section "Personalized matchmaking"?
+Define query contract and matched contracts.
+-->
+
 SPARQL queries retrieve exact matches satisfying the query conditions.
 Since SPARQL can tell only matches from non-matches, the degrees to which matches satisfy the query are unknown.
 Ranking of matches thus needs to be implemented on top of SPARQL.
@@ -95,15 +99,58 @@ Concretely, the matchmaker can use CPV concepts, either as main or additional ob
 Consequently, we define the set of properties $P = \{\texttt{isvz:serviceCategory}, \texttt{pc:additionalObject}, \texttt{pc:kind}, \texttt{pc:mainObject}\}$.
 The range of each of these properties is enumerated by a controlled vocabulary.
 We define a union of concepts in these vocabularies as $Con = Con_{CPV} \cup Con_{kind} \cup Con_{\substack{service \\ category}}$. <!-- _b -->
+
+<!-- Matching -->
+
+Concept association $CA$ is a quad $CA = (con, p_{q}, p_{m}, c)\colon con \in C \land p_{q} \in P \land p_{m} \in P \land c \in C$.
+In each concept association $p_{q}$ is a property associating a concept $con$ to the query contract and $p_{m}$ is a property associating $con$ to a matched contract $c$.
+
+<!--
 Contract objects are sets of concept associations $CA$:
 
 $CA = \{(con, p_{q}, p_{m}): con \in Con \land p_{q} \in P \land p_{m} \in P\}$
 
-In each concept association $p_{q}$ is a property associating a concept $con$ to the query contract and $p_{m}$ a is a property associating a concept $con$ to a matched contract.
 Using the function $t\colon \mathbb{P}(CA) \to \mathbb{P}(WC)$ the matchmaker transforms the concept associations into a set of weighted concepts.
 $WC$ associates concepts $con$ with weights $w$:
 
 $WC = \{(con, w): c \in Con \land w \in \mathbb{R}_{\ge 0}\}$.
+-->
+
+A concept can be either explicitly assigned to a contract or inferred via query expansion.
+To capture this distinction we define $ConT = \{\text{explicit}, \text{inferred}\}$.
+$Cobj$ is an ordered triple $(con, p, t): con \in Con \land p \in P \land t \in ConT$ of a concept, a property with which it is associated to a contract, and a concept type.
+Contract objects are represented as sets of these triples.
+The function $obj\colon C \to \mathbb{P}(Cobj)$ retrieves a contract's object.
+The predicate $matches\colon Cobj \times Cobj \to \{T, F\}$ returns true if contract object pairs match.
+
+$matches(o_{a}, o_{b}) =
+  \begin{cases}
+    T & \text{if}\ o_{a_{1}} = o_{b_{1}} \\
+    F & \textrm{otherwise} \\
+  \end{cases}$ <!-- _b -->
+<!-- Test compatibility between $p_{a}$ and $p_{b}$? The properties could be defined as compatible if they have a common superproperty. Basically, in most cases they must be identical, or a pair of `pc:mainObject` and `pc:additionalObject`. -->
+
+Function $match\colon C \times Dir \times H \to \mathbb{P}(CA)$ retrieves contract associations matching a given query contract $c_{q}$:
+
+$$match(c_{q}, dir, h) = \bigcup_{
+  \substack{o_{q} \in obj(c_{q}) \\
+            c_{m} \in C \setminus \{c_{q}\} \\
+            o_{m} \in obj(c_{m}) \\
+            matches(o_{q}, o_{m})}}
+            (o_{q_{1}}, o_{q_{2}}, o_{m_{2}}, c_{m})$$ {#eq:match}
+
+It produces concept associations $CA$ that are defined as quads $(con, p_{q}, p_{m}, c)\colon con \in Con \land p_{q} \in P \land p_{m} \in P \land c \in C$.
+The matchmaker can translate each part of concept associations to a weight.
+The concept $con$ can be transformed into an IDF, in particular when dealing with concepts obtained via query expansion.
+The properties $p_{q}$ and $p_{m}$ can be weighted according to the degree they contribute to the similarity between contracts.
+The contract $con$ can be turned into a weight corresponding to its contracting authority's fairness score.
+The weights of components in each concept association are then combined using the $comb$ function.
+
+$weight\colon Con \cup P \cup C \to W$ - can be defined as a polymorphic function.
+$weight$ can be mapped over each concept association (i.e. applied to each component of the association).
+$\forall x \in ca, weight(x)$
+Weights of the components can be combined by reducing with the function $comb$.
+The combined weights can be aggregated by reducing with the function $agg$.
 
 For each contract $c$ we define the set $CA_{c} \subset CA$ and the set $WC_{c} \subset WC$, so that $\forall con: (con, p_{q}, p_{m}) \in CA_{c} \implies (con, w) \in WC_{c}$, while $con$ is unique in $WC_{c}$, so that given $x, y \in WC_{c} \land x = (con, w_{i}) \land y = (con, w_{j}) \implies w_{i} = w_{j}$.<!-- _b -->
 The function $t$ expands concepts and weights concept associations, and aggregates the weights per concept.
@@ -113,7 +160,6 @@ The scoring function $mscore\colon C \times B \to \mathbb{R}_{\ge 0}$ can define
 $$mscore(c_{q}, b) = agg(\sum_{c \in C : bidder(c) = b} sim(c_{q}, c))$$ {#eq:mscore}
 
 where $c_{q}$ is the query contract, $b$ is a bidder, $agg$ is an aggregation function, and $sim$ is a contract similarity metric ($sim\colon C \times C \to \mathbb{R}_{\ge 0}$). <!-- _b -->
-The match scores in the matchmaker are not normalized.
 Similarities of contract objects are computed as follows:
 
 $$sim(c_{1}, c_{2}) = obj(c_{1}) \cap obj(c_{2})$$ {#eq:sim}
@@ -127,33 +173,73 @@ The following sections cover the operations involved in computing the $mscore$.
 Contract similarity may be adjusted by zIndex.
 We experimented with weighting contract similarity by zIndex of the matched contract's contracting authority.
 
-$sim(c_{q}, c) \cdot zindex(c)$
+Let $A$ be the set of contracting authorities.
+Let $W$ be the set of weights, so that $W = \{w \in \mathbb{R}: 0 \leq w \leq 1\}$.
+
+The function $authority\colon C \to A$ returns the contracting authority of a given contract.
+The function $zindex\colon A \to W$ produces a weight associated with a given contracting authority via the zIndex ranking.
+We can then define $zindex'$ by composing these functions, i.e. $zindex' = zindex \circ authority$.
 
 * $o_{q}$: object of the query contract
 * $o_{c}$: object of the matched contract
-
-$exp(o_{q}) \bowtie o_{c}$
 -->
+
+Function $weight$ can be applied to all components of concept association $ca \in CA$ using the common higher-order function $map$:
+
+$map(weight, ca) = \begin{cases}
+  () & \text{if}\ ca = () \\
+  weight(ca_{1}) \oplus map(weight, (ca_{2}, \dots, ca_{n})) & \text{if}\ ca = (ca_{1}, ca_{2}, \dots, ca_{n})
+\end{cases}$
+
+<!-- Use the generic definition? -->
+
+$map(f, coll) = \begin{cases}
+  () & \text{if}\ coll = () \\
+  f(coll_{1}) \oplus map(f, (coll_{2}, \dots, coll_{n})) & \text{if}\ coll = (coll_{1}, coll_{2}, \dots, coll_{n})
+\end{cases}$
+
+Both aggregation functions $comb$ and $agg$ have the same type signature $W \times W \to W$.
+Any aggregation function $f$ is applied to n-tuples of weights $ws$ using the $foldl$ function, in which $e$ is the identity element of $f$:
+
+$foldl(f, e, ws) = \begin{cases}
+  e & \text{if}\ ws = () \\
+  foldl(f, f(e, w_{1}), (w_{2}, \dots, w_{n})) & \text{if}\ ws = (w_{1}, w_{2}, \dots, w_{n})
+\end{cases}$
+
+<!-- Use the generic definition? -->
+
+$foldl(f, e, coll) = \begin{cases}
+  e & \text{if}\ coll = () \\
+  foldl(f, f(e, coll_{1}), (coll_{2}, \dots, coll_{n})) & \text{if}\ coll = (coll_{1}, coll_{2}, \dots, coll_{n})
+\end{cases}$
+
+The $foldl$ function is the common left fold higher-order function.
+If fact, both left and right folds can be used, since the aggregation functions are associative.
 
 #### Query expansion
 
 We expand CPV concepts by following hierarchical relations in the CPV.
 We follow either links to narrower concepts via `skos:narrowerTransitive` ([@fig:expand-to-narrower]), links to broader concepts via `skos:broaderTransitive` ([@fig:expand-to-broader]), or links in both directions.
+Query expansion can be parameterized by the maximum number of hops followed to obtain a graph neighbourhood of the expanded concept.
 Both figures illustrating the query expansion show expansions to two-hop neighbourhoods of the CPV concepts.
 
 ![Expansion to narrower concepts](img/expand_to_narrower.png){#fig:expand-to-narrower}
 
 ![Expansion to broader concepts](img/expand_to_broader.png){#fig:expand-to-broader}
 
-<!--
-FIXME: How explicit we want to be? Should be pass the direction of the expansion and the number of hops explicitly? -->
-Query expansion can be defined as $exp\colon Con \times Dir \times \mathbb{N}_{> 0} \to \mathbb{P}(Con)$. <!-- _b -->
-The last argument of the function $exp$ denotes the number of hops in the expansion.
-Direction of expansion $Dir$ is the set $\{\text{broader}, \text{narrower}\}$.
-Bidirectional expansion can be thus defined as $exp(con, \text{broader}, h) \cup exp(con, text(narrower), h)$.
+Query expansion can be defined as $exp\colon \mathbb{P}(Cobj) \times Dir \times H \to \mathbb{P}(Cobj)$.
+Number of hops followed in the expansion is drawn from the set $H = \{h \in \mathbb{N}^{0}\}$.
+Direction of expansion $Dir$ is the set $\{\texttt{skos:broaderTransitive}, \texttt{skos:narrowerTransitive}\}$.
+Bidirectional expansion of concept $con$ by the number of hops $h$ can be thus defined as $exp(con, \texttt{skos:broaderTransitive}, h) \cup exp(con, \texttt{skos:narrowerTransitive}, h)$.
 When no expansion is used, $exp$ is the identity function, which simply returns its argument.
-<!-- FIXME: Or we can simply omit it. -->
-Query expansion can be parameterized by the maximum number of hops followed to obtain a graph neighbourhood of the expanded concept.
+<!-- FIXME: Or:
+a) we can simply omit it
+b) state the default number of hops = 0
+
+TODO: Copy the formalization from the ODBASE paper. -->
+
+Concrete instantiations of the query expansion function can limit which input contract objects are expanded.
+In our case, only contract objects where $p_{q} = \texttt{pc:mainObject}$ and $con \in Con_{CPV}$ are expanded.
 
 #### Weighting
 
@@ -213,16 +299,18 @@ The basic t-norms can be defined as follows [@Beliakov2015, p. 792]:
 * Product t-norm: $T_{P}(x, y) = x \cdot y$
 * Łukasiewicz's t-norm: $T_{L}(x, y) = max(x + y - 1, 0)$ <!-- _b -->
 
+The identity element of t-norms is 1.
 We use these t-norms to combine weights.
-They are used in place of $comb$ in [@eq:sim].
+They are used by the matchmaker in place of $comb$ in the previous formulas.
 The basic t-conorms, complementary to the t-norms, are the following:
 
 * Gödel's t-conorm (maximum t-conorm): $S_{max}(x, y) = max(x, y)$
 * Product t-conorm (probabilistic sum): $S_{P}(x, y) = x + y - x \cdot y$
 * Łukasiewicz's t-conorm (bounded sum): $S_{L}(x, y) = min(x + y, 1)$ <!-- _b -->
 
+The identity element of t-conorms is 0.
 We use these t-conorms to aggregate contract similarities into the match scores of bidders.
-They are used in place of $agg$ in [@eq:mscore].
+They are used by the matchmaker in place of $agg$ in the previous formulas.
 
 ### Non-personalized matchmaking
 
@@ -266,6 +354,7 @@ Score aggregation via aggregation functions is done using SPARQL 1.1 aggregates.
 However, probabilistic sum requires aggregation by multiplication, which cannot be implemented directly in SPARQL since it lacks an operator to multiply grouped bindings.
 Therefore, we implemented this aggregation function via post-processing of SPARQL results.
 Eventually, since the difference on the evaluated metrics between probabilistic sum and summation ($a + b$)    turned out to be statistically insignificant, we opted for summation, which can be computed in SPARQL and is       marginally faster.
+A side effect of this implementation is that the match scores in the matchmaker are not normalized.
 
 <!-- Optimization -->
 

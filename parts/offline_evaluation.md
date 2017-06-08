@@ -58,7 +58,7 @@ $wrank(c) =
   \begin{cases}
     n \in \mathbb{N}\colon bidder(c)\, \textrm{is in position}\, n\, \textrm{in}\, match_{m}(c)
     & \text{if}\ bidder(c) \in match_{m}(c) \\
-    \quad\textrm{nil}, & \textrm{otherwise} \\
+    \quad\textrm{nil} & \textrm{otherwise} \\
   \end{cases}$
 
 The function $awards\colon B \to \mathbb{N}$ returns the number of contracts awarded to a given bidder.
@@ -77,8 +77,8 @@ MRR@10 [@Craswell2009] is the arithmetic mean of multiplicative inverse ranks.
 Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such:
 
 $mir(c)=\begin{cases}
-         \frac{1}{wrank(c)}, & \text{if}\ bidder(c) \in match_{m}(c) \\ 
-         0, & \text{nil}
+         \frac{1}{wrank(c)} & \text{if}\ bidder(c) \in match_{m}(c) \\ 
+         0 & \text{nil}
        \end{cases}$
 
 This metric is used for evaluating systems where *"the user wishes to see one relevant document"* [@Craswell2009] and it is *"equivalent to Mean Average Precision in cases where each query has precisely one relevant document"* [@Craswell2009].
@@ -113,7 +113,7 @@ The short head $SH$ of this ordered n-tuple can be then defined as:
 
 $SH = (b_{1},\dots,b_{e});\quad \textrm{so that}\, e : \sum_{k = 1}^{e - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{l = 1}^{e} awards(b_{l})$ <!-- _b -->
 
-$SH$ is delimited by the index $e$ of the bidder with the awards of whom the short head reaches 20 % of all awarded contracts (i.e. $\frac{\left\vert{C}\right\vert}{5}$).
+$SH$ is delimited by the index $e$ of the bidder with the awards of whom the short head accumulates 20 % of all awarded contracts (i.e. $\frac{\left\vert{C}\right\vert}{5}$).
 Long tail $LT$ is the complement of the short head ($LT = B \setminus SH$).
 We then calculate LTP@10 for the matchmaker $m$ as follows:
 
