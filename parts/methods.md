@@ -64,10 +64,12 @@ TODO: Does C denote a set of identities or internally structured objects?
 -->
 
 We can start with a definition of the key entities involved in the matchmaking task.
-Let $C$ be the set of evaluated public contracts, $B$ the set of known bidders, aand $Con_{CPV}$ be the set of CPV concepts.
-For a query contract $c$, $C_{c}^{c}$ denotes the set of the matched contracts. <!-- _b -->
+Let $C$ be the set of evaluated public contracts, $B$ the set of known bidders, $A$ the set of contracting authorities, and $Con_{CPV}$ be the set of CPV concepts.
+We use numeric subscripts to access elements of n-tuples, so that $coll_{i}$ denotes the $i$-th element of n-tuple $coll$.
 We use $\mathbb{P}$ to denote a power set of a set.
 We use $a \oplus b$ to denote concatenation of n-tuples $a$ and $b$.
+We define the set of tuples of elements from the set $S$ as $(S)$.
+Composition of functions $f$ and $g$ is denoted $f \circ g$.
 
 <!--
 Subscription to streams

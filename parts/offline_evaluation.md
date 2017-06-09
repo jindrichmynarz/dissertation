@@ -54,16 +54,16 @@ The function $match_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the
 The function $bidder\colon C \to B$ returns the bidder to whom a contract was awarded.
 The function $wrank\colon C \to \mathbb{N}_{\ge 1} \cup \{ \text{nil} \}$ gives the rank of the bidder who won a given public contract.
 
-$wrank(c) = 
+$$wrank(c) = 
   \begin{cases}
     n \in \mathbb{N}\colon bidder(c)\, \textrm{is in position}\, n\, \textrm{in}\, match_{m}(c)
     & \text{if}\ bidder(c) \in match_{m}(c) \\
     \quad\textrm{nil} & \textrm{otherwise} \\
-  \end{cases}$
+  \end{cases}$$
 
 The function $awards\colon B \to \mathbb{N}$ returns the number of contracts awarded to a given bidder.
 
-$awards(b) = \left\vert{c \in C : bidder(c) = b}\right\vert$
+$$awards(b) = \left\vert{c \in C : bidder(c) = b}\right\vert$$
 
 We measured accuracy using hit rate at 10 (HR@10) and mean reciprocal rank at 10 (MRR@10).
 HR@10 [@Deshpande2004, p. 159] is the share of queries for which hits are found in the top 10 results.
@@ -71,15 +71,15 @@ We consider hits to be the results that include the awarded bidder.
 We adopted HR@10 as the primary metric that we aim to increase.
 This metric can be calculated for the matchmaker $m$ as follows: 
 
-$HR@10 = \frac{\left\vert{c \in C : bidder(c) \in match_{m}(c) \land wrank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$ <!-- _b -->
+$$HR@10 = \frac{\left\vert{c \in C : bidder(c) \in match_{m}(c) \land wrank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
 
 MRR@10 [@Craswell2009] is the arithmetic mean of multiplicative inverse ranks.
 Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such:
 
-$mir(c)=\begin{cases}
+$$mir(c)=\begin{cases}
          \frac{1}{wrank(c)} & \text{if}\ bidder(c) \in match_{m}(c) \\ 
          0 & \text{nil}
-       \end{cases}$
+       \end{cases}$$
 
 This metric is used for evaluating systems where *"the user wishes to see one relevant document"* [@Craswell2009] and it is *"equivalent to Mean Average Precision in cases where each query has precisely one relevant document"* [@Craswell2009].
 This makes it suitable for our evaluation setup, since for each query (i.e. a contract) we know only one true positive (i.e. the awarded bidder).
@@ -87,20 +87,20 @@ MRR@10 reflects how prominent the position of the hit is in the matchmaking resu
 We aim to increase MRR@10, corresponding to a lower rank the hit has.
 MRR@10 for the matchmaker $m$ can be defined as follows:
 
-$MRR@10 = \frac{1}{\left\vert{C}\right\vert}\sum_{c \in C} mir(c)$ <!-- _b -->
+$$MRR@10 = \frac{1}{\left\vert{C}\right\vert}\sum_{c \in C} mir(c)$$ <!-- _b -->
 
 The adopted metrics that go beyond accuracy include prediction coverage (PC), catalog coverage at 10 (CC@10), and long-tail percentage at 10 (LTP@10).
 PC [@Herlocker2004, p. 40] measures the amount of items for which the evaluated system is able to produce recommendations.
 We strive to increase PC to achieve a near-complete coverage.
 PC for the matchmaker $m$ is defined as the share of queries for which non-empty results are returned.
 
-$PC = \frac{\left\vert{c \in C : match_{m}(c) \neq \varnothing}\right\vert}{\left\vert{C}\right\vert}$ <!-- _b -->
+$$PC = \frac{\left\vert{c \in C : match_{m}(c) \neq \varnothing}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
 
 CC@10 [@Ge2010, p. 258] reflects diversity of the recommended items.
 Systems that recommend a limited set of items have a low catalog coverage, while systems that recommend diverse items achieve a higher catalog coverage.
 We compute CC@10 for the matchmaker $m$ as the number of distinct bidders in the top 10 results for all contracts divided by the number of all bidders.
 
-$CC@10 = \frac{\left\vert{\bigcup_{c \in C} match_{m}(c)}\right\vert}{\left\vert{B}\right\vert}$ <!-- _b -->
+$$CC@10 = \frac{\left\vert{\bigcup_{c \in C} match_{m}(c)}\right\vert}{\left\vert{B}\right\vert}$$ <!-- _b -->
 
 LTP@10 [@Adomavicius2012] is a metric of novelty, which is based on the distribution of the recommended items.
 Concretely, it measures the share of items from the long tail in the matchmaking results.
@@ -111,13 +111,13 @@ This is especially important for evaluation of the case-based matchmakers, which
 Let $(b_{1}, \dots, b_{n})$ be an n-tuple of all bidders $b_{i} \in B$, so that $(i > j) \implies awards(b_{i}) \geq awards(b_{j})$, so that the bidders are sorted in descending order by the number of contracts awarded to them. <!-- _b -->
 The short head $SH$ of this ordered n-tuple can be then defined as:
 
-$SH = (b_{1},\dots,b_{e});\quad \textrm{so that}\, e : \sum_{k = 1}^{e - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{l = 1}^{e} awards(b_{l})$ <!-- _b -->
+$$SH = (b_{1},\dots,b_{e});\quad \textrm{so that}\, e : \sum_{k = 1}^{e - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{l = 1}^{e} awards(b_{l})$$ <!-- _b -->
 
 $SH$ is delimited by the index $e$ of the bidder with the awards of whom the short head accumulates 20 % of all awarded contracts (i.e. $\frac{\left\vert{C}\right\vert}{5}$).
 Long tail $LT$ is the complement of the short head ($LT = B \setminus SH$).
 We then calculate LTP@10 for the matchmaker $m$ as follows:
 
-$LTP@10 = \frac{\sum_{c \in C} \left\vert{match_{m}(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{match_{m}(c)}\right\vert}$
+$$LTP@10 = \frac{\sum_{c \in C} \left\vert{match_{m}(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{match_{m}(c)}\right\vert}$$
 
 <!--
 We can also evaluate novelty in terms of time.
