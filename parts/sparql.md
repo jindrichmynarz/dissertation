@@ -78,16 +78,15 @@ For example, SPARQL treats sorting as a result modifier, which needs to be provi
 
 ### Ranking
 
-<!-- FIXME: Should we rename this section "Personalized matchmaking"? -->
-
 SPARQL queries retrieve exact matches satisfying the query conditions.
 Since SPARQL can tell only matches from non-matches, the degrees to which matches satisfy the query are unknown.
 Ranking of matches thus needs to be implemented on top of SPARQL.
 We need to relax the match conditions to avoid filtering partial matches, and then compute scores to rank the matches.
 
-The matchmaker retrieves contract objects that overlap with the object of the query contract, which are optionally expanded to include related CPV concepts.
-Components of contract objects are weighted and these weights are combined into a contract similarity score.
-Contract similarities are aggregated per bidder to produce bidder's match score.
+The matchmaker operates with a given query contract $c_{q}$, which is matched to contracts from the set $C$. <!-- _b -->
+It retrieves contract objects that overlap with the object of the query contract, which are optionally expanded to include related CPV concepts.
+Components of contract objects are weighted and these weights are combined into partial similarity scores.
+Partial similarities are then aggregated per bidder to produce bidder's match score.
 
 #### Contract objects
 
@@ -95,77 +94,94 @@ Contract objects describe what products or services are sought by contracts.
 There are many ways how a contract object can be described.
 The matchmaker leverages contract objects described by terms from controlled vocabularies, such as CPV or the code list of contract kinds.
 Concretely, the matchmaker can use CPV concepts, either as main or additional objects or their qualifiers (`pc:mainObject`, `pc:additionalObject`), contract kinds (`pc:kind`), and service categories (`isvz:serviceCategory`).
-Consequently, we define the set of properties $P = \{\texttt{isvz:serviceCategory}, \texttt{pc:additionalObject}, \texttt{pc:kind}, \texttt{pc:mainObject}\}$ that associate concepts with contracts.
+Consequently, we define the set of properties $P = \{\texttt{pc:mainObject}, \texttt{pc:additionalObject}, \texttt{pc:kind}, \texttt{isvz:serviceCategory}\}$ that associate concepts with contracts.
 The range of each of these properties is enumerated by a controlled vocabulary.
 We define the union of concepts in these vocabularies as $Con = Con_{CPV} \cup Con_{kind} \cup Con_{\substack{service \\ category}}$. <!-- _b -->
 A concept can be either explicitly assigned to a contract or inferred via query expansion.
-To capture this distinction we define the concept type $ConT = \{\text{explicit}, \text{inferred}\}$.
-Contract object $Cobj$ is then an ordered triple $(con, p, cont): con \in Con \land p \in P \land cont \in ConT$ of a concept $con$, a property $p$ with which it is associated to a contract, and the concept type $cont$.
-Contract objects are represented as sets of these triples.
-In order to access contract objects we use the function $obj\colon C \to \mathbb{P}(Cobj)$.
+To capture this distinction we use concept assignment $ConA = \{\text{explicit}, \text{inferred}\}$.
+Contract object $cobj$ is then a tuple $((con, p), cona) \colon con \in Con, p \in P, cona \in ConA$, in which a concept $con$ is paired with property $p$ that associates the concept to a contract and this pair is qualified with concept assignment $cona$.
+Contract objects are represented as sets $Cobj$ of these tuples.
+In order to obtain contract objects we use the function $obj \colon C \cup \left\{c_{q}\right\} \to \mathbb{P}(Cobj)$. <!-- _b -->
+Here, $\mathbb{P}(Cobj)$ denotes the powerset of the set $Cobj$.
+Accessing the elements of contract objects is in turn done by function $ccobj(cobj) = con \iff cobj = ((con, p), cona)$ for concepts and by function $pcobj(cobj) = p \iff cobj = ((con, p), cona)$ for properties.
 
 #### Query expansion
 
 The controlled vocabularies that describe contract objects can be semantically structured, such as via hierarchical or associative relations.
 Since relevance of a concept may entail relevance of concepts in its neighbourhood, we can leverage the structure of these vocabularies and perform expansion to include the related concepts in the query.
-In particular, we expand CPV concepts by following hierarchical relations in this vocabulary.
+In particular, we expand CPV concepts by following transitive hierarchical relations in this vocabulary.
 We follow either links to narrower concepts via `skos:narrowerTransitive`, links to broader concepts via `skos:broaderTransitive`, or links in both directions.
 Query expansion can be parameterized by the maximum number of hops followed to obtain a graph neighbourhood of the expanded concept.
+When a concept is expanded, its inferred concepts include those that are one to the maximum hops away from the expanded concept.
+Note that it is possible to infer a concept already included in the explicitly assigned concepts when these are hierarchically related.
+In such case, the concept appears twice in the contract object, distinguished by its concept assignment.
+Similarly, the same inferred concept can be reached more times by expanding different concepts.
+Such concept is present once in the results of query expansion since the results form a set.
 Figures [@fig:expand-to-narrower] and [@fig:expand-to-broader] illustrate the query expansion, showing expansions to two-hop neighbourhoods. 
 
-![Expansion to broader concepts](img/expand_to_broader.png){#fig:expand-to-broader}
+![Expansion to broader concepts](img/query_expansion_broader.png){#fig:expand-to-broader width=50%}
 
-![Expansion to narrower concepts](img/expand_to_narrower.png){#fig:expand-to-narrower}
+![Expansion to narrower concepts](img/query_expansion_narrower.png){#fig:expand-to-narrower width=50%}
 
-Query expansion can be defined as $exp\colon \mathbb{P}(Cobj) \times Dir \times H \to \mathbb{P}(Cobj)$.
-Number of hops followed in the expansion is drawn from positive integers in the set $H = \{h \in \mathbb{N}^{0}\}$.
-Direction of expansion $Dir$ is the set $\{\texttt{skos:broaderTransitive}, \texttt{skos:narrowerTransitive}\}$.
-Bidirectional expansion of the contract object $cobj$ by the number of hops $h$ can thus be defined as $exp(cobj, \texttt{skos:broaderTransitive}, h) \cup exp(cobj, \texttt{skos:narrowerTransitive}, h)$.
-We only require $exp$ to be monotonous, so that for every contract object $cobj \in Cobj$ holds that $(con, p, t) \in cobj \;\; \Rightarrow \;\; (con, p, t) \in exp(cobj, dir, h)$.
-By default $h = 0$, which translates to no expansion, so that $exp(cobj, dir, 0) = cobj$.
-Concrete instantiations of the query expansion function can limit which input contract objects are expanded.
-In our case, only contract objects where $p = \texttt{pc:mainObject}$ and $con \in Con_{CPV}$ are expanded. <!-- _b -->
+Arguments of the query expansion function $exp$ are a set of contract objects, a direction of expansion, and a distance of the expansion.
+The direction of expansion $Dir$ is the set $\{\texttt{skos:broaderTransitive}, \texttt{skos:narrowerTransitive}\}$ indicating either the expansion to broader or narrower concepts.
+The distance is the maximum number of hops followed in the expansion.
+Consequently, the query expansion function can be defined as $exp \colon \mathbb{P}(Cobj) \times Dir \times \mathbb{N}_{> 0} \to \mathbb{P}(Cobj)$. <!-- _b -->
+Bidirectional expansion of the contract object $cobj' \subset Cobj$ to the distance $dis$ can thus be computed as $exp(cobj', \texttt{skos:broaderTransitive}, dis) \cup exp(cobj', \texttt{skos:narrowerTransitive}, dis)$.
+We only require $exp$ to be monotonous, so that for every contract object $cobj \in Cobj$ holds that $((con, p), cona) \in cobj \;\; \Rightarrow \;\; ((con, p), cona) \in exp(cobj, dir, dis)$, hence the function $exp$ returns a union of its provided contracts objects with the inferred contract objects.
+Concrete instantiations of $exp$ can limit which input contract objects are expanded.
+In our case, either no contract objects are expanded or we only expand the explicitly assigned contract objects where $p = \texttt{pc:mainObject}$ and $con \in Con_{CPV}$. <!-- _b -->
 
 #### Matching
 
-The matchmaker examines only exact matches between contract objects.
-The predicate $matches\colon Cobj \times Cobj \to \{T, F\}$ returns the boolean value true, denoted as $T$, if concepts in the compared contract objects are the same.
+The matchmaker examines only exact matches between concepts of contract objects.
+Instead of matching complete contract descriptions or sets of concepts, matching on the finer level of individual concepts allows to capture partial overlaps between contracts.
+The predicate $matches \colon Cobj \times Cobj \to \{T, F\}$ returns the boolean value true, denoted as $T$, if concepts in the compared contract objects are the same.
 
 $$matches(cobj_{a}, cobj_{b}) =
   \begin{cases}
-    T & \text{if}\ cobj_{a_{1}} = cobj_{b_{1}} \\
+    T & \text{if}\ ccobj(cobj_{a}) = ccobj(cobj_{b}) \\
     F & \textrm{otherwise} \\
   \end{cases}$$ <!-- _b -->
 
-Here, $cobj_{a_{1}}$ refers to the first element of the tuple $cobj_{a}$, i.e. its concept.
-Analogously, $cobj_{b_{1}}$ is the concept in $cobj_{b}$.
-In order to achieve a match, the ranges of the properties in the compared contract objects must be the same.
+Here, $ccobj(cobj_{a})$ accesses the concept in the contract object $cobj_{a}$.
+As is evident, in order to achieve a match, the ranges of the properties in the compared contract objects must be the same.
 
 Matching considers its input as the query contract, while the others are treated as contracts to be matched.
-Function $match\colon C \times Dir \times H \to \mathbb{P}(CA)$ retrieves contract associations matching a given query contract $c_{q}$.
+Function $match \colon \left\{c_{q}\right\} \times Dir \times \mathbb{N}_{> 0} \to \mathbb{P}(CMA)$ retrieves concept-mediated associations matching a given query contract $c_{q}$.
 
-$$match(c_{q}, dir, h) = \bigcup_{
-  \substack{o_{q} \in obj(c_{q}) \\
-            c_{m} \in C \setminus \{c_{q}\} \\
-            o_{m} \in obj(c_{m}) \\
-            matches(o_{q}, o_{m})}}
-            (o_{q_{1}}, o_{q_{2}}, o_{m_{2}}, c_{m})$$
+$$match(c_{q}, dir, dis) = \bigcup \left\{ \begin{split}
+  & (ccobj(o_{q}), pcobj(o_{q}), pcobj(o_{m}), c_{m}) \colon \\
+  & o_{q} \in exp(obj(c_{q}), dir, dis), \\
+  & c_{m} \in C, \\
+  & o_{m} \in obj(c_{m}), \\
+  & matches(o_{q}, o_{m})
+  \end{split}\right\}$$
 
-This function produces concept associations $CA$ that are defined as quads $(con, p_{q}, p_{m}, c)\colon con \in Con \land p_{q} \in P \land p_{m} \in P \land c \in C$.
-Here we also employ the numeric subscript notation to access elements of the n-tuples $o_{q}$ and $o_{m}$.
-In each concept association $p_{q}$ is a property associating a concept $con$ to the query contract and $p_{m}$ is a property associating $con$ to a matched contract $c$.
+This function produces a set of concept-mediated associations $CMA$ that are defined as 4-tuples $(con, p_{q}, p_{m}, c) \colon con \in Con, p_{q} \in P, p_{m} \in P, c_{m} \in C$.
+We call them concept-mediated associations since they connect the query contract with the matched contracts via concepts.
+In each association $p_{q}$ is a property associating a concept $con$ to the query contract and $p_{m}$ is a property associating $con$ to a matched contract $c_{m}$. <!-- _b -->
+
+![Overall diagram of concept-mediated associations](img/matchmaking_overall_diagram.png){#fig:matchmaking-overall-diagram width=75%}
+
+The [@fig:matchmaking-overall-diagram] shows an overall diagram of concept-mediated associations.
+Query contract $c_{q}$ is associated to matched contracts $c_{1}, c_{2}, c_{3} \in C$ via CPV concepts that are assigned to contracts either by `pc:mainObject` ($mo$) or `pc:additionalObject` ($ao$).
+The matched contracts in turn lead to bidders $b_{1}, b_{2} \in B$.
+Here, $B$ is the set of known bidders.
+Contracting authority of $c_{q}$ is marked as $a_{q}$, while the contracting authority of $c_{3}$ is denoted as $a_{3}$.
+For $a_{3}$ a zIndex score $z_{3}$ is available.
 
 #### Weighting
 
-The matchmaker can translate each part of concept associations into a weight from $W = \{w \in \mathbb{R} : 0 \leq w \leq 1\}$.
+The matchmaker can translate each part of concept-mediated associations into a weight from $W = \{w \in \mathbb{R} \colon 0 \leq w \leq 1\}$.
 The concept $con$ can be transformed into an IDF, in particular when dealing with concepts obtained via query expansion.
-The properties $p_{q}$ and $p_{m}$ can be weighted according to the degree they contribute to the similarity between contracts.
-The contract $c$ can be turned into a weight corresponding to its contracting authority's fairness score.
+The properties $p_{q}$ and $p_{m}$ can be weighted according to the degree to which they contribute to the similarity between contracts.
+The contract $c_{m}$ can be turned into a weight corresponding to its contracting authority's fairness score. <!-- _b -->
 Some weights are given by data or derived from it, others can be provided as configuration to the matchmaker.
 
 There are several concrete ways in which weights can be applied to CPV concepts.
 The matchmaker may apply an inhibiting weight to de-emphasize the concepts associated with contracts via the `pc:additionalObject` property.
-These weights are applied both to associations with the query contract and those with the matched contracts.
+These weights are applied both to $p_{q}$ and $p_{m}$.
 <!--
 We could allow different weights for associations with the query contract and the matched contracts.
 For example, an additional object of the query contract can be weighted lower than an additional object of a matched contract.
@@ -175,16 +191,16 @@ For instance, while an authority may assign a smaller weight to additional objec
 Similarly, qualifying concepts from the CPV's supplementary vocabulary can be discounted by a lower weight.
 Concepts inferred by query expansion can be weighted either by a fixed inhibition or their inverse document frequency (IDF).
 
-Inverse document frequency is used to de-emphasize the impact of popular CPV concepts on matchmaking.
+Inverse document frequency is used to reduce the impact of popular CPV concepts on matchmaking.
 Unlike infrequent and specific concepts, the popular ones may have lesser discriminative power to determine the relevance of contracts described by them.
-IDF ($idf\colon Con_{CPV} \to \mathbb{R}^{+}$) is computed as follows: <!-- _b -->
+IDF, defined as $idf \colon Con_{CPV} \to \mathbb{R}^{+}$, is computed as follows: <!-- _b -->
 
-$$idf(con) = \log\frac{\left\vert{C}\right\vert}{1 + \left\vert{\{c \in C: con \in \{(con', p, t) \in obj(c): con'\}\}}\right\vert}$$
+$$idf(con) = \log\frac{\left\vert{C}\right\vert}{1 + \left\vert{\{c \in C \colon con \in \{((con', p), t) \in obj(c): con'\}\}}\right\vert}$$
 
 The denominator in the formula is incremented by 1 to avoid division by zero in case of concepts unused in contract objects.
 Subsequently, we scale IDF into $W$ by using its maximum value in order to be able to use it as a weight.
 
-$$idf'(con) = \frac{idf(con)}{max(\{con' \in Con_{CPV} : idf(con')\})}$$ <!-- _b -->
+$$idf'(con) = \frac{idf(con)}{max(\{con' \in Con_{CPV} \colon idf(con')\})}$$ <!-- _b -->
 
 Besides CPV, weights can be applied to objects of specific properties from $P$.
 In particular, the matchmaker can inhibit the objects of `pc:kind` when used in combination with CPV.
@@ -193,24 +209,32 @@ This property indicates the kinds of contracts, such as works or supplies, which
 The matchmaker also allows to weight the matched contracts indirectly via weights of their contracting authorities.
 We use zIndex scores as weights of contracting authorities.
 These scores are taken from the dataset described in [@sec:zindex].
-We assume the function $authority\colon C \to A$ returns the contracting authority of a given contract.
-The function $zindex\colon A \to W$ produces a weight given to a contracting authority by the zIndex score.
+We assume the function $authority \colon C \to Auth$ returns the contracting authority of a given contract.
+Here, $Auth$ denotes the set of known contracting authorities.
+The function $zindex \colon Auth \to W$ produces a weight given to a contracting authority by the zIndex score.
 We can then define the weighting function $zindex'$ by composing these functions; i.e. $zindex' = zindex \circ authority$.
 
-Weighting functions can be defined through a polymorphic function $weight\colon Con \cup P \cup C \to W$ that retrieves a weight according to the type of its argument.
-A weighting function $f$ can be thus applied to all components of concept association $coll \in CA$ using the common higher-order function $map$:
+Weighting functions can be defined through a polymorphic function $weight \colon Con \cup P \cup C \to W$ that retrieves a weight according to the type of its argument.
+A weighting function $f$ can be thus applied to all components of concept-mediated association $coll \in CMA$ using the common higher-order function $map$:
 
-$$map(f, coll) = \begin{cases}
+$$\small
+map(f, coll) = \begin{cases}
   () & \text{if}\ coll = () \\
-  f(coll_{1}) \oplus map(f, (coll_{2}, \dots, coll_{n})) & \text{if}\ coll = (coll_{1}, coll_{2}, \dots, coll_{n})
-\end{cases}$$
+  \begin{split}
+  & f(coll_{1}) \\
+  & \oplus \\
+  & map(f, (coll_{2}, \dots, coll_{n}))
+  \end{split}
+  & \text{if}\ coll = (coll_{1}, coll_{2}, \dots, coll_{n})
+\end{cases}
+\normalsize$$
 
-If we apply it to weighting functions from the set $WF$ and concept associations $CA$, then the type signature of this specialization is $map': WF \times CA \to W$.
+If we apply it to weighting functions from the set $WF$ and concept-mediated associations $CMA$, then the type signature of this derived function is $map' \colon WF \times CMA \to W$.
 
 #### Aggregation functions
 
 We use aggregation functions to turn weights into match scores.
-Weights of components in each concept association are combined using the function $comb$.
+Weights of components in each concept-mediated association are combined using the function $comb$.
 The combined weights are aggregated via the function $agg$.
 Both aggregation functions $comb$ and $agg$ have the same type signature $W \times W \to W$.
 
@@ -242,25 +266,34 @@ We use these t-conorms to aggregate contract similarities into the match scores 
 
 Any aggregation function $f$ is applied to a collection of weights $coll$ using the common higher-order function $foldl$ implementing left fold, in which $e$ is the identity element of $f$.
 
-$$foldl(f, e, coll) = \begin{cases}
+$$\small
+foldl(f, e, coll) = \begin{cases}
   e & \text{if}\ coll = () \\
-  foldl(f, f(e, coll_{1}), (coll_{2}, \dots, coll_{n})) & \text{if}\ coll = (coll_{1}, coll_{2}, \dots, coll_{n})
-\end{cases}$$
+  \begin{split}
+  foldl( & f, \\
+         & f(e, coll_{1}), \\
+         & (coll_{2}, \dots, coll_{n}))
+  \end{split}
+  & \text{if}\ coll = (coll_{1}, coll_{2}, \dots, coll_{n})
+\end{cases}
+\normalsize$$ <!-- _b -->
 
 If fact, both left and right folds can be used, since the aggregation functions we employ are associative.
 
 Given these formulas we can summarize how the matchmaker works.
-Using a configuration of query expansion and weighting, for a query contract $c_{q}$ the matchmaker retrieves concept associations $ca \in match(c_{q}, dir, h)$.
+The matchmaker retrieves concept-mediated associations $cma \in match(c_{q}, dir, dis)$ for a query contract $c_{q}$ using a configuration of query expansion and weighting.
 Concept associations are partitioned into subsets by the bidder awarded with their contract.
-Each concept association in these partitions is subsequently weighted to produce $ws = map(weight, ca)$.
-The obtained weights are combined to a single weight of each concept association $w = foldl(comb, 1, ws)$.
-A tuple $ws$ of the combined weights $w$ from a partition by bidder can be then aggregated by $foldl(agg, 0, ws)$ to produce match scores. 
-Finally, matches are sorted by their score in descending order and the top-$k$ matches are output.
+<!-- We can also create subpartitions by contract within these partitions. The aggregated weights in these subpartitions can be considered contract similarity scores. This may be closer to the informal explanation of matchmaking, yet it is unnecessary. -->
+Each concept-mediated association in these partitions is subsequently weighted to produce an n-tuple $ws = map(weight, cma)$.
+The obtained weights are combined to a single weight of each concept-mediated association $w = foldl(comb, 1, ws)$.
+An n-tuple $ws$ of the combined weights $w$ from a partition by bidder can be then aggregated by $foldl(agg, 0, ws)$ to produce match scores. 
+Finally, the matches are sorted by their score in descending order and the top-$k$ matches are output.
 
-### Non-personalized matchmaking
+<!-- FIXME: Do we need to formalize sorting and accessing the bidders from concept associations? -->
 
-Apart from the above-described matchmaker, we also implemented three non-personalized approaches for matchmaking.
-We call these approaches non-personalized because none of them considers the query contract.
+### Blind matchmaking
+
+Apart from the above-described matchmaker, we also implemented three blind approaches for matchmaking, none of which considers the query contract.
 The most basic is the random matchmaker that recommends bidders at random.
 While it is hardly going to deliver a competitive accuracy, it produces diverse results.
 An approach contrary to random matchmaking is the recommendation of the top-most popular bidders.

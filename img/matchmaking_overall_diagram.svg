@@ -29,11 +29,11 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.80983525"
      inkscape:cx="611.25841"
-     inkscape:cy="151.8411"
+     inkscape:cy="141.96255"
      inkscape:document-units="px"
      inkscape:current-layer="g3012"
      showgrid="false"
-     inkscape:window-width="1285"
+     inkscape:window-width="1280"
      inkscape:window-height="751"
      inkscape:window-x="0"
      inkscape:window-y="23"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -555,7 +555,7 @@
            id="tspan3749"
            sodipodi:role="line">a<tspan
    style="font-size:52%;baseline-shift:sub"
-   id="tspan4174">1</tspan></tspan></text>
+   id="tspan5716">3</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
@@ -569,8 +569,8 @@
            x="412.44537"
            y="62.469582"
            style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Open Sans;-inkscape-font-specification:Open Sans">z<tspan
-   style="font-size:11.53756714px;baseline-shift:sub"
-   id="tspan3922">1</tspan></tspan></text>
+   style="font-size:52%;baseline-shift:sub"
+   id="tspan5718">3</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"

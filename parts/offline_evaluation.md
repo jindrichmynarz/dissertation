@@ -49,17 +49,20 @@ Performance ~ efficiency in time and space (e.g., speed and RAM consumption)
 Mention restrictions by the computational cost of an evaluation protocol? E.g., not using a learning to rank algorithm?
 -->
 
-We define the evaluation metrics using the following notation, building on the notation defined previously. 
+We define the evaluation metrics using the following notation.
+Let $C$ be the set of public contracts and $B$ the set of bidders.
 The function $match_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of bidders recommended for a given public contract by matchmaker $m$.
 The function $bidder\colon C \to B$ returns the bidder to whom a contract was awarded.
 The function $wrank\colon C \to \mathbb{N}_{\ge 1} \cup \{ \text{nil} \}$ gives the rank of the bidder who won a given public contract.
 
-$$wrank(c) = 
+$$wrank(c) =
+  \small
   \begin{cases}
     n \in \mathbb{N}\colon bidder(c)\, \textrm{is in position}\, n\, \textrm{in}\, match_{m}(c)
     & \text{if}\ bidder(c) \in match_{m}(c) \\
     \quad\textrm{nil} & \textrm{otherwise} \\
-  \end{cases}$$
+  \end{cases}
+  \normalsize$$
 
 The function $awards\colon B \to \mathbb{N}$ returns the number of contracts awarded to a given bidder.
 

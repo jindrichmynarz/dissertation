@@ -49,4 +49,9 @@ Comparison of CBR systems with information retrieval systems is in [@Richter2013
 Implementation note:
 If bidder was not awarded any tender, find similar bidders via their description in ARES.
 If bidder's description is not found in ARES, an ad hoc request is issued to the ARES API to fetch its description and run it through ETL.
+
+Use a learning to rank plugin? <https://github.com/o19s/elasticsearch-learning-to-rank>
+Use boosting by recency via scripting?
+Custom similarity based on overlaps in description. <http://stefansavev.com/blog/custom-similarity-for-elasticsearch>
+It is possible to implement ES plugins in Clojure. <https://github.com/dakrone/elasticsearch-clojure-plugin>
 -->

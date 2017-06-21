@@ -57,20 +57,6 @@ Browsing-based approaches: navigation of the item space, for example using criti
 - Critiquing can be used to reformulate matchmaking queries (e.g., assign different weights) or query the results (e.g., filter to meet the critique).
 -->
 
-## Definitions
-
-<!--
-TODO: Does C denote a set of identities or internally structured objects?
--->
-
-We can start with a definition of the key entities involved in the matchmaking task.
-Let $C$ be the set of evaluated public contracts, $B$ the set of known bidders, $A$ the set of contracting authorities, and $Con_{CPV}$ be the set of CPV concepts.
-We use numeric subscripts to access elements of n-tuples, so that $coll_{i}$ denotes the $i$-th element of n-tuple $coll$.
-We use $\mathbb{P}$ to denote a power set of a set.
-We use $a \oplus b$ to denote concatenation of n-tuples $a$ and $b$.
-We define the set of tuples of elements from the set $S$ as $(S)$.
-Composition of functions $f$ and $g$ is denoted $f \circ g$.
-
 <!--
 Subscription to streams
 - Notifications
@@ -133,3 +119,11 @@ Top-k recommendation: best matches are shown, but not their predicted ratings.
 <!-- ... segue ... -->
 
 We experimented with matchmaking methods that use SPARQL, full-text search, and tensor factorization.
+
+## Notation conventions
+
+We employ conventional notation to describe the matchmaking methods.
+We use $\mathbb{P}$ to denote a power set of a set.
+We use $a \oplus b$ to denote concatenation of n-tuples $a$ and $b$.
+We mark the set of tuples of elements from the set $S$ as $(S)$.
+Composition of functions $f$ and $g$ is denoted $f \circ g$.
