@@ -127,7 +127,7 @@ Arguments of the query expansion function $exp$ are a set of contract objects, a
 The direction of expansion $Dir$ is the set $\{\texttt{skos:broaderTransitive}, \texttt{skos:narrowerTransitive}\}$ indicating either the expansion to broader or narrower concepts.
 The distance is the maximum number of hops followed in the expansion.
 Consequently, the query expansion function can be defined as $exp \colon \mathbb{P}(Cobj) \times Dir \times \mathbb{N}_{> 0} \to \mathbb{P}(Cobj)$. <!-- _b -->
-Bidirectional expansion of the contract object $cobj' \subset Cobj$ to the distance $dis$ can thus be computed as $exp(cobj', \texttt{skos:broaderTransitive}, dis) \cup exp(cobj', \texttt{skos:narrowerTransitive}, dis)$.
+Bidirectional expansion of the set of contract objects $\{cobj\} \subset Cobj$ to the distance $dis$ can thus be computed as $exp(\{cobj\}, \texttt{skos:broaderTransitive}, dis) \cup exp(\{cobj\}, \texttt{skos:narrowerTransitive}, dis)$.
 We only require $exp$ to be monotonous, so that for every contract object $cobj \in Cobj$ holds that $((con, p), cona) \in cobj \;\; \Rightarrow \;\; ((con, p), cona) \in exp(cobj, dir, dis)$, hence the function $exp$ returns a union of its provided contracts objects with the inferred contract objects.
 Concrete instantiations of $exp$ can limit which input contract objects are expanded.
 In our case, either no contract objects are expanded or we only expand the explicitly assigned contract objects where $p = \texttt{pc:mainObject}$ and $con \in Con_{CPV}$. <!-- _b -->
