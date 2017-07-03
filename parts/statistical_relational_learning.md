@@ -5,7 +5,7 @@ SRL learns models that *"describe probability distributions $P(\{X\})$ over the 
 Here $X$ denotes a random variable and $\{X\}$ refers to the set of such variables in a relational domain.
 The learned model reflects characteristic patterns and global dependencies in relational data.
 Unlike inference rules, these statistical patterns may not be universally true, but have useful predictive power nonetheless.
-An example of such pattern is homophily, which describes a tendency of similar entities to be related.
+An example of such pattern is homophily [@McPherson2001], which describes a tendency of similar entities to be related.
 A model created by SRL is used to predict probabilities of unknown relations in data.
 In other words, in SRL *"the underlying idea is that reasoning can often be reduced to the task of classifying the truth value of potential statements"* [@Nickel2012, p. 271].
 
@@ -27,7 +27,7 @@ Creating latent features is also called predicate invention.
 
 Collective learning *"refers to the effect that an entity's relationships, attributes, or class membership can be predicted not only from the entity's attributes but also from information distributed in the network environment of the entity"* [@Tresp2014, p. 1550].
 It refers to the *"automatic exploitation of attribute and relationship correlations across multiple interconnections of entities and relations"* [@Nickel2012, p. 272].
-The exploited contextual information propagates through relations in data, so that the inferred dependencies can span across entity boundaries and involve entities more distant in the relational graph.
+The exploited contextual information propagates through relations in data, so that the inferred dependencies can span across entity boundaries and involve entities more distant in a relational graph.
 This feature of collective learning can cope with modelling artefacts in RDF, such as intermediate resources that decompose n-ary relations into binary predicates.
 
 <!--
@@ -41,7 +41,7 @@ Transitivity of relations, discovery of indirect relations
 -->
 
 Collective learning is a distinctive feature of SRL and is particularly manifest in *"domains where entities are interconnected by multiple relations"* [@Nickel2011].
-Conversely, traditional machine learning expects data from single relation, usually provided as a single propositional table.
+Conversely, traditional machine learning expects data from a single relation, usually provided as a single propositional table.
 It considers only attributes of the involved entities, which are assumed to be independent.
 This is why SRL was shown to produce superior results for relational data when compared to learning methods that do not take relations into account [@Tresp2014, p. 1551].
 It is thus important to be able to leverage relations in data effectively.
@@ -61,7 +61,7 @@ LOD is a prime example of a large-scale source of relational data afflicted with
 The open nature of LOD has direct consequences to data inconsistency and noisiness.
 These consequences make LOD challenging for reasoning and querying.
 While SRL can overcome these challenges to some extent, they pose a massive hurdle for traditional reasoning using inference based on description logic.
-Logical inference imposes strict constraints on its input, which are often violated in real-world data [@Nickel2016, p. 28].
+Logical inference imposes strict constraints on its input, which are often violated in real-world data [@Nickel2016, p. 28]:
 
 > *"Concerning requirements on the input data, it is quite unrealistic to expect that data from the open Semantic Web will ever be clean enough such that classical reasoning systems will be able to draw useful inferences from them.
 This would require Semantic Web data to be engineered strongly according to shared principles, which not only contrasts with the bottom-up nature of the Web, but is also unrealistic in terms of conceptual realizability: many statements are not true or false, they rather depend on the perspective taken."* [@Hitzler2010, p. 42]

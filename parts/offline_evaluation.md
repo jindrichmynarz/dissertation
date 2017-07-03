@@ -1,6 +1,7 @@
 ## Offline evaluation
 
 We used offline evaluation to filter matchmaking methods and configurations to those that were subsequently used in qualitative evaluation.
+Since we test different matchmakers in the same context, this evaluation can be considered a trade-off analysis [@Wieringa2014, p. 260], in which we balance the differences in the evaluated measures. 
 
 ### Ground truth
 
