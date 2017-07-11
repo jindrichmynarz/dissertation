@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.80983525"
-     inkscape:cx="611.25841"
-     inkscape:cy="141.96255"
+     inkscape:zoom="1.0848253"
+     inkscape:cx="322.96605"
+     inkscape:cy="197.66352"
      inkscape:document-units="px"
      inkscape:current-layer="g3012"
      showgrid="false"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -574,87 +574,111 @@
       <text
          xml:space="preserve"
          style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-         x="145.7175"
+         x="120.24744"
          y="161.78735"
          id="text3763"
          sodipodi:linespacing="125%"
          transform="scale(1,-1)"><tspan
            sodipodi:role="line"
            id="tspan3765"
-           x="145.7175"
-           y="161.78735">CPV</tspan></text>
+           x="120.24744"
+           y="161.78735">concepts</tspan></text>
       <text
          transform="scale(1,-1)"
          sodipodi:linespacing="125%"
-         id="text3777"
-         y="76.914757"
-         x="85.420731"
-         style="font-size:19.52989197px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         id="text3280"
+         y="76.318886"
+         x="84.549057"
+         style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
          xml:space="preserve"><tspan
-           y="76.914757"
-           x="85.420731"
-           id="tspan3779"
-           sodipodi:role="line">ao</tspan></text>
+           style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+           y="76.318886"
+           x="84.549057"
+           id="tspan3282"
+           sodipodi:role="line">p<tspan
+   style="font-size:52.00042725%;baseline-shift:sub"
+   id="tspan3286">q<tspan
+   id="tspan3322">1</tspan></tspan></tspan></text>
       <text
          xml:space="preserve"
-         style="font-size:19.52989197px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-         x="113.30471"
-         y="50.161201"
-         id="text3781"
+         style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         x="120.80804"
+         y="47.394608"
+         id="text3288"
          sodipodi:linespacing="125%"
          transform="scale(1,-1)"><tspan
            sodipodi:role="line"
-           id="tspan3783"
-           x="113.30471"
-           y="50.161201">mo</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:19.52989197px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-         x="211.45589"
-         y="26.798941"
-         id="text3785"
-         sodipodi:linespacing="125%"
-         transform="scale(1,-1)"><tspan
-           sodipodi:role="line"
-           id="tspan3787"
-           x="211.45589"
-           y="26.798941">ao</tspan></text>
+           id="tspan3290"
+           x="120.80804"
+           y="47.394608"
+           style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Open Sans;-inkscape-font-specification:Open Sans">p<tspan
+   id="tspan3292"
+   style="font-size:52.00042725%;baseline-shift:sub">q<tspan
+   id="tspan3326">2</tspan></tspan></tspan></text>
       <text
          transform="scale(1,-1)"
          sodipodi:linespacing="125%"
-         id="text3789"
-         y="26.798941"
-         x="147.59448"
-         style="font-size:19.52989197px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         id="text3294"
+         y="25.350286"
+         x="145.15556"
+         style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
          xml:space="preserve"><tspan
-           y="26.798941"
-           x="147.59448"
-           id="tspan3791"
-           sodipodi:role="line">mo</tspan></text>
+           style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+           y="25.350286"
+           x="145.15556"
+           id="tspan3296"
+           sodipodi:role="line">p<tspan
+   style="font-size:52.00042725%;baseline-shift:sub"
+   id="tspan3300">m<tspan
+   id="tspan3328">1</tspan></tspan></tspan></text>
       <text
          xml:space="preserve"
-         style="font-size:19.52989197px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-         x="259.50726"
-         y="50.161201"
-         id="text3793"
+         style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         x="192.08633"
+         y="25.350286"
+         id="text3302"
          sodipodi:linespacing="125%"
          transform="scale(1,-1)"><tspan
            sodipodi:role="line"
-           id="tspan3795"
-           x="259.50726"
-           y="50.161201">mo</tspan></text>
+           id="tspan3304"
+           x="192.08633"
+           y="25.350286"
+           style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Open Sans;-inkscape-font-specification:Open Sans">p<tspan
+   id="tspan3306"
+   style="font-size:52.00042725%;baseline-shift:sub">m<tspan
+   id="tspan3334">2</tspan></tspan></tspan></text>
       <text
          transform="scale(1,-1)"
          sodipodi:linespacing="125%"
-         id="text3797"
-         y="50.161201"
-         x="313.85818"
-         style="font-size:19.52989197px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         id="text3308"
+         y="64.027267"
+         x="218.93208"
+         style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
          xml:space="preserve"><tspan
-           y="50.161201"
-           x="313.85818"
-           id="tspan3799"
-           sodipodi:role="line">mo</tspan></text>
+           style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+           y="64.027267"
+           x="218.93208"
+           id="tspan3310"
+           sodipodi:role="line">p<tspan
+   style="font-size:52.00042725%;baseline-shift:sub"
+   id="tspan3312">m<tspan
+   id="tspan3336">3</tspan></tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+         x="273.66293"
+         y="38.157894"
+         id="text3314"
+         sodipodi:linespacing="125%"
+         transform="scale(1,-1)"><tspan
+           sodipodi:role="line"
+           id="tspan3316"
+           x="273.66293"
+           y="38.157894"
+           style="font-size:22.18744659px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Open Sans;-inkscape-font-specification:Open Sans">p<tspan
+   id="tspan3318"
+   style="font-size:52.00042725%;baseline-shift:sub">m<tspan
+   id="tspan3340">4</tspan></tspan></tspan></text>
     </g>
   </g>
 </svg>

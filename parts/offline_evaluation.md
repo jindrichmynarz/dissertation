@@ -1,5 +1,11 @@
 ## Offline evaluation
 
+<!--
+FIXME: Do we basically do grid search? Configuration can be considered as hyperparameters. We are basically trying to find the most important (sensitive) hyper-parameters.
+Idea: distribution of the predicted bidders should be equal to the distribution of the bidder frequencies. (Suggested in <https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf>.)
+- To evaluate effect size, should we use Mann-Whitney's test? <http://yatani.jp/teaching/doku.php?id=hcistats:mannwhitney#effect_size>
+-->
+
 We used offline evaluation to filter matchmaking methods and configurations to those that were subsequently used in qualitative evaluation.
 Since we test different matchmakers in the same context, this evaluation can be considered a trade-off analysis [@Wieringa2014, p. 260], in which we balance the differences in the evaluated measures. 
 

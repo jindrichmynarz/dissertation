@@ -156,16 +156,17 @@ $$match(c_{q}, dir, dis) = \bigcup \left\{ \begin{split}
   & c_{m} \in C, \\
   & o_{m} \in obj(c_{m}), \\
   & matches(o_{q}, o_{m})
-  \end{split}\right\}$$
+  \end{split}\right\}$$ <!-- _b -->
 
-This function produces a set of concept-mediated associations $CMA$ that are defined as 4-tuples $(con, p_{q}, p_{m}, c) \colon con \in Con, p_{q} \in P, p_{m} \in P, c_{m} \in C$.
+The direction of expansion $dir$ and the distance $dis$ are passed as arguments to the query expansion function $exp$.
+The function $match$ produces a set of concept-mediated associations $CMA$ that are defined as 4-tuples $(con, p_{q}, p_{m}, c_{m}) \colon con \in Con, p_{q} \in P, p_{m} \in P, c_{m} \in C$.
 We call them concept-mediated associations since they connect the query contract with the matched contracts via concepts.
 In each association $p_{q}$ is a property associating a concept $con$ to the query contract and $p_{m}$ is a property associating $con$ to a matched contract $c_{m}$. <!-- _b -->
 
 ![Overall diagram of concept-mediated associations](img/matchmaking_overall_diagram.png){#fig:matchmaking-overall-diagram width=75%}
 
 The [@fig:matchmaking-overall-diagram] shows an overall diagram of concept-mediated associations.
-Query contract $c_{q}$ is associated to matched contracts $c_{1}, c_{2}, c_{3} \in C$ via CPV concepts that are assigned to contracts either by `pc:mainObject` ($mo$) or `pc:additionalObject` ($ao$).
+Query contract $c_{q}$ is associated to matched contracts $c_{1}, c_{2}, c_{3} \in C$ via concepts that are assigned to the query contract via $p_{q_{i}}$ and to the matched contracts via $p_{m_{i}}$.
 The matched contracts in turn lead to bidders $b_{1}, b_{2} \in B$.
 Here, $B$ is the set of known bidders.
 Contracting authority of $c_{q}$ is marked as $a_{q}$, while the contracting authority of $c_{3}$ is denoted as $a_{3}$.
@@ -173,14 +174,15 @@ For $a_{3}$ a zIndex score $z_{3}$ is available.
 
 #### Weighting
 
-The matchmaker can translate each part of concept-mediated associations into a weight from $W = \{w \in \mathbb{R} \colon 0 \leq w \leq 1\}$.
-The concept $con$ can be transformed into an IDF, in particular when dealing with concepts obtained via query expansion.
-The properties $p_{q}$ and $p_{m}$ can be weighted according to the degree to which they contribute to the similarity between contracts.
-The contract $c_{m}$ can be turned into a weight corresponding to its contracting authority's fairness score. <!-- _b -->
-Some weights are given by data or derived from it, others can be provided as configuration to the matchmaker.
+The matchmaker can translate each part of concept-mediated associations into a weight $w \in \mathbb{R} \colon 0 \leq w \leq 1$.
+In certain variants of the matchmakers the reference to concept $con$ is transformed to an inverse document frequency (IDF), in particular when dealing with concepts obtained via query expansion.
+Similarly, the properties $p_{q}$ and $p_{m}$ can be weighted according to the degree in which they contribute to the similarity between contracts.
+Likewise, the contract $c_{m}$ can be turned into a weight corresponding to its contracting authority's fairness score. <!-- _b -->
+Some weights are given by data, such as the fairness scores, or derived from it, such as IDFs.
+Others can be provided as configuration of the matchmaker, such as the inhibiting weight of `pc:additionalObject`.
 
 There are several concrete ways in which weights can be applied to CPV concepts.
-The matchmaker may apply an inhibiting weight to de-emphasize the concepts associated with contracts via the `pc:additionalObject` property.
+The matchmaker may apply an inhibiting weight to de-emphasize the concepts associated with contracts via the `pc:additionalObject` property in contrast to the `pc:mainObject`.
 These weights are applied both to $p_{q}$ and $p_{m}$.
 <!--
 We could allow different weights for associations with the query contract and the matched contracts.
@@ -188,21 +190,21 @@ For example, an additional object of the query contract can be weighted lower th
 Such distinction may be motivated by different levels of trust in the consistency of contract descriptions of among the contract authorities.
 For instance, while an authority may assign a smaller weight to additional objects of its contracts, it may assume a higher weight of additional objects of contract by other authorities.
 -->
-Similarly, qualifying concepts from the CPV's supplementary vocabulary can be discounted by a lower weight.
-Concepts inferred by query expansion can be weighted either by a fixed inhibition or their inverse document frequency (IDF).
+Similarly, qualifying concepts from the CPV's supplementary vocabulary can be discounted via a lower weight.
+Concepts inferred by query expansion can be weighted either by a fixed inhibiting weight or their IDF.
 
 Inverse document frequency is used to reduce the impact of popular CPV concepts on matchmaking.
 Unlike infrequent and specific concepts, the popular ones may have lesser discriminative power to determine the relevance of contracts described by them.
-IDF, defined as $idf \colon Con_{CPV} \to \mathbb{R}^{+}$, is computed as follows: <!-- _b -->
+Raw IDF of CPV concepts is defined as $idf \colon Con_{CPV} \to \mathbb{R}^{+}$ and is computed as follows: <!-- _b -->
 
-$$idf(con) = \log\frac{\left\vert{C}\right\vert}{1 + \left\vert{\{c \in C \colon con \in \{((con', p), t) \in obj(c): con'\}\}}\right\vert}$$
+$$idf(con) = \log\frac{\left\vert{C}\right\vert}{1 + \left\vert{\{c \in C \colon ((con, p), cona) \in obj(c)}\right\vert}$$
 
 The denominator in the formula is incremented by 1 to avoid division by zero in case of concepts unused in contract objects.
-Subsequently, we scale IDF into $W$ by using its maximum value in order to be able to use it as a weight.
+Subsequently, we normalize IDF into the range of $\left[0, 1\right]$ by using its maximum value in order to be able to use it as a weight.
 
 $$idf'(con) = \frac{idf(con)}{max(\{con' \in Con_{CPV} \colon idf(con')\})}$$ <!-- _b -->
 
-Besides CPV, weights can be applied to objects of specific properties from $P$.
+Besides CPV, weights can be applied to specific properties from $P$.
 In particular, the matchmaker can inhibit the objects of `pc:kind` when used in combination with CPV.
 This property indicates the kinds of contracts, such as works or supplies, which classify contracts into broad categories.
 
@@ -211,32 +213,14 @@ We use zIndex scores as weights of contracting authorities.
 These scores are taken from the dataset described in [@sec:zindex].
 We assume the function $authority \colon C \to Auth$ returns the contracting authority of a given contract.
 Here, $Auth$ denotes the set of known contracting authorities.
-The function $zindex \colon Auth \to W$ produces a weight given to a contracting authority by the zIndex score.
-We can then define the weighting function $zindex'$ by composing these functions; i.e. $zindex' = zindex \circ authority$.
-
-Weighting functions can be defined through a polymorphic function $weight \colon Con \cup P \cup C \to W$ that retrieves a weight according to the type of its argument.
-A weighting function $f$ can be thus applied to all components of concept-mediated association $coll \in CMA$ using the common higher-order function $map$:
-
-$$\small
-map(f, coll) = \begin{cases}
-  () & \text{if}\ coll = () \\
-  \begin{split}
-  & f(coll_{1}) \\
-  & \oplus \\
-  & map(f, (coll_{2}, \dots, coll_{n}))
-  \end{split}
-  & \text{if}\ coll = (coll_{1}, coll_{2}, \dots, coll_{n})
-\end{cases}
-\normalsize$$
-
-If we apply it to weighting functions from the set $WF$ and concept-mediated associations $CMA$, then the type signature of this derived function is $map' \colon WF \times CMA \to W$.
+The function $zindex \colon Auth \to \left[0, 1\right]$ produces a weight given to a contracting authority by the zIndex score.
+The function weighting by zIndex can then be defined by composing these functions; i.e. $zindex \circ authority$.
 
 #### Aggregation functions
 
 We use aggregation functions to turn weights into match scores.
 Weights of components in each concept-mediated association are combined using the function $comb$.
 The combined weights are aggregated via the function $agg$.
-Both aggregation functions $comb$ and $agg$ have the same type signature $W \times W \to W$.
 
 Aggregation functions take multiple numeric inputs and combine them into a single output.
 The matchmaker uses these functions to combine weights and partial similarity scores to form a match score.
@@ -253,7 +237,6 @@ The basic t-norms can be defined as follows [@Beliakov2015, p. 792]:
 * Product t-norm: $T_{P}(x, y) = x \cdot y$
 * Łukasiewicz's t-norm: $T_{L}(x, y) = max(x + y - 1, 0)$ <!-- _b -->
 
-The identity element of t-norms is 1.
 We use these t-norms to combine weights by the function $comb$.
 The basic t-conorms, complementary to the mentioned t-norms, are the following:
 
@@ -261,32 +244,16 @@ The basic t-conorms, complementary to the mentioned t-norms, are the following:
 * Product t-conorm (probabilistic sum): $S_{P}(x, y) = x + y - x \cdot y$
 * Łukasiewicz's t-conorm (bounded sum): $S_{L}(x, y) = min(x + y, 1)$ <!-- _b -->
 
-The identity element of t-conorms is 0.
 We use these t-conorms to aggregate contract similarities into the match scores of bidders by the function $agg$.
-
-Any aggregation function $f$ is applied to a collection of weights $coll$ using the common higher-order function $foldl$ implementing left fold, in which $e$ is the identity element of $f$.
-
-$$\small
-foldl(f, e, coll) = \begin{cases}
-  e & \text{if}\ coll = () \\
-  \begin{split}
-  foldl( & f, \\
-         & f(e, coll_{1}), \\
-         & (coll_{2}, \dots, coll_{n}))
-  \end{split}
-  & \text{if}\ coll = (coll_{1}, coll_{2}, \dots, coll_{n})
-\end{cases}
-\normalsize$$ <!-- _b -->
-
-If fact, both left and right folds can be used, since the aggregation functions we employ are associative.
+Both t-norms and t-conorms are associative and commutative, so their computation can be extended to arbitrary collections of weights.
 
 Given these formulas we can summarize how the matchmaker works.
 The matchmaker retrieves concept-mediated associations $cma \in match(c_{q}, dir, dis)$ for a query contract $c_{q}$ using a configuration of query expansion and weighting.
-Concept associations are partitioned into subsets by the bidder awarded with their contract.
+Concept associations are partitioned into subsets by the bidder awarded with the contract $c_{m}$ from the association. <!-- _b -->
 <!-- We can also create subpartitions by contract within these partitions. The aggregated weights in these subpartitions can be considered contract similarity scores. This may be closer to the informal explanation of matchmaking, yet it is unnecessary. -->
-Each concept-mediated association in these partitions is subsequently weighted to produce an n-tuple $ws = map(weight, cma)$.
-The obtained weights are combined to a single weight of each concept-mediated association $w = foldl(comb, 1, ws)$.
-An n-tuple $ws$ of the combined weights $w$ from a partition by bidder can be then aggregated by $foldl(agg, 0, ws)$ to produce match scores. 
+Each concept-mediated association in these partitions is subsequently weighted to produce an n-tuple of weights. 
+The obtained weights are combined to a single weight of each concept-mediated association via the $comb$ function.
+An n-tuple of the combined weights from a partition by bidder can be then aggregated by the $agg$ function to produce match scores. 
 Finally, the matches are sorted by their score in descending order and the top-$k$ matches are output.
 
 <!-- FIXME: Do we need to formalize sorting and accessing the bidders from concept associations? -->

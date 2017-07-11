@@ -8,6 +8,7 @@
 * Produce results in EDN (<https://github.com/swaroopch/edn_format>).
 * Consider also <https://github.com/nzhiltsov/Ext-RESCAL>?
 * Learning to rank with <http://fa.bianp.net/blog/2012/learning-to-rank-with-scikit-learn-the-pairwise-transform/>?
+* Use <http://hyperopt.github.io/hyperopt> for hyper-parameter optimization?
 -->
 
 @Nickel2011, @Nickel2012, @Zhiltsov2013
