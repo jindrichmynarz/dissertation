@@ -165,8 +165,11 @@ In each association $p_{q}$ is a property associating a concept $con$ to the que
 
 ![Overall diagram of concept-mediated associations](img/matchmaking_overall_diagram.png){#fig:matchmaking-overall-diagram width=75%}
 
+![Concept-mediated associations between contracts](img/concept_associations.png){#fig:concept-associations width=75%}
+
 The [@fig:matchmaking-overall-diagram] shows an overall diagram of concept-mediated associations.
 Query contract $c_{q}$ is associated to matched contracts $c_{1}, c_{2}, c_{3} \in C$ via concepts that are assigned to the query contract via $p_{q_{i}}$ and to the matched contracts via $p_{m_{i}}$.
+As shown in [@fig:concept-associations], contracts may be associated through different kinds of concepts.
 The matched contracts in turn lead to bidders $b_{1}, b_{2} \in B$.
 Here, $B$ is the set of known bidders.
 Contracting authority of $c_{q}$ is marked as $a_{q}$, while the contracting authority of $c_{3}$ is denoted as $a_{3}$.

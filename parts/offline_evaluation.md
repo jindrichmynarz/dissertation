@@ -3,7 +3,11 @@
 <!--
 FIXME: Do we basically do grid search? Configuration can be considered as hyperparameters. We are basically trying to find the most important (sensitive) hyper-parameters.
 Idea: distribution of the predicted bidders should be equal to the distribution of the bidder frequencies. (Suggested in <https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf>.)
+
+Effect size:
+- Effect size measures substantive significance.
 - To evaluate effect size, should we use Mann-Whitney's test? <http://yatani.jp/teaching/doku.php?id=hcistats:mannwhitney#effect_size>
+- Compare effect sizes relative to the baseline? 
 -->
 
 We used offline evaluation to filter matchmaking methods and configurations to those that were subsequently used in qualitative evaluation.
