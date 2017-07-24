@@ -63,6 +63,7 @@ Overall, we developed tens of SPARQL Update operations for data transformation.
 One of the principles we followed was to reduce data early in order to avoid needless processing in subsequent transformation steps.
 For example, we deleted empty contract lots and resources orphaned^[We consider subordinate resources without inbound links as orphaned.] in other transformations.
 Several transformations were used to clean malformed literals; for example to regularize common abbreviations for organizations types or convert `\/` into `V`.
+We removed award dates from the future.
 We added default values into the data.
 Since the dataset is of Czech origin, we used Czech koruna (CZK) as default value in case currency was missing.
 Addresses without an explicitly stated country were assumed to be located in the Czech Republic.
