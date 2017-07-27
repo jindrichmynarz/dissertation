@@ -156,7 +156,7 @@ We used Wilcoxon signed-rank test [@Rey2014] to evaluate the statistical signifi
 We chose it because we compare ranks for the whole dataset and this test is suited for paired samples from the same population.
 Moreover, it does not require the compared samples to follow normal distribution, which is the case of the distributions of ranks.
 
-### Evaluation results
+### Results for SPARQL-based matchmakers
 
 We chose SPARQL-based matchmaking using exact matches via CPV without weighting as our baseline.
 The developed matchmaking methods and configurations were assessed by comparing their evaluation results with the results obtained for the baseline configuration.
@@ -184,9 +184,18 @@ There is no need to replicate these findings.
 
 <!-- Data reduction -->
 
-<!--
-Data reduction ~ cold start problem.
--->
+We evaluated the impact of data reduction on HR@10 for the baseline matchmaker and the blind matchmaker that constantly recommends the top winning bidders.
+Prior to running the evaluation we reduced the number of links between contracts and bidders to a given fraction.
+For example, if the level of data reduction was set to 0.4, 60 % of the links were removed.
+Links to remove were selected randomly.
+The [@fig:data-reduction] shows HR@10 per level of data reduction for the two compared matchmakers.
+
+![HR@10 per level of data reduction](img/evaluation/data_reduction.png){#fig:data-reduction}
+
+In general, we decreased the data reduction level by 0.1 for each evaluation run, but a smaller step was used for the lower levels to better distinguish the impact of data reduction at smaller data sizes.
+The evaluation showed that HR@10 grows logarithmically with the size of the data, while the blind matchmaker performs the same no matter the data size.
+As expected, the baseline matchmaker improves its performance as the data it learns from accrues.
+Both approaches suffer from the cold start problem, although the baseline matchmaker improves rapidly with the initial data growth and demonstrates diminishing returns as data becomes larger.
 
 <!-- Non-personalized matchmakers -->
 
@@ -227,3 +236,7 @@ Other baselines:
 * Recommend random bidders
 * Recommend bidders with highest PageRank
 -->
+
+### Results for Elasticsearch-based matchmakers
+
+### Results for RESCAL-based matchmakers
