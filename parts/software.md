@@ -150,6 +150,23 @@ Both SPARQL queries are provided as Mustache[^mustache] templates to allow param
 Each retrieved description in RDF is converted to JSON-LD and transformed via a provided JSON-LD frame that coerces the input RDF graph into a predictable JSON tree.
 The output is appended to a file that is serialized as Newline Delimited JSON (NDJSON).
 
+### sparql-to-tensor {.unnumbered}
+
+sparql-to-tensor^[<https://github.com/jindrichmynarz/sparql-to-tensor>] exports RDF data from SPARQL endpoints to tensors.
+The tensors are represented as a collection of frontal slices serialized as sparse matrices in the MatrixMarket coordinate format.^[<http://math.nist.gov/MatrixMarket/formats.html#MMformat>]
+IRIs of tensor entities are written to a `headers.txt` file.
+Each IRI is written on a separate line, so that line numbers can be used as indices of the entities in the matrices.
+The header can thus be used to translate the matrices to IRIs of RDF resources.
+
+Tensors are constructed from results of SPARQL SELECT queries provided to the tool by the user.
+Each query must project the several variables.
+The `?feature` variable determines the tensor slice.
+It typically corresponds to an RDF property, but it can also represent a feature constructed from the source RDF data.
+The `?s` variable is an entity that is a subject of the feature, and the `?o` variable is its object.
+An optional variable `?weight` can indicate the weight of the relation between the entities.
+It is a decimal number from the interval $\left[0, 1\right]$, with the default value being 1.
+The SELECT queries must be provided as Mustache[^mustache] templates that allows to retrieve results via pages delimited by `LIMIT` and `OFFSET`.
+
 ### sparql-unlimited {.unnumbered}
 
 sparql-unlimited^[<https://github.com/jindrichmynarz/sparql-unlimited>] can execute SPARQL Update operations that affect many resources by running multiple updates that affect successive subsets of these resources.
