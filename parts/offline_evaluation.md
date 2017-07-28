@@ -161,7 +161,6 @@ All reported evaluation results are rounded to two decimal places.
 We chose SPARQL-based matchmaking using exact matches via CPV without weighting as our baseline.
 The developed matchmaking methods and configurations were assessed by comparing their evaluation results with the results obtained for the baseline configuration.
 In this way, we measured the progress beyond the baseline that various matchmaking factors were able to achieve.
-
 We test several factors involved in the matchmakers.
 These factors include weighting, query expansion, aggregation functions, and data reduction.
 
@@ -184,9 +183,7 @@ Top page rank bidders    0.03    0.01    0.00    1.00    0.80
 
 Table: Evaluation of blind matchmakers {#tbl:blind-matchmakers}
 
-<!--
-There are also papers that consider multiple baselines, such as [@Garcin2014].
--->
+<!-- There are also papers that consider multiple baselines, such as [@Garcin2014]. -->
 
 <!-- Weighting -->
 
@@ -220,11 +217,20 @@ The evaluation showed that HR@10 grows logarithmically with the size of the data
 As can be expected, the baseline matchmaker improves its performance as the data it learns from accrues.
 Both approaches suffer from the cold start problem, although the baseline matchmaker improves rapidly with the initial data growth and demonstrates diminishing returns as data becomes larger.
 
-<!-- Evaluation results for countermeasures to limits of our ground truth:
-* Weighting by zIndex
-* Learning from contracts awarded in open procedures only.
-  The majority of the Czech public contracts actually use an open procedure.
--->
+We evaluated two approaches devised as counter-measures to address the limits of our ground truth.
+One weighted contract awards by the zIndex fairness score of the contracting authority, the other limited the training dataset to contracts awarded in open procedures.
+The proposed counter-measures were not successful.
+Both approaches fared worse than our baseline, as documented in the [@tbl:counter-measures-evaluation].
+While the impact of weighting by zIndex is barely noticeable, the restriction to open procedures decreased the evaluated metrics.
+The decrease may be attributed to the smaller size of training data, even though the majority of the contracts in our dataset were awarded via an open procedure.
+
+Matchmaker                       HR@10  MRR@10   CC@10	    PC  LTP@10
+------------------------------ ------- ------- ------- ------- -------
+Baseline                          0.25    0.12    0.57    0.98    0.68
+Baseline, zIndex                  0.24    0.12    0.57    0.98    0.69
+Baseline, only open procedures    0.21    0.11    0.47    0.96    0.70
+
+Table: Evaluation of counter-measures to limits of the ground truth {#tbl:counter-measures-evaluation}
 
 <!--
 ### Out-takes:

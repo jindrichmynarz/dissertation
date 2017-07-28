@@ -36,7 +36,7 @@ Since learning from contracts awarded in the past is the fundamental part of our
 Nevertheless, how can matchmaking work without learning from the awarded contracts? Can it only employ similarity-based retrieval?
 -->
 
-We devised several countermeasures to ameliorate the impact of adverse selection in our ground truth.
+We devised several counter-measures to ameliorate the impact of adverse selection in our ground truth.
 We experimented with discounting contract awards by the zIndex scores of their contracting authorities.
 However, this is a blunt tool, since it applies across the board for all contracts by a contracting authority.
 Within large contracting authorities each contract may be administered by different civil servants, which may change over time.

@@ -46,7 +46,7 @@ As is apparent from the cardinalities of many properties, the dataset's quality 
 Maximum cardinalities of several properties are higher than expected due to several reasons.
 Some entities were merged inadvertently due to their unreliable identifiers.
 For example, there are few public contracts that share the placeholder identifier `1`.
-We adopted several heuristic countermeasures to avoid fusing distinct entities, such as in case of the previous example, but in general we could not ensure the reliability of all identifiers.
+We adopted several heuristic counter-measures to avoid fusing distinct entities, such as in case of the previous example, but in general we could not ensure the reliability of all identifiers.
 Another cause of high cardinalities is incomplete data fusion due to insufficient information needed to decide on which values to drop and which ones to keep.
 Once the hints for by data fusion, such as the semantics or temporal order of contract notices, were used up, there is no more guidance for preferring particular values.
 When this happens, we can either resort to random sampling or leave the data as is.
