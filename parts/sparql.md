@@ -88,7 +88,7 @@ It retrieves contract objects that overlap with the object of the query contract
 Components of contract objects are weighted and these weights are combined into partial similarity scores.
 Partial similarities are then aggregated per bidder to produce bidder's match score.
 
-#### Contract objects
+#### Contract objects {#sec:contract-objects}
 
 Contract objects describe what products or services are sought by contracts.
 There are many ways how a contract object can be described.

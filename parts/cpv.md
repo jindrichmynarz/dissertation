@@ -1,4 +1,4 @@
-### Common Procurement Vocabulary
+### Common Procurement Vocabulary {#sec:cpv}
 
 Common Procurement Vocabulary (CPV)^[<http://simap.ted.europa.eu/web/simap/cpv>] is a controlled vocabulary standardized by the EU for harmonizing the description of procured objects across the EU member states.
 Within the EU, CPV has been mandatory to use for public procurement since 2006. <!-- FIXME: Add citation? -->

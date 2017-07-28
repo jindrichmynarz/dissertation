@@ -7,11 +7,11 @@ Idea: distribution of the predicted bidders should be equal to the distribution 
 Effect size:
 - Effect size measures substantive significance.
 - To evaluate effect size, should we use Mann-Whitney's test? <http://yatani.jp/teaching/doku.php?id=hcistats:mannwhitney#effect_size>
-- Compare effect sizes relative to the baseline? 
+- Compare effect sizes relative to the baseline?
 -->
 
 We used offline evaluation to filter matchmaking methods and configurations to those that were subsequently used in qualitative evaluation.
-Since we test different matchmakers in the same context, this evaluation can be considered a trade-off analysis [@Wieringa2014, p. 260], in which we balance the differences in the evaluated measures. 
+Since we test different matchmakers in the same context, this evaluation can be considered a trade-off analysis [@Wieringa2014, p. 260], in which we balance the differences in the evaluated measures.
 
 ### Ground truth
 
@@ -24,7 +24,7 @@ Thus, in terms of [@Beel2013], we use a "user-offline-dataset", since it contain
 
 Due to the design of the chosen evaluation task, we had to adjust our ground truth data.
 Since we evaluate matchmaking as a prediction of the awarded bidders, we need each public contract to have a single winner.
-However, that is not the case for around 1 % of public contracts in our dataset. 
+However, that is not the case for around 1 % of public contracts in our dataset.
 This may be either in error or when members of the winning groups of bidders are listed separately.
 For example, framework agreements may be awarded to multiple bidders.
 For the sake of simplicity we decided to exclude these contracts from our ground truth.
@@ -51,7 +51,7 @@ Should we add an explanation why we did not split folds by time?
 The objectives we focus on in offline evaluation are accuracy and diversity of the matchmaking results.
 The adopted evaluation metrics thus go beyond those that reflect accuracy.
 We aim to maximize the metrics of accuracy.
-In case of the non-accuracy metrics we strive to increase them without degrading the accuracy. 
+In case of the non-accuracy metrics we strive to increase them without degrading the accuracy.
 
 <!-- Evaluation of performance?
 Perhaps a rough overall assessment can suffice. E.g., both the SPARQL-based and Elasticsearch-based matchmakers deliver real-time performance, while the RESCAL-based one has to be used in batch mode.
@@ -82,7 +82,7 @@ We measured accuracy using hit rate at 10 (HR@10) and mean reciprocal rank at 10
 HR@10 [@Deshpande2004, p. 159] is the share of queries for which hits are found in the top 10 results.
 We consider hits to be the results that include the awarded bidder.
 We adopted HR@10 as the primary metric that we aim to increase.
-This metric can be calculated for the matchmaker $m$ as follows: 
+This metric can be calculated for the matchmaker $m$ as follows:
 
 $$HR@10 = \frac{\left\vert{c \in C : bidder(c) \in match_{m}(c) \land wrank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
 
@@ -90,7 +90,7 @@ MRR@10 [@Craswell2009] is the arithmetic mean of multiplicative inverse ranks.
 Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such:
 
 $$mir(c)=\begin{cases}
-         \frac{1}{wrank(c)} & \text{if}\ bidder(c) \in match_{m}(c) \\ 
+         \frac{1}{wrank(c)} & \text{if}\ bidder(c) \in match_{m}(c) \\
          0 & \text{nil}
        \end{cases}$$
 
@@ -119,7 +119,7 @@ LTP@10 [@Adomavicius2012] is a metric of novelty, which is based on the distribu
 Concretely, it measures the share of items from the long tail in the matchmaking results.
 If we sort bidders in descending order by the number of contracts awarded to them, the first bidders that account for 20 % of contract awards form the *short head* and the remaining ones constitute the *long tail*.
 In case of the Czech public procurement data, 20 % of the awarded contracts concentrates among the 101 most popular bidders.
-To avoid awarding contracts only to a few highly successful bidders, we aim to increase the recommendations from the long tail of bidders. 
+To avoid awarding contracts only to a few highly successful bidders, we aim to increase the recommendations from the long tail of bidders.
 This is especially important for evaluation of the case-based matchmakers, which tend to favour the most popular bidders.
 Let $(b_{1}, \dots, b_{n})$ be an n-tuple of all bidders $b_{i} \in B$, so that $(i > j) \implies awards(b_{i}) \geq awards(b_{j})$, so that the bidders are sorted in descending order by the number of contracts awarded to them. <!-- _b -->
 The short head $SH$ of this ordered n-tuple can be then defined as:
@@ -155,6 +155,7 @@ We used Wilcoxon signed-rank test [@Rey2014] to evaluate the statistical signifi
 We chose it because we compare ranks for the whole dataset and this test is suited for paired samples from the same population.
 Moreover, it does not require the compared samples to follow normal distribution, which is the case of the distributions of ranks.
 All reported evaluation results are rounded to two decimal places.
+The best results for each metric in each table are highlighted by using a bold font.
 
 ### Results for SPARQL-based matchmakers
 
@@ -175,15 +176,66 @@ On the other hand, recommending the top winning bidders achieves the lowest poss
 Since 7 % of contracts is awarded to the top 10 most winning bidders, recommending them produces the same HR@10.
 Recommending the bidders that score the highest page rank is not as successful as simply recommending the top winning bidders, achieving an HR@10 of 0.03.
 
-Matchmaker              HR@10  MRR@10   CC@10	     PC  LTP@10
---------------------- ------- ------- ------- ------- -------
-Random                   0.00    0.00    1.00    1.00    0.99
-Top winning bidders      0.07    0.03    0.00    1.00    0.00
-Top page rank bidders    0.03    0.01    0.00    1.00    0.80
+Matchmaker               HR@10   MRR@10    CC@10       PC   LTP@10
+--------------------- -------- -------- -------- -------- --------
+Random                    0.00     0.00 **1.00** **1.00** **0.99**
+Top winning bidders   **0.07** **0.03**     0.00 **1.00**     0.00
+Top page rank bidders     0.03     0.01     0.00 **1.00**     0.80
 
 Table: Evaluation of blind matchmakers {#tbl:blind-matchmakers}
 
 <!-- There are also papers that consider multiple baselines, such as [@Garcin2014]. -->
+
+<!-- Individual features -->
+
+As we described in the [@sec:contract-objects], we used several properties that describe contract objects.
+We evaluated these properties separately, without weighting, to determine their predictive powers.
+Evaluation results of matchmakers based on the four considered properties are given in the [@tbl:properties-evaluation].
+The best-performing property is the `pc:mainObject`.
+We chose this property as our baseline that we tried to improve further on.
+The others achieved worse results.
+While the `pc:additionalObject` better covers the long tail, its prediction coverage is low because it is able to produce matches only for the few contracts that are described with this property.
+The `pc:kind` fails in diversity metrics, covering only a minute fraction of the bidders.
+Since there are only few distinct kinds of contracts in our dataset, this property is unable to sufficiently distinguish bidders and thus concentrates only on recommending the most popular ones.
+The weak performance of the `isvz:serviceCategory` may be attributed to its limit to contracts for services.
+
+Property                  HR@10   MRR@10    CC@10       PC   LTP@10
+---------------------- -------- -------- -------- -------- --------
+`pc:mainObject`        **0.25** **0.12** **0.57**     0.98     0.68
+`pc:additionalObject`      0.07     0.04     0.38     0.36 **0.69**
+`pc:kind`                  0.10     0.04     0.00 **0.99**     0.00
+`isvz:serviceCategory`     0.09     0.04     0.04     0.80     0.28
+
+Table: Evaluation of individual properties {#tbl:properties-evaluation}
+
+Having evaluated the properties individually we examined whether their combinations would perform better.
+We combined the properties with the baseline property `pc:mainObject`, using a reduced weight of 0.1 for the added properties.
+Besides the properties evaluated above, we also experimented with including the qualifiers of CPV concepts described in the [@sec:cpv].
+The evaluation results of matchmakers based off combinations of properties are presented in [@tbl:combined-properties].
+None of the properties produced a synergistic effect with `pc:mainObject`.
+If there was an improvement, it was not practically meaningful.
+We also experimented with larger range of weights for the combination with `pc:additionalProperty`, however, none of the weights led to a significant difference in evaluation results.
+
+------------------------------------------------------------------------
+Property                    HR@10    MRR@10     CC@10       PC    LTP@10
+------------------------ -------- --------- --------- -------- ---------
+`pc:additionalObject`        0.25      0.12  **0.57**     0.99      0.65
+
+`pc:kind`                    0.16      0.08      0.09     1.00      0.14
+
+`isvz:serviceCategory`       0.20      0.09      0.39     0.99      0.37
+
+Qualifier                    0.25  **0.12**      0.57     0.98  **0.69**
+
+`pc:additionalObject`,   **0.25**      0.12      0.56     0.99      0.64
+qualifiers
+
+`pc:additionalObject`,       0.15      0.07      0.09 **1.00**      0.13
+`pc:kind`,
+`isvz:serviceCategory`
+------------------------------------------------------------------------
+
+Table: Evaluation of combined properties {#tbl:combined-properties}
 
 <!-- Weighting -->
 
@@ -217,6 +269,8 @@ The evaluation showed that HR@10 grows logarithmically with the size of the data
 As can be expected, the baseline matchmaker improves its performance as the data it learns from accrues.
 Both approaches suffer from the cold start problem, although the baseline matchmaker improves rapidly with the initial data growth and demonstrates diminishing returns as data becomes larger.
 
+<!-- Counter-measures -->
+
 We evaluated two approaches devised as counter-measures to address the limits of our ground truth.
 One weighted contract awards by the zIndex fairness score of the contracting authority, the other limited the training dataset to contracts awarded in open procedures.
 The proposed counter-measures were not successful.
@@ -224,11 +278,11 @@ Both approaches fared worse than our baseline, as documented in the [@tbl:counte
 While the impact of weighting by zIndex is barely noticeable, the restriction to open procedures decreased the evaluated metrics.
 The decrease may be attributed to the smaller size of training data, even though the majority of the contracts in our dataset were awarded via an open procedure.
 
-Matchmaker                       HR@10  MRR@10   CC@10	    PC  LTP@10
------------------------------- ------- ------- ------- ------- -------
-Baseline                          0.25    0.12    0.57    0.98    0.68
-Baseline, zIndex                  0.24    0.12    0.57    0.98    0.69
-Baseline, only open procedures    0.21    0.11    0.47    0.96    0.70
+Matchmaker                          HR@10   MRR@10    CC@10       PC   LTP@10
+-------------------------------- -------- -------- -------- -------- --------
+`pc:mainObject`                  **0.25** **0.12** **0.57** **0.98**     0.68
+`pc:mainObject`, zIndex              0.24     0.12     0.57 **0.98**     0.69
+`pc:mainObject`, open procedures     0.21     0.11     0.47     0.96 **0.70**
 
 Table: Evaluation of counter-measures to limits of the ground truth {#tbl:counter-measures-evaluation}
 
@@ -251,13 +305,6 @@ The task 2 of the challenge used F1-measure @ top 5.
 The evaluation of task 3 on diversity is evaluated using intra-list diversity (ILD) with only dcterms:subject and dbo:author. We can also restrict the ILD to few properties (or property paths).
 
 User coverage: a share of bidders for which the system is able of recommending contracts.
-
-Other baselines:
-
-* Exact match via CPV
-* Recommend most awarded bidders constantly
-* Recommend random bidders
-* Recommend bidders with highest PageRank
 -->
 
 ### Results for Elasticsearch-based matchmakers
