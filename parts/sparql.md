@@ -219,7 +219,7 @@ Here, $Auth$ denotes the set of known contracting authorities.
 The function $zindex \colon Auth \to \left[0, 1\right]$ produces a weight given to a contracting authority by the zIndex score.
 The function weighting by zIndex can then be defined by composing these functions; i.e. $zindex \circ authority$.
 
-#### Aggregation functions
+#### Aggregation functions {#sec:aggregation-functions}
 
 We use aggregation functions to turn weights into match scores.
 Weights of components in each concept-mediated association are combined using the function $comb$.

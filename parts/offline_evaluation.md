@@ -186,12 +186,30 @@ Table: Evaluation of blind matchmakers {#tbl:blind-matchmakers}
 
 <!-- There are also papers that consider multiple baselines, such as [@Garcin2014]. -->
 
+<!-- Aggregation functions -->
+
+We evaluated the aggregation functions from the [@sec:aggregation-functions].
+The functions were applied to matchmaking via the `pc:mainObject` property with the weight of 0.6.
+This weight was chosen in order to allow the differences between the functions to manifest.
+The results of this comparison are shown in [@tbl:norms-conorms].
+Product aggregation clearly outperforms the other measure in terms of accuracy, even though it does so at a cost of diminished diversity.
+This outcome led us to use the product aggregation in all other matchmakers we evaluated.
+
+Aggregation function    HR@10   MRR@10    CC@10       PC   LTP@10
+-------------------- -------- -------- -------- -------- --------
+Gödel                    0.18     0.07 **0.60** **0.98**     0.83
+Product              **0.25** **0.12**     0.57 **0.98**     0.68
+Łukasiewicz              0.16     0.07     0.58 **0.98** **0.86**
+
+Table: Evaluation t-norms and t-conorms {#tbl:norms-conorms}
+
 <!-- Individual features -->
 
 As we described in the [@sec:contract-objects], we used several properties that describe contract objects.
 We evaluated these properties separately, without weighting, to determine their predictive powers.
 Evaluation results of matchmakers based on the four considered properties are given in the [@tbl:properties-evaluation].
 The best-performing property is the `pc:mainObject`.
+Its HR@k grows logarithmically with $k$ [@fig:cumulative-hr], starting at 7 % chance of finding the contact's winner as the first hit.
 We chose this property as our baseline that we tried to improve further on.
 The others achieved worse results.
 While the `pc:additionalObject` better covers the long tail, its prediction coverage is low because it is able to produce matches only for the few contracts that are described with this property.
@@ -208,13 +226,15 @@ Property                  HR@10   MRR@10    CC@10       PC   LTP@10
 
 Table: Evaluation of individual properties {#tbl:properties-evaluation}
 
+![HR@k for `pc:mainObject`](img/evaluation/cumulative_hr.png){#fig:cumulative-hr width=75%}
+
 Having evaluated the properties individually we examined whether their combinations would perform better.
 We combined the properties with the baseline property `pc:mainObject`, using a reduced weight of 0.1 for the added properties.
 Besides the properties evaluated above, we also experimented with including the qualifiers of CPV concepts described in the [@sec:cpv].
 The evaluation results of matchmakers based off combinations of properties are presented in [@tbl:combined-properties].
 None of the properties produced a synergistic effect with `pc:mainObject`.
 If there was an improvement, it was not practically meaningful.
-We also experimented with larger range of weights for the combination with `pc:additionalProperty`, however, none of the weights led to a significant difference in evaluation results.
+We also experimented with a larger range of weights for the combination with `pc:additionalProperty`, however, none of the weights led to a significant difference in evaluation results.
 
 ------------------------------------------------------------------------
 Property                    HR@10    MRR@10     CC@10       PC    LTP@10
