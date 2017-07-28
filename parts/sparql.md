@@ -261,7 +261,7 @@ Finally, the matches are sorted by their score in descending order and the top-$
 
 <!-- FIXME: Do we need to formalize sorting and accessing the bidders from concept associations? -->
 
-### Blind matchmaking
+### Blind matchmakers {#sec:blind-matchmakers}
 
 Apart from the above-described matchmaker, we also implemented three blind approaches for matchmaking, none of which considers the query contract.
 The most basic is the random matchmaker that recommends bidders at random.

@@ -2,7 +2,7 @@
 
 <!--
 FIXME: Do we basically do grid search? Configuration can be considered as hyperparameters. We are basically trying to find the most important (sensitive) hyper-parameters.
-Idea: distribution of the predicted bidders should be equal to the distribution of the bidder frequencies. (Suggested in <https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf>.)
+Idea: distribution of the predicted bidders should be equal to the distribution of the bidder frequencies. (Suggested in <https://static.googleusercontent.com/media/research.google.com/en/pubs/archive/43146.pdf>.)
 
 Effect size:
 - Effect size measures substantive significance.
@@ -38,7 +38,6 @@ We split the evaluation data into training and testing dataset.
 The testing dataset contains the withheld contract awards that a matchmaker attempts to predict.
 We used 5-fold cross-validation, so that we divided the evaluation data into five non-overlapping folds, each of which was used as a testing dataset, while the remaining folds were used for training the evaluated matchmakers.
 In this way we tested prediction of each contract award in the ground truth.
-<!-- To avoid overlaps between the folds we sorted the divided contract awards by IRIs of contracts. (Unnecessary detail?) -->
 
 <!--
 Should we split by time? For example, use 8 years (2006-2014) as training and 2 years (2015-2016) for testing?
@@ -155,6 +154,7 @@ Results with the status of non-match are much more prevalent in matchmaking than
 We used Wilcoxon signed-rank test [@Rey2014] to evaluate the statistical significance of differences between the distributions of ranks produced by the evaluated matchmakers.
 We chose it because we compare ranks for the whole dataset and this test is suited for paired samples from the same population.
 Moreover, it does not require the compared samples to follow normal distribution, which is the case of the distributions of ranks.
+All reported evaluation results are rounded to two decimal places.
 
 ### Results for SPARQL-based matchmakers
 
@@ -164,6 +164,29 @@ In this way, we measured the progress beyond the baseline that various matchmaki
 
 We test several factors involved in the matchmakers.
 These factors include weighting, query expansion, aggregation functions, and data reduction.
+
+<!-- Blind matchmakers -->
+
+As a starting point, we evaluated the blind matchmakers described in the [@sec:blind-matchmakers].
+Results of their evaluation are summarized in the [@tbl:blind-matchmakers].
+Since these matchmakers ignore the query contract, they are able to produce matches for any contract and thus score the maximum PC.
+They cover the opposite sides of the diversity spectrum.
+On the one hand, random matchmaker can recommend any bidder, most of which come from the long tail.
+On the other hand, recommending the top winning bidders achieves the lowest possible catalog coverage, the intersection of which with the long tail is empty by definition.
+Since 7 % of contracts is awarded to the top 10 most winning bidders, recommending them produces the same HR@10.
+Recommending the bidders that score the highest page rank is not as successful as simply recommending the top winning bidders, achieving an HR@10 of 0.03.
+
+Matchmaker              HR@10  MRR@10   CC@10	     PC  LTP@10
+--------------------- ------- ------- ------- ------- -------
+Random                   0.00    0.00    1.00    1.00    0.99
+Top winning bidders      0.07    0.03    0.00    1.00    0.00
+Top page rank bidders    0.03    0.01    0.00    1.00    0.80
+
+Table: Evaluation of blind matchmakers {#tbl:blind-matchmakers}
+
+<!--
+There are also papers that consider multiple baselines, such as [@Garcin2014].
+-->
 
 <!-- Weighting -->
 
@@ -194,14 +217,8 @@ The [@fig:data-reduction] shows HR@10 per level of data reduction for the two co
 
 In general, we decreased the data reduction level by 0.1 for each evaluation run, but a smaller step was used for the lower levels to better distinguish the impact of data reduction at smaller data sizes.
 The evaluation showed that HR@10 grows logarithmically with the size of the data, while the blind matchmaker performs the same no matter the data size.
-As expected, the baseline matchmaker improves its performance as the data it learns from accrues.
+As can be expected, the baseline matchmaker improves its performance as the data it learns from accrues.
 Both approaches suffer from the cold start problem, although the baseline matchmaker improves rapidly with the initial data growth and demonstrates diminishing returns as data becomes larger.
-
-<!-- Non-personalized matchmakers -->
-
-<!--
-There are also papers that consider multiple baselines, such as [@Garcin2014].
--->
 
 <!-- Evaluation results for countermeasures to limits of our ground truth:
 * Weighting by zIndex
