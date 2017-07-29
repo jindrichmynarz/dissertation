@@ -191,8 +191,11 @@ Table: Evaluation of blind matchmakers {#tbl:blind-matchmakers}
 We evaluated the aggregation functions from the [@sec:aggregation-functions].
 The functions were applied to matchmaking via the `pc:mainObject` property with the weight of 0.6.
 This weight was chosen in order to allow the differences between the functions to manifest.
+For instance, if we used the weight of 1, Łukasiewicz's aggregation would not distinguish between bidders who won one matching contract and those who won more.
 The results of this comparison are shown in [@tbl:norms-conorms].
-Product aggregation clearly outperforms the other measure in terms of accuracy, even though it does so at a cost of diminished diversity.
+Product aggregation clearly outperforms the other functions in terms of accuracy, even though it does so at a cost of diminished diversity.
+Both Gödel's and Łukasiewicz's aggregation functions do not learn sufficiently from the extent of matched data.
+Similar findings were obtained in our previous work in @Mynarz2015.
 This outcome led us to use the product aggregation in all other matchmakers we evaluated.
 
 Aggregation function    HR@10   MRR@10    CC@10       PC   LTP@10
@@ -209,7 +212,7 @@ As we described in the [@sec:contract-objects], we used several properties that 
 We evaluated these properties separately, without weighting, to determine their predictive powers.
 Evaluation results of matchmakers based on the four considered properties are given in the [@tbl:properties-evaluation].
 The best-performing property is the `pc:mainObject`.
-Its HR@k grows logarithmically with $k$ [@fig:cumulative-hr], starting at 7 % chance of finding the contact's winner as the first hit.
+As the [@fig:cumulative-hr] illustrates, its HR@k grows logarithmically with $k$, starting at 7 % chance of finding the contact's winner as the first hit.
 We chose this property as our baseline that we tried to improve further on.
 The others achieved worse results.
 While the `pc:additionalObject` better covers the long tail, its prediction coverage is low because it is able to produce matches only for the few contracts that are described with this property.
@@ -226,7 +229,7 @@ Property                  HR@10   MRR@10    CC@10       PC   LTP@10
 
 Table: Evaluation of individual properties {#tbl:properties-evaluation}
 
-![HR@k for `pc:mainObject`](img/evaluation/cumulative_hr.png){#fig:cumulative-hr width=75%}
+![HR@k for `pc:mainObject`](img/evaluation/cumulative_hr.png){#fig:cumulative-hr}
 
 Having evaluated the properties individually we examined whether their combinations would perform better.
 We combined the properties with the baseline property `pc:mainObject`, using a reduced weight of 0.1 for the added properties.
@@ -235,6 +238,7 @@ The evaluation results of matchmakers based off combinations of properties are p
 None of the properties produced a synergistic effect with `pc:mainObject`.
 If there was an improvement, it was not practically meaningful.
 We also experimented with a larger range of weights for the combination with `pc:additionalProperty`, however, none of the weights led to a significant difference in evaluation results.
+Our conclusion is in line with Maidel et al., who found in similar circumstances that *"the inclusion of item concept weights does not improve the performance of the algorithm"* [-@Maidel2008, p. 97].
 
 ------------------------------------------------------------------------
 Property                    HR@10    MRR@10     CC@10       PC    LTP@10
@@ -257,21 +261,8 @@ qualifiers
 
 Table: Evaluation of combined properties {#tbl:combined-properties}
 
-<!-- Weighting -->
-
-<!--
-*"the inclusion of item concept weights does not improve the performance of the algorithm"* [@Maidel2009, p. 97].
--->
-
 <!-- Query expansion
 Too many hops to broader concepts introduce noise [@DiNoia2012a].
--->
-
-<!-- Aggregation functions -->
-
-<!--
-Refer to [@Mynarz2015] for tests of Gödel's and Łukasiewicz's t-norms and t-conorms.
-There is no need to replicate these findings.
 -->
 
 <!-- Data reduction -->
@@ -288,6 +279,24 @@ In general, we decreased the data reduction level by 0.1 for each evaluation run
 The evaluation showed that HR@10 grows logarithmically with the size of the data, while the blind matchmaker performs the same no matter the data size.
 As can be expected, the baseline matchmaker improves its performance as the data it learns from accrues.
 Both approaches suffer from the cold start problem, although the baseline matchmaker improves rapidly with the initial data growth and demonstrates diminishing returns as data becomes larger.
+
+<!-- Data refinement -->
+
+Of the data refinement steps undertaken, as described in the [@sec:transformation], we evaluated what impact better deduplication and mapping CPV 2003 to CPV 2008 had on the baseline matchmaker.
+Both steps improved the evaluation results of the matchmaker, as can be seen in the [@tbl:data-refinement].
+Better deduplication and fusion of bidders reduces the search space of possible matches, so that the probability of finding the correct match increases.
+Mapping CPV 2003 to CPV 2008 enlarges the dataset the matchmaker can learn from by 15.31 %.
+However, while HR@10 improves after this mapping, CC@10 decreases, which may be explained by more data affirming the few established bidders.
+Better deduplication improves accuracy metrics only slightly, which may be due to the original data already being free of most duplicates.
+Nevertheless, in our prior work [@Mynarz2015], deduplication produced the greatest improvement in the evaluation of the baseline matchmaker.
+
+Dataset                          HR@10   MRR@10    CC@10       PC   LTP@10
+----------------------------- -------- -------- -------- -------- --------
+Prior to CPV 2003 mapping         0.24     0.12 **0.60**     0.93     0.80
+Prior to better deduplication     0.25     0.12     0.55     0.96 **0.86**
+Final                         **0.25** **0.12**     0.57 **0.98**     0.68
+
+Table: Impact of data refinement on the baseline matchmaker {#tbl:data-refinement}
 
 <!-- Counter-measures -->
 
