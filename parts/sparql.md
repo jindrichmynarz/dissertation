@@ -105,7 +105,7 @@ In order to obtain contract objects we use the function $obj \colon C \cup \left
 Here, $\mathbb{P}(Cobj)$ denotes the powerset of the set $Cobj$.
 Accessing the elements of contract objects is in turn done by function $ccobj(cobj) = con \iff cobj = ((con, p), cona)$ for concepts and by function $pcobj(cobj) = p \iff cobj = ((con, p), cona)$ for properties.
 
-#### Query expansion
+#### Query expansion {#sec:query-expansion}
 
 The controlled vocabularies that describe contract objects can be semantically structured, such as via hierarchical or associative relations.
 Since relevance of a concept may entail relevance of concepts in its neighbourhood, we can leverage the structure of these vocabularies and perform expansion to include the related concepts in the query.
