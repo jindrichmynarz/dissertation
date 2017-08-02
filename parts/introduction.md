@@ -10,6 +10,13 @@ The relationships in data mirror the relationships in real world.
 This is why it is important to combine data from multiple domain to learn about the context in which public contracts are made.
 Here, semantics is a way to agree on meaning of things in data.
 Semantic web is a way to agree on what things are, so that we can combine our data about the things.
+
+## Matchmaking vs. advertisting
+
+Matchmaking substitutes advertising.
+Business models based on advertising distort the design of web services.
+=> Motivation
+Personalization makes matchmaking approach many-to-1 advertising.
 -->
 
 <!-- What is the problem? -->

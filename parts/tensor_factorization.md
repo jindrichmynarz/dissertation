@@ -111,6 +111,8 @@ RESCAL is similar to matrix factorization methods used in recommender systems [@
 Matrix factorization (MF) offers good scalability, predictive accuracy, and modelling flexibility [@Koren2009, p. 44]
 MF allows to incorporate both explicit and implicit feedback.
 However, reshaping tensors into matrices causes data loss.
+
+RESCAL uses unique latent representation of entities as subjects and objects, which enables efficient information propagation to capture correlations over relational chains [@Nickel2013c, p. 619].
 -->
 
 Time-aware link prediction [@Kuchar2016].

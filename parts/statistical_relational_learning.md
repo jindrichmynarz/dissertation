@@ -31,6 +31,7 @@ The exploited contextual information propagates through relations in data, so th
 This feature of collective learning can cope with modelling artefacts in RDF, such as intermediate resources that decompose n-ary relations into binary predicates.
 
 <!--
+*"In relational data, the similarity of entities is determined by the similarity of their relationships"* [@Nickel2013c, p. 620]
 *"Some Relational Machine Learning approaches can exploit contextual information that might be more distant in the relational graph, a capability often referred to as collective learning."* [@Nickel2012, p. 271]
 Information propagates through the relations in data.
 *"Collective learning is a form of relational learning where information distant in the graph can be made useful."*
