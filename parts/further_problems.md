@@ -10,3 +10,14 @@
 * Use an ageing function to discount older contract awards?
 * Try hybrid methods?
 * Learning to rank
+
+<!--
+TODO: Try to run matchmaking over data in <http://pproc.unizar.es:8890/sparql>. We'd need to make our own copy.
+-->
+
+<!--
+* Now-defunct bidders should be filtered out.
+* Match score can be normalized by the bidders age (now() - dcterms:issued).
+* Contracts with more tenders (`pc:numberOfTenders`) can be scored as more telling, since the bidder won in greater competition.
+* Contracts with open procedures can be also scored as more telling.
+-->

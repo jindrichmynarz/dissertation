@@ -129,6 +129,8 @@ For example, if in our case we combine data from business and public procurement
 If there is no overlap between the resources from the combined datasets, there may be at least an overlap in RDF vocabularies describing the resources [@Heitmann2016], which provide broader conceptual associations.
 
 <!--
+- Results contrary to the thesis that more features lead to better recommendations: *"We point out that even if very few ratings are available, simple rating-based predictors outperform purely metadata-based ones"* [@Pilaszy2009, p. 93].
+
 Semantic features ~ smart descriptors
 - Low-level descriptors require complex distance metrics.
 - High-level, smart descriptors can work with simpler distance metrics.

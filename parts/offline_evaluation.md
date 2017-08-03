@@ -294,9 +294,7 @@ Broader Narrower Weight    HR@10   MRR@10    CC@10       PC   LTP@10
 
 Table: Evaluation of matchmakers using query expansion {#tbl:query-expansion}
 
-<!-- Data reduction
-*"Simple models and a lot of data trump more elaborate models based on less data"* [@Halevy2009, p. 9].
--->
+<!-- Data reduction -->
 
 We evaluated the impact of data reduction on HR@10 for the baseline matchmaker and the blind matchmaker that constantly recommends the top winning bidders.
 Prior to running the evaluation we reduced the number of links between contracts and bidders to a given fraction.

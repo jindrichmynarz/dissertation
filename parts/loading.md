@@ -36,7 +36,7 @@ TODO: Describe the concrete SPARQL CONSTRUCT query used, together with its Elast
 <!-- Web of Needs-based matchmaking -->
 
 <!--
-TODO: What storage mechanism is used for RESCAL?
+- Report the sparsity of the resulting tensor, i.e. count of non-zero entries to all entries?
 -->
 
 <!--
