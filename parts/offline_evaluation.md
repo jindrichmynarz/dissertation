@@ -372,4 +372,7 @@ User coverage: a share of bidders for which the system is able of recommending c
 ### Results for Elasticsearch-based matchmakers
 
 ### Results for RESCAL-based matchmakers
+
+- Add discussion of sensitivity to hyperparameters?
+  - Higher rank typically leads to better models.
 -->

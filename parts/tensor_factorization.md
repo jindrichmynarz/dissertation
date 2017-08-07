@@ -147,6 +147,12 @@ Experiments with YAGO in @Nickel2012 also include materialized `rdf:type` infere
 
 Alternative method for link prediction using tensor representation of RDF:
 <http://semdeep.iiia.csic.es/files/SemDeep-17_paper_3.pdf>
+
+*"tensor (and matrix) rank is a central parameter of factorization methods that determines generalization        ability as well as scalability"* [@Nickel2014].
+
+There are 76 different relations in the Czech public procurement dataset.
+More relations can be obtained from linked data.
+However, we included only few relations in the tensor representation.
 -->
 
 <!--

@@ -1,15 +1,37 @@
 # Introduction
 
-<!--
-For the first time in history we have data on past experiences in making public contracts, from which we can learn how to make better contracts.
-Matchmaking is one way to use these experiences.
-By learning from history we can agree on better deals.
+<!-- What is the problem? -->
 
-Public contracts exist in a network of relationships between companies or people and so does the data about public contracts.
-The relationships in data mirror the relationships in real world.
-This is why it is important to combine data from multiple domain to learn about the context in which public contracts are made.
-Here, semantics is a way to agree on meaning of things in data.
-Semantic web is a way to agree on what things are, so that we can combine our data about the things.
+In order for demand and supply to meet, they must learn about each other.
+Data on demands and supplies thus needs to be accessible, discoverable, and usable.
+As data grows to larger volumes, its machine-readability becomes a must, so that machines can make it usable for people, for whom dealing with large data is impractical.
+Relevant data may be fragmented across diverse data sources, which need to be integrated to enable their effective use.
+If data collection and integration is done manually, it takes a lot of effort.
+
+Some manual effort involved in gathering and evaluation of data about demands and supplies can be automated by matchmaking.
+Matchmakers are tools that retrieve data matching a query.
+In the matchmaking setting, either demands or supplies are casted as queries while the other side is treated as the queried data.
+The queries produce matches from the queried data ranked by their degree to which they satisfy a given query.
+
+<!-- Goal: efficiency -->
+
+Our work concerns matchmaking of bidders and public contracts.
+The primary motivation for our research is to improve the efficiency of resource allocation in public procurement by providing better information to the participants of the public procurement market.
+We employ matchmaking as a way to find information that is useful for the market participants.
+In the context of public procurement, matchmaking can suggest relevant business opportunities to bidders or recommend to contracting authorities which bidders are suitable to be approached for a given public contract.
+
+<!--
+For the first time in history we have open data on past experiences in making public contracts.
+Using this data we can learn how to make better contracts.
+Contracting authorities and bidders can learn from the history of public procurement to be able to agree on better deals.
+Matchmaking is one way to learn from these experiences.
+
+Public contracts exist in a network of relationships between organizations.
+This network manifests in the data about public contracts.
+The relationships in the data mirror the relationships in the real world.
+This is why it is important to combine data from multiple domains to learn about the context in which public contracts are made.
+Here, semantics is a way to agree on meaning of things in the data.
+Semantic web is a way to agree on what things are, so that we can combine the data about the things.
 
 ## Matchmaking vs. advertisting
 
@@ -19,45 +41,23 @@ Business models based on advertising distort the design of web services.
 Personalization makes matchmaking approach many-to-1 advertising.
 -->
 
-<!-- What is the problem? -->
-
-In order for demand and supply to meet, they must learn about each other.
-Data on demands and supplies thus needs to be accessible, discoverable, and usable.
-In case of large data, it must also be machine readable, so that machines can make it usable for humans.
-Relevant data may be fragmented across diverse data sources, which need to be integrated to enable effective use.
-Manual data collection and integration takes a lot of effort.
-
-Some manual effort involved in gathering and evaluation of data about demands and supplies can be automated by matchmaking.
-Matchmakers are tools that retrieve data matching a query.
-In the matchmaking setting, either demands or supplies are casted as queries while the other side is treated as the queried data.
-The queries produce matches from the queried data ranked by their degree to which they satisfy a given query.
-
-<!-- Goal: efficiency -->
-
-Our work concerns matchmaking of bidders and public contracts. 
-The primary motivation for our research is to improve the efficiency of resource allocation in public procurement by providing better information to the participants of the public procurement market.
-We employ matchmaking as a way to find information that is useful for the market participants.
-In the context of public procurement, matchmaking can suggest relevant business opportunities to bidders or recommend contracting authorities which bidders are suitable to be approached with a given public contract.
-
 Our approach to matchmaking is based on two components: good data and good technologies.
 We employ linked open data as a method to defragment and integrate public procurement data and enable to combine it with other data.
 A key challenge in using linked open data is to reuse or develop appropriate techniques for data preparation.
 
 We demonstrate how two generic approaches can be applied to the matchmaking task, namely case-based reasoning and statistical relational learning.
-In the context of case-based reasoning, we casted matchmaking as top-$k$ recommendation.
+In the context of case-based reasoning, we treated matchmaking as top-$k$ recommendation.
 We compared two technologies on this task: SPARQL and full-text search.
 In the case of statistical relational learning, we approached matchmaking as link prediction.
 We used tensor factorization with RESCAL [@Nickel2011] for this task.
-Key challenges with these technologies involve feature selection, feature construction, and ranking via feature weights and combination functions for aggregating similarity scores of matches.
+The key challenges of matchmaking by these technologies involve feature selection, feature construction, ranking via feature weights, and combination functions for aggregating similarity scores of matches.
+Our work discusses these challenges and proposes ways of addressing them.
 
-In order to explore the outlined approaches we prepared a Czech public procurement dataset that links several related open government data sources together, such as the business register or the postal addresses.
+In order to explore the outlined approaches we prepared a Czech public procurement dataset that links several related open government data sources together, such as the Czech business register or the postal addresses from the Czech Republic.
 Our work can be therefore considered a concrete use case in the Czech public procurement.
 Viewed as a use case, our task is to select, combine, and apply the state-of-the-art techniques to a real-world scenario.
 Our key stakeholders in this use case are the participants in the public procurement market: contracting authorities, who represent the side of demand, and bidders, who represent the side of supply.
-<!-- Different motivations: contracting authorities (public sector) vs. bidders (private sector) 
-Both stakeholder groups represent different interests: contracting authorities those of the public sector and bidders those of the private sector.
-This gives rise to an sophisticated interplay.
--->
+The stakeholder groups are driven by different interests; contracting authorities represent the public sector while bidders represent the private sector, which gives rise to an sophisticated interplay of the legal framework of public procurement and the commercial interests.
 
 <!-- Problem statement
 
@@ -93,21 +93,24 @@ We evaluate the developed matchmakers both via offline experiments on retrospect
 In terms of our target metrics, the recommended matches should exhibit both high accuracy and diversity.
 In order to discover the key factors that improve matchmaking we compare the evaluation results produced by the developed matchmakers in their different configurations.
 
-<!-- Designing an artefact is a way of "constructive proof". -->
+<!--
+Designing an artefact is a way of "constructive proof".
+Designing the matchmakers can be considered a constructive proof to answer our question.
+-->
 
 <!-- Contributions -->
 
 The principal contributions of our work are the implemented matchmaking methods and the reusable datasets for testing these methods.
-Using experimental evaluation of these methods we derive general findings about the factors that have the largest impact on the quality of matchmaking of bidders to public contracts.
+By using experimental evaluation of these methods we derive general findings about the factors that have the largest impact on the quality of matchmaking of bidders to public contracts.
 
 <!-- General note at the end of the introduction -->
 
-The remaining parts of this introduction provide the preliminaries that the subsequent chapters build on.
-We explain the fundamentals of linked open data, remark on the characteristics of the public procurement domain, define the matchmaking task and outline the broader approaches we adopted for this task, and finally we survey the related work.
+The remaining parts of this chapter provide the preliminaries that the subsequent chapters build on.
+We explain the fundamentals of linked open data, remark on the characteristics of the public procurement domain, define the matchmaking task, outline the generic approaches we adopted for this task, and finally we survey the related work.
 
 The contributions presented in this thesis including methods and software were authored or co-authored by the thesis' author, unless stated otherwise.
-Both reused and developed software is listed in [appendix @sec:software].
-The abbreviations used throughout the text are gathered in [@sec:abbreviations].
+Both the reused and the developed software is listed in the [appendix @sec:software].
+The abbreviations used throughout the text are collected in the [@sec:abbreviations].
 All vocabulary prefixes used in the text can be resolved to their corresponding namespace IRIs via <http://prefix.cc>.
 
 <!-- Out-takes -->
