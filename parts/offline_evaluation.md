@@ -60,9 +60,9 @@ Mention restrictions by the computational cost of an evaluation protocol? E.g., 
 -->
 
 We define the evaluation metrics using the following notation.
-Let $C$ be the set of public contracts and $B$ the set of bidders.
+Let $C$ be the set of public contracts and $B$ the set of bidders who were awarded at least one contract.
 The function $match_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of bidders recommended for a given public contract by matchmaker $m$.
-The function $winner\colon C \to B$ returns the bidder to whom a contract was awarded.
+The function $winner\colon C \to B$ returns the winning bidder to whom a contract was awarded.
 The function $wrank\colon C \to \mathbb{N}_{\ge 1} \cup \{ \text{nil} \}$ gives the rank of the bidder who won a given public contract.
 
 $$wrank(c) =
@@ -79,7 +79,7 @@ The function $awards\colon B \to \mathbb{N}$ returns the number of contracts awa
 $$awards(b) = \left\vert{c \in C : winner(c) = b}\right\vert$$
 
 We measured accuracy using hit rate at 10 (HR@10) and mean reciprocal rank at 10 (MRR@10).
-HR@10 [@Deshpande2004, p. 159] is the share of queries for which hits are found in the top 10 results.
+HR@10 [@Deshpande2004, p. 159] is the share of queries for which hits are found in the top 10 results.[^top10]
 We consider hits to be the results that include the awarded bidder.
 We adopted HR@10 as the primary metric that we aim to increase.
 This metric can be calculated for the matchmaker $m$ as follows:
@@ -118,15 +118,15 @@ $$CC@10 = \frac{\left\vert{\bigcup_{c \in C} match_{m}(c)}\right\vert}{\left\ver
 LTP@10 [@Adomavicius2012] is a metric of novelty, which is based on the distribution of the recommended items.
 Concretely, it measures the share of items from the long tail in the matchmaking results.
 If we sort bidders in descending order by the number of contracts awarded to them, the first bidders that account for 20 % of contract awards form the *short head* and the remaining ones constitute the *long tail*.
-In case of the Czech public procurement data, 20 % of the awarded contracts concentrates among the 101 most popular bidders.
-To avoid awarding contracts only to a few highly successful bidders, we aim to increase the recommendations from the long tail of bidders.
+In case of the Czech public procurement data, 20 % of the awarded contracts concentrates among the 101 most popular bidders from the total of 14388 bidders in the dataset.
+To avoid awarding contracts only to a few highly successful bidders, we aim to increase the proportion of recommendations from the long tail of bidders.
 This is especially important for evaluation of the case-based matchmakers, which tend to favour the most popular bidders.
-Let $(b_{1}, \dots, b_{n})$ be an n-tuple of all bidders $b_{i} \in B$, so that $(i > j) \implies awards(b_{i}) \geq awards(b_{j})$, so that the bidders are sorted in descending order by the number of contracts awarded to them. <!-- _b -->
+Let $(b_{1}, \dots, b_{n})$ be an n-tuple of all bidders $b_{i} \in B$, so that $(i \prec j) \implies awards(b_{i}) \geq awards(b_{j})$, so that the bidders are sorted in descending order by the number of contracts awarded to them. <!-- _b -->
 The short head $SH$ of this ordered n-tuple can be then defined as:
 
 $$SH = (b_{1},\dots,b_{e});\quad \textrm{so that}\, e : \sum_{k = 1}^{e - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{l = 1}^{e} awards(b_{l})$$ <!-- _b -->
 
-$SH$ is delimited by the index $e$ of the bidder with the awards of whom the short head accumulates 20 % of all awarded contracts (i.e. $\frac{\left\vert{C}\right\vert}{5}$).
+The formula defines $SH$ as delimited by the index $e$ of the bidder with the awards of whom the short head accumulates 20 % of all awarded contracts (i.e. $\frac{\left\vert{C}\right\vert}{5}$).
 Long tail $LT$ is the complement of the short head ($LT = B \setminus SH$).
 We then calculate LTP@10 for the matchmaker $m$ as follows:
 
@@ -151,9 +151,11 @@ Results with the status of non-match are much more prevalent in matchmaking than
 
 <!-- Evaluation of statistical significance -->
 
+<!--
 We used Wilcoxon signed-rank test [@Rey2014] to evaluate the statistical significance of differences between the distributions of ranks produced by the evaluated matchmakers.
 We chose it because we compare ranks for the whole dataset and this test is suited for paired samples from the same population.
 Moreover, it does not require the compared samples to follow normal distribution, which is the case of the distributions of ranks.
+-->
 
 ### Results of SPARQL-based matchmakers
 
@@ -376,3 +378,5 @@ User coverage: a share of bidders for which the system is able of recommending c
 - Add discussion of sensitivity to hyperparameters?
   - Higher rank typically leads to better models.
 -->
+
+[^top10]: 91 % of search engine users consider only the top 10 results, according to a study (<http://www.seo-takeover.com/case-study-click-through-rate-google>).
