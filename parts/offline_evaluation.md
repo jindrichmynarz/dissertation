@@ -62,21 +62,21 @@ Mention restrictions by the computational cost of an evaluation protocol? E.g., 
 We define the evaluation metrics using the following notation.
 Let $C$ be the set of public contracts and $B$ the set of bidders.
 The function $match_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of bidders recommended for a given public contract by matchmaker $m$.
-The function $bidder\colon C \to B$ returns the bidder to whom a contract was awarded.
+The function $winner\colon C \to B$ returns the bidder to whom a contract was awarded.
 The function $wrank\colon C \to \mathbb{N}_{\ge 1} \cup \{ \text{nil} \}$ gives the rank of the bidder who won a given public contract.
 
 $$wrank(c) =
   \small
   \begin{cases}
-    n \in \mathbb{N}\colon bidder(c)\, \textrm{is in position}\, n\, \textrm{in}\, match_{m}(c)
-    & \text{if}\ bidder(c) \in match_{m}(c) \\
+    n \in \mathbb{N}\colon winner(c)\, \textrm{is in position}\, n\, \textrm{in}\, match_{m}(c)
+    & \text{if}\ winner(c) \in match_{m}(c) \\
     \quad\textrm{nil} & \textrm{otherwise} \\
   \end{cases}
   \normalsize$$
 
 The function $awards\colon B \to \mathbb{N}$ returns the number of contracts awarded to a given bidder.
 
-$$awards(b) = \left\vert{c \in C : bidder(c) = b}\right\vert$$
+$$awards(b) = \left\vert{c \in C : winner(c) = b}\right\vert$$
 
 We measured accuracy using hit rate at 10 (HR@10) and mean reciprocal rank at 10 (MRR@10).
 HR@10 [@Deshpande2004, p. 159] is the share of queries for which hits are found in the top 10 results.
@@ -84,13 +84,13 @@ We consider hits to be the results that include the awarded bidder.
 We adopted HR@10 as the primary metric that we aim to increase.
 This metric can be calculated for the matchmaker $m$ as follows:
 
-$$HR@10 = \frac{\left\vert{c \in C : bidder(c) \in match_{m}(c) \land wrank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
+$$HR@10 = \frac{\left\vert{c \in C : winner(c) \in match_{m}(c) \land wrank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
 
 MRR@10 [@Craswell2009] is the arithmetic mean of multiplicative inverse ranks.
 Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such:
 
 $$mir(c)=\begin{cases}
-         \frac{1}{wrank(c)} & \text{if}\ bidder(c) \in match_{m}(c) \\
+         \frac{1}{wrank(c)} & \text{if}\ winner(c) \in match_{m}(c) \\
          0 & \text{nil}
        \end{cases}$$
 
