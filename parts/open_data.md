@@ -1,11 +1,11 @@
 ### Open data
 
 Open data is data that can be accessed equally by people and machines.
-Its definition is grounded in principles that assert what conditions should data meet to achieve legal and technical openness.
+Its definition is grounded in principles that assert what conditions data must meet to achieve legal and technical openness.
 Principles of open data are perhaps best embodied in the Open Definition [@OpenDefinition2015] and the Eight principles of open government data [-@EightPrinciples2007]. 
 According to the Open Definition's summary, *"open data and content can be freely used, modified, and shared by anyone for any purpose."*^[<http://opendefinition.org>]
 <!-- Legal conditions of open data are usually established via a licence or waiver, such as the Open Data Commons Public Domain Dedication and Licence (ODC PDDL).^[<https://opendatacommons.org/licenses/pddl/1.0>] -->
-Eight principles of open government data draws similar requirements as the Open Definition and adds demands for completeness, primacy, and timeliness.
+The Eight principles of open government data draw similar requirements as the Open Definition and add demands for completeness, primacy, and timeliness.
 
 Open data is particularly prominent in the public sector, since public sector data is subject to disclosure mandated by law.
 It may be either reactive disclosure, such as upon Freedom of Information requests, or proactive disclosure, such as by publishing open data. 
@@ -14,12 +14,12 @@ In case of the EU, disclosure of public sector data is regulated by the directiv
 While releasing open data is frequently framed as a means to improve transparency of the public sector, it can also have a positive effect on its efficiency [@AccessInfoEurope2011, p. 69], since the public sector itself is often the primary user of open data.
 Using open data can help streamline public sector processes [@Parycek2014, p. 90] and curb unnecessary expenditures [@Presern2014, p. 4].
 The publication of public procurement data is claimed to improve *"the quality of government investment decision-making"* [@Kenny2012, p. 2], as supervision enabled by access to data puts a pressure on contracting authorities to follow fair and budget-wise contracting procedures.
-Matchmaking public contracts to relevant suppliers is an example of such application that can contribute to better informed decisions that lead to more economically advantageous contracts.
+Matchmaking public contracts to relevant suppliers can be considered an example of such application that can contribute to better-informed decisions that lead to more economically advantageous contracts.
 
-Open data can balance information asymmetries between the participants of the public procurement market.
-The asymmetries may be caused by clientelism, siloing data in closed applications, or fragmentation of data across multiple sources.
-Open access to public procurement data can increase can the number of participants in procurement, since more bidders can learn about a relevant opportunity if it is advertised openly. 
-Even distribution of open data can eventually lead to better decisions of the market participants, in effect increasing the efficiency of resource allocation in public procurement.
+Open data can balance information asymmetries between participants of public procurement markets.
+The asymmetries may be caused by clientelism, siloing data in applications with restricted access, or fragmentation of data across multiple sources.
+Open access to public procurement data can increase the number of participants in procurement, since more bidders can learn about a relevant opportunity if it is advertised openly. 
+Even distribution of open data may eventually lead to better decisions of the market participants, in effect increasing the efficiency of resource allocation in public procurement.
 
 Open data addresses two fundamental problems of recommender systems, which apply to matchmaking as well.
 These problems comprise the cold start problem and data sparsity, which can be jointly described as the data acquisition problem [@Heitmann2010].
