@@ -49,1377 +49,1338 @@
      inkscape:window-height="751"
      id="namedview3995"
      showgrid="false"
-     inkscape:zoom="0.3365368"
-     inkscape:cx="293.26028"
-     inkscape:cy="906.18836"
+     inkscape:zoom="1.0080457"
+     inkscape:cx="831.14659"
+     inkscape:cy="196.72771"
      inkscape:window-x="0"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2985" />
   <g
-     id="g3534"
-     transform="translate(6.6184177,50.760373)">
-    <g
-       transform="translate(-1612.1299,1629.1833)"
-       id="node1"
-       class="node">
-      <title
-         id="title2993">k5c93b120bffbf1aeee3c85841cf478340fc74d2b</title>
-      <text
-         x="2238.99"
-         y="-770.79999"
-         font-size="14.00"
-         id="text2995"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">adms:Identifier</text>
-      <text
-         x="2205.99"
-         y="-750"
-         font-size="10.00"
-         id="text2997"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">skos:notation</text>
-      <text
-         x="2295.98"
-         y="-750"
-         font-size="10.00"
-         id="text2999"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (1..2)</text>
-      <text
-         x="2205.99"
-         y="-731"
-         font-size="10.00"
-         id="text3001"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms:valid</text>
-      <text
-         x="2289.99"
-         y="-731"
-         font-size="10.00"
-         id="text3003"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
-      <polygon
-         points="2403,-761 2403,-761 2201,-761 2201,-761 2201,-761 "
-         id="polygon3005"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="2403,-787 2403,-721 2201,-721 2201,-721 2201,-787 "
-         id="polygon3007"
-         style="fill:none;stroke:#000000" />
-    </g>
-    <g
-       transform="translate(12.870107,1602.7426)"
-       id="node2"
-       class="node">
-      <title
-         id="title3010">k3b66be0a0ee4b7e24caec0b2c19bae572284e890</title>
-      <text
-         x="705.19397"
-         y="-917.79999"
-         font-size="14.00"
-         id="text3012"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">pproc:Lot</text>
-      <text
-         x="581"
-         y="-897"
-         font-size="10.00"
-         id="text3014"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:awardDate</text>
-      <text
-         x="814.98499"
-         y="-897"
-         font-size="10.00"
-         id="text3016"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:date (0..1)</text>
-      <text
-         x="581"
-         y="-878"
-         font-size="10.00"
-         id="text3018"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:numberOfTenders</text>
-      <text
-         x="724.98499"
-         y="-878"
-         font-size="10.00"
-         id="text3020"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:nonNegativeInteger (0..34)</text>
-      <text
-         x="581"
-         y="-859"
-         font-size="10.00"
-         id="text3022"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms:title</text>
-      <text
-         x="790.98102"
-         y="-859"
-         font-size="10.00"
-         id="text3024"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..104)</text>
-      <text
-         x="581"
-         y="-840"
-         font-size="10.00"
-         id="text3026"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:duration</text>
-      <text
-         x="802.98297"
-         y="-840"
-         font-size="10.00"
-         id="text3028"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
-      <text
-         x="580.98901"
-         y="-821"
-         font-size="10.00"
-         id="text3030"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:subcontractingRatio</text>
-      <text
-         x="772.979"
-         y="-821"
-         font-size="10.00"
-         id="text3032"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">pcdt:percentage (0..6)</text>
-      <polygon
-         points="576,-908 576,-908 576,-908 910,-908 910,-908 "
-         id="polygon3034"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="576,-811.5 576,-811.5 576,-934.5 910,-934.5 910,-811.5 "
-         id="polygon3036"
-         style="fill:none;stroke:#000000" />
-    </g>
+     class="node"
+     id="node1"
+     transform="translate(-1605.5115,1679.9437)">
+    <title
+       id="title2993">k5c93b120bffbf1aeee3c85841cf478340fc74d2b</title>
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text2995"
+       font-size="14.00"
+       y="-770.79999"
+       x="2238.99">adms:Identifier</text>
     <text
        style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3045"
+       id="text2997"
        font-size="10.00"
-       y="817.19824"
-       x="695.33252">adms:identifier (1..3)</text>
-    <g
-       transform="translate(-551.12989,1566.0584)"
-       id="node4"
-       class="node">
-      <title
-         id="title3048">ke978590951e47f02524f9e1cc7fc3a237855618c</title>
-      <text
-         x="1192.98"
-         y="-1081.8"
-         font-size="14.00"
-         id="text3050"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">schema:PriceSpecification</text>
-      <text
-         x="1145"
-         y="-1061"
-         font-size="10.00"
-         id="text3052"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:priceCurrency</text>
-      <text
-         x="1348.98"
-         y="-1061"
-         font-size="10.00"
-         id="text3054"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (1..1)</text>
-      <text
-         x="1145"
-         y="-1042"
-         font-size="10.00"
-         id="text3056"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:price</text>
-      <text
-         x="1342.98"
-         y="-1042"
-         font-size="10.00"
-         id="text3058"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:decimal (1..1)</text>
-      <text
-         x="1144.99"
-         y="-1023"
-         font-size="10.00"
-         id="text3060"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:valueAddedTaxIncluded</text>
-      <text
-         x="1342.98"
-         y="-1023"
-         font-size="10.00"
-         id="text3062"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
-      <text
-         x="1145"
-         y="-1004"
-         font-size="10.00"
-         id="text3064"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:valueAddedTaxRate</text>
-      <text
-         x="1318.99"
-         y="-1004"
-         font-size="10.00"
-         id="text3066"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">pcdt:percentage (0..1)</text>
-      <polygon
-         points="1456,-1072 1456,-1072 1140,-1072 1140,-1072 1140,-1072 "
-         id="polygon3068"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="1456,-1098 1456,-994 1140,-994 1140,-994 1140,-1098 "
-         id="polygon3070"
-         style="fill:none;stroke:#000000" />
-    </g>
-    <g
-       transform="translate(28.473597,-150.5223)"
-       id="g4617">
-      <path
-         d="m 705.98416,818.31962 c 0,-53.68757 0.6603,-45.10124 0.6603,-84.23968"
-         id="path3075"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:#000000"
-         sodipodi:nodetypes="cc" />
-      <polygon
-         points="1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 "
-         id="polygon3077"
-         style="fill:#000000;stroke:#000000"
-         transform="matrix(0.3200017,-0.94741698,0.94741698,0.3200017,1286.5102,2123.184)" />
-    </g>
-    <g
-       transform="translate(49.888587,-167.71335)"
-       id="g4601">
-      <text
-         x="692.5766"
-         y="762.00708"
-         font-size="10.00"
-         id="text3079"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:actualPrice (1..1)</text>
-      <text
-         x="692.56158"
-         y="781.00708"
-         font-size="10.00"
-         id="text3081"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:estimatedTotalPrice (1..50)</text>
-      <text
-         x="692.5766"
-         y="800.00708"
-         font-size="10.00"
-         id="text3083"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:lowestBidPrice (1..9)</text>
-      <text
-         x="692.5766"
-         y="819.00708"
-         font-size="10.00"
-         id="text3085"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:subcontractingPrice (1..6)</text>
-    </g>
-    <g
-       transform="translate(-410.12989,1687.1833)"
-       id="node11"
-       class="node">
-      <title
-         id="title3088">k8fa07f843d4d07b376ed35d4f8691c33faa2d169</title>
-      <text
-         x="1268.6"
-         y="-828.79999"
-         font-size="14.00"
-         id="text3090"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">:Tender</text>
-      <text
-         x="1293.8"
-         y="-804.79999"
-         font-size="14.00"
-         id="text3092"
-         style="font-size:14px;text-anchor:start;font-family:Monaco" />
-      <polygon
-         points="1333,-819 1263,-819 1263,-819 1263,-819 1333,-819 "
-         id="polygon3094"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="1333,-793 1263,-793 1263,-793 1263,-845 1333,-845 "
-         id="polygon3096"
-         style="fill:none;stroke:#000000" />
-    </g>
+       y="-750"
+       x="2205.99">skos:notation</text>
+    <text
+       style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco"
+       id="text2999"
+       font-size="10.00"
+       y="-750"
+       x="2295.98">xsd:string (1..2)</text>
     <text
        style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3105"
+       id="text3001"
        font-size="10.00"
-       y="817.19824"
-       x="892.61957">:awardedTender (1..57)</text>
-    <g
-       transform="translate(32.473597,1757.4777)"
-       id="node3"
-       class="node">
-      <title
-         id="title3108">kc276752c9fdaf8619e7cfe812378ae246fe4f9f1</title>
-      <text
-         x="132.194"
-         y="-1490.8"
-         font-size="14.00"
-         id="text3110"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">:Contract</text>
-      <text
-         x="5"
-         y="-1470"
-         font-size="10.00"
-         id="text3112"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms:description</text>
-      <text
-         x="232.983"
-         y="-1470"
-         font-size="10.00"
-         id="text3114"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
-      <text
-         x="5"
-         y="-1451"
-         font-size="10.00"
-         id="text3116"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms:title</text>
-      <text
-         x="232.983"
-         y="-1451"
-         font-size="10.00"
-         id="text3118"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..9)</text>
-      <text
-         x="5"
-         y="-1432"
-         font-size="10.00"
-         id="text3120"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:isFundedFromEUProject</text>
-      <text
-         x="226.991"
-         y="-1432"
-         font-size="10.00"
-         id="text3122"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
-      <text
-         x="4.98242"
-         y="-1413"
-         font-size="10.00"
-         id="text3124"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:isGovernmentProcurementAgreement</text>
-      <text
-         x="226.991"
-         y="-1413"
-         font-size="10.00"
-         id="text3126"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
-      <text
-         x="5"
-         y="-1394"
-         font-size="10.00"
-         id="text3128"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:isElectronicAuction</text>
-      <text
-         x="226.991"
-         y="-1394"
-         font-size="10.00"
-         id="text3130"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
-      <text
-         x="5"
-         y="-1375"
-         font-size="10.00"
-         id="text3132"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:isOnBehalfOf</text>
-      <text
-         x="226.991"
-         y="-1375"
-         font-size="10.00"
-         id="text3134"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
-      <polygon
-         points="0,-1481 0,-1481 0,-1481 340,-1481 340,-1481 "
-         id="polygon3136"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="0,-1365 0,-1365 0,-1507 340,-1507 340,-1365 "
-         id="polygon3138"
-         style="fill:none;stroke:#000000" />
-    </g>
+       y="-731"
+       x="2205.99">dcterms:valid</text>
     <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3147"
+       style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco"
+       id="text3003"
        font-size="10.00"
-       y="819.44226"
-       x="455.68069">adms:identifier (1..89)</text>
-    <path
-       sodipodi:nodetypes="cc"
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path3152"
-       d="m 335.09327,392.5877 c 2.14948,171.55167 106.24448,332.76243 242.30147,334.48282" />
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3156"
-       font-size="10.00"
-       y="647.12341"
-       x="433.18716">:lot (1..475)</text>
-    <path
-       sodipodi:nodetypes="cc"
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path3161"
-       d="m 372.28429,366.82784 c 106.33315,0 104.20403,133.79877 205.40501,133.79877" />
-    <g
-       transform="translate(-243.23644,121.85883)"
-       id="g4577">
-      <text
-         x="639"
-         y="355"
-         font-size="10.00"
-         id="text3165"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:actualPrice (0..1)</text>
-      <text
-         x="639"
-         y="374"
-         font-size="10.00"
-         id="text3167"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:estimatedPrice (0..8)</text>
-      <text
-         x="639"
-         y="393"
-         font-size="10.00"
-         id="text3169"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:lowestConsideredBidPrice (0..2)</text>
-      <text
-         x="638.98199"
-         y="412"
-         font-size="10.00"
-         id="text3171"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:highestConsideredBidPrice (0..2)</text>
-    </g>
-    <g
-       transform="translate(-484.44723,1367.1511)"
-       id="node5"
-       class="node">
-      <title
-         id="title3174">kccd367fc534bf4dd1d71911561b2159c120cb036</title>
-      <text
-         x="692.59198"
-         y="-534.79999"
-         font-size="14.00"
-         id="text3176"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">schema:Place</text>
-      <text
-         x="738.79901"
-         y="-510.79999"
-         font-size="14.00"
-         id="text3178"
-         style="font-size:14px;text-anchor:start;font-family:Monaco" />
-      <polygon
-         points="799,-525 799,-525 687,-525 687,-525 687,-525 "
-         id="polygon3180"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="799,-551 799,-499 687,-499 687,-499 687,-551 "
-         id="polygon3182"
-         style="fill:none;stroke:#000000" />
-    </g>
-    <path
-       sodipodi:nodetypes="cc"
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path3187"
-       d="m 260.5426,392.5477 c 0,248.15564 -1.99782,175.17208 -1.99782,411.9796" />
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3191"
-       font-size="10.00"
-       y="601.67712"
-       x="172.4196">:location (0..11)</text>
-    <path
-       sodipodi:nodetypes="cc"
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path3213"
-       d="m 222.9716,250.1977 c 0,-203.208268 193.04759,-199.428109 354.81013,-199.428109" />
-    <g
-       transform="translate(-876.5025,70.120707)"
-       id="g4721">
-      <text
-         x="1224"
-         y="16.5"
-         font-size="10.00"
-         id="text3217"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:mainObject (0..6)</text>
-      <text
-         x="1224"
-         y="35.5"
-         font-size="10.00"
-         id="text3219"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:kind (0..2)</text>
-      <text
-         x="1224"
-         y="54.5"
-         font-size="10.00"
-         id="text3221"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:mainCriterion (0..2)</text>
-      <text
-         x="1223.99"
-         y="73.5"
-         font-size="10.00"
-         id="text3223"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:serviceCategory (0..3)</text>
-      <text
-         x="1224"
-         y="92.5"
-         font-size="10.00"
-         id="text3225"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:additionalObject (1..10)</text>
-    </g>
-    <g
-       transform="translate(-1147.1299,1571.4804)"
-       id="node10"
-       class="node">
-      <title
-         id="title3228">kfd61f3206f953b1a432595ab2dcbef2a681aefee</title>
-      <text
-         x="1766.1899"
-         y="-595.79999"
-         font-size="14.00"
-         id="text3230"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">schema:Organization</text>
-      <text
-         x="1740.99"
-         y="-575"
-         font-size="10.00"
-         id="text3232"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:legalName</text>
-      <text
-         x="1842.99"
-         y="-575"
-         font-size="10.00"
-         id="text3234"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..25)</text>
-      <text
-         x="1741"
-         y="-556"
-         font-size="10.00"
-         id="text3236"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:url</text>
-      <text
-         x="1842.99"
-         y="-556"
-         font-size="10.00"
-         id="text3238"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..60)</text>
-      <polygon
-         points="1956,-586 1956,-586 1736,-586 1736,-586 1736,-586 "
-         id="polygon3240"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="1956,-612 1956,-546 1736,-546 1736,-546 1736,-612 "
-         id="polygon3242"
-         style="fill:none;stroke:#000000" />
-    </g>
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3251"
-       font-size="10.00"
-       y="922.2475"
-       x="435.14868">:contractingAuthority (0..2)</text>
-    <g
-       transform="translate(-43.129894,1687.4777)"
-       id="node12"
-       class="node">
-      <title
-         id="title3254">kc9152b353b89955859637584792f07708a470200</title>
-      <text
-         x="637.98297"
-         y="-1420.8"
-         font-size="14.00"
-         id="text3256"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">:AwardCriteriaCombination</text>
-      <text
-         x="738.79901"
-         y="-1396.8"
-         font-size="14.00"
-         id="text3258"
-         style="font-size:14px;text-anchor:start;font-family:Monaco" />
-      <polygon
-         points="854,-1411 854,-1411 632,-1411 632,-1411 632,-1411 "
-         id="polygon3260"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="854,-1437 854,-1385 632,-1385 632,-1385 632,-1437 "
-         id="polygon3262"
-         style="fill:none;stroke:#000000" />
-    </g>
-    <g
-       transform="translate(28.473597,-150.5223)"
-       id="g4694">
-      <path
-         d="m 344.105,427.54 c 174.99641,0 128.86759,-0.62463 204.91962,-0.62463"
-         id="path3267"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:#000000"
-         sodipodi:nodetypes="cc" />
-      <polygon
-         points="631.794,-1424.1 623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 "
-         id="polygon3269"
-         style="fill:#000000;stroke:#000000"
-         transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,409.38523,1977.5648)" />
-    </g>
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3271"
-       font-size="10.00"
-       y="271.63962"
-       x="397.15085">:awardCriteriaCombination (0..2)</text>
-    <g
-       transform="translate(-68.129894,1683.9939)"
-       id="node13"
-       class="node">
-      <title
-         id="title3274">k0761b4d61f97623fe29c7a30f153ae33d81425cb</title>
-      <text
-         x="692.59198"
-         y="-1349.8"
-         font-size="14.00"
-         id="text3276"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">foaf:Project</text>
-      <text
-         x="661.99597"
-         y="-1329"
-         font-size="10.00"
-         id="text3278"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">foaf:name</text>
-      <text
-         x="721.992"
-         y="-1329"
-         font-size="10.00"
-         id="text3280"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (1..1)</text>
-      <polygon
-         points="829,-1340 829,-1340 657,-1340 657,-1340 657,-1340 "
-         id="polygon3282"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="829,-1366.5 829,-1319.5 657,-1319.5 657,-1319.5 657,-1366.5 "
-         id="polygon3284"
-         style="fill:none;stroke:#000000" />
-    </g>
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3293"
-       font-size="10.00"
-       y="328.18091"
-       x="443.74265">:subsidy (0..4)</text>
-    <g
-       transform="translate(-42.129894,-226.69458)"
-       id="g4547">
-      <text
-         x="702.24854"
-         y="623.19995"
-         font-size="14.00"
-         id="text3298"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">pproc:Notice</text>
-      <text
-         x="635.98999"
-         y="644"
-         font-size="10.00"
-         id="text3300"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms:dateSubmitted</text>
-      <text
-         x="767.99298"
-         y="644"
-         font-size="10.00"
-         id="text3302"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:date (1..1)</text>
-      <text
-         x="636"
-         y="663"
-         font-size="10.00"
-         id="text3304"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms:issued</text>
-      <text
-         x="767.99298"
-         y="663"
-         font-size="10.00"
-         id="text3306"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:date (1..1)</text>
-      <polygon
-         points="859,-1275 627,-1275 627,-1275 627,-1275 859,-1275 "
-         id="polygon3308"
-         style="fill:#000000;stroke:#000000"
-         transform="translate(4,1908)" />
-      <polygon
-         points="859,-1235 627,-1235 627,-1235 627,-1301 859,-1301 "
-         id="polygon3310"
-         style="fill:none;stroke:#000000"
-         transform="translate(4,1908)" />
-    </g>
-    <path
-       sodipodi:nodetypes="cc"
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path3315"
-       d="m 372.6416,344.3877 c 110.23275,0 104.10363,67.16731 204.82537,67.16731" />
+       y="-731"
+       x="2289.99">xsd:boolean (0..1)</text>
     <polygon
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,1832.0649)"
        style="fill:#000000;stroke:#000000"
-       id="polygon3317"
-       points="617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 " />
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3319"
-       font-size="10.00"
-       y="378.33047"
-       x="483.7634">ns0:notice (1..19)</text>
-    <g
-       transform="translate(-1573.1299,1537.8941)"
-       id="node7"
-       class="node">
-      <title
-         id="title3400">k1f06bf5e020c9834e4f600c76cd3e956a78956e8</title>
-      <text
-         x="2217.99"
-         y="-445.79999"
-         font-size="14.00"
-         id="text3402"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">schema:PostalAddress</text>
-      <text
-         x="2167"
-         y="-425"
-         font-size="10.00"
-         id="text3404"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:addressCountry</text>
-      <text
-         x="2334.98"
-         y="-425"
-         font-size="10.00"
-         id="text3406"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (1..2)</text>
-      <text
-         x="2167"
-         y="-406"
-         font-size="10.00"
-         id="text3408"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:description</text>
-      <text
-         x="2334.98"
-         y="-406"
-         font-size="10.00"
-         id="text3410"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
-      <text
-         x="2167"
-         y="-387"
-         font-size="10.00"
-         id="text3412"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:postalCode</text>
-      <text
-         x="2328.99"
-         y="-387"
-         font-size="10.00"
-         id="text3414"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..14)</text>
-      <text
-         x="2167"
-         y="-368"
-         font-size="10.00"
-         id="text3416"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:addressLocality</text>
-      <text
-         x="2334.98"
-         y="-368"
-         font-size="10.00"
-         id="text3418"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
-      <text
-         x="2167"
-         y="-349"
-         font-size="10.00"
-         id="text3420"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema:streetAddress</text>
-      <text
-         x="2328.99"
-         y="-349"
-         font-size="10.00"
-         id="text3422"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..18)</text>
-      <text
-         x="2167"
-         y="-330"
-         font-size="10.00"
-         id="text3424"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns1:cisloDomovni</text>
-      <text
-         x="2334.98"
-         y="-330"
-         font-size="10.00"
-         id="text3426"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..8)</text>
-      <text
-         x="2167"
-         y="-311"
-         font-size="10.00"
-         id="text3428"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns1:cisloOrientacni</text>
-      <text
-         x="2334.98"
-         y="-311"
-         font-size="10.00"
-         id="text3430"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
-      <text
-         x="2166.99"
-         y="-292"
-         font-size="10.00"
-         id="text3432"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns1:cisloOrientacniPismeno</text>
-      <text
-         x="2334.98"
-         y="-292"
-         font-size="10.00"
-         id="text3434"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
-      <polygon
-         points="2442,-436 2442,-436 2162,-436 2162,-436 2162,-436 "
-         id="polygon3436"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="2442,-462 2442,-282 2162,-282 2162,-282 2162,-462 "
-         id="polygon3438"
-         style="fill:none;stroke:#000000" />
-    </g>
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3447"
-       font-size="10.00"
-       y="1050.5314"
-       x="452.7619">schema:address (0..1)</text>
-    <g
-       transform="translate(-1609.1299,1642.8029)"
-       id="node8"
-       class="node">
-      <title
-         id="title3194">k8370eab1ae99cceb00c302a4073ebcbb5dfc42a7</title>
-      <text
-         x="2251.5901"
-         y="-1608.8"
-         font-size="14.00"
-         id="text3196"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">skos:Concept</text>
-      <text
-         x="2202.99"
-         y="-1588"
-         font-size="10.00"
-         id="text3198"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">skos:prefLabel</text>
-      <text
-         x="2298.98"
-         y="-1588"
-         font-size="10.00"
-         id="text3200"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..1)</text>
-      <text
-         x="2203"
-         y="-1569"
-         font-size="10.00"
-         id="text3202"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">skos:notation</text>
-      <text
-         x="2292.99"
-         y="-1569"
-         font-size="10.00"
-         id="text3204"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..22)</text>
-      <polygon
-         points="2406,-1599 2406,-1599 2198,-1599 2198,-1599 2198,-1599 "
-         id="polygon3206"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="2406,-1625 2406,-1559 2198,-1559 2198,-1559 2198,-1625 "
-         id="polygon3208"
-         style="fill:none;stroke:#000000" />
-    </g>
-    <path
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path3607"
-       d="m 647.59011,16.01703 c 1.36,-9.93 16.45,-17.65 45.28,-17.65 19.82,0 33.15,3.65 39.98,9.16" />
+       id="polygon3005"
+       points="2201,-761 2201,-761 2201,-761 2403,-761 2403,-761 " />
     <polygon
-       transform="translate(-1609.1299,1641.367)"
-       style="fill:#000000;stroke:#000000"
-       id="polygon3609"
-       points="2347.28,-1625.35 2347.28,-1625.35 2347.28,-1625.35 2345.8,-1636.22 2344.63,-1629.6 2341.99,-1633.84 2341.99,-1633.84 2341.99,-1633.84 2344.63,-1629.6 2338.17,-1631.46 " />
-    <g
-       transform="translate(-358.88089,-267.31719)"
-       id="g4710">
-      <text
-         x="1013.6166"
-         y="237"
-         font-size="10.00"
-         id="text3611"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">skos:closeMatch (0..1)</text>
-      <text
-         x="1013.6266"
-         y="256"
-         font-size="10.00"
-         id="text3613"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">skos:related (0..2)</text>
-    </g>
-    <g
-       transform="translate(-885.12989,1734.9136)"
-       id="node9"
-       class="node">
-      <title
-         id="title3616">k90d358a16f415964b2de729fa7f4e0cacacc4c9c</title>
-      <text
-         x="1516.1899"
-         y="-1584.8"
-         font-size="14.00"
-         id="text3618"
-         style="font-size:14px;text-anchor:start;font-family:Monaco">:CriterionWeighting</text>
-      <text
-         x="1479"
-         y="-1564"
-         font-size="10.00"
-         id="text3620"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0:order</text>
-      <text
-         x="1604.98"
-         y="-1564"
-         font-size="10.00"
-         id="text3622"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:integer (1..1)</text>
-      <text
-         x="1478.99"
-         y="-1545"
-         font-size="10.00"
-         id="text3624"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:criterionWeight</text>
-      <text
-         x="1580.99"
-         y="-1545"
-         font-size="10.00"
-         id="text3626"
-         style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">pcdt:percentage (0..1)</text>
-      <polygon
-         points="1718,-1575 1718,-1575 1474,-1575 1474,-1575 1474,-1575 "
-         id="polygon3628"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="1718,-1601 1718,-1535 1474,-1535 1474,-1535 1474,-1601 "
-         id="polygon3630"
-         style="fill:none;stroke:#000000" />
-    </g>
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3639"
-       font-size="10.00"
-       y="111.29253"
-       x="704.21014">:weightedCriterion (0..1)</text>
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3648"
-       font-size="10.00"
-       y="936.6441"
-       x="695.0249">regorg:registration (0..29)</text>
-    <text
-       style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3657"
-       font-size="10.00"
-       y="1050.5314"
-       x="695.39111">schema:address (0..17)</text>
+       style="fill:none;stroke:#000000"
+       id="polygon3007"
+       points="2201,-721 2201,-721 2201,-787 2403,-787 2403,-721 " />
+  </g>
+  <text
+     x="724.6825"
+     y="735.703"
+     font-size="14.00"
+     id="text3012"
+     style="font-size:14px;text-anchor:start;font-family:Monaco">pproc:Lot</text>
+  <text
+     x="600.48853"
+     y="756.50299"
+     font-size="10.00"
+     id="text3014"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:awardDate</text>
+  <text
+     x="831.53003"
+     y="756.50299"
+     font-size="10.00"
+     id="text3016"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:date (0..1)</text>
+  <text
+     x="600.48853"
+     y="775.50299"
+     font-size="10.00"
+     id="text3018"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:numberOfTenders</text>
+  <text
+     x="748.03394"
+     y="775.50299"
+     font-size="10.00"
+     id="text3020"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:nonNegativeInteger (0..34)</text>
+  <text
+     x="600.48853"
+     y="794.50299"
+     font-size="10.00"
+     id="text3022"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms:title</text>
+  <text
+     x="812.62378"
+     y="794.50299"
+     font-size="10.00"
+     id="text3024"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..104)</text>
+  <text
+     x="600.48853"
+     y="813.50299"
+     font-size="10.00"
+     id="text3026"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:duration</text>
+  <text
+     x="825.35815"
+     y="813.50299"
+     font-size="10.00"
+     id="text3028"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
+  <text
+     x="600.47754"
+     y="832.50299"
+     font-size="10.00"
+     id="text3030"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">isvz:subcontractingRatio</text>
+  <text
+     x="792.46753"
+     y="832.50299"
+     font-size="10.00"
+     id="text3032"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">pcdt:percentage (0..6)</text>
+  <polygon
+     points="910,-908 576,-908 576,-908 576,-908 910,-908 "
+     id="polygon3034"
+     style="fill:#000000;stroke:#000000"
+     transform="translate(19.488525,1653.503)" />
+  <polygon
+     points="910,-811.5 576,-811.5 576,-811.5 576,-934.5 910,-934.5 "
+     id="polygon3036"
+     style="fill:none;stroke:#000000"
+     transform="translate(19.488525,1653.503)" />
+  <text
+     x="701.95093"
+     y="867.95862"
+     font-size="10.00"
+     id="text3045"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">adms:identifier (1..3)</text>
+  <text
+     x="648.46851"
+     y="535.01874"
+     font-size="14.00"
+     id="text3050"
+     style="font-size:14px;text-anchor:start;font-family:Monaco">schema:PriceSpecification</text>
+  <text
+     x="600.48853"
+     y="555.81879"
+     font-size="10.00"
+     id="text3052"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:priceCurrency</text>
+  <text
+     x="807.36914"
+     y="555.81879"
+     font-size="10.00"
+     id="text3054"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (1..1)</text>
+  <text
+     x="600.48853"
+     y="574.81879"
+     font-size="10.00"
+     id="text3056"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:price</text>
+  <text
+     x="796.66602"
+     y="574.81879"
+     font-size="10.00"
+     id="text3058"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:decimal (1..1)</text>
+  <text
+     x="600.47852"
+     y="593.81879"
+     font-size="10.00"
+     id="text3060"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:valueAddedTaxIncluded</text>
+  <text
+     x="796.11914"
+     y="593.81879"
+     font-size="10.00"
+     id="text3062"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
+  <text
+     x="600.48853"
+     y="612.81879"
+     font-size="10.00"
+     id="text3064"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">isvz:valueAddedTaxRate</text>
+  <text
+     x="774.47852"
+     y="612.81879"
+     font-size="10.00"
+     id="text3066"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">pcdt:percentage (0..1)</text>
+  <polygon
+     points="1140,-1072 1456,-1072 1456,-1072 1140,-1072 1140,-1072 "
+     id="polygon3068"
+     style="fill:#000000;stroke:#000000"
+     transform="translate(-544.51147,1616.8188)" />
+  <polygon
+     points="1140,-1098 1456,-1098 1456,-994 1140,-994 1140,-994 "
+     id="polygon3070"
+     style="fill:none;stroke:#000000"
+     transform="translate(-544.51147,1616.8188)" />
+  <g
+     id="g4617"
+     transform="translate(35.092015,-99.761927)">
     <path
+       sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
-       id="path3662"
-       d="M 809.02709,1011.4627 C 1221.7449,1010.3326 1022.6019,50.702512 808.42047,50.81663"
-       sodipodi:nodetypes="cc" />
-    <g
-       transform="translate(-1202.8572,-313.74218)"
-       id="g4734">
-      <text
-         x="1997"
-         y="645"
-         font-size="10.00"
-         id="text3666"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:mainActivity (0..20)</text>
-      <text
-         x="1996.99"
-         y="664"
-         font-size="10.00"
-         id="text3668"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">:authorityKind (0..11)</text>
-    </g>
+       id="path3075"
+       d="m 705.98416,818.31962 c 0,-53.68757 0.6603,-45.10124 0.6603,-84.23968" />
+    <polygon
+       transform="matrix(0.3200017,-0.94741698,0.94741698,0.3200017,1286.5102,2123.184)"
+       style="fill:#000000;stroke:#000000"
+       id="polygon3077"
+       points="1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 " />
+  </g>
+  <g
+     id="g4601"
+     transform="translate(56.507005,-116.95298)">
     <text
        style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3677"
+       id="text3079"
        font-size="10.00"
-       y="936.6441"
-       x="891.0459">:bidder (0..12)</text>
+       y="762.00708"
+       x="692.5766">:actualPrice (1..1)</text>
     <text
        style="font-size:10px;text-anchor:start;font-family:Monaco"
-       id="text3686"
+       id="text3081"
        font-size="10.00"
-       y="231.24467"
-       x="704.21014">:awardCriterion (1..10)</text>
-    <g
-       transform="translate(-2442.7429,1255.8941)"
-       id="node22"
-       class="node">
-      <title
-         id="title3927">prefixes</title>
-      <text
-         x="2587.9199"
-         y="-297.79999"
-         font-size="14.00"
-         id="text3929"
-         style="font-size:14px;text-anchor:start;font-family:Open Sans">Namespace prefixes</text>
-      <text
-         x="2501"
-         y="-276"
-         font-size="10.00"
-         id="text3931"
-         style="font-size:10px;text-anchor:start;font-family:Monaco" />
-      <text
-         x="2513"
-         y="-276"
-         font-size="10.00"
-         id="text3933"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://purl.org/procurement/public-contracts#</text>
-      <text
-         x="2483"
-         y="-257"
-         font-size="10.00"
-         id="text3935"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">adms</text>
-      <text
-         x="2513"
-         y="-257"
-         font-size="10.00"
-         id="text3937"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/ns/adms#</text>
-      <text
-         x="2465"
-         y="-238"
-         font-size="10.00"
-         id="text3939"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms</text>
-      <text
-         x="2513"
-         y="-238"
-         font-size="10.00"
-         id="text3941"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://purl.org/dc/terms/</text>
-      <text
-         x="2483"
-         y="-219"
-         font-size="10.00"
-         id="text3943"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">foaf</text>
-      <text
-         x="2513"
-         y="-219"
-         font-size="10.00"
-         id="text3945"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://xmlns.com/foaf/0.1/</text>
-      <text
-         x="2489"
-         y="-200"
-         font-size="10.00"
-         id="text3947"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">gml</text>
-      <text
-         x="2513"
-         y="-200"
-         font-size="10.00"
-         id="text3949"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.opengis.net/ont/gml#</text>
-      <text
-         x="2489"
-         y="-181"
-         font-size="10.00"
-         id="text3951"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns0</text>
-      <text
-         x="2513"
-         y="-181"
-         font-size="10.00"
-         id="text3953"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://linked.opendata.cz/ontology/isvz.cz/</text>
-      <text
-         x="2489"
-         y="-162"
-         font-size="10.00"
-         id="text3955"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">ns1</text>
-      <text
-         x="2513"
-         y="-162"
-         font-size="10.00"
-         id="text3957"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://ruian.linked.opendata.cz/ontology/</text>
-      <text
-         x="2489"
-         y="-143"
-         font-size="10.00"
-         id="text3959"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">owl</text>
-      <text
-         x="2513"
-         y="-143"
-         font-size="10.00"
-         id="text3961"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/2002/07/owl#</text>
-      <text
-         x="2483"
-         y="-124"
-         font-size="10.00"
-         id="text3963"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">pccz</text>
-      <text
-         x="2513"
-         y="-124"
-         font-size="10.00"
-         id="text3965"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://purl.org/procurement/public-contracts-czech#</text>
-      <text
-         x="2483"
-         y="-105"
-         font-size="10.00"
-         id="text3967"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">pcdt</text>
-      <text
-         x="2512.97"
-         y="-105"
-         font-size="10.00"
-         id="text3969"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://purl.org/procurement/public-contracts-datatypes#</text>
-      <text
-         x="2477"
-         y="-86"
-         font-size="10.00"
-         id="text3971"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">pproc</text>
-      <text
-         x="2513"
-         y="-86"
-         font-size="10.00"
-         id="text3973"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://contsem.unizar.es/def/sector-publico/pproc#</text>
-      <text
-         x="2470.99"
-         y="-67"
-         font-size="10.00"
-         id="text3975"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">regorg</text>
-      <text
-         x="2513"
-         y="-67"
-         font-size="10.00"
-         id="text3977"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/ns/regorg#</text>
-      <text
-         x="2470.99"
-         y="-48"
-         font-size="10.00"
-         id="text3979"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">schema</text>
-      <text
-         x="2513"
-         y="-48"
-         font-size="10.00"
-         id="text3981"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://schema.org/</text>
-      <text
-         x="2483"
-         y="-29"
-         font-size="10.00"
-         id="text3983"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">skos</text>
-      <text
-         x="2513"
-         y="-29"
-         font-size="10.00"
-         id="text3985"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/2004/02/skos/core#</text>
-      <text
-         x="2489"
-         y="-10"
-         font-size="10.00"
-         id="text3987"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">xsd</text>
-      <text
-         x="2513"
-         y="-10"
-         font-size="10.00"
-         id="text3989"
-         style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/2001/XMLSchema#</text>
-      <polygon
-         points="2848,-287 2848,-287 2460,-287 2460,-287 2460,-287 "
-         id="polygon3991"
-         style="fill:#000000;stroke:#000000" />
-      <polygon
-         points="2848,-314 2848,0 2460,0 2460,0 2460,-314 "
-         id="polygon3993"
-         style="fill:none;stroke:#000000" />
-    </g>
+       y="781.00708"
+       x="692.56158">isvz:estimatedTotalPrice (1..50)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3083"
+       font-size="10.00"
+       y="800.00708"
+       x="692.5766">isvz:lowestBidPrice (1..9)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3085"
+       font-size="10.00"
+       y="819.00708"
+       x="692.5766">isvz:subcontractingPrice (1..6)</text>
+  </g>
+  <g
+     class="node"
+     id="node11"
+     transform="translate(-403.51147,1737.9437)">
+    <title
+       id="title3088">k8fa07f843d4d07b376ed35d4f8691c33faa2d169</title>
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text3090"
+       font-size="14.00"
+       y="-828.79999"
+       x="1268.6">:Tender</text>
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text3092"
+       font-size="14.00"
+       y="-804.79999"
+       x="1293.8" />
+    <polygon
+       style="fill:#000000;stroke:#000000"
+       id="polygon3094"
+       points="1263,-819 1263,-819 1333,-819 1333,-819 1263,-819 " />
+    <polygon
+       style="fill:none;stroke:#000000"
+       id="polygon3096"
+       points="1263,-793 1263,-845 1333,-845 1333,-793 1263,-793 " />
+  </g>
+  <text
+     x="899.23798"
+     y="867.95862"
+     font-size="10.00"
+     id="text3105"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:awardedTender (1..57)</text>
+  <text
+     x="171.28601"
+     y="317.43805"
+     font-size="14.00"
+     id="text3110"
+     style="font-size:14px;text-anchor:start;font-family:Monaco">:Contract</text>
+  <text
+     x="44.092014"
+     y="338.2381"
+     font-size="10.00"
+     id="text3112"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms:description</text>
+  <text
+     x="277.33301"
+     y="338.2381"
+     font-size="10.00"
+     id="text3114"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
+  <text
+     x="44.092014"
+     y="357.2381"
+     font-size="10.00"
+     id="text3116"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms:title</text>
+  <text
+     x="277.33301"
+     y="357.2381"
+     font-size="10.00"
+     id="text3118"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..9)</text>
+  <text
+     x="44.092014"
+     y="376.2381"
+     font-size="10.00"
+     id="text3120"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">isvz:isFundedFromEUProject</text>
+  <text
+     x="266.08301"
+     y="376.2381"
+     font-size="10.00"
+     id="text3122"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
+  <text
+     x="44.074436"
+     y="395.2381"
+     font-size="10.00"
+     id="text3124"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">isvz:isGovernmentProcurementAgreement</text>
+  <text
+     x="266.08301"
+     y="395.2381"
+     font-size="10.00"
+     id="text3126"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
+  <text
+     x="44.092014"
+     y="414.2381"
+     font-size="10.00"
+     id="text3128"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">isvz:isElectronicAuction</text>
+  <text
+     x="266.08301"
+     y="414.2381"
+     font-size="10.00"
+     id="text3130"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
+  <text
+     x="44.092014"
+     y="433.2381"
+     font-size="10.00"
+     id="text3132"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">isvz:isOnBehalfOf</text>
+  <text
+     x="266.08301"
+     y="433.2381"
+     font-size="10.00"
+     id="text3134"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:boolean (0..1)</text>
+  <polygon
+     points="340,-1481 0,-1481 0,-1481 0,-1481 340,-1481 "
+     id="polygon3136"
+     style="fill:#000000;stroke:#000000"
+     transform="translate(39.092015,1808.2381)" />
+  <polygon
+     points="340,-1365 0,-1365 0,-1365 0,-1507 340,-1507 "
+     id="polygon3138"
+     style="fill:none;stroke:#000000"
+     transform="translate(39.092015,1808.2381)" />
+  <text
+     x="462.2991"
+     y="870.20264"
+     font-size="10.00"
+     id="text3147"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">adms:identifier (1..89)</text>
+  <path
+     d="m 341.71169,443.34807 c 2.14948,171.55167 106.24448,332.76243 242.30147,334.48282"
+     id="path3152"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000"
+     sodipodi:nodetypes="cc" />
+  <text
+     x="439.80557"
+     y="697.88379"
+     font-size="10.00"
+     id="text3156"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:lot (1..475)</text>
+  <path
+     d="m 378.90271,417.58821 c 106.33315,0 104.20403,133.79877 205.40501,133.79877"
+     id="path3161"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000"
+     sodipodi:nodetypes="cc" />
+  <g
+     id="g4577"
+     transform="translate(-236.61802,172.6192)">
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3165"
+       font-size="10.00"
+       y="355"
+       x="639">:actualPrice (0..1)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3167"
+       font-size="10.00"
+       y="374"
+       x="639">:estimatedPrice (0..8)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3169"
+       font-size="10.00"
+       y="393"
+       x="639">isvz:lowestConsideredBidPrice (0..2)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3171"
+       font-size="10.00"
+       y="412"
+       x="638.98199">isvz:highestConsideredBidPrice (0..2)</text>
+  </g>
+  <g
+     class="node"
+     id="node5"
+     transform="translate(-477.82881,1417.9115)">
+    <title
+       id="title3174">kccd367fc534bf4dd1d71911561b2159c120cb036</title>
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text3176"
+       font-size="14.00"
+       y="-534.79999"
+       x="692.59198">schema:Place</text>
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text3178"
+       font-size="14.00"
+       y="-510.79999"
+       x="738.79901" />
+    <polygon
+       style="fill:#000000;stroke:#000000"
+       id="polygon3180"
+       points="687,-525 687,-525 687,-525 799,-525 799,-525 " />
+    <polygon
+       style="fill:none;stroke:#000000"
+       id="polygon3182"
+       points="687,-499 687,-499 687,-551 799,-551 799,-499 " />
+  </g>
+  <path
+     d="m 267.16102,443.30807 c 0,248.15564 -1.99782,175.17208 -1.99782,411.9796"
+     id="path3187"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000"
+     sodipodi:nodetypes="cc" />
+  <text
+     x="179.03802"
+     y="652.4375"
+     font-size="10.00"
+     id="text3191"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:location (0..11)</text>
+  <path
+     d="m 229.59002,300.95807 c 0,-203.208265 193.04759,-199.42811 354.81013,-199.42811"
+     id="path3213"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000"
+     sodipodi:nodetypes="cc" />
+  <g
+     id="g4721"
+     transform="translate(-869.88408,120.88108)">
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3217"
+       font-size="10.00"
+       y="16.5"
+       x="1224">:mainObject (0..6)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3219"
+       font-size="10.00"
+       y="35.5"
+       x="1224">:kind (0..2)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3221"
+       font-size="10.00"
+       y="54.5"
+       x="1224">isvz:mainCriterion (0..2)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3223"
+       font-size="10.00"
+       y="73.5"
+       x="1223.99">isvz:serviceCategory (0..3)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3225"
+       font-size="10.00"
+       y="92.5"
+       x="1224">:additionalObject (1..10)</text>
+  </g>
+  <g
+     class="node"
+     id="node10"
+     transform="translate(-1140.5115,1622.2408)">
+    <title
+       id="title3228">kfd61f3206f953b1a432595ab2dcbef2a681aefee</title>
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text3230"
+       font-size="14.00"
+       y="-595.79999"
+       x="1766.1899">schema:Organization</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3232"
+       font-size="10.00"
+       y="-575"
+       x="1740.99">schema:legalName</text>
+    <text
+       style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco"
+       id="text3234"
+       font-size="10.00"
+       y="-575"
+       x="1842.99">xsd:string (0..25)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3236"
+       font-size="10.00"
+       y="-556"
+       x="1741">schema:url</text>
+    <text
+       style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco"
+       id="text3238"
+       font-size="10.00"
+       y="-556"
+       x="1842.99">xsd:string (0..60)</text>
+    <polygon
+       style="fill:#000000;stroke:#000000"
+       id="polygon3240"
+       points="1736,-586 1736,-586 1736,-586 1956,-586 1956,-586 " />
+    <polygon
+       style="fill:none;stroke:#000000"
+       id="polygon3242"
+       points="1736,-546 1736,-546 1736,-612 1956,-612 1956,-546 " />
+  </g>
+  <text
+     x="441.76709"
+     y="973.00787"
+     font-size="10.00"
+     id="text3251"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:contractingAuthority (0..2)</text>
+  <g
+     class="node"
+     id="node12"
+     transform="translate(-36.511476,1738.2381)">
+    <title
+       id="title3254">kc9152b353b89955859637584792f07708a470200</title>
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text3256"
+       font-size="14.00"
+       y="-1420.8"
+       x="637.98297">:AwardCriteriaCombination</text>
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text3258"
+       font-size="14.00"
+       y="-1396.8"
+       x="738.79901" />
+    <polygon
+       style="fill:#000000;stroke:#000000"
+       id="polygon3260"
+       points="632,-1411 632,-1411 632,-1411 854,-1411 854,-1411 " />
+    <polygon
+       style="fill:none;stroke:#000000"
+       id="polygon3262"
+       points="632,-1385 632,-1385 632,-1437 854,-1437 854,-1385 " />
+  </g>
+  <g
+     id="g4694"
+     transform="translate(35.092015,-99.761927)">
     <path
-       d="m 372.5786,333.92288 c 174.99641,0 128.86759,-0.62463 204.91962,-0.62463"
-       id="path4589"
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000"
+       inkscape:connector-curvature="0"
+       id="path3267"
+       d="m 344.105,427.54 c 174.99641,0 128.86759,-0.62463 204.91962,-0.62463" />
+    <polygon
+       transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,409.38523,1977.5648)"
+       style="fill:#000000;stroke:#000000"
+       id="polygon3269"
+       points="627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 623.664,-1431.46 " />
+  </g>
+  <text
+     x="403.76926"
+     y="322.39999"
+     font-size="10.00"
+     id="text3271"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:awardCriteriaCombination (0..2)</text>
+  <g
+     class="node"
+     id="node13"
+     transform="translate(-61.511476,1734.7543)">
+    <title
+       id="title3274">k0761b4d61f97623fe29c7a30f153ae33d81425cb</title>
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text3276"
+       font-size="14.00"
+       y="-1349.8"
+       x="692.59198">foaf:Project</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3278"
+       font-size="10.00"
+       y="-1329"
+       x="661.99597">foaf:name</text>
+    <text
+       style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco"
+       id="text3280"
+       font-size="10.00"
+       y="-1329"
+       x="721.992">xsd:string (1..1)</text>
+    <polygon
+       style="fill:#000000;stroke:#000000"
+       id="polygon3282"
+       points="657,-1340 657,-1340 657,-1340 829,-1340 829,-1340 " />
+    <polygon
+       style="fill:none;stroke:#000000"
+       id="polygon3284"
+       points="657,-1319.5 657,-1319.5 657,-1366.5 829,-1366.5 829,-1319.5 " />
+  </g>
+  <text
+     x="450.36105"
+     y="378.94128"
+     font-size="10.00"
+     id="text3293"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:subsidy (0..4)</text>
+  <g
+     id="g4547"
+     transform="translate(-35.511476,-175.93421)">
+    <text
+       style="font-size:14px;text-anchor:start;font-family:Monaco"
+       id="text3298"
+       font-size="14.00"
+       y="623.19995"
+       x="702.24854">pproc:Notice</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3300"
+       font-size="10.00"
+       y="644"
+       x="635.98999">dcterms:dateSubmitted</text>
+    <text
+       style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco"
+       id="text3302"
+       font-size="10.00"
+       y="644"
+       x="767.99298">xsd:date (1..1)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3304"
+       font-size="10.00"
+       y="663"
+       x="636">dcterms:issued</text>
+    <text
+       style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco"
+       id="text3306"
+       font-size="10.00"
+       y="663"
+       x="767.99298">xsd:date (1..1)</text>
+    <polygon
+       transform="translate(4,1908)"
+       style="fill:#000000;stroke:#000000"
+       id="polygon3308"
+       points="627,-1275 627,-1275 859,-1275 859,-1275 627,-1275 " />
+    <polygon
+       transform="translate(4,1908)"
+       style="fill:none;stroke:#000000"
+       id="polygon3310"
+       points="627,-1235 627,-1301 859,-1301 859,-1235 627,-1235 " />
+  </g>
+  <path
+     d="m 379.26002,395.14807 c 110.23275,0 104.10363,67.16731 204.82537,67.16731"
+     id="path3315"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000"
+     sodipodi:nodetypes="cc" />
+  <polygon
+     points="615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 "
+     id="polygon3317"
+     style="fill:#000000;stroke:#000000"
+     transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,475.44828,1882.8253)" />
+  <text
+     x="490.38181"
+     y="429.09085"
+     font-size="10.00"
+     id="text3319"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">isvz:notice (1..19)</text>
+  <text
+     x="651.47852"
+     y="1142.8545"
+     font-size="14.00"
+     id="text3402"
+     style="font-size:14px;text-anchor:start;font-family:Monaco">schema:PostalAddress</text>
+  <text
+     x="600.48853"
+     y="1223.1757"
+     font-size="10.00"
+     id="text3404"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:addressCountry</text>
+  <text
+     x="768.46851"
+     y="1223.1757"
+     font-size="10.00"
+     id="text3406"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (1..2)</text>
+  <text
+     x="600.48853"
+     y="1242.1757"
+     font-size="10.00"
+     id="text3408"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:description</text>
+  <text
+     x="768.46851"
+     y="1242.1757"
+     font-size="10.00"
+     id="text3410"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
+  <text
+     x="600.48853"
+     y="1261.1757"
+     font-size="10.00"
+     id="text3412"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:postalCode</text>
+  <text
+     x="762.47852"
+     y="1261.1757"
+     font-size="10.00"
+     id="text3414"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..14)</text>
+  <text
+     x="600.48853"
+     y="1280.1757"
+     font-size="10.00"
+     id="text3416"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:addressLocality</text>
+  <text
+     x="768.46851"
+     y="1280.1757"
+     font-size="10.00"
+     id="text3418"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
+  <text
+     x="600.48853"
+     y="1299.1757"
+     font-size="10.00"
+     id="text3420"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:streetAddress</text>
+  <text
+     x="762.47852"
+     y="1299.1757"
+     font-size="10.00"
+     id="text3422"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..18)</text>
+  <text
+     x="600.48853"
+     y="1167.3889"
+     font-size="10.00"
+     id="text3424"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">ruian:cisloDomovni</text>
+  <text
+     x="768.46851"
+     y="1167.3889"
+     font-size="10.00"
+     id="text3426"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..8)</text>
+  <text
+     x="600.48853"
+     y="1186.3889"
+     font-size="10.00"
+     id="text3428"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">ruian:cisloOrientacni</text>
+  <text
+     x="768.46851"
+     y="1186.3889"
+     font-size="10.00"
+     id="text3430"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
+  <text
+     x="600.47852"
+     y="1205.3889"
+     font-size="10.00"
+     id="text3432"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">ruian:cisloOrientacniPismeno</text>
+  <text
+     x="768.46851"
+     y="1205.3889"
+     font-size="10.00"
+     id="text3434"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..5)</text>
+  <polygon
+     points="2162,-436 2442,-436 2442,-436 2162,-436 2162,-436 "
+     id="polygon3436"
+     style="fill:#000000;stroke:#000000"
+     transform="translate(-1566.5115,1588.6545)" />
+  <polygon
+     points="2162,-462 2442,-462 2442,-282 2162,-282 2162,-282 "
+     id="polygon3438"
+     style="fill:none;stroke:#000000"
+     transform="translate(-1566.5115,1588.6545)" />
+  <text
+     x="459.38031"
+     y="1101.2917"
+     font-size="10.00"
+     id="text3447"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:address (0..1)</text>
+  <text
+     x="649.07861"
+     y="84.763252"
+     font-size="14.00"
+     id="text3196"
+     style="font-size:14px;text-anchor:start;font-family:Monaco">skos:Concept</text>
+  <text
+     x="600.47852"
+     y="107.1633"
+     font-size="10.00"
+     id="text3198"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">skos:prefLabel</text>
+  <text
+     x="696.46851"
+     y="107.1633"
+     font-size="10.00"
+     id="text3200"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..1)</text>
+  <text
+     x="600.48853"
+     y="124.5633"
+     font-size="10.00"
+     id="text3202"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">skos:notation</text>
+  <text
+     x="690.47852"
+     y="124.5633"
+     font-size="10.00"
+     id="text3204"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:string (0..22)</text>
+  <polygon
+     points="2198,-1599 2406,-1599 2406,-1599 2198,-1599 2198,-1599 "
+     id="polygon3206"
+     style="fill:#000000;stroke:#000000"
+     transform="translate(-1602.5115,1693.5633)" />
+  <polygon
+     points="2198,-1625 2406,-1625 2406,-1559 2198,-1559 2198,-1559 "
+     id="polygon3208"
+     style="fill:none;stroke:#000000"
+     transform="translate(-1602.5115,1693.5633)" />
+  <path
+     d="m 654.20853,66.777403 c 1.36,-9.93 16.45,-17.65 45.28,-17.65 19.82,0 33.15,3.65 39.98,9.16"
+     id="path3607"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000" />
+  <polygon
+     points="2347.28,-1625.35 2345.8,-1636.22 2344.63,-1629.6 2341.99,-1633.84 2341.99,-1633.84 2341.99,-1633.84 2344.63,-1629.6 2338.17,-1631.46 2347.28,-1625.35 2347.28,-1625.35 "
+     id="polygon3609"
+     style="fill:#000000;stroke:#000000"
+     transform="translate(-1602.5115,1692.1274)" />
+  <g
+     id="g4710"
+     transform="translate(-352.26247,-216.55682)">
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3611"
+       font-size="10.00"
+       y="237"
+       x="1013.6166">skos:closeMatch (0..1)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3613"
+       font-size="10.00"
+       y="256"
+       x="1013.6266">skos:related (0..2)</text>
+  </g>
+  <text
+     x="637.67847"
+     y="200.87395"
+     font-size="14.00"
+     id="text3618"
+     style="font-size:14px;text-anchor:start;font-family:Monaco">:CriterionWeighting</text>
+  <text
+     x="600.48853"
+     y="221.674"
+     font-size="10.00"
+     id="text3620"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">isvz:order</text>
+  <text
+     x="728.2793"
+     y="221.674"
+     font-size="10.00"
+     id="text3622"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">xsd:integer (1..1)</text>
+  <text
+     x="600.47852"
+     y="240.674"
+     font-size="10.00"
+     id="text3624"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:criterionWeight</text>
+  <text
+     x="702.47852"
+     y="240.674"
+     font-size="10.00"
+     id="text3626"
+     style="font-size:10px;text-anchor:start;fill:#696969;font-family:Monaco">pcdt:percentage (0..1)</text>
+  <polygon
+     points="1474,-1575 1718,-1575 1718,-1575 1474,-1575 1474,-1575 "
+     id="polygon3628"
+     style="fill:#000000;stroke:#000000"
+     transform="translate(-878.51147,1785.674)" />
+  <polygon
+     points="1474,-1601 1718,-1601 1718,-1535 1474,-1535 1474,-1535 "
+     id="polygon3630"
+     style="fill:none;stroke:#000000"
+     transform="translate(-878.51147,1785.674)" />
+  <text
+     x="710.82855"
+     y="162.0529"
+     font-size="10.00"
+     id="text3639"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:weightedCriterion (0..1)</text>
+  <text
+     x="701.64331"
+     y="987.40448"
+     font-size="10.00"
+     id="text3648"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">regorg:registration (0..29)</text>
+  <text
+     x="702.00952"
+     y="1101.2917"
+     font-size="10.00"
+     id="text3657"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema:address (0..17)</text>
+  <path
+     sodipodi:nodetypes="cc"
+     d="M 815.64551,1062.2231 C 1228.3633,1061.093 1029.2203,101.46289 815.03889,101.577"
+     id="path3662"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g4734"
+     transform="translate(-1196.2388,-262.98181)">
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3666"
+       font-size="10.00"
+       y="645"
+       x="1997">:mainActivity (0..20)</text>
+    <text
+       style="font-size:10px;text-anchor:start;font-family:Monaco"
+       id="text3668"
+       font-size="10.00"
+       y="664"
+       x="1996.99">:authorityKind (0..11)</text>
+  </g>
+  <text
+     x="897.66431"
+     y="987.40448"
+     font-size="10.00"
+     id="text3677"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:bidder (0..12)</text>
+  <text
+     x="710.82855"
+     y="282.00504"
+     font-size="10.00"
+     id="text3686"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">:awardCriterion (1..10)</text>
+  <text
+     x="151.79543"
+     y="1008.8545"
+     font-size="14.00"
+     id="text3929"
+     style="font-size:14px;text-anchor:start;font-family:Open Sans">Namespace prefixes</text>
+  <text
+     x="64.875504"
+     y="1030.6545"
+     font-size="10.00"
+     id="text3931"
+     style="font-size:10px;text-anchor:start;font-family:Monaco" />
+  <text
+     x="76.875504"
+     y="1030.6545"
+     font-size="10.00"
+     id="text3933"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://purl.org/procurement/public-contracts#</text>
+  <text
+     x="42.499523"
+     y="1049.6545"
+     font-size="10.00"
+     id="text3935"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">adms</text>
+  <text
+     x="76.875504"
+     y="1049.6545"
+     font-size="10.00"
+     id="text3937"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/ns/adms#</text>
+  <text
+     x="29.101086"
+     y="1068.6545"
+     font-size="10.00"
+     id="text3939"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">dcterms</text>
+  <text
+     x="76.875504"
+     y="1068.6545"
+     font-size="10.00"
+     id="text3941"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://purl.org/dc/terms/</text>
+  <text
+     x="49.975109"
+     y="1087.6545"
+     font-size="10.00"
+     id="text3943"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">foaf</text>
+  <text
+     x="76.875504"
+     y="1087.6545"
+     font-size="10.00"
+     id="text3945"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://xmlns.com/foaf/0.1/</text>
+  <text
+     x="51.513195"
+     y="1106.6545"
+     font-size="10.00"
+     id="text3947"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">gml</text>
+  <text
+     x="76.875504"
+     y="1106.6545"
+     font-size="10.00"
+     id="text3949"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.opengis.net/ont/gml#</text>
+  <text
+     x="50.722179"
+     y="1125.6545"
+     font-size="10.00"
+     id="text3951"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">isvz</text>
+  <text
+     x="76.875504"
+     y="1125.6545"
+     font-size="10.00"
+     id="text3953"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://linked.opendata.cz/ontology/isvz.cz/</text>
+  <text
+     x="44.584484"
+     y="1144.6545"
+     font-size="10.00"
+     id="text3955"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">ruian</text>
+  <text
+     x="76.875504"
+     y="1144.6545"
+     font-size="10.00"
+     id="text3957"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://ruian.linked.opendata.cz/ontology/</text>
+  <text
+     x="53.31007"
+     y="1163.6545"
+     font-size="10.00"
+     id="text3959"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">owl</text>
+  <text
+     x="76.875504"
+     y="1163.6545"
+     font-size="10.00"
+     id="text3961"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/2002/07/owl#</text>
+  <text
+     x="47.265148"
+     y="1182.6545"
+     font-size="10.00"
+     id="text3963"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">pccz</text>
+  <text
+     x="76.875504"
+     y="1182.6545"
+     font-size="10.00"
+     id="text3965"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://purl.org/procurement/public-contracts-czech#</text>
+  <text
+     x="47.563"
+     y="1201.6545"
+     font-size="10.00"
+     id="text3967"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">pcdt</text>
+  <text
+     x="76.845474"
+     y="1201.6545"
+     font-size="10.00"
+     id="text3969"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://purl.org/procurement/public-contracts-datatypes#</text>
+  <text
+     x="41.854992"
+     y="1220.6545"
+     font-size="10.00"
+     id="text3971"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">pproc</text>
+  <text
+     x="76.875504"
+     y="1220.6545"
+     font-size="10.00"
+     id="text3973"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://contsem.unizar.es/def/sector-publico/pproc#</text>
+  <text
+     x="37.543468"
+     y="1239.6545"
+     font-size="10.00"
+     id="text3975"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">regorg</text>
+  <text
+     x="76.875504"
+     y="1239.6545"
+     font-size="10.00"
+     id="text3977"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/ns/regorg#</text>
+  <text
+     x="31.259289"
+     y="1258.6545"
+     font-size="10.00"
+     id="text3979"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">schema</text>
+  <text
+     x="76.875504"
+     y="1258.6545"
+     font-size="10.00"
+     id="text3981"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://schema.org/</text>
+  <text
+     x="47.948742"
+     y="1277.6545"
+     font-size="10.00"
+     id="text3983"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">skos</text>
+  <text
+     x="76.875504"
+     y="1277.6545"
+     font-size="10.00"
+     id="text3985"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/2004/02/skos/core#</text>
+  <text
+     x="52.8755"
+     y="1296.6545"
+     font-size="10.00"
+     id="text3987"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">xsd</text>
+  <text
+     x="76.875504"
+     y="1296.6545"
+     font-size="10.00"
+     id="text3989"
+     style="font-size:10px;text-anchor:start;font-family:Monaco">http://www.w3.org/2001/XMLSchema#</text>
+  <polygon
+     points="2460,-287 2848,-287 2848,-287 2460,-287 2460,-287 "
+     id="polygon3991"
+     style="fill:#000000;stroke:#000000"
+     transform="translate(-2436.1245,1306.6545)" />
+  <polygon
+     points="2460,-314 2848,-314 2848,0 2460,0 2460,0 "
+     id="polygon3993"
+     style="fill:none;stroke:#000000"
+     transform="translate(-2436.1245,1306.6545)" />
+  <path
+     sodipodi:nodetypes="cc"
+     style="fill:none;stroke:#000000"
+     inkscape:connector-curvature="0"
+     id="path4589"
+     d="m 379.19702,384.68325 c 174.99641,0 128.86759,-0.62463 204.91962,-0.62463" />
+  <polygon
+     transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,444.47725,1934.7081)"
+     style="fill:#000000;stroke:#000000"
+     id="polygon4591"
+     points="622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 623.664,-1431.46 627.037,-1425.64 " />
+  <polygon
+     transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,475.44828,1971.7117)"
+     style="fill:#000000;stroke:#000000"
+     id="polygon4593"
+     points="626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 " />
+  <polygon
+     points="626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 "
+     id="polygon4609"
+     style="fill:#000000;stroke:#000000"
+     transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,475.44828,2198.1428)" />
+  <g
+     id="g4745"
+     transform="translate(35.092015,-99.761927)">
+    <path
+       d="m 661.96023,942.20971 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
+       id="path4623"
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#000000"
        sodipodi:nodetypes="cc" />
     <polygon
-       points="623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 "
-       id="polygon4591"
+       points="1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 "
+       id="polygon4625"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,437.85883,1883.9477)" />
-    <polygon
-       points="622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 "
-       id="polygon4593"
-       style="fill:#000000;stroke:#000000"
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,1920.9513)" />
-    <polygon
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,2147.3824)"
-       style="fill:#000000;stroke:#000000"
-       id="polygon4609"
-       points="615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 " />
-    <g
-       transform="translate(28.473597,-150.5223)"
-       id="g4745">
-      <path
-         sodipodi:nodetypes="cc"
-         style="fill:none;stroke:#000000"
-         inkscape:connector-curvature="0"
-         id="path4623"
-         d="m 661.96023,942.20971 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711" />
-      <polygon
-         transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1241.2862,-407.85728)"
-         style="fill:#000000;stroke:#000000"
-         id="polygon4625"
-         points="1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 " />
-    </g>
-    <polygon
-       transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,838.44247,-584.62647)"
-       style="fill:#000000;stroke:#000000"
-       id="polygon4740"
-       points="1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 " />
-    <path
-       d="m 335.09327,392.5877 c 2.14948,171.55167 18.15231,475.6569 242.30147,478.4911"
-       id="path4636"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000"
-       sodipodi:nodetypes="cc" />
-    <polygon
-       points="626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 "
-       id="polygon4638"
-       style="fill:#000000;stroke:#000000"
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,2291.3164)" />
-    <g
-       id="g4647"
-       transform="matrix(1,0,0,-1,-16.750405,1947.6496)">
-      <path
-         d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
-         id="path4649"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:#000000"
-         sodipodi:nodetypes="cc" />
-      <polygon
-         points="1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 "
-         id="polygon4651"
-         style="fill:#000000;stroke:#000000"
-         transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)" />
-    </g>
+       transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1241.2862,-407.85728)" />
+  </g>
+  <polygon
+     points="1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 "
+     id="polygon4740"
+     style="fill:#000000;stroke:#000000"
+     transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,845.06089,-533.8661)" />
+  <path
+     sodipodi:nodetypes="cc"
+     style="fill:none;stroke:#000000"
+     inkscape:connector-curvature="0"
+     id="path4636"
+     d="m 341.71169,443.34807 c 2.14948,171.55167 18.15231,475.6569 242.30147,478.4911" />
+  <polygon
+     transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,475.44828,2342.0768)"
+     style="fill:#000000;stroke:#000000"
+     id="polygon4638"
+     points="626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 " />
+  <g
+     transform="matrix(1,0,0,-1,-10.131987,1998.41)"
+     id="g4647">
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000"
        inkscape:connector-curvature="0"
-       id="path4656"
-       d="m 335.09327,392.5877 c 2.14948,171.55167 -35.26161,595.1475 242.30147,598.6571" />
+       id="path4649"
+       d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711" />
     <polygon
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,2411.6875)"
+       transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)"
        style="fill:#000000;stroke:#000000"
-       id="polygon4658"
-       points="626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 " />
-    <g
-       id="g4660"
-       transform="translate(181.24961,-196.92498)">
-      <path
-         d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
-         id="path4662"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:#000000"
-         sodipodi:nodetypes="cc" />
-      <polygon
-         points="1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 "
-         id="polygon4664"
-         style="fill:#000000;stroke:#000000"
-         transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)" />
-    </g>
+       id="polygon4651"
+       points="1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 " />
+  </g>
+  <path
+     d="m 341.71169,443.34807 c 2.14948,171.55167 -35.26161,595.14753 242.30147,598.65713"
+     id="path4656"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000"
+     sodipodi:nodetypes="cc" />
+  <polygon
+     points="622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 "
+     id="polygon4658"
+     style="fill:#000000;stroke:#000000"
+     transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,475.44828,2462.4479)" />
+  <g
+     transform="translate(187.86803,-146.16461)"
+     id="g4660">
     <path
-       d="m 888.87184,893.5811 c 0,81.8258 -24.23342,97.6637 -70.31863,97.6637"
-       id="path4669"
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000"
+       inkscape:connector-curvature="0"
+       id="path4662"
+       d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711" />
+    <polygon
+       transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)"
+       style="fill:#000000;stroke:#000000"
+       id="polygon4664"
+       points="1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 " />
+  </g>
+  <path
+     sodipodi:nodetypes="cc"
+     style="fill:none;stroke:#000000"
+     inkscape:connector-curvature="0"
+     id="path4669"
+     d="m 895.49026,944.34147 c 0,81.82583 -24.23342,97.66373 -70.31863,97.66373" />
+  <polygon
+     transform="matrix(-0.93159382,-0.36350097,-0.36350097,0.93159382,935.84228,2462.4479)"
+     style="fill:#000000;stroke:#000000"
+     id="polygon4671"
+     points="622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 " />
+  <g
+     id="g4673"
+     transform="matrix(1,0,0,-1,-0.1319783,1289.6956)">
+    <path
+       d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
+       id="path4675"
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#000000"
        sodipodi:nodetypes="cc" />
     <polygon
-       points="617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 "
-       id="polygon4671"
+       points="1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 "
+       id="polygon4677"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(-0.93159382,-0.36350097,-0.36350097,0.93159382,929.22386,2411.6875)" />
-    <g
-       transform="matrix(1,0,0,-1,-6.750396,1238.9352)"
-       id="g4673">
-      <path
-         sodipodi:nodetypes="cc"
-         style="fill:none;stroke:#000000"
-         inkscape:connector-curvature="0"
-         id="path4675"
-         d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711" />
-      <polygon
-         transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)"
-         style="fill:#000000;stroke:#000000"
-         id="polygon4677"
-         points="1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 " />
-    </g>
-    <polygon
-       transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,438.14549,1601.4847)"
-       style="fill:#000000;stroke:#000000"
-       id="polygon4728"
-       points="622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 " />
-    <polygon
-       points="631.794,-1424.1 631.794,-1424.1 623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 "
-       id="polygon4738"
-       style="fill:#000000;stroke:#000000"
-       transform="matrix(-0.94877887,-0.31594088,-0.31594088,0.94877887,948.16868,1601.4847)" />
-    <g
-       transform="translate(28.473597,82.61486)"
-       id="g4749">
-      <path
-         d="m 661.96023,942.20971 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
-         id="path4751"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:#000000"
-         sodipodi:nodetypes="cc" />
-      <polygon
-         points="1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 "
-         id="polygon4753"
-         style="fill:#000000;stroke:#000000"
-         transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1241.2862,-407.85728)" />
-    </g>
+       transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)" />
+  </g>
+  <polygon
+     points="620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 "
+     id="polygon4728"
+     style="fill:#000000;stroke:#000000"
+     transform="matrix(0.94877887,-0.31594088,0.31594088,0.94877887,444.76391,1652.2451)" />
+  <polygon
+     transform="matrix(-0.94877887,-0.31594088,-0.31594088,0.94877887,954.7871,1652.2451)"
+     style="fill:#000000;stroke:#000000"
+     id="polygon4738"
+     points="623.664,-1431.46 627.037,-1425.64 622.28,-1427.18 622.28,-1427.18 622.28,-1427.18 627.037,-1425.64 620.895,-1422.9 631.794,-1424.1 631.794,-1424.1 631.794,-1424.1 " />
+  <g
+     id="g4749"
+     transform="translate(35.092015,133.37523)">
     <path
-       d="m 314.87653,845.94711 c 144.2141,-4.56313 88.03328,331.07199 264.83592,333.30759"
-       id="path4761"
-       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000"
-       sodipodi:nodetypes="cc" />
+       inkscape:connector-curvature="0"
+       id="path4751"
+       d="m 661.96023,942.20971 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711" />
     <polygon
-       points="619.084,-1288.02 622.147,-1282.03 617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 "
-       id="polygon4763"
+       transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1241.2862,-407.85728)"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,468.82986,2599.4222)" />
-    <g
-       id="g3514"
-       transform="matrix(1,0,0,-1,-6.750396,1122.8245)">
-      <path
-         d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711"
-         id="path3516"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:#000000"
-         sodipodi:nodetypes="cc" />
-      <polygon
-         points="1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 "
-         id="polygon3518"
-         style="fill:#000000;stroke:#000000"
-         transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)" />
-    </g>
+       id="polygon4753"
+       points="1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 1139.93,-996.863 " />
+  </g>
+  <path
+     sodipodi:nodetypes="cc"
+     style="fill:none;stroke:#000000"
+     inkscape:connector-curvature="0"
+     id="path4761"
+     d="m 321.49495,896.70748 c 144.2141,-4.56313 88.03328,331.07202 264.83592,333.30762" />
+  <polygon
+     transform="matrix(0.93159382,-0.36350097,0.36350097,0.93159382,475.44828,2650.1826)"
+     style="fill:#000000;stroke:#000000"
+     id="polygon4763"
+     points="617.477,-1283.82 617.477,-1283.82 617.477,-1283.82 622.147,-1282.03 615.87,-1279.61 626.818,-1280.25 626.818,-1280.25 626.818,-1280.25 619.084,-1288.02 622.147,-1282.03 " />
+  <g
+     transform="matrix(1,0,0,-1,-0.1319783,1173.5849)"
+     id="g3514">
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000"
+       inkscape:connector-curvature="0"
+       id="path3516"
+       d="m 707.18423,988.61239 c 0,21.28571 -0.53977,21.89991 -0.53977,39.03711" />
+    <polygon
+       transform="matrix(0.3200017,0.94741698,0.94741698,-0.3200017,1286.5102,-361.4546)"
+       style="fill:#000000;stroke:#000000"
+       id="polygon3518"
+       points="1139.93,-996.863 1139.93,-996.863 1129.05,-998.172 1135.16,-995.37 1130.39,-993.878 1130.39,-993.878 1130.39,-993.878 1135.16,-995.37 1131.73,-989.583 1139.93,-996.863 " />
   </g>
 </svg>
