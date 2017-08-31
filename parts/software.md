@@ -150,7 +150,7 @@ Both SPARQL queries are provided as Mustache[^mustache] templates to allow param
 Each retrieved description in RDF is converted to JSON-LD and transformed via a provided JSON-LD frame that coerces the input RDF graph into a predictable JSON tree.
 The output is appended to a file that is serialized as Newline Delimited JSON (NDJSON).
 
-### sparql-to-tensor {.unnumbered}
+### sparql-to-tensor {#sec:sparql-to-tensor .unnumbered}
 
 sparql-to-tensor^[<https://github.com/jindrichmynarz/sparql-to-tensor>] exports RDF data from SPARQL endpoints to tensors.
 The tensors are represented as a collection of frontal slices serialized as sparse matrices in the MatrixMarket coordinate format.^[<http://math.nist.gov/MatrixMarket/formats.html#MMformat>]

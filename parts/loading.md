@@ -33,7 +33,10 @@ Each batch is then indexed in Elasticsearch using a provided mapping, which defi
 TODO: Describe the concrete SPARQL CONSTRUCT query used, together with its Elasticsearch mapping, once we have a working Elasticsearch matchmaker.
 --> 
 
-<!-- Web of Needs-based matchmaking -->
+<!-- RESCAL-based matchmaking -->
+
+The RESCAL-based matchmaking operates on tensors.
+*sparql-to-tensor* CLI tool we developed is described in [@sec:sparql-to-tensor].
 
 <!--
 - Report the sparsity of the resulting tensor, i.e. count of non-zero entries to all entries?

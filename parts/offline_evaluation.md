@@ -121,8 +121,8 @@ If we sort bidders in descending order by the number of contracts awarded to the
 In case of the Czech public procurement data, 20 % of the awarded contracts concentrates among the 101 most popular bidders from the total of 14388 bidders in the dataset.
 To avoid awarding contracts only to a few highly successful bidders, we aim to increase the proportion of recommendations from the long tail of bidders.
 This is especially important for evaluation of the case-based matchmakers, which tend to favour the most popular bidders.
-Let $(b_{1}, \dots, b_{n})$ be an n-tuple of all bidders $b_{i} \in B$, so that $(i \prec j) \implies awards(b_{i}) \geq awards(b_{j})$, so that the bidders are sorted in descending order by the number of contracts awarded to them. <!-- _b -->
-The short head $SH$ of this ordered n-tuple can be then defined as:
+Let $(b_{1}, \dots, b_{n})$ be a list of all bidders $b_{i} \in B$, so that $(i \prec j) \implies awards(b_{i}) \geq awards(b_{j})$, so that the bidders are sorted in descending order by the number of contracts awarded to them. <!-- _b -->
+The short head $SH$ of this ordered list can be then defined as:
 
 $$SH = (b_{1},\dots,b_{e});\quad \textrm{so that}\, e : \sum_{k = 1}^{e - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{l = 1}^{e} awards(b_{l})$$ <!-- _b -->
 

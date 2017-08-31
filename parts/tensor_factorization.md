@@ -1,16 +1,5 @@
 ## Tensor factorization
 
-<!--
-### Implementation notes:
-
-* Start a new Python project `matchmaker-rescal`.
-* Only command-line interface (~ minimum viable product)
-* Produce results in EDN (<https://github.com/swaroopch/edn_format>).
-* Consider also <https://github.com/nzhiltsov/Ext-RESCAL>?
-* Learning to rank with <http://fa.bianp.net/blog/2012/learning-to-rank-with-scikit-learn-the-pairwise-transform/>?
-* Use <http://hyperopt.github.io/hyperopt> for hyper-parameter optimization?
--->
-
 @Nickel2011, @Nickel2012, @Zhiltsov2013
 
 <!--
@@ -71,6 +60,8 @@ Switching objects in triples sharing the same predicate (under LCWA) is valid fo
 @Nickel2016 proposes an approach that assumes the generated triples to be likely false.
 
 Binary predicates in RDF ~ dyadic relations
+
+Tensor order (also known as tensor degree or tensor rank)
 -->
 
 <!--
