@@ -61,15 +61,15 @@ Mention restrictions by the computational cost of an evaluation protocol? E.g., 
 
 We define the evaluation metrics using the following notation.
 Let $C$ be the set of public contracts and $B$ the set of bidders who were awarded at least one contract.
-The function $match_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of bidders recommended for a given public contract by matchmaker $m$.
+The function $\mathit{match10}_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of 10[^top10] best-matching bidders recommended for a given public contract by matchmaker $m$.
 The function $winner\colon C \to B$ returns the winning bidder to whom a contract was awarded.
-The function $wrank\colon C \to \mathbb{N}_{\ge 1} \cup \{ \text{nil} \}$ gives the rank of the bidder who won a given public contract.
+The function $wrank\colon C \to \mathbb{N}_{> 0} \cup \{ \text{nil} \}$ gives the rank of the bidder who won a given public contract.
 
 $$wrank(c) =
   \small
   \begin{cases}
-    n \in \mathbb{N}\colon winner(c)\, \textrm{is in position}\, n\, \textrm{in}\, match_{m}(c)
-    & \text{if}\ winner(c) \in match_{m}(c) \\
+    n \colon winner(c)\, \textrm{is in position}\, n\, \textrm{in}\, \mathit{match10}_{m}(c)
+    & \text{if}\ winner(c) \in \mathit{match10}_{m}(c) \\
     \quad\textrm{nil} & \textrm{otherwise} \\
   \end{cases}
   \normalsize$$
@@ -79,18 +79,18 @@ The function $awards\colon B \to \mathbb{N}$ returns the number of contracts awa
 $$awards(b) = \left\vert{c \in C : winner(c) = b}\right\vert$$
 
 We measured accuracy using hit rate at 10 (HR@10) and mean reciprocal rank at 10 (MRR@10).
-HR@10 [@Deshpande2004, p. 159] is the share of queries for which hits are found in the top 10 results.[^top10]
+HR@10 [@Deshpande2004, p. 159] is the share of queries for which hits are found in the top 10 results.
 We consider hits to be the results that include the awarded bidder.
 We adopted HR@10 as the primary metric that we aim to increase.
 This metric can be calculated for the matchmaker $m$ as follows:
 
-$$HR@10 = \frac{\left\vert{c \in C : winner(c) \in match_{m}(c) \land wrank(c) \leq 10}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
+$$HR@10 = \frac{\left\vert{c \in C : winner(c) \in \mathit{match10}_{m}(c)}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
 
 MRR@10 [@Craswell2009] is the arithmetic mean of multiplicative inverse ranks.
-Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{\ge 0}$ can be defined as such:
+Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{> 0}$ can be defined as such:
 
 $$mir(c)=\begin{cases}
-         \frac{1}{wrank(c)} & \text{if}\ winner(c) \in match_{m}(c) \\
+         \frac{1}{wrank(c)} & \text{if}\ winner(c) \in \mathit{match10}_{m}(c) \\
          0 & \text{nil}
        \end{cases}$$
 
@@ -107,13 +107,13 @@ PC [@Herlocker2004, p. 40] measures the amount of items for which the evaluated 
 We strive to increase PC to achieve a near-complete coverage.
 PC for the matchmaker $m$ is defined as the share of queries for which non-empty results are returned.
 
-$$PC = \frac{\left\vert{c \in C : match_{m}(c) \neq \varnothing}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
+$$PC = \frac{\left\vert{c \in C : \mathit{match10}_{m}(c) \neq \varnothing}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
 
 CC@10 [@Ge2010, p. 258] reflects diversity of the recommended items.
 Systems that recommend a limited set of items have a low catalog coverage, while systems that recommend diverse items achieve a higher catalog coverage.
 We compute CC@10 for the matchmaker $m$ as the number of distinct bidders in the top 10 results for all contracts divided by the number of all bidders.
 
-$$CC@10 = \frac{\left\vert{\bigcup_{c \in C} match_{m}(c)}\right\vert}{\left\vert{B}\right\vert}$$ <!-- _b -->
+$$CC@10 = \frac{\left\vert{\bigcup_{c \in C} \mathit{match10}_{m}(c)}\right\vert}{\left\vert{B}\right\vert}$$ <!-- _b -->
 
 LTP@10 [@Adomavicius2012] is a metric of novelty, which is based on the distribution of the recommended items.
 Concretely, it measures the share of items from the long tail in the matchmaking results.
@@ -130,7 +130,7 @@ The formula defines $SH$ as delimited by the index $e$ of the bidder with the aw
 Long tail $LT$ is the complement of the short head ($LT = B \setminus SH$).
 We then calculate LTP@10 for the matchmaker $m$ as follows:
 
-$$LTP@10 = \frac{\sum_{c \in C} \left\vert{match_{m}(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{match_{m}(c)}\right\vert}$$
+$$LTP@10 = \frac{\sum_{c \in C} \left\vert{\mathit{match10}_{m}(c) \cap LT}\right\vert}{\sum_{c \in C} \left\vert{\mathit{match10}_{m}(c)}\right\vert}$$
 
 <!--
 We can also evaluate novelty in terms of time.
@@ -167,7 +167,7 @@ These factors included weighting, query expansion, aggregation functions, and da
 All reported evaluation results are rounded to two decimal places.
 The best results for each metric in each table are highlighted by using a bold font.
 
-<!-- Blind matchmakers -->
+#### Blind matchmakers
 
 As a starting point, we evaluated the blind matchmakers described in the [@sec:blind-matchmakers].
 Results of their evaluation are summarized in the [@tbl:blind-matchmakers].
@@ -188,7 +188,7 @@ Table: Evaluation of blind matchmakers {#tbl:blind-matchmakers}
 
 <!-- There are also papers that consider multiple baselines, such as [@Garcin2014]. -->
 
-<!-- Aggregation functions -->
+#### Aggregation functions
 
 We evaluated the aggregation functions from the [@sec:aggregation-functions].
 The functions were applied to matchmaking via the `pc:mainObject` property with the weight of 0.6.
@@ -208,10 +208,10 @@ Product              **0.25** **0.12**     0.57 **0.98**     0.68
 
 Table: Evaluation t-norms and t-conorms {#tbl:norms-conorms}
 
-<!-- Individual features -->
+#### Individual features
 
 As we described in the [@sec:contract-objects], we used several properties that describe contract objects.
-We evaluated these properties separately, without weighting, to determine their predictive powers.
+We evaluated these properties separately, without weighting, to determine their predictive power.
 Evaluation results of the matchmakers based on the four considered properties are given in the [@tbl:properties-evaluation].
 The best-performing property is the `pc:mainObject`.
 As the [@fig:cumulative-hr] illustrates, its HR@k grows logarithmically with $k$, starting at 7 % chance of finding the contact's winner as the first hit.
@@ -232,6 +232,8 @@ Property                  HR@10   MRR@10    CC@10       PC   LTP@10
 Table: Evaluation of individual properties {#tbl:properties-evaluation}
 
 ![HR@k for `pc:mainObject`](img/evaluation/cumulative_hr.png){#fig:cumulative-hr}
+
+#### Combined features
 
 Having evaluated the properties individually we examined whether their combinations could perform better.
 We combined the properties with the baseline property `pc:mainObject`, using a reduced weight of 0.1 for the added properties.
@@ -263,7 +265,7 @@ qualifiers
 
 Table: Evaluation of combined properties {#tbl:combined-properties}
 
-<!-- Query expansion -->
+#### Query expansion
 
 Apart from using combinations of properties, we can also extend the baseline matchmaker via query expansion, as documented in [@sec:query-expansion].
 We evaluated the expansion to related CPV concepts connected via hierarchical relations, both in the direction to broader concepts, to narrower concepts, or in both directions.
@@ -296,7 +298,7 @@ Broader Narrower Weight    HR@10   MRR@10    CC@10       PC   LTP@10
 
 Table: Evaluation of matchmakers using query expansion {#tbl:query-expansion}
 
-<!-- Data reduction -->
+#### Data reduction
 
 We evaluated the impact of data reduction on HR@10 for the baseline matchmaker and the blind matchmaker that constantly recommends the top winning bidders.
 Prior to running the evaluation we reduced the number of links between contracts and bidders to a given fraction.
@@ -310,7 +312,7 @@ Both approaches suffer from the cold start problem, although the baseline matchm
 
 ![HR@10 per level of data reduction](img/evaluation/data_reduction.png){#fig:data-reduction}
 
-<!-- Data refinement -->
+#### Data refinement
 
 Of the data refinement steps undertaken, as described in the [@sec:transformation], we evaluated what impact better deduplication and mapping CPV 2003 to CPV 2008 had on the baseline matchmaker.
 Both steps improved the evaluation results of the matchmaker, as can be seen in the [@tbl:data-refinement].
@@ -328,7 +330,7 @@ Final                         **0.25** **0.12**     0.57 **0.98**     0.68
 
 Table: Impact of data refinement on the baseline matchmaker {#tbl:data-refinement}
 
-<!-- Counter-measures -->
+#### Counter-measures to limits of ground truth 
 
 We evaluated two approaches devised as counter-measures to address the limits of our ground truth.
 One of them weighted contract awards by the zIndex fairness score of the contracting authority, the other limited the training dataset to contracts awarded in open procedures.
