@@ -13,4 +13,8 @@ Main contributions:
 * Cleaned and enriched Czech public procurement dataset published as linked open data for anyone to reuse
 * Reusable command-line tools for working with RDF data
 
-<!-- New findings compared with the state of the art -->
+<!--
+New findings compared with the state of the art
+
+Our work perhaps produced more value in the developed reusable tools for data preparation and matchmaking than as a use case in public procurement.
+-->

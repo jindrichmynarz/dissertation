@@ -54,7 +54,7 @@ Should we split by time? For example, use 8 years (2006-2014) as training and 2 
 Should we add an explanation why we did not split folds by time?
 -->
 
-### Evaluated metrics
+### Evaluated metrics {#sec:evaluated-metrics}
 
 <!-- Metrics and objectives -->
 

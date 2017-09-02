@@ -47,7 +47,7 @@ OpenLink Virtuoso^[<https://virtuoso.openlinksw.com>] is an RDF store that imple
 A notable characteristic of Virtuoso is its column-wise storage enabling vectored query execution [@Erling2012], which gives Virtuoso a good query performance that scales well to large RDF datasets.
 Virtuoso offers an open source version that lacks some of the features in the commercial version.
 
-### RESCAL {.unnumbered}
+### RESCAL {#sec:rescal-software .unnumbered}
 
 RESCAL [@Nickel2011] is a tensor factorization technique for relational data modelled as three-way tensors.
 It has an open source implementation written in Python using the NumPy^[<http://www.numpy.org>] and SciPy^[<https://www.scipy.org>] modules for low-level matrix operations.
@@ -117,6 +117,12 @@ The configuration describes the data to use, connection to a SPARQL endpoint to 
 
 ### matchmaker-rescal {.unnumbered}
 
+matchmaker-rescal^[<https://github.com/jindrichmynarz/matchmaker-rescal>] is a CLI tool that wraps the original implementation of RESCAL in Python [@sec:rescal-software].
+It serves as an exploratory tool for experimentation with RESCAL-based matchmaking.
+The sole purpose of the tool is to evaluate link prediction for a given relation using cross-validation and the metrics defined in @sec:evaluated-metrics.
+Its input consists of the ground truth matrix encoding the relation to predict, additional matrices encoding other relations, and configuration with hyper-parameters for RESCAL.
+The matrices required as input by this tool can be prepared by sparql-to-tensor [@sec:sparql-to-tensor].
+
 ### sparql-to-csv {.unnumbered}
 
 sparql-to-csv^[<https://github.com/jindrichmynarz/sparql-to-csv>] allows to save results of SPARQL queries into CSV.
@@ -154,7 +160,7 @@ The output is appended to a file that is serialized as Newline Delimited JSON (N
 
 sparql-to-tensor^[<https://github.com/jindrichmynarz/sparql-to-tensor>] exports RDF data from SPARQL endpoints to tensors.
 The tensors are represented as a collection of frontal slices serialized as sparse matrices in the MatrixMarket coordinate format.^[<http://math.nist.gov/MatrixMarket/formats.html#MMformat>]
-IRIs of tensor entities are written to a `headers.txt` file.
+IRIs of the tensor entities are written to a `headers.txt` file.
 Each IRI is written on a separate line, so that line numbers can be used as indices of the entities in the matrices.
 The header can thus be used to translate the matrices to IRIs of RDF resources.
 

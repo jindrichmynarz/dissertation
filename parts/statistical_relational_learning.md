@@ -78,10 +78,6 @@ Relational features can be enriched with aggregations.
 
 Relational learning typically involves unirelational graphs.
 We focus on multi-relational data in RDF.
-
-Statistical relational models:
-- Known features
-- Latent features (e.g., tensor factorization, multiway neural networks)
 -->
 
 <!-- #### Link prediction -->
