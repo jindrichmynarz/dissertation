@@ -39,6 +39,16 @@ The testing dataset contains the withheld contract awards that a matchmaker atte
 We used 5-fold cross-validation, so that we divided the evaluation data into five non-overlapping folds, each of which was used as a testing dataset, while the remaining folds were used for training the evaluated matchmakers.
 In this way we tested prediction of each contract award in the ground truth.
 
+<!-- Time series cross-validation -->
+
+When evaluating matchmakers that take time into account, we split the ground truth so that the training data precedes the testing data.
+First, we sort the ground truth by contract award date in ascending order.
+When the award data is unknown, we use the median award date.
+The sorted ground truth is then split in 5 folds.
+The second or later folds are consecutively used as testing data, while all the previous folds constitute training data.
+The first fold is therefore never used for testing, so we test only 4 folds.
+In this way we avoid training on data from the future relative to the tested data.
+
 <!--
 Should we split by time? For example, use 8 years (2006-2014) as training and 2 years (2015-2016) for testing?
 Should we add an explanation why we did not split folds by time?
