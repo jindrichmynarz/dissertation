@@ -384,11 +384,46 @@ User coverage: a share of bidders for which the system is able of recommending c
 
 <!--
 ### Results for Elasticsearch-based matchmakers
+-->
 
 ### Results for RESCAL-based matchmakers
 
+<!--
+#### Random baseline
+
+Is it a meaningful baseline?
+Or should we instead use only the `pc:mainObject` as the baseline, similarly to the SPARQL-based matchmakers?
+-->
+
+#### Hyper-parameters
+
+![HR@10 per rank](img/evaluation/hrs_per_rank.png){#fig:hrs-per-rank}
+
+<!--
+Method of tuning the hyper-parameters: informed/guided grid search?
+
+Initialization methods: random, eigenvalues
+Regularization parameters: lambda A, lambda R
+- best found by [@Kuchar2016]: both 0.01
+- best found by [@Padia2016]: lambda A = 10, lambda R = 0.2
+- We found that relatively high values of the regularization parameters tend to achieve the best results. We set both lambda A and lambda R to be 10.
+Rank
+- Higher rank typically leads to better models. We tested ranks 10 to 1000.
+Omit setting maximum iterations or maximum residual? (We used the default values.)
+
 - Add discussion of sensitivity to hyperparameters?
-  - Higher rank typically leads to better models.
+
+#### Feature selection
+
+`pc:mainObject`
+`pc:additionalObject`
+`pc:mainObject` + `skos:broaderTransitive` (approximating query expansion)
+`pc:kind`
+`isvz:serviceCategory`
+`rov:orgActivity`
+`rov:orgActivity` + `skos:broaderTransitive`
+
+Overall, the RESCAL-based matchmakers produce results with very low diversity, especially when considering their CC@10.
 -->
 
 [^top10]: 91 % of search engine users consider only the top 10 results, according to a study (<http://www.seo-takeover.com/case-study-click-through-rate-google>).
