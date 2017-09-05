@@ -52,7 +52,12 @@ parts/evaluation.md
 parts/offline_evaluation.md
 parts/qualitative_evaluation.md
 parts/conclusions.md
-parts/abbreviations.md
-parts/software.md
 parts/references.md
+```
+
+<div id="refs"></div>
+
+```include
+parts/software.md
+parts/abbreviations.md
 ```

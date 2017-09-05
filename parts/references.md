@@ -1,3 +1,3 @@
 \footnotesize
 
-# References
+# References {.unnumbered}

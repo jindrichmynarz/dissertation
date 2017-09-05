@@ -1,4 +1,7 @@
-# Appendix A: Software {#sec:software label="Appendix A" .unnumbered}
+\normalsize
+\appendix
+
+# Software {#sec:software} 
 
 The work described in this thesis involved many software tools.
 In order to provide a single reference point for these tools, this appendix lists their brief descriptions.
@@ -6,13 +9,13 @@ Here we describe both the software used for data preparation as well as the soft
 The descriptions are divided into two categories: software that we reused and software that we developed.
 Descriptions in each category are sorted in alphabetic order.
 
-## Reused software {.unnumbered}
+## Reused software
 
 Several tools were reused as is or integrated with other tools.
 The software listed in this category comprises mostly database systems or data processing tools.
 <!-- TODO: Should we add Mustache and Graphviz as the reused software? -->
 
-### Elasticsearch {.unnumbered}
+### Elasticsearch
 
 Elasticsearch (ES)^[<https://www.elastic.co/products/elasticsearch>] is an open source full-text search engine based on Apache Lucene.^[<http://lucene.apache.org>]
 ES indexes JSON documents that can be searched via ES query DSL exposed through an HTTP API.
@@ -26,13 +29,13 @@ ES indices can be distributed across several nodes, each hosting a number of ind
 The cluster architecture of ES supports horizontal scaling by adding nodes.
 -->
 
-### GeoTools {.unnumbered}
+### GeoTools
 
 GeoTools^[<http://www.geotools.org>] is an open source Java library for working with geospatial data.
 Its implementation complies with standards of the Open Geospatial Consortium (OGC).
 For example, it supports reprojection of coordinate data between standard coordinate reference systems.
 
-### LinkedPipes-ETL {.unnumbered}
+### LinkedPipes-ETL
 
 LinkedPipes-ETL (LP-ETL) [@Klimek2016]^[<http://etl.linkedpipes.com>] is an open source data processing tool for converting diverse data sources to RDF and performing various transformations of RDF data.
 LP-ETL follows the workflow of Extract-Transform-Load (ETL).
@@ -41,25 +44,25 @@ For example, an extraction component can download data from given URL, a transfo
 The components can be composed into pipelines that automate potentially complex data processing workflows.
 The design of LP-ETL evolved from UnifiedViews and in many respects it can be considered a successor to this project.
 
-### OpenLink Virtuoso {.unnumbered}
+### OpenLink Virtuoso
 
 OpenLink Virtuoso^[<https://virtuoso.openlinksw.com>] is an RDF store that implements SPARQL and a plethora of additional functionality for working with RDF data.
 A notable characteristic of Virtuoso is its column-wise storage enabling vectored query execution [@Erling2012], which gives Virtuoso a good query performance that scales well to large RDF datasets.
 Virtuoso offers an open source version that lacks some of the features in the commercial version.
 
-### RESCAL {#sec:rescal-software .unnumbered}
+### RESCAL {#sec:rescal-software}
 
 RESCAL [@Nickel2011] is a tensor factorization technique for relational data modelled as three-way tensors.
 It has an open source implementation written in Python using the NumPy^[<http://www.numpy.org>] and SciPy^[<https://www.scipy.org>] modules for low-level matrix operations.
 RESCAL achieves superior performance on factorization of large sparse tensors, while having a fundamentally simpler implementation than other tensor factorization techniques.
 
-### Saxon XSLT and XQuery Processor {.unnumbered}
+### Saxon XSLT and XQuery Processor
 
 Saxon XSLT and XQuery Processor^[<http://www.saxonica.com/products/products.xml>] is an implementation of several W3C standards for processing XML data including XSLT, XQuery, and XPath.
 It can transform XML data via XSLT stylesheets or query it via XQuery and XPath.
 The limited Saxon-HE version is available as open source.
 
-### Silk Link Discovery Framework {.unnumbered}
+### Silk Link Discovery Framework
 
 Silk [@Bryl2014]^[<http://silkframework.org>] is an open source link discovery framework for instance matching.
 It offers an extensive arsenal of similarity measures and combination functions for aggregating similarity scores.
@@ -68,14 +71,14 @@ As an alternative to explicit linkage specifications, Silk supports active learn
 Resources to interlink can be retrieved from SPARQL endpoints and RDF or CSV files.
 Silk thus supports integration of heterogeneous data by materializing explicit links across the integrated data sources.
 
-### Tarql {.unnumbered}
+### Tarql
 
 Tarql^[<http://tarql.github.io>] is an open source tool for converting CSV to RDF via SPARQL CONSTRUCT queries.
 It extends the query engine of Apache Jena^[<https://jena.apache.org>] such that each CSV row is provided as inline data to the SPARQL query provided by the user.
 Queries can thus refer to tabular data via query variables based on column names in the source CSV.
 Instead of resorting to custom-coded conversion scripts, such setup enables to harness the expressivity of SPARQL as a native RDF data manipulation language.
 
-### UnifiedViews {.unnumbered}
+### UnifiedViews
 
 UnifiedViews [@Knap2017]^[<https://unifiedviews.eu>] is an open source ETL framework with native support for RDF.
 It allows to execute data processing tasks, monitor progress of their execution, debug failed executions, and schedule periodic tasks.
@@ -83,13 +86,13 @@ Concrete data processing workflows can be implemented as pipelines that combine 
 Each unit is responsible for a data processing step, such as applying an XSL transformation or loading metadata into a data catalogue.
 UnifiedViews has been in development from the year 2013 and it can be considered relatively stable, as it has been deployed to address many use cases since.
 
-## Developed software {.unnumbered}
+## Developed software
 
 In order to cover the needs that were not sufficiently addressed by existing software we developed new reusable tools.
 Most of these tools were implemented in Clojure, with the exception of matchmaker-rescal that was written in Python due to its dependency on RESCAL.
 All the developed tools expose simple command-line interfaces and are released as open source under the terms of the Eclipse Public License 1.0.
 
-### discretize-sparql {#sec:discretize-sparql .unnumbered}
+### discretize-sparql {#sec:discretize-sparql}
 
 discretize-sparql^[<https://github.com/jindrichmynarz/discretize-sparql>] allows to discretize numeric literals in RDF data exposed via a SPARQL 1.1 Update [@Gearon2013] endpoint.
 Discretization groups continuous numeric values into discrete intervals.
@@ -101,7 +104,7 @@ Consequently, the update operation can be formulated as if it contained a mappin
 For instance, `?interval` can be used in the INSERT clause and `?value` in the DELETE clause in order to replace the values to discretize with intervals.
 The provided update operation will be rewritten first to a SELECT query to retrieve the values to discretize and then to an update operation including the actual mapping from numeric literals to intervals.
 
-### elasticsearch-geocoding {.unnumbered}
+### elasticsearch-geocoding
 
 elasticsearch-geocoding^[<https://github.com/jindrichmynarz/elasticsearch-geocoding>] is a tool for geocoding postal addresses via Elasticsearch (ES).
 It uses an ES index seeded with reference addresses to which it matches the addresses to geocode.
@@ -110,7 +113,7 @@ The tool loads the addresses to geocode from a SPARQL endpoint using a given SPA
 For each address an ES query is generated to find matching reference addresses.
 Geo-coordinates of the best ranking result for each query are output as RDF serialized in the N-Triples syntax.
 
-### jsonld-to-elasticsearch {.unnumbered}
+### jsonld-to-elasticsearch
 
 jsonld-to-elasticsearch^[<https://github.com/jindrichmynarz/jsonld-to-elasticsearch>] indexes Newline Delimited JSON (NDJSON) in Elasticsearch (ES).
 Each input line represents a JSON document that is analysed and bulk-indexed in ES using a provided mapping.
@@ -119,15 +122,15 @@ If the input JSON-LD contains the `@context` attribute, it is removed due to bei
 Each JSON-LD document must contain the `@id` attribute, which used as the document identifier in ES.
 RDF data can be prepared into this expected format using sparql-to-jsonld.
 
-### matchmaker-sparql {.unnumbered}
+### matchmaker-sparql
 
 matchmaker-sparql^[<https://github.com/jindrichmynarz/matchmaker-sparql>] is a command-line application for evaluation of SPARQL-based matchmaking.
 The evaluation setup is guided by a configuration file provided to the application.
 The configuration describes the data to use, connection to a SPARQL endpoint to query and update the data, parameters of the matchmaker, and the evaluation protocol for the n-fold cross-validation.
 
-### matchmaker-elasticsearch {.unnumbered}
+### matchmaker-elasticsearch
 
-### matchmaker-rescal {#sec:matchmaker-rescal .unnumbered}
+### matchmaker-rescal {#sec:matchmaker-rescal}
 
 matchmaker-rescal^[<https://github.com/jindrichmynarz/matchmaker-rescal>] is a command-line application that wraps the original implementation of RESCAL in Python.
 It serves as an exploratory tool for experimentation with RESCAL-based matchmaking.
@@ -135,7 +138,7 @@ The sole purpose of the tool is to evaluate link prediction for a given relation
 Its input consists of the ground truth matrix encoding the relation to predict, additional matrices encoding other relations, and configuration with hyper-parameters for RESCAL.
 The matrices required as input by this tool can be prepared by sparql-to-tensor.
 
-### sparql-to-csv {.unnumbered}
+### sparql-to-csv
 
 sparql-to-csv^[<https://github.com/jindrichmynarz/sparql-to-csv>] allows to save results of SPARQL queries into CSV.
 It is primarily intended to support data preparation for analyses that require tabular input.
@@ -148,7 +151,7 @@ Such approach facilitates decomposition of complex queries into a chain of simpl
 It also enables to query a SPARQL endpoint using data from another SPARQL endpoint, in a similar manner to federated queries [@Prudhommeaux2013].
 Alternatively, the query results can be piped to a template producing SPARQL Update operations, so that complex data transformations can be divided into simpler subtasks.
 
-### sparql-to-graphviz {.unnumbered}
+### sparql-to-graphviz
 
 sparql-to-graphviz^[<https://github.com/jindrichmynarz/sparql-to-graphviz>] generates a class diagram representing empirical schema of RDF data exposed via a SPARQL endpoint.
 The empirical schema reflects the structure of instance data in terms of its vocabularies, so that instead of representing the structures prescribed by vocabularies (e.g., `rdfs:domain` and `rdfs:range`), it mirrors the way vocabularies are used in instance data (e.g., actual links between resources).
@@ -157,7 +160,7 @@ In order to separate concerns, in place of producing a visualization, the tool g
 The description can be then turned into an image using Graphviz,[^graphviz] an established visualization tool that offers several algorithms for constructing graph layouts.
 Instead of producing a bitmap image, a vector image in SVG can be generated, which lends itself to further manual post-production to perfect the visualization.
 
-### sparql-to-jsonld {.unnumbered}
+### sparql-to-jsonld
 
 sparql-to-jsonld^[<https://github.com/jindrichmynarz/sparql-to-jsonld>] retrieves RDF data from a SPARQL endpoint and serializes it to JSON-LD documents.
 It starts by fetching a list of IRIs of resources selected by a provided SPARQL SELECT query.
@@ -168,7 +171,7 @@ Both SPARQL queries are provided as Mustache[^mustache] templates to allow param
 Each retrieved description in RDF is converted to JSON-LD and transformed via a provided JSON-LD frame that coerces the input RDF graph into a predictable JSON tree.
 The output is appended to a file that is serialized as Newline Delimited JSON (NDJSON).
 
-### sparql-to-tensor {#sec:sparql-to-tensor .unnumbered}
+### sparql-to-tensor {#sec:sparql-to-tensor}
 
 sparql-to-tensor^[<https://github.com/jindrichmynarz/sparql-to-tensor>] exports RDF data from SPARQL endpoints to tensors.
 The tensors are represented as a collection of frontal slices serialized as sparse matrices in the MatrixMarket coordinate format.^[<http://math.nist.gov/MatrixMarket/formats.html#MMformat>]
@@ -177,15 +180,16 @@ Each IRI is written on a separate line, so that line numbers can be used as indi
 The header can thus be used to translate the matrices to IRIs of RDF resources.
 
 Tensors are constructed from results of SPARQL SELECT queries provided to the tool by the user.
-Each query must project the several variables.
+Each query must project several variables with pre-defined interpretation.
 The `?feature` variable determines the tensor slice.
 It typically corresponds to an RDF property, but it can also represent a feature constructed from the source RDF data.
 The `?s` variable is an entity that is a subject of the feature, and the `?o` variable is its object.
 An optional variable `?weight` can indicate the weight of the relation between the entities.
 It is a decimal number from the interval $\left[0, 1\right]$, with the default value being 1.
 The SELECT queries must be provided as Mustache[^mustache] templates that allows to retrieve results via pages delimited by `LIMIT` and `OFFSET`.
+Support of multiple queries allows to separate concerns and write simpler queries for the individual features.
 
-### sparql-unlimited {.unnumbered}
+### sparql-unlimited
 
 sparql-unlimited^[<https://github.com/jindrichmynarz/sparql-unlimited>] can execute SPARQL Update operations that affect many resources by running multiple updates that affect successive subsets of these resources.
 The input SPARQL Update operation must be provided as a Mustache[^mustache] template that contains a variable for the `LIMIT` to indicate the size of the subset to process.
@@ -195,7 +199,7 @@ The second approach is preferable since it avoids sorting a potentially large li
 Due to its stopping condition, the tool can be used only for update operations that eventually converge to a state, when there is no more data to modify.
 Since there is no standard way for SPARQL endpoints to respond that no data was modified by a received update operation, the tool relies on the way Virtuoso responds, which makes it usable only with this RDF store.
 
-### vocab-to-graphviz {.unnumbered}
+### vocab-to-graphviz
 
 vocab-to-graphviz^[<https://github.com/jindrichmynarz/vocab-to-graphviz>] visualizes RDF vocabularies via Graphviz.[^graphviz]
 It converts an input vocabulary from an RDF file to a description of a class diagram in the DOT language.[^dot-language]

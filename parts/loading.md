@@ -3,18 +3,18 @@
 The aim of loading is to expose data in a way matchmaking methods can operate on efficiently.
 Our three approaches to matchmaking warrant three approaches to loading.
 
-### SPARQL-based matchmaking
+### SPARQL-based matchmakers
 
-The SPARQL-based matchmaking requires data to be available via the SPARQL protocol [@Feigenbaum2013].
+The SPARQL-based matchmakers requires data to be available via the SPARQL protocol [@Feigenbaum2013].
 SPARQL protocol describes the communication between clients and SPARQL endpoints, which provide query interfaces to RDF stores.
 Exposing data via the SPARQL protocol thus requires simply to load it in an RDF store equipped with a SPARQL endpoint.
 We chose to use the open source version of Virtuoso^[<https://virtuoso.openlinksw.com>] from OpenLink as our RDF store.
 Even though Virtuoso lacks in stability and adherence to the SPARQL standard, it redeems that by offering a performance unparalleled by other open source solutions.
 We used Virtuoso's bulk loader^[<https://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtBulkRDFLoader>] to ingest RDF data into the store.
 
-### Elasticsearch-based matchmaking
+### Elasticsearch-based matchmakers
 
-The matchmaking based on full-text search requires a search engine.
+The matchmakers based on full-text search require a search engine.
 Full-text search engines typically require regular data structures to make indexing efficient.
 Heterogeneity of public procurement data thus mandates pre-processing to make the data more regular.
 Greater regularity of RDF data can be achieved by serializing it into JSON-LD [@Sporny2014] and coercing it to a tree layout via JSON-LD Framing [@Longley2016].
@@ -29,13 +29,14 @@ The tool outputs Newline Delimited JSON^[<http://ndjson.org>] (NDJSON) that feat
 The resulting NDJSON is indexed in Elasticsearch using *jsonld-to-elasticsearch*,^[<https://github.com/jindrichmynarz/jsonld-to-elasticsearch>] another CLI tool we created.
 The tool partitions its input data into batches and transforms NDJSON to Elasticsearch bulk load format.^[<https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html>]
 Each batch is then indexed in Elasticsearch using a provided mapping, which defines how to analyze and store the provided data.
+
 <!--
 TODO: Describe the concrete SPARQL CONSTRUCT query used, together with its Elasticsearch mapping, once we have a working Elasticsearch matchmaker.
 --> 
 
-### RESCAL-based matchmaking
+### RESCAL-based matchmakers
 
-The RESCAL-based matchmaking operates on tensors.
+The RESCAL-based matchmakers operate on tensors.
 We developed *sparql-to-tensor*, described in the [@sec:sparql-to-tensor], to export RDF data from a SPARQL endpoint to the tensor form.
 The transformation was defined by SPARQL SELECT queries.
 Each query retrieved data for one or more given RDF properties that constituted the relations in the produced tensor.
@@ -60,9 +61,3 @@ We used contract awards dates as values of $t_{x}$ and the current date as $t_{0
 Award dates were unknown for the 2.3 % of contracts, so we used the median value of the known award dates instead.
 The calculation was implemented in a SPARQL SELECT query.
 However, since natural exponential function is not natively supported in SPARQL, we used the extension function `exp()`^[<http://docs.openlinksw.com/virtuoso/fn_exp>] built in the Virtuoso RDF store to compute it.
-
-<!--
-Out-takes:
-
-*sparql-to-csv*^[https://github.com/jindrichmynarz/sparql-to-csv] is a tool for loading RDF data from a SPARQL endpoint to CSV in order to support data analyses requiring tabular data.
--->
