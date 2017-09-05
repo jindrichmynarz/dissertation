@@ -122,7 +122,7 @@ If the input JSON-LD contains the `@context` attribute, it is removed due to bei
 Each JSON-LD document must contain the `@id` attribute, which used as the document identifier in ES.
 RDF data can be prepared into this expected format using sparql-to-jsonld.
 
-### matchmaker-sparql
+### matchmaker-sparql {#sec:matchmaker-sparql}
 
 matchmaker-sparql^[<https://github.com/jindrichmynarz/matchmaker-sparql>] is a command-line application for evaluation of SPARQL-based matchmaking.
 The evaluation setup is guided by a configuration file provided to the application.

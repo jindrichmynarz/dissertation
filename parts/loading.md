@@ -58,7 +58,7 @@ $$\mathcal{A}(t_{0}) = \mathcal{A}(t_{x}) \cdot e^{-\lambda t}; t_{0} > t_{x}, t
 In this function *"$\mathcal{A}(t_{0})$ is the amount of information at the time $t_{0}$. $\mathcal{A}(t_{x})$ is the amount of information at the time $t_{x}$ when the information was created, $\lambda$ is ageing/retention factor and $t$ is the age of the information."*
 We assume $\mathcal{A}(t_{x})$ to be equal to 1, the same value used for relations encoded without ageing.
 Since our dataset covers a period of 10 years, we use $\lambda = 0.005$ that provides a distribution of values spanning approximately over this period.
-We used contract awards dates as values of $t_{x}$ and the current date as $t_{0}$.
+We used contract awards dates as values of $t_{x}$ and the latest award date as $t_{0}$.
 Award dates were unknown for the 2.3 % of contracts, so we used the median value of the known award dates instead.
 The calculation was implemented in a SPARQL SELECT query.
 However, since natural exponential function is not natively supported in SPARQL, we used the extension function `exp()`^[<http://docs.openlinksw.com/virtuoso/fn_exp>] built in the Virtuoso RDF store to compute it.

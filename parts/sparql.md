@@ -318,7 +318,7 @@ While IDF can be computed on the fly, we decided to pre-compute it and store it 
 Computation of IDF is implemented via two declarative SPARQL Update operations, the first of which uses a Virtuoso-specific extension function for logarithm (`bif:log10()`), and the second normalizes the IDFs using the maximum IDF.
 
 The matchmaker is implemented in Clojure^[<https://clojure.org>] as a wrapper over the Virtuoso RDF store.
-Its source code is available in a public repository^[<https://github.com/jindrichmynarz/matchmaker-sparql>] licensed as open source under the terms of the Eclipse Public License 1.0.
+It is described in [@sec:matchmaker-sparql] in more detail.
 Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
 
 <!--
