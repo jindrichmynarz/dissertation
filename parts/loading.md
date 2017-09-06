@@ -37,9 +37,54 @@ TODO: Describe the concrete SPARQL CONSTRUCT query used, together with its Elast
 ### RESCAL-based matchmakers
 
 The RESCAL-based matchmakers operate on tensors.
+Tensors are multidimensional arrays typically used to represent multi-relational data.
+The number of dimensions of a tensor, also known as ways or modes [@Kolda2009], is referred to as its order.
+Tensors usually denote the higher-order arrays: first-order tensors are vectors and second-order tensors are matrices.
+
+<!--
+Further formalization of tensors (add if needed for the further explanations):
+
+- Don't use "rank", since it is also used for the number of rows of the latent factor matrix $A$ (and the dimensions of the latent factor tensor $\mathcal{R}$).
+
+$\mathcal{X}_{k}$ is a $k$-th frontal slice of tensor $\mathcal{X}$
+
+Third-order tensor $\mathcal{X} \in \mathbb{R}^{I \times J \times K}$.
+
+Adjacency tensors
+Slices: two-dimensional subarrays/sections of tensors (i.e. matrices)
+- Frontal slices of tensors correspond to adjacency matrices of given predicates.
+  - $\mathcal{X}_{::k}$
+  - There are horizontal, lateral, and frontal slices.
+Fibers: one-dimensional subarrays of tensors (i.e. vectors)
+- Fibers fix all tensor indices but one.
+-->
+
+<!-- Tensor representation of RDF -->
+
+Higher-order tensors provide a simple way to model multi-relational data, such as RDF.
+Since RDF predicates are binary relations, RDF data can be represented as a third-order tensor $\mathcal{X}$, in which two modes represent RDF resources in a domain and the third mode represents relation types; i.e. RDF predicates [@Tresp2014].
+The two modes are formed by concatenating the subjects and objects in RDF data.
+The mode-3 slices of such tensors, also referred to as frontal slices, are square adjacency matrices that encode the existence of relation $R_{k}$ between RDF resources $E_{i}$ and $E_{j}$, as depicted in the [@fig:third-order-tensor]. <!-- _b -->
+Consequently, RDF can be modelled as $n \times n \times m$ tensor $\mathcal{X}$, where $n$ is the number of entities and $m$ is the number of relations.
+If $i$^th^ entity is related by the $k$^th^ predicate to $j$^th^ entity, then the tensor entry $\mathcal{X}_{ijk} = 1$.
+Otherwise, if such relation is missing or unknown, the tensor entry is zero.
+
+![Frontal slices of a third-order tensor, adopted from @Nickel2011](img/third_order_tensor.png){#fig:third-order-tensor width=50%}
+
+There are a couple of things to note about tensors representing RDF data.
+Entities in these tensors are not assumed to be homogeneous.
+Instead, they may instantiate different classes.
+Moreover, no distinction between ontological and instance relations is maintained, so that both classes and instances are modelled as entities.
+In this way, *"ontologies are handled like soft constraints, meaning that the additional information present in an ontology guides the factorization to semantically more reasonable results"* [@Nickel2012, p. 273].
+Tensors representing RDF are usually very sparse due to high dimensionality and incompleteness, calling in for algorithms that leverage the sparsity for efficient execution, in particular for large data.
+Scalable processing of large RDF datasets in the tensor form is thus a challenge for optimization techniques.
+Interestingly, unlike RDF, tensors can represent n-ary relations without decomposing them into binary relations.
+What would in RDF require reification or named graphs can be captured by increasing the tensor order.
+This presents an opportunity for more expressive modelling outside of the boundaries of RDF.
+
 We developed *sparql-to-tensor*, described in the [@sec:sparql-to-tensor], to export RDF data from a SPARQL endpoint to the tensor form.
-The transformation was defined by SPARQL SELECT queries given to *sparql-to-tensor*.
-Each query retrieved data for one or more RDF properties that constituted the relations in the output tensor.
+The transformation is defined by SPARQL SELECT queries given to *sparql-to-tensor*.
+Each query retrieves data for one or more RDF properties that constitute the relations in the output tensor.
 We created and tested many tensors, each combining different properties and ways of pre-processing.
 
 In most cases the retrieved relations corresponded to explicit RDF properties found in the source data.
@@ -48,8 +93,7 @@ This was done either to avoid intermediate resources, such as those relating unq
 Since the original RESCAL algorithm does not support continuous variables, we discretized such variables via *discretize-sparql*, described in the [@sec:discretize-sparql].
 We applied discretization to the actual prices of contracts, which we split into 15 equifrequent intervals having approximately the same number of members.
 
-By default, existing relations were encoded with ones as tensor entries $\mathcal{X}_{ijk}$, while missing or unknown relations were represented with zeros.
-Apart from binary numbers we used float numbers $\mathcal{X}_{ijk} \in \mathbb{R} \colon 0 \leq \mathcal{X}_{ijk} \leq 1$ to capture the degrees of importance of relations.
+Apart from binary numbers as tensor entries we used float numbers $\mathcal{X}_{ijk} \in \mathbb{R} \colon 0 \leq \mathcal{X}_{ijk} \leq 1$ to capture the degrees of importance of relations.
 Float entries were used to de-emphasize less descriptive RDF properties, such as `pc:additionalObject`, or to model information loss from ageing, so that older contract awards bear less relevance than newer ones.
 We reused the ageing function from [@Kuchar2016, p. 212]:
 

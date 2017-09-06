@@ -70,13 +70,13 @@ We chose to evaluate the geocoder using metrics adapted from Goldberg et al. [-@
 *Match rate* is defined as the share of addresses capable of being geocoded.
 If $A$ is a set of addresses and $geocode()$ is a geocoding function, we can define match rate $mr$ as follows:
 
-$mr = \frac{|\{a \in A, geocode(a) \neq \varnothing\}|}{|A|}$
+$$mr = \frac{|\{a \in A, geocode(a) \neq \varnothing\}|}{|A|}$$
 
 We adapted *spatial accuracy* as the share of addresses that are geocoded within a specified distance from the reference location.
 We chose to evaluate spatial accuracy at 50 meters, so that geo-coordinates found within 50 meters from the reference location are considered matching.
 Provided a set of addresses $A$ and ground truth $G$, we can define this metric $sa$ in the following way:
 
-$sa = \frac{|\{a \in A, distance(geocode(a), G_a)< 50\}|}{|A|}$
+$$sa = \frac{|\{a \in A, distance(geocode(a), G_a)< 50\}|}{|A|}$$
 
 While match rate can be computed without a gold standard dataset, spatial accuracy needs one.
 Thanks to the links to the Czech addresses dataset from the Public Register, we had a dataset that could be used as a gold standard.

@@ -178,6 +178,7 @@ The tensors are represented as a collection of frontal slices serialized as spar
 IRIs of the tensor entities are written to a `headers.txt` file.
 Each IRI is written on a separate line, so that line numbers can be used as indices of the entities in the matrices.
 The header can thus be used to translate the matrices to IRIs of RDF resources.
+The output of *sparql-to-tensor* complies with the format used by the Web of Needs RESCAL matchmaker [@Friedrich2015].
 
 Tensors are constructed from results of SPARQL SELECT queries provided to the tool by the user.
 Each query must project several variables with pre-defined interpretation.
