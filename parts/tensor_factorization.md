@@ -76,60 +76,50 @@ Relations are functions of a linear combination of latent factors.
 Factorization reduces the noise in the input tensor [@Zhiltsov2013, p. 1254].
 -->
 
+We reused RESCAL for matchmaking via tensor factorization.
+
 ### RESCAL
 
-RESCAL is an algorithm for factorization of third-order tensors.
+RESCAL is a supervised machine learning algorithm for factorization of third-order tensors.
+It factorizes tensor $\mathcal{X}$ with $n$ entities to a rank-$r$ representation, so that each frontal slice $\mathcal{X}_{k}$ of the tensor $\mathcal{X}$ can be approximately reconstructed from the decomposition to latent components, as shown in the @fig:rescal-decomposition: <!-- _b -->
 
-frontal slice $X_{k}$ of $\mathcal{X}$:
+$$X_{k} \approx AR_{k}A^{T}$$
 
-$X_{k} \approx AR_{k}A^{T}$
+![RESCAL decomposition, adopted from @Nickel2012](img/rescal_decomposition.png){#fig:rescal-decomposition}
 
-![RESCAL factorization, adopted from @Nickel2012](img/rescal_factorization.png){#fig:rescal-factorization}
+$A$ is an $n \times r$ matrix containing the latent component representation of entities in $\mathcal{X}$, $A^{T}$ is its transposition, and $R_{k}$ is an $r \times r$ matrix modelling the interactions of the latent components in the $k$^th^ predicate [@Nickel2011]. <!-- _b -->
+Unlike other latent feature models, latent variables in RESCAL do not describe entity classes but are latent entity factors [@Tresp2014].
+Using this decomposition, RESCAL *"explains triples via pairwise interactions of latent features"* [@Nickel2016, p. 17].
+The rank $r$ is a *"a central parameter of factorization methods that determines generalization ability as well as scalability"* [@Nickel2014].
+While higher $r$ increases the expressiveness of the latent features, it also increases the runtime of tensor factorization as well as the propensity for over-fitting.
+Consequently, setting $r$ to an appropriate value is a key trade-off to be made when tuning RESCAL.
 
-@Nickel2011, @Nickel2012, @Zhiltsov2013
+RESCAL uses distinct latent representations of entities as subjects and objects, which enables efficient information propagation to capture correlations over long-range relational chains [@Nickel2013c, p. 619] that may span relations of multiple types.
+In this way, RESCAL is able to leverage contextual data more distant in the relational graph for collective learning, described in the [@sec:srl].
+Unlike other factorization methods that cannot model collective learning sufficiently, *"the main advantage of RESCAL, if compared to other tensor factorizations, is that it can exploit a collective learning effect when applied to relational data"* [@Nickel2012, p. 272].
 
-<!--
-RESCAL was introduced in @Nickel2011.
-It is a method based on factorization of a three-way tensor.
-RESCAL does not require strict feature modelling.
-RESCAL is a supervised machine learning method.
-RESCAL exploits idiosyncratic properties of relational data.
-It is able to use contextual data more distant in the relational graph. (=> collective learning)
 RESCAL achieves leading performance for link prediction tasks.
-RESCAL *"explains triples via pairwise interactions of latent features"* [@Nickel2016, p. 17]
-RESCAL may be used to generate similarities between entities that may be then used in non-relational methods.
-RESCAL was shown to be superior for link prediction tasks on two datasets. Nevertheless, what is the best machine learning method remains dataset-specific.
-
-*"The main advantage of RESCAL, if compared to other tensor factorizations, is that it can exploit a collective learning effect when applied to relational data."* [@Nickel2012, p. 272]
-@Nickel2012 shows how the execution of RESCAL can be parallelized and distributed across multiple computing nodes.
-RESCAL adopts a closed world assumption: *"RESCAL approaches the problem of learning from positive examples only, by assuming that missing triples are very likely not true, an approach that makes sense in a high-dimensional but sparse domain."* [@Nickel2012, p. 273]
-*"RESCAL can be regarded as a latent-variable model for multi-relational data"* [@Nickel2012, p. 273]
-Collective learning via latent components of the factorization.
-- enables learning long-range dependencies that may span chains of relations of multiple types
-- traditional factorization methods cannot model collective learning sufficiently [@Nickel2011]
-
-There is a need to balance the expressiveness of the latent features with the runtime of tensor factorization.
-
-Latent variables in RESCAL do not describe entity classes but are latent entity factors [@Tresp2014].
-
-RESCAL scales better to large data than many similar approaches.
-
+It was shown to be superior for link prediction tasks on several datasets.
+It scales better to large data than many similar approaches.
+@Nickel2012 showed how the execution of RESCAL can be parallelized and distributed across multiple computing nodes.
 RESCAL is also fundamentally simpler than other tensor factorization methods. 
 Unlike similar algorithms, RESCAL stands out by low Kolmogorov complexity.
 It is implemented only in 120 lines of code of Python [@Nickel2011] using only the NumPy^[<http://www.numpy.org>] library.
 
-**Comparison with matrix factorization**
+<!-- Extensions -->
 
-RESCAL is similar to matrix factorization (MF) methods used in recommender systems [@Nickel2016, p. 18].
-MF offers good scalability, predictive accuracy, and modelling flexibility [@Koren2009, p. 44].
-MF allows to incorporate both explicit and implicit feedback.
-However, reshaping tensors into matrices causes data loss.
+Many extensions of RESCAL were proposed.
+Its state-of-the-art results and conceptual simplicity invite improvements.
+The aspects that the extensions deal with include negative training examples, handling literals, or type constraints.
 
-RESCAL uses unique latent representation of entities as subjects and objects, which enables efficient information propagation to capture correlations over relational chains [@Nickel2013c, p. 619].
+<!-- Negative examples -->
 
-*"tensor (and matrix) rank is a central parameter of factorization methods that determines generalization        ability as well as scalability"* [@Nickel2014].
-
--->
+RESCAL adopts the local closed world assumption (LCWA).
+It *"approaches the problem of learning from positive examples only, by assuming that missing triples are very likely not true, an approach that makes sense in a high-dimensional but sparse domain"* [@Nickel2012, p. 273].
+However, *"training on all-positive data is tricky, because the model might easily over generalize"* [@Nickel2016, p. 24].
+Negative examples can be generated via type constraints for predicates or valid ranges of literals.
+@Nickel2016 proposes generating negative examples by perturbing true triples.
+Basically, switching subjects in triples sharing the same functional property produces false, but type-consistent triples.
 
 <!-- Handling literals -->
 
@@ -140,37 +130,23 @@ Moreover, since the number of distinct literals may significantly surpass the nu
 Both high dimensionality and sparseness thereby increase the complexity of computing the factorization.
 Minor improvements can be attained by pre-processing literals, such as by discretizing ordinal values, tokenizing plain texts, and stemming the generated tokens.
 Nevertheless, treatment of literals warrants a more sophisticated approach.
-@Nickel2012 introduced an extension of RESCAL to handle literals via an attribute matrix that is factorized conjointly with the tensor with relations between entities.
+To address this issue, @Nickel2012 introduced an extension of RESCAL to handle literals via an attribute matrix that is factorized conjointly with the tensor with relations between entities.
 @Zhiltsov2013 proposed Ext-RESCAL, an approach using term-based entity descriptions that include names, other datatype properties as attributes, and outgoing links.
 
-<!-- Limitations -->
+<!-- Type constraints -->
 
-RESCAL is a batch approach that cannot produce results in real time.
-First, it needs to factorize the input tensor to a decomposition that models the tensor.
-Once this model is built, predictions for individiual contracts can be computed on demand.
-
-<!--
-Sparse adjacency matrices generated from RDF are often challenging to process.
-
-*"local closed world assumption (LCWA), which is often used for training relational models"* [@Nickel2016, p. 13]
-*"Training on all-positive data is tricky, because the model might easily over generalize."* [@Nickel2016, p. 24]
-Negative examples can be generated by type constraints for predicates or valid ranges of literals.
-@Nickel2016 proposes generating negative examples by "perturbing" true triples. (Basically, switching subjects in triples sharing the same predicate.) This generates "type-consistent" triples.
-Switching objects in triples sharing the same predicate (under LCWA) is valid for functional properties.
-@Nickel2016 proposes an approach that assumes the generated triples to be likely false.
--->
-
-Many extensions of RESCAL were proposed.
-Its state-of-the-art results and conceptual simplicity invite improvements.
-As discussed above, @Zhiltsov2013 enhanced RESCAL with term-based entity descriptions.
-Several researchers (-@Chang2014, -@Krompass2014, -@Krompass2015) investigated adding type constraints to RESCAL.
+Several researchers (@Chang2014, @Krompass2014, @Krompass2015) investigated adding type constraints to RESCAL.
 These constraints improve RESCAL by preventing type-incompatible predictions.
-The type compatibility can be determined by interpreting `rdfs:domain` and `rdfs:range` axioms under LCWA or by evaluating custom restrictions, such as requiring the subject entity to be older than the object entity.
+The type compatibility can be determined by interpreting the `rdfs:domain` and `rdfs:range` axioms under LCWA or by evaluating custom restrictions, such as requiring the subject entity to be older than the object entity when predicting parents.
 These type constraints can be represented as binary matrices [@Krompass2014] indicating compatibility of entities.
-The original RESCAL considers all possible relations, notwithstanding their type, which increases the model complexity and leads to *"an avoidable high runtime and memory consumption"* [@Krompass2014].
-Even though RESCAL is faster than the type-constrained approach when using the same rank, using type constraints typically requires a lower rank to produce results that RESCAL is able of achieving only at higher ranks.
-@Kuchar2016 enhanced link prediction to be time-aware.
-We used this approach in data pre-processing, described in the [@sec:rescal-loading], to model decaying relevance of older contract awards.
+The original RESCAL considers all entities for possible relations, notwithstanding their type, which increases its model complexity and leads to *"an avoidable high runtime and memory consumption"* [@Krompass2014].
+Even though RESCAL is faster than the type-constrained approach with the same rank, using type constraints typically requires a lower rank to produce results that RESCAL is able of achieving only at higher ranks.
+
+<!-- Other extensions -->
+
+Other notable extensions of RESCAL handle time awareness or tensor slice similarity.
+@Kuchar2016 enhanced link prediction via RESCAL to be time-aware.
+We used this approach in data pre-processing, as described in the [@sec:rescal-loading], to model decaying relevance of older contract awards.
 @Padia2016 computed RESCAL with regard to the similarity of tensor slices to obtain better results.
 
 ### Matchmaking
@@ -200,9 +176,15 @@ As reported in [@Nickel2012], determining a reasonable threshold is difficult, b
 ranking by the likelyhood that the predicted relation exists => no threshold needed
 -->
 
+<!-- Limitations -->
+
+RESCAL is a batch approach that cannot produce results in real time.
+First, it needs to factorize the input tensor to a decomposition that models the tensor.
+Once this model is built, predictions for individiual contracts can be computed on demand.
+
 ### Implementation
 
-We implemented *matchmaker-rescal* [@sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol.
+We implemented *matchmaker-rescal*, described in the [@sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol, explained in the [@sec:evaluation-protocol].
 
 Due to the size of the processed data it is important to leverage its sparseness, which is why we employ efficient data structures for sparse matrices from the SciPy^[<https://www.scipy.org>] library.
 
@@ -222,4 +204,21 @@ Alternative method for link prediction using tensor representation of RDF:
 <http://semdeep.iiia.csic.es/files/SemDeep-17_paper_3.pdf>
 
 Alternative approach: Markov Random Fields (very flexible, but computationally expensive)
+
+RESCAL exploits idiosyncratic properties of relational data.
+*"RESCAL can be regarded as a latent-variable model for multi-relational data"* [@Nickel2012, p. 273]
+
+RESCAL does not require strict feature modelling.
+RESCAL may be used to generate similarities between entities that may be then used in non-relational methods.
+
+**Comparison with matrix factorization**
+
+RESCAL is similar to matrix factorization (MF) methods used in recommender systems [@Nickel2016, p. 18].
+MF offers good scalability, predictive accuracy, and modelling flexibility [@Koren2009, p. 44].
+MF allows to incorporate both explicit and implicit feedback.
+However, reshaping tensors into matrices causes data loss.
+
+Switching objects in triples sharing the same predicate (under LCWA) is valid for functional properties.
+@Nickel2016 proposes an approach that assumes the generated triples to be likely false.
+*"local closed world assumption (LCWA), which is often used for training relational models"* [@Nickel2016, p. 13]
 -->

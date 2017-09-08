@@ -29,7 +29,7 @@ This may be either in error or when members of the winning groups of bidders are
 For example, framework agreements may be awarded to multiple bidders.
 For the sake of simplicity we decided to exclude these contracts from our ground truth.
 
-### Evaluation protocol
+### Evaluation protocol {#sec:evaluation-protocol}
 
 <!-- N-fold cross-validation -->
 
