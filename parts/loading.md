@@ -34,7 +34,7 @@ Each batch is then indexed in Elasticsearch using a provided mapping, which defi
 TODO: Describe the concrete SPARQL CONSTRUCT query used, together with its Elasticsearch mapping, once we have a working Elasticsearch matchmaker.
 --> 
 
-### RESCAL-based matchmakers
+### RESCAL-based matchmakers {#sec:rescal-loading}
 
 The RESCAL-based matchmakers operate on tensors.
 Tensors are multidimensional arrays typically used to represent multi-relational data.
@@ -89,7 +89,7 @@ We created and tested many tensors, each combining different properties and ways
 
 In most cases the retrieved relations corresponded to explicit RDF properties found in the source data.
 However, in few select cases we constructed new relations.
-This was done either to avoid intermediate resources, such as those relating unqualified CPV concepts, or relate numeric values discretized to intervals.
+This was done either to avoid intermediate resources, such as tenders relating awarded bidders or proxy concepts relating unqualified CPV concepts, or relate numeric values discretized to intervals.
 Since the original RESCAL algorithm does not support continuous variables, we discretized such variables via *discretize-sparql*, described in the [@sec:discretize-sparql].
 We applied discretization to the actual prices of contracts, which we split into 15 equifrequent intervals having approximately the same number of members.
 
@@ -106,3 +106,20 @@ We used contract awards dates as values of $t_{x}$ and the latest award date as 
 Award dates were unknown for the 2.3 % of contracts, so we used the median value of the known award dates instead.
 The calculation was implemented in a SPARQL SELECT query.
 However, since natural exponential function is not natively supported in SPARQL, we used the extension function `exp()`^[<http://docs.openlinksw.com/virtuoso/fn_exp>] built in the Virtuoso RDF store to compute it.
+
+<!-- Feature selection
+
+`:awardedBidder` (i.e. pc:awardedTender/pc:bidder, weighted by pc:awardDate)
+`pc:mainObject`
+`pc:additionalObject`
+`skos:closeMatch`
+`skos:related`
+`skos:broaderTransitive`
+`rov:orgActivity`
+-->
+
+Instead of exporting all RDF data to the tensor format, we selected few features from it that we deemed to be the most informative.
+There are 76 different relations in the Czech public procurement dataset.
+Even more relations are available if we add the linked data.
+We experimented with selecting individual relations as well as their combinations to find which ones produce the best results.
+We guided this search by an assumption that contributions of the individual relations do not cancel themselves.

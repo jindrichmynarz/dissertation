@@ -2,77 +2,41 @@
 
 <!--
 TODO: Re-read:
+- <https://pdfs.semanticscholar.org/308b/f5b1b6cd5c2124d7589945f715b0adc7b8f8.pdf>
 - <https://pdfs.semanticscholar.org/c971/32a582efacd84d6550ad8107d1ad9a83a88e.pdf>
 - <http://machinelearning.wustl.edu/mlpapers/paper_files/ICML2011Nickel_438.pdf>
 - <https://pdfs.semanticscholar.org/498c/a0a1f8c980586408addf7ab2919ecdb7dd3d.pdf>
-- <https://pdfs.semanticscholar.org/308b/f5b1b6cd5c2124d7589945f715b0adc7b8f8.pdf>
+
+- <https://en.wikipedia.org/wiki/Tensor_rank_decomposition>
+- <https://en.wikipedia.org/wiki/Tensor_(intrinsic_definition)#Tensor_rank>
 -->
-
-Tensors are multidimensional arrays.
-
-### Tensor representation of RDF
-
-Tensors provide a simple way to model multi-relational data, such as RDF.
-RDF data can represented as a third-order tensor.
-Each slice of the tensor corresponds to a relation.
-The slices are square adjacency matrices that encode existence or degree of their relation between entities in the tensor.
-
-Tensors representing RDF data are usually very sparse, calling for algorithms that leverage sparsity for efficient execution.
-
-Since RDF predicates are binary relations, they can be represented as adjacency matrices encoding what RDF resources are related by a given RDF predicate.
-
-Two modes represent entities in a domain and the third mode represents the relation type [@Tresp2014].
 
 <!--
-First-order tensors are vectors, second-order tensors are matrices.
-
-Tensor order (also known as tensor degree or tensor rank or tensor way)
-- Don't use "rank", since it is also used for the number of rows of the latent factor matrix $A$ (and the dimensions of the latent factor tensor $\mathcal{R}$).
-N-th order tensor has N dimensions.
-*"The order of a tensor is the number of dimensions, also known as ways or modes."* [@Kolda2009]
-
-RDF data can be represented as a third-order tensor.
-Third-order tensor $\mathcal{X} \in \mathbb{R}^{I \times J \times K}$.
-Three-way tensor = third order tensor
-
-Unlike RDF, tensors can represent higher-order relations.
-
-Tensors provide a modelling simplicity: multiple relations can be represented in a higher-order tensor.
-A natural way to represent multi-graphs is to use adjacency tensors.
-Adjacency tensors
-Slices: two-dimensional subarrays/sections of tensors (i.e. matrices)
-- Mode-3 slices are referred to as frontal slices (in a third-order tensor)
-- Frontal slices of tensors correspond to adjacency matrices of given predicates.
-  - $\mathcal{X}_{::k}$
-  - There are horizontal, lateral, and frontal slices.
-Fibers: one-dimensional subarrays of tensors (i.e. vectors)
-- Fibers fix all tensor indices but one.
-
-Two modes of a three-way tensors are formed by concatenating dataset's entities (subjects and objects).
-Entities are not assumed to be homogeneous. Instead, they may instantiate different classes.
-The third mode represents the relation types (i.e. predicates).
-$n \times n \time m$ tensor $\mathcal_{X}$. $n$ is the number of entities, $m$ is the number of relations.
-
-Can we say that tensors are a representational formalism for statistical relational learning?
-
-Tensors balance expressiveness with complexity of their model. (How?)
-
-No distinction between ontological and instance relations is maintained.
-In this way, ontologies are handled as soft constraints [@Nickel2013a, p. 66].
-The model of RDF data does not draw a distinction between terminological and instance data (TBox and ABox).
-Both classes and instances are modelled as entities.
-*"ontologies are handled like soft constraints, meaning that the additional information present in an ontology guides the factorization to semantically more reasonable results"* [@Nickel2012, p. 273]
+Tensor factorization in broad strokes, link to statistical relational learning
 -->
 
-### Tensor factorization
+Factorization is a method used in statistical relational learning.
+Tensor factorization can be regarded as generalizing matrix factorization (singular value decomposition) for higher-dimensional arrays.
 
+Tensor factorization is a method of decomposing tensors into lower-rank approximations ...
 Tensor factorization is based on the assumption that there exists a low-dimensional representation of the entities in tensors.
+
+Factorization methods yield good results in domains characterized by high dimensionality and sparseness [@Nickel2011].
+
+Rank of tensor $\mathcal{X}$ is "*the smallest number of rank-one tensors that generate $\mathcal{X}$ as their sum"* [@Kolda2009].
+Rank-one tensors are those that *"can be written as the outer product of $N$ vectors"* [@Kolda2009]:
+
+$$\mathcal{X} = \mathbf{a}^{(1)} \circ \mathbf{a}^{(2)} \circ \cdots \circ \mathbf{a}^{(N)}$$
 
 <!--
 low-rank factorization
 *"The rank of a tensor $\mathcal{X}$, denoted as $rank(\mathcal{X})$, is defined as the smallest number of rank one tensors that generate $\mathcal{X}$ as their sum."* [@Kolda2009]
 
 FIXME: Clarify when "tensor factorization" means a method and when its result. We should probably use "tensor decomposition" for the result (and define it explicitly).
+
+Tensor factorization produces a latent feature model.
+- explains triples by latent features of entities
+- factorizes a partially observed tensor
 
 Tensor factorizations generalizes matrix factorization.
 decomposition into a product of two or more simpler tensors or matrices
@@ -83,7 +47,7 @@ Theoretical generalization of the abilities of tensor factorization is in @Nicke
 decompositions are possible because most tensors have latent structure
 
 Tensor factorization is inefficient if data contains a lot of strongly connected graph components.
-Decomposition addresses high dimensionality and sparsity.
+Decomposition addresses high dimensionality and sparseness.
 
 tensor decompositions for learning latent variable models
 matrices $R$ are low-rank matrix approximations
@@ -100,17 +64,27 @@ Latent factors
 
 Traditional methods for statistical relational learning, such as Markov logic networks, suffer from poor scalability.
 Tensor factorization was shown to scale well.
+
+tensor factorization can be considered a generalization of the matrix singular value decomposition
+
+There are many methods for factorization of tensors representing RDF data.
+Cite related work? [@Franz2009]
+Why have we chosen RESCAL?
+
+Relations are functions of a linear combination of latent factors.
+
+Factorization reduces the noise in the input tensor [@Zhiltsov2013, p. 1254].
 -->
 
 ### RESCAL
 
-RESCAL is a machine learning algorithm for factorization of third-order tensors.
+RESCAL is an algorithm for factorization of third-order tensors.
 
 frontal slice $X_{k}$ of $\mathcal{X}$:
 
 $X_{k} \approx AR_{k}A^{T}$
 
-![RESCAL factorization from @Nickel2012](img/rescal_factorization.png){#fig:rescal-factorization}
+![RESCAL factorization, adopted from @Nickel2012](img/rescal_factorization.png){#fig:rescal-factorization}
 
 @Nickel2011, @Nickel2012, @Zhiltsov2013
 
@@ -131,7 +105,10 @@ RESCAL was shown to be superior for link prediction tasks on two datasets. Never
 RESCAL adopts a closed world assumption: *"RESCAL approaches the problem of learning from positive examples only, by assuming that missing triples are very likely not true, an approach that makes sense in a high-dimensional but sparse domain."* [@Nickel2012, p. 273]
 *"RESCAL can be regarded as a latent-variable model for multi-relational data"* [@Nickel2012, p. 273]
 Collective learning via latent components of the factorization.
-- enables learning long-range dependencies
+- enables learning long-range dependencies that may span chains of relations of multiple types
+- traditional factorization methods cannot model collective learning sufficiently [@Nickel2011]
+
+There is a need to balance the expressiveness of the latent features with the runtime of tensor factorization.
 
 Latent variables in RESCAL do not describe entity classes but are latent entity factors [@Tresp2014].
 
@@ -152,63 +129,27 @@ RESCAL uses unique latent representation of entities as subjects and objects, wh
 
 *"tensor (and matrix) rank is a central parameter of factorization methods that determines generalization        ability as well as scalability"* [@Nickel2014].
 
-Extensions of RESCAL:
-
-- [@Zhiltsov2013]
-- Type constraints: [@Chang2014], [@Krompass2014], [@Krompass2015]
-  - Improving RESCAL by removing type-incompatible (`rdfs:domain`, `rdfs:range`, age1 < age2) predictions.
-  - *"We argue that, especially for larger datasets, the required      increase of model complexity will lead to an avoidable high runtime and memory consumption."* [@Krompass2014]
-  - RESCAL is faster than the type-constrained approach if using the same rank. However, the type-constrained approach typically requires lower rank to produce results that RESCAL is able of producing only at higher ranks.
-  - The constraints allow to use a lower rank of the latent factor matrix.
-  - Type constraints in [@Krompass2014] are represented as binary matrices.
-- Time-aware link prediction [@Kuchar2016].
-  - Weighting by time from award date to model decay of usefulness of older contract awards.
-- [@Padia2016] enhances RESCAL with tensor slice similarity.
 -->
 
-<!--
-### Feature selection
+<!-- Handling literals -->
 
-There is a need to balance the expressiveness of the latent features with the runtime of tensor factorization.
+The original version of RESCAL [@Nickel2011] uses only object properties as relations.
+Datatype properties with literal objects can only be used if the literals are treated as entities.
+Since literals are included as entities, although they never appear as subjects, the tensor's sparseness grows. 
+Moreover, since the number of distinct literals may significantly surpass the number of entities, this naïve treatment will greatly raise the dimensionality of the input tensor. 
+Both high dimensionality and sparseness thereby increase the complexity of computing the factorization.
+Minor improvements can be attained by pre-processing literals, such as by discretizing ordinal values, tokenizing plain texts, and stemming the generated tokens.
+Nevertheless, treatment of literals warrants a more sophisticated approach.
+@Nickel2012 introduced an extension of RESCAL to handle literals via an attribute matrix that is factorized conjointly with the tensor with relations between entities.
+@Zhiltsov2013 proposed Ext-RESCAL, an approach using term-based entity descriptions that include names, other datatype properties as attributes, and outgoing links.
 
-`:awardedBidder` (i.e. pc:awardedTender/pc:bidder, weighted by pc:awardDate)
-`pc:mainObject`
-`pc:additionalObject`
-`skos:closeMatch`
-`skos:related`
-`skos:broaderTransitive`
-`rov:orgActivity`
+<!-- Limitations -->
 
-There are 76 different relations in the Czech public procurement dataset and even more relations are available if we include the linked data.
-We included only few relations in the tensor representation.
-We experimented with selecting individual relations as well as their combinations to find which ones produce the best results.
-We operated under a strong assumption that the impact of features is monotonic
-and that the contributions of individual features do not cancel themselves
--->
+RESCAL is a batch approach that cannot produce results in real time.
+First, it needs to factorize the input tensor to a decomposition that models the tensor.
+Once this model is built, predictions for individiual contracts can be computed on demand.
 
 <!--
-### Handling literals
-
-The original version of RESCAL [@Nickel2011] ignores literals.
-@Nickel2012 introduces an extension of RESCAL to handle literals.
-Pre-processing literals: discretization of ordinal values, tokenization of plain texts, stemming words
-Naïve use of literals dramatically increases the dimensionality of the generated tensors.
-Literals are included as entities, even though they never appear as subjects. This would make tensors even sparser.
-@Nickel2012 proposes to handle literals by separate matrix factorization.
--->
-
-<!--
-### Learning to rank
-
-Use a learning-to-rank method to optimize weights of features.
--->
-
-### Benefits and drawbacks
-
-<!--
-Batch approach, cannot produce results in real time, computes matches for all contracts (although, predictions can be reconstructed from the RESCAL decomposition only for specific contracts)
-- However, once tensor decomposition is computed, producing predictions for individual contracts can be done in real time. 
-
 Sparse adjacency matrices generated from RDF are often challenging to process.
 
 *"local closed world assumption (LCWA), which is often used for training relational models"* [@Nickel2016, p. 13]
@@ -219,16 +160,43 @@ Switching objects in triples sharing the same predicate (under LCWA) is valid fo
 @Nickel2016 proposes an approach that assumes the generated triples to be likely false.
 -->
 
+Many extensions of RESCAL were proposed.
+Its state-of-the-art results and conceptual simplicity invite improvements.
+As discussed above, @Zhiltsov2013 enhanced RESCAL with term-based entity descriptions.
+Several researchers (-@Chang2014, -@Krompass2014, -@Krompass2015) investigated adding type constraints to RESCAL.
+These constraints improve RESCAL by preventing type-incompatible predictions.
+The type compatibility can be determined by interpreting `rdfs:domain` and `rdfs:range` axioms under LCWA or by evaluating custom restrictions, such as requiring the subject entity to be older than the object entity.
+These type constraints can be represented as binary matrices [@Krompass2014] indicating compatibility of entities.
+The original RESCAL considers all possible relations, notwithstanding their type, which increases the model complexity and leads to *"an avoidable high runtime and memory consumption"* [@Krompass2014].
+Even though RESCAL is faster than the type-constrained approach when using the same rank, using type constraints typically requires a lower rank to produce results that RESCAL is able of achieving only at higher ranks.
+@Kuchar2016 enhanced link prediction to be time-aware.
+We used this approach in data pre-processing, described in the [@sec:rescal-loading], to model decaying relevance of older contract awards.
+@Padia2016 computed RESCAL with regard to the similarity of tensor slices to obtain better results.
+
 ### Matchmaking
+
+We used link prediction via RESCAL for matchmaking, assuming that the tensor decomposition produced by RESCAL can accurately model the affinities between contracts and bidders.
+Probabilities of links predicted in the contract award slice can be obtained by reconstructing the slice from the tensor decomposition.
+Given the slice $R_{award}$ for contract awards from the latent factor tensor $\mathcal{R}$ produced by RESCAL, we can obtain predictions of entities awarded with the contract $c$ by computing the vector $p = A_{c}R_{award}A^{T}$. <!-- _b -->
+Entries in $p$ can be interpreted as probabilities of the contract $c$ being awarded to entities at corresponding indices in $p$.
+Using the indices of bidders we can filter the entries in $p$ and then rank them in descending order to obtain the best matches for $c$.
 
 <!--
 Matchmaking as link prediction (~ tensor completion)
 
 Link prediction ranks entries in the reconstructed tensor by their values (components/factors?).
-Assumption: tensor factorization models the affinities between contracts and bidders accurately
+
+matrix slice $R_{award}$ for contract awards from the latent factor tensor $\mathcal{R}$
+$C' \subset C$ are the withheld contracts
+contract $c \in C'$
+
+select only the entries for indices of bidders
+sort in descending order
+select top 10 entries
+FIXME: Put the details (e.g., top 10 entries) into the evaluation section?
 
 Ranking: no threshold
-As reported in [@Nickel2012], determining a reasonable threshold is difficult, because the high sparseness causes a bias towards zero.
+As reported in [@Nickel2012], determining a reasonable threshold is difficult, because the high sparseness causes a bias towards zero: *"However, due to a general sparseness of relationships there is a strong bias towards zero, which makes it difficult to select a reasonable threshold $\theta$"* [@Nickel2012, 274].
 ranking by the likelyhood that the predicted relation exists => no threshold needed
 -->
 
@@ -236,11 +204,11 @@ ranking by the likelyhood that the predicted relation exists => no threshold nee
 
 We implemented *matchmaker-rescal* [@sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol.
 
-Due to the size of the processed data it is important to leverage its sparsity, which is why we employ efficient data structures for sparse matrices from the SciPy^[<https://www.scipy.org>] library.
+Due to the size of the processed data it is important to leverage its sparseness, which is why we employ efficient data structures for sparse matrices from the SciPy^[<https://www.scipy.org>] library.
 
 Reconstructing the whole predictions slice is unfeasible for larger datasets due to its size in memory.
 In order to reduce the memory footprint of the matchmakers, we avoid reconstructing the whole predictions slice from the RESCAL factorization, but instead reconstruct only the top-$k$ results.
-Predictions are computed for each row separately, so that the rows can be garbage collected to free memory.
+Predictions are computed for each row separately, so that the rows can be garbage-collected to free memory.
 
 From the performance standpoint it was important to compile the underlying NumPy library with the OpenBLAS^[<http://www.openblas.net>] back-end, which enables to leverage multi-core machines for computing low-level array operations.
 

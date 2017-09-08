@@ -71,7 +71,8 @@ Mention restrictions by the computational cost of an evaluation protocol? E.g., 
 
 We define the evaluation metrics using the following notation.
 Let $C$ be the set of public contracts and $B$ the set of bidders who were awarded at least one contract.
-The function $\mathit{match10}_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of 10[^top10] best-matching bidders recommended for a given public contract by matchmaker $m$.
+The function $\mathit{match10}_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of 10 best-matching bidders recommended for a given public contract by matchmaker $m$.
+We considered only the first 10 results due to the primacy effect, which describes that the items at the beginning of a recommendation list are analyzed more frequently.[^top10]
 The function $winner\colon C \to B$ returns the winning bidder to whom a contract was awarded.
 The function $wrank\colon C \to \mathbb{N}_{> 0} \cup \{ \text{nil} \}$ gives the rank of the bidder who won a given public contract.
 

@@ -148,7 +148,7 @@ Here, $ccobj(cobj_{a})$ accesses the concept in the contract object $cobj_{a}$.
 As is evident, in order to achieve a match, the ranges of the properties in the compared contract objects must be the same.
 
 Matching considers its input as the query contract, while the others are treated as contracts to be matched.
-Function $match \colon \left\{c_{q}\right\} \times Dir \times \mathbb{N}_{> 0} \to \mathbb{P}(CMA)$ retrieves concept-mediated associations matching a given query contract $c_{q}$.
+The function $match \colon \left\{c_{q}\right\} \times Dir \times \mathbb{N}_{> 0} \to \mathbb{P}(CMA)$ retrieves concept-mediated associations matching a given query contract $c_{q}$.
 
 $$match(c_{q}, dir, dis) = \bigcup \left\{ \begin{split}
   & (ccobj(o_{q}), pcobj(o_{q}), pcobj(o_{m}), c_{m}) \colon \\
@@ -317,8 +317,7 @@ We used materialization for pre-computing inverse document frequencies (IDF) of 
 While IDF can be computed on the fly, we decided to pre-compute it and store it as RDF.
 Computation of IDF is implemented via two declarative SPARQL Update operations, the first of which uses a Virtuoso-specific extension function for logarithm (`bif:log10()`), and the second normalizes the IDFs using the maximum IDF.
 
-The matchmaker is implemented in Clojure^[<https://clojure.org>] as a wrapper over the Virtuoso RDF store.
-It is described in [@sec:matchmaker-sparql] in more detail.
+The matchmaker, described in the [@sec:matchmaker-sparql], is implemented as a wrapper over the Virtuoso RDF store.
 Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
 
 <!--
