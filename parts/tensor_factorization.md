@@ -117,7 +117,7 @@ Other notable extensions of RESCAL add time awareness or tensor slice similariti
 We used this approach in data pre-processing, as described in the [@sec:rescal-loading], to model decaying relevance of older contract awards.
 @Padia2016 computed RESCAL with regard to the similarity of tensor slices to obtain better results.
 
-### Matchmaking
+### Ranking
 
 We applied link prediction via RESCAL to matchmaking, assuming that the tensor decomposition produced by RESCAL can accurately model the affinities between contracts and bidders.
 Probabilities of links predicted in the tensor slice representing contract awards can be obtained by reconstructing the slice from the tensor decomposition.
@@ -125,9 +125,11 @@ Given the slice $R_{award}$ for contract awards from the latent factor tensor $\
 Entries in $p$ can be interpreted as probabilities of the contract $c$ being awarded to entities at corresponding indices in $p$.
 Using the indices of bidders we can filter the entries in $p$ and then rank them in descending order to obtain the best matches for $c$.
 
-<!--
-Matchmaking as link prediction (~ tensor completion)
+We used no minimal threshold to filter out irrelevant matches.
+As reported in [@Nickel2012], determining a reasonable threshold is difficult, because the high sparseness of the input tensors causes a strong bias towards zero [@Nickel2012, 274].
+Consequently, instead of setting an arbitrary threshold, we ranked the predictions by their likelyhood and projected the top-ranking predictions as the matches.
 
+<!--
 Link prediction ranks entries in the reconstructed tensor by their values (components/factors?).
 
 matrix slice $R_{award}$ for contract awards from the latent factor tensor $\mathcal{R}$
@@ -138,29 +140,26 @@ select only the entries for indices of bidders
 sort in descending order
 select top 10 entries
 FIXME: Put the details (e.g., top 10 entries) into the evaluation section?
-
-Ranking: no threshold
-As reported in [@Nickel2012], determining a reasonable threshold is difficult, because the high sparseness causes a bias towards zero: *"However, due to a general sparseness of relationships there is a strong bias towards zero, which makes it difficult to select a reasonable threshold $\theta$"* [@Nickel2012, 274].
-ranking by the likelyhood that the predicted relation exists => no threshold needed
 -->
 
 <!-- Limitations -->
 
-RESCAL is a batch approach that cannot produce results in real time.
+Unlike SPARQL, RESCAL is a batch approach that cannot produce results in real time.
 First, it needs to factorize the input tensor to a decomposition that models the tensor.
 Once this model is built, predictions for individiual contracts can be computed on demand.
+RESCAL is hence slow to cope with changing data.
+Matchmaking via RESCAL is thus more appropriate if the matches are delivered via periodic subscriptions instead of on-demand queries.
 
 ### Implementation
 
 We implemented *matchmaker-rescal*, described in the [@sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol, explained in the [@sec:evaluation-protocol].
 
+When developing the RESCAL wrapper, we needed to take several aspects of performance into consideration.
 Due to the size of the processed data it is important to leverage its sparseness, which is why we employ efficient data structures for sparse matrices from the SciPy^[<https://www.scipy.org>] library.
-
 Reconstructing the whole predictions slice is unfeasible for larger datasets due to its size in memory.
 In order to reduce the memory footprint of the matchmakers, we avoid reconstructing the whole predictions slice from the RESCAL factorization, but instead reconstruct only the top-$k$ results.
 Predictions are computed for each row separately, so that the rows can be garbage-collected to free memory.
-
-From the performance standpoint it was important to compile the underlying NumPy library with the OpenBLAS^[<http://www.openblas.net>] back-end, which enables to leverage multi-core machines for computing low-level array operations.
+In order to enable parallelization it was important to compile the underlying NumPy library with the OpenBLAS^[<http://www.openblas.net>] back-end, which enables to leverage multi-core machines for computing low-level array operations.
 
 <!--
 Out-takes:
