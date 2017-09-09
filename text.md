@@ -41,6 +41,9 @@ parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
 parts/loading.md
+parts/loading_sparql.md
+parts/loading_elasticsearch.md
+parts/loading_rescal.md
 parts/methods.md
 parts/ground_truth.md
 parts/sparql.md
