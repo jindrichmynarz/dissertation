@@ -46,8 +46,10 @@ parts/loading.md
 
 ```include
 parts/sparql.md
+parts/tensor_factorization.md
 parts/evaluation.md
 parts/offline_evaluation.md
+parts/results_sparql.md
 parts/references.md
 ```
 

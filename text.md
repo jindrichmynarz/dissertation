@@ -50,6 +50,8 @@ parts/factors.md
 parts/further_problems.md
 parts/evaluation.md
 parts/offline_evaluation.md
+parts/results_sparql.md
+parts/results_rescal.md
 parts/qualitative_evaluation.md
 parts/conclusions.md
 parts/references.md
