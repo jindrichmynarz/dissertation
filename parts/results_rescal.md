@@ -7,7 +7,6 @@ A heuristic/method of tuning the hyper-parameters: informed/guided grid search?
 
 Since we do not using any threshold for RESCAL-based matchmakers, their prediction coverage is always maximum.
 Consequently, we omit it from the evaluation results.
-This is a trade-off: is it better to return no results or less relevant results?
 
 Note that RESCAL has a greater degree of non-determinism, so that its evaluation results have greater variance.
 

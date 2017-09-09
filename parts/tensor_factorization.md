@@ -1,6 +1,6 @@
 ## Tensor factorization
 
-Tensor factorization is a method for decomposing tensors into lower-rank approximations.
+Tensor factorization is a method for decomposing tensors, described in the [@sec:loading-rescal], into lower-rank approximations.
 The rank of a tensor $\mathcal{X}$ is "*the smallest number of rank one tensors that generate $\mathcal{X}$ as their sum"* [@Kolda2009].
 $\mathcal{X}$ is an $N$^th^ order rank one tensor when it *"can be written as the outer product of $N$ vectors"* [@Kolda2009]: $\mathcal{X} = \mathbf{a}^{(1)} \circ \mathbf{a}^{(2)} \circ \cdots \circ \mathbf{a}^{(N)}$.
 Determining the tensor's rank is known to be an NP-hard problem [@Sidiropoulos2017], so in practice low-rank approximations are used instead.
@@ -82,7 +82,7 @@ We employed some of the discussed extensions for matchmaking.
 
 <!-- Negative examples -->
 
-RESCAL adopts the local closed world assumption (LCWA).
+RESCAL adopts the local closed world assumption (LCWA), which is used often for training relational models [@Nickel2016, p. 13].
 It *"approaches the problem of learning from positive examples only, by assuming that missing triples are very likely not true, an approach that makes sense in a high-dimensional but sparse domain"* [@Nickel2012, p. 273].
 However, *"training on all-positive data is tricky, because the model might easily over generalize"* [@Nickel2016, p. 24].
 In order to avoid under-fitting, negative examples can be generated via type constraints for predicates or valid ranges of literals.
@@ -128,6 +128,7 @@ Using the indices of bidders we can filter the entries in $p$ and then rank them
 We used no minimal threshold to filter out irrelevant matches.
 As reported in [@Nickel2012], determining a reasonable threshold is difficult, because the high sparseness of the input tensors causes a strong bias towards zero [@Nickel2012, 274].
 Consequently, instead of setting an arbitrary threshold, we ranked the predictions by their likelyhood and projected the top-ranking predictions as the matches.
+This decision is a trade-off erring on the side of delivering less relevant results instead of producing no results.
 
 <!--
 Link prediction ranks entries in the reconstructed tensor by their values (components/factors?).
@@ -150,6 +151,10 @@ Once this model is built, predictions for individiual contracts can be computed 
 RESCAL is hence slow to cope with changing data.
 Matchmaking via RESCAL is thus more appropriate if the matches are delivered via periodic subscriptions instead of on-demand queries.
 
+<!--
+FIXME: Mention blind matchmaker implemented by generating random predictions?
+-->
+
 ### Implementation
 
 We implemented *matchmaker-rescal*, described in the [@sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol, explained in the [@sec:evaluation-protocol].
@@ -159,7 +164,11 @@ Due to the size of the processed data it is important to leverage its sparseness
 Reconstructing the whole predictions slice is unfeasible for larger datasets due to its size in memory.
 In order to reduce the memory footprint of the matchmakers, we avoid reconstructing the whole predictions slice from the RESCAL factorization, but instead reconstruct only the top-$k$ results.
 Predictions are computed for each row separately, so that the rows can be garbage-collected to free memory.
-In order to enable parallelization it was important to compile the underlying NumPy library with the OpenBLAS^[<http://www.openblas.net>] back-end, which enables to leverage multi-core machines for computing low-level array operations.
+In order to enable parallelization it was important to compile the underlying NumPy library with the OpenBLAS^[<http://www.openblas.net>] back-end, which allows to leverage multi-core machines for computing low-level array operations, such as the matrix product that is central to RESCAL.
+
+<!--
+numpy.dot implements the matrix product (i.e. sum of rows times columns)
+-->
 
 <!--
 Out-takes:
@@ -187,7 +196,4 @@ However, reshaping tensors into matrices causes data loss.
 
 Switching objects in triples sharing the same predicate (under LCWA) is valid for functional properties.
 @Nickel2016 proposes an approach that assumes the generated triples to be likely false.
-*"local closed world assumption (LCWA), which is often used for training relational models"* [@Nickel2016, p. 13]
-
-numpy.dot implements the matrix product (i.e. sum of rows times columns)
 -->

@@ -128,7 +128,9 @@ matchmaker-sparql^[<https://github.com/jindrichmynarz/matchmaker-sparql>] is a c
 The evaluation setup is guided by a configuration file provided to the application.
 The configuration describes the data to use, connection to a SPARQL endpoint to query and update the data, parameters of the matchmaker, and the evaluation protocol for the n-fold cross-validation.
 
+<!--
 ### matchmaker-elasticsearch
+-->
 
 ### matchmaker-rescal {#sec:matchmaker-rescal}
 

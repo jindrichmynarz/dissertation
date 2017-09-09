@@ -1,4 +1,4 @@
-### RESCAL-based matchmakers {#sec:rescal-loading}
+### RESCAL-based matchmakers {#sec:loading-rescal}
 
 The RESCAL-based matchmakers operate on tensors.
 Tensors are multidimensional arrays typically used to represent multi-relational data.
