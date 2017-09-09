@@ -34,12 +34,12 @@ parts/transformation.md
 parts/linking.md
 parts/geocoding.md
 parts/fusion.md
-parts/loading.md
 parts/linked_datasets.md
 parts/cpv.md
 parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
+parts/loading.md
 ```
 
 # Matchmaking methods
