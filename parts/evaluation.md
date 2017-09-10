@@ -34,7 +34,7 @@ In other words, *"when incomplete datasets are used as ground-truth, recommender
 Due to these limitations offline evaluation has a weak prediction power. 
 As such, *"offline evaluations of accuracy are not always meaningful for predicting the relative performance of different techniques"* [@Garcin2014, p. 176].
 Offline evaluation can tell which of the evaluated approaches provides better results, but it cannot tell if an approach is useful.
-There is a limited correspondence between the evaluted metrics and usefulness in real world.
+There is a limited correspondence between the evaluted metrics and usefulness in the real world.
 Whether an approach is useful can be evaluated only by real users.
 This is what online evaluation or qualitative evaluation can help with.
 

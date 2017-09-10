@@ -14,6 +14,8 @@ Main contributions:
 * Reusable command-line tools for working with RDF data
 
 <!--
+Linked open data is raw data.
+
 We found the SPARQL-based matchmaking to be superior. (TODO: update)
 - Is there any reason to use RESCAL-based matchmaking?
 

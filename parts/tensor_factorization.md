@@ -42,7 +42,7 @@ Perspective of probabilistic databases
 Hybrid approaches combining multiple methods
 - E.g., re-ranking
 
-Dealing with the noise in the data
+Dealing with noise in the data
 -->
 
 ### RESCAL
@@ -85,7 +85,7 @@ We employed some of the discussed extensions for matchmaking.
 RESCAL adopts the local closed world assumption (LCWA), which is used often for training relational models [@Nickel2016, p. 13].
 It *"approaches the problem of learning from positive examples only, by assuming that missing triples are very likely not true, an approach that makes sense in a high-dimensional but sparse domain"* [@Nickel2012, p. 273].
 However, *"training on all-positive data is tricky, because the model might easily over generalize"* [@Nickel2016, p. 24].
-In order to avoid under-fitting, negative examples can be generated via type constraints for predicates or valid ranges of literals.
+In order to avoid underfitting, negative examples can be generated via type constraints for predicates or valid ranges of literals.
 @Nickel2016 proposes generating negative examples by perturbing true triples.
 Basically, switching subjects in triples sharing the same functional property produces false, but type-consistent triples.
 
@@ -114,7 +114,7 @@ Even though RESCAL is faster than the type-constrained approach with the same ra
 
 Other notable extensions of RESCAL add time awareness or tensor slice similarities.
 @Kuchar2016 enhanced link prediction via RESCAL to be time-aware.
-We used this approach in data pre-processing, as described in the [@sec:rescal-loading], to model decaying relevance of older contract awards.
+We used this approach in data pre-processing, as described in the [@sec:loading-rescal], to model decaying relevance of older contract awards.
 @Padia2016 computed RESCAL with regard to the similarity of tensor slices to obtain better results.
 
 ### Ranking
@@ -158,6 +158,7 @@ FIXME: Mention blind matchmaker implemented by generating random predictions?
 ### Implementation
 
 We implemented *matchmaker-rescal*, described in the [@sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol, explained in the [@sec:evaluation-protocol].
+Instead of extending RESCAL, our contribution lies in the data preparation and pre-processing described in the [@sec:loading-rescal].
 
 When developing the RESCAL wrapper, we needed to take several aspects of performance into consideration.
 Due to the size of the processed data it is important to leverage its sparseness, which is why we employ efficient data structures for sparse matrices from the SciPy^[<https://www.scipy.org>] library.

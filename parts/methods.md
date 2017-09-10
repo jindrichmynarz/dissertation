@@ -6,6 +6,24 @@ Many methods will be generic to more than one approach. For example, weighting o
 However, without the finished implementations of all the matchmaking methods, shuffling content around would be a premature optimization.
 -->
 
+Case-based reasoning [@sec:cbr]: SPARQL
+- Custom built method
+- Implements only the *Retrieve* and *Reuse* steps from the CBR cycle?
+  - The *Revise* step would require to incorporate user feedback.
+  - The *Retain* step is useless if the proposed solutions are not verified in the revise step.
+- Both the *Knowledge representation* and the *Problem formulation* steps are implemented in data preparation, as described in the [@sec:data-preparation].
+- Observable features
+- Real time response possible
+
+Statistical relational learning [@sec:srl]: RESCAL
+- Latent feature model
+- Batch mode of operation, no updates in real time 
+- Reused method (RESCAL is treated as a black-box)
+
+Both methods share the same ground truth and have to cope with its limitations and biases [@sec:ground-truth].
+
+Why we have chosen these methods?
+
 <!-- FIXME: This seems to match the introductory section on case-based reasoning. -->
 
 Matchmaking public contracts to bidders can be framed as a task for case-based reasoning.
@@ -30,9 +48,9 @@ From the bidder's perspective, the task seems like recommendation.
 
 <!-- Portability -->
 
-The portability of the developed matchmaking methods is granted by the common data model, the Public Contracts Ontology [@sec:pco].
-Matchmakers can run on any dataset described by PCO.
-One of such datasets is the Czech public procurement dataset which we use as a use case in our work.
+The portability of the developed matchmaking methods is granted by the common data model underlain by the Public Contracts Ontology [@sec:pco].
+Matchmakers can therefore run on any dataset described by the PCO.
+One of such datasets is the Czech public procurement dataset which constitutes the use case for our work.
 
 <!-- Limitations -->
 
@@ -48,7 +66,7 @@ The opposite is true of conversational recommender systems that elicit user feed
 For example, users may provide a critique, such as requiring cheaper matches.
 Critiques can be interpreted as directional feature constraints [@Smyth2007, p. 361].
 
-Moreover, SPARQL requires *"users to express their needs in a single query"*.
+Moreover, SPARQL requires *"users to express their needs in a single query"*. <!-- FIXME: Missing a citation! -->
 This is why the matchmaker employs a single-shot approach.
 
 <!--
@@ -58,6 +76,8 @@ Browsing-based approaches: navigation of the item space, for example using criti
 -->
 
 <!--
+Queries vs. subscriptions
+
 Subscription to streams
 - Notifications
 
@@ -67,10 +87,8 @@ Push-based recommendations ~ matchmaking subscriptions
 
 <!--
 SPARQL and full-text matchmakers are "lazy learners", since they do not build explicit models.
-Since there is no model, performance might be worse.
+Since there is no model, performance might be worse. (Why?)
 We can consider database indices to be the "models".
-
-Representation of cases for efficient retrieval ~ feature selection and construction
 -->
 
 <!--
@@ -79,6 +97,7 @@ This is an opportunity to normalize by the bidder's age from ARES.
 -->
 
 Using the terminology of case-based reasoning, CPV provides a "bridge attribute" that allows to derive the similarity of contracts from the shared concepts in their descriptions.
+<!-- The other properties can be considered bridge attributes too, right? -->
 
 Matchmaking basically learns the associations between CPV concepts and bidders from contract awards. <!-- Potentially NACE concepts too. -->
 For each CPV concept the most associated bidders can be found.
@@ -89,7 +108,7 @@ There are several strategies to mitigate this issue:
 
 <!--
 Comparison of CBR systems with databases in [@Richter2013, p. 524].
-SPARQL operates under the closed world assumption. CBR assumes open world.
+Mismatch: SPARQL operates under the closed world assumption. CBR assumes open world.
 -->
 
 <!--
@@ -99,7 +118,7 @@ Alternative solutions:
 * Ask users to rate a sample of public contracts either as relevant or irrelevant. The sample must be chosen in order to maximize the insight learnt from the rating, e.g., the sample should be generated dynamically to increase its overall diversity.
 -->
 
-## Feature selection
+<!-- ## Feature selection -->
 
 We employed manual feature selection.
 As such, it corresponds to schema-aware matchmaking.
@@ -118,9 +137,9 @@ Top-k recommendation: best matches are shown, but not their predicted ratings.
 
 <!-- ... segue ... -->
 
-We experimented with matchmaking methods that use SPARQL, full-text search, and tensor factorization.
+We experimented with matchmaking methods that use SPARQL and tensor factorization.
 
-## Notation conventions
+<!-- ## Notation conventions -->
 
 We employ conventional notation to describe the matchmaking methods.
 We use $\mathbb{P}$ to denote a power set of a set.

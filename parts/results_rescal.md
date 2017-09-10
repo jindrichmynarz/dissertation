@@ -24,6 +24,8 @@ With higher ranks we observe diminishing returns and, ultimately, the accuracy c
 ![HR@10 per rank](img/evaluation/hrs_per_rank.png){#fig:hrs-per-rank}
 
 <!--
+Observation: Performance improves with rank only for more selective properties, e.g., `pc:mainObject`. Properties that have fewer distinct values, such as `pc:kind`, reach their peak performance already at lower ranks.
+
 Initialization methods: random, eigenvalues
 Regularization parameters: lambda A, lambda R
 - best found by [@Kuchar2016]: both 0.01
