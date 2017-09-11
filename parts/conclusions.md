@@ -13,6 +13,9 @@ Main contributions:
 * Cleaned and enriched Czech public procurement dataset published as linked open data for anyone to reuse
 * Reusable command-line tools for working with RDF data
 
+We explored only a few ways of matchmaking public contracts to bidders.
+Many more ways are left open to pursue and assess their worth.
+
 <!--
 Linked open data is raw data.
 

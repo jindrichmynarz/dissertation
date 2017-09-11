@@ -1,7 +1,8 @@
 ## Ground truth {#sec:ground-truth}
 
 The fundamental part of the proposed matchmaking methods is the ground truth they are based on.
-We use past contracts awards as the ground truth from which the methods learn to assess matches.
+We use past contracts awards as the ground truth from which the methods learn to assess matches.As such it warrants a dedicated section to discuss its characteristics.
+As such, it warrants a dedicated section to discuss its characteristics, in order to provide a better context for the following treatment of the matchmaking methods. 
 
 There are inherent downsides in our assumptions about the ground truth we used.
 The assumption that the awarded bidder is the best match for a contract is fundamentally problematic.

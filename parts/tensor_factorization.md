@@ -1,4 +1,4 @@
-## Tensor factorization
+## Tensor factorization {#sec:method-rescal}
 
 Tensor factorization is a method for decomposing tensors, described in the [@sec:loading-rescal], into lower-rank approximations.
 The rank of a tensor $\mathcal{X}$ is "*the smallest number of rank one tensors that generate $\mathcal{X}$ as their sum"* [@Kolda2009].

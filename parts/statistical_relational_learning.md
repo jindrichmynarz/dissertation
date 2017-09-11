@@ -84,17 +84,14 @@ We focus on multi-relational data in RDF.
 
 We conceived matchmaking via SRL as a link prediction task.
 Link prediction is *"concerned with predicting the existence (or probability of correctness) of (typed) edges in the graph"* [@Nickel2016, p. 14].
+In the context of knowledge graphs, such as LOD, link prediction is also known as knowledge graph completion [@Nickel2016, p. 14].
 An example application of link prediction is discovery of protein interactions in bioinformatics.
-In our case, we predict the link between a public contract and its awarded bidder.
 Typical cases of link prediction operate on multi-relational and noisy data, which makes the task suitable for SRL.
-
-<!--
-There is an inherent disproportion between existing and potential links in link prediction.
-*"In the context of knowledge graphs, link prediction is also referred to as knowledge graph completion."* [@Nickel2016, p. 14]
--->
+In our case, we predict the link between a public contract and its awarded bidder.
 
 <!-- Out-takes
 
 SRL exploits correlations in the target relation.
 Knowledge graphs encode the existence of facts. [@Nickel2016, p. 25]
+There is an inherent disproportion between existing and potential links in link prediction.
 -->

@@ -72,7 +72,7 @@ Property                  HR@10   MRR@10    CC@10       PC   LTP@10
 
 Table: Evaluation of individual properties {#tbl:properties-evaluation}
 
-![HR@k for `pc:mainObject`](img/evaluation/cumulative_hr.png){#fig:cumulative-hr}
+![HR@k for `pc:mainObject`](img/evaluation/cumulative_hr.png){#fig:cumulative-hr width=75%}
 
 #### Combined features
 
@@ -151,7 +151,7 @@ The evaluation showed that HR@10 grows logarithmically with the size of the data
 As can be expected, the baseline matchmaker improves its performance as the data it learns from accrues.
 Both approaches suffer from the cold start problem, although the baseline matchmaker improves rapidly with the initial data growth and demonstrates diminishing returns as data becomes larger.
 
-![HR@10 per level of data reduction](img/evaluation/data_reduction.png){#fig:data-reduction}
+![HR@10 per level of data reduction](img/evaluation/data_reduction.png){#fig:data-reduction width=75%}
 
 #### Data refinement
 
@@ -180,11 +180,13 @@ Both approaches fared worse than our baseline, as documented in the [@tbl:counte
 While the impact of weighting by zIndex is barely noticeable, the restriction to open procedures decreased the observed metrics.
 The decrease may be attributed to the smaller size of training data, even though the majority of the contracts in our dataset were awarded via an open procedure.
 
+-----------------------------------------------------------------------------
 Matchmaker                          HR@10   MRR@10    CC@10       PC   LTP@10
 -------------------------------- -------- -------- -------- -------- --------
 `pc:mainObject`                  **0.25** **0.12** **0.57** **0.98**     0.68
 `pc:mainObject`, zIndex              0.24     0.12     0.57 **0.98**     0.69
 `pc:mainObject`, open procedures     0.21     0.11     0.47     0.96 **0.70**
+-----------------------------------------------------------------------------
 
 Table: Evaluation of counter-measures to limits of the ground truth {#tbl:counter-measures-evaluation}
 

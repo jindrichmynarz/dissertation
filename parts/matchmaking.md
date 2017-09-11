@@ -18,6 +18,8 @@ Viewed in this perspective, matchmaking can be considered a case of top-$k$ retr
 Matchmaking typically operates on complex data structures.
 Both demands and supplies may combine non-negotiable restrictions with more flexible requirements or vague semi-structured descriptions.
 Descriptions of demands and offers thus cannot be reduced to a single dimension, such as a price tag.
+Matchmakers operating on such complex data thus often suffer from the curse of dimensionality.
+Linear increase in dimensionality may cause an exponential growth of negative effects.
 Complex descriptions make demands and offers difficult to compare.
 Since demands and supplies are usually complex, *"most real-world problems require multidimensional matchmaking"* [@Veit2001].
 For example, matchmaking may involve similarity functions that aggregate similarities of individual dimensions.

@@ -42,11 +42,7 @@ parts/zindex.md
 parts/loading.md
 parts/loading_sparql.md
 parts/loading_rescal.md
-```
-
-# Matchmaking methods
-
-```include
+parts/methods.md
 parts/ground_truth.md
 parts/sparql.md
 parts/tensor_factorization.md

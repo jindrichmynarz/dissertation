@@ -1,4 +1,4 @@
-## SPARQL
+## SPARQL {#sec:method-sparql}
 
 The SPARQL-based matchmaker employs a case-based reasoning approach that learns from contracts awarded in the past.
 For each awarded contract a similarity score is computed and the contracts are grouped by bidders who won them.
