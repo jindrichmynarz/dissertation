@@ -1,14 +1,12 @@
-### Results of SPARQL-based matchmakers
+## Results of SPARQL-based matchmakers
 
 We chose SPARQL-based matchmaking via the `pc:mainObject` property without weighting as our baseline.
 The developed matchmakers and configurations were assessed by comparing their evaluation results with the results obtained for the baseline configuration.
 In this way, we assessed the progress beyond the baseline that various matchmaking factors were able to achieve.
 We tested several factors involved in the matchmakers.
 These factors included weighting, query expansion, aggregation functions, and data reduction.
-All reported evaluation results are rounded to two decimal places.
-The best results for each metric in each table are highlighted by using a bold font.
 
-#### Blind matchmakers
+### Blind matchmakers
 
 As a starting point, we evaluated the blind matchmakers described in the [@sec:blind-matchmakers].
 Results of their evaluation are summarized in the [@tbl:blind-matchmakers].
@@ -29,7 +27,7 @@ Table: Evaluation of blind matchmakers {#tbl:blind-matchmakers}
 
 <!-- There are also papers that consider multiple baselines, such as [@Garcin2014]. -->
 
-#### Aggregation functions
+### Aggregation functions
 
 We evaluated the aggregation functions from the [@sec:aggregation-functions].
 The functions were applied to matchmaking via the `pc:mainObject` property with the weight of 0.6.
@@ -49,7 +47,7 @@ Product              **0.25** **0.12**     0.57 **0.98**     0.68
 
 Table: Evaluation t-norms and t-conorms {#tbl:norms-conorms}
 
-#### Individual features
+### Individual features
 
 As we described in the [@sec:contract-objects], we used several properties that describe contract objects.
 We evaluated these properties separately, without weighting, to determine their predictive power.
@@ -74,7 +72,7 @@ Table: Evaluation of individual properties {#tbl:properties-evaluation}
 
 ![HR@k for `pc:mainObject`](img/evaluation/cumulative_hr.png){#fig:cumulative-hr width=75%}
 
-#### Combined features
+### Combined features
 
 Having evaluated the properties individually we examined whether their combinations could perform better.
 We combined the properties with the baseline property `pc:mainObject`, using a reduced weight of 0.1 for the added properties.
@@ -106,7 +104,7 @@ qualifiers
 
 Table: Evaluation of combined properties {#tbl:combined-properties}
 
-#### Query expansion
+### Query expansion
 
 Apart from using combinations of properties, we can also extend the baseline matchmaker via query expansion, as documented in [@sec:query-expansion].
 We evaluated the expansion to related CPV concepts connected via hierarchical relations, both in the direction to broader concepts, to narrower concepts, or in both directions.
@@ -139,7 +137,7 @@ Broader Narrower Weight    HR@10   MRR@10    CC@10       PC   LTP@10
 
 Table: Evaluation of matchmakers using query expansion {#tbl:query-expansion}
 
-#### Data reduction
+### Data reduction
 
 We evaluated the impact of data reduction on HR@10 for the baseline matchmaker and the blind matchmaker that constantly recommends the top winning bidders.
 Prior to running the evaluation we reduced the number of links between contracts and bidders to a given fraction.
@@ -153,7 +151,7 @@ Both approaches suffer from the cold start problem, although the baseline matchm
 
 ![HR@10 per level of data reduction](img/evaluation/data_reduction.png){#fig:data-reduction width=75%}
 
-#### Data refinement
+### Data refinement
 
 Of the data refinement steps undertaken, as described in the [@sec:transformation], we evaluated what impact better deduplication and mapping CPV 2003 to CPV 2008 had on the baseline matchmaker.
 Both steps improved the evaluation results of the matchmaker, as can be seen in the [@tbl:data-refinement].
@@ -171,7 +169,7 @@ Final                         **0.25** **0.12**     0.57 **0.98**     0.68
 
 Table: Impact of data refinement on the baseline matchmaker {#tbl:data-refinement}
 
-#### Counter-measures to limits of ground truth 
+### Counter-measures to limits of ground truth 
 
 We evaluated two approaches devised as counter-measures to address the limits of our ground truth.
 One of them weighted contract awards by the zIndex fairness score of the contracting authority, the other limited the training dataset to contracts awarded in open procedures.

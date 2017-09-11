@@ -49,6 +49,8 @@ parts/tensor_factorization.md
 parts/evaluation.md
 parts/offline_evaluation.md
 parts/results_sparql.md
+parts/results_rescal.md
+parts/conclusions.md
 parts/references.md
 ```
 

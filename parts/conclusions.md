@@ -14,7 +14,7 @@ Main contributions:
 * Reusable command-line tools for working with RDF data
 
 We explored only a few ways of matchmaking public contracts to bidders.
-Many more ways are left open to pursue and assess their worth.
+Many more ways of relevance engineering are left open to pursue and assess their worth.
 
 <!--
 Linked open data is raw data.
@@ -23,6 +23,8 @@ We found the SPARQL-based matchmaking to be superior. (TODO: update)
 - Is there any reason to use RESCAL-based matchmaking?
 
 New findings compared with the state of the art
-
-Our work perhaps produced more value in the developed reusable tools for data preparation and matchmaking than as a use case in public procurement.
 -->
+
+Evaluation with reduced data confirmed that *"simple models and a lot of data trump more elaborate models based on less data"* [@Halevy2009, p. 9].
+
+Ultimately, our work perhaps produced greater value in the developed reusable artefacts for data preparation and matchmaking than as a use case in public procurement.

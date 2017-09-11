@@ -1,4 +1,4 @@
-## Offline evaluation
+<!-- ## Offline evaluation -->
 
 <!--
 FIXME: Do we basically do grid search? Configuration can be considered as hyperparameters. We are basically trying to find the most important (sensitive) hyper-parameters.
@@ -10,12 +10,13 @@ Effect size:
 - Compare effect sizes relative to the baseline?
 -->
 
-We used offline evaluation to filter matchmaking methods and configurations to those that were subsequently used in qualitative evaluation.
+We used offline evaluation to filter matchmaking methods and configurations to find the most promising ones.
 Since we test different matchmakers in the same context, this evaluation can be considered a trade-off analysis [@Wieringa2014, p. 260], in which we balance the differences in the evaluated measures.
 
-### Ground truth
+## Ground truth
 
 We conducted offline evaluation using retrospective data about awarded public contracts.
+As we described previously in the [@sec:ground-truth], the ground truth poses several challenges and limitations that the matchmakers have to deal with.
 Matchmaking was tested on the task of predicting the awarded bidder.
 In our case, we treat contract awards as explicit positive user feedback.
 Thus, in terms of [@Beel2013], we use a "user-offline-dataset", since it contains implicit ratings inferred from contract awards.
@@ -29,7 +30,7 @@ This may be either in error or when members of the winning groups of bidders are
 For example, framework agreements may be awarded to multiple bidders.
 For the sake of simplicity we decided to exclude these contracts from our ground truth.
 
-### Evaluation protocol {#sec:evaluation-protocol}
+## Evaluation protocol {#sec:evaluation-protocol}
 
 <!-- N-fold cross-validation -->
 
@@ -54,7 +55,7 @@ Should we split by time? For example, use 8 years (2006-2014) as training and 2 
 Should we add an explanation why we did not split folds by time?
 -->
 
-### Evaluated metrics {#sec:evaluated-metrics}
+## Evaluated metrics {#sec:evaluated-metrics}
 
 <!-- Metrics and objectives -->
 
@@ -167,5 +168,9 @@ We used Wilcoxon signed-rank test [@Rey2014] to evaluate the statistical signifi
 We chose it because we compare ranks for the whole dataset and this test is suited for paired samples from the same population.
 Moreover, it does not require the compared samples to follow normal distribution, which is the case of the distributions of ranks.
 -->
+
+The rest of this chapter features the results obtained by SPARQL-based and RESCAL-based matchmakers in the evaluation.
+All reported evaluation results are rounded to two decimal places.
+The best results for each metric in each table are highlighted by using a bold font.
 
 [^top10]: 91 % of search engine users consider only the top 10 results, according to a study (<http://www.seo-takeover.com/case-study-click-through-rate-google>).

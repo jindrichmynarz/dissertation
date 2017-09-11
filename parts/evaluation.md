@@ -1,10 +1,18 @@
 # Evaluation
 
+<!--
 We evaluated both the statistical and practical significance of our contributions.
 Evaluation of statistical significance was used to rule out the differences between the evaluated matchmakers that could be attributed to random error.
-We considered practical importance of our research as part of the qualitative evaluation. 
-In this way, we attempted to demonstrate the utility of our developed artefacts.
+We considered practical importance of our research as part of the qualitative evaluation.
+-->
+
+We attempted to demonstrate the utility of the developed matchmakers by evaluating several metrics.
+We chose metrics that approximate the accuracy and diversity of matchmaking.
+The metrics were evaluated in an offline setup.
+
+<!--
 We used a combination of offline evaluation and qualitative evaluation.
+-->
 
 <!-- TODO: Frame within the context of design science.
 
@@ -16,7 +24,7 @@ In terms of Wieringa [-@Wieringa2014, p. 31], both our offline evaluation and qu
 
 <!-- Offline evaluation -->
 
-Offline evaluation is an experimental setting, in which past user interactions are used as ground truth.
+Offline evaluation is an experimental setting in which past user interactions are used as ground truth.
 In this setting, some interactions are withheld and the evaluated system is assessed on its ability to fill in the missing interactions. 
 Offline evaluation is defined in the recommender systems research in contrast to online evaluation.
 While online evaluation involves users in real-time, offline evaluation approximates actual user behaviour by using pre-recorded user interactions.
@@ -51,11 +59,14 @@ Several studies found that *"results of offline and online evaluations often con
 However, conducting online evaluation is expensive since it requires an application with real users.
 In order to attract a sufficient mass of users to make the findings from the evaluation statistically significant, the application must be relatively mature and proven useful.
 Moreover, we wanted to explore a large space of different matchmaker configurations, for which carrying out online evaluation would be prohibitively expensive.
+Ultimately, due to the large effort involved in setting up online evaluation we restricted our work to offline evaluation.
 
 <!-- Qualitative evaluation -->
 
+<!--
 Due to the large effort required by setting up an online evaluation, we decided to balance the shortcoming of offline evaluation with qualitative evaluation.
 We used offline evaluation to prescreen viable matchmaking methods and configurations to select fewer promising variants that we subsequently consulted using semi-structured interviews with domain experts and prospective users of the matchmakers.
+-->
 
 <!--
 Alternative evaluation protocol, widely used in top-k recommendation: <http://dl.acm.org/citation.cfm?id=1864721>
