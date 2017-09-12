@@ -10,10 +10,10 @@ If data collection and integration is done manually, it takes a lot of effort.
 
 Some manual effort involved in gathering and evaluation of data about demands and supplies can be automated by matchmaking.
 Matchmakers are tools that retrieve data matching a query.
-In the matchmaking setting, either demands or supplies are casted as queries while the other side is treated as the queried data.
+In the matchmaking setting, either demands or supplies are cast as queries while the other side is treated as the queried data.
 The queries produce matches from the queried data ranked by their degree to which they satisfy a given query.
 
-<!-- Goal: efficiency -->
+<!-- Motivation: efficiency -->
 
 Our work concerns matchmaking of bidders and public contracts.
 The primary motivation for our research is to improve the efficiency of resource allocation in public procurement by providing better information to the participants of the public procurement market.
@@ -33,7 +33,7 @@ This is why it is important to combine data from multiple domains to learn about
 Here, semantics is a way to agree on meaning of things in the data.
 Semantic web is a way to agree on what things are, so that we can combine the data about the things.
 
-## Matchmaking vs. advertisting
+## Matchmaking vs. advertising
 
 Matchmaking substitutes advertising.
 Business models based on advertising distort the design of web services.
@@ -84,12 +84,13 @@ The domain of this research is an intersection of matchmaking and semantic web k
 <!-- Scientific methods -->
 
 We adopt the methods of the design science [@Hevner2004] in our research.
-We design artefacts, including the Czech public procurement dataset and the matchmakers, and experiment with them during evaluation to tell which of their variants perform better.
+We design artefacts, including the Czech public procurement dataset and the matchmakers, and experiment with them to tell which of their variants perform better.
+Our is hence exploring what matchmaking of public contracts to bidders is feasible given linked open data.
 
 <!-- Evaluation -->
 
 Our key question to evaluate is whether we can develop a matchmaker that can produce results deemed acceptable by domain experts.
-We evaluate the developed matchmakers both via offline experiments on retrospective data and via interviews with representatives of contracting authorities.
+We evaluate the developed matchmakers via offline experiments on retrospective data. <!-- and via interviews with representatives of contracting authorities. -->
 In terms of our target metrics, the recommended matches should exhibit both high accuracy and diversity.
 In order to discover the key factors that improve matchmaking we compare the evaluation results produced by the developed matchmakers in their different configurations.
 
@@ -100,7 +101,7 @@ Designing the matchmakers can be considered a constructive proof to answer our q
 
 <!-- Contributions -->
 
-The principal contributions of our work are the implemented matchmaking methods and the reusable datasets for testing these methods.
+The principal contributions of our work are the implemented matchmaking methods, the reusable datasets for testing these methods, and generic software for processing linked open data.
 By using experimental evaluation of these methods we derive general findings about the factors that have the largest impact on the quality of matchmaking of bidders to public contracts.
 
 <!-- General note at the end of the introduction -->
@@ -130,7 +131,7 @@ FIXME Feedback: De-emphasize hypotheses.
 
 A key obstacle to achieving the stated goal is fragmentation of data on the Web.
 Data about demands and offers is dispersed across a multitude of web sites, including electronic marketplaces or public sector registries. 
-To get a broader picture about the market one must scan through the relevant yet heterogenous sources of data, each of which may expose a different access interface, most of which will be suitable only for humans to process.
+To get a broader picture about the market one must scan through the relevant yet heterogeneous sources of data, each of which may expose a different access interface, most of which will be suitable only for humans to process.
 Therefore, *"search and matchmaking between two business parties over the current Web are still very time-consuming if [...] information from multiple sources needs to be combined to assess the relevance or execute the query"* [@Radinger2013].
 To improve this situation, the broad goal of this thesis is to contribute to defragmentation of online markets by linking the data communicated between them.
 Having links in between datasets on the Web that are traversable by machines may enable to query the distributed markets as a single virtual market.
@@ -145,7 +146,7 @@ Structuring data about both demands and offers in a granular fashion is especial
 Having access to structured data enables automated processing and granular descriptions provide a basis for novel functionalities.
 
 In the public procurement domain, better information can improve the quality of government's decision making and thus make the allocation of public resources more efficient.
-Matchmaking can help public bodies to find a more suitable supplier, while companies can benefit from finding business opportunities in relevent calls for tenders.
+Matchmaking can help public bodies to find a more suitable supplier, while companies can benefit from finding business opportunities in relevant calls for tenders.
 In effect, the ambition of the developed system is mainly to reduce passive waste with public funds [@Bandiera2009], which, unlike active waste, does not benefit the decision-making civil servant, but instead is caused rather by lack of information, skills, and motivation.
 -->
 

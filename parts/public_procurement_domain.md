@@ -92,7 +92,7 @@ Violations of the prescribed schema, lacking data validation, and absent enforce
 For example, tasks such as search in aggregated data or establishing identity of economic operators suffer from data inconsistency.
 Moreover, public procurement data can be distributed across disparate sources providing varying level of detail and completeness, such as in public profiles of contracting authorities and central registers.
 Fragmentation of public procurement data thus requires further data integration in order for the consumer to come to a unified view of the procurement domain that is necessary conducting data analyses.
-In fact, one of the reasons why the public procurement market is dominated by large companies may be that they, unlike SMEs, can afford the friction in processing the data.
+In fact, one of the reasons why the public procurement market is dominated by large companies may be that they, unlike small and medium-sized enterprises, can afford the friction in processing the data.
 
 According to our approach to data preparation, linked data provides a way to compensate the impact of imperfect standardization.
 While a standard can be defined as *"coordination mechanism around non-proprietary knowledge that organizes and directs technological change"* [@Gosain2003, p. 18], linked data enables to cope with insufficient standardization by allowing for *"cooperation without coordination"* [@Wood2011, p. 5] or centralization.
@@ -151,7 +151,7 @@ The chosen procedure type determines for which users is matchmaking relevant.
 Bidders can use matchmaking both in case of open and restricted procedures to be alerted about current business opportunities in public procurement that are relevant for them.
 Contracting authorities can use matchmaking in restricted procedure to get recommendations of suitable bidders.
 <!-- A potential issue: A restricted procedure is probably chosen when the contracting authority already knows which bidders to invite. -->
-Moreover, in case of the simplified under limit procedure, which is allowed for public contracts below a specified financial threshold, contracting authoritiy can approach bidders directly.
+Moreover, in case of the simplified under limit procedure, which is allowed for public contracts below a specified financial threshold, contracting authority can approach bidders directly.
 In such case, at least five bidders must be approached according to the law no. 2016/134 [@CzechRepublic2016]. <!-- <https://www.zakonyprolidi.cz/cs/2016-134#p53> -->
 In that scenario, matchmaking can help recommend appropriate bidders to interest in the public contract.
 There are also other procedure types, such as innovation partnership, in which matchmaking is applicable to a lesser extent.

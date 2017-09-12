@@ -42,7 +42,7 @@ Without the complete history of the registers, access to previous addresses is u
 Since we have only a snapshot of the data, the historical data is missing.
 This deficiency turned out to be detrimental to linking business entities by making it more difficult to identify correct reference entities to link.
 
-Thanks to the uniform API that ARES provides the ETL of both registers differs only in the URL paramaters and the XSL transformations mapping XML data to RDF.
+Thanks to the uniform API that ARES provides the ETL of both registers differs only in the URL parameters and the XSL transformations mapping XML data to RDF.
 The data transformation was done using UnifiedViews.
 A custom data processing unit^[<https://github.com/mff-uk/DPUs/tree/master/dpu-domain-specific/ares>] (DPU) was used to fetch data into UnifiedViews.
 Raw source data in XML was transformed into RDF/XML using XSL stylesheets.

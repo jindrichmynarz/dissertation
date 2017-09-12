@@ -13,7 +13,7 @@ Similar problems in public procurement data were witnessed by Futia et al. [-@Fu
 
 Due to the messiness of the data, we had to make data transformations defensive.
 The transformations needed to rely on fewer assumptions about the data and had to be able to deal with violations of these assumptions. 
-For example, the identifiers of the entities involved in public procurement had to be treated as inherently unrealiable.
+For example, the identifiers of the entities involved in public procurement had to be treated as inherently unreliable.
 
 Moreover, since not all data is disclosed, we have only a sample instead of complete data.
 Given the incentives not to publish data, we cannot assume the sample is random.
@@ -49,7 +49,7 @@ This stopping condition is Virtuoso-specific, since the SPARQL 1.1 Update standa
 Additionally, the tool provides conveniences including configurable retries of failed updates or the ability to restart transformations from a specified offset.
 
 While sparql-unlimited was used to automate parts of individual transformations, each transformation was launched manually.
-Virtuoso, the RDF store in which we executed the transformations, has an upredictable runtime, which may be due to unresolved previous transactions or generally faulty implementation.
+Virtuoso, the RDF store in which we executed the transformations, has an unpredictable runtime, which may be due to unresolved previous transactions or generally faulty implementation.
 Therefore, we started each transformation manually to allow to fine-tune the configuration for each run depending on the perceived response from Virtuoso.
 
 A good practice in ETL is to make checkpoints continuously during data processing.

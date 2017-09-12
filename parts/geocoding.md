@@ -28,7 +28,7 @@ We loaded the data into our RDF store and ran a SPARQL Update operation to match
 In order to geocode other postal addresses, we built and Elasticsearch-based geocoder using the Czech address data ([@sec:czech-addresses]).
 We decided not to use an existing solution for several reasons.
 Some geocoding services have restrictive licenses.
-For instance, the results of Google's Maps Geocoding API can be used only in conjuction with displaying the obtained geo-coordinates on the Google map.^[<https://developers.google.com/maps/documentation/geocoding/policies#map>]
+For instance, the results of Google's Maps Geocoding API can be used only in conjunction with displaying the obtained geo-coordinates on the Google map.^[<https://developers.google.com/maps/documentation/geocoding/policies#map>]
 More liberal geocoding services often provide poor accuracy.
 For example, this is the case of OpenStreetMap's Nominatim,^[<http://wiki.openstreetmap.org/wiki/Nominatim>] both for its structured and unstructured search.
 Finally, we wanted to assess whether open data can help build a geocoder on par with the commercial offerings.
@@ -37,7 +37,7 @@ This is why we based the developed geocoder on the gazetteer from the Czech addr
 During the development of the geocoder we leveraged the tooling we built for data preparation.
 *sparql-to-jsonld*^[<https://github.com/jindrichmynarz/sparql-to-jsonld>] was used to retrieve the Czech address data from a SPARQL endpoint, construct descriptions of the individual postal addresses, and frame them into JSON-LD documents.
 We used *jsonld-to-elasticsearch*^[<https://github.com/jindrichmynarz/jsonld-to-elasticsearch>] to index the addresses in Elasticsearch.
-In the index phase we used basic normalization and employed a synynom filter that expanded abbreviations commonly found in postal addresses.
+In the index phase we used basic normalization and employed a synonym filter that expanded abbreviations commonly found in postal addresses.
 
 The geocoder^[<https://github.com/jindrichmynarz/elasticsearch-geocoding>] was implemented as a command-line tool that loads addresses to geocode from a SPARQL endpoint using a paged SPARQL SELECT query provided by the user, and queries an Elasticsearch index with the Czech address data for each address.
 We adopted Elasticsearch for the geocoder because, unlike SPARQL, it allows to perform fuzzy searches, in which results are ranked by the degree to which they fulfil the search query.

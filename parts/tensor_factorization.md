@@ -127,7 +127,7 @@ Using the indices of bidders we can filter the entries in $p$ and then rank them
 
 We used no minimal threshold to filter out irrelevant matches.
 As reported in [@Nickel2012], determining a reasonable threshold is difficult, because the high sparseness of the input tensors causes a strong bias towards zero [@Nickel2012, 274].
-Consequently, instead of setting an arbitrary threshold, we ranked the predictions by their likelyhood and projected the top-ranking predictions as the matches.
+Consequently, instead of setting an arbitrary threshold, we ranked the predictions by their likelihood and projected the top-ranking predictions as the matches.
 This decision is a trade-off erring on the side of delivering less relevant results instead of producing no results.
 
 <!--
@@ -147,7 +147,7 @@ FIXME: Put the details (e.g., top 10 entries) into the evaluation section?
 
 Unlike SPARQL, RESCAL is a batch approach that cannot produce results in real time.
 First, it needs to factorize the input tensor to a decomposition that models the tensor.
-Once this model is built, predictions for individiual contracts can be computed on demand.
+Once this model is built, predictions for individual contracts can be computed on demand.
 RESCAL is hence slow to cope with changing data.
 Matchmaking via RESCAL is thus more appropriate if the matches are delivered via periodic subscriptions instead of on-demand queries.
 

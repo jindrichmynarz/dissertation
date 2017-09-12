@@ -17,7 +17,7 @@ Missing consensual identifiers are one of the key challenges in integration of p
 
 If descriptions with which entities are referred to are reliable and complete, we can use content-based addressing to discover descriptions referring to the same entity.
 Content-based addressing is a general approach for identifying entities by using their content.
-In case of RDF entities, we assume that triples containing an entity's identifer to make up the entity's description.
+In case of RDF entities, we assume that triples containing an entity's identifier to make up the entity's description.
 We typically restrict such triples to those in which an entity's identifier is in the subject role.
 Various content signatures may be derived from such descriptions of entities.
 

@@ -95,7 +95,7 @@ We selected the Czech public procurement register as our primary dataset, to whi
 The Czech public procurement register provides historical data on Czech public contracts since 2006.
 CPV organizes objects of public contracts in a hierarchical structure that allows to draw inferences about the similarity of the objects from their distance in the structure.
 Czech address data offers geo-coordinates for the reference postal addresses in the Czech Republic.
-By matching postal addresses to their canocanical forms from this dataset, postal addresses can be geocoded.
+By matching postal addresses to their canonical forms from this dataset, postal addresses can be geocoded.
 ARES serves as a reference dataset for business entities.
 We used it to reconcile the identities of business entities in the Czech public procurement data.
 zIndex provides fairness score to contracting authorities in the Czech public procurement.

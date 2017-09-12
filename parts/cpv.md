@@ -34,7 +34,7 @@ This naïve approach could be improved by using techniques, such as blocking [@I
 In order to integrate CPV with the public procurement data, we converted it from XML to RDF.
 The transformation^[<https://github.com/opendatacz/cpv2rdf>] was done using an XSL transformation and SPARQL CONSTRUCT queries for enriching data.
 Its result is described using SKOS plus Dublin Core Terms^[<http://dublincore.org/documents/dcmi-terms>] for metadata.
-While the original CPV source expresses hierachical relations using the structure of numerical notations of the    vocabulary's concepts, its RDF version makes these relations explicit using hierarchical relations from SKOS, such as `skos:broaderTransitive`.
+While the original CPV source expresses hierarchical relations using the structure of numerical notations of the    vocabulary's concepts, its RDF version makes these relations explicit using hierarchical relations from SKOS, such as `skos:broaderTransitive`.
 The transformation was originally orchestrated by a shell script, which was later replaced by a UnifiedViews^[<https://unifiedviews.eu>] [@Knap2017] pipeline.
 UnifiedViews is an ETL tool for producing RDF data, which can be considered a predecessor of LP-ETL.
 

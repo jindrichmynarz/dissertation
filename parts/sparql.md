@@ -102,7 +102,7 @@ To capture this distinction we use concept assignment $ConA = \{\text{explicit},
 Contract object $cobj$ is then a tuple $((con, p), cona) \colon con \in Con, p \in P, cona \in ConA$, in which a concept $con$ is paired with property $p$ that associates the concept to a contract and this pair is qualified with concept assignment $cona$.
 Contract objects are represented as sets $Cobj$ of these tuples.
 In order to obtain contract objects we use the function $obj \colon C \cup \left\{c_{q}\right\} \to \mathbb{P}(Cobj)$. <!-- _b -->
-Here, $\mathbb{P}(Cobj)$ denotes the powerset of the set $Cobj$.
+Here, $\mathbb{P}(Cobj)$ denotes the power set of the set $Cobj$.
 Accessing the elements of contract objects is in turn done by function $ccobj(cobj) = con \iff cobj = ((con, p), cona)$ for concepts and by function $pcobj(cobj) = p \iff cobj = ((con, p), cona)$ for properties.
 
 #### Query expansion {#sec:query-expansion}

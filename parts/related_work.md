@@ -134,7 +134,7 @@ However, the vocabulary features only rudimentary means to express what is sough
 
 <!-- Call for Anything
 
-a simple RDF vocabulary by the DERI’s Linked Data Research Centre that is intended for expressing demand, such as calls for tenders or calls for papers
+a simple RDF vocabulary by the DERI's Linked Data Research Centre that is intended for expressing demand, such as calls for tenders or calls for papers
 Call for Anything vocabulary can be considered as one of the first attempts towards a greater coverage of the side of demand, for which it provides means of expression.
 However, the vocabulary does not provide guidance on the potentially complex modelling of call conditions and it features only a rudimentary functionality for expressing object of the call, relying on literals to convey the semantics of the demanded object.
 -->

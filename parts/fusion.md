@@ -96,7 +96,7 @@ Overall, fusion reduced the data by 52.14 % from 20.5 million triples to 9.8 mil
 
 <!--
 [@Bleiholder2008]
-Completenes
+Completeness
 Conciseness
 Consistency
 - Intensional and extensional

@@ -21,7 +21,7 @@ Using the terminology of the Jacobs and Walsh [-@Jacobs2004], notices are inform
 Information resource is *"a resource which has the property that all of its essential characteristics can be conveyed in a message"* [-@Jacobs2004], so that it can be transferred via HTTP, which cannot be done with non-information resources, such as physical objects or abstract notions.
 
 <!--
-TODO: Add a (simplified) diagram of public contract lifecycle in terms of public notices.
+TODO: Add a (simplified) diagram of public contract life-cycle in terms of public notices.
 -->
 
 We represent contract notices as instances of subclasses of `pproc:Notice` from PPROC, since PCO does not include the concept of a contract notice.

@@ -56,6 +56,6 @@ Each property is provided with the most common range, such as `xsd:date` for a d
 The cardinality ranges may signalize errors in data transformation, such as insufficient data fusion when the maximum cardinality surpasses an expected value.
 
 <!--
-- Data validation is typically mentioned as an instrinsic part of extraction. However, it is also found in the transformation step.
+- Data validation is typically mentioned as an intrinsic part of extraction. However, it is also found in the transformation step.
 - We currently do "validation through use". Syntactical validation is performed when loading the data into an RDF store. However, the data breaks many assumptions of the Public Contracts Ontology to allow to automated validation using tools such as RDFUnit.
 -->

@@ -122,7 +122,7 @@ While traditional recommender systems are mostly unaware of the semantics of the
 If the values of features are resources compliant with the linked data principles, their IRIs can be dereferenced to obtain more features from the descriptions of the resources.
 In this way linked data allows to automate the retrieval of additional features.
 IRIs of linked resources can be automatically crawled to harvest contextual data.
-Furthemore, crawlers may recursively follow links in the obtained data.
+Furthermore, crawlers may recursively follow links in the obtained data.
 The links between datasets can be used to provide cross-domain recommendations.
 In such scenario preferences from one domain are be used to predict preferences in another domain.
 For example, if in our case we combine data from business and public procurement registers, we may leverage links between business entities described with concepts from an economic classification to predict their associations to concepts from a procurement classification.

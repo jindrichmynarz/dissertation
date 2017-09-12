@@ -40,7 +40,7 @@ CSV
 ~ Comma-Separated Values
 
 CZK
-~ Czech Koruna
+~ Czech koruna
 
 DAML
 ~ DARPA Agent Markup Language

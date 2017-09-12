@@ -39,7 +39,7 @@ In our case, we found that relatively high values of the regularization paramete
 We set both *lambda A* and *lambda R* to be 10.
 
 <!--
-- Add discussion of sensitivity to hyperparameters?
+- Add discussion of sensitivity to hyper-parameters?
 -->
 
 ### Feature selection

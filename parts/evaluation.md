@@ -16,8 +16,8 @@ We used a combination of offline evaluation and qualitative evaluation.
 
 <!-- TODO: Frame within the context of design science.
 
-The evaluation includes both experimental and nonexperimental design.
-The offline evaluation follows an experimental design, while the qualitative evaluation is nonexperimental.
+The evaluation includes both experimental and non-experimental design.
+The offline evaluation follows an experimental design, while the qualitative evaluation is non-experimental.
 
 In terms of Wieringa [-@Wieringa2014, p. 31], both our offline evaluation and qualitative evaluation are validation, because both use a model of how the developed matchmakers would be used in the real world.
 -->
@@ -42,7 +42,7 @@ In other words, *"when incomplete datasets are used as ground-truth, recommender
 Due to these limitations offline evaluation has a weak prediction power. 
 As such, *"offline evaluations of accuracy are not always meaningful for predicting the relative performance of different techniques"* [@Garcin2014, p. 176].
 Offline evaluation can tell which of the evaluated approaches provides better results, but it cannot tell if an approach is useful.
-There is a limited correspondence between the evaluted metrics and usefulness in the real world.
+There is a limited correspondence between the evaluated metrics and usefulness in the real world.
 Whether an approach is useful can be evaluated only by real users.
 This is what online evaluation or qualitative evaluation can help with.
 
@@ -65,7 +65,7 @@ Ultimately, due to the large effort involved in setting up online evaluation we 
 
 <!--
 Due to the large effort required by setting up an online evaluation, we decided to balance the shortcoming of offline evaluation with qualitative evaluation.
-We used offline evaluation to prescreen viable matchmaking methods and configurations to select fewer promising variants that we subsequently consulted using semi-structured interviews with domain experts and prospective users of the matchmakers.
+We used offline evaluation to pre-screen viable matchmaking methods and configurations to select fewer promising variants that we subsequently consulted using semi-structured interviews with domain experts and prospective users of the matchmakers.
 -->
 
 <!--
@@ -86,7 +86,7 @@ Experimental design (experimental evaluation, controlled experiment)
 - Lab studies
 - Matchmaking as a classification task that produces a ranked list of relevant items.
 
-Nonexperimental design: qualitative research via interviews with users (or domain experts)
+Non-experimental design: qualitative research via interviews with users (or domain experts)
 
 + Descriptive evaluation via example scenarios?
 + Cost-benefit analysis discussing the matchmaker's value compared with the costs in sustaining it (keeping it operable)?

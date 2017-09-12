@@ -14,7 +14,7 @@ The RÚIAN-specific attributes, such as the orientational number or the building
 Since each row in the source data is independent of the others, it was possible to use chunked transformation to process smaller batches of rows separately and thus decrease the execution time of the transformation.
 The resulting data consisting of 42 million RDF triples was loaded into a Virtuoso RDF store. 
 
-Czech addreses data use Systém Jednotné trigonometrické sítě katastrální (S-JTSK)[^S-JTSK] as its coordinate reference system (CRS).
+Czech addresses data use Systém Jednotné trigonometrické sítě katastrální (S-JTSK)[^S-JTSK] as its coordinate reference system (CRS).
 S-JTSK is based on the Křovák projection, which was designed specifically for the Czechoslovakia to provide more precise geo-coordinates than another reference system would.
 However, the standard CRS used in web applications is the World Geodetic System (WGS84).
 Data using S-JTSK are thus not directly interoperable with many existing datasets.
