@@ -1,18 +1,18 @@
 ## Results of RESCAL-based matchmakers
 
 The approach for exploring the space of configurations of RESCAL-based matchmakers was similar to the one used for SPARQL-based matchmakers.
-We started with `pc:mainObject` as the principal feature and examined what improvement can be achieved via adjustments of hyper-parameters, combination with additional features, or other treatments.
+We started with `pc:mainObject` as the principal feature and examined what improvements can be achieved via adjustments of hyper-parameters, combinations with additional features, or other treatments.
 The adopted heuristic for tuning the matchmakers' performance can be considered a manually guided grid search.
 Note that RESCAL exhibits a greater degree of non-determinism than the SPARQL-based method, so that its evaluation results have greater variance.
 
 We measured the same evaluation metrics for the RESCAL-based matchmakers as for the SPARQL-based ones.
-Since we do not use any threshold for RESCAL-based matchmakers, their prediction coverage is always maximum.
-Consequently, we omit this metric from the evaluation results.
+Since we do not use any threshold for the RESCAL-based matchmakers, their prediction coverage is always maximum.
+Consequently, for brevity, we omit this metric from the evaluation results.
 
 ### Hyper-parameters
 
 The central hyper-parameter of RESCAL is the rank of its decomposition.
-As reported in literature, RESCAL's accuracy improves with increasing rank of the factorization.
+As reported in existing research, RESCAL's accuracy improves with increasing rank of the factorization.
 With higher ranks we observe diminishing returns and, eventually, HR@10 ceases to improve at around rank 500, as the [@fig:hrs-per-rank] displays.
 An analogous impact can be observed for CC@10, although its growth is much more subtle.
 We tested ranks ranging from 10 to 1000, using smaller intervals for greater resolution in low ranks.

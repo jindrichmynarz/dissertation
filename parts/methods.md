@@ -53,6 +53,8 @@ Since it builds a prediction model up front, it is an example of eager learning.
 Consequently, it operates in batch mode that allows to update data only in bulk.
 
 The key differences between CBR and SRL are summarized in the [@tbl:matchmaking-methods-differences].
+Matchmaking can also be implemented via hybrid methods that combine multiple approaches.
+For instance, SPARQL can be used to pre-select matches and RESCAL can then re-rank this selection.
 
 Method                    CBR                     SRL
 ------------------------- ----------------------- --------------
@@ -92,6 +94,7 @@ Alternative solutions:
 
 If no matches are found:
 - Contracting authority can respecify the query contract.
+  - Such contract may be overspecified or merge unrelated goods or services that can be better awarded via multiple contracts.
 - Bidder can ask for recommendation for its competitors.
 -->
 

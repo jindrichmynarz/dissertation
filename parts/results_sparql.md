@@ -191,6 +191,7 @@ Table: Evaluation of counter-measures to limits of the ground truth {#tbl:counte
 In conclusion, rather than improving on the baseline matchmaker, we managed to analyze what makes it perform well.
 It benefits mostly from refining and extending the training data and from using the product aggregation function.
 Other extensions of the baseline matchmaker were found to have no practical benefits.
+Simply put, the evaluation indicated that *"simple models and a lot of data trump more elaborate models based on less data"* [@Halevy2009, p. 9].
 
 <!--
 ### Out-takes:

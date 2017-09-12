@@ -1,4 +1,4 @@
-## Related work
+## Related work {#sec:related-work}
 
 Before we present our approaches to matchmaking we survey the research related to our work.
 This section summarizes the background to our research and helps to discern the progress beyond the state of the art in our contributions.
