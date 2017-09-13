@@ -69,5 +69,3 @@ We adapted two general approaches for matchmaking: case-based reasoning and stat
 Both have many things in common and employ similar techniques to achieve their goal.
 Both learn from past data to produce predictions that are not guaranteed to be correct.
 A more detailed comparison of case-based reasoning with machine learning is in Richter and Weber [-@Richter2013, p. 531].
-
-<!-- TODO: Should we also discuss other approaches adopted for matchmaking in related research, e.g., reasoning with description logic? -->

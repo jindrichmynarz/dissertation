@@ -23,26 +23,54 @@ Runtime of tensor factorization with RESCAL increases approximately linearly wit
 We observed that performance improves with rank only for more selective properties, e.g., `pc:mainObject`.
 Properties that have fewer distinct values, such as `pc:kind`, reach their peak performance already at lower ranks.
 
-<!--
-Initialization methods: random, eigenvalues
-- Do we need to discuss them?
-- We should probably do experiments with the baseline `pc:mainObject` showing the impact of different initialization methods.
-
-Omit setting maximum iterations or maximum residual? (We used the default values.)
--->
-
-RESCAL allows to tune its generalization ability via the regularization parameters *lambda A* for the latent factor matrix $A$ and *lambda R* for the tensor $R$ that captures the interactions of the latent components.
+RESCAL allows to tune its generalization ability via the regularization parameters $\lambda_{A}$ for the latent factor matrix $A$ and $\lambda_{R}$ for the tensor $R$ that captures the interactions of the latent components.
 Increasing the amount of regularization helps avoid overfitting.
 Optimal values of the regularization parameters are dataset-specific.
-While @Padia2016 achieved the best results with *lambda A* = 10 and *lambda R* = 0.2, @Kuchar2016 obtained the peak performance by setting both to 0.01. 
+While @Padia2016 achieved the best results with $\lambda_{A} = 10$ and $\lambda_{R} = 0.2$, @Kuchar2016 obtained the peak performance by setting both to 0.01.
 In our case, we found that relatively high values of the regularization parameters tend to achieve the best results.
-We set both *lambda A* and *lambda R* to be 10.
+We set both $\lambda_{A}$ and $\lambda_{R}$ to be 10.
+A comparison of a few selected values of the regularization parameters is shown in the [@tbl:regularization-parameters] for `pc:mainObject` at rank 50.
 
-<!--
-- Add discussion of sensitivity to hyper-parameters?
--->
+$\lambda_{A}$ $\lambda_{R}$    HR@10   MRR@10    CC@10   LTP@10
+------------- ------------- -------- -------- -------- --------
+            0             0     0.05     0.02 **0.02** **0.49**
+           10           0.2     0.08     0.03     0.01     0.16
+         0.01          0.01     0.07     0.03     0.01     0.27
+           10            10 **0.08** **0.03**     0.01     0.05
+           20            20     0.08     0.03     0.01     0.04
+
+Table: Evaluation of regularization parameters {#tbl:regularization-parameters}
+
+The remaining hyper-parameters exposed by RESCAL include initialization methods and convergence criteria.
+RESCAL can initialize the latent matrices either randomly or by eigenvalues of the input tensor, the latter method being clearly superior, as shown in the [@tbl:initialization-methods] for `pc:mainObject` at rank 50.
+RESCAL stops when it reaches the given convergence criteria, which can be specified either as the maximum number of iterations or as the maximum residual.
+We used the default values for these hyper-parameters.
+
+Initialization method    HR@10   MRR@10    CC@10   LTP@10
+--------------------- -------- -------- -------- --------
+Random                    0.00     0.00     0.00 **1.00**
+Eigenvalues           **0.08** **0.03** **0.01**     0.00
+
+Table: Evaluation of initialization methods {#tbl:initialization-methods}
 
 ### Feature selection
+
+<!-- Individual features -->
+
+We evaluated the predictive power of descriptive features that can be obtained from our dataset.
+We started by assessing the results of the individual features.
+We combined each feature with the ground truth comprising contract awards and observed how well it can help predicting the awarded bidders.
+
+<!-- Link the improvement gained by increasing rank to higher selectivity of the evaluated properties? -->
+
+<!-- `pc:mainObject` + additional features -->
+
+As in evaluation of the SPARQL-based matchmakers, we adopted `pc:mainObject` as our pivot feature that we combined with additional features.
+Our next step after evaluating the features separately was thus to see how they perform in combination with `pc:mainObject`.
+
+<!-- Larger combinations of features -->
+
+Ultimately, we considered using larger sets of features including those that improved the results of `pc:mainObject` when combined with it.
 
 <!--
 `pc:mainObject`
@@ -56,19 +84,29 @@ We set both *lambda A* and *lambda R* to be 10.
 
 ### Ageing
 
-Time series cross-validation
+Time series cross-validation [@sec:evaluation-protocol]
+
+Ageing was applied to the tensor slice containing links between public contracts and awarded bidders, as described in the [@sec:loading-rescal].
+
+<!--
+Compare `pc:mainObject` normal and aged, in both cases using time series cross-validation, at ranks 50 and 500.
+The main difference is in the mode of cross-validation.
+Time series cross-validation achieves much lower results than n-fold cross-validation even when no ageing is used.
+This can be explained in part by lower volume of training data.
+However, it may hint a bug in the evaluation protocol.
+-->
 
 ### Literals
 
 Actual prices (i.e. `pc:actualPrice`) are known for 91.5 % of contracts in the evaluated dataset.
 
 If there is no improvement or a decrease in performance, it might be explainable by noisy data about prices.
-Prices may be reported as coefficients to be multiplied by an implicit factor that is not part of the structured data. 
+Prices may be reported as coefficients to be multiplied by an implicit factor that is not part of the structured data.
 
 <!-- Summary -->
 
 Overall, the RESCAL-based matchmakers produce results with very low diversity, especially when considering their CC@10.
-They tend to recommend the same bidders repeatedly. 
+Low diversity means that they tend to recommend the same bidders repeatedly.
 
 <!--
 TODO: Add a comparison of the best-performing configurations of SPARQL-based and RESCAL-based matchmakers.

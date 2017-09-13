@@ -1,4 +1,4 @@
-### Open data
+### Open data {#sec:open-data}
 
 Open data is data that can be accessed equally by people and machines.
 Its definition is grounded in principles that assert what conditions data must meet to achieve legal and technical openness.

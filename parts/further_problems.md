@@ -7,7 +7,6 @@
 * Determine the weights of features based on their perceived utility
 * Reformulate award criteria using <https://en.wikipedia.org/wiki/Conjoint_analysis>?
 * What repair action can we provide users when faced with empty results of matchmaking?
-* Use an ageing function to discount older contract awards?
 * Try hybrid methods?
 * Learning to rank
 

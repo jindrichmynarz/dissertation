@@ -118,7 +118,6 @@ All vocabulary prefixes used in the text can be resolved to their corresponding 
 
 <!--
 ## Core hypotheses
-FIXME Feedback: De-emphasize hypotheses.
 
 * Additional features obtained from linked open data can improve matchmaking.
 * Matchmaking methods that are able to leverage textual data effectively surpass the methods that cannot.

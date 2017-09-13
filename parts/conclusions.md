@@ -7,13 +7,13 @@ See p. 3, <http://fis.vse.cz/wp-content/uploads/2014/02/Standardy_zpracovani_dok
 <!-- Summary of the main contributions -->
 
 We developed and documented methods to match public contracts to bidders.
-These methods leverage linked open data that describes the entities involved in matchmaking as being a part of a semantically described knowledge graph.
-The knowledge graph includes descriptions of the entities, as well as their interactions, relations, or contextual data.
-We implemented the proposed matchmaking methods using existing technologies, namely SPARQL, an RDF query language, and RESCAL, a tensor factorization algorithm.
-The implementations served as artefacts that we can experiment with.
+These methods leverage linked open data that describes the entities involved in matchmaking as being a part of a semantically described knowledge graph, which includes descriptions of the entities, as well as their interactions, relations, or contextual data.
+We implemented the proposed matchmaking methods by using existing technologies, namely SPARQL, an RDF query language, and RESCAL, a tensor factorization algorithm.
+The implementations served as artefacts that we experimented with.
 We examined their usefulness by evaluating the accuracy and diversity of the matches they produce.
 
-In order to approximate the conditions in public procurement we evaluated the designed matchmaking methods on a large dataset of retrospective data spanning ten years of Czech public procurement, including several related datasets. Preparation of this dataset constituted a fundamental part of our work.
+In order to approximate the conditions in real-world public procurement we evaluated the designed matchmaking methods on a large dataset of retrospective data spanning ten years of Czech public procurement, including several related datasets.
+Preparation of this dataset constituted a fundamental part of our work.
 Transforming the data into a knowledge base structured as linked open data required an extensive effort that warranted the development of novel and reusable tools for data processing.
 Both the prepared dataset and the developed tools thus represent a key side contribution of our research.
 We published the cleaned and enriched Czech public procurement dataset as linked open data for anyone to reuse.

@@ -1,7 +1,7 @@
 <!-- ## Offline evaluation -->
 
 <!--
-FIXME: Do we basically do grid search? Configuration can be considered as hyper-parameters. We are basically trying to find the most important (sensitive) hyper-parameters.
+Do we basically do grid search? Configuration can be considered as hyper-parameters. We are basically trying to find the most important (sensitive) hyper-parameters.
 Idea: distribution of the predicted bidders should be equal to the distribution of the bidder frequencies. (Suggested in <https://static.googleusercontent.com/media/research.google.com/en/pubs/archive/43146.pdf>.)
 
 Effect size:

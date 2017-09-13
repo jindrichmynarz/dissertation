@@ -111,7 +111,7 @@ Compared with the EU, Czech Republic exhibits consistent above-average values of
 <!-- Economy of scale -->
 
 The large volume of transactions in public procurement gives rise to economies of scale, so that even minor improvements can accrue substantial economic impact, since the scale of operations in this domain provides ample opportunity for cost savings.
-Publishing open data on public procurement as well as using our matchmaking methods can be considered among the examples of such improvements, which can potentially increase the efficiency of resource allocation in the public sector. <!-- TODO: Add link to the previous discussion in the section on open data? -->
+Publishing open data on public procurement as well as using our matchmaking methods can be considered among the examples of such improvements, which can potentially increase the efficiency of resource allocation in the public sector, as mentioned in the [@sec:open-data].
 
 <!-- Passive waste -->
 

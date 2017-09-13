@@ -1,10 +1,6 @@
 # Matchmaking methods
 
 <!--
-TODO: It may make sense to move much content from the specific sections of this chapter here.
-Many methods will be generic to more than one approach. For example, weighting or query expansion.
-However, without the finished implementations of all the matchmaking methods, shuffling content around would be a premature optimization.
-
 Why we have chosen these methods?
 Should we formulate requirements for the matchmaking methods?
 -->

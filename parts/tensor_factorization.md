@@ -140,7 +140,6 @@ contract $c \in C'$
 select only the entries for indices of bidders
 sort in descending order
 select top 10 entries
-FIXME: Put the details (e.g., top 10 entries) into the evaluation section?
 -->
 
 <!-- Limitations -->

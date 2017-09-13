@@ -20,10 +20,4 @@ The data in CSV was transformed to RDF using Tarql.
 The RDF version of the data was represented as a simple data cube using the Data Cube Vocabulary [@Cyganiak2014a].
 Each zIndex score was modelled as a measure of an observation that is indexed by the dimensions of the scored contracting authority and the rating period.
 Contracting authorities are identified by their IRIs from ARES, which are automatically derived from their RNs.
-The scores are available for 4989 distinct contracting authorities in total.
-
-<!-- TODO: Add the percentage of contracting authorities, for which zIndex is known. -->
-
-<!--
-zIndex can be used to determine trust.
--->
+The scores are available for 29.4 % of the contracting authorities in our dataset. <!-- 4989 out of 16982. -->
