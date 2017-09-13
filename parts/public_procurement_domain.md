@@ -61,8 +61,10 @@ This provides equal access to contract notices for all members of the public wit
 <!-- Desire for conformity -->
 
 Public procurement is subject to stringent and complex legal regulations.
-Civil servants responsible for public procurement therefore put a strong emphasis on legal conformance. <!-- TODO: Substantiate this claim. -->
-For example, it is important to evaluate award criteria correctly to avoid protracted appeals of unsuccessful bidders.
+Civil servants responsible for public procurement therefore put a strong emphasis on legal conformance.
+Representatives of contracting authorities may exhibit high risk aversion at the cost of compromising economical advantageousness.
+For example, using the award criterion of lowest price decreases the probability of an audit three times even though it often leads to inefficient contracts, as observed for the Czech public procurement [@Nedved2017].
+Moreover, it is important to evaluate award criteria correctly to avoid protracted appeals of unsuccessful bidders.
 Consequently, public officials in this domain exhibit high risk-aversion and desire for conformity.
 For instance, this is why not deviating from defaults or awarding popular bidders may be perceived as a safe choice.
 In effect, desire for conformity may imply there is less propensity for diversity in recommendations produced via matchmaking.
