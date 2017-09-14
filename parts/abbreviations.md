@@ -137,10 +137,6 @@ Non-UNA
 
 NUTS
 ~ Nomenclature of Territorial Units for Statistics
-<!--
-ODC
-~ Open Data Commons
--->
 
 OGC
 ~ Open Geospatial Consortium
@@ -159,10 +155,6 @@ PC
 
 PCO
 ~ Public Contracts Ontology
-<!--
-PDDL
-~ Public Domain Dedication and Licence
--->
 
 PPROC
 ~ Public Procurement Ontology

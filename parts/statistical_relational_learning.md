@@ -2,7 +2,7 @@
 
 Statistical relational learning (SRL) is a subfield of machine learning that is concerned with learning from relational data.
 SRL learns models that *"describe probability distributions $P(\{X\})$ over the random variables in a relational domain"* [@Tresp2014, p. 1554].
-Here, $X$ denotes a random variable and $\{X\}$ refers to the set of such variables in a relational domain.
+Here, $X$ denotes a random variable and $\{X\}$ refers to a set of such variables in a relational domain.
 The learned model reflects the characteristic patterns and global dependencies in relational data.
 Unlike inference rules, these statistical patterns may not be universally true, but have useful predictive power nonetheless.
 An example of such pattern is homophily [@McPherson2001], which describes the tendency of similar entities to be related.
@@ -14,7 +14,7 @@ In other words, in SRL *"the underlying idea is that reasoning can often be redu
 There are two basic kinds of SRL models: models with observable features and models with latent features.
 Our work focuses on the latent feature models.
 Unlike observable features, latent features are not directly observed in data.
-Instead, they are assumed to be hidden causes for the observed variables.
+Instead, they are assumed to be the hidden causes for the observed variables.
 Consequently, results from machine learning based on latent features are usually difficult to interpret.
 Latent feature models are used to derive relationships between entities from interactions of their latent features [@Nickel2016, p. 17].
 Since latent features correspond to global patterns in data, they can be considered products of collective learning.

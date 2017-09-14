@@ -1,5 +1,10 @@
 # Abstract {.unnumbered}
 
+use case in the Czech public procurement
+linked open data for data integration
+Case-based reasoning, SPARQL
+Statistical relational learning, RESCAL
+
 The main problem in matchmaking public procurement data is low data quality.
 Even with large effort invested in data preparation, the data still exhibits fundamental structural problems.
 

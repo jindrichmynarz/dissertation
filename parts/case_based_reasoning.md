@@ -8,10 +8,10 @@ Experiences described in cases can be either positive or negative.
 Positive experiences propose solutions to be reused, whereas the negative ones indicate solutions to avoid.
 For example, experiences may concern diagnosing a patient and evaluating the outcome of the diagnosis, which may be either successful or unsuccessful.
 Cases are stored and organized in a case base, such as a database.
-Case base serves as a memory that retains experiences to learn from.
+Case base serves as a memory that retains the experiences to learn from.
 
 The workings of CBR systems can be described in terms of the CBR cycle [@Kolodner1992].
-The cycle consists of four steps a CBR system may iterate through:
+The cycle consists of four principal steps a CBR system may iterate through:
 
 1. Retrieve
 2. Reuse
@@ -25,8 +25,8 @@ For each use case and each feature a different similarity measure may be adopted
 This also enables assigning each feature a different weight, so that more relevant features may be emphasized.
 The employed metrics may be either symmetric or asymmetric.
 For example, we can use an asymmetric metric to favour lower prices over higher prices, even though their distance to the price in the query is the same.
-Since the similarity metrics allow fuzzy matches, reasoning in CBR is approximate.
-Richter and Weber argue that *"the most important characteristic that distinguishes case-based reasoning from other kinds of reasoning is that it does not lead from true assumptions to true conclusions"* [-@Richter2013, p. 18].
+Since the similarity metrics allow fuzzy matches, reasoning in CBR systems is approximate.
+As Richter and Weber argue, *"the most important characteristic that distinguishes case-based reasoning from other kinds of reasoning is that it does not lead from true assumptions to true conclusions"* [-@Richter2013, p. 18].
 
 A key feature of CBR is that similarity computation typically requires background knowledge.
 While similarity of ordinal features can be determined without it, categorical features call for additional knowledge to assess their degree of similarity.
@@ -42,17 +42,17 @@ We may either reuse the process that generated the solution, reuse the solution 
 
 The reused solution is evaluated in the *Revise* step to assess whether it is applicable to the query problem.
 Without this step a CBR system cannot learn from its mistakes.
+It is the step in which CBR may add user feedback.
 
-Finally, in the *Retain* step, the query problem and its solution may be incorporated in the case base as a new case for future learning.
+Finally, in the *Retain* step, the query problem and its revised and adopted solution may be incorporated in the case base as a new case for future learning.
 Alternatively, the generated case may be discarded if the CBR system stores only the actual cases.
 
-This cycle may be preceded by preparatory steps described by Richter and Weber [-@Richter2013].
+The CBR cycle may be preceded by preparatory steps described by Richter and Weber [-@Richter2013].
 A CBR system can be initialized by the *Knowledge representation* step, which structures the knowledge contained in cases the system learns from.
-Cases are explicitly formulated and described in a structured way, so that their similarity may be determined effectively.
+Cases are explicitly formulated and described in a structured way, so that their similarity can be determined effectively.
 The simplest representation of a case is a set of feature-value pairs.
 However, using more sophisticated data structures is common.
-In order to compute similarity of cases, they must be described using comparable features.
-Put differently, descriptions of cases must adhere to the same schema.
+In order to compute similarity of cases, they must be described using comparable features, or, put differently, the descriptions of cases must adhere to the same schema.
 
 *Problem formulation* is a preliminary step in which a query problem is formulated.
 A query can be considered a partially specified case.
@@ -62,7 +62,7 @@ Underspecified queries may require solutions from the matching cases to be combi
 Overall, the CBR cycle resembles human reasoning, such as problem solving by finding analogies.
 In fact, the CBR research is rooted in psychology and cognitive science.
 It is also similar to case law, which reasons from precedents to produce new interpretations of law.
-Thanks to these similarities, CBR is perceived as natural [@Kolodner1992], which makes its function usually easy to explain.
+Thanks to these similarities, CBR is perceived as natural by its users [@Kolodner1992], which makes its function usually easy to explain.
 
 <!-- Case-based recommenders -->
 

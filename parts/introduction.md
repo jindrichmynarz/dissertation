@@ -4,9 +4,9 @@
 
 In order for demand and supply to meet, they must learn about each other.
 Data on demands and supplies thus needs to be accessible, discoverable, and usable.
-As data grows to larger volumes, its machine-readability becomes a must, so that machines can make it usable for people, for whom dealing with large data is impractical.
-Relevant data may be fragmented across diverse data sources, which need to be integrated to enable their effective use.
-If data collection and integration is done manually, it takes a lot of effort.
+As data grows to larger volumes, its machine-readability becomes paramount, so that machines can make it usable for people, for whom dealing with large data is impractical.
+Moreover, relevant data may be fragmented across diverse data sources, which need to be integrated to enable their effective use.
+Nevertheless, when data collection and integration is done manually, it takes a lot of effort.
 
 Some manual effort involved in gathering and evaluation of data about demands and supplies can be automated by matchmaking.
 Matchmakers are tools that retrieve data matching a query.
@@ -47,17 +47,17 @@ A key challenge in using linked open data is to reuse or develop appropriate tec
 
 We demonstrate how two generic approaches can be applied to the matchmaking task, namely case-based reasoning and statistical relational learning.
 In the context of case-based reasoning, we treated matchmaking as top-$k$ recommendation.
-We compared two technologies on this task: SPARQL and full-text search.
+We used the SPARQL [@Harris2013] query language to implement this task.
 In the case of statistical relational learning, we approached matchmaking as link prediction.
 We used tensor factorization with RESCAL [@Nickel2011] for this task.
-The key challenges of matchmaking by these technologies involve feature selection, feature construction, ranking via feature weights, and combination functions for aggregating similarity scores of matches.
-Our work discusses these challenges and proposes ways of addressing them.
+The key challenges of matchmaking by these technologies involve feature selection or feature construction, ranking by feature weights, and combination functions for aggregating similarity scores of matches.
+Our work discusses these challenges and proposes novel ways of addressing them.
 
 In order to explore the outlined approaches we prepared a Czech public procurement dataset that links several related open government data sources together, such as the Czech business register or the postal addresses from the Czech Republic.
 Our work can be therefore considered a concrete use case in the Czech public procurement.
 Viewed as a use case, our task is to select, combine, and apply the state-of-the-art techniques to a real-world scenario.
 Our key stakeholders in this use case are the participants in the public procurement market: contracting authorities, who represent the side of demand, and bidders, who represent the side of supply.
-The stakeholder groups are driven by different interests; contracting authorities represent the public sector while bidders represent the private sector, which gives rise to an sophisticated interplay of the legal framework of public procurement and the commercial interests.
+The stakeholder groups are driven by different interests; contracting authorities represent the public sector while bidders represent the private sector, which gives rise to a sophisticated interplay of the legal framework of public procurement and the commercial interests.
 
 <!-- Problem statement
 
@@ -85,13 +85,13 @@ The domain of this research is an intersection of matchmaking and semantic web k
 
 We adopt the methods of the design science [@Hevner2004] in our research.
 We design artefacts, including the Czech public procurement dataset and the matchmakers, and experiment with them to tell which of their variants perform better.
-Our is hence exploring what matchmaking of public contracts to bidders is feasible given linked open data.
+Our task is to explore what kinds of matchmaking of public contracts to bidders does linked open data make feasible.
 
 <!-- Evaluation -->
 
-Our key question to evaluate is whether we can develop a matchmaker that can produce results deemed acceptable by domain experts.
+The key question to evaluate is whether we can develop a matchmaker that can produce results deemed useful by domain experts representing the stakeholders.
 We evaluate the developed matchmakers via offline experiments on retrospective data. <!-- and via interviews with representatives of contracting authorities. -->
-In terms of our target metrics, the recommended matches should exhibit both high accuracy and diversity.
+In terms of our target metrics, we aim to recommend matches exhibiting both high accuracy and diversity.
 In order to discover the key factors that improve matchmaking we compare the evaluation results produced by the developed matchmakers in their different configurations.
 
 <!--
@@ -107,9 +107,9 @@ By using experimental evaluation of these methods we derive general findings abo
 <!-- General note at the end of the introduction -->
 
 The remaining parts of this chapter provide the preliminaries that the subsequent chapters build on.
-We explain the fundamentals of linked open data, remark on the characteristics of the public procurement domain, define the matchmaking task, outline the generic approaches we adopted for this task, and finally we survey the related work.
+We explain the fundamentals of linked open data, remark on the characteristics of the public procurement domain, define the matchmaking task, outline the generic approaches we adopted for this task, and finally, we survey the related work.
 
-The contributions presented in this thesis including methods and software were authored or co-authored by the thesis' author, unless stated otherwise.
+The contributions presented in this thesis including the methods and software were authored or co-authored by the thesis' author, unless stated otherwise.
 Both the reused and the developed software is listed in the [appendix @sec:software].
 The abbreviations used throughout the text are collected in the [@sec:abbreviations].
 All vocabulary prefixes used in the text can be resolved to their corresponding namespace IRIs via <http://prefix.cc>.

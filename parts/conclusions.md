@@ -45,3 +45,4 @@ We used sound heuristics to navigate this space and select the more salient and 
 <!-- Future work -->
 Overall, we explored only a few ways of matching public contracts to bidders.
 Many more ways of relevance engineering for this task are left open to pursue and assess their worth.
+<!-- Our work suggests that improving the data quality may produce the highest returns. -->

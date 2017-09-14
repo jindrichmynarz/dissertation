@@ -3,9 +3,9 @@
 Linked data is a set of practices for publishing structured data on the Web.
 It is a way of structuring data that identifies entities with Internationalized Resource Identifiers (IRIs) and materializes their relationships as a network of machine-processable data [@Ayers2007, p. 94].
 IRIs are universal, so that any entity can be identified with a IRI, and have global scope, therefore an IRI can only identify one entity [@BernersLee1996].
-In this section we provide a basic introduction to key aspects of linked data used in this thesis.
-A more detailed introduction in available in Heath and Bizer [-@Heath2011].
-A dominant manifestation of linked data is the Linking Open Data Cloud [@Abele2017], which maps the web of semantically structured data that the spans hundreds of datasets from diverse domains, such as health care or linguistics.
+A major manifestation of linked data is the Linking Open Data Cloud [@Abele2017], which maps the web of semantically structured data that the spans hundreds of datasets from diverse domains, such as health care or linguistics.
+In this section we provide a basic introduction to the key aspects of linked data that we built on in this thesis.
+A more detailed introduction to linked data in available in Heath and Bizer [-@Heath2011].
 
 Linked data may be seen as a pragmatic implementation of the so-called semantic web vision.
 It is based on semantic web technologies.
@@ -23,16 +23,16 @@ $I$, $B$, and $L$ are pairwise disjoint sets.
 An RDF graph can be decomposed into a set of statements called RDF triples.
 An RDF triple can be defined as $(s, p, o) \in (I \cup B) \times I \times (I \cup B \cup L)$.
 In such triple, $s$ is called *subject*, $p$ is *predicate*, and $o$ is *object*.
-As the definition indicates, subjects can be either IRIs or blank nodes, predicates can be only IRIs, and objects can be both IRIs, blank nodes, and literals.
+As the definition indicates, subjects can be either IRIs or blank nodes, predicates can be only IRIs, and objects can be IRIs, blank nodes, or literals.
 Predicates are also often referred to as properties.
 RDF graphs can be grouped into RDF datasets.
 Each graph in an RDF dataset can be associated with a name $g \in (I \cup B)$.
 RDF datasets can be thus decomposed into quads $(s, p, o, g)$, where $g$ is called *named graph*.
 
 What we described above is the abstract syntax of RDF.
-In order to be able to exchange RDF graphs and datasets a serialization is needed.
+In order to be able to exchange RDF graphs and datasets, a serialization is needed.
 RDF can be serialized into several concrete syntaxes, including Turtle [@Beckett2014], JSON-LD [@Sporny2014], or N-Quads [@Carothers2014].
-An example of data describing a public contract serialized in Turtle is shown in [@lst:example-turtle].
+An example of data describing a public contract serialized in the Turtle syntax is shown in [@lst:example-turtle].
 
 ```{#lst:example-turtle caption="Example data in Turtle"}
 @prefix contract: <http://linked.opendata.cz/resource/isvz.cz/contract> .
@@ -57,7 +57,7 @@ If more sophisticated ontological constraints are required, they can be defined 
 RDFS and OWL can be used in tandem to create vocabularies that provide classes and properties to describe data.
 Vocabularies enable tools to operate on datasets sharing the same vocabulary without dataset-specific adaptations.
 The explicit semantics provided by RDF vocabularies makes datasets described by such vocabularies machine-understandable to a limited extent.
-For example, one shared vocabulary used in our work is the Public Contracts Ontology, which is described in [@sec:pco].
+For example, we use the Public Contracts Ontology, described in [@sec:pco], for this purpose in our work.
 
 <!-- SPARQL -->
 
@@ -69,7 +69,7 @@ Solutions to SPARQL queries are subgraphs that match the specified graph pattern
 The solutions are subsequently processed by modifiers, such as by deduplication or ordering.
 Solutions are output based on the query type.
 ASK queries output boolean values, SELECT queries output tabular data, and CONSTRUCT or DESCRIBE queries output RDF graphs.
-An example SPARQL query that retrieves all classes instantiated in a dataset is shown in [@lst:sparql-example].
+An example SPARQL query that retrieves all classes instantiated in a dataset is shown in the [@lst:sparql-example].
 
 ```{#lst:sparql-example caption="Example SPARQL query"}
 SELECT DISTINCT ?class
@@ -88,7 +88,7 @@ Use of the above-mentioned semantic web technologies for publishing linked data 
 3. When someone looks up a IRI, provide useful information, using the standards (RDF, SPARQL).
 4. Include links to other IRIs, so that they can discover more things.
 
-Besides prescribing the way to identify resources the principles describe how to navigate linked data.
+Besides prescribing the way to identify resources, the principles describe how to navigate linked data.
 The principles invoke the mechanism of dereferencing, by which an HTTP request to a resource's IRI should return the resource's description in RDF.
 
 Linked data invokes several assumptions that have implications for its users.
@@ -98,8 +98,8 @@ This assumption implies that deduplication may be needed if identifiers are requ
 In other words, not knowing whether a statement is explicitly true does not imply that the statement is false"* [@Hebeler2009, p. 103].
 Due to OWA we cannot infer that missing statements are false.
 However, it allows us to model incomplete data.
-In matchmaking *"the absence of a characteristic in the description of a supply or demand should not be interpreted as a constraint"* [@DiNoia2007, p. 279].
-OWA poses a potential problem for classification tasks in machine learning, because linked data rarely contains explicit negative examples [@Nickel2012, p. 272].
+This is useful in matchmaking, where *"the absence of a characteristic in the description of a supply or demand should not be interpreted as a constraint"* [@DiNoia2007, p. 279].
+Nonetheless, OWA poses a potential problem for classification tasks in machine learning, because linked data rarely contains explicit negative examples [@Nickel2012, p. 272].
 The principle of *Anyone can say anything about anything* (AAA) assumes that the open world of linked data provides no guarantees that the assertions published as linked data are consistent or uncontradictory.
 Given this assumption, quality assessment followed by data pre-processing is typically required when using linked data.
 
@@ -107,26 +107,26 @@ Given this assumption, quality assessment followed by data pre-processing is typ
 
 Having considered the characteristics of linked data we may highlight its advantages. 
 Many of these advantages are related to data preparation, which we point out in [@sec:data-preparation], however, linked data can also benefit matchmaking in several ways.
-This overview draws upon the benefits of linked data for recommender systems identified in related research (e.g., @DiNoia2014, @DiNoia2016), since these benefits apply to matchmaking too.
+This overview draws upon the benefits of linked data for recommender systems identified in related research [@DiNoia2014; @DiNoia2016], since these benefits apply to matchmaking too.
 
 Unlike textual content, linked data is structured, so there is less need for structuring it via content analysis.
-RDF gives linked data not only structure but also flexibility to model varied data. 
+RDF gives linked data not only its structure but also a flexibility to model diverse kinds of data. 
 Both content and preferences in recommender systems or matchmaking, such as contract awards in our case, can be expressed in RDF in an uniform way in the same feature space, which simplifies operations on the data.
 Moreover, the common data model enables combining linked data with external linked datasets that can provide valuable additional features.
-The mechanism of tagging literal with language identifiers also makes for an easy representation of multilingual data, such as in the case of cross-country procurement in the EU.
+The mechanism of tagging literal values with language identifiers also makes for an easy representation of multilingual data, such as in the case of cross-country procurement in the EU.
 
-The features in RDF are endowed with semantics thanks to RDF vocabularies.
-The explicit semantics makes features more operative, as opposed to features produced by shallow content analysis [@Jannach2010, p. 75], such as keywords.
+The features in RDF are endowed with semantics originating in RDF vocabularies.
+The explicit semantics makes the features more telling, as opposed to features produced by shallow content analysis [@Jannach2010, p. 75], such as keywords.
 While traditional recommender systems are mostly unaware of the semantics of the features they use, linked data features do not have to be treated like black boxes, since their expected interpretations can be looked up in the corresponding RDF vocabularies that define the features. 
 
 If the values of features are resources compliant with the linked data principles, their IRIs can be dereferenced to obtain more features from the descriptions of the resources.
-In this way linked data allows to automate the retrieval of additional features.
+In this way, linked data allows to automate the retrieval of additional features.
 IRIs of linked resources can be automatically crawled to harvest contextual data.
 Furthermore, crawlers may recursively follow links in the obtained data.
 The links between datasets can be used to provide cross-domain recommendations.
-In such scenario preferences from one domain are be used to predict preferences in another domain.
-For example, if in our case we combine data from business and public procurement registers, we may leverage links between business entities described with concepts from an economic classification to predict their associations to concepts from a procurement classification.
-If there is no overlap between the resources from the combined datasets, there may be at least an overlap in RDF vocabularies describing the resources [@Heitmann2016], which provide broader conceptual associations.
+In such scenario, preferences from one domain can be used to predict preferences in another domain.
+For example, if in our case we combine data from business and public procurement registers, we may leverage the links between business entities described with concepts from an economic classification to predict their associations to concepts from a procurement classification.
+If there is no overlap between the resources from the combined datasets, there may be at least an overlap in the RDF vocabularies describing the resources [@Heitmann2016], which provide broader conceptual associations.
 
 <!--
 - Results contrary to the thesis that more features lead to better recommendations: *"We point out that even if very few ratings are available, simple rating-based predictors outperform purely metadata-based ones"* [@Pilaszy2009, p. 93].

@@ -84,7 +84,7 @@ Ultimately, we considered using larger sets of features including those that imp
 
 ### Ageing
 
-Time series cross-validation [@sec:evaluation-protocol]
+Evaluation of ageing was done by time series cross-validation, as described in the [@sec:evaluation-protocol].
 
 Ageing was applied to the tensor slice containing links between public contracts and awarded bidders, as described in the [@sec:loading-rescal].
 
@@ -100,8 +100,10 @@ However, it may hint a bug in the evaluation protocol.
 
 Actual prices (i.e. `pc:actualPrice`) are known for 91.5 % of contracts in the evaluated dataset.
 
+<!--
 If there is no improvement or a decrease in performance, it might be explainable by noisy data about prices.
 Prices may be reported as coefficients to be multiplied by an implicit factor that is not part of the structured data.
+-->
 
 <!-- Summary -->
 
