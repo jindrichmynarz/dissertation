@@ -26,9 +26,9 @@ Creating latent features is also called predicate invention.
 -->
 
 Collective learning *"refers to the effect that an entity's relationships, attributes, or class membership can be predicted not only from the entity's attributes but also from information distributed in the network environment of the entity"* [@Tresp2014, p. 1550].
-It refers to the *"automatic exploitation of attribute and relationship correlations across multiple interconnections of entities and relations"* [@Nickel2012, p. 272].
-The exploited contextual information propagates through relations in data, so that the inferred dependencies can span across entity boundaries and involve entities that are more distant in a relational graph.
-This feature of collective learning can help cope with modelling artefacts in RDF, such as intermediate resources that decompose n-ary relations into binary predicates.
+It involves *"automatic exploitation of attribute and relationship correlations across multiple interconnections of entities and relations"* [@Nickel2012, p. 272].
+The exploited contextual information propagates through relations in data, so that the inferred dependencies may span across entity boundaries and involve entities that are more distant in a relational graph.
+Among other things, this feature of collective learning can help cope with modelling artefacts in RDF, such as intermediate resources that decompose n-ary relations into binary predicates.
 
 <!--
 *"In relational data, the similarity of entities is determined by the similarity of their relationships"* [@Nickel2013c, p. 620]
@@ -44,8 +44,8 @@ Transitivity of relations, discovery of indirect relations
 Collective learning is a distinctive feature of SRL and is particularly manifest in *"domains where entities are interconnected by multiple relations"* [@Nickel2011].
 Conversely, traditional machine learning expects data from a single relation, usually provided in a single propositional table.
 It considers only attributes of the involved entities, which are assumed to be mutually independent.
-This is one of the reasons that can explain why SRL was shown to produce superior results for relational data when compared to learning methods that do not take relations into account [@Tresp2014, p. 1551].
-It is thus important to be able to leverage the relations in data effectively.
+This is one of the reasons that can explain why SRL was demonstrated to be able to produce superior results for relational data when compared to learning methods that do not take relations into account [@Tresp2014, p. 1551].
+These results mark the importance of being able to leverage the relations in data effectively.
 
 Nowadays the relevance of SRL grows as relational data becomes still more prevalent.
 In fact, many datasets have relational nature.
@@ -53,8 +53,8 @@ For instance, vast amounts of relational data are produced by social networking 
 Relational data appears in many contexts, including relational databases, ground predicates in first order logic, or RDF.
 
 Using relational datasets is nevertheless challenging, since many of them are incomplete or noisy and contain uncertain or false statements.
-Fortunately, SRL is robust to inconsistencies, noise, or adversarial input, since it utilizes non-deterministic dependencies in data.
-Yet it is worth noting that even though SRL copes well with faulty data, systemic biases in the data will manifest in biased results produced by this method.
+Fortunately, SRL is relatively robust to inconsistencies, noise, or adversarial input, since it utilizes non-deterministic dependencies in data.
+Yet it is worth noting that even though SRL usually copes well with faulty data, systemic biases in the data will manifest in biased results produced by this method.
 
 <!-- #### Statistical relational learning for linked open data -->
 

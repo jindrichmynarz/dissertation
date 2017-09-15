@@ -1,30 +1,29 @@
 ## Extraction
 
-Data from the Czech public procurement register was not initially available as structured data, so that interested parties had to scrape its data from HTML.
-This dataset was eventually released as open data.^[<http://www.isvz.cz/ISVZ/Podpora/ISVZ_open_data_vz.aspx>]
-The data is published in exports to XML, CSV, or Microsoft Excel, each partitioned by year.
-However, the dataset exports contain only past contracts that were already awarded, so they cannot be used for alerting bidders about relevant opportunities in public procurement.
+Data from the Czech public procurement register was not initially available as structured data, so that the interested parties had to scrape the data from HTML.
+The dataset was eventually released as open data.^[<http://www.isvz.cz/ISVZ/Podpora/ISVZ_open_data_vz.aspx>]
+The data is published in exports to XML, CSV, and Microsoft Excel, each partitioned by year.
+However, the dataset exports contain only the past contracts that were already awarded, so they cannot be used for alerting bidders about the relevant opportunities in public procurement.
 Nevertheless, this historical data can be used for training and evaluation.
 Although published in structured formats, the data is structured poorly, so we had to spend substantial effort improving its structure.
-This open data offering also includes exports from electronic marketplaces, where some public contracts are published.
-For instance, electronic marketplaces serve for purchases of commodities.
+The portal publishing this open data also includes exports from the electronic marketplaces where some public contracts are published, such as purchases of commodities.
 Nonetheless, we did not use this dataset, since it follows a different schema than the Czech public procurement register, so that using it would require us to spend further effort on data preparation.
-Unfortunately, since data preparation is not a routine task, reliable estimates of the required effort are difficult to come by, so we avoid them.
+Unfortunately, since data preparation is not a routine task, reliable estimates of the required effort are difficult to come by, so we avoid making them.
 
 We chose the XML version as the source for data extraction.
 XML allows us to leverage mature tooling, such as XSLT processors, for the extraction.
-The choice of input data format also enabled exploring the data using the tools designed for manipulating XML.
+The choice of the input data format also enabled us to explore the data by using the tools designed for manipulating XML.
 
 Ad hoc exploratory queries were done using XQuery.
 We ran queries to discover possible values of a given XML element or to verify assumptions about the data.
 Finding distinct values of XML elements helped us detect fixed enumerations, which can be turned into code lists.
-Queries verifying assumptions about the data allowed us to tell if an error in data is present in its source or if it is made during our data transformation.
+Queries verifying our assumptions about the data allowed us to tell if an error in data is present in its source or if it is made during data transformation.
 For example, we assumed that the awarded bidder's registered identification number (RN) is always different from the contracting authority's RN.
 This assumption turned out to be false, caused by errors in the source data.
 
 More systematic analysis of the dataset's structure was implemented using an XSL transformation.
-For the purposes of development of the XSL stylesheet we implemented a transformation that computes cardinalities of elements in the data.
-This allowed us to tell the always-present elements that can be used as keys identifying entities described in the data.
+For the purposes of development of the XSL stylesheet we implemented a transformation that computes the cardinalities of elements in the data.
+This allowed us to tell the always-present elements that can be used as keys identifying the entities described in the data.
 The tree of element cardinalities revealed the *empirical schema* of the data.
 When we looked at this schema, we saw that it follows a fixed structure.
 In fact, it exhibited a reductive use of XML.
@@ -36,24 +35,24 @@ To reduce the size of the processed data and simplify further processing we firs
 Doing so simplified the subsequent transformations, since they did not have to cater for the option of empty elements.
 
 We developed an XSL stylesheet to extract the source XML data to RDF/XML [@Gandon2014].
-The stylesheet maps the schema of the source data onto the target schema ([@sec:concrete-data-model]).
+The stylesheet maps the schema of the source data onto the target schema described in the [@sec:concrete-data-model].
 During the extraction we validated the syntax of registered identification numbers, CPV codes, and literals typed with `xsd:date`.
-If possible, we established links in the extracted data via concatenating unambiguous identifiers to namespace IRIs.
-However, the majority of linking was offloaded to a dedicated phase in the ETL process ([@sec:linking]), since it typically required queries over the complete dataset.
+If possible, we established links in the extracted data by concatenating unambiguous identifiers to namespace IRIs.
+However, the majority of linking was offloaded to a dedicated phase in the ETL process, covered in the [@sec:linking], since it typically required queries over the complete dataset.
 A trade-off we had to make due to our choice of an RDF store was to use plain literals in place of literals typed with `xsd:duration`, since Virtuoso^[<https://virtuoso.openlinksw.com>] does not yet support this data type.
 We used LinkedPipes-ETL (LP-ETL) [@Klimek2016] to automate the extraction.
 LP-ETL provided us with a way to automate downloading and transforming the source data in a data processing pipeline.
-Syntax of the extracted output was validated via Apache Jena's *riot*^[<https://jena.apache.org/documentation/io>] to avoid common problems in RDF/XML, such as incorrect striping [@Brickley2002].
+The syntax of the extracted output was validated via Apache Jena's *riot*^[<https://jena.apache.org/documentation/io>] to avoid common problems in RDF/XML, such as incorrect striping [@Brickley2002].
 
 The selected dataset spans Czech public contracts from June 1, 2006 to January 18, 2017.
 This selection amounts to 1.6 GB of raw data in XML and corresponds to 20.5 million extracted RDF triples.
 The dataset contains 186 965 public contracts.
 
-To aid visual validation of the extracted data, we developed *sparql-to-graphviz*^[<https://github.com/jindrichmynarz/sparql-to-graphviz>] that produces a class diagram representing the empirical schema of the data it is provided with.
-This tool generates a description of the dataset's class diagram in the DOT language, which can be rendered to images via Graphviz,^[<http://www.graphviz.org>] an established visualization software for graph structures.
-The dataset's summary in the diagram contains classes instantiated in the dataset, along with their datatype properties and object properties interconnecting the classes.
-Each property is provided with the most common range, such as `xsd:date` for a datatype property or `schema:Organization` for an object property, and its minimum and maximum cardinality.
-The cardinality ranges may signalize errors in data transformation, such as insufficient data fusion when the maximum cardinality surpasses an expected value.
+To aid the visual validation of the extracted data, we developed *sparql-to-graphviz*^[<https://github.com/jindrichmynarz/sparql-to-graphviz>] that produces a class diagram representing the empirical schema of the data it is provided with.
+It generates a description of the dataset's class diagram in the DOT language, which can be rendered to images via Graphviz,^[<http://www.graphviz.org>] an established visualization software for graph structures.
+The dataset's summary in the diagram, shown in the [@fig:vvz], contains the classes instantiated in the dataset, along with their datatype properties and object properties interconnecting the classes.
+Each property is provided with its most common range, such as `xsd:date` for a datatype property or `schema:Organization` for an object property, and its minimum and maximum cardinality.
+As mentioned before, the cardinality ranges may signalize errors in the data transformation, such as insufficient data fusion when the maximum cardinality surpasses an expected value.
 
 <!--
 - Data validation is typically mentioned as an intrinsic part of extraction. However, it is also found in the transformation step.

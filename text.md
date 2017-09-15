@@ -43,6 +43,7 @@ parts/zindex.md
 parts/loading.md
 parts/loading_sparql.md
 parts/loading_rescal.md
+parts/data_summary.md
 parts/methods.md
 parts/ground_truth.md
 parts/sparql.md
@@ -51,6 +52,7 @@ parts/evaluation.md
 parts/offline_evaluation.md
 parts/results_sparql.md
 parts/results_rescal.md
+parts/results_comparison.md
 parts/conclusions.md
 parts/references.md
 ```

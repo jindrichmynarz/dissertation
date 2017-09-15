@@ -34,8 +34,16 @@ Nevertheless, most linked open data must be considered to be raw data that requi
 
 When we review our progress beyond the state-of-the-art, introduced in the [@sec:related-work], our key contribution is the adaption of existing generic technologies for a concrete use case concerning matchmaking in the Czech public procurement.
 Using SPARQL, we developed a novel matchmaking method inspired by case-based reasoning.
-As a side effect of our investigation of matchmaking methods, we advanced the available means of processing RDF data by developing a set of reusable tools that address some of the recurrent tasks involved in handling RDF data.
+As a side effect of our investigation in matchmaking methods, we advanced the available means of processing RDF data by developing a set of reusable tools that address some of the recurrent tasks involved in handling RDF data.
 Ultimately, our work produced a greater value in the developed reusable artefacts for data preparation and matchmaking than as a practical use case in public procurement.
+
+The presented work built on open source software as well as data prepared by others.
+In particular, most of the transformations of the ARES dataset were done by Jakub Klímek. 
+The extracted Business Register data was provided by Ondřej Kokeš.
+Both these contributions are acknowledged directly in the [@sec:ares].
+zIndex fairness scores were supplied to us by Datlab s.r.o.
+The software we reused in our work is listed in the [appendix @sec:software].
+The design of the Public Contracts Ontology was a collaborative effort as indicated in the references in the [@sec:pco].
 
 <!-- Assessment of degree of fulfillment of the stated goals -->
 

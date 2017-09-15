@@ -79,7 +79,11 @@ Specific problems:
 The domain of this research is an intersection of matchmaking and semantic web knowledge engineering.
 -->
 
-<!-- Research goals -->
+## Goals and methods
+
+<!-- TODO: Exploration of matchmaking, by developing software, identification of the problems in data
+Side goals: testing the available implementations of the semantic web technologies, if unsatisfactory: developing own tools, supporting reusable tools for data pre-processing
+We can acknowledge that some of the goals were initially implicit, but we specified explicitly as we learnt about them. -->
 
 <!-- Scientific methods -->
 
@@ -87,9 +91,11 @@ We adopt the methods of the design science [@Hevner2004] in our research.
 We design artefacts, including the Czech public procurement dataset and the matchmakers, and experiment with them to tell which of their variants perform better.
 Our task is to explore what kinds of matchmaking of public contracts to bidders does linked open data make feasible.
 
+<!-- Research goals -->
+
 <!-- Evaluation -->
 
-The key question to evaluate is whether we can develop a matchmaker that can produce results deemed useful by domain experts representing the stakeholders.
+The key goal to evaluate is whether we can develop a matchmaker that can produce results deemed useful by domain experts representing the stakeholders.
 We evaluate the developed matchmakers via offline experiments on retrospective data. <!-- and via interviews with representatives of contracting authorities. -->
 In terms of our target metrics, we aim to recommend matches exhibiting both high accuracy and diversity.
 In order to discover the key factors that improve matchmaking we compare the evaluation results produced by the developed matchmakers in their different configurations.
@@ -108,6 +114,10 @@ By using experimental evaluation of these methods we derive general findings abo
 
 The remaining parts of this chapter provide the preliminaries that the subsequent chapters build on.
 We explain the fundamentals of linked open data, remark on the characteristics of the public procurement domain, define the matchmaking task, outline the generic approaches we adopted for this task, and finally, we survey the related work.
+
+## Outline of the thesis
+
+<!-- TODO: Outline the structure of the dissertation (a la table of contents) -->
 
 The contributions presented in this thesis including the methods and software were authored or co-authored by the thesis' author, unless stated otherwise.
 Both the reused and the developed software is listed in the [appendix @sec:software].
@@ -179,4 +189,11 @@ Develop matchmakers
 Do the developed matchmakers provide value to bidders and contracting authorities?
 (Are the matchmakers "good enough" (= accurate enough and diverse enough)?)
 (Would users continue to use the matchmakers if they are provided with a demo?)
+-->
+
+<!--
+TODO: Titulek "téma práce", jak se téma vztahuje k práci katedry (linked data ~ SPARQL, data mining ~ RESCAL), důvod výběru práce, navázání na LOD2 atp.
+Přidat rovnou odkaz na Related work.
+Samostatná sekce o cílích a metodách.
+Návaznost kapitol práce.
 -->

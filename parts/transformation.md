@@ -1,17 +1,17 @@
 ## Transformation {#sec:transformation}
 
-Due to our separation of concerns, extraction produced only intermediate data.
+Since we practiced the principle of separation of concerns, the data extraction produced only intermediate data.
 This data needed to be transformed in order to reach a better quality and conform with our target data model.
 
 Even though the current documentation of the Czech public procurement register states that the collected data is validated by several rules, we found errors in the data that should have been prevented by the rules.
 A possible explanation for this issue is that the extracted dataset contains historical data as well, some of which might date to the past when the register did not yet employ as comprehensive validation as it does now. 
 Alternatively, the *"errors in the published data may be caused by either negligence when filling out Journal forms or by deliberate obfuscation of sensitive information in order to reduce a contract's traceability"* [@Soudek2016a].
 A large part of data transformation was therefore devoted to denoising.
-We dealt both with natural noise, such as involuntarily introduced typos in literals, and malicious noise, such as deliberate omissions to obfuscate the data.
-Many other data quality problems of the Czech public procurement register are documented in the wiki of zIndex [@Soudek2016a].
-Similar problems in public procurement data were witnessed by Futia et al. [-@Futia2017] in case of Italy. 
+We dealt both with natural noise, such as the involuntarily introduced typos in literals, and malicious noise, such as deliberate omissions to obfuscate the data.
+Many other data quality problems of the Czech public procurement register are documented on the wiki of zIndex [@Soudek2016a].
+Similar problems in public procurement data were witnessed by Futia et al. [-@Futia2017] in case of Italian procurement. 
 
-Due to the messiness of the data, we had to make data transformations defensive.
+Due to the messiness of the data, we had to make the data transformations defensive.
 The transformations needed to rely on fewer assumptions about the data and had to be able to deal with violations of these assumptions. 
 For example, the identifiers of the entities involved in public procurement had to be treated as inherently unreliable.
 

@@ -1,4 +1,4 @@
-### Access to Registers of Economic Subjects/Entities
+### Access to Registers of Economic Subjects/Entities {#sec:ares}
 
 Access to Registers of Economic Subjects/Entities^[<http://wwwinfo.mfcr.cz/ares/ares.html.en>] (ARES) is an information system about business entities, which is maintained by the Ministry of Finance of the Czech Republic.
 The data describes business entities along with their registrations required to pursue their business.
