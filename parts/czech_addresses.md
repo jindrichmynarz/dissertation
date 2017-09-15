@@ -1,4 +1,4 @@
-### Czech addresses
+#### Czech addresses {#sec:czech-addresses}
 
 In order to provide the postal addresses in the Czech public procurement data with geo-coordinates, we extracted Czech address data from the Registry of territorial identification, addresses, and real estate^[<http://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN.aspx>] (RÚIAN).
 The registry contains 2.9 million addresses^[Valid as of September 2016.] in the Czech Republic.

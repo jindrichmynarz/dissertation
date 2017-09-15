@@ -34,12 +34,12 @@ parts/extraction.md
 parts/transformation.md
 parts/linking.md
 parts/geocoding.md
-parts/fusion.md
 parts/linked_datasets.md
 parts/cpv.md
 parts/ares.md
 parts/czech_addresses.md
 parts/zindex.md
+parts/fusion.md
 parts/loading.md
 parts/loading_sparql.md
 parts/loading_rescal.md
