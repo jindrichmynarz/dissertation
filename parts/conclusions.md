@@ -37,7 +37,7 @@ Using SPARQL, we developed a novel matchmaking method inspired by case-based rea
 As a side effect of our investigation in matchmaking methods, we advanced the available means of processing RDF data by developing a set of reusable tools that address some of the recurrent tasks involved in handling RDF data.
 Ultimately, our work produced a greater value in the developed reusable artefacts for data preparation and matchmaking than as a practical use case in public procurement.
 
-The presented work built on open source software as well as data prepared by others.
+The presented work was built on open source software as well as data prepared by others.
 In particular, most of the transformations of the ARES dataset were done by Jakub Klímek. 
 The extracted Business Register data was provided by Ondřej Kokeš.
 Both these contributions are acknowledged directly in the [@sec:ares].

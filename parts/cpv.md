@@ -51,6 +51,8 @@ Instead, we adopted Apache Jena's *arq*^[<https://jena.apache.org/documentation/
 Provided the RDF version of the mappings from the correspondence table, concepts from CPV 2003 were resolved to their CPV 2008 counterparts by using a SPARQL Update operation that exploited the mappings.
 
 <!-- 
+Out-takes:
+
 A fundamental problem that breaks the promise of controlled vocabularies is that of inter-indexer and intra-indexer consistency.
 A shared vocabulary does not help if the way it is used is not shared too.
 This is a to certain degree an unsolvable problem.
@@ -58,10 +60,9 @@ To a limited extent it can be alleviated by strict rules or shared practices.
 Probably the most common inconsistency is assigning less specific concepts.
 
 A partial solution to inter-indexer consistency (assuming intra-indexer consistency): consider CPV as local tags. I.e. they are comparable only with respect to the contracting authority that assigned them. (This approach also ignores that several civil servants are likely assigning CPV for most contracting authorities, hence the intra-indexer consistency may be broken.)
--->
 
-<!--
 RDF version of CPV is also available at <http://cpv.data.ac.uk>.
 There is also the version from MOLDEAS.
+
+Discuss transitivity of hierarchical relations with `skos:broaderTransitive` vs. `skos:broader`?
 -->
-<!-- Discuss transitivity of hierarchical relations with `skos:broaderTransitive` vs. `skos:broader`? -->
