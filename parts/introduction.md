@@ -9,7 +9,7 @@ Moreover, relevant data may be fragmented across diverse data sources, which nee
 Nevertheless, when data collection and integration is done manually, it takes a lot of effort.
 
 Some manual effort involved in gathering and evaluation of data about demands and supplies can be automated by matchmaking.
-Matchmakers are tools that retrieve data matching a query.
+Simply put, matchmakers are tools that retrieve data matching a query.
 In the matchmaking setting, either demands or supplies are cast as queries while the other side is treated as the queried data.
 The queries produce matches from the queried data ranked by their degree to which they satisfy a given query.
 
@@ -81,9 +81,12 @@ The domain of this research is an intersection of matchmaking and semantic web k
 
 ## Goals and methods
 
-<!-- TODO: Exploration of matchmaking, by developing software, identification of the problems in data
-Side goals: testing the available implementations of the semantic web technologies, if unsatisfactory: developing own tools, supporting reusable tools for data pre-processing
-We can acknowledge that some of the goals were initially implicit, but we specified explicitly as we learnt about them. -->
+<!-- Research goals -->
+
+Our research goal is to explore matchmaking of public contracts to bidders operating on linked open data.
+In order to pursue this goal we prepare public procurement linked open data and develop software for matchmaking.
+Our secondary target implied by our research direction is to test the available implementations of the semantic web technologies for handling linked open data and, if these tools are found lacking, we develop auxiliary tools to support data preparation and matchmaking.
+These secondary goals were initially not formulated upfront, we only specified them explicitly as we progressed the pursuit of our primary goal.
 
 <!-- Scientific methods -->
 
@@ -91,11 +94,9 @@ We adopt the methods of the design science [@Hevner2004] in our research.
 We design artefacts, including the Czech public procurement dataset and the matchmakers, and experiment with them to tell which of their variants perform better.
 Our task is to explore what kinds of matchmaking of public contracts to bidders does linked open data make feasible.
 
-<!-- Research goals -->
-
 <!-- Evaluation -->
 
-The key goal to evaluate is whether we can develop a matchmaker that can produce results deemed useful by domain experts representing the stakeholders.
+The key question to evaluate is whether we can develop a matchmaker that can produce results deemed useful by domain experts representing the stakeholders.
 We evaluate the developed matchmakers via offline experiments on retrospective data. <!-- and via interviews with representatives of contracting authorities. -->
 In terms of our target metrics, we aim to recommend matches exhibiting both high accuracy and diversity.
 In order to discover the key factors that improve matchmaking we compare the evaluation results produced by the developed matchmakers in their different configurations.
@@ -115,9 +116,17 @@ By using experimental evaluation of these methods we derive general findings abo
 The remaining parts of this chapter provide the preliminaries that the subsequent chapters build on.
 We explain the fundamentals of linked open data, remark on the characteristics of the public procurement domain, define the matchmaking task, outline the generic approaches we adopted for this task, and finally, we survey the related work.
 
-## Outline of the thesis
+## Outline of the dissertation
 
-<!-- TODO: Outline the structure of the dissertation (a la table of contents) -->
+We follow a simple structure in this dissertation.
+This chapter introduces our research and explains both the preliminaries and context in which our work is built as well as surveying the related research to position our contributions.
+The dissertation continues with a substantial chapter on data preparation that describes the extensive effort we invested in pre-processing data for matchmaking purposes.
+In line with the requirements of linked open data, the key parts of this chapter deal with linking and data fusion.
+We follow up with a principal chapter that describes the matchmaking methods we designed and implemented, which includes matchmaking based on SPARQL and on tensor factorization by RESCAL.
+The subsequent chapter discusses the evaluation of the matchmaking methods we devised.
+We experimented with many configurations of the matchmaking methods in the evaluation.
+In this chapter, we present the results of selected quantitative evaluation metrics and provide interpretations of the obtained results.
+Finally, the concluding chapter closes the dissertation, summarizing its principal contributions as well as remarking on its limitations that may be addresses in future research. 
 
 The contributions presented in this thesis including the methods and software were authored or co-authored by the thesis' author, unless stated otherwise.
 Both the reused and the developed software is listed in the [appendix @sec:software].
