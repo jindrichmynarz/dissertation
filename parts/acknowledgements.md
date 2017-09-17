@@ -1,7 +1,7 @@
 # Acknowledgements {.unnumbered}
 
 I would like to thank my supervisor doc. Ing. Vojtěch Svátek, Dr. for creating an environment in which this research could have been done and for helping me navigate the mazes of academia.
-Completing this dissertation would also not be feasible without developers of open-source software, whom I want to thank for sharing their work.
+Completing this dissertation would also not be feasible without developers of open source software, whom I want to thank for sharing their work.
 I am grateful to dr. Tommaso di Noia, who allowed me to visit his group at the Polytechnic University of Bari, Italy.
 During this internship, Tommaso helped me to clarify the relation of my topic to recommender systems.
 Vito Claudio Ostuni, then one of Tommaso's Ph.D. students, suggested looking into case-base reasoning, which provided my work with a useful conceptual framework.

@@ -22,12 +22,12 @@ Open access to public procurement data can increase the number of participants i
 Even distribution of open data may eventually lead to better decisions of the market participants, thereby increasing the efficiency of resource allocation in public procurement.
 
 Open data addresses two fundamental problems of recommender systems, which apply to matchmaking as well.
-These problems comprise the cold start problem and data sparsity, which can be jointly described as the data acquisition problem [@Heitmann2010].
+These problems comprise the cold start problem and data sparseness, which can be jointly described as the data acquisition problem [@Heitmann2010].
 Cold start problem concerns the lack of data needed to make recommendations.
 It appears in new recommender systems that have yet to acquire users to amass enough data to make accurate recommendations.
 Open data ameliorates this problem by allowing to bootstrap a system from openly available datasets.
 In our case, we use open data from business registers to obtain descriptions of business entities that have not been awarded a contract yet, in order to make them discoverable for matchmaking.
-Data sparsity refers to the share of missing values in a dataset. 
+Data sparseness refers to the share of missing values in a dataset. 
 If a large share of the matched entities is lacking values of the key properties leveraged by matchmaking, the quality of matchmaking results deteriorates.
 Complementary open datasets can help fill in the blank values or add extra features [@DiNoia2015, p. 102] that improve the quality of matchmaking.
 

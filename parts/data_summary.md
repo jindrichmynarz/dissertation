@@ -2,6 +2,14 @@
 
 <!--
 Summarize the data preparation work done as well as key challenges encountered.
+[@fig:cloud]:
+- the central: Czech public procurement dataset
+- Common Procurement Vocabulary
+- Three business registers mediated via ARES
+- Czech addresses dataset
+- NACE classification
+- zIndex
+Mostly linking and fusion.
 
 Problems:
 - Missing data
@@ -11,7 +19,7 @@ Problems:
 - Reductive use of XML
 - Violations of the allegedly validated rules
 - Missing shared identifiers
-- A more detailed description of the quality of the Czech public procurement data is available in@      Soudek2016a.
+- A more detailed description of the quality of the Czech public procurement data is available in @Soudek2016a.
 
 Aims:
 - Combating the afore-mentioned problems

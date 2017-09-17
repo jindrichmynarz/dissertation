@@ -11,10 +11,10 @@ Its particular focus *"lies in resolving value-level contradictions among the di
 
 Viewed from the perspective of data fusion, linking is a way to discover identity conflicts.
 Identity conflicts arise when a single entity is provided with multiple identities.
-Identities in RDF correspond to either IRIs or blank nodes.
-Resolution of identity conflicts in turn gives rise to data conflicts.
+Identities in RDF correspond either to IRIs or blank nodes.
+Resolution of identity conflicts gives rise to data conflicts in turn.
 Rewriting an identity with another identity automatically merges the RDF triples in which the identities appear.
-Merging RDF triples may cause functional properties to have multiple values, which constitutes a conflict.
+Merging RDF triples may consequently cause functional properties to have multiple values, which constitutes a conflict.
 <!--
 Conflicts handled by data fusion are typically divided into contradictions, where multiple non-null values are provided for a functional property, and uncertainties, where a functional property has both null and a non-null value.
 However, since there are no nulls in RDF, conflicts in RDF are limited to contradictions.
@@ -43,7 +43,7 @@ Fazekas discusses a similar set of issues of public procurement data from Hungar
 A corollary of these issues is that tracking public contracts through the stages of their life-cycle, from their announcement over to completion, is difficult because of the lack of reliable identifiers.
 -->
 
-In order to simplify resolution of identity conflicts, we adopted a conventional directionality of the `owl:sameAs` links from a non-preferred IRI to the preferred IRI.
+In order to simplify the resolution of identity conflicts, we adopted a conventional directionality of the `owl:sameAs` links from a non-preferred IRI to the preferred IRI.
 This convention allowed us to use a uniform SPARQL Update operation to resolve non-preferred IRIs to their preferred counterparts.
 For example, if there is a triple `:a owl:sameAs :b`, `:a` as the non-preferred IRI will be rewritten to `:b`.
 Note that this convention is applicable only if you can distinguish between non-preferred and preferred IRIs, such as by preferring IRIs from a reference dataset.
@@ -51,19 +51,21 @@ Note that this convention is applicable only if you can distinguish between non-
 Data conflicts arose only in properties that can be interpreted as functional.
 Some of these properties explicitly instantiate `owl:FunctionalProperty`, such as `pc:kind` describing the kind of a contract, while others, such as `dcterms:title` expressing the contract's title, can be endowed with this semantics for the purpose of attaining a unified view of the fused data.
 Most of our data fusion work was devoted to resolving data from contract notices.
-As was the case with identity conflicts, resolution of data conflicts was done with SPARQL Update operations.
+As was the case of identity conflicts, the resolution of data conflicts was done via SPARQL Update operations.
 
-Conflicts are resolved using resolution functions.
-Resolution functions are either *deciding*, which pick one of their inputs, or *mediating*, which derive output from inputs.
-An example deciding function is picking the maximum value, while an example mediating function is computing median value.
+Conflicts are resolved by using resolution functions.
+Resolution functions are either *deciding*, which pick one of their inputs, or *mediating*, which derive their output from the inputs.
+An example deciding function is picking the maximum value, while an example mediating function is computing the median value.
 We employed deciding conflict resolution functions.
+
+### Conflict resolution strategies
 
 The conflict resolution strategies we implemented can be classified according to Bleiholder and Naumann [-@Bleiholder2006].
 We used *Trust your friends* [@Bleiholder2006, p. 3] strategy to prefer values from ARES, since we consider it a trustworthy reference dataset.
 Leveraging the semantics of notice types, we preferred data from correction notices.
 A similar reason led us to remove syntactically invalid RNs in case valid RNs were present too.
-We used *Keep up to date* [@Bleiholder2006, p. 3] metadata-based deciding conflict resolution strategy to prefer values from the most recent public notices.
-We determined the temporal order of notices from their submission dates and the semantics of their types, which represents an implicit order.
+We used *Keep up to date* [@Bleiholder2006, p. 3] metadata-based conflict resolution strategy to prefer values from the most recent public notices.
+We determined the temporal order of notices from their submission dates and the semantics of their types, which represent an implicit order.
 For example, prior information notice comes before contract notice, which in turn precedes contract award notice.
 The order of notice types can be *learnt* from the most common order of notices with immediately following submission dates.
 We combined such distribution of subsequent notice types with manual assessment to rule out erroneous pairs.
@@ -73,20 +75,20 @@ We used *Most specific concept* [@Bleiholder2006, p. 4] strategy for resolution 
 In case a single functional property linked multiple concepts that were in a hierarchical relation, the most specific concepts were retained.
 For instance, we removed procedure types that can be transitively inferred by following `skos:broaderTransitive` links.
 We used *No gossiping* [@Bleiholder2006, p. 3] strategy for conflicting boolean values.
-If a boolean property has both `true` and `false` value, and there is no way to prioritize a value, we conclude the true value of the property is unknown, and therefore delete both conflicting values. 
-Once the conflicts were resolved by the above-described strategies, we moved the remaining notice data to the associated contracts, which corresponds with the strategy *Take the information* [@Bleiholder2006, p. 3].
+If a boolean property has both `true` and `false` value, and there is no way to prioritize a value, we conclude the true value of the property is unknown, and therefore delete both conflicting values.
+Once the conflicts were resolved by the above-described strategies, we moved the remaining notice data to the associated contracts, which corresponds to the strategy *Take the information* [@Bleiholder2006, p. 3].
 We excluded notice's proper data, such as submission date or notice type, from this step.
-If all previous conflict resolution strategies failed, in select cases we followed the *Roll the dice* [@Bleiholder2006, p. 5] strategy and picked a random value via the `SAMPLE` aggregate function in SPARQL.
+If all previous conflict resolution strategies failed, in select cases we followed *Roll the dice* [@Bleiholder2006, p. 5] strategy and picked a random value via the `SAMPLE` aggregate function in SPARQL.
 We did this for procedure types (values of `pc:procedureType`), contracting authorities (values of `pc:contractingAuthority`) without valid RNs, and actual prices (values of `pc:actualPrice`).
 
-The final polishing touch was to excise the resources orphaned during data fusion.
+As the final polishing touch we excised the resources orphaned during data fusion.
 Since removing orphans may create more orphans, we deleted orphans in the topological order based on their links.
 In this way we first removed orphans, followed by deleting their dependent resources that were orphaned next.
 
 ### Evaluation
 
 If we decide to evaluate the quality of data fusion, there are several measures available.
-One of the broadest measures for assessing data fusion is data reduction ratio, which represents the decrease in the number of fused entities.
+One of the broadest measures for assessing data fusion is data reduction ratio, which represents the decrease of the number of fused entities.
 This figure corresponds to the measure of extensional conciseness defined by Bleiholder and Naumann [-@Bleiholder2008, pp. 1:5-1:6] as the *"percentage of real-world objects covered by that dataset."*
 Many evaluation measures used for data fusion reflect the impact of this task on data quality.
 An example of those measures is completeness, which represents the ratio of instances having value for a specified property before and after fusion, and is sometimes rephrased as coverage and density [@Akoka2007].
