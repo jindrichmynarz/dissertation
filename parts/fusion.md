@@ -1,4 +1,4 @@
-## Fusion
+## Fusion {#sec:fusion}
 
 Data fusion can be defined as *"the process of integrating multiple data items representing the same real-world object into a single, consistent, and clean representation"* [@Bizer2009].
 In order to reach this goal, data fusion removes invalid or non-preferred data, so that *"duplicate representations are combined and fused into a single representation while inconsistencies in the data are resolved"* [@Bleiholder2008, p. 1:3].
