@@ -4,14 +4,13 @@ body {
   font-size: 18px;
   line-height: 1.45;
   color: #333333;
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   line-height: 1.2;
-  color: inherit;
   text-rendering: optimizelegibility;
 }
 
@@ -85,4 +84,21 @@ table caption {
 .figure {
   text-align: center;
   color: #777;
+}
+
+.anchor {
+  display: none;
+}
+
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+  display: inline;
+}
+
+.anchor:hover {
+  text-decoration: none;
 }
