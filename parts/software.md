@@ -3,7 +3,7 @@
 
 # Software {#sec:software} 
 
-The work described in this thesis involved many software tools.
+The work described in this dissertation involved many software tools.
 In order to provide a single reference point for these tools, this appendix lists their brief descriptions.
 Here we describe both the software used for data preparation as well as the software for matchmaking.
 The descriptions are divided into two categories: software that we reused and software that we developed.

@@ -4,7 +4,7 @@ Linked data is a set of practices for publishing structured data on the Web.
 It is a way of structuring data that identifies entities with Internationalized Resource Identifiers (IRIs) and materializes their relationships as a network of machine-processable data [@Ayers2007, p. 94].
 IRIs are universal, so that any entity can be identified with a IRI, and have global scope, therefore an IRI can only identify one entity [@BernersLee1996].
 A major manifestation of linked data is the Linking Open Data Cloud [@Abele2017], which maps the web of semantically structured data that the spans hundreds of datasets from diverse domains, such as health care or linguistics.
-In this section we provide a basic introduction to the key aspects of linked data that we built on in this thesis.
+In this section we provide a basic introduction to the key aspects of linked data that we built on in this dissertation.
 A more detailed introduction to linked data in available in Heath and Bizer [-@Heath2011].
 
 Linked data may be seen as a pragmatic implementation of the so-called semantic web vision.
@@ -129,7 +129,7 @@ For example, if in our case we combine data from business and public procurement
 If there is no overlap between the resources from the combined datasets, there may be at least an overlap in the RDF vocabularies describing the resources [@Heitmann2016], which provide broader conceptual associations.
 
 <!--
-- Results contrary to the thesis that more features lead to better recommendations: *"We point out that even if very few ratings are available, simple rating-based predictors outperform purely metadata-based ones"* [@Pilaszy2009, p. 93].
+- Results contrary to the dissertation that more features lead to better recommendations: *"We point out that even if very few ratings are available, simple rating-based predictors outperform purely metadata-based ones"* [@Pilaszy2009, p. 93].
 
 Semantic features ~ smart descriptors
 - Low-level descriptors require complex distance metrics.

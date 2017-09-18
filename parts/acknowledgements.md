@@ -8,4 +8,4 @@ Vito Claudio Ostuni, then one of Tommaso's Ph.D. students, suggested looking int
 My thanks also goes to RNDr. Jakub Klímek, Ph.D. from the Czech Technical University for his help with data preparation, and to PhDr. Ing. Jiří Skuhrovec, Ph.D. from Datlab s.r.o. for supplying me with the zIndex data as well as insights into the public procurement domain.
 A special thanks belongs to my friends and family, who helped me stay sane during the long years of my Ph.D. endeavour.
 
-The research presented in this thesis was partially supported by the EU ICT FP7 project no. 257943 (LOD2 project) and by the H2020 project no. 645833 (OpenBudgets.eu).
+The research presented in this dissertation was partially supported by the EU ICT FP7 project no. 257943 (LOD2 project) and by the H2020 project no. 645833 (OpenBudgets.eu).

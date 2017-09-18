@@ -45,6 +45,9 @@ CZK
 DAML
 ~ DARPA Agent Markup Language
 
+DIKE
+~ Department of Information and Knowledge Engineering
+
 DL
 ~ Description logics
 

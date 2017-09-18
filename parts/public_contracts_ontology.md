@@ -1,7 +1,7 @@
 ### Public Contracts Ontology {#sec:pco}
 
 Public Contracts Ontology^[<https://github.com/opendatacz/public-contracts-ontology>] (PCO) is a lightweight RDF vocabulary for describing data about public contracts.
-The vocabulary has been developed by the Czech OpenData.cz initiative since 2011, while this thesis' author has been one of its editors.
+The vocabulary has been developed by the Czech OpenData.cz initiative since 2011, while this dissertation's author has been one of its editors.
 Its design is driven by what public procurement data is available, mostly in the Czech Republic and at the EU level. 
 The data-driven approach *"implies that vocabularies should not use conceptualizations that do not match well to common database schemas in their target domains"* [@Mynarz2014a].
 

@@ -52,7 +52,7 @@ The retrieved data was relatively consistent, so it did not require much cleanin
 However, we paid a special care to cleaning postal addresses, since we needed them for geocoding.
 SPARQL Update operations were employed to clean and structure the addresses.
 The data transformation^[<https://github.com/opendatacz/ARES2RDF>] was released as open source.
-Most of the transformation was done by Jakub Klímek from the Charles University in Prague with a contribution of this thesis' author, in particular regarding the XSL stylesheets and SPARQL Update operations.
+Most of the transformation was done by Jakub Klímek from the Charles University in Prague with a contribution of this dissertation's author, in particular regarding the XSL stylesheets and SPARQL Update operations.
 
 We used a subset of BR containing a classification of the registered business entities.
 The organizations in BR are assigned concepts from the Statistical Classification of Economic Activities in the European Community (NACE).

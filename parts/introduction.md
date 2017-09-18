@@ -41,6 +41,8 @@ Business models based on advertising distort the design of web services.
 Personalization makes matchmaking approach many-to-1 advertising.
 -->
 
+## Research topic
+
 Our approach to matchmaking is based on two components: good data and good technologies.
 We employ linked open data as a method to defragment and integrate public procurement data and enable to combine it with other data.
 A key challenge in using linked open data is to reuse or develop appropriate techniques for data preparation.
@@ -58,6 +60,13 @@ Our work can be therefore considered a concrete use case in the Czech public pro
 Viewed as a use case, our task is to select, combine, and apply the state-of-the-art techniques to a real-world scenario.
 Our key stakeholders in this use case are the participants in the public procurement market: contracting authorities, who represent the side of demand, and bidders, who represent the side of supply.
 The stakeholder groups are driven by different interests; contracting authorities represent the public sector while bidders represent the private sector, which gives rise to a sophisticated interplay of the legal framework of public procurement and the commercial interests.
+
+Our topic is firmly grounded in the research direction of the Department of Information and Knowledge Engineering (DIKE) at the University of Economics in Prague where our work was conducted.
+Our research builds both on linked data and data mining, uniting the principal areas researched at DIKE.
+Linked data is a pervasive part of our work, manifest in the data preparation as well as in the SPARQL-based matchmakers.
+Data mining surfaces in our application of tensor factorization via RESCAL for matchmaking.
+The adopted topic constitutes a natural continuation of this dissertation author's prior work with linked open data since 2009.
+The topic was originally formulated as part of the LOD2,^[<http://lod2.eu>] a 7^th^ Framework Programme EU research project on linked open data, which funded our work from 2011 to 2014.
 
 <!-- Problem statement
 
@@ -116,19 +125,19 @@ By using experimental evaluation of these methods we derive general findings abo
 The remaining parts of this chapter provide the preliminaries that the subsequent chapters build on.
 We explain the fundamentals of linked open data, remark on the characteristics of the public procurement domain, define the matchmaking task, outline the generic approaches we adopted for this task, and finally, we survey the related work.
 
-## Outline of the dissertation
+## Outline
 
 We follow a simple structure in this dissertation.
-This chapter introduces our research and explains both the preliminaries and context in which our work is built as well as surveying the related research to position our contributions.
+This chapter introduces our research and explains both the preliminaries and context in which our work is built as well as surveying the related research ([@sec:related-work]) to position our contributions.
 The dissertation continues with a substantial chapter on data preparation that describes the extensive effort we invested in pre-processing data for matchmaking purposes.
-In line with the requirements of linked open data, the key parts of this chapter deal with linking and data fusion.
+In line with the characteristics of linked open data, the key parts of this chapter deal with linking and data fusion.
 We follow up with a principal chapter that describes the matchmaking methods we designed and implemented, which includes matchmaking based on SPARQL and on tensor factorization by RESCAL.
-The subsequent chapter discusses the evaluation of the matchmaking methods we devised.
+The subsequent chapter discusses the evaluation of the devised matchmaking methods by using the datasets we prepared.
 We experimented with many configurations of the matchmaking methods in the evaluation.
 In this chapter, we present the results of selected quantitative evaluation metrics and provide interpretations of the obtained results.
 Finally, the concluding chapter closes the dissertation, summarizing its principal contributions as well as remarking on its limitations that may be addresses in future research. 
 
-The contributions presented in this thesis including the methods and software were authored or co-authored by the thesis' author, unless stated otherwise.
+The contributions presented in this dissertation including the methods and software were authored or co-authored by the dissertation's author, unless stated otherwise.
 Both the reused and the developed software is listed in the [appendix @sec:software].
 The abbreviations used throughout the text are collected in the [@sec:abbreviations].
 All vocabulary prefixes used in the text can be resolved to their corresponding namespace IRIs via <http://prefix.cc>.
@@ -151,7 +160,7 @@ A key obstacle to achieving the stated goal is fragmentation of data on the Web.
 Data about demands and offers is dispersed across a multitude of web sites, including electronic marketplaces or public sector registries. 
 To get a broader picture about the market one must scan through the relevant yet heterogeneous sources of data, each of which may expose a different access interface, most of which will be suitable only for humans to process.
 Therefore, *"search and matchmaking between two business parties over the current Web are still very time-consuming if [...] information from multiple sources needs to be combined to assess the relevance or execute the query"* [@Radinger2013].
-To improve this situation, the broad goal of this thesis is to contribute to defragmentation of online markets by linking the data communicated between them.
+To improve this situation, the broad goal of this dissertation is to contribute to defragmentation of online markets by linking the data communicated between them.
 Having links in between datasets on the Web that are traversable by machines may enable to query the distributed markets as a single virtual market.
 Such virtual market may facilitate supply and demand to meet in a distributed linked open data infrastructure.
 
@@ -174,7 +183,7 @@ Side goals:
 * Transparency through data integration: Prior to data integration the meaning of data is lost in the noise of user-generated data. Data integration cleans the view and provides greater overview over public procurement.
 * Democratization of public procurement data analysis: Enables the rise of the armchair auditors.
 
-The proposed solution to address the thesis' goal uses linked open data as a method for integrating data on the Web.
+The proposed solution to address the dissertation's goal uses linked open data as a method for integrating data on the Web.
 The means towards approaching the depicted vision consist of application of semantic web technologies for matching data about offers and demands on the Web.
 To achieve the goal of machine readable data the semantic web stack offers a strong basis.
 Resource Description Framework (RDF) may be used as a common formalism, while RDF vocabularies and ontologies may serve as shared conceptualizations for modelling data.
@@ -198,11 +207,4 @@ Develop matchmakers
 Do the developed matchmakers provide value to bidders and contracting authorities?
 (Are the matchmakers "good enough" (= accurate enough and diverse enough)?)
 (Would users continue to use the matchmakers if they are provided with a demo?)
--->
-
-<!--
-TODO: Titulek "téma práce", jak se téma vztahuje k práci katedry (linked data ~ SPARQL, data mining ~ RESCAL), důvod výběru práce, navázání na LOD2 atp.
-Přidat rovnou odkaz na Related work.
-Samostatná sekce o cílích a metodách.
-Návaznost kapitol práce.
 -->

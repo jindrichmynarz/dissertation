@@ -178,13 +178,11 @@ Both approaches fared worse than our baseline, as documented in the [@tbl:counte
 While the impact of weighting by zIndex is barely noticeable, the restriction to open procedures decreased the observed metrics.
 The decrease may be attributed to the smaller size of training data, even though the majority of the contracts in our dataset were awarded via an open procedure.
 
------------------------------------------------------------------------------
 Matchmaker                          HR@10   MRR@10    CC@10       PC   LTP@10
 -------------------------------- -------- -------- -------- -------- --------
 `pc:mainObject`                  **0.25** **0.12** **0.57** **0.98**     0.68
 `pc:mainObject`, zIndex              0.24     0.12     0.57 **0.98**     0.69
 `pc:mainObject`, open procedures     0.21     0.11     0.47     0.96 **0.70**
------------------------------------------------------------------------------
 
 Table: Evaluation of counter-measures to limits of the ground truth {#tbl:counter-measures-evaluation}
 
