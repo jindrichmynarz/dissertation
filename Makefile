@@ -2,13 +2,14 @@ define COMMON_PARAMS
 -f markdown+implicit_figures+backtick_code_blocks \
 --number-sections \
 --toc \
--s \
--S \
---filter pandoc-include \
+--smart \
+--standalone \
+--normalize \
 --filter pandoc-crossref \
 --filter pandoc-citeproc \
 --bibliography references.bib \
---csl style/iso690-author-date-cs.csl
+--csl style/iso690-author-date-cs.csl \
+parts/metadata.yaml
 endef
 
 html:
@@ -20,7 +21,7 @@ html:
 		--css http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic \
 		--css media/css/bootstrap.css \
 		$(COMMON_PARAMS) \
-		text.md
+		parts/*.md
 
 pdf:
 	pandoc --latex-engine=xelatex \
@@ -35,7 +36,7 @@ pdf:
 		-V papersize=a4paper \
 		-V documentclass:report \
 		$(COMMON_PARAMS) \
-		text.md
+		staging/*.md parts/*.md
 
 excerpt:
 	pandoc --latex-engine=xelatex \
@@ -49,7 +50,7 @@ excerpt:
 		-V papersize=a4paper \
 		-V documentclass:report \
 		$(COMMON_PARAMS) \
-		excerpt.md
+		parts/*.md
 
 clean:
 	rm -f text.html text.pdf excerpt.pdf
