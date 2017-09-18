@@ -12,14 +12,19 @@ html:
 		--template style/template.html \
 		--bibliography references.bib \
 		--csl style/iso690-author-date-cs.csl \
+		--css http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css \
+		--css http://fonts.googleapis.com/css?family=Source+Sans+Pro:700 \
+		--css http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic \
+		--css media/css/bootstrap.css \
 		text.md
 
 pdf:
-	pandoc -f markdown+implicit_figures+backtick_code_blocks+citations \
+	pandoc -f markdown+implicit_figures+backtick_code_blocks \
 		--latex-engine=xelatex \
 		--number-sections \
 		--toc \
 		--include-before-body parts/title_page.tex \
+		--include-before-body parts/affidavit.tex \
 		-s \
 		-S \
 		-o text.pdf \

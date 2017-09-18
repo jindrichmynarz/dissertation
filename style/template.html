@@ -13,64 +13,6 @@
     <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
     $endif$
     <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"          type="text/css">
-    <style type="text/css">
-body {
-  font-family: Lora, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.45;
-  color: #333333;
-  background-color: #fff;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bold;
-  line-height: 26px;
-  color: inherit;
-  text-rendering: optimizelegibility;
-  line-height: 1.2;
-}
-
-a {
-  color: #e78b24;
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: #da7e18;
-  text-decoration: underline;
-}
-
-.dont-break-out {
-  /* These are technically the same, but use both */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-
-  -ms-word-break: break-all;
-  /* This is the dangerous one in WebKit, as it breaks things wherever */
-  word-break: break-all;
-  /* Instead use this non-standard one: */
-  word-break: break-word;
-
-  /* Adds a hyphen where the word breaks, if supported (No Blink) */
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-.figure img {
-  width: 100%;
-}
-.figure {
-  text-align: center;
-  font-style: italic;
-}
-    </style>
     $if(quotes)$
     <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
     $endif$
