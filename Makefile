@@ -13,7 +13,7 @@ parts/metadata.yaml
 endef
 
 html:
-	pandoc --mathjax \
+	pandoc --mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js \
 		-o text.html \
 		--template style/template.html \
 		--css http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css \
