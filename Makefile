@@ -1,3 +1,5 @@
+.PHONY: clean
+
 define COMMON_PARAMS
 -f markdown+implicit_figures+backtick_code_blocks \
 --number-sections \
