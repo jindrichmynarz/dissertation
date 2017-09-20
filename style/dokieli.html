@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html $if(lang)$ lang="$lang$"$endif$
+  prefix="prov:   http://www.w3.org/ns/prov#
+          schema: http://schema.org/
+          sioc:   http://rdfs.org/sioc/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$">
+    $endfor$
+    $if(date-meta)$
+    <meta name="date" content="$date-meta$">
+    $endif$
+    $if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
+    $endif$
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+    $if(quotes)$
+    <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+    $endif$
+    $if(highlighting-css)$
+    <style type="text/css">
+    $highlighting-css$
+    </style>
+    $endif$
+    $for(css)$
+    <link rel="stylesheet" href="$css$" type="text/css">
+    $endfor$
+    $if(math)$
+      $math$
+    $endif$
+    $for(header-includes)$
+        $header-includes$
+    $endfor$
+  </head>
+  <body typeof="schema:CreativeWork sioc:Post prov:Entity">
+    <main class="container">
+      <div class="text-center"> 
+        <h1 class="title">$title$</h1>
+
+        $if(subtitle)$
+        <h2 class="subtitle">$subtitle$</h2>
+        $endif$
+
+        <div id="authors">
+          $for(author)$
+          <dd class="author">$author$</dd>
+          $endfor$
+        </div>
+        
+        <p>$institute$</p>
+        
+        <p><a href="mailto:jindrich.mynarz@vse.cz"><tt>jindrich.mynarz@vse.cz</tt></a></p>
+
+        $if(date)$
+        <h3 class="date">$date$</h3>
+        $endif$
+      </div>
+
+      $if(toc)$
+      <h2>Table of contents</h2>
+      <div id="$idprefix$TOC">
+      $toc$
+      </div>
+      $endif$
+      <main>
+        <article about="" class="row text-justify" typeof="schema:Article">
+          <div class="col-md-8 offset-md-2 dont-break-out">
+            $body$
+          </div>
+        </article>
+      </main>
+      $for(include-after)$
+      $include-after$
+      $endfor$
+    </main>
+    <script src="https://dokie.li/scripts/simplerdf.js"></script>
+    <script src="https://dokie.li/scripts/medium-editor.min.js"></script>
+    <script src="https://dokie.li/scripts/medium-editor-tables.min.js"></script>
+    <script src="https://dokie.li/scripts/do.js"></script>
+  </body>
+</html>
