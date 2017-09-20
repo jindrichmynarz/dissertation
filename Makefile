@@ -57,4 +57,4 @@ excerpt:
 		parts/*.md
 
 clean:
-	rm -f text.html text.pdf excerpt.pdf
+	rm -f index.html text.pdf excerpt.pdf
