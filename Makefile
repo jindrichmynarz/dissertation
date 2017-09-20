@@ -16,11 +16,13 @@ endef
 
 html:
 	pandoc --mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full \
-		-o text.html \
-		--template style/template.html \
+		-o index.html \
+		--template style/dokieli.html \
 		--css http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css \
 		--css http://fonts.googleapis.com/css?family=Source+Sans+Pro:700 \
 		--css http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic \
+		--css https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css \
+		--css https://dokie.li/media/css/do.css \
 		--css media/css/bootstrap.css \
 		$(COMMON_PARAMS) \
 		parts/*.md
