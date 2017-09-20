@@ -12,4 +12,7 @@ keywords:
 - public procurement
 link-citations: true
 linkReferences: true
+classoption:
+- twoside
+- openright
 ---
