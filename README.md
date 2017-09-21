@@ -2,6 +2,8 @@
 
 My dissertation in progress.
 
+You can read in at <http://mynarz.net/dissertation>.
+
 ## Acknowledgements
 
 * Compiled by [Pandoc](http://pandoc.org)
