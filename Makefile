@@ -17,6 +17,8 @@ endef
 html:
 	pandoc --mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full \
 		-o index.html \
+		-t html5 \
+		--section-divs \
 		--template resources/templates/dokieli.html \
 		--css http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css \
 		--css http://fonts.googleapis.com/css?family=Source+Sans+Pro:700 \
