@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html $if(lang)$ lang="$lang$"$endif$
-  prefix="prov:   http://www.w3.org/ns/prov#
-          schema: http://schema.org/
-          sioc:   http://rdfs.org/sioc/ns#">
+  prefix="cc:      http://creativecommons.org/ns#
+          dcterms: http://purl.org/dc/terms/
+          schema:  http://schema.org/
+          xsd:     http://www.w3.org/2001/XMLSchema#">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,10 +35,10 @@
         $header-includes$
     $endfor$
   </head>
-  <body typeof="schema:CreativeWork sioc:Post prov:Entity">
+  <body about="" typeof="schema:ScholarlyArticle">
     <main class="container">
       <div class="text-center"> 
-        <h1 class="title">$title$</h1>
+        <h1 class="title" property="dcterms:title">$title$</h1>
 
         $if(subtitle)$
         <h2 class="subtitle">$subtitle$</h2>
@@ -45,17 +46,34 @@
 
         <div id="authors">
           $for(author)$
-          <dd class="author">$author$</dd>
+          <dd class="author" rel="dcterms:creator">
+            <span about="http://mynarz.net/#jindrich" property="schema:name">$author$</span>
+          </dd>
           $endfor$
         </div>
         
         <p>$institute$</p>
         
-        <p><a href="mailto:jindrich.mynarz@vse.cz"><tt>jindrich.mynarz@vse.cz</tt></a></p>
+        <p rel="dcterms:creator">
+          <a about="http://mynarz.net/#jindrich" href="mailto:jindrich.mynarz@vse.cz">
+            <tt property="schema:email">jindrich.mynarz@vse.cz</tt>
+          </a>
+        </p>
 
         $if(date)$
-        <h3 class="date">$date$</h3>
+        <h3 class="date" property="dcterms:created" datatype="xsd:gYear">$date$</h3>
         $endif$
+
+        <p>
+          <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">
+            <img alt="Creative Commons License"
+                 style="border-width:0"
+                 src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+          </a>
+          <span property="cc:attributionName" content="Jindřich Mynarz"/>
+          <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation"/>
+        </p>
+        <p>Licensed under a <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">Creative Commons Attribution-ShareAlike 3.0 Czech Republic License</a>.</p>
       </div>
 
       $if(toc)$
@@ -64,7 +82,7 @@
       $toc$
       </div>
       $endif$
-      <article about="" class="row text-justify" typeof="schema:Article">
+      <article class="row text-justify">
         <div class="col-md-8 offset-md-2 dont-break-out">
           $body$
         </div>
