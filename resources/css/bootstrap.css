@@ -37,7 +37,6 @@ a:focus {
   /* Adds a hyphen where the word breaks, if supported (No Blink) */
   -ms-hyphens: auto;
   -moz-hyphens: auto;
-  -webkit-hyphens: auto;
   hyphens: auto;
 }
 
@@ -76,10 +75,10 @@ table caption {
   text-align: center;
 }
 
-.figure img {
+figure img {
   width: 100%;
 }
-.figure {
+figure {
   text-align: center;
   color: #777;
 }
