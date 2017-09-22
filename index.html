@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html 
+<html  lang="en"
   prefix="cc:      http://creativecommons.org/ns#
           dcterms: http://purl.org/dc/terms/
           schema:  http://schema.org/
@@ -14,8 +14,6 @@
                 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:700" type="text/css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" type="text/css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="https://dokie.li/media/css/do.css" type="text/css">
         <link rel="stylesheet" href="resources/css/bootstrap.css" type="text/css">
               <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
           </head>
@@ -26,29 +24,32 @@
 
         
         <div id="authors">
-                    <dd class="author" rel="dcterms:creator">
-            <span about="http://mynarz.net/#jindrich" property="schema:name">Jindřich Mynarz</span>
+                    <dd class="author">
+            <a rel="dcterms:creator" href="http://mynarz.net/#jindrich">Jindřich Mynarz</a>
           </dd>
                   </div>
 
-        <p>Department of Information and Knowledge Engineering, University of Economics</p>
+        <p>Department of Information and Knowledge Engineering, <a href="https://www.vse.cz/english">University of Economics, Prague</a></p>
 
         <p rel="dcterms:creator">
           <a about="http://mynarz.net/#jindrich" href="mailto:jindrich.mynarz@vse.cz">
-            <tt property="schema:email">jindrich.mynarz@vse.cz</tt>
+            <tt lang="" property="schema:email">jindrich.mynarz@vse.cz</tt>
           </a>
         </p>
 
                 <h3 class="date" property="dcterms:created" datatype="xsd:gYear">2017</h3>
         
+        <p>Supervisor: <a href="http://nb.vse.cz/~svatek/welcom_e.htm">doc. Ing. Vojtěch Svátek, Dr.</a>
+        </p>
+
         <p>
           <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">
             <img alt="Creative Commons License"
                  src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
           </a>
           Licensed under a <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">Creative Commons Attribution-ShareAlike 3.0 Czech Republic License</a>.
-          <span property="cc:attributionName" content="Jindřich Mynarz"/>
-          <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation"/>
+          <span property="cc:attributionName" content="Jindřich Mynarz" lang="" />
+          <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation" />
         </p>
       </div>
 
@@ -171,7 +172,6 @@
       </ul></li>
       </ul></li>
       <li><a href="#sec:abbreviations">Abbreviations</a></li>
-      <li><a href="#sec:glossary">Glossary</a></li>
       </ul>
       </div>
             <article class="row text-justify">
@@ -229,9 +229,9 @@
           <section id="goals-and-methods" class="level2">
           <h2><span class="header-section-number">1.2</span> Goals and methods</h2>
           <!-- Research goals -->
-          <p>Our research goal is to explore matchmaking of public contracts to bidders operating on linked open data. In order to pursue this goal we prepare public procurement linked open data and develop software for matchmaking. Our secondary target implied by our research direction is to test the available implementations of the semantic web technologies for handling linked open data and, if these tools are found lacking, we develop auxiliary tools to support data preparation and matchmaking. These secondary goals were initially not formulated upfront, we only specified them explicitly as we progressed the pursuit of our primary goal.</p>
+          <p>Our research goal is to explore matchmaking of public contracts to bidders operating on linked open data. In order to pursue this goal we prepare public procurement linked open data and develop software for matchmaking. Our secondary target implied by our research direction is to test the available implementations of the semantic web technologies for handling linked open data and, if these tools are found lacking, to develop auxiliary tools to support data preparation and matchmaking. These secondary goals were not formulated upfront; we only specified them explicitly as we progressed the pursuit of our primary goal.</p>
           <!-- Scientific methods -->
-          <p>We adopt the methods of the design science <span class="citation" data-cites="Hevner2004">(Hevner et al. <a href="#ref-Hevner2004">2004</a>)</span> in our research. We design artefacts, including the Czech public procurement dataset and the matchmakers, and experiment with them to tell which of their variants perform better. Our task is to explore what kinds of matchmaking of public contracts to bidders does linked open data make feasible.</p>
+          <p>We adopt the methods of the design science <span class="citation" data-cites="Hevner2004">(Hevner et al. <a href="#ref-Hevner2004">2004</a>)</span> in our research. We design artefacts, including the Czech public procurement dataset and the matchmakers, and experiment with them to tell which of their variants perform better. Viewed this way, our task is to explore what kinds of artefacts for matchmaking of public contracts to bidders makes linked open data feasible to build.</p>
           <!-- Evaluation -->
           <p>The key question to evaluate is whether we can develop a matchmaker that can produce results deemed useful by domain experts representing the stakeholders. We evaluate the developed matchmakers via offline experiments on retrospective data. <!-- and via interviews with representatives of contracting authorities. --> In terms of our target metrics, we aim to recommend matches exhibiting both high accuracy and diversity. In order to discover the key factors that improve matchmaking we compare the evaluation results produced by the developed matchmakers in their different configurations.</p>
           <!--
@@ -1622,7 +1622,7 @@
           We chose it because we compare ranks for the whole dataset and this test is suited for paired samples from the same population.
           Moreover, it does not require the compared samples to follow normal distribution, which is the case of the distributions of ranks.
           -->
-          <p>The rest of this chapter features the results obtained by SPARQL-based and RESCAL-based matchmakers in the evaluation. All reported evaluation results are rounded to three decimal places. The best results for each metric in each table are highlighted by using a bold font.</p>
+          <p>The rest of this chapter features the results obtained from SPARQL-based and RESCAL-based matchmakers in the evaluation. All reported evaluation results are rounded to three decimal places. The best results for each metric in each table are highlighted by using a bold font.</p>
           <!--
           ### Out-takes:
           
@@ -1646,7 +1646,7 @@
           </section>
           <section id="results-of-sparql-based-matchmakers" class="level2">
           <h2><span class="header-section-number">4.4</span> Results of SPARQL-based matchmakers</h2>
-          <p>We chose SPARQL-based matchmaking via the <code>pc:mainObject</code> property without weighting as our baseline. The developed matchmakers and configurations were assessed by comparing their evaluation results with the results obtained for the baseline configuration. In this way, we assessed the progress beyond the baseline that various matchmaking factors were able to achieve. We tested several factors involved in the matchmakers. These factors included weighting, query expansion, aggregation functions, and data reduction.</p>
+          <p>We chose SPARQL-based matchmaking via the <code>pc:mainObject</code> property without weighting as our baseline. The developed matchmakers and configurations were assessed by comparing their evaluation results with the results obtained for the baseline configuration. <!-- "hill climbing" --> In this way, we assessed the progress beyond the baseline that various matchmaking factors were able to achieve. We tested several factors involved in the matchmakers. These factors included weighting, query expansion, aggregation functions, and data reduction.</p>
           <section id="blind-matchmakers" class="level3">
           <h3><span class="header-section-number">4.4.1</span> Blind matchmakers</h3>
           <p>As a starting point, we evaluated the blind matchmakers described in the sec. <a href="#sec:blind-matchmakers">3.2.3</a>. The results of their evaluation are summarized in the tbl. <a href="#tbl:blind-matchmakers">2</a>. Since these matchmakers ignore the query contract, they are able to produce matches for any contract, and thus score the maximum PC. They cover the extremes of the diversity spectrum. On the one hand, the random matchmaker can recommend practically any bidder, most of whom come from the long tail. On the other hand, recommending the top winning bidders yields the lowest possible catalog coverage, the intersection of which with the long tail is empty by the definition of this matchmaker. Since 7 % of contracts is awarded to the top 10 most winning bidders, recommending them produces the same HR@10. Recommending the bidders that score the highest page rank is not as successful as simply recommending the top winning bidders, achieving an HR@10 of 0.03.</p>
@@ -2347,7 +2347,7 @@
           -->
           <!-- Assessment of degree of fulfillment of the stated goals -->
           <p>As stated in our goals, we explored the ways of matching of public contracts to bidders when their interactions are described as linked open data. Since the space of possibilities of applying matchmaking in this setting is vast, we managed to explore only a fraction of this space. We used sound heuristics to navigate this space and select the more salient and informative features to explore. <!-- Future work --> Overall, we explored only a few ways of matching public contracts to bidders. Many more ways of relevance engineering for this task are left open to pursue and assess their worth. <!-- Our work suggests that improving the data quality may produce the highest returns. --></p>
-          <p></p>
+          
           </section>
           <section id="references" class="level1 unnumbered">
           <h1>References</h1>
@@ -2839,7 +2839,7 @@
           <p>ZHILTSOV, Nikita and Eugene AGICHTEIN, 2013. Improving entity search over linked data by modeling latent semantics. In: <em>Proceedings of the 22<sup>nd</sup> ACM international conference on information &amp; knowledge management</em> [online]. New York (NY): ACM, p. 1253–1256. ISBN 978-1-4503-2263-8. Available at: doi:<a href="https://doi.org/10.1145/2505515.2507868">10.1145/2505515.2507868</a></p>
           </div>
           </div>
-          <p></p>
+          
           </section>
           <section id="sec:software" class="level1">
           <h1><span class="header-section-number">6</span> Software</h1>
@@ -2937,7 +2937,7 @@
           <section id="vocab-to-graphviz" class="level3">
           <h3><span class="header-section-number">6.2.11</span> vocab-to-graphviz</h3>
           <p>vocab-to-graphviz<a href="#fn122" class="footnoteRef" id="fnref122"><sup>122</sup></a> visualizes RDF vocabularies via Graphviz.<a href="#fn123" class="footnoteRef" id="fnref123"><sup>123</sup></a> It converts an input vocabulary from an RDF file to a description of a class diagram in the DOT language.<a href="#fn124" class="footnoteRef" id="fnref124"><sup>124</sup></a> This description can be subsequently rendered to an image via Graphviz. The generated class diagram captures the relations between the vocabulary’s terms as defined by its schema axioms, such as <code>rdfs:domain</code> or <code>rdfs:range</code>. It thus functions in a way similar to sparql-to-graphviz.</p>
-          <p></p>
+          
           </section>
           </section>
           </section>
@@ -3173,16 +3173,7 @@
           <dd>XSL Transformations
           </dd>
           </dl>
-          <p></p>
-          <p></p>
-          </section>
-          <section id="sec:glossary" class="level1 unnumbered">
-          <h1>Glossary</h1>
-          <dl>
-          <dt>Materialization</dt>
-          <dd><p>Explicit representation of knowledge</p>
-          </dd>
-          </dl>
+          
           </section>
           <section class="footnotes">
           <hr />
@@ -3316,10 +3307,6 @@
         </div>
       </article>
           </main>
-    <script src="https://dokie.li/scripts/simplerdf.js"></script>
-    <script src="https://dokie.li/scripts/medium-editor.min.js"></script>
-    <script src="https://dokie.li/scripts/medium-editor-tables.min.js"></script>
-    <script src="https://dokie.li/scripts/do.js"></script>
     <script type="text/javascript" src="resources/js/script.js"></script>
   </body>
 </html>
