@@ -77,10 +77,20 @@ table caption {
 
 figure img {
   width: 100%;
+  margin-bottom: .5em;
 }
 figure {
+  margin: .5em;
   text-align: center;
   color: #777;
+}
+
+.listing p {
+  color: #777;
+  text-align: center;
+}
+.listing pre {
+  text-align: left;
 }
 
 .anchor {
