@@ -47,8 +47,8 @@
                  src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
           </a>
           Licensed under a <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">Creative Commons Attribution-ShareAlike 3.0 Czech Republic License</a>.
-          <span property="cc:attributionName" content="Jindřich Mynarz" lang="" />
-          <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation" />
+          <span property="cc:attributionName" content="Jindřich Mynarz" lang=""></span>
+          <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation"></span>
         </p>
       </div>
 
@@ -229,6 +229,8 @@
           <h2><span class="header-section-number">1.2</span> Goals and methods</h2>
           <!-- Research goals -->
           <p>Our research goal is to explore matchmaking of public contracts to bidders operating on linked open data. In order to pursue this goal we prepare public procurement linked open data and develop software for matchmaking. Our secondary target implied by our research direction is to test the available implementations of the semantic web technologies for handling linked open data and, if these tools are found lacking, to develop auxiliary tools to support data preparation and matchmaking. These secondary goals were not formulated upfront; we only specified them explicitly as we progressed the pursuit of our primary goal.</p>
+          <!-- Prerequisites -->
+          <p>In order to be able to deliver on the stated goals, their prerequisites must be fulfilled. Applied research depends on the availability of its building blocks. Our research is built on open data and open-source software. We need public procurement data to be available as open data, as described in the sec. <a href="#sec:open-data">1.4.1</a>. The data must be structured in a way from which a semantic description of the data can be created, implying that the data is machine-readable and consistent. Consistency of the data arises from standardization, including the adherence to fixed schemas and code lists. We conceive matchmaking as a high-level task based on many layers of technology. Both our data preparation tools and matchmakers build on open-source components. In the pursuit of our goals we reused and orchestrated a large set of existing open-source software.</p>
           <!-- Scientific methods -->
           <p>We adopt the methods of the design science <span class="citation" data-cites="Hevner2004">(Hevner et al. <a href="#ref-Hevner2004">2004</a>)</span> in our research. We design artefacts, including the Czech public procurement dataset and the matchmakers, and experiment with them to tell which of their variants perform better. Viewed this way, our task is to explore what kinds of artefacts for matchmaking of public contracts to bidders makes linked open data feasible to build.</p>
           <!-- Evaluation -->
@@ -239,8 +241,8 @@
           -->
           <!-- Contributions -->
           <p>The principal contributions of our work are the implemented matchmaking methods, the reusable datasets for testing these methods, and generic software for processing linked open data. By using experimental evaluation of these methods we derive general findings about the factors that have the largest impact on the quality of matchmaking of bidders to public contracts.</p>
-          <!-- General note at the end of the introduction -->
-          <p>The remaining parts of this chapter provide the preliminaries that the subsequent chapters build on. We explain the fundamentals of linked open data, remark on the characteristics of the public procurement domain, define the matchmaking task, outline the generic approaches we adopted for this task, and finally, we survey the related work.</p>
+          <!-- Limitations -->
+          <p>We need to acknowledge the limitations of our contributions. Our work covers only a narrow fraction of matchmaking that is feasible. The two methods we applied to matchmaking are evaluated on a single dataset. Narrowing down the data we experimented with to one dataset implies a limited generalization ability of our findings. Consequently, we cannot guarantee that the findings would translate to other public procurement datasets. We used only quantitative evaluation with retrospective data, which gives us a limited insight into the evaluated matchmaking methods. A richer understanding of the methods could have been obtained via qualitative evaluation or online evaluation involving users of the matchmakers.</p>
           </section>
           <section id="outline" class="level2">
           <h2><span class="header-section-number">1.3</span> Outline</h2>
@@ -2201,42 +2203,42 @@
           <tr class="odd">
           <td>0</td>
           <td>0</td>
-          <td style="text-align: right;">0.05</td>
-          <td style="text-align: right;">0.02</td>
-          <td style="text-align: right;"><strong>0.02</strong></td>
-          <td style="text-align: right;"><strong>0.49</strong></td>
+          <td style="text-align: right;">0.049</td>
+          <td style="text-align: right;">0.024</td>
+          <td style="text-align: right;"><strong>0.016</strong></td>
+          <td style="text-align: right;"><strong>0.493</strong></td>
           </tr>
           <tr class="even">
+          <td>0.01</td>
+          <td>0.01</td>
+          <td style="text-align: right;">0.066</td>
+          <td style="text-align: right;">0.028</td>
+          <td style="text-align: right;">0.01</td>
+          <td style="text-align: right;">0.272</td>
+          </tr>
+          <tr class="odd">
           <td>10</td>
           <td>0.2</td>
-          <td style="text-align: right;">0.08</td>
-          <td style="text-align: right;">0.03</td>
-          <td style="text-align: right;">0.01</td>
-          <td style="text-align: right;">0.16</td>
-          </tr>
-          <tr class="odd">
-          <td>0.01</td>
-          <td>0.01</td>
-          <td style="text-align: right;">0.07</td>
-          <td style="text-align: right;">0.03</td>
-          <td style="text-align: right;">0.01</td>
-          <td style="text-align: right;">0.27</td>
+          <td style="text-align: right;">0.077</td>
+          <td style="text-align: right;">0.032</td>
+          <td style="text-align: right;">0.006</td>
+          <td style="text-align: right;">0.163</td>
           </tr>
           <tr class="even">
           <td>10</td>
           <td>10</td>
-          <td style="text-align: right;"><strong>0.08</strong></td>
-          <td style="text-align: right;"><strong>0.03</strong></td>
-          <td style="text-align: right;">0.01</td>
-          <td style="text-align: right;">0.05</td>
+          <td style="text-align: right;"><strong>0.081</strong></td>
+          <td style="text-align: right;"><strong>0.032</strong></td>
+          <td style="text-align: right;">0.006</td>
+          <td style="text-align: right;">0.049</td>
           </tr>
           <tr class="odd">
           <td>20</td>
           <td>20</td>
-          <td style="text-align: right;">0.08</td>
-          <td style="text-align: right;">0.03</td>
-          <td style="text-align: right;">0.01</td>
-          <td style="text-align: right;">0.04</td>
+          <td style="text-align: right;">0.081</td>
+          <td style="text-align: right;">0.032</td>
+          <td style="text-align: right;">0.006</td>
+          <td style="text-align: right;">0.042</td>
           </tr>
           </tbody>
           </table>
@@ -2257,17 +2259,17 @@
           <tbody>
           <tr class="odd">
           <td>Random</td>
-          <td style="text-align: right;">0.00</td>
-          <td style="text-align: right;">0.00</td>
-          <td style="text-align: right;">0.00</td>
-          <td style="text-align: right;"><strong>1.00</strong></td>
+          <td style="text-align: right;">0.002</td>
+          <td style="text-align: right;">0.001</td>
+          <td style="text-align: right;">0.003</td>
+          <td style="text-align: right;"><strong>1</strong></td>
           </tr>
           <tr class="even">
           <td>Eigenvalues</td>
-          <td style="text-align: right;"><strong>0.08</strong></td>
-          <td style="text-align: right;"><strong>0.03</strong></td>
-          <td style="text-align: right;"><strong>0.01</strong></td>
-          <td style="text-align: right;">0.00</td>
+          <td style="text-align: right;"><strong>0.081</strong></td>
+          <td style="text-align: right;"><strong>0.032</strong></td>
+          <td style="text-align: right;"><strong>0.006</strong></td>
+          <td style="text-align: right;">0.049</td>
           </tr>
           </tbody>
           </table>
