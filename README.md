@@ -2,7 +2,7 @@
 
 My dissertation in progress.
 
-You can read in at <http://mynarz.net/dissertation>.
+You can read it at <http://mynarz.net/dissertation>.
 
 ## Acknowledgements
 
