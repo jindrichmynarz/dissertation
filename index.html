@@ -2,6 +2,8 @@
 <html  lang="en"
   prefix="cc:      http://creativecommons.org/ns#
           dcterms: http://purl.org/dc/terms/
+          ldp:     http://www.w3.org/ns/ldp#
+          oa:      http://www.w3.org/ns/oa#
           schema:  http://schema.org/
           xsd:     http://www.w3.org/2001/XMLSchema#">
   <head>
@@ -14,6 +16,8 @@
                 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:700" type="text/css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="https://dokie.li/media/css/do.css" type="text/css">
         <link rel="stylesheet" href="resources/css/bootstrap.css" type="text/css">
               <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
             <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -48,17 +52,25 @@
 
                 <h3 class="date" property="dcterms:created" datatype="xsd:gYear">2017</h3>
         
-        <p>Supervisor: <a href="http://nb.vse.cz/~svatek/welcom_e.htm">doc. Ing. Vojtěch Svátek, Dr.</a></p>
-        <p>Submit comments <a href="https://github.com/jindrichmynarz/dissertation/issues">here</a>.</p>
-        <p>
-          <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">
-            <img alt="Creative Commons License"
-                 src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
-          </a>
-          Licensed under a <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">Creative Commons Attribution-ShareAlike 3.0 Czech Republic License</a>.
-          <span property="cc:attributionName" content="Jindřich Mynarz" lang=""></span>
-          <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation"></span>
-        </p>
+        <dl>
+          <dt>Supervisor</dt>
+          <dd><a href="http://nb.vse.cz/~svatek/welcom_e.htm">doc. Ing. Vojtěch Svátek, Dr.</a></dd>
+          <dt>Annotation service</dt>
+          <dd><a href="https://linkedresearch.org/annotation/mynarz.net/dissertation/" rel="oa:annotationService">https://linkedresearch.org/annotation/mynarz.net/dissertation/</a></dd>
+          <dt>Notifications inbox</dt>
+          <dd><a href="https://linkedresearch.org/inbox/mynarz.net/dissertation/"
+                 rel="ldp:inbox">https://linkedresearch.org/inbox/mynarz.net/dissertation/</a></dd>
+          <dt>Licence</dt>
+          <dd>
+            <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">
+              <img alt="Creative Commons License"
+                   src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+              Creative Commons Attribution-ShareAlike 3.0 Czech Republic License
+            </a>
+            <span property="cc:attributionName" content="Jindřich Mynarz" lang=""></span>
+            <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation"></span>
+          </dd>
+        </dl>
       </div>
 
             <h2>Table of contents</h2>
@@ -3317,6 +3329,10 @@
         </div>
       </article>
           </main>
-    <script type="text/javascript" src="resources/js/script.js"></script>
+    <script src="https://dokie.li/scripts/simplerdf.js"></script>
+    <script src="https://dokie.li/scripts/medium-editor.min.js"></script>
+    <script src="https://dokie.li/scripts/medium-editor-tables.min.js"></script>
+    <script src="https://dokie.li/scripts/do.js"></script>
+    <script src="resources/js/script.js"></script>
   </body>
 </html>
