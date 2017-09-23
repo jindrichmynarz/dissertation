@@ -29,6 +29,23 @@ html:
 		$(COMMON_PARAMS) \
 		parts/*.md
 
+dokieli:
+	pandoc \
+		-o index.html \
+		-t html5 \
+		--section-divs \
+		--template resources/templates/dokieli.html \
+		--css http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css \
+		--css http://fonts.googleapis.com/css?family=Source+Sans+Pro:700 \
+		--css http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic \
+		--css https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css \
+		--css https://dokie.li/media/css/do.css \
+		--css resources/css/bootstrap.css \
+		--mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full \
+		-V lang=en \
+		$(COMMON_PARAMS) \
+		parts/*.md
+
 pdf:
 	pandoc --latex-engine=xelatex \
 		--include-before-body parts/title_page.tex \
