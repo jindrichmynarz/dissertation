@@ -2,6 +2,8 @@
 <html $if(lang)$ lang="$lang$"$endif$
   prefix="cc:      http://creativecommons.org/ns#
           dcterms: http://purl.org/dc/terms/
+          ldp:     http://www.w3.org/ns/ldp#
+          oa:      http://www.w3.org/ns/oa#
           schema:  http://schema.org/
           xsd:     http://www.w3.org/2001/XMLSchema#">
   <head>
@@ -34,6 +36,15 @@
     $for(header-includes)$
         $header-includes$
     $endfor$
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39372032-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-39372032-1');
+    </script>
   </head>
   <body about="" typeof="schema:ScholarlyArticle">
     <main class="container">
@@ -46,8 +57,8 @@
 
         <div id="authors">
           $for(author)$
-          <dd class="author" rel="dcterms:creator">
-            <span about="http://mynarz.net/#jindrich" property="schema:name">$author$</span>
+          <dd class="author">
+            <a rel="dcterms:creator" href="http://mynarz.net/#jindrich">$author$</a>
           </dd>
           $endfor$
         </div>
@@ -56,7 +67,7 @@
 
         <p rel="dcterms:creator">
           <a about="http://mynarz.net/#jindrich" href="mailto:jindrich.mynarz@vse.cz">
-            <tt property="schema:email">jindrich.mynarz@vse.cz</tt>
+            <tt lang="" property="schema:email">jindrich.mynarz@vse.cz</tt>
           </a>
         </p>
 
@@ -64,15 +75,25 @@
         <h3 class="date" property="dcterms:created" datatype="xsd:gYear">$date$</h3>
         $endif$
 
-        <p>
-          <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">
-            <img alt="Creative Commons License"
-                 src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
-          </a>
-          Licensed under a <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">Creative Commons Attribution-ShareAlike 3.0 Czech Republic License</a>.
-          <span property="cc:attributionName" content="Jindřich Mynarz"/>
-          <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation"/>
-        </p>
+        <dl>
+          <dt>Supervisor</dt>
+          <dd><a href="http://nb.vse.cz/~svatek/welcom_e.htm">doc. Ing. Vojtěch Svátek, Dr.</a></dd>
+          <dt>Annotation service</dt>
+          <dd><a href="https://linkedresearch.org/annotation/mynarz.net/dissertation/" rel="oa:annotationService">https://linkedresearch.org/annotation/mynarz.net/dissertation/</a></dd>
+          <dt>Notifications inbox</dt>
+          <dd><a href="https://linkedresearch.org/inbox/mynarz.net/dissertation/"
+                 rel="ldp:inbox">https://linkedresearch.org/inbox/mynarz.net/dissertation/</a></dd>
+          <dt>Licence</dt>
+          <dd>
+            <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">
+              <img alt="Creative Commons License"
+                   src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+              Creative Commons Attribution-ShareAlike 3.0 Czech Republic License
+            </a>
+            <span property="cc:attributionName" content="Jindřich Mynarz" lang=""></span>
+            <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation"></span>
+          </dd>
+        </dl>
       </div>
 
       $if(toc)$
@@ -94,6 +115,6 @@
     <script src="https://dokie.li/scripts/medium-editor.min.js"></script>
     <script src="https://dokie.li/scripts/medium-editor-tables.min.js"></script>
     <script src="https://dokie.li/scripts/do.js"></script>
-    <script type="text/javascript" src="resources/js/script.js"></script>
+    <script src="resources/js/script.js"></script>
   </body>
 </html>
