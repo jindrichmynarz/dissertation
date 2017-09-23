@@ -109,3 +109,10 @@ h6:hover .anchor {
 .anchor:hover {
   text-decoration: none;
 }
+
+dt {
+  margin-top: .5em;
+}
+dd {
+  margin-bottom: .5em;
+}
