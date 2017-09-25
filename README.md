@@ -6,7 +6,7 @@ You can read it at <http://mynarz.net/dissertation>.
 
 ## Acknowledgements
 
-* Compiled by [Pandoc](http://pandoc.org)
+* Compiled by [Pandoc](http://pandoc.org) using [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref) and [pandoc-citeproc](https://github.com/jgm/pandoc-citeproc).
 * Parts of HTML and LaTeX templates reused from the [Template for writing a PhD thesis in Markdown](https://github.com/tompollard/phd_thesis_markdown) by [Tom Pollard](https://github.com/tompollard)
 
 ## License
