@@ -100,7 +100,7 @@ pdf:
 	pandoc --latex-engine=xelatex \
 		--include-before-body parts/title_page.tex \
 		--include-before-body parts/affidavit.tex \
-		-o text.pdf \
+		-o dissertation.pdf \
 		--variable citecolor=orange \
 		--variable urlcolor=orange \
 		--variable linkcolor=orange \
@@ -114,7 +114,7 @@ pdf:
 excerpt:
 	pandoc --latex-engine=xelatex \
 		--include-before-body parts/title_page.tex \
-		-o excerpt.pdf \
+		-o dissertation.pdf \
 		--variable citecolor=orange \
 		--variable urlcolor=orange \
 		--variable linkcolor=orange \
@@ -126,4 +126,4 @@ excerpt:
 		$(PARTS)
 
 clean:
-	rm -f index.html text.pdf excerpt.pdf
+	rm -f index.html dissertation.pdf
