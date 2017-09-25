@@ -1,5 +1,55 @@
 .PHONY: clean
 
+define PARTS
+parts/introduction.md \
+parts/linked_open_data.md \
+parts/open_data.md \
+parts/linked_data.md \
+parts/public_procurement_domain.md \
+parts/matchmaking.md \
+parts/case_based_reasoning.md \
+parts/statistical_relational_learning.md \
+parts/related_work.md \
+parts/data_preparation.md \
+parts/modelling.md \
+parts/public_contracts_ontology.md \
+parts/concrete_data_model.md \
+parts/extraction.md \
+parts/transformation.md \
+parts/linking.md \
+parts/geocoding.md \
+parts/linked_datasets.md \
+parts/cpv.md \
+parts/ares.md \
+parts/czech_addresses.md \
+parts/zindex.md \
+parts/fusion.md \
+parts/loading.md \
+parts/loading_sparql.md \
+parts/loading_rescal.md \
+parts/data_summary.md \
+parts/methods.md \
+parts/ground_truth.md \
+parts/sparql.md \
+parts/tensor_factorization.md \
+parts/evaluation.md \
+parts/offline_evaluation.md \
+parts/results_sparql.md \
+parts/results_rescal.md \
+parts/results_comparison.md \
+parts/conclusions.md \
+parts/references.md \
+parts/software.md \
+parts/abbreviations.md
+endef
+
+define STAGING_PARTS
+staging/abstract_english.md \
+staging/abstract_czech.md \
+staging/acknowledgements.md \
+staging/preface.md
+endef
+
 define COMMON_PARAMS
 -f markdown+implicit_figures+backtick_code_blocks \
 --normalize \
@@ -27,7 +77,7 @@ html:
 		--mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full \
 		-V lang=en \
 		$(COMMON_PARAMS) \
-		parts/*.md
+		$(PARTS)
 
 dokieli:
 	pandoc \
@@ -44,7 +94,7 @@ dokieli:
 		--mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full \
 		-V lang=en \
 		$(COMMON_PARAMS) \
-		parts/*.md
+		$(PARTS)
 
 pdf:
 	pandoc --latex-engine=xelatex \
@@ -59,7 +109,7 @@ pdf:
 		-V papersize=a4paper \
 		-V documentclass:report \
 		$(COMMON_PARAMS) \
-		staging/*.md parts/*.md
+		$(STAGING_PARTS) $(PARTS)
 
 excerpt:
 	pandoc --latex-engine=xelatex \
@@ -73,7 +123,7 @@ excerpt:
 		-V papersize=a4paper \
 		-V documentclass:report \
 		$(COMMON_PARAMS) \
-		parts/*.md
+		$(PARTS)
 
 clean:
 	rm -f index.html text.pdf excerpt.pdf
