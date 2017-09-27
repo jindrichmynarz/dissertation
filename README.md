@@ -1,8 +1,12 @@
 # Dissertation
 
-My dissertation in progress.
+My dissertation in progress&ldots;
 
 You can read it at <http://mynarz.net/dissertation>.
+
+## Use
+
+The dissertation can be compiled via [make](https://www.gnu.org/software/make/manual/make.html). Use `make html` to compile the HTML version or `make pdf` to compile the PDF version.
 
 ## Acknowledgements
 
