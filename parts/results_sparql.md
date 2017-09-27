@@ -114,6 +114,7 @@ Following too many hops to related concepts can introduce noise [@DiNoia2012a], 
 The results of the experiments with query expansion are gathered in the [@tbl:query-expansion].
 Expansion to broader concepts was able to improve on the accuracy metrics slightly, although the difference was too small to be meaningful.
 Overall, we found that introducing query expansion led only to minuscule changes in the performance of the baseline matchmaker.
+For instance, expansion to broader concepts weighted by IDF produced results that differed only in higher decimal precision for the different numbers of hops followed.
 
 Broader Narrower Weight     HR@10    MRR@10     CC@10        PC    LTP@10
 ------- -------- ------ --------- --------- --------- --------- ---------
@@ -122,19 +123,19 @@ Broader Narrower Weight     HR@10    MRR@10     CC@10        PC    LTP@10
       1        0    0.1     0.257     0.127     0.563      0.99     0.682
       2        0    0.1     0.258     0.126     0.545     0.994     0.672
       3        0    0.1     0.257     0.125     0.517 **0.996**      0.65
-      1        0    IDF     0.249     0.125     0.565     0.978     0.684
-      2        0    IDF     0.249     0.125     0.565     0.978     0.684
-      3        0    IDF     0.249      0.12      0.57      0.98  **0.68**
+      1        0    IDF     0.249     0.125     0.565     0.978 **0.684**
+      2        0    IDF     0.249     0.125     0.565     0.978 **0.684**
+      3        0    IDF     0.249     0.125     0.565     0.978 **0.684**
       0        1      1     0.248     0.123     0.527     0.982     0.677
       0        1    0.5     0.252     0.125     0.549     0.982     0.677
       0        1    0.1     0.253     0.126 **0.569**     0.982     0.677
       0        2    0.1     0.253     0.126     0.565     0.979     0.679
       0        3    0.1     0.254     0.126     0.562     0.982     0.677
-      0        1    IDF     0.253     0.126     0.572     0.982     0.684
+      0        1    IDF     0.253     0.126     0.572     0.982 **0.684**
       0        2    IDF     0.254     0.126     0.572     0.982      0.68
       0        3    IDF     0.254     0.126     0.569     0.982     0.682
       1        1    0.1 **0.259** **0.128**     0.563     0.991     0.678
-      1        1    IDF     0.249     0.125     0.565     0.978     0.684
+      1        1    IDF     0.249     0.125     0.565     0.978 **0.684**
 
 Table: Evaluation of matchmakers using query expansion {#tbl:query-expansion}
 
