@@ -35,6 +35,8 @@
       <div>
         <h1 class="title" property="dcterms:title">Matchmaking of bidders and public contracts using linked open data</h1>
 
+        <h2>Working draft</h2>
+
         
         <div id="authors">
                     <p class="author">
@@ -1899,7 +1901,7 @@
           </section>
           <section id="query-expansion" class="level3">
           <h3><span class="header-section-number">4.4.5</span> Query expansion</h3>
-          <p>Apart from using combinations of properties, we can also extend the baseline matchmaker via query expansion, as documented in the sec. <a href="#sec:query-expansion">3.2.2.2</a>. We evaluated the expansion to related CPV concepts connected via hierarchical relations, both in the direction to broader concepts, to narrower concepts, or in both directions. The query expansion followed a given maximum number of hops in these directions. Following too many hops to related concepts can introduce noise <span class="citation" data-cites="DiNoia2012a">(Di Noia et al. <a href="#ref-DiNoia2012a">2012</a><a href="#ref-DiNoia2012a">b</a>)</span>, so we weighted the concepts inferred by query expansion either by a fixed inhibition or by a weight derived from their IDF. The results of the experiments with query expansion are gathered in the tbl. <a href="#tbl:query-expansion">6</a>. Expansion to broader concepts was able to improve on the accuracy metrics slightly, although the difference was too small to be meaningful. Overall, we found that introducing query expansion led only to minuscule changes in the performance of the baseline matchmaker.</p>
+          <p>Apart from using combinations of properties, we can also extend the baseline matchmaker via query expansion, as documented in the sec. <a href="#sec:query-expansion">3.2.2.2</a>. We evaluated the expansion to related CPV concepts connected via hierarchical relations, both in the direction to broader concepts, to narrower concepts, or in both directions. The query expansion followed a given maximum number of hops in these directions. Following too many hops to related concepts can introduce noise <span class="citation" data-cites="DiNoia2012a">(Di Noia et al. <a href="#ref-DiNoia2012a">2012</a><a href="#ref-DiNoia2012a">b</a>)</span>, so we weighted the concepts inferred by query expansion either by a fixed inhibition or by a weight derived from their IDF. The results of the experiments with query expansion are gathered in the tbl. <a href="#tbl:query-expansion">6</a>. Expansion to broader concepts was able to improve on the accuracy metrics slightly, although the difference was too small to be meaningful. Overall, we found that introducing query expansion led only to minuscule changes in the performance of the baseline matchmaker. For instance, expansion to broader concepts weighted by IDF produced results that differed only in higher decimal precision for the different numbers of hops followed.</p>
           <div id="tbl:query-expansion">
           <table>
           <caption>Table 6: Evaluation of matchmakers using query expansion</caption>
@@ -1974,7 +1976,7 @@
           <td style="text-align: right;">0.125</td>
           <td style="text-align: right;">0.565</td>
           <td style="text-align: right;">0.978</td>
-          <td style="text-align: right;">0.684</td>
+          <td style="text-align: right;"><strong>0.684</strong></td>
           </tr>
           <tr class="odd">
           <td>2</td>
@@ -1984,17 +1986,17 @@
           <td style="text-align: right;">0.125</td>
           <td style="text-align: right;">0.565</td>
           <td style="text-align: right;">0.978</td>
-          <td style="text-align: right;">0.684</td>
+          <td style="text-align: right;"><strong>0.684</strong></td>
           </tr>
           <tr class="even">
           <td>3</td>
           <td>0</td>
           <td>IDF</td>
           <td style="text-align: right;">0.249</td>
-          <td style="text-align: right;">0.12</td>
-          <td style="text-align: right;">0.57</td>
-          <td style="text-align: right;">0.98</td>
-          <td style="text-align: right;"><strong>0.68</strong></td>
+          <td style="text-align: right;">0.125</td>
+          <td style="text-align: right;">0.565</td>
+          <td style="text-align: right;">0.978</td>
+          <td style="text-align: right;"><strong>0.684</strong></td>
           </tr>
           <tr class="odd">
           <td>0</td>
@@ -2054,7 +2056,7 @@
           <td style="text-align: right;">0.126</td>
           <td style="text-align: right;">0.572</td>
           <td style="text-align: right;">0.982</td>
-          <td style="text-align: right;">0.684</td>
+          <td style="text-align: right;"><strong>0.684</strong></td>
           </tr>
           <tr class="odd">
           <td>0</td>
@@ -2094,7 +2096,7 @@
           <td style="text-align: right;">0.125</td>
           <td style="text-align: right;">0.565</td>
           <td style="text-align: right;">0.978</td>
-          <td style="text-align: right;">0.684</td>
+          <td style="text-align: right;"><strong>0.684</strong></td>
           </tr>
           </tbody>
           </table>
@@ -2364,11 +2366,17 @@
           <!-- Delta from the state of the art -->
           <p>When we review our progress beyond the state of the art, introduced in the sec. <a href="#sec:related-work">1.7</a>, our key contribution is the adaption of existing generic technologies for a concrete use case concerning matchmaking in the Czech public procurement. Using SPARQL, we developed a novel matchmaking method inspired by case-based reasoning. As a side effect of our investigation in matchmaking methods, we advanced the available means of processing RDF data by developing a set of reusable tools that address some of the recurrent tasks involved in handling RDF data. Ultimately, our work produced a greater value in the developed reusable artefacts for data preparation and matchmaking than as a practical use case in public procurement.</p>
           <p>The presented work was built on open source software as well as data prepared by others. In particular, most of the transformations of the ARES dataset were done by Jakub Klímek. The extracted Business Register data was provided by Ondřej Kokeš. Both these contributions are acknowledged directly in the sec. <a href="#sec:ares">2.4.6.2</a>. zIndex fairness scores were supplied to us by Datlab s.r.o. The software we reused in our work is listed in the appendix <a href="#sec:software">6</a>. The design of the Public Contracts Ontology was a collaborative effort as indicated in the references in the sec. <a href="#sec:pco">2.1.1</a>.</p>
-          <!-- Assessment of the applicability of the work
+          <!-- Assessment of the applicability of the work -->
+          <!--
+          We made both the matchmakers and the data processing tools available as open source software. 
+          The software is thus open to reuse and adaptation.
+          However, while the data processing tools were designed to be reusable, the matchmakers are tied with our evaluation protocol, so they would need to be reworked for reuse.
           
-          A practical service for Datlab?
+          A practical service for Datlab? [zInfo.cz](https://www.zinfo.cz)
           Reusable tools for data processing
           What needs to be done to reuse the matchmakers?
+          - Implementations of the matchmakers are tied to the evaluation protocol.
+          - Adaptation would be needed.
           Practical use?
           -->
           <!-- Assessment of degree of fulfillment of the stated goals -->
