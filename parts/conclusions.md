@@ -38,20 +38,21 @@ As a side effect of our investigation in matchmaking methods, we advanced the av
 Ultimately, our work produced a greater value in the developed reusable artefacts for data preparation and matchmaking than as a practical use case in public procurement.
 
 The presented work was built on open source software as well as data prepared by others.
-In particular, most of the transformations of the ARES dataset were done by Jakub Klímek. 
+In particular, most of the transformations of the ARES dataset were done by Jakub Klímek.
 The extracted Business Register data was provided by Ondřej Kokeš.
 Both these contributions are acknowledged directly in the [@sec:ares].
 zIndex fairness scores were supplied to us by Datlab s.r.o.
 The software we reused in our work is listed in the [appendix @sec:software].
 The design of the Public Contracts Ontology was a collaborative effort as indicated in the references in the [@sec:pco].
 
-<!-- Assessment of the applicability of the work
+<!-- Assessment of the applicability of the work -->
 
-A practical service for Datlab?
-Reusable tools for data processing
-What needs to be done to reuse the matchmakers?
-Practical use?
--->
+The practical applicability of our work stems from the software we developed.
+We made both the matchmakers and the data processing tools available as open source software.
+The software is thus open to reuse and adaptation.
+In this way, we contributed back to the open source ecosystem from which we drawn tools to build on.
+However, while the data processing tools were designed to be reusable, the matchmakers are tied with our evaluation protocol, so they would need to be reworked for reuse.
+If adapted, matchmakers can be integrated with practical applications for managing public contracts, such as with our prototype described in @Mynarz2014b, or with [zInfo.cz](https://www.zinfo.cz), a Czech platform for public contracts maintained by Datlab s.r.o.
 
 <!-- Assessment of degree of fulfillment of the stated goals -->
 

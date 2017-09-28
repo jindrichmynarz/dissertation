@@ -49,6 +49,8 @@
       <div>
         <h1 class="title" property="dcterms:title">$title$</h1>
 
+        <h2>Working draft</h2>
+
         $if(subtitle)$
         <h2 class="subtitle">$subtitle$</h2>
         $endif$
@@ -73,17 +75,24 @@
         <h3 class="date" property="dcterms:created" datatype="xsd:gYear">$date$</h3>
         $endif$
 
-        <p>Supervisor: <a href="http://nb.vse.cz/~svatek/welcom_e.htm">doc. Ing. Vojtěch Svátek, Dr.</a></p>
-        <p>Submit comments <a href="https://github.com/jindrichmynarz/dissertation/issues">here</a>.</p>
-        <p>
-          <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">
-            <img alt="Creative Commons License"
-                 src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
-          </a>
-          Licensed under a <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">Creative Commons Attribution-ShareAlike 3.0 Czech Republic License</a>.
-          <span property="cc:attributionName" content="Jindřich Mynarz" lang=""></span>
-          <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation"></span>
-        </p>
+        <dl>
+          <dt>Supervisor</dt>
+          <dd><a href="http://nb.vse.cz/~svatek/welcom_e.htm">doc. Ing. Vojtěch Svátek, Dr.</a></dd>
+          <dt>PDF version</dt>
+          <dd><a href="dissertation.pdf">dissertation.pdf</a></dd>
+          <dt>GitHub repository</dt>
+          <dd><a href="https://github.com/jindrichmynarz/dissertation">https://github.com/jindrichmynarz/dissertation</a></dd>
+          <dt>Licence</dt>
+          <dd>
+            <a rel="dcterms:license" href="https://creativecommons.org/licenses/by-sa/3.0/cz">
+              <img alt="Creative Commons License"
+                   src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+              Creative Commons Attribution-ShareAlike 3.0 Czech Republic License
+            </a>
+            <span property="cc:attributionName" content="Jindřich Mynarz" lang=""></span>
+            <span rel="cc:attributionURL" resource="http://mynarz.net/dissertation"></span>
+          </dd>
+        </dl>
       </div>
 
       $if(toc)$

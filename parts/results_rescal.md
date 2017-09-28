@@ -58,10 +58,22 @@ Table: Evaluation of initialization methods {#tbl:initialization-methods}
 <!-- Individual features -->
 
 We evaluated the predictive power of descriptive features that can be obtained from our dataset.
+While most features correspond to RDF properties, some are derived from property paths, such as `pc:location/schema:address`.
 We started by assessing the results of the individual features.
 We combined each feature with the ground truth comprising contract awards and observed how well it can help predicting the awarded bidders.
+We evaluated the HR@10 of selected features at ranks 50 and 500, as shown in the [@fig:properties-per-rank]. 
 
-<!-- Link the improvement gained by increasing rank to higher selectivity of the evaluated properties? -->
+![HR@10 per rank for individual properties](resources/img/evaluation/properties_per_rank.png){#fig:properties-per-rank}
+
+Out of the features `pc:mainObject` obtained the best results.
+Higher rank improves the results of most features, such as `pc:mainObject`, `pc:contractingAuthority`, or `isvz:serviceCategory`.
+However, increasing rank has the inverse effect on other features, including `pc:procedureType`, `pc:actualPrice`, or `isvz:mainCriterion`, for which HR@10 worsens when higher rank is used.
+We observed that features, for which higher rank improves evaluation results, have higher cardinality, while the converse is usually true for features with low cardinality.
+Here, cardinality is the number of distinct values a feature has in a dataset.
+For instance, cardinalities of the mentioned features, for which results improve with the increased rank, are 4588, 16982, and 43; whereas cardinalities of the features that exhibit the inverse are 10, 15, and 4.
+These observations suggest that higher rank can rearch better resolution if provided with a feature having higher cardinality.
+Conversely, RESCAL cannot leverage a higher rank if given a feature with low cardinality, in which case its latent features capture noise instead of informative distinctions.
+Nevertheless, high cardinality does not imply good results, such as in case of `pc:weightedCriterion` that has 27793 distinct values in our dataset.
 
 <!-- `pc:mainObject` + additional features -->
 

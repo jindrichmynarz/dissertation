@@ -4,6 +4,10 @@ My dissertation in progress.
 
 You can read it at <http://mynarz.net/dissertation>.
 
+## Use
+
+The dissertation can be compiled via [make](https://www.gnu.org/software/make/manual/make.html). Use `make html` to compile the HTML version or `make pdf` to compile the PDF version.
+
 ## Acknowledgements
 
 * Compiled by [Pandoc](http://pandoc.org) using [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref) and [pandoc-citeproc](https://github.com/jgm/pandoc-citeproc).
