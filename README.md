@@ -1,6 +1,6 @@
 # Dissertation
 
-My dissertation in progress&ldots;
+My dissertation in progress.
 
 You can read it at <http://mynarz.net/dissertation>.
 
