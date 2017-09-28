@@ -41,7 +41,7 @@ The selected unprocessed bindings from the sub-query are split into subsets by s
 The outer update operation then works on this subset and transforms it.
 
 We developed *sparql-unlimited*^[<https://github.com/jindrichmynarz/sparql-unlimited>] that allows to run SPARQL update operations following the described structure using Virtuoso.
-This tool executes transformations rendered from Mustache^[<https://mustache.github.io>] templates that feature placeholders for `LIMIT`, and optionally `OFFSET`.
+This tool executes transformations rendered from Mustache[^mustache] templates that feature placeholders for `LIMIT`, and optionally `OFFSET`.
 Limit determines the size of a subset to be transformed in one update operation.
 In this way, the processed subset's size can be adjusted based on the complexity of the transformation.
 Updates are executed repeatedly, the offset being incremented by the limit in each iteration, until their response reports zero modifications.
@@ -120,3 +120,5 @@ Findings of data analyses:
 
 Mention linking EU projects?
 -->
+
+[^mustache]: <https://mustache.github.io>

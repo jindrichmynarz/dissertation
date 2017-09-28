@@ -47,6 +47,7 @@ The design of the Public Contracts Ontology was a collaborative effort as indica
 
 <!-- Assessment of the applicability of the work -->
 
+The practical applicability of our work stems from the software we developed.
 We made both the matchmakers and the data processing tools available as open source software.
 The software is thus open to reuse and adaptation.
 In this way, we contributed back to the open source ecosystem from which we drawn tools to build on.
