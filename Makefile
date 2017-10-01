@@ -40,6 +40,7 @@ parts/results_comparison.md \
 parts/conclusions.md \
 parts/references.md \
 parts/software.md \
+parts/publications.md \
 parts/abbreviations.md
 endef
 
