@@ -85,7 +85,7 @@ For example, we used it to compare syntactically invalid RNs via string distance
 We used Silk Workbench, a graphical user interface for Silk, for iterative development of the linkage rules.
 Silk Workbench displays the results of linking in a way the interlinked entities can be compared manually.
 This enables to examine a sample of links for false positives and negatives and adjust the linkage rules accordingly, tuning weights and thresholds to avoid the undesired results.
-An example linkage rule in Silk Workbench is shown in the [@fig:silk].
+An example linkage rule in Silk Workbench is shown in [Fig. @fig:silk].
 Elasticsearch^[<https://www.elastic.co/products/elasticsearch>] was employed for matching postal addresses to reference addresses from the Czech addresses dataset.
 
 ![Example linkage rule in Silk Workbench](resources/img/silk_workbench_linkage_rule.png){#fig:silk}

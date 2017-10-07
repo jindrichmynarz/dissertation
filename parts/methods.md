@@ -10,7 +10,7 @@ We first review what these methods have in common and then discuss their differe
 Both methods learn from the same ground truth and have to cope with its limitations and biases, described in the [@sec:ground-truth], such as having only positive training examples.
 In this ground truth, public contracts represent explicit demands and contract awards model past behaviour of bidders offering products or services.
 Both methods learn only from their input data, not from user feedback.
-In order to incorporate user feedback, it would need to materialized as part of the input data.
+In order to incorporate user feedback, it would need to be materialized as part of the input data.
 This approach is known as one-shot recommendation, and is typical for case-based recommenders in particular [@Smyth2007].
 We employed manual feature selection, corresponding to schema-aware matchmaking.
 Portability of the developed matchmakers is granted by the common data model underlain by the Public Contracts Ontology, which we covered in the [@sec:pco].

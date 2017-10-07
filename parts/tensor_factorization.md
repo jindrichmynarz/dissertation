@@ -48,7 +48,7 @@ Dealing with noise in the data
 ### RESCAL
 
 RESCAL is a machine learning algorithm for factorization of third-order tensors.
-It factorizes a tensor $\mathcal{X}$ with $n$ entities to a rank-$r$ representation, so that each frontal slice $\mathcal{X}_{k}$ of the tensor can be approximately reconstructed via matrix product from the decomposition to latent components, as shown in the @fig:rescal-decomposition: <!-- _b -->
+It factorizes a tensor $\mathcal{X}$ with $n$ entities to a rank-$r$ representation, so that each frontal slice $\mathcal{X}_{k}$ of the tensor can be approximately reconstructed via matrix product from the decomposition to latent components, as shown in [Fig. @fig:rescal-decomposition]: <!-- _b -->
 
 $$X_{k} \approx AR_{k}A^{T}$$ {#eq:rescal-decomposition}
 

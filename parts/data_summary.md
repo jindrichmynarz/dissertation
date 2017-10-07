@@ -1,7 +1,7 @@
 ## Summary {#sec:data-summary}
 
 Data preparation constituted a fundamental part of our research, since linked data offloads many concerns typically resolves on the application level to the data level.
-As a result of our data preparation effort a collection of interlinked datasets was created, as depicted in the [@fig:cloud].
+As a result of our data preparation effort a collection of interlinked datasets was created, as depicted in [Fig. @fig:cloud].
 The Czech public procurement dataset is central to this collection, including the primary data we used for matchmaking.
 The remaining datasets enrich the public procurement data with contextual information that can be turned into additional features for matchmaking.
 These datasets include the Common Procurement Vocabulary, three business registers mediated via the ARES system, Czech addresses dataset, NACE classification, and zIndex fairness scores.

@@ -3,7 +3,7 @@
 Linked data is a set of practices for publishing structured data on the Web.
 It is a way of structuring data that identifies entities with Internationalized Resource Identifiers (IRIs) and materializes their relationships as a network of machine-processable data [@Ayers2007, p. 94].
 IRIs are universal, so that any entity can be identified with a IRI, and have global scope, therefore an IRI can only identify one entity [@BernersLee1996].
-A major manifestation of linked data is the Linking Open Data Cloud [@Abele2017], which maps the web of semantically structured data that the spans hundreds of datasets from diverse domains, such as health care or linguistics.
+A major manifestation of linked data is the Linking Open Data Cloud [@Abele2017], which maps the web of semantically structured data that spans hundreds of datasets from diverse domains, such as health care or linguistics.
 In this section we provide a basic introduction to the key aspects of linked data that we built on in this dissertation.
 A more detailed introduction to linked data in available in Heath and Bizer [-@Heath2011].
 
@@ -12,7 +12,7 @@ It is based on semantic web technologies.
 This technology stack is largely built upon W3C standards.^[<https://www.w3.org/standards/semanticweb>]
 The fundamental standards of the semantic web technology stack, which are used throughout our work, are the Resource Description Framework (RDF), RDF Schema (RDFS), and SPARQL.
 
-<!-- RDF -->
+#### RDF
 
 RDF [@Cyganiak2014b] is a graph data format for exchanging data on the Web.
 The formal data model of RDF is a directed labelled multi-graph.
@@ -27,7 +27,7 @@ As the definition indicates, subjects can be either IRIs or blank nodes, predica
 Predicates are also often referred to as properties.
 RDF graphs can be grouped into RDF datasets.
 Each graph in an RDF dataset can be associated with a name $g \in (I \cup B)$.
-RDF datasets can be thus decomposed into quads $(s, p, o, g)$, where $g$ is called *named graph*.
+RDF datasets can be thus decomposed into quadruples $(s, p, o, g)$, where $g$ is called *named graph*.
 
 What we described above is the abstract syntax of RDF.
 In order to be able to exchange RDF graphs and datasets, a serialization is needed.
@@ -40,11 +40,11 @@ An example of data describing a public contract serialized in the Turtle syntax 
 @prefix pc:       <http://purl.org/procurement/public-contracts#> .
 
 contract:60019151 a pc:Contract ;
-  dcterms:title "Poskytnutí finančního úvěru"@cs ;
+  dcterms:title "Poskytnutí finančního úvěru"@cs, "Financial loan provision"@en ;
   pc:contractingAuthority business-entity:CZ00275492 .
 ```
 
-<!-- RDF Schema -->
+#### RDF Schema
 
 RDFS [@Brickley2014] is an ontological language for describing semantics of data.
 It provides a way to group resources as instances of classes and describe relationships among the resources.
@@ -59,12 +59,13 @@ Vocabularies enable tools to operate on datasets sharing the same vocabulary wit
 The explicit semantics provided by RDF vocabularies makes datasets described by such vocabularies machine-understandable to a limited extent.
 For example, we use the Public Contracts Ontology, described in [@sec:pco], for this purpose in our work.
 
-<!-- SPARQL -->
+#### SPARQL
 
 SPARQL [@Harris2013] is a query language for RDF data.
 The syntax of SPARQL was inspired by SQL.
 The `WHERE` clauses in SPARQL specify graph patterns to match in the queried data.
 The syntax of graph patterns extends the Turtle RDF serialization with variables, which are names prefixed either by `?` or `$`.
+Matches of graph patterns can be further restricted by `FILTER` constaints that evaluate boolean expressions on RDF terms, such as by testing ranges of numeric literals or asserting required language tags of string literals.
 Solutions to SPARQL queries are subgraphs that match the specified graph patterns.
 The solutions are subsequently processed by modifiers, such as by deduplication or ordering.
 Solutions are output based on the query type.
@@ -79,7 +80,7 @@ WHERE {
 ORDER BY ?class
 ```
 
-<!-- Linked data principles -->
+#### Linked data principles
 
 Use of the above-mentioned semantic web technologies for publishing linked data is guided by four principles [@BernersLee2009]:
 
@@ -103,7 +104,7 @@ Nonetheless, OWA poses a potential problem for classification tasks in machine l
 The principle of *Anyone can say anything about anything* (AAA) assumes that the open world of linked data provides no guarantees that the assertions published as linked data are consistent or uncontradictory.
 Given this assumption, quality assessment followed by data pre-processing is typically required when using linked data.
 
-<!-- Benefits of linked data -->
+#### Benefits of linked data for matchmaking
 
 Having considered the characteristics of linked data we may highlight its advantages. 
 Many of these advantages are related to data preparation, which we point out in [@sec:data-preparation], however, linked data can also benefit matchmaking in several ways.

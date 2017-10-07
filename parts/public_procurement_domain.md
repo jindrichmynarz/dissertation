@@ -4,7 +4,7 @@ Our work targets the domain of public procurement.
 In particular, we apply the developed matchmaking methods to data describing the Czech public procurement.
 Public procurement is the process by which public bodies purchase products or services from companies.
 Public bodies make such purchases in public interest in order to pursue their mission.
-For example, public procurement can cater for road repairs or arrange supplies of electricity.
+For example, public procurement can be used for purchases of drugs in hospitals, cater for road repairs, or arrange supplies of electricity.
 Bodies issuing public contracts, such as ministries or municipalities, are referred to as contracting authorities.
 Companies competing for contract awards are called bidders.
 Since public procurement is a legal domain, public contracts are legally enforceable agreements on purchases financed from public funds.
@@ -97,7 +97,7 @@ We describe our use of linked data in detail in the [@sec:data-preparation].
 Public procurement constitutes a large share of the volume of transactions in the economy.
 The share of expenditures in the EU member states' public procurement on works, goods, and services (excluding utilities) was estimated to be *"13.1 % of the EU GDP in 2015, the highest value for the last 4 years"* [@EuropeanCommission2016].
 This estimate amounted to 24.2 billion EUR in 2015 in the Czech Republic, which translated to 14.5 % of the country's GDP [@EuropeanCommission2016].
-Compared with the EU, the Czech Republic exhibits consistent above-average values of this indicator, as can be seen in the [@fig:gdp].
+Compared with the EU, the Czech Republic exhibits consistent above-average values of this indicator, as can be seen in [Fig. @fig:gdp].
 
 ![Percentage of public procurement's share of GDP. Source: Public Procurement Indicators 2012-2015 [@EuropeanCommission2016]](resources/img/share_of_gdp_v2.png){#fig:gdp}
 

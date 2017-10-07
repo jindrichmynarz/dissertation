@@ -50,7 +50,7 @@ The dataset contains 186 965 public contracts.
 
 To aid the visual validation of the extracted data, we developed *sparql-to-graphviz*^[<https://github.com/jindrichmynarz/sparql-to-graphviz>] that produces a class diagram representing the empirical schema of the data it is provided with.
 It generates a description of the dataset's class diagram in the DOT language, which can be rendered to images via Graphviz,^[<http://www.graphviz.org>] an established visualization software for graph structures.
-The dataset's summary in the diagram, shown in the [@fig:vvz], contains the classes instantiated in the dataset, along with their datatype properties and object properties interconnecting the classes.
+The dataset's summary in the diagram, shown in [Fig. @fig:vvz], contains the classes instantiated in the dataset, along with their datatype properties and object properties interconnecting the classes.
 Each property is provided with its most common range, such as `xsd:date` for a datatype property or `schema:Organization` for an object property, and its minimum and maximum cardinality.
 As mentioned before, the cardinality ranges may signalize errors in the data transformation, such as insufficient data fusion when the maximum cardinality surpasses an expected value.
 
