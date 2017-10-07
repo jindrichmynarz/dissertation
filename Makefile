@@ -45,8 +45,6 @@ parts/abbreviations.md
 endef
 
 define STAGING_PARTS
-staging/abstract_english.md \
-staging/abstract_czech.md \
 staging/preface.md \
 staging/acknowledgements.md
 endef
@@ -101,6 +99,8 @@ pdf:
 	pandoc --latex-engine=xelatex \
 		--include-before-body parts/title_page.tex \
 		--include-before-body parts/affidavit.tex \
+		--include-before-body parts/abstract_czech.tex \
+		--include-before-body parts/abstract_english.tex \
 		-o dissertation.pdf \
 		--variable citecolor=orange \
 		--variable urlcolor=orange \
