@@ -34,6 +34,9 @@ Nevertheless, most linked open data must be considered to be raw data that requi
 
 When we review our progress beyond the state of the art, introduced in the [@sec:related-work], our key contribution is the adaption of existing generic technologies for a concrete use case concerning matchmaking in the Czech public procurement.
 Using SPARQL, we developed a novel matchmaking method inspired by case-based reasoning.
+The closest to this method is the work of @AlvarezRodriguez2011c, which is however documented only in broad strokes, thus preventing more detailed comparison.
+The combination of logical deduction and statistical learning we were inspired by can be traced back to the work on iSPARQL by @Kiefer2008.
+The RESCAL-based matchmakers build on the generic basis laid out by the Web of Needs [@Friedrich2015], combining it with novel extensions and specialization to the public procurement domain.
 As a side effect of our investigation in matchmaking methods, we advanced the available means of processing RDF data by developing a set of reusable tools that address some of the recurrent tasks involved in handling RDF data.
 Ultimately, our work produced a greater value in the developed reusable artefacts for data preparation and matchmaking than as a practical use case in public procurement.
 
