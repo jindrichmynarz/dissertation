@@ -209,6 +209,9 @@ TF-IDF
 TLR
 ~ Trade Licensing Register
 
+UEP
+~ University of Economics, Prague
+
 URL
 ~ Uniform Resource Locator
 

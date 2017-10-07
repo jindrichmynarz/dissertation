@@ -47,8 +47,8 @@ endef
 define STAGING_PARTS
 staging/abstract_english.md \
 staging/abstract_czech.md \
-staging/acknowledgements.md \
-staging/preface.md
+staging/preface.md \
+staging/acknowledgements.md
 endef
 
 define COMMON_PARAMS
