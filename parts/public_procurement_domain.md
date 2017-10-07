@@ -40,17 +40,6 @@ Public procurement law requires explicit formulation of demands in contract noti
 In most markets only supply is described explicitly, such as through advertising, while demand is left implicit.
 Since matchmaking requires demands to be specified, public procurement makes for a suitable market to apply the matchmaking methods.
 
-<!-- Complex representation -->
-
-Since public procurement often pursues multiple objectives, public contracts are demands with variable degrees of complexity and completeness.
-Their explicit formulation thus requires sufficiently expressive modelling, making it a fitting use case for the semantic web technologies, including RDF and RDF Schema.
-Public contracts may stipulate non-negotiable qualification criteria as well as setting desired, but negotiable qualities sought in bidders.
-The objects of public contracts are often heterogeneous products or services, that cannot be described only in terms of price.
-Apart from their complex representation, public contracts have many features unavailable as structured data.
-These features comprise unstructured documentation or undisclosed terms and conditions.
-Consequently, matchmaking has to operate on simplified models of public contracts.
-The data model for public contracts we designed is described in the [@sec:modelling].
-
 <!-- Proactive disclosure -->
 
 There is a legal mandate for proactive disclosure of contract notices.
