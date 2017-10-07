@@ -94,7 +94,7 @@ Ultimately, we considered using larger sets of features including those that imp
 `rov:orgActivity` + `skos:broaderTransitive`
 -->
 
-### Ageing
+### Ageing relations
 
 Evaluation of ageing was done by time series cross-validation, as described in the [@sec:evaluation-protocol].
 
@@ -108,7 +108,7 @@ This can be explained in part by lower volume of training data.
 However, it may hint a bug in the evaluation protocol.
 -->
 
-### Literals
+### Use of literals
 
 <!--
 Actual prices (i.e. `pc:actualPrice`) are known for 91.5 % of contracts in the evaluated dataset.

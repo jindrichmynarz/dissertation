@@ -73,7 +73,7 @@ This was done to ensure that the hashed descriptions of blank nodes do not conta
 Since no two blank nodes are the same, this procedure led to a significant reduction of aliases.
 <!-- TODO: Should we quantify this reduction? -->
 
-### Technologies
+### Linking technologies
 
 We employed four kinds of linking technologies.
 Simple keys and some compound keys were used directly to construct IRIs in XSLT.
@@ -94,7 +94,7 @@ In general, linking was done iteratively, interposed with data fusion.
 Fusion reduced the size of the data, in turn reducing the search space for linking.
 Additionally, linking that followed fusion could build on the previously created links.
 
-### Tasks
+### Linking tasks
 
 We worked on three main linking tasks.
 We reconciled the values in our dataset with standard code lists.
@@ -120,7 +120,7 @@ Resolution of these links thus reduced the share of the unlinked business entiti
 We geocoded postal addresses in ARES and in the Czech public procurement register by linking them to the Czech addresses dataset.
 Geocoding is the described in greater detail further in a separate section.
 
-### Evaluation
+### Evaluation of linking
 
 Evaluation of the quality of linking typically involves a clerical review of a sample of the resulting equivalence links [@Christen2012, p. 174].
 By using manual assessment, a randomly selected sample of links can be split into correct and incorrect matches.

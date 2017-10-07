@@ -57,7 +57,7 @@ Checkpoints consist of persisting the intermediate data output from the individu
 However, due to the large numbers of transformations in our case large disk space would be required if checkpoints were done for every transformation.
 To reduce disk consumption we persisted only the outputs of the major sub-parts of the data processing pipeline.
 
-### Transformations
+### Transformation tasks
 
 Overall, we developed tens of SPARQL Update operations for the data transformation.
 One of the principles we followed was to reduce data early in order to avoid needless processing in the subsequent transformation steps.

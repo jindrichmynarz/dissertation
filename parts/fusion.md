@@ -85,7 +85,7 @@ As the final polishing touch we excised the resources orphaned during data fusio
 Since removing orphans may create more orphans, we deleted orphans in the topological order based on their links.
 In this way we first removed orphans, followed by deleting their dependent resources that were orphaned next.
 
-### Evaluation
+### Evaluation of fusion
 
 If we decide to evaluate the quality of data fusion, there are several measures available.
 One of the broadest measures for assessing data fusion is data reduction ratio, which represents the decrease of the number of fused entities.

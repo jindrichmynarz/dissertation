@@ -117,7 +117,7 @@ Other notable extensions of RESCAL add time awareness or tensor slice similariti
 We used this approach in data pre-processing, as described in the [@sec:loading-rescal], to model decaying relevance of older contract awards.
 @Padia2016 computed RESCAL with regard to the similarity of tensor slices to obtain better results.
 
-### Ranking
+### Ranking matches
 
 We applied link prediction via RESCAL to matchmaking, assuming that the tensor decomposition produced by RESCAL can accurately model the affinities between contracts and bidders.
 Probabilities of links predicted in the tensor slice representing contract awards can be obtained by reconstructing the slice from the tensor decomposition.
@@ -154,7 +154,7 @@ Matchmaking via RESCAL is thus more appropriate if the matches are delivered via
 FIXME: Mention blind matchmaker implemented by generating random predictions?
 -->
 
-### Implementation
+### Implementation of RESCAL-based matchmakers
 
 We implemented *matchmaker-rescal*, described in the [@sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol, explained in the [@sec:evaluation-protocol].
 Instead of extending RESCAL, our contribution lies in the data preparation and pre-processing described in the [@sec:loading-rescal].

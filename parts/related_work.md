@@ -4,7 +4,7 @@ Before we present our approaches to matchmaking we survey the research related t
 This section summarizes the background to our research and helps to discern the progress beyond the state of the art in our contributions.
 This overview of the related work is divided into matchmaking applications, vocabularies for matchmaking, and technologies related to matchmaking.
 
-### Applications
+### Related applications
 
 <!-- Description logics -->
 
@@ -120,7 +120,7 @@ Extensive evaluation shows the presented approach as superior to other matchmaki
 - Public procurement in Chile [@AravenaDiaz2016], matches potential bidders, uses natural language processing and latent semantic analysis, early stage
 -->
 
-### Vocabularies
+### Related vocabularies
 
 Semantic matchmaking operates on data described by vocabularies and ontologies.
 Vocabularies enable to bestow data with semantic features that matchmaking can leverage.
