@@ -45,8 +45,8 @@ parts/abbreviations.md
 endef
 
 define STAGING_PARTS
-staging/preface.md \
-staging/acknowledgements.md
+parts/preface.md \
+parts/acknowledgements.md
 endef
 
 define COMMON_PARAMS
