@@ -118,7 +118,3 @@ If there is no improvement or a decrease in performance, it might be explainable
 Prices may be reported as coefficients to be multiplied by an implicit factor that is not part of the structured data.
 
 <!-- Summary -->
-
-<!--
-TODO: Add a comparison of the best-performing configurations of SPARQL-based and RESCAL-based matchmakers.
--->

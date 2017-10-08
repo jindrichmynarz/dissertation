@@ -32,7 +32,7 @@ RDF datasets can be thus decomposed into quadruples $(s, p, o, g)$, where $g$ is
 What we described above is the abstract syntax of RDF.
 In order to be able to exchange RDF graphs and datasets, a serialization is needed.
 RDF can be serialized into several concrete syntaxes, including Turtle [@Beckett2014], JSON-LD [@Sporny2014], or N-Quads [@Carothers2014].
-An example of data describing a public contract serialized in the Turtle syntax is shown in [@lst:example-turtle].
+An example of data describing a public contract serialized in the Turtle syntax is shown in [Listing @lst:example-turtle].
 
 ```{#lst:example-turtle caption="Example data in Turtle"}
 @prefix contract: <http://linked.opendata.cz/resource/isvz.cz/contract> .
@@ -40,7 +40,8 @@ An example of data describing a public contract serialized in the Turtle syntax 
 @prefix pc:       <http://purl.org/procurement/public-contracts#> .
 
 contract:60019151 a pc:Contract ;
-  dcterms:title "Poskytnutí finančního úvěru"@cs, "Financial loan provision"@en ;
+  dcterms:title "Poskytnutí finančního úvěru"@cs,
+                "Financial loan provision"@en ;
   pc:contractingAuthority business-entity:CZ00275492 .
 ```
 
@@ -70,7 +71,7 @@ Solutions to SPARQL queries are subgraphs that match the specified graph pattern
 The solutions are subsequently processed by modifiers, such as by deduplication or ordering.
 Solutions are output based on the query type.
 ASK queries output boolean values, SELECT queries output tabular data, and CONSTRUCT or DESCRIBE queries output RDF graphs.
-An example SPARQL query that retrieves all classes instantiated in a dataset is shown in the [@lst:sparql-example].
+An example SPARQL query that retrieves all classes instantiated in a dataset and ordered alphabetically is shown in [Listing @lst:sparql-example].
 
 ```{#lst:sparql-example caption="Example SPARQL query"}
 SELECT DISTINCT ?class

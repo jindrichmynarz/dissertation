@@ -280,7 +280,7 @@ The generated queries are executed on the configured SPARQL endpoint and return 
 Each kind of matchmaker corresponds to a query template.
 It may also expose specific parameters that can be provided via the configuration.
 
-The basic graph pattern considered in most configurations of the matchmaker is illustrated in [@lst:property-path] using the SPARQL 1.1 Property Path syntax.
+The basic graph pattern considered in most configurations of the matchmaker is illustrated in [Listing @lst:property-path] using the SPARQL 1.1 Property Path syntax.
 The path is complicated by intermediate resources proxying CPV concepts connected via `skos:closeMatch`, as described in the [@sec:concrete-data-model].
 
 ```{#lst:property-path caption="Matchmaker's basic SPARQL property path"}
@@ -289,7 +289,7 @@ The path is complicated by intermediate resources proxying CPV concepts connecte
                pc:awardedTender/pc:bidder ?matchedBidder .
 ```
 
-Apart from our baseline matchmaker, which uses the property path in [@lst:property-path], the implementation of the matchmakers is based on nested sub-queries and `VALUES` clauses used to associate the considered properties with weights.
+Apart from our baseline matchmaker, which uses the property path in [Listing @lst:property-path], the implementation of the matchmakers is based on nested sub-queries and `VALUES` clauses used to associate the considered properties with weights.
 
 We implemented query expansion via SPARQL 1.1 property paths.
 Property paths allow us to retrieve concepts reachable within a given maximum number of hops transitively following the hierarchical relations in CPV.
