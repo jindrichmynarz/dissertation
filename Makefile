@@ -40,14 +40,13 @@ parts/results_comparison.md \
 parts/conclusions.md \
 parts/references.md \
 parts/software.md \
+parts/publications.md \
 parts/abbreviations.md
 endef
 
 define STAGING_PARTS
-staging/abstract_english.md \
-staging/abstract_czech.md \
-staging/acknowledgements.md \
-staging/preface.md
+parts/preface.md \
+parts/acknowledgements.md
 endef
 
 define COMMON_PARAMS
@@ -100,6 +99,8 @@ pdf:
 	pandoc --latex-engine=xelatex \
 		--include-before-body parts/title_page.tex \
 		--include-before-body parts/affidavit.tex \
+		--include-before-body parts/abstract_czech.tex \
+		--include-before-body parts/abstract_english.tex \
 		-o dissertation.pdf \
 		--variable citecolor=orange \
 		--variable urlcolor=orange \

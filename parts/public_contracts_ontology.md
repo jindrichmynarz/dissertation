@@ -14,7 +14,7 @@ Several properties in PCO have their range restricted to values enumerated in co
 For example, there is a code list for procedure types, including open or restricted procedures.
 These core code lists are represented using the Simple Knowledge Organization System (SKOS) [@Miles2009] and are a part of the vocabulary.
 The design of PCO is described in more detail in Klímek et al. [-@Klimek2012] and Nečaský et al. [-@Necasky2014].
-The class diagram in [@fig:pco] shows the Public Contracts Ontology.
+The class diagram in [Fig. @fig:pco] shows the Public Contracts Ontology.
 
 ![Public Contracts Ontology](resources/img/pco.png){#fig:pco}
 

@@ -54,7 +54,7 @@ As we described in the [@sec:contract-objects], we used several properties that 
 We evaluated these properties separately, without weighting, to determine their predictive power.
 Evaluation results of the matchmakers based on the four considered properties are given in the [@tbl:properties-evaluation].
 The best-performing property is the `pc:mainObject`.
-As the [@fig:cumulative-hr] illustrates, its HR@k grows logarithmically with $k$, starting at 7 % chance of finding the contact's winner as the first hit.
+As [Fig. @fig:cumulative-hr] illustrates, its HR@k grows logarithmically with $k$, starting at 7 % chance of finding the contact's winner as the first hit.
 We chose this property as our baseline that we tried to improve further on.
 The other properties achieved worse results.
 While the `pc:additionalObject` covers the long tail better, its prediction coverage is low because it is able to produce matches only for the few contracts that are described with this property.
@@ -145,7 +145,7 @@ We evaluated the impact of data reduction on HR@10 for the baseline matchmaker a
 Prior to running the evaluation we reduced the number of links between contracts and bidders to a given fraction.
 For example, if the level of data reduction was set to 0.4, 60 % of the links were removed.
 Links to remove were selected randomly.
-The [@fig:data-reduction] shows HR@10 per level of data reduction for the two compared matchmakers.
+[Fig. @fig:data-reduction] shows HR@10 per level of data reduction for the two compared matchmakers.
 In general, we decreased the data reduction level by 0.1 for each evaluation run, but a smaller step was used for the lower levels to better distinguish the impact of data reduction at smaller data sizes.
 The evaluation showed that HR@10 grows logarithmically with the size of the data, while the blind matchmaker performs the same no matter the data size.
 As can be expected, the baseline matchmaker improves its performance as the data it learns from accrues.

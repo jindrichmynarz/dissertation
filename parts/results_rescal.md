@@ -13,7 +13,7 @@ Consequently, for brevity, we omit this metric from the evaluation results.
 
 The central hyper-parameter of RESCAL is the rank of its decomposition.
 As reported in existing research, RESCAL's accuracy improves with increasing rank of the factorization.
-With higher ranks we observe diminishing returns and, eventually, HR@10 ceases to improve at around rank 500, as the [@fig:hrs-per-rank] displays.
+With higher ranks we observe diminishing returns and, eventually, HR@10 ceases to improve at around rank 500, as [Fig. @fig:hrs-per-rank] displays.
 An analogous impact can be observed for CC@10, although its growth is much more subtle.
 We tested ranks ranging from 10 to 1000, using smaller intervals for greater resolution in low ranks.
 Runtime of tensor factorization with RESCAL increases approximately linearly with the rank, so there is a need to balance the quality of RESCAL's results with the available time to compute them.
@@ -61,7 +61,7 @@ We evaluated the predictive power of descriptive features that can be obtained f
 While most features correspond to RDF properties, some are derived from property paths, such as `pc:location/schema:address`.
 We started by assessing the results of the individual features.
 We combined each feature with the ground truth comprising contract awards and observed how well it can help predicting the awarded bidders.
-We evaluated the HR@10 of selected features at ranks 50 and 500, as shown in the [@fig:properties-per-rank]. 
+We evaluated the HR@10 of selected features at ranks 50 and 500, as shown in [Fig. @fig:properties-per-rank]. 
 
 ![HR@10 per rank for individual properties](resources/img/evaluation/properties_per_rank.png){#fig:properties-per-rank}
 
@@ -94,7 +94,7 @@ Ultimately, we considered using larger sets of features including those that imp
 `rov:orgActivity` + `skos:broaderTransitive`
 -->
 
-### Ageing
+### Ageing relations
 
 Evaluation of ageing was done by time series cross-validation, as described in the [@sec:evaluation-protocol].
 
@@ -108,7 +108,7 @@ This can be explained in part by lower volume of training data.
 However, it may hint a bug in the evaluation protocol.
 -->
 
-### Literals
+### Use of literals
 
 <!--
 Actual prices (i.e. `pc:actualPrice`) are known for 91.5 % of contracts in the evaluated dataset.

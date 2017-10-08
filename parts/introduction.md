@@ -70,7 +70,7 @@ Specific problems:
 * How to engineer matchmaking methods to achieve high accuracy and diversity of recommendations?
 -->
 
-<!-- Problem context 
+<!-- Problem context
 
 * Selection of a matching object; specifically for tenders
 * Social context: Better matchmaking helps avoid passive waste with public resources.
@@ -86,6 +86,7 @@ The domain of this research is an intersection of matchmaking and semantic web k
 <!-- Research goals -->
 
 Our research goal is to explore matchmaking of public contracts to bidders operating on linked open data.
+In particular, we want to explore what methods can be adopted for this task and discover the most salient factors influencing the quality of matchmaking, with a specific focus on what linked open data enables.
 In order to pursue this goal we prepare public procurement linked open data and develop software for matchmaking.
 Our secondary target implied by our research direction is to test the available implementations of the semantic web technologies for handling linked open data and, if these tools are found lacking, to develop auxiliary tools to support data preparation and matchmaking.
 These secondary goals were not formulated upfront; we only specified them explicitly as we progressed the pursuit of our primary goal.
@@ -106,7 +107,7 @@ In the pursuit of our goals we reused and orchestrated a large set of existing o
 
 We adopt the methods of the design science [@Hevner2004] in our research.
 We design artefacts, including the Czech public procurement dataset and the matchmakers, and experiment with them to tell which of their variants perform better.
-Viewed this way, our task is to explore what kinds of artefacts for matchmaking of public contracts to bidders makes linked open data feasible to build.
+Viewed this way, our task is to explore what kinds of artefacts for matchmaking of public contracts to bidders are made feasible by linked open data.
 
 <!-- Evaluation -->
 
@@ -145,7 +146,7 @@ We follow up with a principal chapter that describes the matchmaking methods we 
 The subsequent chapter discusses the evaluation ([@sec:evaluation]) of the devised matchmaking methods by using the datasets we prepared.
 We experimented with many configurations of the matchmaking methods in the evaluation.
 In this chapter, we present the results of selected quantitative evaluation metrics and provide interpretations of the obtained results.
-Finally, the concluding chapter ([@sec:conclusions]) closes the dissertation, summarizing its principal contributions as well as remarking on its limitations that may be addresses in future research. 
+Finally, the concluding chapter ([@sec:conclusions]) closes the dissertation, summarizing its principal contributions as well as remarking on its limitations that may be addresses in future research.
 
 The contributions presented in this dissertation including the methods and software were authored or co-authored by the dissertation's author, unless stated otherwise.
 Both the reused and the developed software is listed in the [appendix @sec:software].
@@ -167,7 +168,7 @@ All vocabulary prefixes used in the text can be resolved to their corresponding 
 <!-- Le old
 
 A key obstacle to achieving the stated goal is fragmentation of data on the Web.
-Data about demands and offers is dispersed across a multitude of web sites, including electronic marketplaces or public sector registries. 
+Data about demands and offers is dispersed across a multitude of web sites, including electronic marketplaces or public sector registries.
 To get a broader picture about the market one must scan through the relevant yet heterogeneous sources of data, each of which may expose a different access interface, most of which will be suitable only for humans to process.
 Therefore, *"search and matchmaking between two business parties over the current Web are still very time-consuming if [...] information from multiple sources needs to be combined to assess the relevance or execute the query"* [@Radinger2013].
 To improve this situation, the broad goal of this dissertation is to contribute to defragmentation of online markets by linking the data communicated between them.

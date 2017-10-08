@@ -19,7 +19,7 @@ This matchmaker explores the use of SPARQL [@Harris2013] for matchmaking.
 We introduced SPARQL in the [@sec:linked-data].
 The choice of this technology for matchmaking has both benefits and drawbacks.
 
-#### Benefits
+#### Benefits of SPARQL for matchmaking
 
 <!-- Nativeness -->
 
@@ -49,7 +49,7 @@ Thanks to this feature, SPARQL can answer matchmaking queries in real time.
 In particular, this is useful for recommendations from streaming data.
 Public procurement data shares some of the characteristics of streaming data as it becomes quickly obsolete due to its currency bound on fixed deadlines for tender submission.
 
-#### Drawbacks
+#### Drawbacks of SPARQL for matchmaking
 
 The benefits of SPARQL come with costs.
 As Maali [-@Maali2014, p. 57] writes, the pure declarative nature and expressivity of SPARQL implies a high evaluation cost.
@@ -76,15 +76,15 @@ Matchmaking in SPARQL depends on aggregations and sorting, both of which are exa
 Such operations prevent lazy execution, since they require their complete input to be realized.
 For example, SPARQL treats sorting as a result modifier, which needs to be provided with all results.
 
-### Ranking
+### Ranking matches
 
 SPARQL queries retrieve exact matches satisfying the query conditions.
 Since SPARQL can tell only matches from non-matches, matches that satisfy the query partially are left out.
-Ranking of matches by their degree to which they satisfy the query thus needs to be implemented on top of SPARQL.
+Ranking of matches by the degree to which they satisfy the query thus needs to be implemented on top of SPARQL.
 Hence, we need to relax the match conditions to avoid filtering partial matches and then compute scores to rank the matches.
 
-The matchmaker operates with a given query contract $c_{q}$, which is matched to contracts from the set $C$. <!-- _b -->
-It retrieves contract objects that overlap with the object of the query contract, which are optionally expanded to include related CPV concepts.
+The matchmakers operate with a given query contract $c_{q}$, which is matched to contracts from the set $C$. <!-- _b -->
+They retrieve contract objects that overlap with the object of the query contract, which are optionally expanded to include related CPV concepts.
 Components of contract objects are weighted and these weights are combined into partial similarity scores.
 Partial similarities are then aggregated per bidder to produce the bidder's match score.
 
@@ -167,9 +167,9 @@ In each association $p_{q}$ is a property associating a concept $con$ to the que
 
 ![Concept-mediated associations between contracts](resources/img/concept_associations.png){#fig:concept-associations width=75%}
 
-The [@fig:matchmaking-overall-diagram] shows an overall diagram of concept-mediated associations.
+[Fig. @fig:matchmaking-overall-diagram] shows an overall diagram of concept-mediated associations.
 The query contract $c_{q}$ is associated to the matched contracts $c_{1}, c_{2}, c_{3} \in C$ via concepts that are assigned to the query contract via $p_{q_{i}}$ and to the matched contracts via $p_{m_{i}}$.
-As shown in [@fig:concept-associations], contracts may be associated through different kinds of concepts.
+As shown in [Fig. @fig:concept-associations], contracts may be associated through different kinds of concepts.
 The matched contracts in turn lead to bidders $b_{1}, b_{2} \in B$.
 Here, $B$ is the set of known bidders.
 Contracting authority of $c_{q}$ is marked as $a_{q}$, while the contracting authority of $c_{3}$ is denoted as $a_{3}$.
@@ -272,9 +272,9 @@ A similar approach is employed in the matchmaker that recommends bidders with th
 Since this score uses a proprietary extension of SPARQL, it is an exception from our constraint to standard SPARQL.
 These conceptually and computationally simpler approaches are used as baselines to which we can contrast the more sophisticated ones in evaluation.
 
-### Implementation
+### Implementation of SPARQL-based matchmakers
 
-The matchmaker is implemented using SPARQL query templates.
+The matchmakers are implemented using SPARQL query templates.
 Each template receives a configuration and produces a SPARQL query.
 The generated queries are executed on the configured SPARQL endpoint and return ordered sets of matches.
 Each kind of matchmaker corresponds to a query template.

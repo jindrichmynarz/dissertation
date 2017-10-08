@@ -21,7 +21,7 @@ Linking discovers co-referent identities, while fusion resolves them to the pref
 Linking and fusion are interleaved and executed iteratively, each building on the results of its previous step.
 Loading is concerned with making the data available in a way that the matchmaking methods can operate efficiently.
 The adopted ETL workflow evolved from the workflow that was previously described by this dissertation's author [-@Mynarz2014c].
-The [@fig:etl] summarizes the overall workflow.
+[Fig. @fig:etl] summarizes the overall workflow.
 
 ![ETL workflow](resources/img/etl_workflow.png){#fig:etl}
 

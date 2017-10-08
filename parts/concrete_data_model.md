@@ -1,7 +1,7 @@
 ### Concrete data model {#sec:concrete-data-model}
 
 The concrete data model of the Czech public procurement data uses the PCO mixed with terms cherry-picked from other linked open vocabularies, such as Public Procurement Ontology (PPROC) [@MunozSoro2016], which directly builds upon PCO.
-The data model's class diagram is shown in [@fig:vvz].
+The data model's class diagram is shown in [Fig. @fig:vvz].
 
 ![Class diagram of the Czech public procurement data](resources/img/vvz.png){#fig:vvz}
 
@@ -42,7 +42,7 @@ We also extracted several code lists enumerating the types of contract notices.
 The EU-wide standard types of notices, including the prior information notice or the design contest notice, were published in 2004 and updated in 2014, with a few types removed, such as the public works concession, or added, such as the modification notice.^[<http://simap.ted.europa.eu/standard-forms-for-public-procurement>]
 All these code lists were represented in RDF using SKOS.
 
-The diagram of the concrete data model in the [@fig:vvz] shows the Czech public procurement register data after the steps described in this chapter were applied.
+The diagram of the concrete data model in [Fig. @fig:vvz] shows the Czech public procurement register data after the steps described in this chapter were applied.
 As is apparent from the cardinalities of many properties, the dataset's quality is hardly optimal.
 Maximum cardinalities of several properties are higher than expected due to several reasons.
 Some entities were inadvertently merged due to their unreliable identifiers.

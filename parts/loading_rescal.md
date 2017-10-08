@@ -28,7 +28,7 @@ Fibers: one-dimensional subarrays of tensors (i.e. vectors)
 Higher-order tensors provide a simple way to model multi-relational data, such as RDF.
 Since RDF predicates are binary relations, RDF data can be represented as a third-order tensor, in which two modes represent RDF resources in a domain and the third mode represents relation types; i.e. RDF predicates [@Tresp2014].
 The two modes are formed by concatenating the subjects and objects in RDF data.
-The mode-3 slices of such tensors, also referred to as frontal slices, are square adjacency matrices that encode the existence of relation $R_{k}$ between RDF resources $E_{i}$ and $E_{j}$, as depicted in the [@fig:third-order-tensor]. <!-- _b -->
+The mode-3 slices of such tensors, also referred to as frontal slices, are square adjacency matrices that encode the existence of relation $R_{k}$ between RDF resources $E_{i}$ and $E_{j}$, as depicted in [Fig. @fig:third-order-tensor]. <!-- _b -->
 Consequently, RDF can be modelled as $n \times n \times m$ tensor $\mathcal{X}$, where $n$ is the number of entities and $m$ is the number of relations.
 If the $i$^th^ entity is related by the $k$^th^ predicate to the $j$^th^ entity, then the tensor entry $\mathcal{X}_{ijk} = 1$.
 Otherwise, if such relation is missing or unknown, the tensor entry is zero.
@@ -86,4 +86,4 @@ Instead of exporting all RDF data to the tensor format, we selected few features
 There are 76 different relations in the Czech public procurement dataset in total.
 Even more relations are available if we add the linked data.
 We experimented with selecting individual relations as well as their combinations to find out which ones produce the best results.
-We guided this search by the assumption that the contributions of the individual relations do not cancel themselves.
+We guided this search by the assumption that the contributions of the individual relations do not cancel themselves out.

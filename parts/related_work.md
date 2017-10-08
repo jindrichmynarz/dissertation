@@ -4,7 +4,7 @@ Before we present our approaches to matchmaking we survey the research related t
 This section summarizes the background to our research and helps to discern the progress beyond the state of the art in our contributions.
 This overview of the related work is divided into matchmaking applications, vocabularies for matchmaking, and technologies related to matchmaking.
 
-### Applications
+### Related applications
 
 <!-- Description logics -->
 
@@ -40,7 +40,7 @@ Perhaps the first application of matchmaking in public procurement was conceived
 Overall, this project aimed to design an interoperable architecture of a pan-European platform for aggregating and mediating public procurement notices in the EU.
 A part of the project that explored semantic web technologies in public procurement was called Methods on Linked Data for E-procurement Applying Semantics (MOLDEAS) [@AlvarezRodriguez2012].
 MOLDEAS covered algorithms for enriching data about public procurement notices [@AlvarezRodriguez2011b], integration of diverse data sources via linked data [@AlvarezRodriguez2011a], and matchmaking via SPARQL enhanced with query expansion [@AlvarezRodriguez2011c] or spreading activation [@AlvarezRodriguez2013, p. 118].
-<!-- Unfortunately, it is difficult to compare its results with our approach, because neither implementation details nor evaluation were revealed in the papers describing this work. -->
+Unfortunately, it is difficult to compare the results matchmaking in MOLDEAS with our approach, because neither implementation details nor evaluation were revealed in the papers describing this work.
 The project emphasized product classification schemes and devoted extensive efforts to converting such classifications to RDF and linking them.
 Product Types Ontology (PTO),^[<http://www.productontology.org>] a product ontology derived from Wikipedia, was selected as a linking hub to tie these classifications together.
 
@@ -120,7 +120,7 @@ Extensive evaluation shows the presented approach as superior to other matchmaki
 - Public procurement in Chile [@AravenaDiaz2016], matches potential bidders, uses natural language processing and latent semantic analysis, early stage
 -->
 
-### Vocabularies
+### Related vocabularies
 
 Semantic matchmaking operates on data described by vocabularies and ontologies.
 Vocabularies enable to bestow data with semantic features that matchmaking can leverage.
