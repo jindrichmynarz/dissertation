@@ -7,21 +7,21 @@ Should we formulate requirements for the matchmaking methods?
 
 We applied two methods to matching public contracts to bidders: case-based reasoning (CBR) and statistical relational learning (SRL).
 We first review what these methods have in common and then discuss their differences.
-Both methods learn from the same ground truth and have to cope with its limitations and biases, described in the [@sec:ground-truth], such as having only positive training examples.
+Both methods learn from the same ground truth and have to cope with its limitations and biases, described in [Section @sec:ground-truth], such as having only positive training examples.
 In this ground truth, public contracts represent explicit demands and contract awards model past behaviour of bidders offering products or services.
 Both methods learn only from their input data, not from user feedback.
 In order to incorporate user feedback, it would need to be materialized as part of the input data.
 This approach is known as one-shot recommendation, and is typical for case-based recommenders in particular [@Smyth2007].
 We employed manual feature selection, corresponding to schema-aware matchmaking.
-Portability of the developed matchmakers is granted by the common data model underlain by the Public Contracts Ontology, which we covered in the [@sec:pco].
+Portability of the developed matchmakers is granted by the common data model underlain by the Public Contracts Ontology, which we covered in [Section @sec:pco].
 The matchmakers therefore work with any dataset described by the PCO, such as the Czech public procurement dataset that constitutes our use case.
 Both methods are evaluated on the task of predicting the awarded bidders.
 The inverse task of recommending relevant public contracts to bidders is feasible as well, but we have not focused on it, since it mirrors the evaluated task.
 
 <!-- Case-based reasoning -->
 
-The underlying technology we used to implement the matchmakers based on case-based reasoning, introduced in the [@sec:cbr], is SPARQL [@Harris2013].
-Using the means of SPARQL we designed a custom-built matchmaking method, explained in detail in the [@sec:method-sparql].
+The underlying technology we used to implement the matchmakers based on case-based reasoning, introduced in [Section @sec:cbr], is SPARQL [@Harris2013].
+Using the means of SPARQL we designed a custom-built matchmaking method, explained in detail in [Section @sec:method-sparql].
 In line with the CBR perspective, this method recasts data on awarded contracts as past cases to learn from.
 Viewed this way, awarded contracts can be considered as experiences of solved problems and contract awards can be thus interpreted as implicit positive ratings of the awarded bidders.
 Consequently, bidders awarded with most contracts similar to a given query contract can be recommended as potential awardees of the contract.
@@ -30,7 +30,7 @@ The developed matchmakers implement only the *Retrieve* and *Reuse* steps from t
 The retrieved matches are ranked to produce recommendations for reuse.
 Including the *Revise* step would require the matchmakers to incorporate user feedback.
 The *Retain* step is not applicable if the proposed matches are not approved or disapproved in the *Revise* step.
-Both the *Knowledge representation* and the *Problem formulation* steps can be considered to be incorporated in data preparation, as documented in the [@sec:data-preparation], since both cases and queries are materialized as data. 
+Both the *Knowledge representation* and the *Problem formulation* steps can be considered to be incorporated in data preparation, as documented in [Section @sec:data-preparation], since both cases and queries are materialized as data. 
 
 Matchmaking via SPARQL is conceived as a top-$k$ recommendation task.
 It produces a list of bidders sorted by their degree to which they match the requirements of a given query contract.
@@ -39,8 +39,8 @@ Having no model to create up front allows to answer matchmaking queries in real 
 
 <!-- Statistical relational learning -->
 
-Matchmakers based on statistical relational learning (SRL), which we presented in the [@sec:srl], are built on RESCAL [@Nickel2011],
-In this case, we adopted an existing learning method for the matchmaking task, as explained in the [@sec:method-rescal].
+Matchmakers based on statistical relational learning (SRL), which we presented in [Section @sec:srl], are built on RESCAL [@Nickel2011],
+In this case, we adopted an existing learning method for the matchmaking task, as explained in [Section @sec:method-rescal].
 Viewed from the perspective of SRL, matchmaking can be conceived as link prediction.
 In our setting, the task of matchmaking is predicting the most likely links between public contracts and their winning bidders.
 
@@ -48,7 +48,7 @@ Unlike the method based on SPARQL, RESCAL is a latent feature model.
 Since it builds a prediction model up front, it is an example of eager learning.
 Consequently, it operates in a batch mode that allows to update data only in bulk.
 
-The key differences between the use of CBR and SRL for matchmaking are summarized in the [@tbl:matchmaking-methods-differences].
+The key differences between the use of CBR and SRL for matchmaking are summarized in [Table @tbl:matchmaking-methods-differences].
 Matchmaking can be also implemented via hybrid methods that combine multiple approaches.
 For instance, SPARQL can be used to pre-select matches and RESCAL can then re-rank this selection.
 

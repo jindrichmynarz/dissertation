@@ -96,7 +96,7 @@ These secondary goals were not formulated upfront; we only specified them explic
 In order to be able to deliver on the stated goals, their prerequisites must be fulfilled.
 Applied research depends on the availability of its building blocks.
 Our research is built on open data and open-source software.
-We need public procurement data to be available as open data, as described in the [@sec:open-data].
+We need public procurement data to be available as open data, as described in [Section @sec:open-data].
 The data must be structured in a way from which a semantic description of the data can be created, implying that the data is machine-readable and consistent.
 Consistency of the data arises from standardization, including the adherence to fixed schemas and code lists.
 We conceive matchmaking as a high-level task based on many layers of technology.
@@ -139,17 +139,17 @@ A richer understanding of the methods could have been obtained via qualitative e
 ## Outline
 
 We follow a simple structure in this dissertation.
-This chapter introduces our research and explains both the preliminaries and context in which our work is built as well as surveying the related research ([@sec:related-work]) to position our contributions.
-The dissertation continues with a substantial chapter on data preparation ([@sec:data-preparation]) that describes the extensive effort we invested in pre-processing data for the purposes of matchmaking.
-In line with the characteristics of linked open data, the key parts of this chapter deal with linking ([@sec:linking]) and data fusion ([@sec:fusion]).
-We follow up with a principal chapter that describes the matchmaking methods we designed and implemented ([@sec:methods]), which includes matchmaking based on SPARQL ([@sec:method-sparql]) and on tensor factorization by RESCAL ([@sec:method-rescal]).
-The subsequent chapter discusses the evaluation ([@sec:evaluation]) of the devised matchmaking methods by using the datasets we prepared.
+This chapter introduces our research and explains both the preliminaries and context in which our work is built as well as surveying the related research ([-@sec:related-work]) to position our contributions.
+The dissertation continues with a substantial chapter on data preparation ([-@sec:data-preparation]) that describes the extensive effort we invested in pre-processing data for the purposes of matchmaking.
+In line with the characteristics of linked open data, the key parts of this chapter deal with linking ([-@sec:linking]) and data fusion ([-@sec:fusion]).
+We follow up with a principal chapter that describes the matchmaking methods we designed and implemented ([-@sec:methods]), which includes matchmaking based on SPARQL ([-@sec:method-sparql]) and on tensor factorization by RESCAL ([-@sec:method-rescal]).
+The subsequent chapter discusses the evaluation ([-@sec:evaluation]) of the devised matchmaking methods by using the datasets we prepared.
 We experimented with many configurations of the matchmaking methods in the evaluation.
 In this chapter, we present the results of selected quantitative evaluation metrics and provide interpretations of the obtained results.
-Finally, the concluding chapter ([@sec:conclusions]) closes the dissertation, summarizing its principal contributions as well as remarking on its limitations that may be addresses in future research.
+Finally, the concluding chapter ([-@sec:conclusions]) closes the dissertation, summarizing its principal contributions as well as remarking on its limitations that may be addresses in future research.
 
 The contributions presented in this dissertation including the methods and software were authored or co-authored by the dissertation's author, unless stated otherwise.
-Both the reused and the developed software is listed in the [appendix @sec:software].
+Both the reused and the developed software is listed in [Appendix @sec:software].
 The abbreviations used throughout the text are collected at the end of the dissertation.
 All vocabulary prefixes used in the text can be resolved to their corresponding namespace IRIs via <http://prefix.cc>.
 

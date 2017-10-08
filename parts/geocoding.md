@@ -16,7 +16,7 @@ The main challenge to address in geocoding was the lack of structure in the geoc
 // We don't do geocoding of non-organization addresses that contain only `schema:description`, hence commented out.
 87.22 % postal addresses in the Czech public procurement register have only unstructured `schema:description`.
 -->
-As described in the [@sec:transformation], we attempted to parse the unstructured addresses to recover their structure.
+As described in [Section @sec:transformation], we attempted to parse the unstructured addresses to recover their structure.
 Nevertheless, many addresses contained just a name of a region or a municipality.
 This is why we started with simple geocoding based on matching region or municipality names.
 
@@ -25,7 +25,7 @@ The data provides geo-coordinates of centroids of each region and municipality.
 The geo-coordinates were reprojected from EPSG:5514 coordinate reference system (CRS) to EPSG:4326 to improve their interoperability, since the latter one is a de facto standard CRS on the Web.
 We loaded the data into our RDF store and ran a SPARQL Update operation to match the geo-coordinates to postal addresses via the names of regions and municipalities.
 
-In order to geocode other postal addresses, we built an Elasticsearch-based geocoder using the Czech addresses data, covered in the [@sec:czech-addresses].
+In order to geocode other postal addresses, we built an Elasticsearch-based geocoder using the Czech addresses data, covered in [Section @sec:czech-addresses].
 We decided not to use an existing solution for several reasons.
 Some existing services for geocoding have restrictive licenses.
 For instance, the results of the Google Maps Geocoding API can be used only in conjunction with displaying the obtained geo-coordinates on a map from Google Maps.^[<https://developers.google.com/maps/documentation/geocoding/policies#map>]
@@ -34,7 +34,7 @@ For example, this is the case of OpenStreetMap's Nominatim,^[<http://wiki.openst
 Finally, we wanted to assess whether open data can help build a geocoder on par with the commercial offerings.
 This is why we based the developed geocoder on the gazetteer built from the Czech address data.
 
-During the development of the geocoder we leveraged the tooling we built for data preparation, described in the [appendix @sec:software].
+During the development of the geocoder we leveraged the tooling we built for data preparation, described in the [Appendix @sec:software].
 *sparql-to-jsonld*^[<https://github.com/jindrichmynarz/sparql-to-jsonld>] was used to retrieve the Czech addresses data from a SPARQL endpoint, construct descriptions of the individual postal addresses, and frame them into JSON-LD documents.
 We used *jsonld-to-elasticsearch*^[<https://github.com/jindrichmynarz/jsonld-to-elasticsearch>] to index the addresses in Elasticsearch.
 In the index phase we applied a basic normalization and employed a synonym filter to expand the abbreviations commonly found in postal addresses.
@@ -47,7 +47,7 @@ In case we obtained multiple results from the geocoder, we selected the first on
 Since we practice separation of concerns, the geocoder expects a reasonably clean input.
 It is the responsibility of data preparation to structure and normalize the geocoded postal addresses.
 This effort has benefits for many tasks, not geocoding only.
-Instead of ad hoc cleaning during geocoding we thus prepared the postal addresses as part of the ETL pre-processing, as described in [@sec:transformation]. 
+Instead of ad hoc cleaning during geocoding we thus prepared the postal addresses as part of the ETL pre-processing, as described in [Section @sec:transformation]. 
 
 The geocoder generates the queries to Elasticsearch from its input addresses. 
 Since every property of the addresses is optional, the queries can be generated in several ways, depending on the semantics associated with the properties.

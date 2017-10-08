@@ -69,7 +69,7 @@ Since the dataset is of Czech origin, we used Czech koruna (CZK) as the default 
 The addresses without an explicitly stated country were assumed to be located in the Czech Republic.
 Nonetheless, it is important to acknowledge that adding default values was a trade-off favouring coverage over accuracy.
 
-We paid particular attention to structuring postal addresses in order to improve the results of the subsequent geocoding, described in the [@sec:geocoding].
+We paid particular attention to structuring postal addresses in order to improve the results of the subsequent geocoding, described in [Section @sec:geocoding].
 The primary aim of the transformation of postal addresses was to minimize their variety to increase their chance for match with the reference postal addresses.
 We managed to extract postal codes, house numbers, and street names from otherwise unstructured data.
 Accidental variations in postal addresses, such as punctuation, were normalized where possible.

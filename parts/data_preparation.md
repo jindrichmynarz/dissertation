@@ -110,4 +110,4 @@ The data preparation tasks were implemented via declarative programming using XS
 The high-level nature of declarative programming made the implementation concise and helped us to avoid bugs by abstracting from lower-level data manipulation.
 The work on data preparation started already in 2011, which may explain the diverse choices of the employed tools.
 Throughout the data preparation, as more suitable and mature tools appeared, we adopted them.
-A reference for the involved software is provided in the [appendix @sec:software].
+A reference for the involved software is provided in [Appendix @sec:software].

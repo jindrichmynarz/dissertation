@@ -16,7 +16,7 @@ The hereby described version is thus the third iteration of the matchmaker with 
 ### Benefits and drawbacks
 
 This matchmaker explores the use of SPARQL [@Harris2013] for matchmaking.
-We introduced SPARQL in the [@sec:linked-data].
+We introduced SPARQL in [Section @sec:linked-data].
 The choice of this technology for matchmaking has both benefits and drawbacks.
 
 #### Benefits of SPARQL for matchmaking
@@ -32,7 +32,7 @@ Consequently, there is little impedance mismatch between data and queries, which
 
 The design of SPARQL makes it into a universal tool for working with RDF.
 Thanks to its expressivity and declarative formulation it can be used for many varied tasks.
-For example, besides matchmaking we also adopted it as our primary tool for data preparation, as described in the [@sec:data-preparation].
+For example, besides matchmaking we also adopted it as our primary tool for data preparation, as described in [Section @sec:data-preparation].
 
 <!-- Standardization -->
 
@@ -213,7 +213,7 @@ This property indicates the kinds of contracts, such as works or supplies, which
 
 The matchmaker also allows to weight the matched contracts indirectly via weights of their contracting authorities.
 We use zIndex scores as weights of contracting authorities.
-These scores are taken from the dataset covered in the [@sec:zindex].
+These scores are taken from the dataset covered in [Section @sec:zindex].
 We assume the function $authority \colon C \to Auth$ returns the contracting authority of a given contract.
 Here, $Auth$ denotes the set of known contracting authorities.
 The function $zindex \colon Auth \to \left[0, 1\right]$ produces a weight given to a contracting authority by the zIndex score.
@@ -263,25 +263,25 @@ Finally, the matches are sorted by their score in descending order and the top-$
 
 ### Blind matchmakers {#sec:blind-matchmakers}
 
-Apart from the above-described matchmaker, we also implemented three blind approaches for matchmaking, none of which considers the query contract.
+Apart from the above-described matchmakers, we also implemented three blind approaches for matchmaking, none of which considers the query contract.
 The most basic is the random matchmaker that recommends bidders at random.
 While it is hardly going to deliver a competitive accuracy, it produces diverse results.
 An approach contrary to random matchmaking is the recommendation of the top-most popular bidders.
 For each contract this matchmaker recommends the same bidders that were awarded the most contracts.
 A similar approach is employed in the matchmaker that recommends bidders with the highest score computed by the PageRank-like algorithm implemented by the Virtuoso-specific `IRI_RANK` [@Virtuoso2017].
 Since this score uses a proprietary extension of SPARQL, it is an exception from our constraint to standard SPARQL.
-These conceptually and computationally simpler approaches are used as baselines to which we can contrast the more sophisticated ones in evaluation.
+These conceptually and computationally simpler approaches are used as baselines to which we can contrast the more sophisticated approaches in evaluation.
 
 ### Implementation of SPARQL-based matchmakers
 
-The matchmakers are implemented using SPARQL query templates.
+The matchmakers are implemented by SPARQL query templates.
 Each template receives a configuration and produces a SPARQL query.
 The generated queries are executed on the configured SPARQL endpoint and return ordered sets of matches.
-Each kind of matchmaker corresponds to a query template.
+Each kind of matchmaker corresponds to a particular query template.
 It may also expose specific parameters that can be provided via the configuration.
 
-The basic graph pattern considered in most configurations of the matchmaker is illustrated in [Listing @lst:property-path] using the SPARQL 1.1 Property Path syntax.
-The path is complicated by intermediate resources proxying CPV concepts connected via `skos:closeMatch`, as described in the [@sec:concrete-data-model].
+The basic graph pattern considered in most matchmakers is illustrated in [Listing @lst:property-path] using the SPARQL 1.1 Property Path syntax.
+The path is complicated by intermediate resources proxying CPV concepts connected via `skos:closeMatch`, as described in [Section @sec:concrete-data-model].
 
 ```{#lst:property-path caption="Matchmaker's basic SPARQL property path"}
 ?queryContract ^pc:lot/pc:mainObject/skos:closeMatch/
@@ -317,7 +317,7 @@ We used materialization for pre-computing inverse document frequencies (IDF) of 
 While IDF can be computed on the fly, we decided to pre-compute it and store it as RDF.
 Computation of IDF is implemented via two declarative SPARQL Update operations, the first of which uses a Virtuoso-specific extension function for logarithm (`bif:log10()`), and the second normalizes the IDFs using the maximum IDF.
 
-The matchmaker, described in the [@sec:matchmaker-sparql], is implemented as a wrapper over the Virtuoso RDF store.
+The matchmaker, described in [Section @sec:matchmaker-sparql], is implemented as a wrapper over the Virtuoso RDF store.
 Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
 
 <!--

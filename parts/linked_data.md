@@ -58,7 +58,7 @@ If more sophisticated ontological constraints are required, they can be defined 
 RDFS and OWL can be used in tandem to create vocabularies that provide classes and properties to describe data.
 Vocabularies enable tools to operate on datasets sharing the same vocabulary without dataset-specific adaptations.
 The explicit semantics provided by RDF vocabularies makes datasets described by such vocabularies machine-understandable to a limited extent.
-For example, we use the Public Contracts Ontology, described in [@sec:pco], for this purpose in our work.
+For example, we use the Public Contracts Ontology, described in [Section @sec:pco], for this purpose in our work.
 
 #### SPARQL
 
@@ -108,7 +108,7 @@ Given this assumption, quality assessment followed by data pre-processing is typ
 #### Benefits of linked data for matchmaking
 
 Having considered the characteristics of linked data we may highlight its advantages. 
-Many of these advantages are related to data preparation, which we point out in [@sec:data-preparation], however, linked data can also benefit matchmaking in several ways.
+Many of these advantages are related to data preparation, which we point out in [Section @sec:data-preparation], however, linked data can also benefit matchmaking in several ways.
 This overview draws upon the benefits of linked data for recommender systems identified in related research [@DiNoia2014; @DiNoia2016], since these benefits apply to matchmaking too.
 
 Unlike textual content, linked data is structured, so there is less need for structuring it via content analysis.

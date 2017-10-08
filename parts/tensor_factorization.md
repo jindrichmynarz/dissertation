@@ -1,6 +1,6 @@
 ## Tensor factorization {#sec:method-rescal}
 
-Tensor factorization is a method for decomposing tensors, described in the [@sec:loading-rescal], into lower-rank approximations.
+Tensor factorization is a method for decomposing tensors, described in [Section @sec:loading-rescal], into lower-rank approximations.
 The rank of a tensor $\mathcal{X}$ is "*the smallest number of rank one tensors that generate $\mathcal{X}$ as their sum"* [@Kolda2009].
 $\mathcal{X}$ is an $N$^th^ order rank one tensor when it *"can be written as the outer product of $N$ vectors"* [@Kolda2009]: $\mathcal{X} = \mathbf{a}^{(1)} \circ \mathbf{a}^{(2)} \circ \cdots \circ \mathbf{a}^{(N)}$.
 Determining the tensor's rank is known to be an NP-hard problem [@Sidiropoulos2017], so in practice low-rank approximations are used instead.
@@ -13,7 +13,7 @@ Unlike matrices, tensor representation offers a greater fidelity, since it can p
 Tensor factorization is also referred to as tensor decomposition.
 Here, for clarity, we use tensor factorization to denote the process of computing its product, the tensor decomposition.
 
-Statistical relational learning, introduced in the [@sec:srl], employs tensor factorization for link prediction.
+Statistical relational learning, introduced in [Section @sec:srl], employs tensor factorization for link prediction.
 Viewed from this perspective, the input of factorization is considered to be a noisy, partially observed tensor.
 Tensor decomposition produced by the factorization can be in turn used to reconstruct an approximation of the complete tensor.
 In this way, we can use tensor decompositions as prediction models that explain the predicted links by latent features of entities.
@@ -62,7 +62,7 @@ While higher $r$ increases the expressiveness of the latent features, it also in
 Consequently, setting $r$ to an appropriate value is a key trade-off to be made when tuning RESCAL.
 
 RESCAL uses distinct latent representations of entities as subjects and objects, which enables efficient information propagation to capture correlations over long-range relational chains [@Nickel2013c, p. 619] that may span heterogeneous relations. 
-In this way, RESCAL is able to leverage contextual data that is more distant in the relational graph for collective learning, which we described in the [@sec:srl].
+In this way, RESCAL is able to leverage contextual data that is more distant in the relational graph for collective learning, which we described in [Section @sec:srl].
 Unlike other factorization methods that cannot model collective learning sufficiently, *"the main advantage of RESCAL, if compared to other tensor factorizations, is that it can exploit a collective learning effect when applied to relational data"* [@Nickel2012, p. 272].
 
 RESCAL achieves leading performance for link prediction tasks.
@@ -114,7 +114,7 @@ Even though RESCAL is faster than the type-constrained approach with the same ra
 
 Other notable extensions of RESCAL add time awareness or tensor slice similarities.
 @Kuchar2016 enhanced link prediction via RESCAL to be time-aware.
-We used this approach in data pre-processing, as described in the [@sec:loading-rescal], to model decaying relevance of older contract awards.
+We used this approach in data pre-processing, as described in [Section @sec:loading-rescal], to model decaying relevance of older contract awards.
 @Padia2016 computed RESCAL with regard to the similarity of tensor slices to obtain better results.
 
 ### Ranking matches
@@ -156,8 +156,8 @@ FIXME: Mention blind matchmaker implemented by generating random predictions?
 
 ### Implementation of RESCAL-based matchmakers
 
-We implemented *matchmaker-rescal*, described in the [@sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol, explained in the [@sec:evaluation-protocol].
-Instead of extending RESCAL, our contribution lies in the data preparation and pre-processing described in the [@sec:loading-rescal].
+We implemented *matchmaker-rescal*, described in [Section @sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol, explained in [Section @sec:evaluation-protocol].
+Instead of extending RESCAL, our contribution lies in the data preparation and pre-processing described in [Section @sec:loading-rescal].
 
 When developing the RESCAL wrapper, we needed to take several aspects of performance into consideration.
 Due to the size of the processed data it is important to leverage its sparseness, which is why we employ efficient data structures for sparse matrices from the SciPy^[<https://www.scipy.org>] library.

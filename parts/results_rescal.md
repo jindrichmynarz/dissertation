@@ -29,7 +29,7 @@ Optimal values of the regularization parameters are dataset-specific.
 While @Padia2016 achieved the best results with $\lambda_{A} = 10$ and $\lambda_{R} = 0.2$, @Kuchar2016 obtained the peak performance by setting both to 0.01.
 In our case, we found that relatively high values of the regularization parameters tend to achieve the best results.
 We set both $\lambda_{A}$ and $\lambda_{R}$ to be 10.
-A comparison of a few selected values of the regularization parameters is shown in the [@tbl:regularization-parameters] for `pc:mainObject` at rank 50.
+A comparison of a few selected values of the regularization parameters is shown in [Table @tbl:regularization-parameters] for `pc:mainObject` at rank 50.
 
 $\lambda_{A}$ $\lambda_{R}$     HR@10    MRR@10     CC@10    LTP@10
 ------------- ------------- --------- --------- --------- ---------
@@ -42,7 +42,7 @@ $\lambda_{A}$ $\lambda_{R}$     HR@10    MRR@10     CC@10    LTP@10
 Table: Evaluation of regularization parameters {#tbl:regularization-parameters}
 
 The remaining hyper-parameters exposed by RESCAL include initialization methods and convergence criteria.
-RESCAL can initialize the latent matrices either randomly or by eigenvalues of the input tensor, the latter method being clearly superior, as shown in the [@tbl:initialization-methods] for `pc:mainObject` at rank 50.
+RESCAL can initialize the latent matrices either randomly or by eigenvalues of the input tensor, the latter method being clearly superior, as shown in [Table @tbl:initialization-methods] for `pc:mainObject` at rank 50.
 RESCAL stops when it reaches the given convergence criteria, which can be specified either as the maximum number of iterations or as the maximum residual.
 We used the default values for these hyper-parameters.
 
@@ -92,13 +92,15 @@ Ultimately, we considered using larger sets of features including those that imp
 `isvz:serviceCategory`
 `rov:orgActivity`
 `rov:orgActivity` + `skos:broaderTransitive`
+
+Worse results achieved by the combinations of feature individually improving the baseline invalidate our assumption that the contributions of features do not cancel themselves out.
 -->
 
 ### Ageing relations
 
-Evaluation of ageing was done by time series cross-validation, as described in the [@sec:evaluation-protocol].
+Evaluation of ageing was done by time series cross-validation, as described in [Section @sec:evaluation-protocol].
 
-Ageing was applied to the tensor slice containing links between public contracts and awarded bidders, as described in the [@sec:loading-rescal].
+Ageing was applied to the tensor slice containing links between public contracts and awarded bidders, as described in [Section @sec:loading-rescal].
 
 <!--
 Compare `pc:mainObject` normal and aged, in both cases using time series cross-validation, at ranks 50 and 500.

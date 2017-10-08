@@ -128,7 +128,7 @@ The configuration describes the data to use, connection to a SPARQL endpoint to 
 
 *matchmaker-rescal*^[<https://github.com/jindrichmynarz/matchmaker-rescal>] is a command-line application that wraps the original implementation of RESCAL in Python.
 It serves as an exploratory tool for experimentation with RESCAL-based matchmaking.
-The sole purpose of the tool is to evaluate link prediction for a given relation using cross-validation and the metrics defined in the @sec:evaluated-metrics.
+The sole purpose of the tool is to evaluate link prediction for a given relation using cross-validation and the metrics defined in [Section @sec:evaluated-metrics].
 Its input consists of the ground truth matrix encoding the relation to predict, additional matrices encoding other relations, and configuration with hyper-parameters for RESCAL.
 The matrices required as input by this tool can be prepared by *sparql-to-tensor*.
 

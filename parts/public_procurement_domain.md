@@ -90,7 +90,7 @@ In fact, one of the reasons why the public procurement market is dominated by la
 According to our approach to data preparation, linked data provides a way to compensate the impact of imperfect standardization.
 While a standard can be defined as *"coordination mechanism around non-proprietary knowledge that organizes and directs technological change"* [@Gosain2003, p. 18], linked data enables to cope with insufficient standardization by allowing for *"cooperation without coordination"* [@Wood2011, p. 5] or without centralization.
 Instead, linked data bridges local heterogeneities via the flexible data model of RDF and explicit links between the decentralized data sources.
-We describe our use of linked data in detail in the [@sec:data-preparation].
+We describe our use of linked data in detail in [Section @sec:data-preparation].
 
 ### Economic context
 
@@ -104,7 +104,7 @@ Compared with the EU, the Czech Republic exhibits consistent above-average value
 <!-- Economy of scale -->
 
 The large volume of transactions in public procurement gives rise to economies of scale, so that even minor improvements can accrue substantial economic impact, since the scale of operations in this domain provides ample opportunity for cost savings.
-Publishing open data on public procurement as well as using matchmaking methods can be considered among the examples of such improvements, which can potentially increase the efficiency of resource allocation in the public sector, as mentioned in the [@sec:open-data].
+Publishing open data on public procurement as well as using matchmaking methods can be considered among the examples of such improvements, which can potentially increase the efficiency of resource allocation in the public sector, as mentioned in [Section @sec:open-data].
 
 <!-- Passive waste -->
 

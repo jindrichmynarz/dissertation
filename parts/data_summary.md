@@ -9,7 +9,7 @@ We encountered many challenges during the preparation of these datasets.
 
 Since it is collectively created by thousands of officials representing contracting authorities over time, the Czech public procurement dataset suffers from the same problems as user-generated data, resulting in inconsistency and heterogeneity.
 Standardization can counteract these problems, but the standardization of public procurement data is imperfect at best.
-Moreover, as discussed in the [@sec:public-procurement], public procurement is laden with disincentives to publishing good data.
+Moreover, as discussed in [Section @sec:public-procurement], public procurement is laden with disincentives to publishing good data.
 A key data quality problem we encountered was missing data.
 In particular, shared identifiers of entities involved in public procurement were non-existent, missing, or unreliable.
 In other cases there were conflicting values in the data, without enough annotations to discern the correct values and resolve their conflicts.
@@ -21,7 +21,7 @@ Problems:
 - Violations of the allegedly validated rules
 -->
 
-In order to combat the afore-mentioned data quality problems, we invested a lot of effort into linking ([@sec:linking]) and fusion ([@sec:fusion]) of the data.
+In order to combat the afore-mentioned data quality problems, we invested a lot of effort into linking ([-@sec:linking]) and fusion ([-@sec:fusion]) of the data.
 The primary task we addressed was to reduce the variety of the data by conforming values, fusing aliases, or resolving value conflicts.
 Our approach to ETL adopted the separation of concerns as its basic design principle.
 In this way, we reduced the complexity of the data preparation and avoided bugs that could be caused by needless coupling.

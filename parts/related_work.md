@@ -124,7 +124,7 @@ Extensive evaluation shows the presented approach as superior to other matchmaki
 
 Semantic matchmaking operates on data described by vocabularies and ontologies.
 Vocabularies enable to bestow data with semantic features that matchmaking can leverage.
-Support for matchmaking was one of the design goals of the Public Contracts Ontology (PCO), described in [@sec:pco], which we developed to represent public procurement data.
+Support for matchmaking was one of the design goals of the Public Contracts Ontology (PCO), described in [Section @sec:pco], which we developed to represent public procurement data.
 Here we present a review of related vocabularies that too can provide support for matchmaking.
 
 Call for Anything (C4N)^[<http://vocab.deri.ie/c4n>] is a simple vocabulary for describing demands, such as calls for tenders or calls for papers.
@@ -159,7 +159,7 @@ Leaving this difference aside, the way demands can be expressed follows the same
 <!-- LOTED2 -->
 
 LOTED2 [@Distinto2016] is a legal ontology for public procurement notices.
-As a legal ontology, it closely follows the EU directives governing public procurement, which we described in the [@sec:legal-context].
+As a legal ontology, it closely follows the EU directives governing public procurement, which we described in [Section @sec:legal-context].
 As such, the ontology enables to describe the tendering process for public contracts in legal terms.
 It pays a special attention to qualification criteria, which matchmaking may interpret as hard constraints for filtering bidders who are allowed to compete for public contracts.
 As the name indicates, LOTED2 evolved from Linked Open Tenders Electronic Daily (LOTED) [@Valle2010], an effort to convert TED to RDF using a simple vocabulary that mirrored the structure of the source data.
