@@ -1,6 +1,8 @@
 .PHONY: clean
 
 define PARTS
+parts/preface.md \
+parts/acknowledgements.md \
 parts/introduction.md \
 parts/linked_open_data.md \
 parts/open_data.md \
@@ -42,11 +44,6 @@ parts/references.md \
 parts/software.md \
 parts/publications.md \
 parts/abbreviations.md
-endef
-
-define STAGING_PARTS
-parts/preface.md \
-parts/acknowledgements.md
 endef
 
 define COMMON_PARAMS
@@ -110,7 +107,7 @@ pdf:
 		-V papersize=a4paper \
 		-V documentclass:report \
 		$(COMMON_PARAMS) \
-		$(STAGING_PARTS) $(PARTS)
+		$(PARTS)
 
 excerpt:
 	pandoc --latex-engine=xelatex \
