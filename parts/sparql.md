@@ -301,24 +301,24 @@ However, it can be rewritten to the more verbose standard SPARQL notation if ful
 Score aggregation via aggregation functions is done using SPARQL 1.1 aggregates.
 However, probabilistic sum requires aggregation by multiplication, which cannot be implemented directly in SPARQL since it lacks an operator to multiply grouped bindings.
 Therefore, we implemented this aggregation function via post-processing of SPARQL results.
-Eventually, since the difference on the evaluated metrics between probabilistic sum and summation ($a + b$)    turned out to be statistically insignificant, we opted for summation, which can be computed in SPARQL and is       marginally faster.
-A side effect of this implementation is that the match scores in the matchmaker are not normalized.
+Eventually, since the difference on the evaluated metrics between probabilistic sum and summation ($a + b$)    turned out to be statistically insignificant, we opted for summation, which can be computed directly in SPARQL and is marginally faster.
+A side effect of this implementation is that the match scores in the matchmakers using this aggregation function are not normalized.
 
 <!-- Optimization -->
 
-The execution time of the matchmaker can be improved by common optimization techniques for SPARQL.
-We reordered triple patterns in the matchmaking queries in order to minimize cardinality of the intermediate results.
+The execution time of the matchmakers can be improved by common optimization techniques for SPARQL.
+We reordered triple patterns in the matchmaking queries in order to minimize the cardinalities of the intermediate results.
 We reduced unnecessary intermediate bindings via blank nodes and property paths.
-Performance can be also enhanced by materialization of pre-computed data.
-While there is no need for data pre-processing, derived data that changes infrequently can be materialized and stored in RDF.
-Doing so can improve performance by avoiding the need to recompute the derived data at query time.
-This benefit is offset by increased use of storage space and an overhead with updates, since materialized data has to be recomputed when the data it is derived from changes.
-We used materialization for pre-computing inverse document frequencies (IDF) of CPV concepts.
+Performance can be also enhanced by storing pre-computed data.
+While there is no need for data pre-processing specific for the matchmakers, derived data that changes infrequently can be materialized and stored in RDF.
+Doing so can improve the performance of matchmakers by avoiding the need to recompute the derived data at query time.
+This benefit is offset by increased use of storage space and an additional overhead with updates, since materialized data has to be recomputed when the data it is derived from changes.
+We used materialization for pre-computing IDF of CPV concepts.
 While IDF can be computed on the fly, we decided to pre-compute it and store it as RDF.
 Computation of IDF is implemented via two declarative SPARQL Update operations, the first of which uses a Virtuoso-specific extension function for logarithm (`bif:log10()`), and the second normalizes the IDFs using the maximum IDF.
 
-The matchmaker, described in [Section @sec:matchmaker-sparql], is implemented as a wrapper over the Virtuoso RDF store.
-Example SPARQL queries used by the matchmaker can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
+The implementation of the matchmakers, described in [Section @sec:matchmaker-sparql], is built as a wrapper over the Virtuoso RDF store.
+Example SPARQL queries used by the matchmakers can be found at <https://github.com/opendatacz/matchmaker/wiki/SPARQL-query-examples>.
 
 <!--
 Out-takes:

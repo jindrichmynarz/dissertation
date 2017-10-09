@@ -202,7 +202,7 @@ Since the graph data model of LOD is conducive to the use of graph algorithms, s
 Examples of this sort include personalized PageRank [@Nguyen2015], spreading activation [@Heitmann2014; @Heitmann2016], or WeightedNIPaths [@Ristoski2015].
 
 Matchmaking can also derive inspiration from technologies in two broader research areas.
-Instance matching [@Christen2012; @Bryl2014] is usually limited to discovering equivalence relationships, although its similarity measures and combination functions to aggregate similarity scores are also applicable to discovering matches between demands and supplies.
+Instance matching [@Christen2012; @Bryl2014] is usually limited to discovering identity links, although its similarity measures and combination functions to aggregate similarity scores are also applicable to discovering matches between demands and supplies.
 Semantic search [@Davies2009] can be considered a research area to which semantic matchmaking belongs.
 Matchmaking can borrow many techniques from this parent, such as query expansion or retrieval from semi-structured data.
 A notable example of a semantic search engine for RDF is SIREn [@Delbru2012], which extends Apache Lucene^[<http://lucene.apache.org>] with capabilities to search deeply nested data without a fixed schema.

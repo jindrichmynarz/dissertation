@@ -8,7 +8,7 @@ As data grows to larger volumes, its machine-readability becomes paramount, so t
 Moreover, relevant data may be fragmented across diverse data sources, which need to be integrated to enable their effective use.
 Nevertheless, when data collection and integration is done manually, it takes a lot of effort.
 
-Some manual effort involved in gathering and evaluation of data about demands and supplies can be automated by matchmaking.
+Some manual effort involved in gathering and evaluation of data about demands and supplies can be automated by matchmaking, as explained further in [Section @sec:matchmaking].
 Simply put, matchmakers are tools that retrieve data matching a query.
 In the matchmaking setting, either demands or supplies are cast as queries while the other side is treated as the queried data.
 The queries produce matches from the queried data ranked by their degree to which they satisfy a given query.

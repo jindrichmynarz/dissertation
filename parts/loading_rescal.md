@@ -86,4 +86,6 @@ Instead of exporting all RDF data to the tensor format, we selected few features
 There are 76 different relations in the Czech public procurement dataset in total.
 Even more relations are available if we add the linked data.
 We experimented with selecting individual relations as well as their combinations to find out which ones produce the best results.
-We guided this search by the assumption that the contributions of the individual relations do not cancel themselves out.
+We guided this search by the assumption that the contributions of the individual relations do not cancel one another out.
+Moreover, we ignore the possibility that features that do not bring improvement separately can produce improvement if used in combination, having synergic effect.
+Our heuristic for manual feature selection thus resembles simple hill-climbing.
