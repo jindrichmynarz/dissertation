@@ -129,8 +129,14 @@ We identified several use cases in public procurement where matchmaking can help
 Matchmaking covers the information phase of market transaction [@Schmid1998, p. 194] that corresponds to the preparation and tendering stages in public procurement life-cycle [@Necasky2014, p. 865].
 During this phase *"participants to the market seek potential partners"* [@DiNoia2004], so that public bodies learn about relevant bidders and companies learn about relevant open calls.
 In this sense, demands for products and services correspond to information needs and the aim of matchmaking is to retrieve the information that will satisfy them.
-Several use cases for matchmaking follow from the public procurement legislation according to the procedure types chosen for public contracts.
-The following use cases are by no means intended to be comprehensive, instead, they illustrate a typical situations in which matchmaking can be helpful.
+Several use cases for matchmaking follow from the public procurement legislation according to the procedure types chosen for public contracts, such as:
+
+1. Matching bidders to suitable contracts to apply for in open procedures
+2. Matching relevant bidders that contracting authorities can approach in closed procedures
+3. Matching similar contracts to serve as models for a new contract
+
+The following use cases are by no means intended to be comprehensive.
+They illustrate the typical situations in which matchmaking can be helpful.
 
 Public procurement law defines types of procedures that govern how contracting authorities communicate with bidders.
 In particular, procedure types determine what data on public contracts is published, along with specifying who has access to it and when it needs to be made available.
