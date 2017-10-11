@@ -94,6 +94,8 @@ Ultimately, we considered using larger sets of features including those that imp
 `rov:orgActivity` + `skos:broaderTransitive`
 
 Worse results achieved by the combinations of feature individually improving the baseline invalidate our assumption that the contributions of features do not cancel themselves out.
+
+Directionality matters: compare `rov:orgActivity` and symmetric variants.
 -->
 
 ### Ageing relations
