@@ -33,7 +33,7 @@ Offline evaluation then *"consists of running several algorithms on the same dat
 <!-- Limitations of offline evaluation -->
 
 While using historical user interaction data for evaluation is a common practice [@Jannach2010, p. 169], it has several flaws that reduce its predictive power.
-In addition to the domain-specific limitations of the ground truth, which we described in [@sec:ground-truth], the datasets used for offline evaluation can be incomplete and may contain systemic biases.
+In addition to the domain-specific limitations of the ground truth, which we described in [Section @sec:ground-truth], the datasets used for offline evaluation can be incomplete and may contain systemic biases.
 Ground truth in the datasets is incomplete, since it typically contains only a fraction of true positives.
 In most cases, users review only few possible matches, excluding the rest, notwithstanding its relevance, from the true positives.
 Consequently, if the evaluated system recommends relevant items that are not in the ground truth, these matches are ignored.

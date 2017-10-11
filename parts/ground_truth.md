@@ -38,7 +38,7 @@ Nevertheless, how can matchmaking work without learning from the awarded contrac
 -->
 
 We devised several counter-measures to ameliorate the impact of adverse selection in our ground truth.
-We experimented with discounting contract awards by the zIndex scores, described in the [@sec:zindex], of their contracting authorities.
+We experimented with discounting contract awards by the zIndex scores, described in [Section @sec:zindex], of their contracting authorities.
 However, this is a blunt tool, since it applies across the board for all contracts by a contracting authority.
 Within large contracting authorities each contract may be administered by a different civil servant, who may change over time.
 

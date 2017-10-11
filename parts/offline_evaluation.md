@@ -16,7 +16,7 @@ Since we test different matchmakers in the same context, this evaluation can be 
 ## Ground truth
 
 We conducted offline evaluation using retrospective data about awarded public contracts.
-As we described previously in the [@sec:ground-truth], the ground truth poses several challenges and limitations that the matchmakers have to deal with.
+As we described previously in [Section @sec:ground-truth], the ground truth poses several challenges and limitations that the matchmakers have to deal with.
 Matchmaking was tested on the task of predicting the awarded bidder.
 In our case, we treat contract awards as explicit positive user feedback.
 Thus, in terms of [@Beel2013], we use a "user-offline-dataset", since it contains implicit ratings inferred from contract awards.

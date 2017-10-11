@@ -1,4 +1,4 @@
-## Matchmaking
+## Matchmaking {#sec:matchmaking}
 
 Matchmaking is an information retrieval task that ranks pairs of demands and offers according to the degree to which the offer satisfies the demand.
 It is a *"process of searching the space of possible matches between demand and supplies"* [@DiNoia2004, p. 9].

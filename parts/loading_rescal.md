@@ -46,7 +46,7 @@ Interestingly, unlike RDF, tensors can represent n-ary relations without decompo
 What would in RDF require reification or named graphs can be captured with greater tensor order.
 This presents an opportunity for more expressive modelling outside of the boundaries of RDF.
 
-We developed *sparql-to-tensor*, described in the [@sec:sparql-to-tensor], to export RDF data from a SPARQL endpoint to the tensor form.
+We developed *sparql-to-tensor*, described in [Section @sec:sparql-to-tensor], to export RDF data from a SPARQL endpoint to the tensor form.
 The transformation is defined by SPARQL SELECT queries given to this export tool. 
 Each query retrieves data for one or more RDF properties that constitute the relations in the output tensor.
 During the evaluation, we created and tested many tensors, each combining different properties and ways of pre-processing.
@@ -54,7 +54,7 @@ During the evaluation, we created and tested many tensors, each combining differ
 In most cases the retrieved relations corresponded to explicit RDF properties found in the source data.
 However, in a few select cases we constructed new relations.
 This was done either to avoid intermediate resources, such as tenders relating awarded bidders or proxy concepts relating unqualified CPV concepts, or to relate numeric values discretized to intervals.
-Since the original RESCAL algorithm does not support continuous variables, we discretized such variables via *discretize-sparql*, which is covered in the [@sec:discretize-sparql].
+Since the original RESCAL algorithm does not support continuous variables, we discretized such variables via *discretize-sparql*, which is covered in [Section @sec:discretize-sparql].
 We applied discretization to the actual prices of contracts, which we split into 15 equifrequent intervals having approximately the same number of members.
 
 Apart from binary numbers as tensor entries we used float numbers $\mathcal{X}_{ijk} \in \mathbb{R} \colon 0 \leq \mathcal{X}_{ijk} \leq 1$ to distinguish the degrees of importance of relations.
@@ -86,4 +86,6 @@ Instead of exporting all RDF data to the tensor format, we selected few features
 There are 76 different relations in the Czech public procurement dataset in total.
 Even more relations are available if we add the linked data.
 We experimented with selecting individual relations as well as their combinations to find out which ones produce the best results.
-We guided this search by the assumption that the contributions of the individual relations do not cancel themselves out.
+We guided this search by the assumption that the contributions of the individual relations do not cancel one another out.
+Moreover, we ignore the possibility that features that do not bring improvement separately can produce improvement if used in combination, having synergic effect.
+Our heuristic for manual feature selection thus resembles simple hill-climbing.

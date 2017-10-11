@@ -8,8 +8,8 @@ These factors included weighting, query expansion, aggregation functions, and da
 
 ### Blind matchmakers
 
-As a starting point, we evaluated the blind matchmakers described in the [@sec:blind-matchmakers].
-The results of their evaluation are summarized in the [@tbl:blind-matchmakers].
+As a starting point, we evaluated the blind matchmakers described in [Section @sec:blind-matchmakers].
+The results of their evaluation are summarized in [Table @tbl:blind-matchmakers].
 Since these matchmakers ignore the query contract, they are able to produce matches for any contract, and thus score the maximum PC.
 They cover the extremes of the diversity spectrum.
 On the one hand, the random matchmaker can recommend practically any bidder, most of whom come from the long tail.
@@ -29,12 +29,12 @@ Table: Evaluation of blind matchmakers {#tbl:blind-matchmakers}
 
 ### Aggregation functions
 
-We evaluated the aggregation functions from the [@sec:aggregation-functions].
+We evaluated the aggregation functions from [Section @sec:aggregation-functions].
 In each case, we used the t-norm and t-conorm from the same family, e.g., the Gödel's t-norm was used with the Gödel t-conorm.
 The functions were applied to matchmaking via the `pc:mainObject` property with the weight of 0.6.
 This weight was chosen in order to allow the differences between the functions to manifest.
 For instance, if we used the weight of 1, Łukasiewicz's aggregation would not distinguish between bidders who won one matching contract and those who won more.
-The results of this comparison are shown in the [@tbl:norms-conorms].
+The results of this comparison are shown in [Table @tbl:norms-conorms].
 Product aggregation clearly outperforms the other functions in terms of accuracy. 
 Both Gödel's and Łukasiewicz's aggregation functions do not learn sufficiently from the extent of matched data.
 Similar findings were obtained in our previous work in @Mynarz2015.
@@ -50,9 +50,9 @@ Table: Evaluation t-norms and t-conorms {#tbl:norms-conorms}
 
 ### Individual features
 
-As we described in the [@sec:contract-objects], we used several properties that describe contract objects.
+As we described in [Section @sec:contract-objects], we used several properties that describe contract objects.
 We evaluated these properties separately, without weighting, to determine their predictive power.
-Evaluation results of the matchmakers based on the four considered properties are given in the [@tbl:properties-evaluation].
+Evaluation results of the matchmakers based on the four considered properties are given in [Table @tbl:properties-evaluation].
 The best-performing property is the `pc:mainObject`.
 As [Fig. @fig:cumulative-hr] illustrates, its HR@k grows logarithmically with $k$, starting at 7 % chance of finding the contact's winner as the first hit.
 We chose this property as our baseline that we tried to improve further on.
@@ -77,8 +77,8 @@ Table: Evaluation of individual properties {#tbl:properties-evaluation}
 
 Having evaluated the properties individually we examined whether their combinations could perform better.
 We combined the properties with the baseline property `pc:mainObject`, using a reduced weight of 0.1 for the added properties.
-Besides the properties evaluated above, we also experimented with including the qualifiers of CPV concepts described in the [@sec:cpv].
-The evaluation results of the matchmakers based on the combinations of properties are presented in the [@tbl:combined-properties].
+Besides the properties evaluated above, we also experimented with including the qualifiers of CPV concepts described in [Section @sec:cpv].
+The evaluation results of the matchmakers based on the combinations of properties are presented in [Table @tbl:combined-properties].
 None of the properties produced a synergistic effect with `pc:mainObject`.
 If there was an improvement, it was not practically meaningful.
 We also experimented with a larger range of weights for the combination with `pc:additionalProperty`, however, none of the weights led to a significant difference in the evaluation results.
@@ -107,11 +107,11 @@ Table: Evaluation of combined properties {#tbl:combined-properties}
 
 ### Query expansion
 
-Apart from using combinations of properties, we can also extend the baseline matchmaker via query expansion, as documented in the [@sec:query-expansion].
+Apart from using combinations of properties, we can also extend the baseline matchmaker via query expansion, as documented in [Section @sec:query-expansion].
 We evaluated the expansion to related CPV concepts connected via hierarchical relations, both in the direction to broader concepts, to narrower concepts, or in both directions.
 The query expansion followed a given maximum number of hops in these directions.
 Following too many hops to related concepts can introduce noise [@DiNoia2012a], so we weighted the concepts inferred by query expansion either by a fixed inhibition or by a weight derived from their IDF.
-The results of the experiments with query expansion are gathered in the [@tbl:query-expansion].
+The results of the experiments with query expansion are gathered in [Table @tbl:query-expansion].
 Expansion to broader concepts was able to improve on the accuracy metrics slightly, although the difference was too small to be meaningful.
 Overall, we found that introducing query expansion led only to minuscule changes in the performance of the baseline matchmaker.
 For instance, expansion to broader concepts weighted by IDF produced results that differed only in higher decimal precision for the different numbers of hops followed.
@@ -155,8 +155,8 @@ Both approaches suffer from the cold start problem, although the baseline matchm
 
 ### Data refinement
 
-Of the data refinement steps undertaken, as described in the [@sec:transformation], we evaluated what impact better deduplication and mapping CPV 2003 to CPV 2008 had on the baseline matchmaker.
-Both steps improved the evaluation results of the matchmaker, as can be seen in the [@tbl:data-refinement].
+Of the data refinement steps undertaken, as described in [Section @sec:transformation], we evaluated what impact better deduplication and mapping CPV 2003 to CPV 2008 had on the baseline matchmaker.
+Both steps improved the evaluation results of the matchmaker, as can be seen in [Table @tbl:data-refinement].
 Better deduplication and fusion of bidders reduces the search space of possible matches, so that the probability of finding the correct match increases.
 Mapping CPV 2003 to CPV 2008 enlarges the dataset the matchmaker can learn from by 15.31 %, accounting for older contracts described by CPV 2003.
 However, while HR@10 improves after this mapping, CC@10 decreases, which may be explained by more data affirming the few established bidders.
@@ -176,7 +176,7 @@ Table: Impact of data refinement on the baseline matchmaker {#tbl:data-refinemen
 We evaluated two approaches devised as counter-measures to address the limits of our ground truth.
 One of them weighted contract awards by the zIndex fairness score of the contracting authority, the other limited the training dataset to contracts awarded in open procedures.
 The proposed counter-measures were not successful.
-Both approaches fared worse than our baseline, as documented in the [@tbl:counter-measures-evaluation].
+Both approaches fared worse than our baseline, as documented in [Table @tbl:counter-measures-evaluation].
 While the impact of weighting by zIndex is barely noticeable, the restriction to open procedures decreased most of the observed metrics.
 The decrease may be attributed to the smaller size of training data, even though the majority of contracts in our dataset were awarded via an open procedure.
 

@@ -34,4 +34,4 @@ Complementary open datasets can help fill in the blank values or add extra featu
 The hereby presented work was done within the broader context of the OpenData.cz^[<http://opendata.cz>] initiative.
 OpenData.cz is an initiative for a transparent data infrastructure of the Czech public sector.
 It advocates adopting open data and linked data principles for publishing data on the Web.
-Our contributions described in the [@sec:data-preparation] enhance this infrastructure by supplying it with more open datasets and improving the existing ones.
+Our contributions described in [Section @sec:data-preparation] enhance this infrastructure by supplying it with more open datasets and improving the existing ones.

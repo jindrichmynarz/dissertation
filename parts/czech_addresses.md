@@ -37,7 +37,7 @@ We may ascribe this difference to the precision of the transformation keys that 
 Nevertheless, the differences among the variants ranged in centimeters, so that they were negligible for the purposes we wanted to use the geo-coordinates.
 
 In fact, the reprojection of the Czech addresses geo-coordinates would not be necessary if we only computed distances within this dataset.
-However, the reprojection was needed in order to be able to compare the geo-coordinates with WGS84 geo-coordinates produced by existing geocoding services for the purpose of evaluation of geocoding, as described in the [@sec:geocoding].
+However, the reprojection was needed in order to be able to compare the geo-coordinates with WGS84 geo-coordinates produced by existing geocoding services for the purpose of evaluation of geocoding, as described in [Section @sec:geocoding].
 Moreover, the reprojection to a standard coordinate reference system generally improved the ease of use of the data.
 For example, map visualizations, that are typically done using software libraries expecting WGS84 geo-coordinates, could thus avoid using to on-the-fly reprojections of the data. 
 

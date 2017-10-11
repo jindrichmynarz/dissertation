@@ -1,25 +1,25 @@
 ## Tensor factorization {#sec:method-rescal}
 
-Tensor factorization is a method for decomposing tensors, described in the [@sec:loading-rescal], into lower-rank approximations.
-The rank of a tensor $\mathcal{X}$ is "*the smallest number of rank one tensors that generate $\mathcal{X}$ as their sum"* [@Kolda2009].
+Tensor factorization is a method for decomposing tensors, which are described in [Section @sec:loading-rescal], into lower-rank approximations.
+The rank of a tensor $\mathcal{X}$ is *"the smallest number of rank one tensors that generate $\mathcal{X}$ as their sum"* [@Kolda2009].
 $\mathcal{X}$ is an $N$^th^ order rank one tensor when it *"can be written as the outer product of $N$ vectors"* [@Kolda2009]: $\mathcal{X} = \mathbf{a}^{(1)} \circ \mathbf{a}^{(2)} \circ \cdots \circ \mathbf{a}^{(N)}$.
 Determining the tensor's rank is known to be an NP-hard problem [@Sidiropoulos2017], so in practice low-rank approximations are used instead.
-As such, tensor factorization can be considered a dimensionality reduction technique based on the assumption that there exists a low-dimensional embedding of entities in tensors.
+As such, tensor factorization can be considered a dimensionality reduction technique based on the assumption that there exists a low-dimensional embedding of the entities in tensors.
 In fact, computing a tensor factorization is possible because most tensors exhibit latent structure.
 A theoretical generalization of the abilities of tensor factorization is provided in @Nickel2013b.
 
 Tensor factorization can be regarded as a generalization of matrix factorization for higher-dimensional arrays.
-Unlike matrices, tensor representation offers a greater fidelity, since it can preserve the structure of higher order relations that would be lost were these relations collapsed into a matrix representation [@Morup2011].
+Unlike matrices, tensor representation offers a greater fidelity, since it can preserve the structure of higher order relations that would be otherwise lost were these relations collapsed into a matrix representation [@Morup2011].
 Tensor factorization is also referred to as tensor decomposition.
 Here, for clarity, we use tensor factorization to denote the process of computing its product, the tensor decomposition.
 
-Statistical relational learning, introduced in the [@sec:srl], employs tensor factorization for link prediction.
+Statistical relational learning, introduced in [Section @sec:srl], employs tensor factorization for link prediction.
 Viewed from this perspective, the input of factorization is considered to be a noisy, partially observed tensor.
 Tensor decomposition produced by the factorization can be in turn used to reconstruct an approximation of the complete tensor.
 In this way, we can use tensor decompositions as prediction models that explain the predicted links by latent features of entities.
 Tensor factorization typically yields good results for link prediction in domains characterized by high dimensionality, sparseness [@Nickel2011], and noise [@Zhiltsov2013, p. 1254].
 So far, it has found applications in many domains, including chemometrics or social network mining.
-There were also a few attempts to apply tensor factorization to RDF, such as TripleRank [@Franz2009], the dominant one being RESCAL [@Nickel2011]. 
+There were also a few attempts applying tensor factorization to RDF, such as TripleRank [@Franz2009], the dominant one being RESCAL [@Nickel2011]. 
 We reused RESCAL for matchmaking via tensor factorization.
 
 <!--
@@ -48,37 +48,37 @@ Dealing with noise in the data
 ### RESCAL
 
 RESCAL is a machine learning algorithm for factorization of third-order tensors.
-It factorizes a tensor $\mathcal{X}$ with $n$ entities to a rank-$r$ representation, so that each frontal slice $\mathcal{X}_{k}$ of the tensor can be approximately reconstructed via matrix product from the decomposition to latent components, as shown in [Fig. @fig:rescal-decomposition]: <!-- _b -->
+It factorizes a tensor $\mathcal{X}$ with $n$ entities to a rank-$r$ representation, so that each frontal slice $\mathcal{X}_{k}$ of the tensor can be approximately reconstructed via matrix product from the decomposition to latent components, as shown in [Fig. @fig:rescal-decomposition], using this formula: <!-- _b -->
 
 $$X_{k} \approx AR_{k}A^{T}$$ {#eq:rescal-decomposition}
 
 ![RESCAL decomposition, adopted from @Nickel2012](resources/img/rescal_decomposition.png){#fig:rescal-decomposition}
 
-In this formula, $A$ is an $n \times r$ matrix containing the latent component representation of entities in $\mathcal{X}$, $A^{T}$ is its transposition, and $R_{k}$ is a square $r \times r$ matrix modelling the interactions of the latent components in the $k$^th^ predicate [@Nickel2011]. <!-- _b -->
+In this formula, $A$ is an $n \times r$ matrix containing the latent component representation of entities in $\mathcal{X}$, $A^{T}$ is its transposition, and $R_{k}$ is a square $r \times r$ matrix that models the interactions of the latent components in the $k$^th^ predicate [@Nickel2011]. <!-- _b -->
 Using this decomposition, RESCAL *"explains triples via pairwise interactions of latent features"* [@Nickel2016, p. 17].
-Unlike other latent feature models, latent variables in RESCAL do not describe entity classes but are latent entity factors [@Tresp2014].
-The rank $r$ is a *"a central parameter of factorization methods that determines generalization ability as well as scalability"* [@Nickel2014].
+Unlike in other latent feature models, the latent variables in RESCAL do not describe entity classes but latent entity factors instead [@Tresp2014].
+The rank $r$ is a *"central parameter of factorization methods that determines generalization ability as well as scalability"* [@Nickel2014].
 While higher $r$ increases the expressiveness of the latent features, it also increases the runtime of tensor factorization as well as its propensity for overfitting.
 Consequently, setting $r$ to an appropriate value is a key trade-off to be made when tuning RESCAL.
 
 RESCAL uses distinct latent representations of entities as subjects and objects, which enables efficient information propagation to capture correlations over long-range relational chains [@Nickel2013c, p. 619] that may span heterogeneous relations. 
-In this way, RESCAL is able to leverage contextual data that is more distant in the relational graph for collective learning, which we described in the [@sec:srl].
-Unlike other factorization methods that cannot model collective learning sufficiently, *"the main advantage of RESCAL, if compared to other tensor factorizations, is that it can exploit a collective learning effect when applied to relational data"* [@Nickel2012, p. 272].
+In this way, RESCAL is able to leverage contextual data that is more distant in the relational graph for collective learning, which we described in [Section @sec:srl].
+Unlike other factorization methods that cannot model collective learning sufficiently, *"the main advantage of RESCAL, [...] is that it can exploit a collective learning effect when applied to relational data"* [@Nickel2012, p. 272].
 
-RESCAL achieves leading performance for link prediction tasks.
+RESCAL achieves a leading performance for link prediction tasks.
 It was shown to be superior for link prediction tasks on several datasets.
 Moreover, it scales better to large data than many traditional methods for statistical relational learning, such as Markov logic networks.
 @Nickel2012 demonstrated how the execution of RESCAL can be parallelized and distributed across multiple computing nodes.
 RESCAL is also fundamentally simpler than other tensor factorization methods. 
-Unlike similar algorithms, RESCAL stands out by low Kolmogorov complexity.
-It is implemented only in 120 lines of code of Python [@Nickel2011] using only the NumPy^[<http://www.numpy.org>] library.
+Unlike similar algorithms, RESCAL stands out by a low Kolmogorov complexity.
+It is implemented only in 120 lines of code in Python [@Nickel2011] using solely the NumPy^[<http://www.numpy.org>] library.
 
 <!-- Extensions -->
 
 Many extensions of RESCAL were proposed.
 Its state-of-the-art results and conceptual simplicity invite improvements.
 The aspects that the extensions deal with include negative training examples, handling literals, or type constraints.
-We employed some of the discussed extensions for matchmaking.
+<!-- We employed some of the discussed extensions for matchmaking. -->
 
 <!-- Negative examples -->
 
@@ -86,17 +86,17 @@ RESCAL adopts the local closed world assumption (LCWA), which is used often for 
 It *"approaches the problem of learning from positive examples only, by assuming that missing triples are very likely not true, an approach that makes sense in a high-dimensional but sparse domain"* [@Nickel2012, p. 273].
 However, *"training on all-positive data is tricky, because the model might easily over generalize"* [@Nickel2016, p. 24].
 In order to avoid underfitting, negative examples can be generated via type constraints for predicates or valid ranges of literals.
-@Nickel2016 proposes generating negative examples by perturbing true triples.
-Basically, switching subjects in triples sharing the same functional property produces false, but type-consistent triples.
+@Nickel2016 propose generating negative examples by perturbing true triples.
+For instance, switching subjects in triples sharing the same functional property produces false, but type-consistent triples.
 
 <!-- Handling literals -->
 
 The original version of RESCAL [@Nickel2011] uses only object properties as relations.
 Datatype properties with literal objects can only be used if the literals are treated as entities.
-When literals are included as entities, although they never appear as subjects, the tensor's sparseness grows. 
+When literals are included as entities in a tensor, although they never appear as subjects, the tensor's sparseness grows. 
 Moreover, since the number of distinct literals may significantly surpass the number of entities, this naïve treatment will greatly expand the dimensionality of the input tensor. 
 Both high dimensionality and sparseness thereby increase the complexity of computing the factorization.
-Minor improvements can be attained by pre-processing literals, such as by discretizing ordinal values, tokenizing plain texts, and stemming the generated tokens.
+Minor improvements can be attained by pre-processing literals, such as by discretizing numeric values, tokenizing plain texts, and stemming the generated tokens.
 Nevertheless, treatment of literals warrants a more sophisticated approach.
 To address this issue, @Nickel2012 introduced an extension of RESCAL to handle literals via an attribute matrix that is factorized conjointly with the tensor with relations between entities.
 In a similar vein, @Zhiltsov2013 proposed Ext-RESCAL, an approach using term-based entity descriptions that include names, other datatype properties as attributes, and outgoing links.
@@ -114,21 +114,21 @@ Even though RESCAL is faster than the type-constrained approach with the same ra
 
 Other notable extensions of RESCAL add time awareness or tensor slice similarities.
 @Kuchar2016 enhanced link prediction via RESCAL to be time-aware.
-We used this approach in data pre-processing, as described in the [@sec:loading-rescal], to model decaying relevance of older contract awards.
-@Padia2016 computed RESCAL with regard to the similarity of tensor slices to obtain better results.
+We used this approach in data pre-processing, as described in [Section @sec:loading-rescal], to model decaying relevance of older contract awards.
+@Padia2016 obtained better results from RESCAL by considering the similarities of tensor slices. 
 
 ### Ranking matches
 
 We applied link prediction via RESCAL to matchmaking, assuming that the tensor decomposition produced by RESCAL can accurately model the affinities between contracts and bidders.
 Probabilities of links predicted in the tensor slice representing contract awards can be obtained by reconstructing the slice from the tensor decomposition.
-Given the slice $R_{award}$ for contract awards from the latent factor tensor $\mathcal{R}$ produced by RESCAL, we can obtain predictions of entities awarded with the contract $c$ by following the [@eq:rescal-decomposition] and computing the vector $p = A_{c}R_{award}A^{T}$. <!-- _b This vector is also a mode-2 fiber. -->
+Given the slice $R_{award}$ for contract awards from the latent factor tensor $\mathcal{R}$ produced by RESCAL, we can obtain predictions of entities awarded with the contract $c$ by following [Eq. @eq:rescal-decomposition] and computing the predictions vector $p = A_{c}R_{award}A^{T}$. <!-- _b This vector is also a mode-2 fiber. -->
 Entries in $p$ can be interpreted as probabilities of the contract $c$ being awarded to entities at corresponding indices in $p$.
 Using the indices of bidders we can filter the entries in $p$ and then rank them in descending order to obtain the best matches for $c$.
 
 We used no minimal threshold to filter out irrelevant matches.
 As reported in [@Nickel2012], determining a reasonable threshold is difficult, because the high sparseness of the input tensors causes a strong bias towards zero [@Nickel2012, 274].
-Consequently, instead of setting an arbitrary threshold, we ranked the predictions by their likelihood and projected the top-ranking predictions as the matches.
-This decision is a trade-off erring on the side of delivering less relevant results instead of producing no results.
+Consequently, instead of setting an arbitrary threshold, we ranked the predictions by their probability and projected the top-ranking predictions as the matches.
+This decision is a trade-off erring on the side of delivering less relevant results instead of producing fewer or no results.
 
 <!--
 Link prediction ranks entries in the reconstructed tensor by their values (components/factors?).
@@ -156,15 +156,15 @@ FIXME: Mention blind matchmaker implemented by generating random predictions?
 
 ### Implementation of RESCAL-based matchmakers
 
-We implemented *matchmaker-rescal*, described in the [@sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol, explained in the [@sec:evaluation-protocol].
-Instead of extending RESCAL, our contribution lies in the data preparation and pre-processing described in the [@sec:loading-rescal].
+We implemented *matchmaker-rescal*, described in [Section @sec:matchmaker-rescal], a thin wrapper of RESCAL that runs our evaluation protocol, explained in [Section @sec:evaluation-protocol].
+Instead of extending RESCAL, our contribution lies in the data preparation and pre-processing described in [Section @sec:loading-rescal].
 
 When developing the RESCAL wrapper, we needed to take several aspects of performance into consideration.
 Due to the size of the processed data it is important to leverage its sparseness, which is why we employ efficient data structures for sparse matrices from the SciPy^[<https://www.scipy.org>] library.
-Reconstructing the whole predictions slice is unfeasible for larger datasets due to its size in memory.
-In order to reduce the memory footprint of the matchmakers, we avoid reconstructing the whole predictions slice from the RESCAL factorization, but instead reconstruct only the top-$k$ results.
-Predictions are computed for each row separately, so that the rows can be garbage-collected to free memory.
-In order to enable parallelization it was important to compile the underlying NumPy library with the OpenBLAS^[<http://www.openblas.net>] back-end, which allows to leverage multi-core machines for computing low-level array operations, such as the matrix product that is central to RESCAL.
+Due to its size in memory, reconstructing the whole predictions slice is unfeasible for larger datasets. 
+In order to reduce the memory footprint of the RESCAL-based matchmakers, we avoided reconstructing the whole predictions slice from the RESCAL factorization, but computed only the top-$k$ results instead.
+Predictions were computed for each row separately, so that the rows could be garbage-collected to free memory.
+In order to enable parallelization, it was important to compile the underlying NumPy library with the OpenBLAS^[<http://www.openblas.net>] back-end, which allows to leverage multi-core machines for parallel computation of low-level array operations, such as the matrix product that is central to RESCAL.
 
 <!--
 numpy.dot implements the matrix product (i.e. sum of rows times columns)

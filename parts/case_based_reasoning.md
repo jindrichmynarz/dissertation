@@ -26,10 +26,10 @@ This also enables assigning each feature a different weight, so that more releva
 The employed metrics may be either symmetric or asymmetric.
 For example, we can use an asymmetric metric to favour lower prices over higher prices, even though their distance to the price in the query is the same.
 Since the similarity metrics allow fuzzy matches, reasoning in CBR systems is approximate.
-As Richter and Weber argue, *"the most important characteristic that distinguishes case-based reasoning from other kinds of reasoning is that it does not lead from true assumptions to true conclusions"* [-@Richter2013, p. 18].
+Consequently, as Richter and Weber argue, the characteristic that distinguishes CBR from deductive reasoning in logic or databases is that *"it does not lead from true assumptions to true conclusions"* [-@Richter2013, p. 18].
 
 A key feature of CBR is that similarity computation typically requires background knowledge.
-While similarity of ordinal features can be determined without it, categorical features call for additional knowledge to assess their degree of similarity.
+While similarity of cardinal features can be determined without it, nominal features call for additional knowledge to assess their degree of similarity. <!-- Richter and Weber use "ordinal" instead of "cardinal". -->
 For instance, a taxonomy may be used to compute similarity as the inverse of taxonomic distance between the values of the compared feature.
 Since hand-coding background knowledge is expensive, and typically requires assistance of domain experts, CBR research considered alternatives for knowledge acquisition, such as using external semantics from linked open data or discovering latent semantics via machine learning.
 

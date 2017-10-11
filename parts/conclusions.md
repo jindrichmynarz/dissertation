@@ -32,7 +32,7 @@ Nevertheless, most linked open data must be considered to be raw data that requi
 
 <!-- Delta from the state of the art -->
 
-When we review our progress beyond the state of the art, introduced in the [@sec:related-work], our key contribution is the adaption of existing generic technologies for a concrete use case concerning matchmaking in the Czech public procurement.
+When we review our progress beyond the state of the art, introduced in [Section @sec:related-work], our key contribution is the adaption of existing generic technologies for a concrete use case concerning matchmaking in the Czech public procurement.
 Using SPARQL, we developed a novel matchmaking method inspired by case-based reasoning.
 The closest to this method is the work of @AlvarezRodriguez2011c, which is however documented only in broad strokes, thus preventing more detailed comparison.
 The combination of logical deduction and statistical learning we were inspired by can be traced back to the work on iSPARQL by @Kiefer2008.
@@ -43,10 +43,10 @@ Ultimately, our work produced a greater value in the developed reusable artefact
 The presented work was built on open source software as well as data prepared by others.
 In particular, most of the transformations of the ARES dataset were done by Jakub Klímek.
 The extracted Business Register data was provided by Ondřej Kokeš.
-Both these contributions are acknowledged directly in the [@sec:ares].
+Both these contributions are acknowledged directly in [Section @sec:ares].
 zIndex fairness scores were supplied to us by Datlab s.r.o.
-The software we reused in our work is listed in the [appendix @sec:software].
-The design of the Public Contracts Ontology was a collaborative effort as indicated in the references in the [@sec:pco].
+The software we reused in our work is listed in [Appendix @sec:software].
+The design of the Public Contracts Ontology was a collaborative effort as indicated in the references in [Section @sec:pco].
 
 <!-- Assessment of the applicability of the work -->
 

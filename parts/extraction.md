@@ -35,10 +35,10 @@ To reduce the size of the processed data and simplify further processing we firs
 Doing so simplified the subsequent transformations, since they did not have to cater for the option of empty elements.
 
 We developed an XSL stylesheet to extract the source XML data to RDF/XML [@Gandon2014].
-The stylesheet maps the schema of the source data onto the target schema described in the [@sec:concrete-data-model].
+The stylesheet maps the schema of the source data onto the target schema described in [Section @sec:concrete-data-model].
 During the extraction we validated the syntax of registered identification numbers, CPV codes, and literals typed with `xsd:date`.
 If possible, we established links in the extracted data by concatenating unambiguous identifiers to namespace IRIs.
-However, the majority of linking was offloaded to a dedicated phase in the ETL process, covered in the [@sec:linking], since it typically required queries over the complete dataset.
+However, the majority of linking was offloaded to a dedicated phase in the ETL process, covered in [Section @sec:linking], since it typically required queries over the complete dataset.
 A trade-off we had to make due to our choice of an RDF store was to use plain literals in place of literals typed with `xsd:duration`, since Virtuoso^[<https://virtuoso.openlinksw.com>] does not yet support this data type.
 We used LinkedPipes-ETL (LP-ETL) [@Klimek2016] to automate the extraction.
 LP-ETL provided us with a way to automate downloading and transforming the source data in a data processing pipeline.
