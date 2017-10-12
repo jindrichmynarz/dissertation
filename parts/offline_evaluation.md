@@ -11,7 +11,7 @@ Effect size:
 -->
 
 We used offline evaluation to filter matchmaking methods and configurations to find the most promising ones.
-Since we test different matchmakers in the same context, this evaluation can be considered a trade-off analysis [@Wieringa2014, p. 260], in which we balance the differences in the evaluated measures.
+Since we test different matchmakers in the same context, this evaluation can be also considered a trade-off analysis [@Wieringa2014, p. 260], in which we balance the differences in the evaluated measures.
 
 ## Ground truth
 
@@ -25,8 +25,8 @@ Thus, in terms of [@Beel2013], we use a "user-offline-dataset", since it contain
 
 Due to the design of the chosen evaluation task, we had to adjust our ground truth data.
 Since we evaluate matchmaking as a prediction of the awarded bidders, we need each public contract to have a single winner.
-However, that is not the case for around 1 % of public contracts in our dataset.
-This may be either in error or when members of the winning groups of bidders are listed separately.
+However, that is not the case for around 1 % of the public contracts in our dataset.
+This may be either in error or caused by members of the winning groups of bidders being listed separately.
 For example, framework agreements may be awarded to multiple bidders.
 For the sake of simplicity we decided to exclude these contracts from our ground truth.
 
@@ -44,10 +44,10 @@ In this way we tested prediction of each contract award in the ground truth.
 
 When evaluating matchmakers that take time into account, we split the ground truth so that the training data precedes the testing data.
 First, we sort the ground truth by contract award date in ascending order.
-When the award data is unknown, we use the median award date.
-The sorted ground truth is then split in 5 folds.
-The second or later folds are consecutively used as testing data, while all the previous folds constitute training data.
-The first fold is therefore never used for testing, so we test only 4 folds.
+If the award date is unknown, we use its median value.
+The sorted ground truth is then split in five folds.
+The second or later folds are consecutively used as the testing data, while all the previous folds constitute the training data.
+The first fold is therefore never used for testing, so we test only four folds.
 In this way we avoid training on data from the future relative to the tested data.
 
 <!--
@@ -61,8 +61,7 @@ Should we add an explanation why we did not split folds by time?
 
 The objectives we focus on in offline evaluation are accuracy and diversity of the matchmaking results.
 The adopted evaluation metrics thus go beyond those that reflect accuracy.
-We aim to maximize the metrics of accuracy.
-In case of the non-accuracy metrics we strive to increase them without degrading the accuracy.
+While we aim to maximize the metrics of accuracy, in case of the non-accuracy metrics, we strive to increase them without degrading the accuracy.
 
 <!-- Evaluation of performance?
 Perhaps a rough overall assessment can suffice. E.g., both the SPARQL-based and Elasticsearch-based matchmakers deliver real-time performance, while the RESCAL-based one has to be used in batch mode.
@@ -72,8 +71,8 @@ Mention restrictions by the computational cost of an evaluation protocol? E.g., 
 
 We define the evaluation metrics using the following notation.
 Let $C$ be the set of public contracts and $B$ the set of bidders who were awarded at least one contract.
-The function $\mathit{match10}_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of 10 best-matching bidders recommended for a given public contract by matchmaker $m$.
-We considered only the first 10 results due to the primacy effect, which describes that the items at the beginning of a recommendation list are analyzed more frequently.[^top10]
+The function $\mathit{match10}_{m}\colon C \to \mathbb{P}(B)$, where $\mathbb{P}(B)$ is the powerset of $B$, returns an ordered set of 10 best-matching bidders recommended by matchmaker $m$ for a given public contract.
+We considered only the first 10 results due to the primacy effect, which describes that users analyze the items at the beginning of a recommendation list more frequently.[^top10]
 The function $winner\colon C \to B$ returns the winning bidder to whom a contract was awarded.
 The function $wrank\colon C \to \mathbb{N}_{> 0} \cup \{ \text{nil} \}$ gives the rank of the bidder who won a given public contract.
 
@@ -99,7 +98,7 @@ This metric can be calculated for the matchmaker $m$ as follows:
 $$HR@10 = \frac{\left\vert{c \in C : winner(c) \in \mathit{match10}_{m}(c)}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
 
 MRR@10 [@Craswell2009] is the arithmetic mean of multiplicative inverse ranks.
-Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{> 0}$ can be defined as such:
+Multiplicative inverse rank $mir\colon C \to \mathbb{Q}_{> 0}$ for matchmaker $m$ can be defined as such:
 
 $$mir(c)=\begin{cases}
          \frac{1}{wrank(c)} & \text{if}\ winner(c) \in \mathit{match10}_{m}(c) \\
@@ -110,19 +109,19 @@ This metric is used for evaluating systems where *"the user wishes to see one re
 This makes it suitable for our evaluation setup, since for each query (i.e. a contract) we know only one true positive (i.e. the awarded bidder).
 MRR@10 reflects how prominent the position of the hit is in the matchmaking results.
 We aim to increase MRR@10, corresponding to a lower rank the hit has.
-MRR@10 for the matchmaker $m$ can be defined as follows:
+MRR@10 can be defined as follows:
 
 $$MRR@10 = \frac{1}{\left\vert{C}\right\vert}\sum_{c \in C} mir(c)$$ <!-- _b -->
 
 The adopted metrics that go beyond accuracy include prediction coverage (PC), catalog coverage at 10 (CC@10), and long-tail percentage at 10 (LTP@10).
 PC [@Herlocker2004, p. 40] measures the amount of items for which the evaluated system is able to produce recommendations.
 We strive to increase PC to achieve a near-complete coverage.
-PC for the matchmaker $m$ is defined as the share of queries for which non-empty results are returned.
+PC for the matchmaker $m$ is defined as the share of the queries for which non-empty results are returned.
 
 $$PC = \frac{\left\vert{c \in C : \mathit{match10}_{m}(c) \neq \varnothing}\right\vert}{\left\vert{C}\right\vert}$$ <!-- _b -->
 
 CC@10 [@Ge2010, p. 258] reflects diversity of the recommended items.
-Systems that recommend a limited set of items have a low catalog coverage, while systems that recommend diverse items achieve a higher catalog coverage.
+Systems that recommend a limited set of items have a low catalog coverage, while systems that recommend many diverse items achieve a higher catalog coverage.
 We compute CC@10 for the matchmaker $m$ as the number of distinct bidders in the top 10 results for all contracts divided by the number of all bidders.
 
 $$CC@10 = \frac{\left\vert{\bigcup_{c \in C} \mathit{match10}_{m}(c)}\right\vert}{\left\vert{B}\right\vert}$$ <!-- _b -->
@@ -132,13 +131,12 @@ Concretely, it measures the share of items from the long tail in the matchmaking
 If we sort bidders in descending order by the number of contracts awarded to them, the first bidders that account for 20 % of contract awards form the *short head* and the remaining ones constitute the *long tail*.
 In case of the Czech public procurement data, 20 % of the awarded contracts concentrates among the 101 most popular bidders from the total of 14388 bidders in the dataset.
 To avoid awarding contracts only to a few highly successful bidders, we aim to increase the proportion of recommendations from the long tail of bidders.
-This is especially important for evaluation of the case-based matchmakers, which tend to favour the most popular bidders.
-Let $(b_{1}, \dots, b_{n})$ be a list of all bidders $b_{i} \in B$, so that $(i \prec j) \implies awards(b_{i}) \geq awards(b_{j})$, so that the bidders are sorted in descending order by the number of contracts awarded to them. <!-- _b -->
+Let $(b_{1}, \dots, b_{n})$ be a list of all bidders $b_{i} \in B$, so that $(i \prec j) \implies awards(b_{i}) \geq awards(b_{j})$ and the bidders are sorted in descending order by the number of contracts awarded to them. <!-- _b -->
 The short head $SH$ of this ordered list can be then defined as:
 
 $$SH = (b_{1},\dots,b_{e});\quad \textrm{so that}\, e : \sum_{k = 1}^{e - 1} awards(b_{k}) < \frac{\left\vert{C}\right\vert}{5} \leq \sum_{l = 1}^{e} awards(b_{l})$$ <!-- _b -->
 
-The formula defines $SH$ as delimited by the index $e$ of the bidder with the awards of whom the short head accumulates 20 % of all awarded contracts (i.e. $\frac{\left\vert{C}\right\vert}{5}$).
+The formula defines $SH$ as delimited by the index $e$ of the bidder with the awards of whom the short head accumulates the 20 % of all awarded contracts (i.e. $\frac{\left\vert{C}\right\vert}{5}$).
 Long tail $LT$ is the complement of the short head ($LT = B \setminus SH$).
 We then calculate LTP@10 for the matchmaker $m$ as follows:
 
@@ -156,8 +154,8 @@ This is probably not such a large difference, since the maximum age is only
 <!-- Unused evaluation metrics -->
 
 Due to our evaluation setup we avoided some of the usual metrics from information retrieval in general and from recommender systems in particular.
-Both precision and recall have limited prediction power in our case, since only one true positive is known.
-If we consider top 10 results only, precision would be either 1/10 or 0, while recall would either be 1 or 0.
+Both precision and recall have limited use in our case, since only one true positive is known.
+If we consider top 10 results only, the precision would be either 1/10 or 0, while the recall would be either 1 or 0.
 This problem is known as class imbalance [@Christen2012].
 Results with the status of non-match are much more prevalent in matchmaking than those with the status of match, which skews the evaluation measures that take non-matches into account.
 
@@ -170,7 +168,7 @@ Moreover, it does not require the compared samples to follow normal distribution
 -->
 
 The rest of this chapter features the results obtained from SPARQL-based and RESCAL-based matchmakers in the evaluation.
-All reported evaluation results are rounded to three decimal places.
+All the reported evaluation results are rounded to three decimal places for the purpose of presentation.
 The best results for each metric in each table are highlighted by using a bold font.
 
 [^top10]: 91 % of search engine users consider only the top 10 results, according to a study (<http://www.seo-takeover.com/case-study-click-through-rate-google>).
