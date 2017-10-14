@@ -173,7 +173,7 @@ Table: Impact of data refinement on the baseline matchmaker {#tbl:data-refinemen
 
 ### Counter-measures to limits of ground truth 
 
-We evaluated two approaches devised as counter-measures to address the limits of our ground truth.
+We evaluated two approaches devised as counter-measures to address the limits of our ground truth, described in [Section @sec:ground-truth].
 One of them weighted contract awards by the zIndex fairness score of the contracting authority, the other limited the training dataset to contracts awarded in open procedures.
 The proposed counter-measures were not successful.
 Both approaches fared worse than our baseline, as documented in [Table @tbl:counter-measures-evaluation].
