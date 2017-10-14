@@ -53,6 +53,8 @@ Eigenvalues           **0.081** **0.032** **0.006**    0.049
 
 Table: Evaluation of initialization methods {#tbl:initialization-methods}
 
+In the further experiments, we use rank 500, $\lambda_{A}$ and $\lambda_{R}$ set to 10, unless specified otherwise.
+
 ### Feature selection
 
 <!-- Individual features -->
@@ -101,8 +103,17 @@ Directionality matters: compare `rov:orgActivity` and symmetric variants.
 ### Ageing relations
 
 Evaluation of ageing was done by time series cross-validation, as described in [Section @sec:evaluation-protocol].
+Ageing was applied to the tensor slice containing links between public contracts and awarded bidders, which we covered in [Section @sec:loading-rescal].
+We compared how ageing affects matchmaking with the `pc:mainObject` property. 
+As shown in [Table @tbl:ageing], there is no significant observable difference when ageing is applied.
+When compared to `pc:mainObject` evaluated using the n-fold cross-validation, the results in time series cross-validation are notably worse, which can be attributed to the lower amount of data available in this evaluation protocol.
 
-Ageing was applied to the tensor slice containing links between public contracts and awarded bidders, as described in [Section @sec:loading-rescal].
+Configuration            HR@10   MRR@10     CC@10    LTP@10
+--------------------- -------- -------- --------- ---------
+`pc:mainObject`       **0.07** **0.03** **0.013** **0.185**
+`pc:mainObject`, aged **0.07** **0.03** **0.013** **0.185**
+
+Table: Evaluation of ageing {#tbl:ageing}
 
 <!--
 Compare `pc:mainObject` normal and aged, in both cases using time series cross-validation, at ranks 50 and 500.
@@ -114,11 +125,19 @@ However, it may hint a bug in the evaluation protocol.
 
 ### Use of literals
 
-<!--
-Actual prices (i.e. `pc:actualPrice`) are known for 91.5 % of contracts in the evaluated dataset.
--->
+We experimented with a limited use of literals, namely via discretization of the actual prices of contracts, represented by the `pc:actualPrice` property, which we split into 15 equifrequent intervals having approximately the same number of members.
+Actual prices were known for 91.5 % of contracts in the evaluated dataset.
+We combined the discretized actual prices with `pc:mainObject`.
+A comparison of the combination with `pc:mainObject` only is shown in [Table @tbl:discretization-actual-price].
+Adding actual prices mostly worsens the evaluation results.
+We surmise that the decrease can be explained by noisy data about prices.
+Upon manual inspection, we found that prices may be reported as coefficients to be multiplied by an implicit factor that is not part of the structured data.
 
-If there is no improvement or a decrease in performance, it might be explainable by noisy data about prices.
-Prices may be reported as coefficients to be multiplied by an implicit factor that is not part of the structured data.
+Features                             HR@10    MRR@10     CC@10    LTP@10
+--------------------------------- -------- --------- --------- ---------
+`pc:mainObject`                   **0.17** **0.077**      0.02 **0.211**
+`pc:mainObject`, `pc:actualPrice`    0.155	    0.07 **0.025**	   0.086
+
+Table: Evaluation of adding discretized actual prices {#tbl:discretization-actual-price}
 
 <!-- Summary -->
