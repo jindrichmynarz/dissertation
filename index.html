@@ -2640,7 +2640,7 @@
           </section>
           <section id="ageing-relations" class="level3">
           <h3><span class="header-section-number">4.5.3</span> Ageing relations</h3>
-          <p>Evaluation of ageing was done by time series cross-validation, as described in Section <a href="#sec:evaluation-protocol">4.2</a>. Ageing, which we covered in Section <a href="#sec:loading-rescal">2.6.2</a>, was applied to the tensor slice containing the links between public contracts and awarded bidders. We compared how ageing affects matchmaking with the <code>pc:mainObject</code> property. As shown in Table <a href="#tbl:ageing">15</a>, there is no observable difference when ageing is applied. When compared to <code>pc:mainObject</code> evaluated using the n-fold cross-validation, the results in time series cross-validation are notably worse, which can be attributed to the lower volume of data available in this evaluation protocol.</p>
+          <p>Evaluation of ageing was done by time series cross-validation, as described in Section <a href="#sec:evaluation-protocol">4.2</a>. Ageing, which we covered in Section <a href="#sec:loading-rescal">2.6.2</a>, was applied to the tensor slice containing the links between public contracts and awarded bidders. We compared how ageing affects matchmaking with the <code>pc:mainObject</code> property. As shown in Table <a href="#tbl:ageing">15</a>, applying the ageing worsens the results of the accuracy metrics. When compared to <code>pc:mainObject</code> evaluated using the n-fold cross-validation, the results in time series cross-validation are notably worse, which can be attributed to the lower volume of data available in this evaluation protocol.</p>
           <div id="tbl:ageing">
           <table>
           <caption>Table 15: Evaluation of ageing</caption>
@@ -2658,15 +2658,15 @@
           <td style="text-align: left;"><code>pc:mainObject</code></td>
           <td style="text-align: right;"><strong>0.07</strong></td>
           <td style="text-align: right;"><strong>0.03</strong></td>
-          <td style="text-align: right;"><strong>0.013</strong></td>
-          <td style="text-align: right;"><strong>0.185</strong></td>
+          <td style="text-align: right;">0.013</td>
+          <td style="text-align: right;">0.185</td>
           </tr>
           <tr class="even">
           <td style="text-align: left;"><code>pc:mainObject</code>, aged</td>
-          <td style="text-align: right;"><strong>0.07</strong></td>
-          <td style="text-align: right;"><strong>0.03</strong></td>
-          <td style="text-align: right;"><strong>0.013</strong></td>
-          <td style="text-align: right;"><strong>0.185</strong></td>
+          <td style="text-align: right;">0.035</td>
+          <td style="text-align: right;">0.013</td>
+          <td style="text-align: right;"><strong>0.016</strong></td>
+          <td style="text-align: right;"><strong>0.413</strong></td>
           </tr>
           </tbody>
           </table>
