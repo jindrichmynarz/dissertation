@@ -1,3 +1,4 @@
+\normalsize
 \appendix
 
 # Abbreviations {#sec:abbreviations .unnumbered}

@@ -41,9 +41,9 @@ parts/results_rescal.md \
 parts/results_comparison.md \
 parts/conclusions.md \
 parts/references.md \
+parts/abbreviations.md \
 parts/software.md \
-parts/publications.md \
-parts/abbreviations.md
+parts/publications.md
 endef
 
 define COMMON_PARAMS
