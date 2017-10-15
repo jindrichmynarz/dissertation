@@ -9,7 +9,7 @@ We sum up our main contributions and contrast them with the current research to 
 We consider the practical applicability of our work and provide concrete examples of incorporating it into end-user applications.
 Finally, we assess the degree of fulfilment of our stated goals and suggest directions for future research.
 
-## Summary of the main contributions
+## Main contributions
 
 We developed and documented methods to match public contracts to bidders.
 These methods leverage linked open data that describes the entities involved in matchmaking as being a part of a semantically described knowledge graph, which includes descriptions of the entities, as well as their interactions, relations, or contextual data.
