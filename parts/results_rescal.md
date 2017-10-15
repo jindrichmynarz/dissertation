@@ -73,7 +73,7 @@ However, increasing rank has the inverse effect on other features, including `pc
 We observed that features for which higher rank improves the evaluation results have higher cardinality, while the converse is usually true for features with low cardinality.
 Here, cardinality is the number of distinct values a feature has in a dataset.
 For instance, the cardinalities of the mentioned features for which results improve with the increased rank are 4588, 16982, and 43; whereas the cardinalities of the respective features that exhibit the inverse are 10, 15, and 4.
-These observations suggest that higher rank can rearch better resolution if provided with a feature having a higher cardinality.
+These observations suggest that higher rank can reach better resolution if provided with a feature having a higher cardinality.
 Conversely, RESCAL cannot leverage a higher rank if given a feature with low cardinality, in which case its latent components capture noise instead of informative distinctions.
 Nevertheless, high cardinality does not imply good results, such as in case of `pc:weightedCriterion` that has 27793 distinct values in our dataset, yet achieves poor results.
 
