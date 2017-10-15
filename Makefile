@@ -109,6 +109,23 @@ pdf:
 		$(COMMON_PARAMS) \
 		$(PARTS)
 
+print:
+	pandoc --latex-engine=xelatex \
+		--include-before-body parts/title_page.tex \
+		--include-before-body parts/affidavit.tex \
+		--include-before-body parts/abstract_czech.tex \
+		--include-before-body parts/abstract_english.tex \
+		-o dissertation.pdf \
+		--variable citecolor=black \
+		--variable urlcolor=black \
+		--variable linkcolor=black \
+		--template resources/templates/template.tex \
+		-V fontsize=12pt \
+		-V papersize=a4paper \
+		-V documentclass:report \
+		$(COMMON_PARAMS) \
+		$(PARTS)
+
 excerpt:
 	pandoc --latex-engine=xelatex \
 		--include-before-body parts/title_page.tex \
