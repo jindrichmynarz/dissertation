@@ -112,30 +112,31 @@ We evaluated the expansion to related CPV concepts connected via hierarchical re
 The query expansion followed a given maximum number of hops in these directions.
 Following too many hops to related concepts can introduce noise [@DiNoia2012a], so we weighted the concepts inferred by query expansion either by a fixed inhibition or by a weight derived from their IDF.
 The results of the experiments with query expansion are gathered in [Table @tbl:query-expansion].
+Here, ↑ denotes the number of hops expanded to the broader concepts and ↓ indicates the hops to the narrower concepts. 
 Expansion to broader concepts was able to improve on the accuracy metrics slightly, although the difference was too small to be meaningful.
 Overall, we found that introducing query expansion led only to minuscule changes in the performance of the baseline matchmaker.
 For instance, expansion to broader concepts weighted by IDF produced results that differed only in higher decimal precision for the different numbers of hops followed.
 
-Broader Narrower Weight     HR@10    MRR@10     CC@10        PC    LTP@10
-------- -------- ------ --------- --------- --------- --------- ---------
-      1        0      1     0.245     0.119      0.51      0.99      0.67
-      1        0    0.5     0.252     0.124     0.533      0.99     0.673
-      1        0    0.1     0.257     0.127     0.563      0.99     0.682
-      2        0    0.1     0.258     0.126     0.545     0.994     0.672
-      3        0    0.1     0.257     0.125     0.517 **0.996**      0.65
-      1        0    IDF     0.249     0.125     0.565     0.978 **0.684**
-      2        0    IDF     0.249     0.125     0.565     0.978 **0.684**
-      3        0    IDF     0.249     0.125     0.565     0.978 **0.684**
-      0        1      1     0.248     0.123     0.527     0.982     0.677
-      0        1    0.5     0.252     0.125     0.549     0.982     0.677
-      0        1    0.1     0.253     0.126 **0.569**     0.982     0.677
-      0        2    0.1     0.253     0.126     0.565     0.979     0.679
-      0        3    0.1     0.254     0.126     0.562     0.982     0.677
-      0        1    IDF     0.253     0.126     0.572     0.982 **0.684**
-      0        2    IDF     0.254     0.126     0.572     0.982      0.68
-      0        3    IDF     0.254     0.126     0.569     0.982     0.682
-      1        1    0.1 **0.259** **0.128**     0.563     0.991     0.678
-      1        1    IDF     0.249     0.125     0.565     0.978 **0.684**
+↑ ↓ Weight     HR@10    MRR@10     CC@10        PC    LTP@10
+- - ------ --------- --------- --------- --------- ---------
+1 0      1     0.245     0.119      0.51      0.99      0.67
+1 0    0.5     0.252     0.124     0.533      0.99     0.673
+1 0    0.1     0.257     0.127     0.563      0.99     0.682
+2 0    0.1     0.258     0.126     0.545     0.994     0.672
+3 0    0.1     0.257     0.125     0.517 **0.996**      0.65
+1 0    IDF     0.249     0.125     0.565     0.978 **0.684**
+2 0    IDF     0.249     0.125     0.565     0.978 **0.684**
+3 0    IDF     0.249     0.125     0.565     0.978 **0.684**
+0 1      1     0.248     0.123     0.527     0.982     0.677
+0 1    0.5     0.252     0.125     0.549     0.982     0.677
+0 1    0.1     0.253     0.126 **0.569**     0.982     0.677
+0 2    0.1     0.253     0.126     0.565     0.979     0.679
+0 3    0.1     0.254     0.126     0.562     0.982     0.677
+0 1    IDF     0.253     0.126     0.572     0.982 **0.684**
+0 2    IDF     0.254     0.126     0.572     0.982      0.68
+0 3    IDF     0.254     0.126     0.569     0.982     0.682
+1 1    0.1 **0.259** **0.128**     0.563     0.991     0.678
+1 1    IDF     0.249     0.125     0.565     0.978 **0.684**
 
 Table: Evaluation of matchmakers using query expansion {#tbl:query-expansion}
 
@@ -163,11 +164,17 @@ However, while HR@10 improves after this mapping, CC@10 decreases, which may be 
 Better deduplication improves the accuracy metrics only slightly, which may be due to the original data already being free of most duplicates.
 Nevertheless, in our prior work [@Mynarz2015], deduplication produced the greatest improvement in the evaluation of the baseline matchmaker.
 
-Dataset                           HR@10    MRR@10     CC@10        PC    LTP@10
------------------------------ --------- --------- --------- --------- ---------
-Prior to CPV 2003 mapping         0.237      0.12 **0.595**     0.931     0.798
-Prior to better deduplication     0.245     0.121     0.554     0.955 **0.858**
-Final                         **0.248** **0.124**     0.567 **0.978**     0.684
+--------------------------------------------------------------------
+Dataset                HR@10    MRR@10     CC@10        PC    LTP@10
+------------------ --------- --------- --------- --------- ---------
+Prior to CPV 2003      0.237      0.12 **0.595**     0.931     0.798
+mapping 
+
+Prior to better        0.245     0.121     0.554     0.955 **0.858**
+deduplication 
+
+Final              **0.248** **0.124**     0.567 **0.978**     0.684
+--------------------------------------------------------------------
 
 Table: Impact of data refinement on the baseline matchmaker {#tbl:data-refinement}
 
@@ -180,11 +187,16 @@ Both approaches fared worse than our baseline, as documented in [Table @tbl:coun
 While the impact of weighting by zIndex is barely noticeable, the restriction to open procedures decreased most of the observed metrics.
 The decrease may be attributed to the smaller size of training data, even though the majority of contracts in our dataset were awarded via an open procedure.
 
-Matchmaker                           HR@10    MRR@10     CC@10        PC    LTP@10
--------------------------------- --------- --------- --------- --------- ---------
-`pc:mainObject`                  **0.248** **0.124** **0.567** **0.978**     0.684
-`pc:mainObject`, zIndex              0.243     0.121     0.566 **0.978**     0.687
-`pc:mainObject`, open procedures     0.214     0.106     0.469     0.964 **0.702**
+-------------------------------------------------------------------------
+Matchmaker                  HR@10    MRR@10     CC@10        PC    LTP@10
+----------------------- --------- --------- --------- --------- ---------
+`pc:mainObject`         **0.248** **0.124** **0.567** **0.978**     0.684
+
+`pc:mainObject`, zIndex     0.243     0.121     0.566 **0.978**     0.687
+
+`pc:mainObject`,            0.214     0.106     0.469     0.964 **0.702**
+open procedures
+-------------------------------------------------------------------------
 
 Table: Evaluation of counter-measures to limits of the ground truth {#tbl:counter-measures-evaluation}
 

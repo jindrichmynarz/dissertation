@@ -24,3 +24,5 @@ My research built on both linked data and data mining, uniting the two principal
 Linked data is a pervasive part of my work, manifest in the data preparation as well as in the SPARQL-based matchmakers.
 Data mining surfaces in the application of tensor factorization via RESCAL for matchmaking.
 Moreover, the overarching economic objectives motivating my Ph.D. research fit the domain targeted by UEP.
+
+An online version of the dissertation is available at <http://mynarz.net/dissertation>.

@@ -105,7 +105,7 @@ After we evaluated the features separately our next step was thus to see how the
 The evaluation results of these feature pairs are shown in [Table @tbl:additional-features].
 In case of `rdf:type` we included the links to classes of public contracts and bidders.
 The `skos:broaderTransitive` property adds the hierarchical relations in CPV, thus emulating the query expansion described in [Section @sec:query-expansion].
-The `skos:related` property brings in the qualifying concepts from the supplementary vocabulary of CPV.[^In order to be able to qualify the CPV concepts proxy concepts were used instead of directly linking the concepts from contracts as in the other evaluated cases.]
+The `skos:related` property brings in the qualifying concepts from the supplementary vocabulary of CPV.^[In order to be able to qualify the CPV concepts proxy concepts were used instead of directly linking the concepts from contracts as in the other evaluated cases.]
 We achieved the best improvement in all evaluated metrics with the `rov:orgActivity` property that associates bidders with concepts from the NACE classification in the Business Register, as covered in [Section @sec:ares].
 
 Additional feature               HR@10    MRR@10     CC@10    LTP@10
@@ -158,6 +158,14 @@ To the contrary, this interplay illustrates that the contributions of the indivi
 <!--
 Directionality matters: compare `rov:orgActivity` and symmetric variants.
 -->
+
+Domain of `rov:orgActivity`     HR@10    MRR@10     CC@10    LTP@10
+--------------------------- --------- --------- --------- ---------
+Bidder                          0.001         0     0.022 **0.995**
+Contract                        0.003     0.001     0.015     0.951
+Bidder and contract         **0.137** **0.105** **0.086**     0.656
+
+Table: Evaluation of directionality of `rov:orgActivity` {#tbl:directionality}
 
 ### Ageing relations
 
