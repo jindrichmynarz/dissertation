@@ -1,4 +1,4 @@
-.PHONY: clean
+.PHONY: citations clean
 
 define PARTS
 parts/preface.md \
@@ -139,6 +139,25 @@ excerpt:
 		-V documentclass:report \
 		$(COMMON_PARAMS) \
 		$(PARTS)
+
+citations:
+	pandoc --latex-engine=xelatex \
+		-o citations.pdf \
+		--variable citecolor=black \
+		--variable urlcolor=black \
+		--variable linkcolor=black \
+		-V fontsize=12pt \
+		-V papersize=a4paper \
+		-V documentclass:report \
+		-f markdown \
+		--normalize \
+		--smart \
+		--standalone \
+		--filter pandoc-crossref \
+		--filter pandoc-citeproc \
+		--bibliography citations/citations.bib \
+		--csl resources/iso690-author-date-cs.csl \
+		citations/citations.md
 
 clean:
 	rm -f index.html dissertation.pdf

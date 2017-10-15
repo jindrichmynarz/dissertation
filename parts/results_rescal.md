@@ -175,13 +175,13 @@ Table: Evaluation of directionality of `rov:orgActivity` {#tbl:directionality}
 Evaluation of ageing was done by time series cross-validation, as described in [Section @sec:evaluation-protocol].
 Ageing, which we covered in [Section @sec:loading-rescal], was applied to the tensor slice containing the links between public contracts and awarded bidders.
 We compared how ageing affects matchmaking with the `pc:mainObject` property. 
-As shown in [Table @tbl:ageing], there is no observable difference when ageing is applied.
+As shown in [Table @tbl:ageing], applying the ageing worsens the results of the accuracy metrics.
 When compared to `pc:mainObject` evaluated using the n-fold cross-validation, the results in time series cross-validation are notably worse, which can be attributed to the lower volume of data available in this evaluation protocol.
 
 Configuration            HR@10   MRR@10     CC@10    LTP@10
 --------------------- -------- -------- --------- ---------
-`pc:mainObject`       **0.07** **0.03** **0.013** **0.185**
-`pc:mainObject`, aged **0.07** **0.03** **0.013** **0.185**
+`pc:mainObject`       **0.07** **0.03**     0.013     0.185
+`pc:mainObject`, aged    0.035	  0.013	**0.016**	**0.413**
 
 Table: Evaluation of ageing {#tbl:ageing}
 
