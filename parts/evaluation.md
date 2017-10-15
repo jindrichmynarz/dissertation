@@ -24,7 +24,7 @@ In terms of Wieringa [-@Wieringa2014, p. 31], both our offline evaluation and qu
 
 <!-- Offline evaluation -->
 
-Offline evaluation is an experimental setting in which past user interactions are used as ground truth.
+Offline evaluation is an experimental setting in which past interactions are used as ground truth.
 In this setting, some interactions are withheld and the evaluated system is assessed on its ability to fill in the missing interactions. 
 Offline evaluation is defined in the recommender systems research in contrast to online evaluation.
 While online evaluation involves users in real-time, offline evaluation approximates actual user behaviour by using pre-recorded user interactions.
@@ -55,7 +55,7 @@ Ground truth in offline evaluation may be derived from more thorough examination
 
 Online evaluation is commonly recommended as a remedy to the afore-mentioned limitations of offline evaluation.
 As a matter of fact, results of online evaluation can differ widely from the results of offline evaluation.
-Several studies found that *"results of offline and online evaluations often contradict each other"* [@Beel2013, p. 7] or acknowledged that *"there remains a discrepancy in the offline evaluation protocols, and the online deployment and accuracy estimate of the algorithms in a real-life setting"* [-@Said2013].
+Several studies found that the *"results of offline and online evaluations often contradict each other"* [@Beel2013, p. 7] or acknowledged that *"there remains a discrepancy in the offline evaluation protocols, and the online deployment and accuracy estimate of the algorithms in a real-life setting"* [@Said2013].
 However, conducting online evaluation is expensive since it requires an application with real users.
 In order to attract a sufficient mass of users to make the findings from the evaluation statistically significant, the application must be relatively mature and proven useful.
 Moreover, we wanted to explore a large space of different matchmaker configurations, for which carrying out online evaluation would be prohibitively expensive.

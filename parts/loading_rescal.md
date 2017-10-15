@@ -55,7 +55,6 @@ In most cases the retrieved relations corresponded to explicit RDF properties fo
 However, in a few select cases we constructed new relations.
 This was done either to avoid intermediate resources, such as tenders relating awarded bidders or proxy concepts relating unqualified CPV concepts, or to relate numeric values discretized to intervals.
 Since the original RESCAL algorithm does not support continuous variables, we discretized such variables via *discretize-sparql*, which is covered in [Section @sec:discretize-sparql].
-We applied discretization to the actual prices of contracts, which we split into 15 equifrequent intervals having approximately the same number of members.
 
 Apart from binary numbers as tensor entries we used float numbers $\mathcal{X}_{ijk} \in \mathbb{R} \colon 0 \leq \mathcal{X}_{ijk} \leq 1$ to distinguish the degrees of importance of relations.
 Float entries were used to de-emphasize less descriptive RDF properties, such as `pc:additionalObject`, or to model information loss from ageing, so that older contract awards bear less relevance than newer ones.

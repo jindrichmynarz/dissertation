@@ -44,7 +44,7 @@
      showgrid="false"
      inkscape:zoom="1.1164139"
      inkscape:cx="365.87092"
-     inkscape:cy="210.5573"
+     inkscape:cy="282.21531"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -1027,23 +1027,17 @@
      style="font-size:28px;font-family:'Open Sans';fill:#808080;stroke:none;text-rendering:optimizeLegibility"
      y="38.9277"
      x="736.7334">Rank</text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:100%;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#828282;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="360.03714"
-     y="658.53839"
-     id="text3619"
-     sodipodi:linespacing="100%"><tspan
-       sodipodi:role="line"
-       id="tspan3621"
-       x="360.03714"
-       y="658.53839">pc:awardCriteriaCombination/</tspan><tspan
-       sodipodi:role="line"
-       x="360.03714"
-       y="678.53839"
-       id="tspan3623">pc:awardCriterion/</tspan><tspan
-       sodipodi:role="line"
-       x="360.03714"
-       y="698.53839"
-       id="tspan3625">pc:weightedCriterion</tspan></text>
+  <g
+     transform="translate(-219.59968,-58.113959)"
+     style="font-size:24px;font-family:'Open Sans';fill:#808080;stroke:#808080;text-rendering:optimizeLegibility"
+     id="g3474">
+    <text
+       x="237.709"
+       xml:space="preserve"
+       y="737.63141"
+       style="stroke:none"
+       id="text3476"
+       clip-path="url(#clipPath1)"
+       transform="translate(110.11924,0)">pc:weightedCriterion</text>
+  </g>
 </svg>

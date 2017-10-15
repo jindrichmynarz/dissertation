@@ -53,72 +53,158 @@ Eigenvalues           **0.081** **0.032** **0.006**    0.049
 
 Table: Evaluation of initialization methods {#tbl:initialization-methods}
 
+In the further experiments, we use rank 500 and both $\lambda_{A}$ and $\lambda_{R}$ set to 10, unless specified otherwise.
+
 ### Feature selection
 
 <!-- Individual features -->
 
-We evaluated the predictive power of descriptive features that can be obtained from our dataset.
-While most features correspond to RDF properties, some are derived from property paths, such as `pc:location/schema:address`.
-We started by assessing the results of the individual features.
-We combined each feature with the ground truth comprising contract awards and observed how well it can help predicting the awarded bidders.
-We evaluated the HR@10 of selected features at ranks 50 and 500, as shown in [Fig. @fig:properties-per-rank]. 
+We evaluated the predictive power of the descriptive features that can be obtained from our dataset.
+While most features correspond to RDF properties, some are derived from property paths, such as `pc:location/schema:address` or `pc:awardCriteriaCombination/pc:awardCriterion/pc:weightedCriterion`, which we shorten as `pc:weightedCriterion`.
+We started by assessing the results of matchmakers based on the individual features.
+We combined each feature with the ground truth comprising contract awards and observed how well the feature can help predict the awarded bidders.
+We evaluated the HR@10 of selected features at ranks 50 and 500, as shown in [Fig. @fig:properties-per-rank].
 
 ![HR@10 per rank for individual properties](resources/img/evaluation/properties_per_rank.png){#fig:properties-per-rank}
 
 Out of the features `pc:mainObject` obtained the best results.
 Higher rank improves the results of most features, such as `pc:mainObject`, `pc:contractingAuthority`, or `isvz:serviceCategory`.
-However, increasing rank has the inverse effect on other features, including `pc:procedureType`, `pc:actualPrice`, or `isvz:mainCriterion`, for which HR@10 worsens when higher rank is used.
-We observed that features, for which higher rank improves evaluation results, have higher cardinality, while the converse is usually true for features with low cardinality.
+However, increasing rank has the inverse effect on other features, including `pc:procedureType`, `pc:actualPrice`, or `isvz:mainCriterion`.
+We observed that features for which higher rank improves the evaluation results have higher cardinality, while the converse is usually true for features with low cardinality.
 Here, cardinality is the number of distinct values a feature has in a dataset.
-For instance, cardinalities of the mentioned features, for which results improve with the increased rank, are 4588, 16982, and 43; whereas cardinalities of the features that exhibit the inverse are 10, 15, and 4.
-These observations suggest that higher rank can rearch better resolution if provided with a feature having higher cardinality.
-Conversely, RESCAL cannot leverage a higher rank if given a feature with low cardinality, in which case its latent features capture noise instead of informative distinctions.
-Nevertheless, high cardinality does not imply good results, such as in case of `pc:weightedCriterion` that has 27793 distinct values in our dataset.
+For instance, the cardinalities of the mentioned features for which results improve with the increased rank are 4588, 16982, and 43; whereas the cardinalities of the respective features that exhibit the inverse are 10, 15, and 4.
+These observations suggest that higher rank can reach better resolution if provided with a feature having a higher cardinality.
+Conversely, RESCAL cannot leverage a higher rank if given a feature with low cardinality, in which case its latent components capture noise instead of informative distinctions.
+Nevertheless, high cardinality does not imply good results, such as in case of `pc:weightedCriterion` that has 27793 distinct values in our dataset, yet achieves poor results.
+
+Feature                         HR@10    MRR@10     CC@10    LTP@10
+---------------------------- -------- --------- --------- ---------
+`ares:zivnost`                  0.002         0     0.015     0.952
+`isvz:mainCriterion`            0.075     0.031     0.009     0.048
+`isvz:serviceCategory`          0.096     0.036     0.014     0.392
+`pc:additionalObject`           0.048     0.021     0.016     0.669
+`pc:contractingAuthority`       0.137     0.064      0.02     0.202
+`pc:kind`                       0.121     0.051     0.009     0.003
+`pc:location/schema:address`    0.045     0.016     0.014     0.116
+`pc:mainObject`              **0.17** **0.077**      0.02     0.211
+`pc:procedureType`              0.071     0.021     0.009     0.012
+`pc:weightedCriterion`          0.019     0.007     0.017     0.753
+`rov:orgActivity`               0.001         0 **0.022** **0.995**
+
+Table: Evaluation of individual features {#tbl:individual-features}
+
+Results of all evaluation metrics for the individual features as listed in [Table @tbl:individual-features].
+The `pc:mainObject` property clearly stands out with the best results of the accuracy metrics.
+Although the properties of bidders, i.e. `ares:zivnost` and `rov:orgActivity`, achieve the best results for the diversity metrics, their poor accuracy is comparable to the results of random matchmaking.
 
 <!-- `pc:mainObject` + additional features -->
 
-As in evaluation of the SPARQL-based matchmakers, we adopted `pc:mainObject` as our pivot feature that we combined with additional features.
-Our next step after evaluating the features separately was thus to see how they perform in combination with `pc:mainObject`.
+As in the evaluation of the SPARQL-based matchmakers, we adopted `pc:mainObject` as our pivot feature that we combined with additional features.
+After we evaluated the features separately, our next step was to see how they perform in combination with `pc:mainObject`.
+The evaluation results of these feature pairs are shown in [Table @tbl:additional-features].
+In case of `rdf:type` we included the links to classes of public contracts and bidders.
+The `skos:broaderTransitive` property adds the hierarchical relations in CPV, thus emulating the query expansion we described in [Section @sec:query-expansion].
+The `skos:related` property brings in the qualifying concepts from the supplementary vocabulary of CPV.^[In order to be able to qualify the CPV concepts proxy concepts were used instead of directly linking the CPV concepts from contracts as in the other evaluated cases.]
+We achieved the best improvement in all evaluated metrics with the `rov:orgActivity` property that associates bidders with concepts from the NACE classification in the Business Register we covered in [Section @sec:ares].
+
+Additional feature               HR@10    MRR@10     CC@10    LTP@10
+---------------------------- --------- --------- --------- ---------
+`ares:zivnost`                   0.171     0.078     0.023      0.17
+`isvz:mainCriterion`             0.152     0.069     0.022     0.075
+`isvz:serviceCategory`           0.172     0.076     0.021     0.212
+`pc:additionalObject`            0.175     0.079     0.021     0.177
+`pc:contractingAuthority`        0.171 **0.083**     0.023     0.215
+`pc:kind`                        0.163     0.073      0.02     0.122
+`pc:location/schema:address`     0.172     0.078      0.02     0.139
+`pc:procedureType`               0.157     0.071     0.023      0.08
+`pc:weightedCriterion`           0.164     0.075     0.021     0.121
+`rdf:type`                       0.154     0.069     0.013     0.068
+`rov:orgActivity`            **0.187** **0.083** **0.036** **0.295**
+`skos:broaderTransitive`         0.174     0.079     0.021     0.156
+`skos:related`                   0.173     0.078      0.02     0.176
+
+Table: Evaluation of `pc:mainObject` and additional features {#tbl:additional-features}
 
 <!-- Larger combinations of features -->
 
-Ultimately, we considered using larger sets of features including those that improved the results of `pc:mainObject` when combined with it.
+Ultimately, we examined a larger set of features that improved the results of `pc:mainObject` when combined with it one by one.
+We tested separately a subset of the improving features that involved only the links to subject classifications via `pc:mainObject`, `pc:additionalObject` and `rov:orgActivity`, together with the hierarchical relations in both CPV and NACE represented by the `skos:broaderTransitive` property.
+The evaluation results for both combinations of additional features are presented in [Table @tbl:combinations-features].
 
-<!--
-`pc:mainObject`
-`pc:additionalObject`
-`pc:mainObject` + `skos:broaderTransitive` (approximating query expansion)
-`pc:kind`
-`isvz:serviceCategory`
-`rov:orgActivity`
-`rov:orgActivity` + `skos:broaderTransitive`
+---------------------------------------------------------------------
+Additional features               HR@10    MRR@10     CC@10    LTP@10
+----------------------------- --------- --------- --------- ---------
+`pc:additionalObject`,        **0.182** **0.081** **0.044** **0.311**
+`rov:orgActivity`,
+`skos:broaderTransitive`
 
-Worse results achieved by the combinations of feature individually improving the baseline invalidate our assumption that the contributions of features do not cancel themselves out.
+`ares:zivnost`,                   0.125     0.065     0.017     0.208 
+`isvz:serviceCategory`,
+`pc:additionalObject`,
+`pc:contractingAuthority`,
+`pc:location/schema:address`,
+`rov:orgActivity`,
+`skos:broaderTransitive`
+---------------------------------------------------------------------
 
-Directionality matters: compare `rov:orgActivity` and symmetric variants.
--->
+Table: Evaluation of `pc:mainObject` and combinations of features {#tbl:combinations-features}
+
+The subset of subject classifications fared better than indiscriminate inclusion of all improving features.
+Yet still, this combination of features did not surpass the evaluation results of `pc:mainObject` combined just with `rov:orgActivity`.
+The worse results scored by the combinations of features individually improving the `pc:mainObject` baseline invalidate our assumption that the contributions of features do not cancel themselves out.
+To the contrary, this interplay illustrates that their contributions are not cumulative, and, in fact, some features diminish the contribution of other features.
+
+The directionality of relations in the input tensor matters for RESCAL.
+We examined this characteristic using the `rov:orgActivity` property.
+In the source data, `rov:orgActivity` is a property of bidders associating them with NACE concepts.
+We found out that the evaluation results differ widely if the domain of this property changes.
+Apart from its directionality in the source data, we evaluated the cases in which the property is directly attached to contracts and when it is symmetric.
+As can be seen in [Table @tbl:directionality], the symmetric option decidedly outperforms the others.
+Nevertheless, treating relations as symmetric does not always lead to an improvement, as in the case of `pc:mainObject` when the symmetric interpretation in fact worsens the evaluation results.
+
+Domain of `rov:orgActivity`     HR@10    MRR@10     CC@10    LTP@10
+--------------------------- --------- --------- --------- ---------
+Bidder                          0.001         0     0.022 **0.995**
+Contract                        0.003     0.001     0.015     0.951
+Bidder and contract         **0.137** **0.105** **0.086**     0.656
+
+Table: Evaluation of directionality of `rov:orgActivity` {#tbl:directionality}
 
 ### Ageing relations
 
 Evaluation of ageing was done by time series cross-validation, as described in [Section @sec:evaluation-protocol].
+Ageing, which we covered in [Section @sec:loading-rescal], was applied to the tensor slice containing the links between public contracts and awarded bidders.
+We compared how ageing affects matchmaking with the `pc:mainObject` property. 
+As shown in [Table @tbl:ageing], there is no observable difference when ageing is applied.
+When compared to `pc:mainObject` evaluated using the n-fold cross-validation, the results in time series cross-validation are notably worse, which can be attributed to the lower volume of data available in this evaluation protocol.
 
-Ageing was applied to the tensor slice containing links between public contracts and awarded bidders, as described in [Section @sec:loading-rescal].
+Configuration            HR@10   MRR@10     CC@10    LTP@10
+--------------------- -------- -------- --------- ---------
+`pc:mainObject`       **0.07** **0.03** **0.013** **0.185**
+`pc:mainObject`, aged **0.07** **0.03** **0.013** **0.185**
 
-<!--
-Compare `pc:mainObject` normal and aged, in both cases using time series cross-validation, at ranks 50 and 500.
-The main difference is in the mode of cross-validation.
-Time series cross-validation achieves much lower results than n-fold cross-validation even when no ageing is used.
-This can be explained in part by lower volume of training data.
-However, it may hint a bug in the evaluation protocol.
--->
+Table: Evaluation of ageing {#tbl:ageing}
 
 ### Use of literals
 
-<!--
-Actual prices (i.e. `pc:actualPrice`) are known for 91.5 % of contracts in the evaluated dataset.
--->
+We experimented with a limited use of literals, namely via discretization of the actual prices of contracts, represented by the `pc:actualPrice` property, which we split into 15 equifrequent intervals having approximately the same number of members.
+Actual prices were known for 91.5 % of contracts in the evaluated dataset.
+We combined the discretized actual prices with `pc:mainObject`.
+A comparison of the combination with `pc:mainObject` only is shown in [Table @tbl:discretization-actual-price].
+Adding actual prices mostly worsens the evaluation results.
+We surmise that the decrease can be explained by noisy data about prices.
+Upon manual inspection, we found that prices may be reported as coefficients to be multiplied by an implicit factor that is not part of the structured data.
 
-If there is no improvement or a decrease in performance, it might be explainable by noisy data about prices.
-Prices may be reported as coefficients to be multiplied by an implicit factor that is not part of the structured data.
+Features                             HR@10    MRR@10     CC@10    LTP@10
+--------------------------------- -------- --------- --------- ---------
+`pc:actualPrice`                     0.078     0.028     0.013     0.083
+`pc:mainObject`                   **0.17** **0.077**      0.02 **0.211**
+`pc:mainObject`, `pc:actualPrice`    0.155      0.07 **0.025**     0.086
+
+Table: Evaluation of adding discretized actual prices {#tbl:discretization-actual-price}
 
 <!-- Summary -->
+
+In summary, the best results in RESCAL-based matchmakers were achieved for `pc:mainObject` combined with `rov:orgActivity`.
+These relations linking subject classifications, i.e. CPV and NACE, turned out to be the most informative for the prediction of awarded bidders.
+We found that rank 500 tends to deliver the best accuracy, especially if combined with relatively high regularization parameters that prevent overfitting.

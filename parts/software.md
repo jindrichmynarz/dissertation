@@ -1,4 +1,3 @@
-\normalsize
 \appendix
 
 # Software {#sec:software} 
