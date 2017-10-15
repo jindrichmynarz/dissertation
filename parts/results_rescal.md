@@ -155,9 +155,13 @@ Yet still this combination of features did not surpass the evaluation results of
 The worse results scored by the combinations of features individually improving the `pc:mainObject` baseline invalidate our assumption that the contributions of features do not cancel themselves out.
 To the contrary, this interplay illustrates that the contributions of the individual features are not cumulative, and, in fact, some features diminish the contribution of other features.
 
-<!--
-Directionality matters: compare `rov:orgActivity` and symmetric variants.
--->
+The directionality of relations in the input tensor matters for RESCAL.
+We examined this characteristic using the `rov:orgActivity` property.
+In the source data, `rov:orgActivity` is a property of bidders associating them with NACE concepts.
+We found out that the evaluation results differ widely if the domain of this property changes.
+Apart from its directionality in the source data, we evaluated the cases in which the property is directly attached to contracts and when it is symmetric.
+As can be seen in [Table @tbl:directionality], the symmetric option decidedly outperforms the others.
+Nevertheless, treating relations as symmetric does not always lead to an improvement, as in the case of `pc:mainObject` when the symmetric interpretation worsens the evaluation results.
 
 Domain of `rov:orgActivity`     HR@10    MRR@10     CC@10    LTP@10
 --------------------------- --------- --------- --------- ---------
