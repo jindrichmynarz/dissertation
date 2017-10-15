@@ -9,7 +9,7 @@ The data model of the extracted data departs from PCO in several ways.
 There are ad hoc terms in the `<http://linked.opendata.cz/ontology/isvz.cz/>` namespace to represent dataset-specific features of the Czech public procurement register.
 Some of these terms are intermediate and are subsequently replaced during data transformation.
 
-Contract objects expressed via the properties `pc:mainObject` and `pc:additionalObject` are qualified instead of linking CPV directly.
+Contract objects expressed via `pc:mainObject` and `pc:additionalObject` are qualified instead of linking CPV directly.
 A proxy concept that links a CPV concept via `skos:closeMatch` is created for each contract object to allow qualification by concepts from the CPV's supplementary vocabulary.
 The proxy concepts link their qualifier via `skos:related`.
 For example, a contract may have *Electrical machinery, apparatus, equipment and consumables; lighting* (code `31600000`) assigned as the main object, which can be qualified by the supplementary concept *For the energy industry* (code `KA16`).
