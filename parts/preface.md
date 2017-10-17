@@ -1,3 +1,6 @@
+<!-- Switch page numbering on -->
+\pagestyle{plain}
+
 # Preface {.unnumbered}
 
 I started with two vague assumptions driving my Ph.D.
