@@ -60,6 +60,19 @@ define COMMON_PARAMS
 parts/metadata.yaml
 endef
 
+define PDF_PARAMS
+--latex-engine=xelatex \
+--include-before-body parts/title_page.tex \
+--include-before-body parts/affidavit.tex \
+--include-before-body parts/abstract_czech.tex \
+--include-before-body parts/abstract_english.tex \
+--template resources/templates/template.tex \
+-V fontsize=12pt \
+-V papersize=a4paper \
+-V documentclass:report \
+-o dissertation.pdf
+endef
+
 html:
 	pandoc \
 		-o index.html \
@@ -93,50 +106,18 @@ dokieli:
 		$(PARTS)
 
 pdf:
-	pandoc --latex-engine=xelatex \
-		--include-before-body parts/title_page.tex \
-		--include-before-body parts/affidavit.tex \
-		--include-before-body parts/abstract_czech.tex \
-		--include-before-body parts/abstract_english.tex \
-		-o dissertation.pdf \
-		--variable citecolor=orange \
+	pandoc --variable citecolor=orange \
 		--variable urlcolor=orange \
 		--variable linkcolor=orange \
-		--template resources/templates/template.tex \
-		-V fontsize=12pt \
-		-V papersize=a4paper \
-		-V documentclass:report \
+		$(PDF_PARAMS) \
 		$(COMMON_PARAMS) \
 		$(PARTS)
 
 print:
-	pandoc --latex-engine=xelatex \
-		--include-before-body parts/title_page.tex \
-		--include-before-body parts/affidavit.tex \
-		--include-before-body parts/abstract_czech.tex \
-		--include-before-body parts/abstract_english.tex \
-		-o dissertation.pdf \
-		--variable citecolor=black \
+	pandoc --variable citecolor=black \
 		--variable urlcolor=black \
 		--variable linkcolor=black \
-		--template resources/templates/template.tex \
-		-V fontsize=12pt \
-		-V papersize=a4paper \
-		-V documentclass:report \
-		$(COMMON_PARAMS) \
-		$(PARTS)
-
-excerpt:
-	pandoc --latex-engine=xelatex \
-		--include-before-body parts/title_page.tex \
-		-o dissertation.pdf \
-		--variable citecolor=orange \
-		--variable urlcolor=orange \
-		--variable linkcolor=orange \
-		--template resources/templates/template.tex \
-		-V fontsize=12pt \
-		-V papersize=a4paper \
-		-V documentclass:report \
+		$(PDF_PARAMS) \
 		$(COMMON_PARAMS) \
 		$(PARTS)
 
