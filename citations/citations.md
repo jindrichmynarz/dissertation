@@ -2,6 +2,7 @@
 
 Zde jsou sepsány citace publikací, jichž jsem spoluautorem.
 Pro každou publikaci je uveden seznam citujících publikací, z nichž jsou vyřazeny autocitace ve vlastních textech.
+Celkem je zde zaznamenáno 56 citací.
 Citační vazby byly získány z dat Google Scholar.^[<https://scholar.google.cz/citations?user=llCUEmIAAAAJ>]
 
 @mynarz2016modeling:
