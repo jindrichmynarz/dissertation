@@ -179,7 +179,7 @@ $endfor$
 
 % Headers and page numbering
 \usepackage{fancyhdr}
-%\pagestyle{plain}
+\pagestyle{plain}
 
 % Table package
 \usepackage{ctable}% http://ctan.org/pkg/ctable
@@ -265,6 +265,7 @@ $if(toc)$
 {
 \hypersetup{linkcolor=black}
 \setcounter{tocdepth}{$toc-depth$}
+\pagestyle{plain}
 \tableofcontents
 }
 $endif$
