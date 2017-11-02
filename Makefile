@@ -47,11 +47,9 @@ parts/publications.md
 endef
 
 define COMMON_PARAMS
--f markdown+implicit_figures+backtick_code_blocks \
---normalize \
+-f markdown+implicit_figures+backtick_code_blocks+smart \
 --number-sections \
 --toc \
---smart \
 --standalone \
 --filter pandoc-crossref \
 --filter pandoc-citeproc \
@@ -61,7 +59,7 @@ parts/metadata.yaml
 endef
 
 define PDF_PARAMS
---latex-engine=xelatex \
+--pdf-engine=xelatex \
 --include-before-body parts/title_page.tex \
 --include-before-body parts/affidavit.tex \
 --include-before-body parts/abstract_czech.tex \
@@ -85,6 +83,7 @@ html:
 		--css resources/css/bootstrap.css \
 		--mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full \
 		-V lang=en \
+		--strip-comments \
 		$(COMMON_PARAMS) \
 		$(PARTS)
 
@@ -140,5 +139,24 @@ citations:
 		--csl resources/iso690-author-date-cs.csl \
 		citations/citations.md
 
+autoreferat:
+	pandoc --latex-engine=xelatex \
+		-o autorefererat.pdf \
+		--variable citecolor=black \
+		--variable urlcolor=black \
+		--variable linkcolor=black \
+		-V fontsize=12pt \
+		-V papersize=a4paper \
+		-V documentclass:report \
+		-f markdown \
+		--normalize \
+		--smart \
+		--standalone \
+		--filter pandoc-crossref \
+		--filter pandoc-citeproc \
+		--bibliography references.bib \
+		--csl resources/iso690-author-date-cs.csl \
+		autoreferat/autoreferat.md
+
 clean:
-	rm -f index.html dissertation.pdf
+	rm -f index.html dissertation.pdf citations.pdf autoreferat.pdf
