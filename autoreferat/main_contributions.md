@@ -1,0 +1,27 @@
+## Main contributions
+
+<!-- přínosy disertační práce -->
+
+We developed and documented methods to match public contracts to bidders.
+These methods leverage linked open data that describes the entities involved in matchmaking as being a part of a semantically described knowledge graph, which includes descriptions of the entities, as well as their interactions, relations, or contextual data.
+We implemented the proposed matchmaking methods by using existing technologies, namely SPARQL, an RDF query language, and RESCAL, a tensor factorization algorithm.
+The implementations served as artefacts that we experimented with.
+We examined their usefulness by evaluating the accuracy and diversity of the matches they produce.
+
+In order to approximate the conditions in real-world public procurement we evaluated the designed matchmaking methods on a large dataset of retrospective data spanning ten years of Czech public procurement, including several related datasets.
+Preparation of this dataset constituted a fundamental part of our work.
+Transforming the data into a knowledge base structured as linked open data required an extensive effort that warranted the development of novel and reusable tools for data processing.
+Both the prepared dataset and the developed tools thus represent a key side contribution of our research.
+We published the cleaned and enriched Czech public procurement dataset as linked open data for anyone to reuse.
+Similarly, the implemented tools for working with RDF data were released as open source.
+
+The evaluation proved it challenging to obtain good results for the matchmaking task.
+Already during data preparation, we discovered the underlying data to be riddled with errors and ambiguity.
+Moreover, we problematized the ground truth that the matchmakers use to learn about matching public contracts to bidders.
+As we explained, the ground truth comprising data on historical awards of public contracts is subject to systemic biases that undermine its relevance for matchmaking.
+Despite these shortcomings, the evaluation indicated that the SPARQL-based matchmakers can be used to pre-screen relevant bidders or public contracts.
+Moreover, they can answer matchmaking queries on demand, even on constantly updating data.
+Apart from having subpar accuracy, the results of the RESCAL-based matchmakers were afflicted with very low diversity.
+These matchmakers turned out to be inferior in all the evaluated respects when compared with the SPARQL-based ones.
+We found the assumption that contextual data can improve matchmaking to be justified, although the improvements proceeding from incorporating additional linked data turned out to be relatively minor.
+Nevertheless, most linked open data must be considered to be raw data that requires significant data preparation effort to realize its effective use.

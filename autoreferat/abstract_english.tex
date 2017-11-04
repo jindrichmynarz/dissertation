@@ -1,0 +1,29 @@
+\begin{abstract}
+
+Matchmaking searches the space of possible pairs of demands and offers and ranks them according to the degree to which the offer satisfies the demand.
+We demonstrate how two generic approaches, namely case-based reasoning and statistical relational learning, can be applied to matchmaking of public contracts to bidders.
+Both adaptations use a combination of logical and statistical reasoning for matchmaking in comparable, semi-structured, and semantically described data.
+We designed and implemented a novel method using case-based reasoning for matchmaking via SPARQL, an RDF query language.
+It employs a similarity-based search that learns from past awarded contracts, which are treated as experiences of solved problems.
+In the context of statistical relational learning, we adopted RESCAL, an algorithm for factorization of multi-relational tensor data that leverages collective learning for link prediction.
+In both approaches our key contributions involve feature selection, feature construction, and tuning the configuration of the matchmakers.
+
+We apply the matchmakers to a collection of linked open government data centered on the Czech public procurement dataset.
+We chose public procurement as our application domain since it provides explicit demands available as structured open data thanks to the proactive disclosure of public procurement notices that is mandated by law.
+The pervasive large-scale passive waste caused by the inefficiencies in public procurement motivates our research in matchmaking to serve better resource allocation.
+We integrated the Czech public procurement dataset with other government data, such as business registers or controlled vocabularies.
+The data preparation required an extensive effort in building complex ETL pipelines, both since the public procurement data is fraught with numerous data quality issues and also due to the heterogeneity of the combined datasets.
+We used linked open data as a framework for data integration, building on the technological standards included in the semantic web stack.
+We addressed the key challenges posed by the data by designing and implementing techniques for linking and data fusion.
+As part of the data preparation we tested and integrated existing software based on the semantic web technologies, as well as developed reusable open-source tools for pre-processing RDF data.
+
+We evaluated the matchmakers on the task of predicting the winning bidders of contracts by using retrospective data on contract awards spanning ten years.
+We compared the impact of the factors involved in matchmaking, such as using query expansion or reducing the volume of data, through the metrics of accuracy and diversity.
+Data quality and volume manifested to be the fundamental factors that affect matchmaking, in many cases trumping the sophistication of matchmaking algorithms.
+We found the SPARQL-based approach clearly superior to the RESCAL-based one, especially in terms of diversity metrics and its runtime characteristics.
+While most features turned out to be noise, the features from controlled vocabularies that describe public contracts or bidders were identified as the most informative for matchmaking.
+For each approach the best-performing matchmakers combined features from multiple datasets, highlighting the value of contextual data from the linked datasets.
+
+\emph{Keywords:} matchmaking, linked data, open data, public procurement
+
+\end{abstract}

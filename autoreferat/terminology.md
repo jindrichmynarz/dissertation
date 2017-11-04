@@ -1,0 +1,3 @@
+# Terminology
+
+<!-- použitá terminologie -->
