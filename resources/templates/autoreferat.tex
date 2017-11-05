@@ -159,7 +159,13 @@ $if(natbib)$
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
 $endif$
 $if(biblatex)$
-\usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
+\usepackage[
+  backend=biber        
+  ,style=iso-authoryear
+  ,autolang=other     
+  ,sortlocale=en_GB  
+  ,bibencoding=UTF8
+]{biblatex}
 $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
@@ -351,6 +357,10 @@ $endif$
 \usepackage{setspace}
 \onehalfspacing
 \raggedbottom
+
+\usepackage{abstract}
+\setlength{\absleftindent}{0mm}
+\setlength{\absrightindent}{0mm}
 
 \begin{document}
 $if(title)$

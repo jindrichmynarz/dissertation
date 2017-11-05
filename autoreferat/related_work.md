@@ -3,45 +3,25 @@
 <!-- stav řešení problematiky v ČR a ve světě -->
 <!-- TODO: This needs to be substantially shortened. -->
 
-Before we present our approaches to matchmaking we survey the research related to our work.
-This section summarizes the background to our research and helps to discern the progress beyond the state of the art in our contributions.
-This overview of the related work is divided into matchmaking applications, vocabularies for matchmaking, and technologies related to matchmaking.
+In order to help discern the progress beyond the state of the art in our contributions, we briefly survey the research related to our work.
+This overview includes matchmaking applications as well as related vocabularies and technologies. 
+
+Early matchmaking in 1990s adopted reasoning with description logics (DL) and communication between software agents, such as in @Kuokka1995.
+DL remained the basis of matchmaking at the onset of 2000s when the semantic web initiative arose.
+Unlike the prior solutions, the newer matchmakers were built with ontological languages, such as the Web Ontology Language (OWL) [@DiNoia2004], that encoded explicit semantics.
+Matchmaking queries were formulated as classes of matches, so that matches could be tested via subsumption or satisfiability of the class constraints by reasoning in DL.
+
+Using reasoners for matchmaking turned out to be problematic due to limited expressivity of DL constructs and poor performance for larger data.
+SPARQL [@Prudhommeaux2008], released in 2008, spawned approaches to matchmaking via production rules implemented as database queries (e.g., @Salvadores2008 or @Radinger2013), improving both on expressivity and scalability.
+
+Perhaps the first application of matchmaking in public procurement was conceived in the Spanish research project 10ders Information Services.^[<http://rd.10ders.net>]
+A part of this project called Methods on Linked Data for E-procurement Applying Semantics (MOLDEAS) [@AlvarezRodriguez2012] explored the application of semantic web technologies in public procurement.
 
 ## Related applications
 
-<!-- Description logics -->
-
-Early matchmaking dates back to the 1990s.
-Matchmakers proposed during that era often adopted reasoning with description logics (DL) and communication between software agents.
-An example of such approach is the work of Kuokka and Harada [-@Kuokka1995], who used Knowledge Query and Manipulation Language (KQML) to describe messages exchanged between agents participating in matchmaking.
-However, without a common vocabulary the semantics of the messages had to be hardwired in application code.
-
-<!-- Semantic web -->
-
-A new wave of matchmaking based on DL arose with the semantic web initiative in the 2000s.
-These efforts employed then created ontological languages, such as the DARPA Agent Markup Language plus the Ontology Inference Layer (DAML+OIL) [@GonzalezCastillo2001], or the Web Ontology Language (OWL) [@DiNoia2004; @DiNoia2007], and approached matchmaking as a task for DL reasoning.
-Viewed in this way, matchmaking queries can be formulated as classes of matches and matches may thus be tested via subsumption or satisfiability of the class constraints.
-Such inferences can be produced by standard reasoners, such as RACER [@Haarslev2001].
-During this time, typical application domains for matchmaking included web service discovery [@Trastour2001; @Ankolekar2002] or e-commerce [@Li2004].
-
-<!-- SPARQL -->
-
-Using reasoners for matchmaking turned out to be problematic as their performance did not scale well for larger data.
-In time with the initial release of SPARQL in 2008 [@Prudhommeaux2008] several efforts appeared that approached matchmaking via production rules implemented as database queries in SPARQL.
-The turn to SPARQL provided matchmaking with better performance and expressivity. 
-An example of this approach was used in the Market Blended Insight project [@Salvadores2008].
-While this project was concerned mostly with data preparation and feature extraction, basic matchmaking was included as its part, using SPARQL to discover the matches satisfying `owl:onProperty` constraints.
-Matchmaking was used as means of micro-segmentation to target specific agents exhibiting the propensity to buy.
-An RDF version of the Standard Industry Classification 1992 was used to determine similarity of the matched entities.
-A similar technique that combined SPARQL with RDFS entailment was explored in BauDataWeb [@Radinger2013].^[Example queries are available at <http://www.ebusiness-unibw.org/tools/baudataweb-queries>.]
-BauDataWeb applied matchmaking to the European building and construction materials market.
-Similarity of the matched entities was determined via the FreeClassOWL taxonomy.^[FreeClassOWL is an RDF version of <http://freeclass.eu>.]
-
 <!-- 10ders Information Services -->
 
-Perhaps the first application of matchmaking in public procurement was conceived in the Spanish research project 10ders Information Services.^[<http://rd.10ders.net>]
 Overall, this project aimed to design an interoperable architecture of a pan-European platform for aggregating and mediating public procurement notices in the EU.
-A part of the project that explored semantic web technologies in public procurement was called Methods on Linked Data for E-procurement Applying Semantics (MOLDEAS) [@AlvarezRodriguez2012].
 MOLDEAS covered algorithms for enriching data about public procurement notices [@AlvarezRodriguez2011b], integration of diverse data sources via linked data [@AlvarezRodriguez2011a], and matchmaking via SPARQL enhanced with query expansion [@AlvarezRodriguez2011c] or spreading activation [@AlvarezRodriguez2013, p. 118].
 Unfortunately, it is difficult to compare the results matchmaking in MOLDEAS with our approach, because neither implementation details nor evaluation were revealed in the papers describing this work.
 The project emphasized product classification schemes and devoted extensive efforts to converting such classifications to RDF and linking them.

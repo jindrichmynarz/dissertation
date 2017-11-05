@@ -1,6 +1,7 @@
 ## Main contributions
 
 <!-- přínosy disertační práce -->
+<!-- TODO: Add concrete numeric results for the key metrics and the best-performing matchmakers. -->
 
 We developed and documented methods to match public contracts to bidders.
 These methods leverage linked open data that describes the entities involved in matchmaking as being a part of a semantically described knowledge graph, which includes descriptions of the entities, as well as their interactions, relations, or contextual data.
