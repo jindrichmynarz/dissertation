@@ -11,66 +11,33 @@ DL remained the basis of matchmaking at the onset of 2000s when the semantic web
 Unlike the prior solutions, the newer matchmakers were built with ontological languages, such as the Web Ontology Language (OWL) [@DiNoia2004], that encoded explicit semantics.
 Matchmaking queries were formulated as classes of matches, so that matches could be tested via subsumption or satisfiability of the class constraints by reasoning in DL.
 
-Using reasoners for matchmaking turned out to be problematic due to limited expressivity of DL constructs and poor performance for larger data.
+Using reasoners for matchmaking turned out to be problematic due to the limited expressivity of DL constructs and poor performance for larger data.
 SPARQL [@Prudhommeaux2008], released in 2008, spawned approaches to matchmaking via production rules implemented as database queries (e.g., @Salvadores2008 or @Radinger2013), improving both on expressivity and scalability.
 
 Perhaps the first application of matchmaking in public procurement was conceived in the Spanish research project 10ders Information Services.^[<http://rd.10ders.net>]
-A part of this project called Methods on Linked Data for E-procurement Applying Semantics (MOLDEAS) [@AlvarezRodriguez2012] explored the application of semantic web technologies in public procurement.
+A part of this project called Methods on Linked Data for E-procurement Applying Semantics (MOLDEAS) [@AlvarezRodriguez2012] explored the application of semantic web technologies in public procurement and included matchmaking via SPARQL enhanced with query expansion [@AlvarezRodriguez2011c] or spreading activation [@AlvarezRodriguez2013, p. 118].
 
-## Related applications
+SPARQL is optimized for exact matches in structured data.
+A fundamental feature of matchmaking is ranking data by the degree it satifies a query, whereas exact matching produce either matches or non-matches, without any way to rank the matches.
+In order to be able capture partial matches as well as leverage unstructured data, approaches to matchmaking based on machine learning and text search were introduced.
 
-<!-- 10ders Information Services -->
+A forerunner of this research direction was iSPARQL [@Kiefer2007], which extended SPARQL with similarity functions.
+It demonstrated that both combining logical deduction with statistical induction and exploiting textual information can improve matchmaking.
+Machine learning and text search are also employed for matchmaking within the Web of Needs project [@Kleedorfer2014].
+Here, real-time matchmaking is delivered by searching semi-structured data using Apache Solr^[<http://lucene.apache.org/solr>] and batch matchmaking built on RESCAL [@Nickel2011] in a similar fashion to one of our approaches.
+The matchmakers in the Web of Needs are generic, based on a common denominator of data about demands and offers, including the features such as title, description, tags, or price [@Friedrich2016].
+On the contrary, our approach is specific to the public procurement domain, so that it can leverage more powerful, but domain-specific features in matchmaking.
 
-Overall, this project aimed to design an interoperable architecture of a pan-European platform for aggregating and mediating public procurement notices in the EU.
-MOLDEAS covered algorithms for enriching data about public procurement notices [@AlvarezRodriguez2011b], integration of diverse data sources via linked data [@AlvarezRodriguez2011a], and matchmaking via SPARQL enhanced with query expansion [@AlvarezRodriguez2011c] or spreading activation [@AlvarezRodriguez2013, p. 118].
-Unfortunately, it is difficult to compare the results matchmaking in MOLDEAS with our approach, because neither implementation details nor evaluation were revealed in the papers describing this work.
-The project emphasized product classification schemes and devoted extensive efforts to converting such classifications to RDF and linking them.
-Product Types Ontology (PTO),^[<http://www.productontology.org>] a product ontology derived from Wikipedia, was selected as a linking hub to tie these classifications together.
+Besides matchmaking applications, our work relates to RDF vocabularies that describe demands or offers and generic technologies conducive to applications similar to matchmaking.
+RDF vocabularies enable to bestow data with semantic features that matchmaking can leverage.
+Call for Anything^[<http://vocab.deri.ie/c4n>] is one of the first vocabularies for formulating demands as data.
+GoodRelations [@Hepp2008] is an ontology for e-commerce on the Web.
+It focuses more on offers, but enables to express demands as ideal offers.
+Apart from these generic vocabularies, vocabularies describing the public procurement market were designed, such as LOTED2 [@Distinto2016] or Public Procurement Ontology [@MunozSoro2016]. 
 
-10ders Information Services also involved Euroalert.net [@Marin2013],^[<https://euroalert.net>] a commercial undertaking that alerts small and medium enterprises about relevant public sector information, including current public contracts.
-Euroalert.net generates alerts by matching the profiles of its subscribers to an incoming stream of published calls for tenders from Tenders Electronic Daily (TED).^[<http://ted.europa.eu>]
-TED is an EU-wide register of public procurement that aggregates data about public contracts from the EU member states.
-According to the public description of Euroalert.net, its matchmaking is based on comparison of keywords and code lists and does not exploit semantics or linked open data. 
-
-While SPARQL improves on reasoning-based matchmaking in terms of better expressivity and performance, queries need to be restricted to exact matches for the most part in order to maintain a good runtime.
-A fundamental feature of matchmaking is ranking matches by the degree to which they satisfy a query.
-Exact matching, to the contrary, produces only matches and non-matches, without any way to rank the matches.
-Moreover, exact matches in SPARQL are optimized for structured data, so that performance degrades if SPARQL queries analyse semi-structured or unstructured data, such as literals, which may nevertheless supply valuable data to matchmaking.
-Concerns such as these led to the development of approaches to matchmaking that involved full-text search or machine learning.
-
-A forerunner of this research direction was iSPARQL [@Kiefer2007].
-iSPARQL extends SPARQL with similarity measures implemented using Apache Jena^[<https://jena.apache.org>] with custom property functions.
-In this way, it allows to combine graph pattern matching with similarity-based retrieval within a single query.
-While conceived as a general approach, it was also applied to matchmaking of web services [@Kiefer2008].
-This application coupled iSPARQL with machine learning in order to improve the detection of approximate matches. 
-This use case demonstrated that the hybrid *"combination of logical deduction and statistical induction produces superior performance over logical inference only"* [@Kiefer2008, p. 473].
-Moreover, the similarity-based queries *"that exploit textual information of the services turned out to be very effective"* [@Kiefer2008, p. 475].
-Both these findings greatly influenced our approaches to matchmaking.
-For example, we leverage machine learning in the RESCAL-based matchmaking.
-
-Another attempt to go beyond SPARQL was the initial matchmaker developed for the PC Filing App [@Snoha2013] in the context of the LOD2 project.^[<http://lod2.eu>]
-PC Filing App was a content management system for administering public contracts by contracting authorities. 
-The matchmaker integrated in this application combined SPARQL, which retrieved the matches satisfying the declared hard constraints, with a custom Java implementation of similarity measures between the pre-filtered matches.
-While its second step enabled the matchmaker to leverage literals more effectively, the footprint of its in-memory implementation based on Java objects led to its poor performance.
-Our SPARQL-based matchmaker later replaced this matchmaker in the LOD2 project.
-
-A related research effort that closely matches the objectives pursued by our work is the Web of Needs project [@Kleedorfer2014].
-Its *"overall goal is to create a decentralized infrastructure that allows people to publish documents on the Web which make it possible to contact each other"* [@Kleedorfer2013].
-Web of Needs thus covers the entire distributed infrastructure for marketplaces on the Web with matchmaking being just one of its components.
-The infrastructure supports three principal tasks: describing supply or demand, identifying trading partners, and conducting a transaction [@Kleedorfer2014].
-The proposed process overview involving these tasks, described in detail in @Kleedorfer2016, includes online and offline matchmaking.
-The online matchmaking, which is capable of serving queries in real time, is implemented via full-text search in semi-structured data using Apache Solr.^[<http://lucene.apache.org/solr>]
-The offline matchmaking, which delivers results periodically as it processes queries in batches, is implemented using machine learning via RESCAL [@Nickel2011].
-It thus closely resembles our matchmaker based on the same technology.
-Detailed evaluation of the offline matchmaker is available in @Friedrich2015. 
-While our approaches to matchmaking mirror the ones in the Web of Needs to a large extent, their fundamental difference is the application to the public procurement domain.
-Matchmakers in the Web of Needs are generic, since they are not tuned for any specific use case.
-Instead, they support common matchmaking scenarios shared in many domains, so they are based on a common denominator of data about demands and offers, including features such as title, description, tags, or price [@Friedrich2016].
-However, the architecture of the Web of Needs allows extensions to particular vertical marketplaces, such as the public procurement, so that more powerful domain-specific features can be leveraged in matchmaking.
-
-An alternative tensor-based approach to matchmaking semantic web services is described in [@Szwabe2015].
-This proposal combines tuple-based probabilistic tensor modeling with covariance-based multilinear filtering.
-Extensive evaluation shows the presented approach as superior to other matchmaking methods for the evaluated task.
+LOD-enabled recommender systems
+Instance matching
+Semantic search
 
 ## Related vocabularies
 
