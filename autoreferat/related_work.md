@@ -28,64 +28,13 @@ Here, real-time matchmaking is delivered by searching semi-structured data using
 The matchmakers in the Web of Needs are generic, based on a common denominator of data about demands and offers, including the features such as title, description, tags, or price [@Friedrich2016].
 On the contrary, our approach is specific to the public procurement domain, so that it can leverage more powerful, but domain-specific features in matchmaking.
 
-Besides matchmaking applications, our work relates to RDF vocabularies that describe demands or offers and generic technologies conducive to applications similar to matchmaking.
+Besides matchmaking applications, our work relates both to RDF vocabularies that describe demands or offers and generic technologies conducive to applications similar to matchmaking.
 RDF vocabularies enable to bestow data with semantic features that matchmaking can leverage.
 Call for Anything^[<http://vocab.deri.ie/c4n>] is one of the first vocabularies for formulating demands as data.
 GoodRelations [@Hepp2008] is an ontology for e-commerce on the Web.
 It focuses more on offers, but enables to express demands as ideal offers.
 Apart from these generic vocabularies, vocabularies describing the public procurement market were designed, such as LOTED2 [@Distinto2016] or Public Procurement Ontology [@MunozSoro2016]. 
 
-LOD-enabled recommender systems
-Instance matching
-Semantic search
-
-## Related vocabularies
-
-Semantic matchmaking operates on data described by vocabularies and ontologies.
-Vocabularies enable to bestow data with semantic features that matchmaking can leverage.
-Support for matchmaking was one of the design goals of the Public Contracts Ontology (PCO), described in [Section @sec:pco], which we developed to represent public procurement data.
-Here we present a review of related vocabularies that too can provide support for matchmaking.
-
-Call for Anything (C4N)^[<http://vocab.deri.ie/c4n>] is a simple vocabulary for describing demands, such as calls for tenders or calls for papers.
-C4N can be regarded as one of the first to aim for explicit formulation of demands on the Web.
-However, the vocabulary features only rudimentary means to express what is sought by demands, as it relies on unstructured literals to specify the objects in demand.
-
-GoodRelations [@Hepp2008] is an ontology for e-commerce on the Web.
-It focuses on describing offers, which it views as promises, emphasizing the importance of good and explicitly captured relationships between entities in the e-commerce domain.
-While the ontology is oriented towards supplies, its cookbook remarks that it is possible to *"use the very same GoodRelations vocabulary for the buy and the sell side of commerce."*^[<http://wiki.goodrelations-vocabulary.org/Cookbook/Seeks>]
-In order to do that, the ontology proposes a conceptual symmetry between demand and supply.
-It suggests to model demands as ideal offers (i.e. instances of `gr:Offering`) satisfying what that entities seek (i.e. link via the `gr:seeks` property).
-In this way, GoodRelations can take advantage of its comprehensive vocabulary for offers to describe demands, including specifications of the demanded products and services or the payment conditions. 
-
-<!-- LOTED2 -->
-
-LOTED2 [@Distinto2016] is a legal ontology for public procurement notices.
-As a legal ontology, it closely follows the EU directives governing public procurement, which we described in [Section @sec:legal-context].
-As such, the ontology enables to describe the tendering process for public contracts in legal terms.
-It pays a special attention to qualification criteria, which matchmaking may interpret as hard constraints for filtering bidders who are allowed to compete for public contracts.
-As the name indicates, LOTED2 evolved from Linked Open Tenders Electronic Daily (LOTED) [@Valle2010], an effort to convert TED to RDF using a simple vocabulary that mirrored the structure of the source data.
-The account on LOTED2 [@Distinto2016, p. 21] proposes matchmaking as future work and suggests matching TED to OpenCorporates,^[<https://opencorporates.com>] an open database of companies, using reasoning and matching classifications.
-
-<!-- PPROC -->
-
-Public Procurement Ontology (PPROC) [@MunozSoro2016] is an ontology that covers the complete life-cycle of public contracts, ranging from their issue to termination.
-As such, it supports both publication of public contracts as open data and management of public procurement processes in a transparent and accountable way.
-Its stated underlying goal is to enable open access to procurement data to the public [@MunozSoro2015].
-Although the publications about the ontology are agnostic of its intended use in applications, the ontology was already used in practice for integration of public procurement data from Spanish administrative bodies.
-It was adopted for public contracts of several authorities from the autonomous community of Aragón.
-
-## Related technologies
-
-We conclude this section with a brief overview of related technologies.
-To the best of our knowledge, these technologies have not yet found use in matchmaking, although they were adopted for related tasks, such as in recommender systems.
-
-LOD-enabled recommender systems [@DiNoia2012a; @DiNoia2012b; @DiNoia2016; @Thalhammer2012] constitute a source from which many technologies applicable to semantic matchmaking can be drawn.
-These systems typically employ established techniques for producing recommendations, such as matrix factorization [@Koren2009], but enhance them with semantic features extracted from LOD.
-Since the graph data model of LOD is conducive to the use of graph algorithms, some of the LOD-enabled recommender systems found uses for such algorithms or proposed novel algorithms operating on graph data.
-Examples of this sort include personalized PageRank [@Nguyen2015], spreading activation [@Heitmann2014; @Heitmann2016], or WeightedNIPaths [@Ristoski2015].
-
-Matchmaking can also derive inspiration from technologies in two broader research areas.
-Instance matching [@Christen2012; @Bryl2014] is usually limited to discovering identity links, although its similarity measures and combination functions to aggregate similarity scores are also applicable to discovering matches between demands and supplies.
-Semantic search [@Davies2009] can be considered a research area to which semantic matchmaking belongs.
-Matchmaking can borrow many techniques from this parent, such as query expansion or retrieval from semi-structured data.
-A notable example of a semantic search engine for RDF is SIREn [@Delbru2012], which extends Apache Lucene^[<http://lucene.apache.org>] with capabilities to search deeply nested data without a fixed schema.
+Our approaches to matchmaking are similar to those involved in LOD-enabled recommender systems [@DiNoia2014].
+In particular, the overlap is apparent in enhancing data with semantic features extracted from LOD.
+We also borrow many techniques from the fields like instance matching [@Bryl2014] and semantic search [@Davies2009], including similarity measures or query expansion.

@@ -13,11 +13,10 @@ These secondary goals were not formulated upfront; we only specified them explic
 <!-- Prerequisites -->
 
 In order to be able to deliver on the stated goals, their prerequisites must be fulfilled.
-Applied research depends on the availability of its building blocks.
 Our research is built on open data and open-source software.
-We need public procurement data to be available as open data, as described in [Section @sec:open-data].
-The data must be structured in a way from which a semantic description of the data can be created, implying that the data is machine-readable and consistent.
-Consistency of the data arises from standardization, including the adherence to fixed schemas and code lists.
+We need public procurement data to be available as open data. 
+Data must be structured in a regular way from which a semantic, machine-readable description of the data can be created.
+Regularity of the data arises from standardization, including the adherence to fixed schemas and code lists.
 We conceive matchmaking as a high-level task based on many layers of technology.
 Both our data preparation tools and matchmakers build on open-source components.
 In the pursuit of our goals we reused and orchestrated a large set of existing open-source software.

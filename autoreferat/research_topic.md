@@ -13,7 +13,7 @@ The main motivation of our research is to improve resource allocation in the pub
 In this context, matchmaking can suggest relevant business opportunities to bidders or recommend bidders to be approached by contracting authorities for a given public contract.
 
 Our approach to matchmaking is based on good data and good technologies.
-We employ linked open data as a method to integrate public procurement data and enable to combine it with other data.
+We employ linked open data (LOD) as a method to integrate public procurement data and enable to combine it with other data.
 A key challenge in using linked open data is to reuse or develop appropriate techniques for data preparation.
 
 We demonstrate how two generic approaches can be applied to the matchmaking task, namely case-based reasoning and statistical relational learning.
