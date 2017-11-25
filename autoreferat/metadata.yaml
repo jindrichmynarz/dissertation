@@ -2,4 +2,5 @@
 lang: en
 polyglossia-otherlangs:
   - name: czech
+link-citations: true
 ---

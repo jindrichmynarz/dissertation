@@ -6,7 +6,7 @@ We adopt the terminology established in knowledge engineering and related resear
 Some of the key terms we use include the following.
 
 Case-based reasoning
-~ A methodology that learns from experiences of previously solved problems, which are called cases [@Richter2013, p. 17]
+~ A methodology that learns from experiences of previously solved problems, which are called cases [@Richter2013, p. 17].
 
 Data fusion
 ~ *"The process of integrating multiple data items representing the same real-world object into a single, consistent, and clean representation"* [@Bizer2009].
@@ -26,7 +26,7 @@ Matchmaking
 ~ An information retrieval task that ranks pairs of demands and offers according to the degree to which the offer satisfies the demand.
 
 Open data
-~ A set of practices for publishing data that enables equal access to people and machines.
+~ A set of practices for publishing data that enables equal access to both all people and all machines.
 
 Public procurement
 ~ The process by which public bodies purchase products or services from companies.
@@ -38,7 +38,7 @@ Resource Description Framework (RDF)
 ~ A graph data format for exchanging data on the Web.
 
 Semantic web
-~ Web of data endowed with explicit semantics which machines can operate on.
+~ Web of RDF data endowed with explicit semantics which machines can operate on.
 
 SPARQL Protocol and RDF Query Language (SPARQL)
 ~ A query language for RDF data based on pattern-matching.

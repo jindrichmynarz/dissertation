@@ -2,7 +2,7 @@
 
 # Relevant publications {#sec:publications .unnumbered}
 
-Our key publications relevant to this dissertation are the following, listed in reverse chronological order:
+Our key publications relevant to this dissertation are the following, listed in the reverse chronological order:
 
 * @Mynarz2015 describe in detail the approach for SPARQL-based matchmaking evaluated on a prior version of the Czech public procurement dataset as well as the EU-wide register Tenders Electronic Daily.
 * @Mynarz2014c covers an ETL workflow for preparation of public procurement linked open data.
