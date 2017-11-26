@@ -1,4 +1,4 @@
-.PHONY: autoreferat citations clean
+.PHONY: autoreferat-print citations clean
 
 define PARTS
 parts/preface.md \
@@ -141,7 +141,7 @@ citations:
 
 autoreferat:
 	pandoc --pdf-engine=xelatex \
-		-o autoreferat.pdf \
+		-o autoreferat/autoreferat.pdf \
 		--variable citecolor=black \
 		--variable urlcolor=black \
 		--variable linkcolor=black \
@@ -170,6 +170,15 @@ autoreferat:
 		autoreferat/future_work.md \
 		autoreferat/references.md \
 		autoreferat/publications.md
+
+autoreferat-print: autoreferat
+	latexmk -pdf \
+		-outdir=autoreferat \
+		autoreferat/booklet.tex \
+		&& \
+	latexmk -c \
+		-outdir=autoreferat \
+		autoreferat/booklet.tex
 
 clean:
 	rm -f index.html dissertation.pdf citations.pdf autoreferat.pdf
