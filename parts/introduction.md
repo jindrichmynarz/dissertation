@@ -146,7 +146,7 @@ We follow up with a principal chapter that describes the matchmaking methods we 
 The subsequent chapter discusses the evaluation ([-@sec:evaluation]) of the devised matchmaking methods by using the datasets we prepared.
 We experimented with many configurations of the matchmaking methods in the evaluation.
 In this chapter, we present the results of selected quantitative evaluation metrics and provide interpretations of the obtained results.
-Finally, the concluding chapter ([-@sec:conclusions]) closes the dissertation, summarizing its principal contributions as well as remarking on its limitations that may be addresses in future research.
+Finally, the concluding chapter ([-@sec:conclusions]) closes the dissertation, summarizing its principal contributions as well as remarking on its limitations that may be addressed in future research.
 
 The contributions presented in this dissertation including the methods and software were authored or co-authored by the dissertation's author, unless stated otherwise.
 Both the reused and the developed software is listed in [Appendix @sec:software].

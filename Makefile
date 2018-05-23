@@ -1,4 +1,4 @@
-.PHONY: citations clean
+.PHONY: autoreferat-print citations clean
 
 define PARTS
 parts/preface.md \
@@ -77,9 +77,9 @@ html:
 		-t html5 \
 		--section-divs \
 		--template resources/templates/template.html \
-		--css http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css \
-		--css http://fonts.googleapis.com/css?family=Source+Sans+Pro:700 \
-		--css http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic \
+		--css https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css \
+		--css https://fonts.googleapis.com/css?family=Source+Sans+Pro:700 \
+		--css https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic \
 		--css resources/css/bootstrap.css \
 		--mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full \
 		-V lang=en \
@@ -93,9 +93,9 @@ dokieli:
 		-t html5 \
 		--section-divs \
 		--template resources/templates/dokieli.html \
-		--css http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css \
-		--css http://fonts.googleapis.com/css?family=Source+Sans+Pro:700 \
-		--css http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic \
+		--css https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css \
+		--css https://fonts.googleapis.com/css?family=Source+Sans+Pro:700 \
+		--css https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic \
 		--css https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css \
 		--css https://dokie.li/media/css/do.css \
 		--css resources/css/bootstrap.css \
@@ -121,7 +121,7 @@ print:
 		$(PARTS)
 
 citations:
-	pandoc --latex-engine=xelatex \
+	pandoc --pdf-engine=xelatex \
 		-o citations.pdf \
 		--variable citecolor=black \
 		--variable urlcolor=black \
@@ -140,23 +140,45 @@ citations:
 		citations/citations.md
 
 autoreferat:
-	pandoc --latex-engine=xelatex \
-		-o autorefererat.pdf \
+	pandoc --pdf-engine=xelatex \
+		-o autoreferat/autoreferat.pdf \
 		--variable citecolor=black \
 		--variable urlcolor=black \
 		--variable linkcolor=black \
-		-V fontsize=12pt \
-		-V papersize=a4paper \
-		-V documentclass:report \
-		-f markdown \
-		--normalize \
-		--smart \
+		-V geometry=a5paper \
+		-V documentclass=article \
+		--template resources/templates/autoreferat.tex \
+		-f markdown+implicit_figures+backtick_code_blocks+smart \
 		--standalone \
-		--filter pandoc-crossref \
 		--filter pandoc-citeproc \
 		--bibliography references.bib \
 		--csl resources/iso690-author-date-cs.csl \
-		autoreferat/autoreferat.md
+		--include-before-body autoreferat/title_page.tex \
+		--include-before-body autoreferat/abstract_czech.tex \
+		--include-before-body autoreferat/abstract_english.tex \
+		autoreferat/metadata.yaml \
+		autoreferat/research_topic.md \
+		autoreferat/related_work.md \
+		autoreferat/research_goals.md \
+		autoreferat/research_methods.md \
+		autoreferat/outline.md \
+		autoreferat/terminology.md \
+		autoreferat/conclusion.md \
+		autoreferat/fulfilment_of_the_stated_goals.md \
+		autoreferat/main_contributions.md \
+		autoreferat/applicability_of_the_work.md \
+		autoreferat/future_work.md \
+		autoreferat/references.md \
+		autoreferat/publications.md
+
+autoreferat-print: autoreferat
+	latexmk -pdf \
+		-outdir=autoreferat \
+		autoreferat/booklet.tex \
+		&& \
+	latexmk -c \
+		-outdir=autoreferat \
+		autoreferat/booklet.tex
 
 clean:
 	rm -f index.html dissertation.pdf citations.pdf autoreferat.pdf

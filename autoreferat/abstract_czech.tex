@@ -1,0 +1,29 @@
+\begin{czech}
+\begin{abstract}
+
+Párování prohledává kombinace nabídky a poptávky, které řadí dle míry, s jakou nabídka vyhovuje poptávce.
+Tato práce demonstruje, jak lze dva obecné postupy, jmenovitě případové usuzování a statistické relační učení, použít pro párování veřejných zakázek a uchazečů o zakázky.
+V obou případech párování využívá jak logické, tak statistické usuzování využívající vzájemně porovnatelná, polo-strukturovaná a sémanticky popsaná data.
+Na základech případového usuzování jsme navrhli novou metodu párování implementovanou pomocí jazyka SPARQL pro dotazování v datech ve formátu RDF.
+Metoda využívá podobnostní vyhledávání učící se z dříve udělených zakázek.
+Pro párování vycházející ze statistického relačního učení jsme převzali algoritmus RESCAL pro faktorizaci multi-relačních tenzorů využívající kolektivní učení pro predikci vazeb.
+Náš přínos v obou přístupech zahrnuje zejména výběr a tvorbu příznaků a také ladění parametrů párování.
+
+Metody párování jsme aplikovali na soubor propojených otevřených dat veřejné správy, jehož ústředním prvkem je Věstník veřejných zakázek České republiky.
+Doménu veřejných zakázek jsme zvolili, protože poskytuje explicitně popsané poptávky, které jsou díky zákonem požadovanému proaktivnímu zveřejňování oznámení o veřejných zakázkách dostupné v podobě otevřených a strukturovaných dat.
+Náš výzkum je motivován rozsáhlým pasivním plýtváním ve veřejných zakázkách, které má párování šanci zmírnit návrhy efektivnější alokace veřejných prostředků.
+Příprava použitých dat si však vyžádala rozsáhlé úsilí při tvorbě komplexních ETL procesů.
+Jako rámec integrace těchto dat jsme využili propojená otevřená data.
+Klíčové problémy dat jsme řešili pomocí technik pro propojování a fúzi dat.
+Otestovali jsme a integrovali dostupný software založený na technologiích sémantického webu, ale také vyvinuli přepoužitelné nástroje pro předzpracování dat ve formátu RDF.
+
+Evaluaci přesnosti a diverzity metod párování jsme provedli na úloze predikce vítězných uchazečů o zakázky v retrospektivních datech o zakázkách udělených během deseti let.
+Kvalita a rozsah vstupních dat se projevily jako zásadní faktory rozhodující o úspěšnosti párování.
+Párování využívající SPARQL ve všech ohledech jednoznačně překonalo přístup založený na algoritmu RESCAL, a to zejména s ohledem na diverzitu výsledků a náročnost výpočtu.
+Na rozdíl od většiny využitých příznaků, které se projevily jako šum, se příznaky z řízených slovníků popisujících zakázky nebo uchazeče ukázaly pro párování jako podstatně informativnější.
+Na hodnotu propojených dat poukázaly nejlepší výsledky u obou přístupů, které byly dosaženy párováním kombinujícím příznaky z více datových zdrojů.
+
+\emph{Klíčová slova:} párování, propojená data, otevřená data, veřejné zakázky
+
+\end{abstract}
+\end{czech}
